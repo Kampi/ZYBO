@@ -1,0 +1,67 @@
+timestamp=[2021-01-03 17:40:37], mode=WORKBENCH_START, duration=0:00:17.873, duration_ms=17873, data={}
+timestamp=[2021-01-03 17:40:38], mode=WORKBENCH_UI_INIT, duration=0:00:01.238, duration_ms=1238, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2021-01-03 17:40:58], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:17.531, duration_ms=17531, data={}
+timestamp=[2021-01-03 17:43:14], mode=PLATFORM_CREATION, duration=0:00:15.309, duration_ms=15309, data={platform_source=dsa, os=linux, processor=ps7_cortexa9, platform=null}
+timestamp=[2021-01-03 17:45:28], mode=PLATFORM_CREATION, duration=0:00:11.831, duration_ms=11831, data={platform_source=dsa, os=linux, processor=ps7_cortexa9, platform=null}
+timestamp=[2021-01-03 18:32:28], mode=PLATFORM_GENERATION, duration=0:41:24.501, duration_ms=2484501, data={name=MinimalLinux}
+timestamp=[2021-01-03 18:34:46], mode=APP_CREATION, duration=0:00:10.297, duration_ms=10297, data={name=HelloWorld, project_type=sdk, os=linux, processor=cortex-a9, runtime=C/C++, platform=MinimalLinux, application_type=application}
+timestamp=[2021-01-03 18:36:54], mode=BUILD, duration=0:00:03.251, duration_ms=3251, data={name=HelloWorld, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 18:37:08], mode=BUILD, duration=0:00:02.857, duration_ms=2857, data={name=HelloWorld, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 18:37:20], mode=BUILD, duration=0:00:01.452, duration_ms=1452, data={name=HelloWorld, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 19:07:48], mode=BUILD, duration=0:00:01.514, duration_ms=1514, data={name=HelloWorld, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 19:14:01], mode=BUILD, duration=0:00:01.287, duration_ms=1287, data={name=HelloWorld, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 19:14:14], mode=BUILD, duration=0:00:02.038, duration_ms=2038, data={name=HelloWorld, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 19:48:17], mode=BUILD, duration=0:00:01.407, duration_ms=1407, data={name=HelloWorld, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 19:50:05], mode=APP_CREATION, duration=0:00:05.008, duration_ms=5008, data={name=ADC_Reader, project_type=sdk, os=linux, processor=cortex-a9, runtime=C/C++, platform=MinimalLinux, application_type=application}
+timestamp=[2021-01-03 19:51:41], mode=BUILD, duration=0:00:01.165, duration_ms=1165, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 19:54:20], mode=BUILD, duration=0:00:01.188, duration_ms=1188, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 19:54:36], mode=BUILD, duration=0:00:00.276, duration_ms=276, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 20:00:07], mode=BUILD, duration=0:00:01.112, duration_ms=1112, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 20:00:21], mode=BUILD, duration=0:00:00.251, duration_ms=251, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 20:07:22], mode=BUILD, duration=0:00:00.331, duration_ms=331, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 20:07:55], mode=BUILD, duration=0:00:01.050, duration_ms=1050, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 20:09:19], mode=BUILD, duration=0:00:01.126, duration_ms=1126, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 20:09:49], mode=BUILD, duration=0:00:01.054, duration_ms=1054, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 20:10:41], mode=BUILD, duration=0:00:01.359, duration_ms=1359, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 20:10:54], mode=BUILD, duration=0:00:00.988, duration_ms=988, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 20:12:39], mode=BUILD, duration=0:00:00.340, duration_ms=340, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 20:13:11], mode=BUILD, duration=0:00:01.163, duration_ms=1163, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 20:15:26], mode=BUILD, duration=0:00:00.933, duration_ms=933, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 20:15:52], mode=BUILD, duration=0:00:01.032, duration_ms=1032, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 20:16:12], mode=BUILD, duration=0:00:01.008, duration_ms=1008, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 20:16:25], mode=BUILD, duration=0:00:01.099, duration_ms=1099, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 20:23:13], mode=BUILD, duration=0:00:01.138, duration_ms=1138, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 20:27:45], mode=BUILD, duration=0:00:00.353, duration_ms=353, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 22:42:01], mode=BUILD, duration=0:00:01.321, duration_ms=1321, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 22:42:36], mode=BUILD, duration=0:00:00.321, duration_ms=321, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 22:44:06], mode=BUILD, duration=0:00:01.088, duration_ms=1088, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 22:45:29], mode=BUILD, duration=0:00:01.184, duration_ms=1184, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 22:46:09], mode=BUILD, duration=0:00:01.100, duration_ms=1100, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 22:47:13], mode=BUILD, duration=0:00:01.051, duration_ms=1051, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 22:47:55], mode=BUILD, duration=0:00:01.011, duration_ms=1011, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 22:49:01], mode=BUILD, duration=0:00:00.446, duration_ms=446, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 22:49:12], mode=BUILD, duration=0:00:00.998, duration_ms=998, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 22:49:46], mode=BUILD, duration=0:00:01.013, duration_ms=1013, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 22:49:52], mode=BUILD, duration=0:00:00.234, duration_ms=234, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 22:50:14], mode=BUILD, duration=0:00:00.990, duration_ms=990, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 23:00:08], mode=BUILD, duration=0:00:01.198, duration_ms=1198, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 23:01:34], mode=BUILD, duration=0:00:01.264, duration_ms=1264, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 23:02:48], mode=BUILD, duration=0:00:01.243, duration_ms=1243, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 23:03:16], mode=BUILD, duration=0:00:01.171, duration_ms=1171, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 23:04:23], mode=BUILD, duration=0:00:00.553, duration_ms=553, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 23:04:37], mode=BUILD, duration=0:00:01.184, duration_ms=1184, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 23:05:03], mode=BUILD, duration=0:00:01.367, duration_ms=1367, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 23:05:53], mode=BUILD, duration=0:00:01.221, duration_ms=1221, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-03 23:36:46], mode=WORKBENCH_START, duration=0:00:42.865, duration_ms=42865, data={}
+timestamp=[2021-01-03 23:36:47], mode=WORKBENCH_UI_INIT, duration=0:00:01.634, duration_ms=1634, data={editors_count=4, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=ADC_Reader,ADC_Reader_system,MinimalLinux,RemoteSystemsTempFiles}
+timestamp=[2021-01-03 23:36:49], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.709, duration_ms=1709, data={}
+timestamp=[2021-01-04 00:21:03], mode=PLATFORM_GENERATION, duration=0:42:44.556, duration_ms=2564556, data={name=MinimalLinux}
+timestamp=[2021-01-04 00:22:01], mode=BUILD, duration=0:00:00.864, duration_ms=864, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-04 00:29:16], mode=PLATFORM_GENERATION, duration=0:07:08.213, duration_ms=428213, data={name=MinimalLinux}
+timestamp=[2021-01-04 00:29:17], mode=BUILD, duration=0:00:00.692, duration_ms=692, data={name=ADC_Reader, configuration=Debug, clean_build=true}
+timestamp=[2021-01-04 00:48:12], mode=PLATFORM_GENERATION, duration=0:18:51.928, duration_ms=1131928, data={name=MinimalLinux}
+timestamp=[2021-01-04 00:48:17], mode=BUILD, duration=0:00:04.190, duration_ms=4190, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-04 00:49:52], mode=BUILD, duration=0:00:00.543, duration_ms=543, data={name=ADC_Reader, configuration=Debug, clean_build=false}
+timestamp=[2021-01-04 16:50:07], mode=WORKBENCH_START, duration=0:00:37.109, duration_ms=37109, data={}
+timestamp=[2021-01-04 16:50:09], mode=WORKBENCH_UI_INIT, duration=0:00:02.199, duration_ms=2199, data={editors_count=0, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=ADC_Reader,ADC_Reader_system,MinimalLinux,RemoteSystemsTempFiles}
+timestamp=[2021-01-04 16:50:10], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.418, duration_ms=418, data={}

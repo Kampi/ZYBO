@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+
+float Voltage;
+float Scale;
+
+FILE* File;
+char Buffer[32];
+
+int main(void)
+{
+	File = fopen("/sys/bus/iio/devices/iio:device1/in_voltage10_vaux14_scale", "r");
+	if(File == NULL)
+	{
+	    printf("[ERROR] Can not open file!");
+
+	    return -1;
+	}
+	fgets(Buffer, 12, File);
+	fclose(File);
+
+	Scale = atof(Buffer);
+	printf("[INFO] Scale: %4.9f mV / Bit\n\r", Scale);
+
+	while(1)
+	{
+		int i = 0x00;
+		char c = 0x00;
+
+		File = fopen("/sys/bus/iio/devices/iio:device1/in_voltage10_vaux14_raw", "r");
+		if(File == NULL)
+		{
+		    printf("[ERROR] Can not open file!");
+
+		    return -1;
+		}
+
+		while(scanf("%s", Buffer) == 1)
+		{
+			Voltage = (float)atoi(Buffer) * Scale / 1000.0;
+		}
+
+		fclose(File);
+
+
+		printf("[INFO] Raw: %s\n\r", Buffer);
+		printf("[INFO] Voltge: %4.2f V\n\r", Voltage);
+		sleep(1);
+	}
+
+	return 0;
+}

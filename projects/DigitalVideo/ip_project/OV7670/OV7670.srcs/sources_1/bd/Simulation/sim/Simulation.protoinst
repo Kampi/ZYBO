@@ -1,0 +1,47 @@
+{
+	"version": "1.0",
+	"modules": {
+		"Simulation": {
+			"proto_instances": {
+				"/AXI_Lite_Reader/M_AXI": {
+					"interface": "xilinx.com:interface:aximm:1.0",
+					"ports": {
+						"ACLK": { "actual": "aclk"},
+						"ARADDR": { "actual": "m_axi_araddr"},
+						"ARESETN": { "actual": "aresetn"},
+						"ARPROT": { "actual": "m_axi_arprot"},
+						"ARREADY": { "actual": "m_axi_arready"},
+						"ARVALID": { "actual": "m_axi_arvalid"},
+						"AWADDR": { "actual": "m_axi_awaddr"},
+						"AWPROT": { "actual": "m_axi_awprot"},
+						"AWREADY": { "actual": "m_axi_awready"},
+						"AWVALID": { "actual": "m_axi_awvalid"},
+						"BREADY": { "actual": "m_axi_bready"},
+						"BRESP": { "actual": "m_axi_bresp"},
+						"BVALID": { "actual": "m_axi_bvalid"},
+						"RDATA": { "actual": "m_axi_rdata"},
+						"RREADY": { "actual": "m_axi_rready"},
+						"RRESP": { "actual": "m_axi_rresp"},
+						"RVALID": { "actual": "m_axi_rvalid"},
+						"WDATA": { "actual": "m_axi_wdata"},
+						"WREADY": { "actual": "m_axi_wready"},
+						"WSTRB": { "actual": "m_axi_wstrb"},
+						"WVALID": { "actual": "m_axi_wvalid"}
+					}
+				},
+				"/AXI_Stream_Reader/S_AXIS": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "aclk"},
+						"ARESETN": { "actual": "aresetn"},
+						"TDATA": { "actual": "s_axis_tdata"},
+						"TLAST": { "actual": "s_axis_tlast"},
+						"TREADY": { "actual": "s_axis_tready"},
+						"TUSER": { "actual": "s_axis_tuser"},
+						"TVALID": { "actual": "s_axis_tvalid"}
+					}
+				}
+			}
+		}
+	}
+}

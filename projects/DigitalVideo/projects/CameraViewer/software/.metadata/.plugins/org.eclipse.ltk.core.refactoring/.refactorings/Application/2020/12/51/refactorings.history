@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Application/src/Video/VideoPlayer.h&apos; to &apos;Video.h&apos;" description="Rename resource &apos;VideoPlayer.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Video/VideoPlayer.h" name="Video.h" stamp="1608287356935" updateReferences="true"/>
+</session>

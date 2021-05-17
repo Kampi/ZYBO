@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Interface_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Interface_TB" />
+            <top_module name="axi4stream_vip_pkg" />
+            <top_module name="axi_vip_pkg" />
+            <top_module name="glbl" />
+            <top_module name="std" />
+            <top_module name="vcomponents" />
+            <top_module name="xil_common_vip_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="5310142000fs"></ZoomStartTime>
+      <ZoomEndTime time="5311666001fs"></ZoomEndTime>
+      <Cursor1Time time="5310816000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="208"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="6" />
+   <wvobject fp_name="/Interface_TB/AXI_Clock" type="logic">
+      <obj_property name="ElementShortName">AXI_Clock</obj_property>
+      <obj_property name="ObjectShortName">AXI_Clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Interface_TB/AXI_nReset" type="logic">
+      <obj_property name="ElementShortName">AXI_nReset</obj_property>
+      <obj_property name="ObjectShortName">AXI_nReset</obj_property>
+   </wvobject>
+   <wvobject fp_name="group101" type="group">
+      <obj_property name="label">AXI-Lite Simulation</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Interface_TB/AXI_AWADDR" type="array">
+         <obj_property name="ElementShortName">AXI_AWADDR[3:0]</obj_property>
+         <obj_property name="ObjectShortName">AXI_AWADDR[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/AXI_AWPROT" type="array">
+         <obj_property name="ElementShortName">AXI_AWPROT[2:0]</obj_property>
+         <obj_property name="ObjectShortName">AXI_AWPROT[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/AXI_AWVALID" type="logic">
+         <obj_property name="ElementShortName">AXI_AWVALID</obj_property>
+         <obj_property name="ObjectShortName">AXI_AWVALID</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/AXI_AWREADY" type="logic">
+         <obj_property name="ElementShortName">AXI_AWREADY</obj_property>
+         <obj_property name="ObjectShortName">AXI_AWREADY</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/AXI_WDATA" type="array">
+         <obj_property name="ElementShortName">AXI_WDATA[31:0]</obj_property>
+         <obj_property name="ObjectShortName">AXI_WDATA[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/AXI_WSTRB" type="array">
+         <obj_property name="ElementShortName">AXI_WSTRB[3:0]</obj_property>
+         <obj_property name="ObjectShortName">AXI_WSTRB[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/AXI_WVALID" type="logic">
+         <obj_property name="ElementShortName">AXI_WVALID</obj_property>
+         <obj_property name="ObjectShortName">AXI_WVALID</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/AXI_WREADY" type="logic">
+         <obj_property name="ElementShortName">AXI_WREADY</obj_property>
+         <obj_property name="ObjectShortName">AXI_WREADY</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/AXI_BRESP" type="array">
+         <obj_property name="ElementShortName">AXI_BRESP[1:0]</obj_property>
+         <obj_property name="ObjectShortName">AXI_BRESP[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/AXI_BVALID" type="logic">
+         <obj_property name="ElementShortName">AXI_BVALID</obj_property>
+         <obj_property name="ObjectShortName">AXI_BVALID</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/AXI_BREADY" type="logic">
+         <obj_property name="ElementShortName">AXI_BREADY</obj_property>
+         <obj_property name="ObjectShortName">AXI_BREADY</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/AXI_ARADDR" type="array">
+         <obj_property name="ElementShortName">AXI_ARADDR[3:0]</obj_property>
+         <obj_property name="ObjectShortName">AXI_ARADDR[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/AXI_ARPROT" type="array">
+         <obj_property name="ElementShortName">AXI_ARPROT[2:0]</obj_property>
+         <obj_property name="ObjectShortName">AXI_ARPROT[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/AXI_ARVALID" type="logic">
+         <obj_property name="ElementShortName">AXI_ARVALID</obj_property>
+         <obj_property name="ObjectShortName">AXI_ARVALID</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/AXI_ARREADY" type="logic">
+         <obj_property name="ElementShortName">AXI_ARREADY</obj_property>
+         <obj_property name="ObjectShortName">AXI_ARREADY</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/AXI_RDATA" type="array">
+         <obj_property name="ElementShortName">AXI_RDATA[31:0]</obj_property>
+         <obj_property name="ObjectShortName">AXI_RDATA[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/AXI_RRESP" type="array">
+         <obj_property name="ElementShortName">AXI_RRESP[1:0]</obj_property>
+         <obj_property name="ObjectShortName">AXI_RRESP[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/AXI_RVALID" type="logic">
+         <obj_property name="ElementShortName">AXI_RVALID</obj_property>
+         <obj_property name="ObjectShortName">AXI_RVALID</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/AXI_RREADY" type="logic">
+         <obj_property name="ElementShortName">AXI_RREADY</obj_property>
+         <obj_property name="ObjectShortName">AXI_RREADY</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group44" type="group">
+      <obj_property name="label">AXI-Stream Simulation</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Interface_TB/TDATA" type="array">
+         <obj_property name="ElementShortName">TDATA[23:0]</obj_property>
+         <obj_property name="ObjectShortName">TDATA[23:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/TREADY" type="logic">
+         <obj_property name="ElementShortName">TREADY</obj_property>
+         <obj_property name="ObjectShortName">TREADY</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/TVALID" type="logic">
+         <obj_property name="ElementShortName">TVALID</obj_property>
+         <obj_property name="ObjectShortName">TVALID</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/TLAST" type="logic">
+         <obj_property name="ElementShortName">TLAST</obj_property>
+         <obj_property name="ObjectShortName">TLAST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/TUSER" type="logic">
+         <obj_property name="ElementShortName">TUSER</obj_property>
+         <obj_property name="ObjectShortName">TUSER</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group344" type="group">
+      <obj_property name="label">Camera Simulation</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="group67" type="group">
+         <obj_property name="label">Counter</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/Interface_TB/PixelCounter" type="array">
+            <obj_property name="ElementShortName">PixelCounter[31:0]</obj_property>
+            <obj_property name="ObjectShortName">PixelCounter[31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Interface_TB/LineCounter" type="array">
+            <obj_property name="ElementShortName">LineCounter[31:0]</obj_property>
+            <obj_property name="ObjectShortName">LineCounter[31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Interface_TB/XCLK_Counter" type="array">
+            <obj_property name="ElementShortName">XCLK_Counter[31:0]</obj_property>
+            <obj_property name="ObjectShortName">XCLK_Counter[31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/XCLK" type="logic">
+         <obj_property name="ElementShortName">XCLK</obj_property>
+         <obj_property name="ObjectShortName">XCLK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/OV7670_PCLK" type="logic">
+         <obj_property name="ElementShortName">OV7670_PCLK</obj_property>
+         <obj_property name="ObjectShortName">OV7670_PCLK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/OV7670_VSYNC" type="logic">
+         <obj_property name="ElementShortName">OV7670_VSYNC</obj_property>
+         <obj_property name="ObjectShortName">OV7670_VSYNC</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/OV7670_HREF" type="logic">
+         <obj_property name="ElementShortName">OV7670_HREF</obj_property>
+         <obj_property name="ObjectShortName">OV7670_HREF</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/OV7670_Data" type="array">
+         <obj_property name="ElementShortName">OV7670_Data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">OV7670_Data[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+         <obj_property name="Reversed">false</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group532" type="group">
+      <obj_property name="label">DUT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/Interface_TB/DUT/Row" type="other">
+         <obj_property name="ElementShortName">Row</obj_property>
+         <obj_property name="ObjectShortName">Row</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Interface_TB/DUT/Pixel" type="other">
+         <obj_property name="ElementShortName">Pixel</obj_property>
+         <obj_property name="ObjectShortName">Pixel</obj_property>
+      </wvobject>
+      <wvobject fp_name="group170" type="group">
+         <obj_property name="label">OV7670</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/Interface_TB/DUT/Camera_Interface/FIFO_Data_Reg" type="array">
+            <obj_property name="ElementShortName">FIFO_Data_Reg[15:0]</obj_property>
+            <obj_property name="ObjectShortName">FIFO_Data_Reg[15:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Interface_TB/DUT/Camera_Interface/FIFO_Data" type="array">
+            <obj_property name="ElementShortName">FIFO_Data[23:0]</obj_property>
+            <obj_property name="ObjectShortName">FIFO_Data[23:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Interface_TB/DUT/Camera_Interface/FIFO_WE" type="logic">
+            <obj_property name="ElementShortName">FIFO_WE</obj_property>
+            <obj_property name="ObjectShortName">FIFO_WE</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+</wave_config>

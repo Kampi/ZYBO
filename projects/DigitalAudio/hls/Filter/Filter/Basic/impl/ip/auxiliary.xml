@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="Filter" xd:componentRef="Filter" xd:initiationInterval="118" xd:clockPeriod="8.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:arg xd:name="DataIn" xd:originalName="DataIn" xd:direction="in" xd:interfaceRef="DataIn" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(DataOut)" xd:originalName="DataOut" xd:direction="out" xd:interfaceRef="DataOut" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="Enable" xd:originalName="Enable" xd:direction="in" xd:interfaceRef="Enable" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1" xd:firstOut="2"/>
+  <xd:latencyEstimates xd:best-case="2" xd:worst-case="117" xd:average-case="60"/>
+  <xd:resourceEstimates xd:LUT="352" xd:FF="412" xd:BRAM="0" xd:DSP="2"/>
+</xd:acceleratorMap>

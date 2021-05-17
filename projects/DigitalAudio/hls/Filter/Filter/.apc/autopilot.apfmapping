@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="Filter.cpp" path="C:\Users\Daniel.Kampert\Desktop\Git\ZYBO\projects\DigitalAudio\hls\Filter\src\Filter.cpp"/>
+    <originFiles name="Filter.h" path="C:\Users\Daniel.Kampert\Desktop\Git\ZYBO\projects\DigitalAudio\hls\Filter\include\Filter.h"/>
+  </source>
+  <testbench>
+    <originFiles name="Filter.h" path="C:\Users\Daniel.Kampert\Desktop\Git\ZYBO\projects\DigitalAudio\hls\Filter\include\Filter.h"/>
+    <originFiles name="Filter_Test.cpp" path="C:\Users\Daniel.Kampert\Desktop\Git\ZYBO\projects\DigitalAudio\hls\Filter\test\Filter_Test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

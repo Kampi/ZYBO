@@ -1,0 +1,24 @@
+
+
+================================================================
+== Synthesis Summary Report of 'SobelFilter'
+================================================================
++ General Information: 
+    * Date:           Fri May  7 20:28:39 2021
+    * Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+    * Project:        SobelFilter
+    * Solution:       SobelFilter (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z010-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +---------------+------+-------+---------+--------+----------+---------+------+----------+------+----+----------+----------+-----+
+    |    Modules    | Issue|       | Latency | Latency| Iteration|         | Trip |          |      |    |          |          |     |
+    |    & Loops    | Type | Slack | (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM | DSP|    FF    |    LUT   | URAM|
+    +---------------+------+-------+---------+--------+----------+---------+------+----------+------+----+----------+----------+-----+
+    |+ SobelFilter  |     -|  -5.84|        1|   8.000|         -|        2|     -|        no|     -|   -|  34 (~0%)|  36 (~0%)|    -|
+    +---------------+------+-------+---------+--------+----------+---------+------+----------+------+----+----------+----------+-----+
+

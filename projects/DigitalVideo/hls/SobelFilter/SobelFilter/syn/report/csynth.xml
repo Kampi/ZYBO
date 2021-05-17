@@ -1,0 +1,442 @@
+<profile>
+    <ReportVersion>
+        <Version>2020.2</Version>
+    </ReportVersion>
+    <UserAssignments>
+        <unit>ns</unit>
+        <ProductFamily>zynq</ProductFamily>
+        <Part>xc7z010-clg400-1</Part>
+        <TopModelName>SobelFilter</TopModelName>
+        <TargetClockPeriod>8.00</TargetClockPeriod>
+        <ClockUncertainty>2.16</ClockUncertainty>
+        <FlowTarget>vivado</FlowTarget>
+    </UserAssignments>
+    <PerformanceEstimates>
+        <PipelineType>none</PipelineType>
+        <SummaryOfTimingAnalysis>
+            <unit>ns</unit>
+            <EstimatedClockPeriod>0.000</EstimatedClockPeriod>
+        </SummaryOfTimingAnalysis>
+        <SummaryOfOverallLatency>
+            <unit>clock cycles</unit>
+            <Best-caseLatency>1</Best-caseLatency>
+            <Average-caseLatency>1</Average-caseLatency>
+            <Worst-caseLatency>1</Worst-caseLatency>
+            <Best-caseRealTimeLatency>8.000 ns</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>8.000 ns</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>8.000 ns</Worst-caseRealTimeLatency>
+            <Interval-min>2</Interval-min>
+            <Interval-max>2</Interval-max>
+        </SummaryOfOverallLatency>
+    </PerformanceEstimates>
+    <AreaEstimates>
+        <Resources>
+            <FF>34</FF>
+            <LUT>36</LUT>
+            <BRAM_18K>0</BRAM_18K>
+            <DSP>0</DSP>
+            <URAM>0</URAM>
+        </Resources>
+        <AvailableResources>
+            <BRAM_18K>120</BRAM_18K>
+            <DSP>80</DSP>
+            <FF>35200</FF>
+            <LUT>17600</LUT>
+            <URAM>0</URAM>
+        </AvailableResources>
+    </AreaEstimates>
+    <InterfaceSummary>
+        <RtlPorts>
+            <name>ap_clk</name>
+            <Object>SobelFilter</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_rst_n</name>
+            <Object>SobelFilter</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_start</name>
+            <Object>SobelFilter</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_done</name>
+            <Object>SobelFilter</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_idle</name>
+            <Object>SobelFilter</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_ready</name>
+            <Object>SobelFilter</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>DataIn</name>
+            <Object>DataIn</Object>
+            <Type>scalar</Type>
+            <Scope/>
+            <IOProtocol>ap_none</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>32</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>DataOut_TDATA</name>
+            <Object>DataOut</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>out</Dir>
+            <Bits>32</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>DataOut_TVALID</name>
+            <Object>DataOut</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>DataOut_TREADY</name>
+            <Object>DataOut</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+    </InterfaceSummary>
+    <RTLDesignHierarchy>
+        <TopModule>
+            <ModuleName>SobelFilter</ModuleName>
+        </TopModule>
+    </RTLDesignHierarchy>
+    <ModuleInformation>
+        <Module>
+            <Name>SobelFilter</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>8.00</TargetClockPeriod>
+                    <ClockUncertainty>2.16</ClockUncertainty>
+                    <EstimatedClockPeriod>0.000</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>1</Best-caseLatency>
+                    <Average-caseLatency>1</Average-caseLatency>
+                    <Worst-caseLatency>1</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>8.000 ns</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>8.000 ns</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>8.000 ns</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>2</PipelineInitiationInterval>
+                    <PipelineType>none</PipelineType>
+                </SummaryOfOverallLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>34</FF>
+                    <AVAIL_FF>35200</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>36</LUT>
+                    <AVAIL_LUT>17600</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>120</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>80</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <InterfaceSummary>
+                <RtlPorts>
+                    <name>ap_clk</name>
+                    <Object>SobelFilter</Object>
+                    <Type>return value</Type>
+                    <Scope/>
+                    <IOProtocol>ap_ctrl_hs</IOProtocol>
+                    <IOConfig/>
+                    <Dir>in</Dir>
+                    <Bits>1</Bits>
+                    <Attribute>control</Attribute>
+                </RtlPorts>
+                <RtlPorts>
+                    <name>ap_rst_n</name>
+                    <Object>SobelFilter</Object>
+                    <Type>return value</Type>
+                    <Scope/>
+                    <IOProtocol>ap_ctrl_hs</IOProtocol>
+                    <IOConfig/>
+                    <Dir>in</Dir>
+                    <Bits>1</Bits>
+                    <Attribute>control</Attribute>
+                </RtlPorts>
+                <RtlPorts>
+                    <name>ap_start</name>
+                    <Object>SobelFilter</Object>
+                    <Type>return value</Type>
+                    <Scope/>
+                    <IOProtocol>ap_ctrl_hs</IOProtocol>
+                    <IOConfig/>
+                    <Dir>in</Dir>
+                    <Bits>1</Bits>
+                    <Attribute>control</Attribute>
+                </RtlPorts>
+                <RtlPorts>
+                    <name>ap_done</name>
+                    <Object>SobelFilter</Object>
+                    <Type>return value</Type>
+                    <Scope/>
+                    <IOProtocol>ap_ctrl_hs</IOProtocol>
+                    <IOConfig/>
+                    <Dir>out</Dir>
+                    <Bits>1</Bits>
+                    <Attribute>control</Attribute>
+                </RtlPorts>
+                <RtlPorts>
+                    <name>ap_idle</name>
+                    <Object>SobelFilter</Object>
+                    <Type>return value</Type>
+                    <Scope/>
+                    <IOProtocol>ap_ctrl_hs</IOProtocol>
+                    <IOConfig/>
+                    <Dir>out</Dir>
+                    <Bits>1</Bits>
+                    <Attribute>control</Attribute>
+                </RtlPorts>
+                <RtlPorts>
+                    <name>ap_ready</name>
+                    <Object>SobelFilter</Object>
+                    <Type>return value</Type>
+                    <Scope/>
+                    <IOProtocol>ap_ctrl_hs</IOProtocol>
+                    <IOConfig/>
+                    <Dir>out</Dir>
+                    <Bits>1</Bits>
+                    <Attribute>control</Attribute>
+                </RtlPorts>
+                <RtlPorts>
+                    <name>DataIn</name>
+                    <Object>DataIn</Object>
+                    <Type>scalar</Type>
+                    <Scope/>
+                    <IOProtocol>ap_none</IOProtocol>
+                    <IOConfig/>
+                    <Dir>in</Dir>
+                    <Bits>32</Bits>
+                    <Attribute>data</Attribute>
+                    <CType>int</CType>
+                </RtlPorts>
+                <RtlPorts>
+                    <name>DataOut_TDATA</name>
+                    <Object>DataOut</Object>
+                    <Type>pointer</Type>
+                    <Scope/>
+                    <IOProtocol>axis</IOProtocol>
+                    <IOConfig>register, both mode</IOConfig>
+                    <Dir>out</Dir>
+                    <Bits>32</Bits>
+                    <Attribute>data</Attribute>
+                    <CType>int</CType>
+                </RtlPorts>
+                <RtlPorts>
+                    <name>DataOut_TVALID</name>
+                    <Object>DataOut</Object>
+                    <Type>pointer</Type>
+                    <Scope/>
+                    <IOProtocol>axis</IOProtocol>
+                    <IOConfig>register, both mode</IOConfig>
+                    <Dir>out</Dir>
+                    <Bits>1</Bits>
+                    <Attribute>control</Attribute>
+                    <CType>int</CType>
+                </RtlPorts>
+                <RtlPorts>
+                    <name>DataOut_TREADY</name>
+                    <Object>DataOut</Object>
+                    <Type>pointer</Type>
+                    <Scope/>
+                    <IOProtocol>axis</IOProtocol>
+                    <IOConfig>register, both mode</IOConfig>
+                    <Dir>in</Dir>
+                    <Bits>1</Bits>
+                    <Attribute>control</Attribute>
+                    <CType>int</CType>
+                </RtlPorts>
+            </InterfaceSummary>
+        </Module>
+    </ModuleInformation>
+    <FIFOInformation/>
+    <Args>
+        <Arg ArgName="DataIn" index="0" direction="in" srcType="" srcSize="32">
+            <hwRefs>
+                <hwRef type="port" interface="DataIn" name="DataIn" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="DataOut" index="1" direction="out" srcType="*" srcSize="32">
+            <hwRefs>
+                <hwRef type="interface" interface="DataOut" name="" usage="data" direction="out"/>
+            </hwRefs>
+        </Arg>
+    </Args>
+    <Interfaces>
+        <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
+            <busParams>
+                <busParam busParamName="ASSOCIATED_BUSIF">DataOut</busParam>
+                <busParam busParamName="ASSOCIATED_RESET">ap_rst_n</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_clk">CLK</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_clk</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_ctrl" type="ap_ctrl" busTypeName="acc_handshake" mode="slave">
+            <portMaps>
+                <portMap portMapName="ap_start">start</portMap>
+                <portMap portMapName="ap_done">done</portMap>
+                <portMap portMapName="ap_idle">idle</portMap>
+                <portMap portMapName="ap_ready">ready</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_done</port>
+                <port>ap_idle</port>
+                <port>ap_ready</port>
+                <port>ap_start</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_rst_n" type="reset" busTypeName="reset" mode="slave">
+            <busParams>
+                <busParam busParamName="POLARITY">ACTIVE_LOW</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_rst_n">RST</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_rst_n</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="DataIn" type="data" busTypeName="data" mode="slave" dataWidth="32">
+            <portMaps>
+                <portMap portMapName="DataIn">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>DataIn</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_none" register_option="0" argName="DataIn"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="DataOut" type="axi4stream" busTypeName="axis" mode="master" dataWidth="32" portPrefix="DataOut_">
+            <ports>
+                <port>DataOut_TDATA</port>
+                <port>DataOut_TREADY</port>
+                <port>DataOut_TVALID</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both" argName="DataOut"/>
+            </constraints>
+        </Interface>
+    </Interfaces>
+    <ReportHWInterface>
+        <section name="HW Interfaces" level="0">
+            <item name="AXIS">
+                <table>
+                    <keys size="5">Interface, Register Mode, TDATA, TREADY, TVALID</keys>
+                    <column name="DataOut">both, 32, 1, 1</column>
+                </table>
+            </item>
+            <item name="REGISTER">
+                <table>
+                    <keys size="3">Interface, Mode, Bitwidth</keys>
+                    <column name="DataIn">ap_none, 32</column>
+                </table>
+            </item>
+            <item name="TOP LEVEL CONTROL">
+                <table>
+                    <keys size="3">Interface, Type, Ports</keys>
+                    <column name="ap_clk">clock, ap_clk</column>
+                    <column name="ap_rst_n">reset, ap_rst_n</column>
+                    <column name="ap_ctrl">ap_ctrl_hs, ap_done ap_idle ap_ready ap_start</column>
+                </table>
+            </item>
+        </section>
+    </ReportHWInterface>
+    <ReportSWInterface>
+        <section name="SW I/O Information" level="0">
+            <item name="Top Function Arguments">
+                <table isCollapsed="1">
+                    <keys size="3">Argument, Direction, Datatype</keys>
+                    <column name="DataIn">in, </column>
+                    <column name="DataOut">out, pointer</column>
+                </table>
+            </item>
+            <item name="SW-to-HW Mapping">
+                <table isCollapsed="1">
+                    <keys size="3">Argument, HW Name, HW Type</keys>
+                    <column name="DataIn">DataIn, port</column>
+                    <column name="DataOut">DataOut, interface</column>
+                </table>
+            </item>
+        </section>
+    </ReportSWInterface>
+</profile>
+

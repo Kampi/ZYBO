@@ -1,0 +1,34 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.916364",
+   "Default View_TopLeft":"-217,0",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 3 -x 810 -y 60 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 3 -x 810 -y 80 -defaultsOSRD
+preplace port Vaux14 -pg 1 -lvl 0 -x 0 -y 360 -defaultsOSRD
+preplace port Vaux15 -pg 1 -lvl 0 -x 0 -y 380 -defaultsOSRD
+preplace port user_temp_alarm_out -pg 1 -lvl 3 -x 810 -y 270 -defaultsOSRD
+preplace port ot_out -pg 1 -lvl 3 -x 810 -y 390 -defaultsOSRD
+preplace inst ProcessingSystem -pg 1 -lvl 2 -x 580 -y 100 -defaultsOSRD
+preplace inst XADC -pg 1 -lvl 2 -x 580 -y 380 -defaultsOSRD
+preplace inst Reset_ProcessingSystem -pg 1 -lvl 1 -x 200 -y 100 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 200 380 200 790
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 3 30 210 NJ 210 780
+preplace netloc XADC_user_temp_alarm_out 1 2 1 NJ 270
+preplace netloc XADC_ot_out 1 2 1 NJ 390
+preplace netloc SystemReset_peripheral_reset 1 1 1 370 100n
+preplace netloc processing_system7_0_DDR 1 2 1 NJ 60
+preplace netloc processing_system7_0_FIXED_IO 1 2 1 NJ 80
+preplace netloc Vaux14_1 1 0 2 NJ 360 NJ
+preplace netloc Vaux15_1 1 0 2 NJ 380 NJ
+levelinfo -pg 1 0 200 580 810
+pagesize -pg 1 -db -bbox -sgen -100 0 1000 550
+"
+}
+{
+   "da_axi4_cnt":"1",
+   "da_board_cnt":"1",
+   "da_clkrst_cnt":"1"
+}

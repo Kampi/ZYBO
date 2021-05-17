@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:busDefinition xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>www.kampis-elektroecke.de</spirit:vendor>
+  <spirit:library>Kampis-Elektroecke</spirit:library>
+  <spirit:name>OV7670</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:directConnection>false</spirit:directConnection>
+  <spirit:isAddressable>false</spirit:isAddressable>
+  <spirit:extends spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="vga" spirit:version="1.0"/>
+  <spirit:maxMasters>1</spirit:maxMasters>
+  <spirit:maxSlaves>1</spirit:maxSlaves>
+  <spirit:description>OV7670 image sensor bus specification.</spirit:description>
+  <spirit:vendorExtensions>
+    <xilinx:busDefinitionInfo>
+      <xilinx:displayName>OV7670</xilinx:displayName>
+    </xilinx:busDefinitionInfo>
+  </spirit:vendorExtensions>
+</spirit:busDefinition>

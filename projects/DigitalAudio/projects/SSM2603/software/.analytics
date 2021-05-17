@@ -1,0 +1,37 @@
+timestamp=[2021-02-13 09:18:08], mode=WORKBENCH_START, duration=0:00:05.640, duration_ms=5640, data={}
+timestamp=[2021-02-13 09:18:09], mode=WORKBENCH_UI_INIT, duration=0:00:01.587, duration_ms=1587, data={editors_count=0, platform_editors_count=0, projects_count=1, platform_projects_count=0, active_platform_editor=false, projects=RemoteSystemsTempFiles}
+timestamp=[2021-02-13 09:20:04], mode=APP_CREATION, duration=0:01:00.098, duration_ms=60098, data={name=SSM2603, project_type=sdk, os=standalone, processor=ps7_cortexa9, runtime=cpp, platform=System_wrapper, application_type=application}
+timestamp=[2021-02-13 09:22:26], mode=PLATFORM_GENERATION, duration=0:01:10.512, duration_ms=70512, data={name=System_wrapper}
+timestamp=[2021-02-13 09:30:32], mode=PLATFORM_GENERATION, duration=0:00:32.144, duration_ms=32144, data={name=System_wrapper}
+timestamp=[2021-02-13 10:41:59], mode=PLATFORM_GENERATION, duration=0:00:04.471, duration_ms=4471, data={name=System_wrapper}
+timestamp=[2021-02-13 10:42:40], mode=PLATFORM_GENERATION, duration=0:00:33.038, duration_ms=33038, data={name=System_wrapper}
+timestamp=[2021-02-13 10:43:09], mode=PLATFORM_GENERATION, duration=0:00:04.172, duration_ms=4172, data={name=System_wrapper}
+timestamp=[2021-02-13 10:45:09], mode=PLATFORM_GENERATION, duration=0:01:04.701, duration_ms=64701, data={name=System_wrapper}
+timestamp=[2021-02-13 10:52:58], mode=PLATFORM_GENERATION, duration=0:00:03.609, duration_ms=3609, data={name=System_wrapper}
+timestamp=[2021-02-13 11:00:30], mode=PLATFORM_GENERATION, duration=0:00:03.730, duration_ms=3730, data={name=System_wrapper}
+timestamp=[2021-02-13 11:10:21], mode=PLATFORM_GENERATION, duration=0:00:03.609, duration_ms=3609, data={name=System_wrapper}
+timestamp=[2021-02-13 11:57:58], mode=PLATFORM_GENERATION, duration=0:00:04.868, duration_ms=4868, data={name=System_wrapper}
+timestamp=[2021-02-13 12:02:16], mode=PLATFORM_GENERATION, duration=0:00:04.645, duration_ms=4645, data={name=System_wrapper}
+timestamp=[2021-02-13 12:06:50], mode=PLATFORM_GENERATION, duration=0:00:03.491, duration_ms=3491, data={name=System_wrapper}
+timestamp=[2021-02-13 12:22:29], mode=PLATFORM_GENERATION, duration=0:00:03.553, duration_ms=3553, data={name=System_wrapper}
+timestamp=[2021-02-13 12:37:00], mode=PLATFORM_GENERATION, duration=0:00:03.676, duration_ms=3676, data={name=System_wrapper}
+timestamp=[2021-02-13 12:37:14], mode=PLATFORM_GENERATION, duration=0:00:04.331, duration_ms=4331, data={name=System_wrapper}
+timestamp=[2021-02-13 12:38:16], mode=PLATFORM_GENERATION, duration=0:01:00.020, duration_ms=60020, data={name=System_wrapper}
+timestamp=[2021-02-13 12:47:44], mode=PLATFORM_GENERATION, duration=0:00:03.732, duration_ms=3732, data={name=System_wrapper}
+timestamp=[2021-02-13 18:01:08], mode=PLATFORM_GENERATION, duration=0:00:03.757, duration_ms=3757, data={name=System_wrapper}
+timestamp=[2021-02-13 18:12:10], mode=PLATFORM_GENERATION, duration=0:00:03.594, duration_ms=3594, data={name=System_wrapper}
+timestamp=[2021-02-13 18:20:25], mode=PLATFORM_GENERATION, duration=0:00:03.786, duration_ms=3786, data={name=System_wrapper}
+timestamp=[2021-02-13 18:39:25], mode=PLATFORM_GENERATION, duration=0:00:04.278, duration_ms=4278, data={name=System_wrapper}
+timestamp=[2021-02-13 18:46:18], mode=PLATFORM_GENERATION, duration=0:00:04.181, duration_ms=4181, data={name=System_wrapper}
+timestamp=[2021-02-13 18:50:10], mode=PLATFORM_GENERATION, duration=0:00:03.486, duration_ms=3486, data={name=System_wrapper}
+timestamp=[2021-02-13 18:50:58], mode=PLATFORM_GENERATION, duration=0:00:04.051, duration_ms=4051, data={name=System_wrapper}
+timestamp=[2021-02-13 18:57:12], mode=PLATFORM_GENERATION, duration=0:00:03.685, duration_ms=3685, data={name=System_wrapper}
+timestamp=[2021-02-13 20:32:30], mode=PLATFORM_GENERATION, duration=0:00:03.549, duration_ms=3549, data={name=System_wrapper}
+timestamp=[2021-02-13 20:39:07], mode=PLATFORM_GENERATION, duration=0:00:03.550, duration_ms=3550, data={name=System_wrapper}
+timestamp=[2021-02-13 20:44:25], mode=PLATFORM_GENERATION, duration=0:00:03.680, duration_ms=3680, data={name=System_wrapper}
+timestamp=[2021-02-13 20:49:50], mode=PLATFORM_GENERATION, duration=0:00:03.552, duration_ms=3552, data={name=System_wrapper}
+timestamp=[2021-02-13 21:50:02], mode=PLATFORM_GENERATION, duration=0:00:04.209, duration_ms=4209, data={name=System_wrapper}
+timestamp=[2021-02-13 21:59:26], mode=PLATFORM_GENERATION, duration=0:00:04.421, duration_ms=4421, data={name=System_wrapper}
+timestamp=[2021-02-13 22:16:14], mode=PLATFORM_GENERATION, duration=0:00:03.975, duration_ms=3975, data={name=System_wrapper}
+timestamp=[2021-02-14 12:53:10], mode=WORKBENCH_START, duration=0:00:22.507, duration_ms=22507, data={}
+timestamp=[2021-02-14 12:53:12], mode=WORKBENCH_UI_INIT, duration=0:00:01.399, duration_ms=1399, data={editors_count=3, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,SSM2603,SSM2603_system,System_wrapper}

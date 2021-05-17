@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Testbench" />
+            <top_module name="axi4stream_vip_pkg" />
+            <top_module name="glbl" />
+            <top_module name="xil_common_vip_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="447584fs"></ZoomStartTime>
+      <ZoomEndTime time="866585fs"></ZoomEndTime>
+      <Cursor1Time time="568000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="131"></NameColumnWidth>
+      <ValueColumnWidth column_width="62"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="2" />
+   <wvobject fp_name="group11" type="group">
+      <obj_property name="label">Simulation input</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/Testbench/SimulationClock" type="logic">
+         <obj_property name="ElementShortName">SimulationClock</obj_property>
+         <obj_property name="ObjectShortName">SimulationClock</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Testbench/nSimulationReset" type="logic">
+         <obj_property name="ElementShortName">nSimulationReset</obj_property>
+         <obj_property name="ObjectShortName">nSimulationReset</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group45" type="group">
+      <obj_property name="label">AXI-Stream</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/Testbench/TREADY" type="logic">
+         <obj_property name="ElementShortName">TREADY</obj_property>
+         <obj_property name="ObjectShortName">TREADY</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Testbench/TVALID" type="logic">
+         <obj_property name="ElementShortName">TVALID</obj_property>
+         <obj_property name="ObjectShortName">TVALID</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Testbench/TLAST" type="logic">
+         <obj_property name="ElementShortName">TLAST</obj_property>
+         <obj_property name="ObjectShortName">TLAST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Testbench/TUSER" type="logic">
+         <obj_property name="ElementShortName">TUSER</obj_property>
+         <obj_property name="ObjectShortName">TUSER</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Testbench/TDATA" type="array">
+         <obj_property name="ElementShortName">TDATA[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TDATA[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,87 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.327273",
+   "Default View_TopLeft":"-853,0",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 6 -x 1970 -y 660 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 6 -x 1970 -y 680 -defaultsOSRD
+preplace port IIC -pg 1 -lvl 6 -x 1970 -y 700 -defaultsOSRD
+preplace port Switches -pg 1 -lvl 6 -x 1970 -y 1280 -defaultsOSRD
+preplace port Buttons -pg 1 -lvl 6 -x 1970 -y 1300 -defaultsOSRD
+preplace port LED -pg 1 -lvl 6 -x 1970 -y 930 -defaultsOSRD
+preplace port OV7670 -pg 1 -lvl 6 -x 1970 -y 1090 -defaultsOSRD
+preplace port Clock125 -pg 1 -lvl 0 -x 0 -y 280 -defaultsOSRD
+preplace port Video_HSync -pg 1 -lvl 6 -x 1970 -y 130 -defaultsOSRD
+preplace port Video_VSync -pg 1 -lvl 6 -x 1970 -y 150 -defaultsOSRD
+preplace port OV7670_XCLK -pg 1 -lvl 6 -x 1970 -y 1520 -defaultsOSRD
+preplace portBus Video_Red -pg 1 -lvl 6 -x 1970 -y 1420 -defaultsOSRD
+preplace portBus Video_Blue -pg 1 -lvl 6 -x 1970 -y 1440 -defaultsOSRD
+preplace portBus Video_Green -pg 1 -lvl 6 -x 1970 -y 1460 -defaultsOSRD
+preplace inst Reset_ProcessingSystem -pg 1 -lvl 2 -x 410 -y 900 -defaultsOSRD
+preplace inst ProcessingSystem -pg 1 -lvl 5 -x 1710 -y 720 -defaultsOSRD
+preplace inst VDMA_Display -pg 1 -lvl 3 -x 780 -y 740 -defaultsOSRD
+preplace inst Interrupts -pg 1 -lvl 4 -x 1190 -y 1110 -defaultsOSRD
+preplace inst VideoClock -pg 1 -lvl 1 -x 120 -y 280 -defaultsOSRD
+preplace inst Reset_Video -pg 1 -lvl 2 -x 410 -y 260 -defaultsOSRD
+preplace inst VideoTiming -pg 1 -lvl 3 -x 780 -y 130 -defaultsOSRD
+preplace inst VideoOut -pg 1 -lvl 4 -x 1190 -y 180 -defaultsOSRD
+preplace inst VDMA_Camera -pg 1 -lvl 3 -x 780 -y 1080 -defaultsOSRD
+preplace inst AXI_Lite -pg 1 -lvl 4 -x 1190 -y 840 -defaultsOSRD
+preplace inst AXI -pg 1 -lvl 4 -x 1190 -y 480 -defaultsOSRD
+preplace inst AXI_GPIO_Input -pg 1 -lvl 5 -x 1710 -y 1300 -defaultsOSRD
+preplace inst Reset_Camera -pg 1 -lvl 4 -x 1190 -y 1320 -defaultsOSRD
+preplace inst AXI_GPIO_Output -pg 1 -lvl 5 -x 1710 -y 930 -defaultsOSRD
+preplace inst VGA_Decimate -pg 1 -lvl 5 -x 1710 -y 1440 -defaultsOSRD
+preplace inst OV7670 -pg 1 -lvl 5 -x 1710 -y 1100 -defaultsOSRD
+preplace netloc Interrupts_dout 1 4 1 1410 760n
+preplace netloc clk_in1_0_1 1 0 1 N 280
+preplace netloc v_axi4s_vid_out_0_vid_hsync 1 4 2 NJ 130 NJ
+preplace netloc v_axi4s_vid_out_0_vid_vsync 1 4 2 NJ 150 NJ
+preplace netloc v_axi4s_vid_out_0_vid_active_video 1 4 1 1430 90n
+preplace netloc v_axi4s_vid_out_0_vid_data 1 4 1 1390 110n
+preplace netloc VGA_Decimate_Red 1 5 1 NJ 1420
+preplace netloc VGA_Decimate_Blue 1 5 1 NJ 1440
+preplace netloc VGA_Decimate_Green 1 5 1 NJ 1460
+preplace netloc Reset_Video_peripheral_reset 1 2 2 N 260 NJ
+preplace netloc Reset_ProcessingSystem_peripheral_aresetn 1 2 3 590 1200 990 1200 1480
+preplace netloc VideoClock_locked 1 1 1 N 300
+preplace netloc Reset_Video_peripheral_aresetn 1 2 1 580 170n
+preplace netloc ProcessingSystem_FCLK_RESET0_N 1 1 5 230 1230 NJ 1230 1010 1180 1450J 850 1940
+preplace netloc VideoOut_vtg_ce 1 2 3 600 230 960J 10 1370
+preplace netloc VideoClock_ClockVGA 1 1 3 220 160 590 240 980J
+preplace netloc VDMA_mm2s_introut 1 3 1 970 770n
+preplace netloc VideoClock_ClockXCLK 1 1 5 220 1220 NJ 1220 980 1520 NJ 1520 NJ
+preplace netloc ProcessingSystem_FCLK_CLK0 1 1 5 240 800 580 960 1010 1040 1460 840 1950
+preplace netloc AXI_GPIO_ip2intc_irpt 1 3 3 1020 1220 NJ 1220 1940
+preplace netloc Reset_Camera_peripheral_aresetn 1 4 1 1470 1070n
+preplace netloc processing_system7_0_DDR 1 5 1 NJ 660
+preplace netloc AXI_Lite_M02_AXI 1 4 1 1420 840n
+preplace netloc ProcessingSystem_M_AXI_GP0 1 3 3 1020 640 1380J 600 1950
+preplace netloc AXI_GPIO_GPIO2 1 5 1 NJ 1300
+preplace netloc processing_system7_0_FIXED_IO 1 5 1 NJ 680
+preplace netloc axi_mem_intercon_M00_AXI 1 4 1 1460 480n
+preplace netloc OV7670_0_OV7670 1 5 1 NJ 1090
+preplace netloc AXI_GPIO_Output_GPIO 1 5 1 NJ 930
+preplace netloc VDMA_Camera_M_AXI_S2MM 1 3 1 1000 410n
+preplace netloc ProcessingSystem_axi_periph_M00_AXI 1 2 3 600 950 960J 1190 1360
+preplace netloc OV7670_0_M_AXIS 1 2 4 600 1210 NJ 1210 NJ 1210 1940
+preplace netloc ProcessingSystem_axi_periph_M01_AXI 1 2 3 600 630 NJ 630 1370
+preplace netloc AXI_Lite_M04_AXI 1 4 1 1400 880n
+preplace netloc AXI_GPIO_GPIO 1 5 1 NJ 1280
+preplace netloc VDMA_Display_M_AXI_MM2S 1 3 1 980 390n
+preplace netloc ProcessingSystem_IIC_0 1 5 1 NJ 700
+preplace netloc VDMA_M_AXIS_MM2S 1 3 1 970 100n
+preplace netloc AXI_Lite_M03_AXI 1 4 1 1440 860n
+preplace netloc VideoTiming_vtiming_out 1 3 1 N 120
+levelinfo -pg 1 0 120 410 780 1190 1710 1970
+pagesize -pg 1 -db -bbox -sgen -110 0 2140 1540
+"
+}
+{
+   "da_axi4_cnt":"29",
+   "da_board_cnt":"5",
+   "da_clkrst_cnt":"65",
+   "da_ps7_cnt":"2"
+}

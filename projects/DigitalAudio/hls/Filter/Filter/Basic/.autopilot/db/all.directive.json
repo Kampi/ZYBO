@@ -1,0 +1,93 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "Filter",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "INTERFACE",
+            "option": [
+              {
+                "name": "axis",
+                "value": "",
+                "positionalBoolean": "mode"
+              },
+              {
+                "name": "register",
+                "value": "",
+                "positionalBoolean": "1"
+              },
+              {
+                "name": "both",
+                "value": "",
+                "positionalBoolean": "register_mode"
+              },
+              {
+                "name": "depth",
+                "value": "1"
+              },
+              {
+                "name": "port",
+                "value": "DataIn",
+                "positionalBoolean": "4"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "Filter",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "INTERFACE",
+            "option": [
+              {
+                "name": "ap_ctrl_none",
+                "value": "",
+                "positionalBoolean": "mode"
+              },
+              {
+                "name": "port",
+                "value": "return",
+                "positionalBoolean": "4"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "Filter",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "INTERFACE",
+            "option": [
+              {
+                "name": "axis",
+                "value": "",
+                "positionalBoolean": "mode"
+              },
+              {
+                "name": "register",
+                "value": "",
+                "positionalBoolean": "1"
+              },
+              {
+                "name": "both",
+                "value": "",
+                "positionalBoolean": "register_mode"
+              },
+              {
+                "name": "depth",
+                "value": "1"
+              },
+              {
+                "name": "port",
+                "value": "DataOut",
+                "positionalBoolean": "4"
+              }
+            ]
+          }
+        }
+      ]
+    }]}

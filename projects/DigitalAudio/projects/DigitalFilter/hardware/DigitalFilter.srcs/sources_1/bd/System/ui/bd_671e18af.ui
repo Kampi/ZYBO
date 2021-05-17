@@ -1,0 +1,66 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.868188",
+   "Default View_TopLeft":"-117,-32",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 6 -x 1910 -y 90 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 6 -x 1910 -y 110 -defaultsOSRD
+preplace port Switches -pg 1 -lvl 6 -x 1910 -y 430 -defaultsOSRD
+preplace port I2C -pg 1 -lvl 6 -x 1910 -y 130 -defaultsOSRD
+preplace port Buttons -pg 1 -lvl 6 -x 1910 -y 450 -defaultsOSRD
+preplace port Mute -pg 1 -lvl 6 -x 1910 -y 70 -defaultsOSRD
+preplace port Clock125 -pg 1 -lvl 0 -x -10 -y 860 -defaultsOSRD
+preplace port Tx_LRCLK -pg 1 -lvl 6 -x 1910 -y 810 -defaultsOSRD
+preplace port Tx_SCLK -pg 1 -lvl 6 -x 1910 -y 790 -defaultsOSRD
+preplace port Tx_SD -pg 1 -lvl 6 -x 1910 -y 830 -defaultsOSRD
+preplace port MCLK -pg 1 -lvl 6 -x 1910 -y 590 -defaultsOSRD
+preplace inst ProcessingSystem -pg 1 -lvl 5 -x 1670 -y 140 -defaultsOSRD
+preplace inst FIFO -pg 1 -lvl 3 -x 890 -y 170 -defaultsOSRD
+preplace inst Reset_ProcessingSystem -pg 1 -lvl 1 -x 200 -y 570 -defaultsOSRD
+preplace inst ClockingWizard -pg 1 -lvl 5 -x 1670 -y 600 -defaultsOSRD
+preplace inst Reset_Audio -pg 1 -lvl 4 -x 1240 -y 760 -defaultsOSRD
+preplace inst ProcessingSystem_AXILite -pg 1 -lvl 2 -x 540 -y 280 -defaultsOSRD
+preplace inst IO -pg 1 -lvl 5 -x 1670 -y 450 -defaultsOSRD
+preplace inst Concat_Interrupt -pg 1 -lvl 4 -x 1240 -y 150 -defaultsOSRD
+preplace inst AXIS_I2S_Transmitter -pg 1 -lvl 5 -x 1670 -y 800 -defaultsOSRD
+preplace inst EnableFilter -pg 1 -lvl 3 -x 890 -y 330 -defaultsOSRD
+preplace inst Filter -pg 1 -lvl 4 -x 1240 -y 310 -defaultsOSRD
+preplace netloc clk_in1_0_1 1 0 5 10J 460 NJ 460 NJ 460 NJ 460 1420J
+preplace netloc ProcessingSystem_FCLK_RESET0_N 1 0 6 30 470 NJ 470 NJ 470 1050 440 1420J 370 1880
+preplace netloc AXIS_I2S_Transmitter_0_LRCLK 1 5 1 NJ 810
+preplace netloc AXIS_I2S_Transmitter_0_SCLK 1 5 1 NJ 790
+preplace netloc AXIS_I2S_Transmitter_0_SD 1 5 1 NJ 830
+preplace netloc Reset_Audio_peripheral_aresetn 1 4 1 N 800
+preplace netloc ProcessingSystem_FCLK_CLK0 1 0 6 20 380 370 90 730 250 1050 400 1450 270 1890
+preplace netloc Reset_ProcessingSystem_peripheral_aresetn 1 1 4 380 100 710 420 1070 420 1410
+preplace netloc ClockingWizard_ClkAudio 1 3 3 1060 860 1440 690 1890
+preplace netloc ClockingWizard_locked 1 3 3 1070 870 1460J 700 1870
+preplace netloc Concat_Interrupt_dout 1 4 1 N 150
+preplace netloc FIFO_interrupt 1 3 1 1050 140n
+preplace netloc Mute_ip2intc_irpt 1 3 3 1070 220 1460J 280 1870
+preplace netloc EnableFilter_gpio_io_o 1 3 1 N 340
+preplace netloc ProcessingSystem_M_AXI_GP0 1 1 5 390 10 NJ 10 NJ 10 NJ 10 1890
+preplace netloc ProcessingSystem_AXILite_M01_AXI 1 2 3 700 410 NJ 410 1440J
+preplace netloc Filter_DataOut 1 4 1 1430 310n
+preplace netloc Mute_GPIO2 1 5 1 NJ 450
+preplace netloc ProcessingSystem_IIC_0 1 5 1 NJ 130
+preplace netloc ProcessingSystem_axi_periph_M00_AXI 1 2 1 720 150n
+preplace netloc ProcessingSystem_AXILite_M03_AXI 1 2 1 N 310
+preplace netloc FIFO_AXI_STR_TXD 1 3 1 1060 150n
+preplace netloc ProcessingSystem_GPIO_0 1 5 1 NJ 70
+preplace netloc ProcessingSystem_FIXED_IO 1 5 1 NJ 110
+preplace netloc ProcessingSystem_DDR 1 5 1 NJ 90
+preplace netloc ProcessingSystem_AXILite_M02_AXI 1 2 3 690 430 NJ 430 NJ
+preplace netloc Mute_GPIO 1 5 1 NJ 430
+levelinfo -pg 1 -10 200 540 890 1240 1670 1910
+pagesize -pg 1 -db -bbox -sgen -120 0 2030 900
+"
+}
+{
+   "da_axi4_cnt":"7",
+   "da_board_cnt":"3",
+   "da_clkrst_cnt":"11",
+   "da_ps7_cnt":"2"
+}

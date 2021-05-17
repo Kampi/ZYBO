@@ -1,0 +1,9 @@
+sv work "glbl.v"
+sv xil_defaultlib "AESL_axi_s_DataIn.v"
+sv xil_defaultlib "AESL_axi_s_DataOut.v"
+sv xil_defaultlib "AESL_fifo.v"
+sv xil_defaultlib "Filter.autotb.v"
+sv xil_defaultlib "Filter.v"
+sv xil_defaultlib "Filter_mul_mul_18bkb.v"
+sv xil_defaultlib "regslice_core.v"
+
