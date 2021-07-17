@@ -58,11 +58,10 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="72" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../sdk/components/libraries/util/sdk_errors.h" selected="0" top="27" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="43" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../sdk/components/libraries/log/nrf_log_instance.h" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="33" y="77" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="main.c" selected="1" top="48" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="119" useTextEdit="1" openedFrom="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/nordic/I2S_Sender/main.c" useBinaryEdit="0" left="0" path="../sdk/modules/nrfx/hal/nrf_i2s.h" selected="0" top="96" codecName="Default"/>
-  <SessionOpenFile windowGroup="HUD {e1f3eeb1-0554-4212-a40c-27ab7c6df32d} Middle" x="0" y="105" useTextEdit="1" openedFrom="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/nordic/sdk/integration/nrfx/legacy/nrf_drv_i2s.h" useBinaryEdit="0" left="0" path="../sdk/modules/nrfx/drivers/include/nrfx_i2s.h" selected="0" top="65" codecName="Default"/>
+  <SessionOpenFile windowGroup="HUD {e1f3eeb1-0554-4212-a40c-27ab7c6df32d} Middle" x="19" y="70" useTextEdit="1" openedFrom="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/nordic/sdk/integration/nrfx/legacy/nrf_drv_i2s.h" useBinaryEdit="0" left="0" path="../sdk/modules/nrfx/drivers/include/nrfx_i2s.h" selected="0" top="65" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="5" y="50" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="main.c" selected="1" top="39" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="119" useTextEdit="1" openedFrom="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/nordic/I2S_Sender/main.c" useBinaryEdit="0" left="0" path="../sdk/modules/nrfx/hal/nrf_i2s.h" selected="0" top="84" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="35" useTextEdit="1" openedFrom="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/nordic/I2S_Sender/main.c" useBinaryEdit="0" left="0" path="../sdk/integration/nrfx/legacy/nrf_drv_i2s.h" selected="0" top="35" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="I2S_Sender" fileDialogDefaultFilter="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.hxx" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <ARMCrossStudioWindow activeProject="I2S_Sender" fileDialogDefaultFilter="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.hxx" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>
