@@ -3,7 +3,8 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
-  ipgui::add_param $IPINST -name "RATIO" -parent ${Page_0}
+  set RATIO [ipgui::add_param $IPINST -name "RATIO" -parent ${Page_0}]
+  set_property tooltip {MCLK / SCLK ratio.} ${RATIO}
   set WIDTH [ipgui::add_param $IPINST -name "WIDTH" -parent ${Page_0} -widget comboBox]
   set_property tooltip {Data width per channel in bits.} ${WIDTH}
 

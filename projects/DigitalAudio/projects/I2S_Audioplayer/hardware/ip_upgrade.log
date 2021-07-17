@@ -1,0 +1,121 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Sat Jul 17 16:03:18 2021
+| Host         : PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'System_AXIS_I2S_Transmitter_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of System_AXIS_I2S_Transmitter_0_0 (www.Kampis-Elektroecke.com:Kampis-Elektroecke:AXIS_I2S_Transmitter:1.0) from (Rev. 3) to (Rev. 1)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Sat Jul 17 15:56:32 2021
+| Host         : PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'System_AXIS_I2S_Transmitter_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of System_AXIS_I2S_Transmitter_0_0 (www.Kampis-Elektroecke.com:Kampis-Elektroecke:AXIS_I2S_Transmitter:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Sat Jul 17 15:08:16 2021
+| Host         : PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'System_clk_wiz_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of System_clk_wiz_0_0 (xilinx.com:ip:clk_wiz:6.0) from (Rev. 4) to (Rev. 6)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Sat Jul 17 15:08:16 2021
+| Host         : PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'System_axi_fifo_mm_s_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of System_axi_fifo_mm_s_0_0 (xilinx.com:ip:axi_fifo_mm_s:4.2) from (Rev. 2) to (Rev. 4)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Sat Jul 17 15:08:16 2021
+| Host         : PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'System_ProcessingSystem_axi_periph_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of System_ProcessingSystem_axi_periph_1 (xilinx.com:ip:axi_interconnect:2.1) from (Rev. 21) to (Rev. 23)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Sat Jul 17 15:08:16 2021
+| Host         : PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'System_AXIS_I2S_Transmitter_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of System_AXIS_I2S_Transmitter_0_0 (www.Kampis-Elektroecke.com:Kampis-Elektroecke:AXIS_I2S_Transmitter:1.0) from (Rev. 1) to (Rev. 2)
+

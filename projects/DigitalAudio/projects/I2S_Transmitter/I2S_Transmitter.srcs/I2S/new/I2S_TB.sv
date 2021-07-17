@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+
 //////////////////////////////////////////////////////////////////////////////////
 // Company:             https://www.kampis-elektroecke.de
 // Engineer:            Daniel Kampert
@@ -24,8 +25,8 @@
 module I2S_TB();
 
     // Simulation input
-    bit SimulationClock             = 0;
-    bit nSimulationReset            = 0;
+    bit SimulationClock             = 1'b0;
+    bit nSimulationReset            = 1'b0;
 
     // I2S interface
     bit SCLK;
@@ -33,7 +34,7 @@ module I2S_TB();
     bit SD;
     bit MCLK;
 
-    Top Transmitter(
+    Top DUT(
             .Clock(SimulationClock),
             .nReset(nSimulationReset),
             .MCLK(MCLK),
