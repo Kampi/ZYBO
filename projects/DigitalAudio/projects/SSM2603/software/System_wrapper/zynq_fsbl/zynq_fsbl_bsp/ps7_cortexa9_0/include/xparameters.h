@@ -51,6 +51,8 @@
 #define XPAR_CLOCKINGWIZARD_PRECISION 1
 #define XPAR_CLOCKINGWIZARD_ENABLE_PLL0 0
 #define XPAR_CLOCKINGWIZARD_ENABLE_PLL1 0
+#define XPAR_CLOCKINGWIZARD_PRIM_IN_FREQ 125.000
+#define XPAR_CLOCKINGWIZARD_NUM_OUT_CLKS 1
 
 
 /******************************************************************/
@@ -72,6 +74,8 @@
 #define XPAR_CLK_WIZ_0_PRECISION 1
 #define XPAR_CLK_WIZ_0_Enable_PLL0 0
 #define XPAR_CLK_WIZ_0_Enable_PLL1 0
+#define XPAR_CLK_WIZ_0_PRIM_IN_FREQ 125.000
+#define XPAR_CLK_WIZ_0_NUM_OUT_CLKS 1
 
 
 /******************************************************************/
@@ -291,6 +295,7 @@
 
 /******************************************************************/
 
+/* Definition for input Clock */
 /* Definitions for driver LLFIFO */
 #define XPAR_XLLFIFO_NUM_INSTANCES 1U
 
@@ -466,6 +471,7 @@
 
 /******************************************************************/
 
+/* Definition for input Clock */
 /* Definitions for driver XADCPS */
 #define XPAR_XADCPS_NUM_INSTANCES 1
 

@@ -84,7 +84,7 @@
 	 OV7670_TP_SHIFT		= (0x00 << 0x01) | (0x01 << 0x00),	/*<< Shifting "1". */
 	 OV7670_TP_COLORBAR		= (0x01 << 0x01) | (0x00 << 0x00),	/*<< 8-bar color bar. */
 	 OV7670_TP_FADE			= (0x01 << 0x01) | (0x01 << 0x00),	/*<< Fade to gray color bar. */
- } OV7670_Range_Opt_t;
+ } OV7670_TP_Opt_t;
 
  /**@brief				SCCB communication function pointer which should be mapped to the platform specific read functions of the user.
   * @param Device_Addr	Device address.

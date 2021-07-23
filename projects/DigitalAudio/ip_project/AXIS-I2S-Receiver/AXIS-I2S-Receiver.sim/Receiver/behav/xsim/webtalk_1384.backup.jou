@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Jul 18 11:27:23 2021
+# Process ID: 1384
+# Current directory: H:/NextCloud/Git/ZYBO/projects/DigitalAudio/ip_project/AXIS-I2S-Receiver/AXIS-I2S-Receiver.sim/Receiver/behav/xsim
+# Command line: wbtcv.exe -mode batch -source H:/NextCloud/Git/ZYBO/projects/DigitalAudio/ip_project/AXIS-I2S-Receiver/AXIS-I2S-Receiver.sim/Receiver/behav/xsim/xsim.dir/Receiver_TB_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: H:/NextCloud/Git/ZYBO/projects/DigitalAudio/ip_project/AXIS-I2S-Receiver/AXIS-I2S-Receiver.sim/Receiver/behav/xsim/webtalk.log
+# Journal file: H:/NextCloud/Git/ZYBO/projects/DigitalAudio/ip_project/AXIS-I2S-Receiver/AXIS-I2S-Receiver.sim/Receiver/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source H:/NextCloud/Git/ZYBO/projects/DigitalAudio/ip_project/AXIS-I2S-Receiver/AXIS-I2S-Receiver.sim/Receiver/behav/xsim/xsim.dir/Receiver_TB_behav/webtalk/xsim_webtalk.tcl -notrace

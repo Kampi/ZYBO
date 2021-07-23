@@ -1,10 +1,10 @@
-// Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2019.2.1 (win64) Build 2729669 Thu Dec  5 04:49:17 MST 2019
-// Date        : Mon Mar 30 09:16:52 2020
-// Host        : 40B0341C1F56 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top System_Reset_ProcessingSystem_0 -prefix
-//               System_Reset_ProcessingSystem_0_ System_Reset_ProcessingSystem_0_sim_netlist.v
+// Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+// Date        : Fri Jul 23 20:53:32 2021
+// Host        : PC running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim
+//               h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/DigitalFilter/hardware/DigitalFilter.srcs/sources_1/bd/System/ip/System_Reset_ProcessingSystem_0/System_Reset_ProcessingSystem_0_sim_netlist.v
 // Design      : System_Reset_ProcessingSystem_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,7 +12,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "System_Reset_ProcessingSystem_0,proc_sys_reset,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "proc_sys_reset,Vivado 2019.2.1" *) 
+(* CHECK_LICENSE_TYPE = "System_Reset_ProcessingSystem_0,proc_sys_reset,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "proc_sys_reset,Vivado 2020.2" *) 
 (* NotValidForBitStream *)
 module System_Reset_ProcessingSystem_0
    (slowest_sync_clk,
@@ -69,6 +69,7 @@ module System_Reset_ProcessingSystem_0
         .slowest_sync_clk(slowest_sync_clk));
 endmodule
 
+(* ORIG_REF_NAME = "cdc_sync" *) 
 module System_Reset_ProcessingSystem_0_cdc_sync
    (lpf_asr_reg,
     scndry_out,
@@ -256,6 +257,7 @@ module System_Reset_ProcessingSystem_0_cdc_sync_0
         .O(lpf_exr_reg));
 endmodule
 
+(* ORIG_REF_NAME = "lpf" *) 
 module System_Reset_ProcessingSystem_0_lpf
    (lpf_int,
     slowest_sync_clk,
@@ -409,6 +411,7 @@ endmodule
 (* C_AUX_RESET_HIGH = "1'b0" *) (* C_AUX_RST_WIDTH = "4" *) (* C_EXT_RESET_HIGH = "1'b0" *) 
 (* C_EXT_RST_WIDTH = "4" *) (* C_FAMILY = "zynq" *) (* C_NUM_BUS_RST = "1" *) 
 (* C_NUM_INTERCONNECT_ARESETN = "1" *) (* C_NUM_PERP_ARESETN = "1" *) (* C_NUM_PERP_RST = "1" *) 
+(* ORIG_REF_NAME = "proc_sys_reset" *) 
 module System_Reset_ProcessingSystem_0_proc_sys_reset
    (slowest_sync_clk,
     ext_reset_in,
@@ -525,6 +528,7 @@ module System_Reset_ProcessingSystem_0_proc_sys_reset
         .slowest_sync_clk(slowest_sync_clk));
 endmodule
 
+(* ORIG_REF_NAME = "sequence_psr" *) 
 module System_Reset_ProcessingSystem_0_sequence_psr
    (MB_out,
     Bsr_out,
@@ -568,13 +572,13 @@ module System_Reset_ProcessingSystem_0_sequence_psr
   wire seq_cnt_en;
   wire slowest_sync_clk;
 
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N_i_1 
        (.I0(Bsr_out),
         .O(bsr_reg_0));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N_i_1 
@@ -600,6 +604,7 @@ module System_Reset_ProcessingSystem_0_sequence_psr
         .seq_clr(seq_clr),
         .seq_cnt_en(seq_cnt_en),
         .slowest_sync_clk(slowest_sync_clk));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h0090)) 
     \bsr_dec[0]_i_1 
@@ -631,7 +636,7 @@ module System_Reset_ProcessingSystem_0_sequence_psr
         .D(p_5_out[2]),
         .Q(\bsr_dec_reg_n_0_[2] ),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
     .INIT(4'h2)) 
     bsr_i_1
@@ -709,7 +714,6 @@ module System_Reset_ProcessingSystem_0_sequence_psr
         .I2(seq_cnt[2]),
         .I3(seq_cnt[1]),
         .O(pr_dec0__0));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h0480)) 
     \pr_dec[0]_i_1 
@@ -740,7 +744,7 @@ module System_Reset_ProcessingSystem_0_sequence_psr
         .D(p_3_out[2]),
         .Q(\pr_dec_reg_n_0_[2] ),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT2 #(
     .INIT(4'h2)) 
     pr_i_1
@@ -765,6 +769,7 @@ module System_Reset_ProcessingSystem_0_sequence_psr
         .R(lpf_int));
 endmodule
 
+(* ORIG_REF_NAME = "upcnt_n" *) 
 module System_Reset_ProcessingSystem_0_upcnt_n
    (Q,
     seq_clr,
@@ -893,12 +898,15 @@ module glbl ();
 
     parameter ROC_WIDTH = 100000;
     parameter TOC_WIDTH = 0;
+    parameter GRES_WIDTH = 10000;
+    parameter GRES_START = 10000;
 
 //--------   STARTUP Globals --------------
     wire GSR;
     wire GTS;
     wire GWE;
     wire PRLD;
+    wire GRESTORE;
     tri1 p_up_tmp;
     tri (weak1, strong0) PLL_LOCKG = p_up_tmp;
 
@@ -911,6 +919,7 @@ module glbl ();
     reg GSR_int;
     reg GTS_int;
     reg PRLD_int;
+    reg GRESTORE_int;
 
 //--------   JTAG Globals --------------
     wire JTAG_TDO_GLBL;
@@ -938,6 +947,7 @@ module glbl ();
     assign (strong1, weak0) GSR = GSR_int;
     assign (strong1, weak0) GTS = GTS_int;
     assign (weak1, weak0) PRLD = PRLD_int;
+    assign (strong1, weak0) GRESTORE = GRESTORE_int;
 
     initial begin
 	GSR_int = 1'b1;
@@ -951,6 +961,14 @@ module glbl ();
 	GTS_int = 1'b1;
 	#(TOC_WIDTH)
 	GTS_int = 1'b0;
+    end
+
+    initial begin 
+	GRESTORE_int = 1'b0;
+	#(GRES_START);
+	GRESTORE_int = 1'b1;
+	#(GRES_WIDTH);
+	GRESTORE_int = 1'b0;
     end
 
 endmodule

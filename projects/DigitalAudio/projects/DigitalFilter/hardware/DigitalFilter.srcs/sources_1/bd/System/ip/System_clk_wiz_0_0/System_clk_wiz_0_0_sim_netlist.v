@@ -1,10 +1,10 @@
-// Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2019.2.1 (win64) Build 2729669 Thu Dec  5 04:49:17 MST 2019
-// Date        : Mon Mar 30 09:21:35 2020
-// Host        : 40B0341C1F56 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top System_clk_wiz_0_0 -prefix
-//               System_clk_wiz_0_0_ System_clk_wiz_0_0_sim_netlist.v
+// Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+// Date        : Fri Jul 23 20:56:45 2021
+// Host        : PC running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim
+//               h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/DigitalFilter/hardware/DigitalFilter.srcs/sources_1/bd/System/ip/System_clk_wiz_0_0/System_clk_wiz_0_0_sim_netlist.v
 // Design      : System_clk_wiz_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -59,6 +59,7 @@ module System_clk_wiz_0_0
   output locked;
   input clk_in1;
 
+  wire \<const0> ;
   wire ClkAudio;
   (* IBUF_LOW_PWR *) wire clk_in1;
   wire locked;
@@ -71,17 +72,25 @@ module System_clk_wiz_0_0
   wire s_axi_awready;
   wire s_axi_awvalid;
   wire s_axi_bready;
-  wire [1:0]s_axi_bresp;
+  wire [1:1]\^s_axi_bresp ;
   wire s_axi_bvalid;
   wire [31:0]s_axi_rdata;
   wire s_axi_rready;
-  wire [1:0]s_axi_rresp;
+  wire [1:1]\^s_axi_rresp ;
   wire s_axi_rvalid;
   wire [31:0]s_axi_wdata;
   wire s_axi_wready;
   wire [3:0]s_axi_wstrb;
   wire s_axi_wvalid;
+  wire [0:0]NLW_inst_s_axi_bresp_UNCONNECTED;
+  wire [0:0]NLW_inst_s_axi_rresp_UNCONNECTED;
 
+  assign s_axi_bresp[1] = \^s_axi_bresp [1];
+  assign s_axi_bresp[0] = \<const0> ;
+  assign s_axi_rresp[1] = \^s_axi_rresp [1];
+  assign s_axi_rresp[0] = \<const0> ;
+  GND GND
+       (.G(\<const0> ));
   (* C_S_AXI_ADDR_WIDTH = "11" *) 
   (* C_S_AXI_DATA_WIDTH = "32" *) 
   System_clk_wiz_0_0_System_clk_wiz_0_0_axi_clk_config inst
@@ -97,11 +106,11 @@ module System_clk_wiz_0_0
         .s_axi_awready(s_axi_awready),
         .s_axi_awvalid(s_axi_awvalid),
         .s_axi_bready(s_axi_bready),
-        .s_axi_bresp(s_axi_bresp),
+        .s_axi_bresp({\^s_axi_bresp ,NLW_inst_s_axi_bresp_UNCONNECTED[0]}),
         .s_axi_bvalid(s_axi_bvalid),
         .s_axi_rdata(s_axi_rdata),
         .s_axi_rready(s_axi_rready),
-        .s_axi_rresp(s_axi_rresp),
+        .s_axi_rresp({\^s_axi_rresp ,NLW_inst_s_axi_rresp_UNCONNECTED[0]}),
         .s_axi_rvalid(s_axi_rvalid),
         .s_axi_wdata(s_axi_wdata),
         .s_axi_wready(s_axi_wready),
@@ -109,6 +118,7 @@ module System_clk_wiz_0_0
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
+(* ORIG_REF_NAME = "System_clk_wiz_0_0_address_decoder" *) 
 module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
    (\GEN_BKEND_CE_REGISTERS[3].ce_out_i_reg[3]_0 ,
     D,
@@ -440,7 +450,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
   wire ip2bus_rdack;
   wire ip2bus_wrack;
   wire ip2bus_wrack_int1;
-  wire load_enable_reg_d_i_3_n_0;
+  wire load_enable_reg_d_i_2_n_0;
   wire load_enable_reg_d_reg;
   wire \load_enable_reg_reg[30] ;
   wire \load_enable_reg_reg[30]_0 ;
@@ -550,7 +560,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .D(Bus_RNW_reg_i_1_n_0),
         .Q(Bus_RNW_reg),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT4 #(
     .INIT(16'h0004)) 
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i[0]_i_1 
@@ -565,7 +575,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .D(ce_expnd_i_8),
         .Q(p_8_in),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT4 #(
     .INIT(16'h0008)) 
     \GEN_BKEND_CE_REGISTERS[1].ce_out_i[1]_i_1 
@@ -580,7 +590,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .D(ce_expnd_i_7),
         .Q(p_7_in),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT4 #(
     .INIT(16'h0040)) 
     \GEN_BKEND_CE_REGISTERS[2].ce_out_i[2]_i_1 
@@ -595,7 +605,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .D(ce_expnd_i_6),
         .Q(p_6_in),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT4 #(
     .INIT(16'h0080)) 
     \GEN_BKEND_CE_REGISTERS[3].ce_out_i[3]_i_1 
@@ -635,7 +645,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .D(ce_expnd_i_4),
         .Q(p_4_in),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT4 #(
     .INIT(16'h0800)) 
     \GEN_BKEND_CE_REGISTERS[5].ce_out_i[5]_i_1 
@@ -650,7 +660,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .D(ce_expnd_i_3),
         .Q(p_3_in),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT4 #(
     .INIT(16'h4000)) 
     \GEN_BKEND_CE_REGISTERS[6].ce_out_i[6]_i_1 
@@ -665,7 +675,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .D(ce_expnd_i_2),
         .Q(p_2_in),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \GEN_BKEND_CE_REGISTERS[7].ce_out_i[7]_i_1 
@@ -698,7 +708,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
     .INIT(64'h0000000400000000)) 
     \clkfbout_reg[6]_i_1 
        (.I0(\clkout0_reg_reg[14] ),
-        .I1(load_enable_reg_d_i_3_n_0),
+        .I1(load_enable_reg_d_i_2_n_0),
         .I2(\clkfbout_reg_reg[6] ),
         .I3(\ram_clk_config_reg[13][31] [5]),
         .I4(\clkfbout_reg_reg[6]_0 ),
@@ -709,10 +719,10 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
     .INIT(8'h40)) 
     \clkout0_reg[14]_i_1 
        (.I0(\clkout0_reg_reg[14] ),
-        .I1(load_enable_reg_d_i_3_n_0),
+        .I1(load_enable_reg_d_i_2_n_0),
         .I2(\clkout0_reg_reg[14]_0 ),
         .O(rst_reg));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT4 #(
     .INIT(16'hF0E0)) 
     dummy_local_reg_rdack_d1_i_1
@@ -721,7 +731,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .I2(Bus_RNW_reg),
         .I3(p_2_in),
         .O(dummy_local_reg_rdack_d10));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT5 #(
     .INIT(32'h0000CCC8)) 
     dummy_local_reg_rdack_i_1
@@ -731,7 +741,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .I3(p_1_in),
         .I4(dummy_local_reg_rdack_d1),
         .O(dummy_local_reg_rdack0));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT4 #(
     .INIT(16'h0F0E)) 
     dummy_local_reg_wrack_d1_i_1
@@ -740,7 +750,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .I2(Bus_RNW_reg),
         .I3(p_2_in),
         .O(dummy_local_reg_wrack_d10));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT5 #(
     .INIT(32'h00003332)) 
     dummy_local_reg_wrack_i_1
@@ -760,7 +770,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .I4(\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg_n_0_[8] ),
         .I5(\interrupt_enable_reg_reg[15] ),
         .O(Bus_RNW_reg_reg_0));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'hCD)) 
     \interrupt_enable_reg[15]_i_2 
@@ -788,19 +798,19 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .I4(wrack),
         .I5(dummy_local_reg_wrack),
         .O(ip2bus_wrack_int1));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'h2A)) 
     \load_enable_reg[0]_i_1 
-       (.I0(load_enable_reg_d_i_3_n_0),
+       (.I0(load_enable_reg_d_i_2_n_0),
         .I1(\load_enable_reg_reg[30]_0 ),
         .I2(\load_enable_reg_reg[30] ),
         .O(\GEN_BKEND_CE_REGISTERS[1].ce_out_i_reg[1]_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT5 #(
     .INIT(32'h2AFF00FF)) 
-    load_enable_reg_d_i_2
-       (.I0(load_enable_reg_d_i_3_n_0),
+    load_enable_reg_d_i_1
+       (.I0(load_enable_reg_d_i_2_n_0),
         .I1(\load_enable_reg_reg[30]_0 ),
         .I2(\load_enable_reg_reg[30] ),
         .I3(load_enable_reg_d_reg),
@@ -809,17 +819,17 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
   (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT4 #(
     .INIT(16'h00CD)) 
-    load_enable_reg_d_i_3
+    load_enable_reg_d_i_2
        (.I0(p_7_in),
         .I1(Bus_RNW_reg),
         .I2(p_6_in),
         .I3(\ram_clk_config[13][31]_i_2_n_0 ),
-        .O(load_enable_reg_d_i_3_n_0));
+        .O(load_enable_reg_d_i_2_n_0));
   (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT4 #(
     .INIT(16'h0200)) 
     \ram_clk_config[0][31]_i_1 
-       (.I0(load_enable_reg_d_i_3_n_0),
+       (.I0(load_enable_reg_d_i_2_n_0),
         .I1(\ram_clk_config_reg[29][31] ),
         .I2(\ram_clk_config_reg[13][31] [3]),
         .I3(\ram_clk_config_reg[0][0] ),
@@ -840,7 +850,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
        (.I0(\ram_clk_config_reg[29][31] ),
         .I1(\ram_clk_config_reg[13][31] [2]),
         .I2(\ram_clk_config_reg[11][31] ),
-        .I3(load_enable_reg_d_i_3_n_0),
+        .I3(load_enable_reg_d_i_2_n_0),
         .I4(\ram_clk_config_reg[13][31] [1]),
         .I5(\ram_clk_config_reg[13][31] [0]),
         .O(\bus2ip_addr_i_reg[4]_1 ));
@@ -854,7 +864,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .I4(\ram_clk_config_reg[13][31] [0]),
         .I5(\ram_clk_config[1][31]_i_2_n_0 ),
         .O(\bus2ip_addr_i_reg[6] ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT5 #(
     .INIT(32'h10000000)) 
     \ram_clk_config[13][31]_i_1 
@@ -874,7 +884,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .I4(\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg_n_0_[8] ),
         .I5(p_4_in),
         .O(\ram_clk_config[13][31]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT5 #(
     .INIT(32'h0000CD00)) 
     \ram_clk_config[13][31]_i_3 
@@ -890,7 +900,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
        (.I0(\ram_clk_config_reg[4][0] ),
         .I1(\ram_clk_config_reg[13][31] [3]),
         .I2(\ram_clk_config_reg[13][31] [4]),
-        .I3(load_enable_reg_d_i_3_n_0),
+        .I3(load_enable_reg_d_i_2_n_0),
         .I4(\ram_clk_config_reg[13][31] [1]),
         .I5(\ram_clk_config_reg[13][31] [2]),
         .O(\bus2ip_addr_i_reg[5]_0 ));
@@ -900,7 +910,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
        (.I0(\ram_clk_config_reg[13][31] [2]),
         .I1(\ram_clk_config_reg[13][31] [3]),
         .I2(\ram_clk_config_reg[13][31] [4]),
-        .I3(load_enable_reg_d_i_3_n_0),
+        .I3(load_enable_reg_d_i_2_n_0),
         .I4(\ram_clk_config_reg[13][31] [1]),
         .I5(\ram_clk_config_reg[13][31] [0]),
         .O(\bus2ip_addr_i_reg[4]_3 ));
@@ -919,7 +929,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
     \ram_clk_config[17][31]_i_1 
        (.I0(\ram_clk_config_reg[5][0] ),
         .I1(\ram_clk_config_reg[13][31] [3]),
-        .I2(load_enable_reg_d_i_3_n_0),
+        .I2(load_enable_reg_d_i_2_n_0),
         .I3(\ram_clk_config_reg[13][31] [1]),
         .I4(\ram_clk_config_reg[13][31] [2]),
         .I5(\ram_clk_config_reg[13][31] [4]),
@@ -948,7 +958,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
     .INIT(16'hFFFB)) 
     \ram_clk_config[19][31]_i_2 
        (.I0(\ram_clk_config_reg[16][31] ),
-        .I1(load_enable_reg_d_i_3_n_0),
+        .I1(load_enable_reg_d_i_2_n_0),
         .I2(\ram_clk_config_reg[13][31] [3]),
         .I3(\ram_clk_config_reg[29][31] ),
         .O(\ram_clk_config[19][31]_i_2_n_0 ));
@@ -967,13 +977,13 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
     .INIT(4'hB)) 
     \ram_clk_config[1][31]_i_2 
        (.I0(\ram_clk_config_reg[16][31] ),
-        .I1(load_enable_reg_d_i_3_n_0),
+        .I1(load_enable_reg_d_i_2_n_0),
         .O(\ram_clk_config[1][31]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h0000004000000000)) 
     \ram_clk_config[20][31]_i_1 
        (.I0(\ram_clk_config_reg[13][31] [3]),
-        .I1(load_enable_reg_d_i_3_n_0),
+        .I1(load_enable_reg_d_i_2_n_0),
         .I2(\ram_clk_config_reg[13][31] [2]),
         .I3(\ram_clk_config_reg[13][31] [1]),
         .I4(\ram_clk_config_reg[13][31] [0]),
@@ -983,7 +993,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
     .INIT(64'h0400000000000000)) 
     \ram_clk_config[21][31]_i_1 
        (.I0(\ram_clk_config_reg[13][31] [1]),
-        .I1(load_enable_reg_d_i_3_n_0),
+        .I1(load_enable_reg_d_i_2_n_0),
         .I2(\ram_clk_config_reg[13][31] [3]),
         .I3(\ram_clk_config_reg[13][31] [4]),
         .I4(\ram_clk_config_reg[13][31] [0]),
@@ -1043,7 +1053,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
     .INIT(64'h0000800000000000)) 
     \ram_clk_config[27][31]_i_1 
        (.I0(\ram_clk_config_reg[13][31] [3]),
-        .I1(load_enable_reg_d_i_3_n_0),
+        .I1(load_enable_reg_d_i_2_n_0),
         .I2(\ram_clk_config_reg[13][31] [0]),
         .I3(\ram_clk_config_reg[13][31] [4]),
         .I4(\ram_clk_config_reg[13][31] [2]),
@@ -1076,7 +1086,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .I1(\ram_clk_config_reg[2][31] ),
         .I2(\ram_clk_config_reg[13][31] [2]),
         .I3(\ram_clk_config_reg[13][31] [1]),
-        .I4(load_enable_reg_d_i_3_n_0),
+        .I4(load_enable_reg_d_i_2_n_0),
         .I5(\load_enable_reg_reg[30]_0 ),
         .O(E));
   LUT6 #(
@@ -1092,7 +1102,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
   LUT6 #(
     .INIT(64'h8000000000000000)) 
     \ram_clk_config[31][31]_i_1 
-       (.I0(load_enable_reg_d_i_3_n_0),
+       (.I0(load_enable_reg_d_i_2_n_0),
         .I1(\ram_clk_config_reg[13][31] [2]),
         .I2(\ram_clk_config_reg[13][31] [1]),
         .I3(\ram_clk_config_reg[13][31] [3]),
@@ -1105,7 +1115,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
        (.I0(\ram_clk_config_reg[5][0] ),
         .I1(\ram_clk_config_reg[13][31] [4]),
         .I2(\ram_clk_config_reg[13][31] [3]),
-        .I3(load_enable_reg_d_i_3_n_0),
+        .I3(load_enable_reg_d_i_2_n_0),
         .I4(\ram_clk_config_reg[13][31] [2]),
         .I5(\ram_clk_config_reg[13][31] [1]),
         .O(\bus2ip_addr_i_reg[6]_2 ));
@@ -1115,7 +1125,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
        (.I0(\ram_clk_config_reg[4][0] ),
         .I1(\ram_clk_config_reg[13][31] [4]),
         .I2(\ram_clk_config_reg[13][31] [3]),
-        .I3(load_enable_reg_d_i_3_n_0),
+        .I3(load_enable_reg_d_i_2_n_0),
         .I4(\ram_clk_config_reg[13][31] [2]),
         .I5(\ram_clk_config_reg[13][31] [1]),
         .O(\bus2ip_addr_i_reg[6]_5 ));
@@ -1125,7 +1135,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
        (.I0(\ram_clk_config_reg[5][0] ),
         .I1(\ram_clk_config_reg[13][31] [4]),
         .I2(\ram_clk_config_reg[13][31] [3]),
-        .I3(load_enable_reg_d_i_3_n_0),
+        .I3(load_enable_reg_d_i_2_n_0),
         .I4(\ram_clk_config_reg[13][31] [2]),
         .I5(\ram_clk_config_reg[13][31] [1]),
         .O(\bus2ip_addr_i_reg[6]_6 ));
@@ -1145,7 +1155,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
        (.I0(\ram_clk_config_reg[13][31] [1]),
         .I1(\ram_clk_config_reg[13][31] [2]),
         .I2(\ram_clk_config_reg[13][31] [0]),
-        .I3(load_enable_reg_d_i_3_n_0),
+        .I3(load_enable_reg_d_i_2_n_0),
         .I4(\ram_clk_config_reg[13][31] [3]),
         .I5(\ram_clk_config_reg[13][31] [4]),
         .O(\bus2ip_addr_i_reg[3]_8 ));
@@ -1157,7 +1167,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .I2(\ram_clk_config_reg[13][31] [1]),
         .I3(\ram_clk_config_reg[13][31] [2]),
         .I4(\ram_clk_config_reg[13][31] [3]),
-        .I5(load_enable_reg_d_i_3_n_0),
+        .I5(load_enable_reg_d_i_2_n_0),
         .O(\bus2ip_addr_i_reg[2]_0 ));
   LUT6 #(
     .INIT(64'h4400440400000000)) 
@@ -1169,7 +1179,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .I4(p_7_in),
         .I5(\ram_clk_config[9][31]_i_2_n_0 ),
         .O(\bus2ip_addr_i_reg[6]_4 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT4 #(
     .INIT(16'h0004)) 
     \ram_clk_config[9][31]_i_2 
@@ -1186,7 +1196,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .I1(Bus_RNW_reg),
         .I2(\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg_n_0_[8] ),
         .O(rdack_reg_10));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT4 #(
     .INIT(16'h0004)) 
     reset_trig_i_1
@@ -1349,7 +1359,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .I1(Bus_RNW_reg),
         .I2(p_6_in),
         .O(\s_axi_rdata_i[15]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'hEFFF)) 
     \s_axi_rdata_i[15]_i_7 
@@ -1572,7 +1582,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .I4(\s_axi_rdata_i_reg[16] ),
         .I5(\s_axi_rdata_i[31]_i_6_n_0 ),
         .O(D[30]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
     .INIT(32'h00000040)) 
     \s_axi_rdata_i[31]_i_12 
@@ -1592,7 +1602,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .I4(p_4_in),
         .I5(p_6_in),
         .O(\GEN_BKEND_CE_REGISTERS[3].ce_out_i_reg[3]_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \s_axi_rdata_i[31]_i_6 
@@ -1713,7 +1723,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .I3(\s_axi_rdata_i_reg[16]_0 ),
         .I4(\s_axi_rdata_i_reg[8] ),
         .O(\s_axi_rdata_i[8]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
     .INIT(32'h0A030A00)) 
     \s_axi_rdata_i[9]_i_1 
@@ -1732,7 +1742,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .I3(\s_axi_rdata_i_reg[16]_0 ),
         .I4(\s_axi_rdata_i_reg[9] ),
         .O(\s_axi_rdata_i[9]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT3 #(
     .INIT(8'h04)) 
     sw_rst_cond_d1_i_1
@@ -1749,7 +1759,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_address_decoder
         .O(\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8]_0 ));
 endmodule
 
-(* C_S_AXI_ADDR_WIDTH = "11" *) (* C_S_AXI_DATA_WIDTH = "32" *) 
+(* C_S_AXI_ADDR_WIDTH = "11" *) (* C_S_AXI_DATA_WIDTH = "32" *) (* ORIG_REF_NAME = "System_clk_wiz_0_0_axi_clk_config" *) 
 module System_clk_wiz_0_0_System_clk_wiz_0_0_axi_clk_config
    (s_axi_aclk,
     s_axi_aresetn,
@@ -1880,12 +1890,12 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_axi_clk_config
   wire CLK_CORE_DRP_I_n_27;
   wire CLK_CORE_DRP_I_n_28;
   wire CLK_CORE_DRP_I_n_29;
+  wire CLK_CORE_DRP_I_n_3;
   wire CLK_CORE_DRP_I_n_30;
   wire CLK_CORE_DRP_I_n_31;
   wire CLK_CORE_DRP_I_n_32;
   wire CLK_CORE_DRP_I_n_33;
-  wire CLK_CORE_DRP_I_n_34;
-  wire CLK_CORE_DRP_I_n_35;
+  wire CLK_CORE_DRP_I_n_4;
   wire CLK_CORE_DRP_I_n_5;
   wire CLK_CORE_DRP_I_n_6;
   wire CLK_CORE_DRP_I_n_7;
@@ -2049,38 +2059,38 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_axi_clk_config
         .s_axi_bresp(\^s_axi_bresp ),
         .s_axi_bvalid(s_axi_bvalid),
         .s_axi_rdata(s_axi_rdata),
-        .\s_axi_rdata_i_reg[10] (CLK_CORE_DRP_I_n_27),
-        .\s_axi_rdata_i_reg[11] (CLK_CORE_DRP_I_n_26),
-        .\s_axi_rdata_i_reg[12] (CLK_CORE_DRP_I_n_25),
-        .\s_axi_rdata_i_reg[13] (CLK_CORE_DRP_I_n_24),
-        .\s_axi_rdata_i_reg[14] (CLK_CORE_DRP_I_n_23),
+        .\s_axi_rdata_i_reg[10] (CLK_CORE_DRP_I_n_25),
+        .\s_axi_rdata_i_reg[11] (CLK_CORE_DRP_I_n_24),
+        .\s_axi_rdata_i_reg[12] (CLK_CORE_DRP_I_n_23),
+        .\s_axi_rdata_i_reg[13] (CLK_CORE_DRP_I_n_22),
+        .\s_axi_rdata_i_reg[14] (CLK_CORE_DRP_I_n_21),
         .\s_axi_rdata_i_reg[15] ({p_33_in,p_33_in38_in,p_36_in,p_39_in,p_42_in,p_45_in,p_48_in,p_51_in,p_54_in,p_57_in,p_60_in,p_63_in,p_66_in,p_69_in,p_72_in}),
-        .\s_axi_rdata_i_reg[15]_0 (CLK_CORE_DRP_I_n_22),
-        .\s_axi_rdata_i_reg[16] (CLK_CORE_DRP_I_n_21),
-        .\s_axi_rdata_i_reg[17] (CLK_CORE_DRP_I_n_20),
-        .\s_axi_rdata_i_reg[18] (CLK_CORE_DRP_I_n_19),
-        .\s_axi_rdata_i_reg[19] (CLK_CORE_DRP_I_n_18),
-        .\s_axi_rdata_i_reg[1] (CLK_CORE_DRP_I_n_5),
-        .\s_axi_rdata_i_reg[20] (CLK_CORE_DRP_I_n_17),
-        .\s_axi_rdata_i_reg[21] (CLK_CORE_DRP_I_n_16),
-        .\s_axi_rdata_i_reg[22] (CLK_CORE_DRP_I_n_15),
-        .\s_axi_rdata_i_reg[23] (CLK_CORE_DRP_I_n_14),
-        .\s_axi_rdata_i_reg[24] (CLK_CORE_DRP_I_n_13),
-        .\s_axi_rdata_i_reg[25] (CLK_CORE_DRP_I_n_12),
-        .\s_axi_rdata_i_reg[26] (CLK_CORE_DRP_I_n_11),
-        .\s_axi_rdata_i_reg[27] (CLK_CORE_DRP_I_n_10),
-        .\s_axi_rdata_i_reg[28] (CLK_CORE_DRP_I_n_9),
-        .\s_axi_rdata_i_reg[29] (CLK_CORE_DRP_I_n_8),
-        .\s_axi_rdata_i_reg[2] (CLK_CORE_DRP_I_n_35),
-        .\s_axi_rdata_i_reg[30] (CLK_CORE_DRP_I_n_7),
-        .\s_axi_rdata_i_reg[31] (CLK_CORE_DRP_I_n_6),
-        .\s_axi_rdata_i_reg[3] (CLK_CORE_DRP_I_n_34),
-        .\s_axi_rdata_i_reg[4] (CLK_CORE_DRP_I_n_33),
-        .\s_axi_rdata_i_reg[5] (CLK_CORE_DRP_I_n_32),
-        .\s_axi_rdata_i_reg[6] (CLK_CORE_DRP_I_n_31),
-        .\s_axi_rdata_i_reg[7] (CLK_CORE_DRP_I_n_30),
-        .\s_axi_rdata_i_reg[8] (CLK_CORE_DRP_I_n_29),
-        .\s_axi_rdata_i_reg[9] (CLK_CORE_DRP_I_n_28),
+        .\s_axi_rdata_i_reg[15]_0 (CLK_CORE_DRP_I_n_20),
+        .\s_axi_rdata_i_reg[16] (CLK_CORE_DRP_I_n_19),
+        .\s_axi_rdata_i_reg[17] (CLK_CORE_DRP_I_n_18),
+        .\s_axi_rdata_i_reg[18] (CLK_CORE_DRP_I_n_17),
+        .\s_axi_rdata_i_reg[19] (CLK_CORE_DRP_I_n_16),
+        .\s_axi_rdata_i_reg[1] (CLK_CORE_DRP_I_n_3),
+        .\s_axi_rdata_i_reg[20] (CLK_CORE_DRP_I_n_15),
+        .\s_axi_rdata_i_reg[21] (CLK_CORE_DRP_I_n_14),
+        .\s_axi_rdata_i_reg[22] (CLK_CORE_DRP_I_n_13),
+        .\s_axi_rdata_i_reg[23] (CLK_CORE_DRP_I_n_12),
+        .\s_axi_rdata_i_reg[24] (CLK_CORE_DRP_I_n_11),
+        .\s_axi_rdata_i_reg[25] (CLK_CORE_DRP_I_n_10),
+        .\s_axi_rdata_i_reg[26] (CLK_CORE_DRP_I_n_9),
+        .\s_axi_rdata_i_reg[27] (CLK_CORE_DRP_I_n_8),
+        .\s_axi_rdata_i_reg[28] (CLK_CORE_DRP_I_n_7),
+        .\s_axi_rdata_i_reg[29] (CLK_CORE_DRP_I_n_6),
+        .\s_axi_rdata_i_reg[2] (CLK_CORE_DRP_I_n_33),
+        .\s_axi_rdata_i_reg[30] (CLK_CORE_DRP_I_n_5),
+        .\s_axi_rdata_i_reg[31] (CLK_CORE_DRP_I_n_4),
+        .\s_axi_rdata_i_reg[3] (CLK_CORE_DRP_I_n_32),
+        .\s_axi_rdata_i_reg[4] (CLK_CORE_DRP_I_n_31),
+        .\s_axi_rdata_i_reg[5] (CLK_CORE_DRP_I_n_30),
+        .\s_axi_rdata_i_reg[6] (CLK_CORE_DRP_I_n_29),
+        .\s_axi_rdata_i_reg[7] (CLK_CORE_DRP_I_n_28),
+        .\s_axi_rdata_i_reg[8] (CLK_CORE_DRP_I_n_27),
+        .\s_axi_rdata_i_reg[9] (CLK_CORE_DRP_I_n_26),
         .s_axi_rready(s_axi_rready),
         .s_axi_rresp(\^s_axi_rresp ),
         .s_axi_rvalid(s_axi_rvalid),
@@ -2102,37 +2112,37 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_axi_clk_config
         .Q({config_reg__0[0],config_reg__0[1],config_reg__0[2],config_reg__0[3],config_reg__0[4],config_reg__0[5],config_reg__0[6],config_reg__0[7],config_reg__0[8],config_reg__0[9],config_reg__0[10],config_reg__0[11],config_reg__0[12],config_reg__0[13],config_reg__0[14],config_reg__0[15],config_reg__0[16],config_reg__0[17],config_reg__0[18],config_reg__0[19],config_reg__0[20],config_reg__0[21],config_reg__0[22],config_reg__0[23],config_reg__0[24],config_reg__0[25],config_reg__0[26],config_reg__0[27],config_reg__0[28],config_reg__0[29],config_reg}),
         .SR(reset2ip_reset),
         .SRDY(SRDY),
-        .\bus2ip_addr_i_reg[5] (CLK_CORE_DRP_I_n_5),
-        .\bus2ip_addr_i_reg[6] (CLK_CORE_DRP_I_n_6),
-        .\bus2ip_addr_i_reg[6]_0 (CLK_CORE_DRP_I_n_7),
-        .\bus2ip_addr_i_reg[6]_1 (CLK_CORE_DRP_I_n_8),
-        .\bus2ip_addr_i_reg[6]_10 (CLK_CORE_DRP_I_n_17),
-        .\bus2ip_addr_i_reg[6]_11 (CLK_CORE_DRP_I_n_18),
-        .\bus2ip_addr_i_reg[6]_12 (CLK_CORE_DRP_I_n_19),
-        .\bus2ip_addr_i_reg[6]_13 (CLK_CORE_DRP_I_n_20),
-        .\bus2ip_addr_i_reg[6]_14 (CLK_CORE_DRP_I_n_21),
-        .\bus2ip_addr_i_reg[6]_15 (CLK_CORE_DRP_I_n_22),
-        .\bus2ip_addr_i_reg[6]_16 (CLK_CORE_DRP_I_n_23),
-        .\bus2ip_addr_i_reg[6]_17 (CLK_CORE_DRP_I_n_24),
-        .\bus2ip_addr_i_reg[6]_18 (CLK_CORE_DRP_I_n_25),
-        .\bus2ip_addr_i_reg[6]_19 (CLK_CORE_DRP_I_n_26),
-        .\bus2ip_addr_i_reg[6]_2 (CLK_CORE_DRP_I_n_9),
-        .\bus2ip_addr_i_reg[6]_20 (CLK_CORE_DRP_I_n_27),
-        .\bus2ip_addr_i_reg[6]_21 (CLK_CORE_DRP_I_n_28),
-        .\bus2ip_addr_i_reg[6]_22 (CLK_CORE_DRP_I_n_29),
-        .\bus2ip_addr_i_reg[6]_23 (CLK_CORE_DRP_I_n_30),
-        .\bus2ip_addr_i_reg[6]_24 (CLK_CORE_DRP_I_n_31),
-        .\bus2ip_addr_i_reg[6]_25 (CLK_CORE_DRP_I_n_32),
-        .\bus2ip_addr_i_reg[6]_26 (CLK_CORE_DRP_I_n_33),
-        .\bus2ip_addr_i_reg[6]_27 (CLK_CORE_DRP_I_n_34),
-        .\bus2ip_addr_i_reg[6]_28 (CLK_CORE_DRP_I_n_35),
-        .\bus2ip_addr_i_reg[6]_3 (CLK_CORE_DRP_I_n_10),
-        .\bus2ip_addr_i_reg[6]_4 (CLK_CORE_DRP_I_n_11),
-        .\bus2ip_addr_i_reg[6]_5 (CLK_CORE_DRP_I_n_12),
-        .\bus2ip_addr_i_reg[6]_6 (CLK_CORE_DRP_I_n_13),
-        .\bus2ip_addr_i_reg[6]_7 (CLK_CORE_DRP_I_n_14),
-        .\bus2ip_addr_i_reg[6]_8 (CLK_CORE_DRP_I_n_15),
-        .\bus2ip_addr_i_reg[6]_9 (CLK_CORE_DRP_I_n_16),
+        .\bus2ip_addr_i_reg[5] (CLK_CORE_DRP_I_n_3),
+        .\bus2ip_addr_i_reg[6] (CLK_CORE_DRP_I_n_4),
+        .\bus2ip_addr_i_reg[6]_0 (CLK_CORE_DRP_I_n_5),
+        .\bus2ip_addr_i_reg[6]_1 (CLK_CORE_DRP_I_n_6),
+        .\bus2ip_addr_i_reg[6]_10 (CLK_CORE_DRP_I_n_15),
+        .\bus2ip_addr_i_reg[6]_11 (CLK_CORE_DRP_I_n_16),
+        .\bus2ip_addr_i_reg[6]_12 (CLK_CORE_DRP_I_n_17),
+        .\bus2ip_addr_i_reg[6]_13 (CLK_CORE_DRP_I_n_18),
+        .\bus2ip_addr_i_reg[6]_14 (CLK_CORE_DRP_I_n_19),
+        .\bus2ip_addr_i_reg[6]_15 (CLK_CORE_DRP_I_n_20),
+        .\bus2ip_addr_i_reg[6]_16 (CLK_CORE_DRP_I_n_21),
+        .\bus2ip_addr_i_reg[6]_17 (CLK_CORE_DRP_I_n_22),
+        .\bus2ip_addr_i_reg[6]_18 (CLK_CORE_DRP_I_n_23),
+        .\bus2ip_addr_i_reg[6]_19 (CLK_CORE_DRP_I_n_24),
+        .\bus2ip_addr_i_reg[6]_2 (CLK_CORE_DRP_I_n_7),
+        .\bus2ip_addr_i_reg[6]_20 (CLK_CORE_DRP_I_n_25),
+        .\bus2ip_addr_i_reg[6]_21 (CLK_CORE_DRP_I_n_26),
+        .\bus2ip_addr_i_reg[6]_22 (CLK_CORE_DRP_I_n_27),
+        .\bus2ip_addr_i_reg[6]_23 (CLK_CORE_DRP_I_n_28),
+        .\bus2ip_addr_i_reg[6]_24 (CLK_CORE_DRP_I_n_29),
+        .\bus2ip_addr_i_reg[6]_25 (CLK_CORE_DRP_I_n_30),
+        .\bus2ip_addr_i_reg[6]_26 (CLK_CORE_DRP_I_n_31),
+        .\bus2ip_addr_i_reg[6]_27 (CLK_CORE_DRP_I_n_32),
+        .\bus2ip_addr_i_reg[6]_28 (CLK_CORE_DRP_I_n_33),
+        .\bus2ip_addr_i_reg[6]_3 (CLK_CORE_DRP_I_n_8),
+        .\bus2ip_addr_i_reg[6]_4 (CLK_CORE_DRP_I_n_9),
+        .\bus2ip_addr_i_reg[6]_5 (CLK_CORE_DRP_I_n_10),
+        .\bus2ip_addr_i_reg[6]_6 (CLK_CORE_DRP_I_n_11),
+        .\bus2ip_addr_i_reg[6]_7 (CLK_CORE_DRP_I_n_12),
+        .\bus2ip_addr_i_reg[6]_8 (CLK_CORE_DRP_I_n_13),
+        .\bus2ip_addr_i_reg[6]_9 (CLK_CORE_DRP_I_n_14),
         .clk_in1(clk_in1),
         .\clkout0_reg_reg[14]_0 (AXI_LITE_IPIF_I_n_49),
         .dummy_local_reg_rdack(dummy_local_reg_rdack),
@@ -2256,6 +2266,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_axi_clk_config
         .R(reset2ip_reset));
 endmodule
 
+(* ORIG_REF_NAME = "System_clk_wiz_0_0_axi_lite_ipif" *) 
 module System_clk_wiz_0_0_System_clk_wiz_0_0_axi_lite_ipif
    (bus2ip_reset_active_high,
     s_axi_rresp,
@@ -2771,29 +2782,35 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_axi_lite_ipif
         .wrack_reg_10(wrack_reg_10));
 endmodule
 
+(* ORIG_REF_NAME = "System_clk_wiz_0_0_clk_wiz" *) 
 module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz
-   (drdy,
+   (D,
     s_axi_aclk_0,
+    drdy,
     DO,
     ClkAudio,
-    D,
+    \s_axi_rdata_i_reg[0] ,
+    Q,
+    \s_axi_rdata_i_reg[0]_0 ,
+    \s_axi_rdata_i_reg[0]_1 ,
+    \s_axi_rdata_i_reg[0]_2 ,
     clk_in1,
     s_axi_aclk,
     den,
     dwe,
     reset,
     DI,
-    DADDR,
-    \s_axi_rdata_i_reg[0] ,
-    Q,
-    \s_axi_rdata_i_reg[0]_0 ,
-    \s_axi_rdata_i_reg[0]_1 ,
-    \s_axi_rdata_i_reg[0]_2 );
-  output drdy;
+    DADDR);
+  output [0:0]D;
   output s_axi_aclk_0;
+  output drdy;
   output [14:0]DO;
   output ClkAudio;
-  output [0:0]D;
+  input \s_axi_rdata_i_reg[0] ;
+  input [0:0]Q;
+  input \s_axi_rdata_i_reg[0]_0 ;
+  input \s_axi_rdata_i_reg[0]_1 ;
+  input \s_axi_rdata_i_reg[0]_2 ;
   input clk_in1;
   input s_axi_aclk;
   input den;
@@ -2801,11 +2818,6 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz
   input reset;
   input [15:0]DI;
   input [6:0]DADDR;
-  input \s_axi_rdata_i_reg[0] ;
-  input [0:0]Q;
-  input \s_axi_rdata_i_reg[0]_0 ;
-  input \s_axi_rdata_i_reg[0]_1 ;
-  input \s_axi_rdata_i_reg[0]_2 ;
 
   wire ClkAudio;
   wire ClkAudio_System_clk_wiz_0_0;
@@ -2919,12 +2931,11 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz
         .O(D));
 endmodule
 
+(* ORIG_REF_NAME = "System_clk_wiz_0_0_clk_wiz_drp" *) 
 module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
    (IP2Bus_WrAck,
-    s_axi_aclk_0,
-    ClkAudio,
-    SRDY,
     D,
+    s_axi_aclk_0,
     \bus2ip_addr_i_reg[5] ,
     \bus2ip_addr_i_reg[6] ,
     \bus2ip_addr_i_reg[6]_0 ,
@@ -2957,9 +2968,10 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
     \bus2ip_addr_i_reg[6]_27 ,
     \bus2ip_addr_i_reg[6]_28 ,
     ip2bus_rdack_int1,
+    ClkAudio,
     Q,
     \interrupt_enable_reg_reg[15]_0 ,
-    clk_in1,
+    SRDY,
     SR,
     load_enable_reg_d_reg_0,
     s_axi_aclk,
@@ -2977,6 +2989,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
     \ram_clk_config_reg[0][0]_0 ,
     rst_ip2bus_rdack,
     dummy_local_reg_rdack,
+    clk_in1,
     E,
     \ram_clk_config_reg[0][0]_1 ,
     \ram_clk_config_reg[0][31]_0 ,
@@ -3016,10 +3029,8 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
     \ram_clk_config_reg[30][31]_0 ,
     \ram_clk_config_reg[31][31]_0 );
   output IP2Bus_WrAck;
-  output s_axi_aclk_0;
-  output ClkAudio;
-  output SRDY;
   output [0:0]D;
+  output s_axi_aclk_0;
   output \bus2ip_addr_i_reg[5] ;
   output \bus2ip_addr_i_reg[6] ;
   output \bus2ip_addr_i_reg[6]_0 ;
@@ -3052,9 +3063,10 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
   output \bus2ip_addr_i_reg[6]_27 ;
   output \bus2ip_addr_i_reg[6]_28 ;
   output ip2bus_rdack_int1;
+  output ClkAudio;
   output [30:0]Q;
   output [14:0]\interrupt_enable_reg_reg[15]_0 ;
-  input clk_in1;
+  output SRDY;
   input [0:0]SR;
   input load_enable_reg_d_reg_0;
   input s_axi_aclk;
@@ -3072,6 +3084,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
   input \ram_clk_config_reg[0][0]_0 ;
   input rst_ip2bus_rdack;
   input dummy_local_reg_rdack;
+  input clk_in1;
   input [0:0]E;
   input [0:0]\ram_clk_config_reg[0][0]_1 ;
   input [4:0]\ram_clk_config_reg[0][31]_0 ;
@@ -3223,10 +3236,10 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
   wire [11:7]p_4_in;
   wire [11:7]p_6_in;
   wire [11:7]p_8_in;
-  wire pll_drp_inst_n_20;
-  wire pll_drp_inst_n_22;
-  wire pll_drp_inst_n_23;
-  wire pll_drp_inst_n_24;
+  wire pll_drp_inst_n_4;
+  wire pll_drp_inst_n_6;
+  wire pll_drp_inst_n_7;
+  wire pll_drp_inst_n_8;
   wire \ram[41][15]_i_24_n_0 ;
   wire \ram[41][15]_i_25_n_0 ;
   wire \ram[41][15]_i_26_n_0 ;
@@ -4650,9 +4663,10 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .Q(Q[21]),
         .R(SR));
   System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp pll_drp_inst
-       (.CO(pll_drp_inst_n_24),
+       (.CO(pll_drp_inst_n_8),
         .DADDR(daddr),
-        .DI(din),
+        .DI({pll_drp_inst_n_4,p_0_in__0,pll_drp_inst_n_6}),
+        .\DI_reg[15]_0 (din),
         .DO({dout[15:9],dout[7:0]}),
         .O({\ram_reg[41][15]_i_14_n_4 ,\ram_reg[41][15]_i_14_n_5 ,\ram_reg[41][15]_i_14_n_6 ,\ram_reg[41][15]_i_14_n_7 }),
         .Q({S2_CLKFBOUT_MULT,\ram_clk_config_reg_n_0_[0][7] ,p_12_in,\ram_clk_config_reg_n_0_[0][1] ,\ram_clk_config_reg_n_0_[0][0] }),
@@ -4663,9 +4677,8 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .den(den),
         .drdy(drdy),
         .dwe(dwe),
-        .\ram_addr_reg[4]_0 (Q[0]),
-        .\ram_clk_config_reg[0][14] ({pll_drp_inst_n_20,p_0_in__0,pll_drp_inst_n_22}),
-        .\ram_clk_config_reg[0][8] (pll_drp_inst_n_23),
+        .\ram_addr_reg[2]_0 (Q[0]),
+        .\ram_clk_config_reg[0][8] (pll_drp_inst_n_7),
         .\ram_reg[22][6]_0 ({\ram_clk_config_reg_n_0_[2][7] ,\ram_clk_config_reg_n_0_[2][6] ,\ram_clk_config_reg_n_0_[2][5] ,\ram_clk_config_reg_n_0_[2][4] ,\ram_clk_config_reg_n_0_[2][3] ,\ram_clk_config_reg_n_0_[2][2] ,\ram_clk_config_reg_n_0_[2][1] ,\ram_clk_config_reg_n_0_[2][0] }),
         .\ram_reg[24][6]_0 ({\ram_clk_config_reg_n_0_[5][7] ,p_2_in,\ram_clk_config_reg_n_0_[5][1] ,\ram_clk_config_reg_n_0_[5][0] }),
         .\ram_reg[26][6]_0 ({\ram_clk_config_reg_n_0_[8][7] ,p_4_in,\ram_clk_config_reg_n_0_[8][1] ,\ram_clk_config_reg_n_0_[8][0] }),
@@ -4678,7 +4691,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
     .INIT(64'h0000000000000004)) 
     \ram[41][15]_i_24 
        (.I0(S2_CLKFBOUT_MULT[5]),
-        .I1(pll_drp_inst_n_23),
+        .I1(pll_drp_inst_n_7),
         .I2(S2_CLKFBOUT_MULT[2]),
         .I3(S2_CLKFBOUT_MULT[3]),
         .I4(S2_CLKFBOUT_MULT[4]),
@@ -4689,7 +4702,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
     \ram[41][15]_i_25 
        (.I0(S2_CLKFBOUT_MULT[6]),
         .I1(S2_CLKFBOUT_MULT[5]),
-        .I2(pll_drp_inst_n_23),
+        .I2(pll_drp_inst_n_7),
         .I3(S2_CLKFBOUT_MULT[2]),
         .I4(S2_CLKFBOUT_MULT[3]),
         .I5(S2_CLKFBOUT_MULT[4]),
@@ -4700,7 +4713,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
        (.I0(S2_CLKFBOUT_MULT[5]),
         .I1(S2_CLKFBOUT_MULT[6]),
         .I2(S2_CLKFBOUT_MULT[4]),
-        .I3(pll_drp_inst_n_23),
+        .I3(pll_drp_inst_n_7),
         .I4(S2_CLKFBOUT_MULT[3]),
         .I5(S2_CLKFBOUT_MULT[2]),
         .O(\ram[41][15]_i_26_n_0 ));
@@ -4714,7 +4727,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I4(S2_CLKFBOUT_MULT[0]),
         .I5(S2_CLKFBOUT_MULT[2]),
         .O(\ram[41][15]_i_27_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair102" *) 
+  (* SOFT_HLUTNM = "soft_lutpair103" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][0]_i_1 
@@ -4722,7 +4735,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[0]),
         .O(\ram_clk_config[0][0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair107" *) 
+  (* SOFT_HLUTNM = "soft_lutpair108" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][10]_i_1 
@@ -4730,7 +4743,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[10]),
         .O(\ram_clk_config[0][10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair108" *) 
+  (* SOFT_HLUTNM = "soft_lutpair109" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][11]_i_1 
@@ -4738,7 +4751,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[11]),
         .O(\ram_clk_config[0][11]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair107" *) 
+  (* SOFT_HLUTNM = "soft_lutpair108" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][12]_i_1 
@@ -4746,7 +4759,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[12]),
         .O(\ram_clk_config[0][12]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair108" *) 
+  (* SOFT_HLUTNM = "soft_lutpair109" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][13]_i_1 
@@ -4754,7 +4767,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[13]),
         .O(\ram_clk_config[0][13]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair109" *) 
+  (* SOFT_HLUTNM = "soft_lutpair110" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][14]_i_1 
@@ -4762,7 +4775,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[14]),
         .O(\ram_clk_config[0][14]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair109" *) 
+  (* SOFT_HLUTNM = "soft_lutpair110" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][15]_i_1 
@@ -4770,7 +4783,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[15]),
         .O(\ram_clk_config[0][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair110" *) 
+  (* SOFT_HLUTNM = "soft_lutpair111" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][16]_i_1 
@@ -4778,7 +4791,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[16]),
         .O(\ram_clk_config[0][16]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair110" *) 
+  (* SOFT_HLUTNM = "soft_lutpair111" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][17]_i_1 
@@ -4786,7 +4799,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[17]),
         .O(\ram_clk_config[0][17]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair111" *) 
+  (* SOFT_HLUTNM = "soft_lutpair112" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][18]_i_1 
@@ -4794,7 +4807,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[18]),
         .O(\ram_clk_config[0][18]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair111" *) 
+  (* SOFT_HLUTNM = "soft_lutpair112" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][19]_i_1 
@@ -4802,7 +4815,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[19]),
         .O(\ram_clk_config[0][19]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair102" *) 
+  (* SOFT_HLUTNM = "soft_lutpair103" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][1]_i_1 
@@ -4810,7 +4823,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[1]),
         .O(\ram_clk_config[0][1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair112" *) 
+  (* SOFT_HLUTNM = "soft_lutpair113" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][20]_i_1 
@@ -4818,7 +4831,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[20]),
         .O(\ram_clk_config[0][20]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair112" *) 
+  (* SOFT_HLUTNM = "soft_lutpair113" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][21]_i_1 
@@ -4826,7 +4839,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[21]),
         .O(\ram_clk_config[0][21]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair113" *) 
+  (* SOFT_HLUTNM = "soft_lutpair114" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][22]_i_1 
@@ -4834,7 +4847,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[22]),
         .O(\ram_clk_config[0][22]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair113" *) 
+  (* SOFT_HLUTNM = "soft_lutpair114" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][23]_i_1 
@@ -4842,7 +4855,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[23]),
         .O(\ram_clk_config[0][23]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair114" *) 
+  (* SOFT_HLUTNM = "soft_lutpair115" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][24]_i_1 
@@ -4850,7 +4863,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[24]),
         .O(\ram_clk_config[0][24]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair114" *) 
+  (* SOFT_HLUTNM = "soft_lutpair115" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][25]_i_1 
@@ -4884,7 +4897,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I2(\clkfbout_reg_reg_n_0_[13] ),
         .I3(\clkfbout_reg_reg_n_0_[12] ),
         .O(\ram_clk_config[0][26]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair103" *) 
+  (* SOFT_HLUTNM = "soft_lutpair104" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][2]_i_1 
@@ -4892,7 +4905,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[2]),
         .O(\ram_clk_config[0][2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair103" *) 
+  (* SOFT_HLUTNM = "soft_lutpair104" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][3]_i_1 
@@ -4900,7 +4913,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[3]),
         .O(\ram_clk_config[0][3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair104" *) 
+  (* SOFT_HLUTNM = "soft_lutpair105" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][4]_i_1 
@@ -4908,7 +4921,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[4]),
         .O(\ram_clk_config[0][4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair104" *) 
+  (* SOFT_HLUTNM = "soft_lutpair105" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][5]_i_1 
@@ -4916,7 +4929,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[5]),
         .O(\ram_clk_config[0][5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair105" *) 
+  (* SOFT_HLUTNM = "soft_lutpair106" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][6]_i_1 
@@ -4924,7 +4937,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[6]),
         .O(\ram_clk_config[0][6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair105" *) 
+  (* SOFT_HLUTNM = "soft_lutpair106" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][7]_i_1 
@@ -4932,7 +4945,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[7]),
         .O(\ram_clk_config[0][7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair106" *) 
+  (* SOFT_HLUTNM = "soft_lutpair107" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][8]_i_1 
@@ -4940,7 +4953,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[0][0]_0 ),
         .I2(s_axi_wdata[8]),
         .O(\ram_clk_config[0][8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair106" *) 
+  (* SOFT_HLUTNM = "soft_lutpair107" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[0][9]_i_1 
@@ -4956,7 +4969,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[2][0]_0 ),
         .I2(s_axi_wdata[0]),
         .O(\ram_clk_config[2][0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair98" *) 
+  (* SOFT_HLUTNM = "soft_lutpair99" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[2][10]_i_1 
@@ -4964,7 +4977,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[2][0]_0 ),
         .I2(s_axi_wdata[10]),
         .O(\ram_clk_config[2][10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair97" *) 
+  (* SOFT_HLUTNM = "soft_lutpair99" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[2][11]_i_1 
@@ -4972,7 +4985,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[2][0]_0 ),
         .I2(s_axi_wdata[11]),
         .O(\ram_clk_config[2][11]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair96" *) 
+  (* SOFT_HLUTNM = "soft_lutpair100" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[2][12]_i_1 
@@ -4980,7 +4993,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[2][0]_0 ),
         .I2(s_axi_wdata[12]),
         .O(\ram_clk_config[2][12]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair95" *) 
+  (* SOFT_HLUTNM = "soft_lutpair100" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[2][13]_i_1 
@@ -4988,7 +5001,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[2][0]_0 ),
         .I2(s_axi_wdata[13]),
         .O(\ram_clk_config[2][13]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair94" *) 
+  (* SOFT_HLUTNM = "soft_lutpair101" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[2][14]_i_1 
@@ -4996,7 +5009,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[2][0]_0 ),
         .I2(s_axi_wdata[14]),
         .O(\ram_clk_config[2][14]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair99" *) 
+  (* SOFT_HLUTNM = "soft_lutpair101" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[2][15]_i_1 
@@ -5004,7 +5017,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[2][0]_0 ),
         .I2(s_axi_wdata[15]),
         .O(\ram_clk_config[2][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair115" *) 
+  (* SOFT_HLUTNM = "soft_lutpair102" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[2][16]_i_1 
@@ -5012,7 +5025,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[2][0]_0 ),
         .I2(s_axi_wdata[16]),
         .O(\ram_clk_config[2][16]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair115" *) 
+  (* SOFT_HLUTNM = "soft_lutpair102" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[2][17]_i_1 
@@ -5046,7 +5059,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I4(\clkout0_reg_reg_n_0_[20] ),
         .I5(\clkout0_reg_reg_n_0_[19] ),
         .O(\ram_clk_config[2][18]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair100" *) 
+  (* SOFT_HLUTNM = "soft_lutpair95" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[2][1]_i_1 
@@ -5054,7 +5067,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[2][0]_0 ),
         .I2(s_axi_wdata[1]),
         .O(\ram_clk_config[2][1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair101" *) 
+  (* SOFT_HLUTNM = "soft_lutpair95" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[2][2]_i_1 
@@ -5062,7 +5075,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[2][0]_0 ),
         .I2(s_axi_wdata[2]),
         .O(\ram_clk_config[2][2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair100" *) 
+  (* SOFT_HLUTNM = "soft_lutpair96" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[2][3]_i_1 
@@ -5070,7 +5083,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[2][0]_0 ),
         .I2(s_axi_wdata[3]),
         .O(\ram_clk_config[2][3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair95" *) 
+  (* SOFT_HLUTNM = "soft_lutpair94" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[2][4]_i_1 
@@ -5078,7 +5091,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[2][0]_0 ),
         .I2(s_axi_wdata[4]),
         .O(\ram_clk_config[2][4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair96" *) 
+  (* SOFT_HLUTNM = "soft_lutpair97" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[2][5]_i_1 
@@ -5086,7 +5099,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[2][0]_0 ),
         .I2(s_axi_wdata[5]),
         .O(\ram_clk_config[2][5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair101" *) 
+  (* SOFT_HLUTNM = "soft_lutpair96" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[2][6]_i_1 
@@ -5110,7 +5123,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .I1(\ram_clk_config_reg[2][0]_0 ),
         .I2(s_axi_wdata[8]),
         .O(\ram_clk_config[2][8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair99" *) 
+  (* SOFT_HLUTNM = "soft_lutpair98" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram_clk_config[2][9]_i_1 
@@ -13311,10 +13324,10 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .Q(\ram_clk_config_reg[9]_5 [9]),
         .R(SR));
   CARRY4 \ram_reg[41][15]_i_14 
-       (.CI(pll_drp_inst_n_24),
+       (.CI(pll_drp_inst_n_8),
         .CO({\NLW_ram_reg[41][15]_i_14_CO_UNCONNECTED [3],\ram_reg[41][15]_i_14_n_1 ,\ram_reg[41][15]_i_14_n_2 ,\ram_reg[41][15]_i_14_n_3 }),
         .CYINIT(1'b0),
-        .DI({1'b0,pll_drp_inst_n_20,p_0_in__0,pll_drp_inst_n_22}),
+        .DI({1'b0,pll_drp_inst_n_4,p_0_in__0,pll_drp_inst_n_6}),
         .O({\ram_reg[41][15]_i_14_n_4 ,\ram_reg[41][15]_i_14_n_5 ,\ram_reg[41][15]_i_14_n_6 ,\ram_reg[41][15]_i_14_n_7 }),
         .S({\ram[41][15]_i_24_n_0 ,\ram[41][15]_i_25_n_0 ,\ram[41][15]_i_26_n_0 ,\ram[41][15]_i_27_n_0 }));
   FDRE rdack_reg_1_reg
@@ -16873,19 +16886,18 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz_drp
         .R(wrack_reg_10));
 endmodule
 
+(* ORIG_REF_NAME = "System_clk_wiz_0_0_pll_drp" *) 
 module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
-   (den,
-    SRDY,
+   (SRDY,
     dwe,
+    den,
     reset,
     DI,
-    \ram_clk_config_reg[0][14] ,
     \ram_clk_config_reg[0][8] ,
     CO,
     DADDR,
+    \DI_reg[15]_0 ,
     s_axi_aclk,
-    drdy,
-    DO,
     Q,
     \ram_reg[32][6]_0 ,
     \ram_reg[30][6]_0 ,
@@ -16896,20 +16908,20 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
     O,
     SR,
     SEN,
+    drdy,
     SRDY_reg_0,
-    \ram_addr_reg[4]_0 );
-  output den;
+    \ram_addr_reg[2]_0 ,
+    DO);
   output SRDY;
   output dwe;
+  output den;
   output reset;
-  output [15:0]DI;
-  output [2:0]\ram_clk_config_reg[0][14] ;
+  output [2:0]DI;
   output \ram_clk_config_reg[0][8] ;
   output [0:0]CO;
   output [6:0]DADDR;
+  output [15:0]\DI_reg[15]_0 ;
   input s_axi_aclk;
-  input drdy;
-  input [14:0]DO;
   input [15:0]Q;
   input [7:0]\ram_reg[32][6]_0 ;
   input [7:0]\ram_reg[30][6]_0 ;
@@ -16920,14 +16932,16 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
   input [3:0]O;
   input [0:0]SR;
   input SEN;
+  input drdy;
   input SRDY_reg_0;
-  input [0:0]\ram_addr_reg[4]_0 ;
+  input [0:0]\ram_addr_reg[2]_0 ;
+  input [14:0]DO;
 
   wire [0:0]CO;
   wire [6:0]DADDR;
   wire \DADDR[6]_i_1_n_0 ;
   wire \DADDR[6]_i_2_n_0 ;
-  wire [15:0]DI;
+  wire [2:0]DI;
   wire \DI[0]_i_1_n_0 ;
   wire \DI[10]_i_1_n_0 ;
   wire \DI[11]_i_1_n_0 ;
@@ -16946,6 +16960,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
   wire \DI[7]_i_1_n_0 ;
   wire \DI[8]_i_1_n_0 ;
   wire \DI[9]_i_1_n_0 ;
+  wire [15:0]\DI_reg[15]_0 ;
   wire [14:0]DO;
   wire [3:0]O;
   wire [15:0]Q;
@@ -16958,7 +16973,6 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
   wire \current_state[0]_i_2_n_0 ;
   wire \current_state[1]_i_2_n_0 ;
   wire \current_state[1]_i_3_n_0 ;
-  wire \current_state[1]_i_4_n_0 ;
   wire \current_state[2]_i_2_n_0 ;
   wire den;
   wire drdy;
@@ -17285,8 +17299,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
   wire \ram_addr[4]_i_2_n_0 ;
   wire \ram_addr[5]_i_1_n_0 ;
   wire \ram_addr[5]_i_3_n_0 ;
-  wire [0:0]\ram_addr_reg[4]_0 ;
-  wire [2:0]\ram_clk_config_reg[0][14] ;
+  wire [0:0]\ram_addr_reg[2]_0 ;
   wire \ram_clk_config_reg[0][8] ;
   wire [38:0]ram_do;
   wire \ram_do[0]_i_3_n_0 ;
@@ -17353,10 +17366,10 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
   wire \ram_do[6]_i_8_n_0 ;
   wire \ram_do[6]_i_9_n_0 ;
   wire \ram_do[7]_i_10_n_0 ;
+  wire \ram_do[7]_i_11_n_0 ;
   wire \ram_do[7]_i_2_n_0 ;
   wire \ram_do[7]_i_3_n_0 ;
   wire \ram_do[7]_i_5_n_0 ;
-  wire \ram_do[7]_i_6_n_0 ;
   wire \ram_do[7]_i_7_n_0 ;
   wire \ram_do[7]_i_8_n_0 ;
   wire \ram_do[7]_i_9_n_0 ;
@@ -17383,6 +17396,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
   wire \ram_do_reg[5]_i_2_n_0 ;
   wire \ram_do_reg[6]_i_2_n_0 ;
   wire \ram_do_reg[7]_i_4_n_0 ;
+  wire \ram_do_reg[7]_i_6_n_0 ;
   wire \ram_do_reg[9]_i_2_n_0 ;
   wire \ram_reg[22][3]_i_1_n_0 ;
   wire \ram_reg[22][3]_i_1_n_1 ;
@@ -17526,9 +17540,9 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
   wire \state_count[1]_i_1_n_0 ;
   wire \state_count[2]_i_1_n_0 ;
   wire \state_count[3]_i_1_n_0 ;
-  wire \state_count[3]_i_2_n_0 ;
   wire \state_count[4]_i_1_n_0 ;
   wire \state_count[4]_i_2_n_0 ;
+  wire \state_count[4]_i_3_n_0 ;
   wire [3:1]\NLW_ram_reg[22][5]_i_2_CO_UNCONNECTED ;
   wire [3:2]\NLW_ram_reg[22][5]_i_2_O_UNCONNECTED ;
   wire [3:1]\NLW_ram_reg[24][5]_i_2_CO_UNCONNECTED ;
@@ -17549,20 +17563,20 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
   wire [0:0]\NLW_ram_reg[41][15]_i_8_O_UNCONNECTED ;
 
   LUT4 #(
-    .INIT(16'h0010)) 
+    .INIT(16'h0002)) 
     \DADDR[6]_i_1 
-       (.I0(current_state[1]),
-        .I1(current_state[3]),
-        .I2(current_state[0]),
+       (.I0(current_state[0]),
+        .I1(current_state[1]),
+        .I2(current_state[3]),
         .I3(current_state[2]),
         .O(\DADDR[6]_i_1_n_0 ));
   LUT4 #(
-    .INIT(16'h0006)) 
+    .INIT(16'h0110)) 
     \DADDR[6]_i_2 
-       (.I0(current_state[2]),
-        .I1(current_state[0]),
-        .I2(current_state[3]),
-        .I3(current_state[1]),
+       (.I0(current_state[3]),
+        .I1(current_state[1]),
+        .I2(current_state[2]),
+        .I3(current_state[0]),
         .O(\DADDR[6]_i_2_n_0 ));
   FDRE \DADDR_reg[0] 
        (.C(s_axi_aclk),
@@ -17607,12 +17621,12 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .Q(DADDR[6]),
         .R(\DADDR[6]_i_1_n_0 ));
   LUT4 #(
-    .INIT(16'h0006)) 
+    .INIT(16'h0110)) 
     DEN_i_1
-       (.I0(current_state[3]),
-        .I1(current_state[2]),
-        .I2(current_state[0]),
-        .I3(current_state[1]),
+       (.I0(current_state[1]),
+        .I1(current_state[0]),
+        .I2(current_state[3]),
+        .I3(current_state[2]),
         .O(next_den));
   FDRE DEN_reg
        (.C(s_axi_aclk),
@@ -17621,266 +17635,266 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .Q(den),
         .R(1'b0));
   LUT5 #(
-    .INIT(32'hF8F8F808)) 
+    .INIT(32'hEFE0E0E0)) 
     \DI[0]_i_1 
-       (.I0(ram_do[38]),
-        .I1(DO[0]),
+       (.I0(\DI_reg[15]_0 [0]),
+        .I1(ram_do[0]),
         .I2(current_state[0]),
-        .I3(ram_do[0]),
-        .I4(DI[0]),
+        .I3(DO[0]),
+        .I4(ram_do[38]),
         .O(\DI[0]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'hF8F8F808)) 
+    .INIT(32'hEFE0E0E0)) 
     \DI[10]_i_1 
-       (.I0(ram_do[29]),
-        .I1(DO[9]),
+       (.I0(\DI_reg[15]_0 [10]),
+        .I1(ram_do[10]),
         .I2(current_state[0]),
-        .I3(ram_do[10]),
-        .I4(DI[10]),
+        .I3(DO[9]),
+        .I4(ram_do[29]),
         .O(\DI[10]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'hF8F8F808)) 
+    .INIT(32'hEFE0E0E0)) 
     \DI[11]_i_1 
-       (.I0(ram_do[27]),
-        .I1(DO[10]),
+       (.I0(\DI_reg[15]_0 [11]),
+        .I1(ram_do[11]),
         .I2(current_state[0]),
-        .I3(ram_do[11]),
-        .I4(DI[11]),
+        .I3(DO[10]),
+        .I4(ram_do[27]),
         .O(\DI[11]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'hF8F8F808)) 
+    .INIT(32'hEFE0E0E0)) 
     \DI[12]_i_1 
-       (.I0(ram_do[28]),
-        .I1(DO[11]),
+       (.I0(\DI_reg[15]_0 [12]),
+        .I1(ram_do[12]),
         .I2(current_state[0]),
-        .I3(ram_do[12]),
-        .I4(DI[12]),
+        .I3(DO[11]),
+        .I4(ram_do[28]),
         .O(\DI[12]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'hF8F8F808)) 
+    .INIT(32'hEFE0E0E0)) 
     \DI[13]_i_1 
-       (.I0(ram_do[29]),
-        .I1(DO[12]),
+       (.I0(\DI_reg[15]_0 [13]),
+        .I1(ram_do[13]),
         .I2(current_state[0]),
-        .I3(ram_do[13]),
-        .I4(DI[13]),
+        .I3(DO[12]),
+        .I4(ram_do[29]),
         .O(\DI[13]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'hF8F8F808)) 
+    .INIT(32'hEFE0E0E0)) 
     \DI[14]_i_1 
-       (.I0(ram_do[30]),
-        .I1(DO[13]),
+       (.I0(\DI_reg[15]_0 [14]),
+        .I1(ram_do[14]),
         .I2(current_state[0]),
-        .I3(ram_do[14]),
-        .I4(DI[14]),
+        .I3(DO[13]),
+        .I4(ram_do[30]),
         .O(\DI[14]_i_1_n_0 ));
   LUT4 #(
-    .INIT(16'h0004)) 
+    .INIT(16'h0010)) 
     \DI[15]_i_1 
        (.I0(current_state[3]),
-        .I1(current_state[0]),
-        .I2(current_state[2]),
+        .I1(current_state[2]),
+        .I2(current_state[0]),
         .I3(current_state[1]),
         .O(\DI[15]_i_1_n_0 ));
   LUT4 #(
     .INIT(16'h00A4)) 
     \DI[15]_i_2 
-       (.I0(current_state[2]),
+       (.I0(current_state[1]),
         .I1(current_state[0]),
-        .I2(current_state[1]),
+        .I2(current_state[2]),
         .I3(current_state[3]),
         .O(\DI[15]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'hF8F8F808)) 
+    .INIT(32'hEFE0E0E0)) 
     \DI[15]_i_3 
-       (.I0(ram_do[31]),
-        .I1(DO[14]),
+       (.I0(\DI_reg[15]_0 [15]),
+        .I1(ram_do[15]),
         .I2(current_state[0]),
-        .I3(ram_do[15]),
-        .I4(DI[15]),
+        .I3(DO[14]),
+        .I4(ram_do[31]),
         .O(\DI[15]_i_3_n_0 ));
   LUT5 #(
-    .INIT(32'hF8F8F808)) 
+    .INIT(32'hEFE0E0E0)) 
     \DI[1]_i_1 
-       (.I0(ram_do[38]),
-        .I1(DO[1]),
+       (.I0(\DI_reg[15]_0 [1]),
+        .I1(ram_do[1]),
         .I2(current_state[0]),
-        .I3(ram_do[1]),
-        .I4(DI[1]),
+        .I3(ram_do[38]),
+        .I4(DO[1]),
         .O(\DI[1]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'hF8F8F808)) 
+    .INIT(32'hEFE0E0E0)) 
     \DI[2]_i_1 
-       (.I0(ram_do[38]),
-        .I1(DO[2]),
+       (.I0(\DI_reg[15]_0 [2]),
+        .I1(ram_do[2]),
         .I2(current_state[0]),
-        .I3(ram_do[2]),
-        .I4(DI[2]),
+        .I3(ram_do[38]),
+        .I4(DO[2]),
         .O(\DI[2]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'hF8F8F808)) 
+    .INIT(32'hEFE0E0E0)) 
     \DI[3]_i_1 
-       (.I0(ram_do[38]),
-        .I1(DO[3]),
+       (.I0(\DI_reg[15]_0 [3]),
+        .I1(ram_do[3]),
         .I2(current_state[0]),
-        .I3(ram_do[3]),
-        .I4(DI[3]),
+        .I3(DO[3]),
+        .I4(ram_do[38]),
         .O(\DI[3]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'hF8F8F808)) 
+    .INIT(32'hEFE0E0E0)) 
     \DI[4]_i_1 
-       (.I0(ram_do[23]),
-        .I1(DO[4]),
+       (.I0(\DI_reg[15]_0 [4]),
+        .I1(ram_do[4]),
         .I2(current_state[0]),
-        .I3(ram_do[4]),
-        .I4(DI[4]),
+        .I3(DO[4]),
+        .I4(ram_do[23]),
         .O(\DI[4]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'hF8F8F808)) 
+    .INIT(32'hEFE0E0E0)) 
     \DI[5]_i_1 
-       (.I0(ram_do[38]),
-        .I1(DO[5]),
+       (.I0(ram_do[5]),
+        .I1(\DI_reg[15]_0 [5]),
         .I2(current_state[0]),
-        .I3(ram_do[5]),
-        .I4(DI[5]),
+        .I3(DO[5]),
+        .I4(ram_do[38]),
         .O(\DI[5]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'hF8F8F808)) 
+    .INIT(32'hEFE0E0E0)) 
     \DI[6]_i_1 
-       (.I0(ram_do[38]),
-        .I1(DO[6]),
+       (.I0(\DI_reg[15]_0 [6]),
+        .I1(ram_do[6]),
         .I2(current_state[0]),
-        .I3(ram_do[6]),
-        .I4(DI[6]),
+        .I3(DO[6]),
+        .I4(ram_do[38]),
         .O(\DI[6]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'hF8F8F808)) 
+    .INIT(32'hEFE0E0E0)) 
     \DI[7]_i_1 
-       (.I0(ram_do[23]),
-        .I1(DO[7]),
+       (.I0(\DI_reg[15]_0 [7]),
+        .I1(ram_do[7]),
         .I2(current_state[0]),
-        .I3(ram_do[7]),
-        .I4(DI[7]),
+        .I3(DO[7]),
+        .I4(ram_do[23]),
         .O(\DI[7]_i_1_n_0 ));
   LUT3 #(
     .INIT(8'hE0)) 
     \DI[8]_i_1 
-       (.I0(DI[8]),
-        .I1(ram_do[8]),
+       (.I0(ram_do[8]),
+        .I1(\DI_reg[15]_0 [8]),
         .I2(current_state[0]),
         .O(\DI[8]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'hF8F8F808)) 
+    .INIT(32'hEFE0E0E0)) 
     \DI[9]_i_1 
-       (.I0(ram_do[38]),
-        .I1(DO[8]),
+       (.I0(\DI_reg[15]_0 [9]),
+        .I1(ram_do[9]),
         .I2(current_state[0]),
-        .I3(ram_do[9]),
-        .I4(DI[9]),
+        .I3(DO[8]),
+        .I4(ram_do[38]),
         .O(\DI[9]_i_1_n_0 ));
   FDRE \DI_reg[0] 
        (.C(s_axi_aclk),
         .CE(\DI[15]_i_2_n_0 ),
         .D(\DI[0]_i_1_n_0 ),
-        .Q(DI[0]),
+        .Q(\DI_reg[15]_0 [0]),
         .R(\DI[15]_i_1_n_0 ));
   FDRE \DI_reg[10] 
        (.C(s_axi_aclk),
         .CE(\DI[15]_i_2_n_0 ),
         .D(\DI[10]_i_1_n_0 ),
-        .Q(DI[10]),
+        .Q(\DI_reg[15]_0 [10]),
         .R(\DI[15]_i_1_n_0 ));
   FDRE \DI_reg[11] 
        (.C(s_axi_aclk),
         .CE(\DI[15]_i_2_n_0 ),
         .D(\DI[11]_i_1_n_0 ),
-        .Q(DI[11]),
+        .Q(\DI_reg[15]_0 [11]),
         .R(\DI[15]_i_1_n_0 ));
   FDRE \DI_reg[12] 
        (.C(s_axi_aclk),
         .CE(\DI[15]_i_2_n_0 ),
         .D(\DI[12]_i_1_n_0 ),
-        .Q(DI[12]),
+        .Q(\DI_reg[15]_0 [12]),
         .R(\DI[15]_i_1_n_0 ));
   FDRE \DI_reg[13] 
        (.C(s_axi_aclk),
         .CE(\DI[15]_i_2_n_0 ),
         .D(\DI[13]_i_1_n_0 ),
-        .Q(DI[13]),
+        .Q(\DI_reg[15]_0 [13]),
         .R(\DI[15]_i_1_n_0 ));
   FDRE \DI_reg[14] 
        (.C(s_axi_aclk),
         .CE(\DI[15]_i_2_n_0 ),
         .D(\DI[14]_i_1_n_0 ),
-        .Q(DI[14]),
+        .Q(\DI_reg[15]_0 [14]),
         .R(\DI[15]_i_1_n_0 ));
   FDRE \DI_reg[15] 
        (.C(s_axi_aclk),
         .CE(\DI[15]_i_2_n_0 ),
         .D(\DI[15]_i_3_n_0 ),
-        .Q(DI[15]),
+        .Q(\DI_reg[15]_0 [15]),
         .R(\DI[15]_i_1_n_0 ));
   FDRE \DI_reg[1] 
        (.C(s_axi_aclk),
         .CE(\DI[15]_i_2_n_0 ),
         .D(\DI[1]_i_1_n_0 ),
-        .Q(DI[1]),
+        .Q(\DI_reg[15]_0 [1]),
         .R(\DI[15]_i_1_n_0 ));
   FDRE \DI_reg[2] 
        (.C(s_axi_aclk),
         .CE(\DI[15]_i_2_n_0 ),
         .D(\DI[2]_i_1_n_0 ),
-        .Q(DI[2]),
+        .Q(\DI_reg[15]_0 [2]),
         .R(\DI[15]_i_1_n_0 ));
   FDRE \DI_reg[3] 
        (.C(s_axi_aclk),
         .CE(\DI[15]_i_2_n_0 ),
         .D(\DI[3]_i_1_n_0 ),
-        .Q(DI[3]),
+        .Q(\DI_reg[15]_0 [3]),
         .R(\DI[15]_i_1_n_0 ));
   FDRE \DI_reg[4] 
        (.C(s_axi_aclk),
         .CE(\DI[15]_i_2_n_0 ),
         .D(\DI[4]_i_1_n_0 ),
-        .Q(DI[4]),
+        .Q(\DI_reg[15]_0 [4]),
         .R(\DI[15]_i_1_n_0 ));
   FDRE \DI_reg[5] 
        (.C(s_axi_aclk),
         .CE(\DI[15]_i_2_n_0 ),
         .D(\DI[5]_i_1_n_0 ),
-        .Q(DI[5]),
+        .Q(\DI_reg[15]_0 [5]),
         .R(\DI[15]_i_1_n_0 ));
   FDRE \DI_reg[6] 
        (.C(s_axi_aclk),
         .CE(\DI[15]_i_2_n_0 ),
         .D(\DI[6]_i_1_n_0 ),
-        .Q(DI[6]),
+        .Q(\DI_reg[15]_0 [6]),
         .R(\DI[15]_i_1_n_0 ));
   FDRE \DI_reg[7] 
        (.C(s_axi_aclk),
         .CE(\DI[15]_i_2_n_0 ),
         .D(\DI[7]_i_1_n_0 ),
-        .Q(DI[7]),
+        .Q(\DI_reg[15]_0 [7]),
         .R(\DI[15]_i_1_n_0 ));
   FDRE \DI_reg[8] 
        (.C(s_axi_aclk),
         .CE(\DI[15]_i_2_n_0 ),
         .D(\DI[8]_i_1_n_0 ),
-        .Q(DI[8]),
+        .Q(\DI_reg[15]_0 [8]),
         .R(\DI[15]_i_1_n_0 ));
   FDRE \DI_reg[9] 
        (.C(s_axi_aclk),
         .CE(\DI[15]_i_2_n_0 ),
         .D(\DI[9]_i_1_n_0 ),
-        .Q(DI[9]),
+        .Q(\DI_reg[15]_0 [9]),
         .R(\DI[15]_i_1_n_0 ));
   LUT4 #(
-    .INIT(16'h0010)) 
+    .INIT(16'h0100)) 
     DWE_i_1
-       (.I0(current_state[0]),
-        .I1(current_state[2]),
-        .I2(current_state[3]),
-        .I3(current_state[1]),
+       (.I0(current_state[2]),
+        .I1(current_state[0]),
+        .I2(current_state[1]),
+        .I3(current_state[3]),
         .O(next_dwe));
   FDRE DWE_reg
        (.C(s_axi_aclk),
@@ -17904,13 +17918,13 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .Q(reset),
         .R(1'b0));
   LUT5 #(
-    .INIT(32'h00000020)) 
+    .INIT(32'h00001000)) 
     SRDY_i_1
-       (.I0(current_state[1]),
-        .I1(current_state[2]),
+       (.I0(current_state[2]),
+        .I1(current_state[0]),
         .I2(SRDY_reg_0),
-        .I3(current_state[3]),
-        .I4(current_state[0]),
+        .I3(current_state[1]),
+        .I4(current_state[3]),
         .O(next_srdy));
   FDRE SRDY_reg
        (.C(s_axi_aclk),
@@ -17919,12 +17933,12 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .Q(SRDY),
         .R(1'b0));
   LUT6 #(
-    .INIT(64'hFDFFFFFFFDFF0000)) 
+    .INIT(64'hFFBFFFFFFFBF0000)) 
     \current_state[0]_i_1 
-       (.I0(drdy),
-        .I1(current_state[2]),
-        .I2(current_state[1]),
-        .I3(current_state[0]),
+       (.I0(current_state[1]),
+        .I1(drdy),
+        .I2(current_state[0]),
+        .I3(current_state[2]),
         .I4(current_state[3]),
         .I5(\current_state[0]_i_2_n_0 ),
         .O(next_state[0]));
@@ -17938,62 +17952,63 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(current_state[1]),
         .I5(current_state[0]),
         .O(\current_state[0]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h0040FFFF00400000)) 
+    \current_state[1]_i_1 
+       (.I0(current_state[1]),
+        .I1(\current_state[1]_i_2_n_0 ),
+        .I2(current_state[0]),
+        .I3(current_state[2]),
+        .I4(current_state[3]),
+        .I5(\current_state[1]_i_3_n_0 ),
+        .O(next_state[1]));
+  LUT6 #(
+    .INIT(64'h0000000100000000)) 
+    \current_state[1]_i_2 
+       (.I0(state_count[1]),
+        .I1(state_count[3]),
+        .I2(state_count[2]),
+        .I3(state_count[0]),
+        .I4(state_count[4]),
+        .I5(drdy),
+        .O(\current_state[1]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'h03BBFF00)) 
-    \current_state[1]_i_2 
+    \current_state[1]_i_3 
        (.I0(drdy),
         .I1(current_state[2]),
         .I2(SEN),
         .I3(current_state[1]),
         .I4(current_state[0]),
-        .O(\current_state[1]_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'h00000020)) 
-    \current_state[1]_i_3 
-       (.I0(drdy),
-        .I1(\current_state[1]_i_4_n_0 ),
-        .I2(current_state[0]),
-        .I3(current_state[2]),
-        .I4(current_state[1]),
         .O(\current_state[1]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair54" *) 
-  LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
-    \current_state[1]_i_4 
-       (.I0(state_count[1]),
-        .I1(state_count[4]),
-        .I2(state_count[0]),
-        .I3(state_count[2]),
-        .I4(state_count[3]),
-        .O(\current_state[1]_i_4_n_0 ));
   LUT6 #(
-    .INIT(64'h0338003830303030)) 
+    .INIT(64'h0330003038303830)) 
     \current_state[2]_i_1 
        (.I0(\current_state[2]_i_2_n_0 ),
         .I1(current_state[3]),
         .I2(current_state[2]),
-        .I3(current_state[1]),
+        .I3(current_state[0]),
         .I4(SEN),
-        .I5(current_state[0]),
+        .I5(current_state[1]),
         .O(next_state[2]));
   LUT6 #(
-    .INIT(64'hAAAAAAAAAAAAAAA8)) 
+    .INIT(64'hFFFFFFFE00000000)) 
     \current_state[2]_i_2 
-       (.I0(drdy),
+       (.I0(state_count[1]),
         .I1(state_count[3]),
-        .I2(state_count[2]),
-        .I3(state_count[0]),
+        .I2(state_count[0]),
+        .I3(state_count[2]),
         .I4(state_count[4]),
-        .I5(state_count[1]),
+        .I5(drdy),
         .O(\current_state[2]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'h3000040C)) 
-    \current_state[3]_i_1 
+    .INIT(32'h3000004C)) 
+    \current_state[3]_i_2 
        (.I0(drdy),
         .I1(current_state[3]),
-        .I2(current_state[2]),
-        .I3(current_state[0]),
-        .I4(current_state[1]),
+        .I2(current_state[0]),
+        .I3(current_state[1]),
+        .I4(current_state[2]),
         .O(next_state[3]));
   (* DONT_TOUCH *) 
   (* KEEP = "yes" *) 
@@ -18015,11 +18030,6 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .D(next_state[1]),
         .Q(current_state[1]),
         .R(SR));
-  MUXF7 \current_state_reg[1]_i_1 
-       (.I0(\current_state[1]_i_2_n_0 ),
-        .I1(\current_state[1]_i_3_n_0 ),
-        .O(next_state[1]),
-        .S(current_state[3]));
   (* DONT_TOUCH *) 
   (* KEEP = "yes" *) 
   FDRE #(
@@ -18730,7 +18740,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(Q[14]),
         .I2(Q[15]),
         .O(\ram[36][7]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair85" *) 
+  (* SOFT_HLUTNM = "soft_lutpair82" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[37][0]_i_1 
@@ -18738,7 +18748,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(Q[8]),
         .I2(\ram[39][2]_i_2_n_0 ),
         .O(p_15_in[0]));
-  (* SOFT_HLUTNM = "soft_lutpair73" *) 
+  (* SOFT_HLUTNM = "soft_lutpair79" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[37][1]_i_1 
@@ -18746,7 +18756,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(Q[8]),
         .I2(\ram[39][3]_i_2_n_0 ),
         .O(p_15_in[1]));
-  (* SOFT_HLUTNM = "soft_lutpair70" *) 
+  (* SOFT_HLUTNM = "soft_lutpair71" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[37][2]_i_1 
@@ -18754,7 +18764,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(Q[8]),
         .I2(\ram[39][4]_i_2_n_0 ),
         .O(p_15_in[2]));
-  (* SOFT_HLUTNM = "soft_lutpair82" *) 
+  (* SOFT_HLUTNM = "soft_lutpair87" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[37][3]_i_1 
@@ -18762,7 +18772,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(Q[8]),
         .I2(\ram[39][5]_i_2_n_0 ),
         .O(p_15_in[3]));
-  (* SOFT_HLUTNM = "soft_lutpair88" *) 
+  (* SOFT_HLUTNM = "soft_lutpair81" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[37][4]_i_1 
@@ -18770,7 +18780,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(Q[8]),
         .I2(\ram[39][6]_i_2_n_0 ),
         .O(p_15_in[4]));
-  (* SOFT_HLUTNM = "soft_lutpair72" *) 
+  (* SOFT_HLUTNM = "soft_lutpair78" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[37][5]_i_1 
@@ -18778,7 +18788,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(Q[8]),
         .I2(\ram[39][7]_i_2_n_0 ),
         .O(p_15_in[5]));
-  (* SOFT_HLUTNM = "soft_lutpair93" *) 
+  (* SOFT_HLUTNM = "soft_lutpair89" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[37][6]_i_1 
@@ -18786,7 +18796,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(Q[8]),
         .I2(\ram[39][8]_i_2_n_0 ),
         .O(p_15_in[6]));
-  (* SOFT_HLUTNM = "soft_lutpair88" *) 
+  (* SOFT_HLUTNM = "soft_lutpair75" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[37][7]_i_1 
@@ -18794,7 +18804,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(Q[8]),
         .I2(\ram[39][9]_i_2_n_0 ),
         .O(p_15_in[7]));
-  (* SOFT_HLUTNM = "soft_lutpair85" *) 
+  (* SOFT_HLUTNM = "soft_lutpair82" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[37][8]_i_1 
@@ -18812,7 +18822,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_3_n_6 ),
         .I5(\ram[39][2]_i_5_n_0 ),
         .O(\ram[37][8]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair87" *) 
+  (* SOFT_HLUTNM = "soft_lutpair79" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[37][9]_i_1 
@@ -18847,7 +18857,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(\ram_reg[39][14]_i_3_n_6 ),
         .I2(\ram[39][6]_i_11_n_0 ),
         .O(\ram[38][0]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  (* SOFT_HLUTNM = "soft_lutpair93" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[38][0]_i_3 
@@ -18865,7 +18875,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_21_n_7 ),
         .I5(\ram_reg[39][14]_i_3_n_5 ),
         .O(\ram[38][0]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair70" *) 
+  (* SOFT_HLUTNM = "soft_lutpair72" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[38][10]_i_1 
@@ -18883,7 +18893,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_3_n_6 ),
         .I5(\ram[39][4]_i_5_n_0 ),
         .O(\ram[38][10]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair82" *) 
+  (* SOFT_HLUTNM = "soft_lutpair83" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[38][11]_i_1 
@@ -18910,7 +18920,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(Q[8]),
         .I4(\ram[38][12]_i_4_n_0 ),
         .O(p_16_in[12]));
-  (* SOFT_HLUTNM = "soft_lutpair92" *) 
+  (* SOFT_HLUTNM = "soft_lutpair91" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[38][12]_i_2 
@@ -18918,7 +18928,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(\ram_reg[39][14]_i_3_n_6 ),
         .I2(\ram[39][6]_i_6_n_0 ),
         .O(\ram[38][12]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair69" *) 
+  (* SOFT_HLUTNM = "soft_lutpair90" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[38][12]_i_3 
@@ -18965,6 +18975,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(Q[8]),
         .I4(\ram[38][13]_i_4_n_0 ),
         .O(p_16_in[13]));
+  (* SOFT_HLUTNM = "soft_lutpair93" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[38][13]_i_2 
@@ -18972,7 +18983,6 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(\ram_reg[39][14]_i_3_n_6 ),
         .I2(\ram[39][7]_i_6_n_0 ),
         .O(\ram[38][13]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair79" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[38][13]_i_3 
@@ -19019,7 +19029,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(Q[8]),
         .I4(\ram[38][14]_i_4_n_0 ),
         .O(p_16_in[14]));
-  (* SOFT_HLUTNM = "soft_lutpair91" *) 
+  (* SOFT_HLUTNM = "soft_lutpair90" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[38][14]_i_2 
@@ -19083,7 +19093,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(\ram_reg[39][14]_i_3_n_5 ),
         .I4(\ram[39][10]_i_7_n_0 ),
         .O(\ram[38][1]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair69" *) 
+  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[38][1]_i_3 
@@ -19091,7 +19101,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(\ram_reg[39][14]_i_3_n_6 ),
         .I2(\ram[38][1]_i_5_n_0 ),
         .O(\ram[38][1]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair58" *) 
+  (* SOFT_HLUTNM = "soft_lutpair56" *) 
   LUT5 #(
     .INIT(32'h01024B74)) 
     \ram[38][1]_i_4 
@@ -19111,7 +19121,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_21_n_7 ),
         .I5(\ram_reg[39][14]_i_21_n_4 ),
         .O(\ram[38][1]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair90" *) 
+  (* SOFT_HLUTNM = "soft_lutpair88" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[38][2]_i_1 
@@ -19166,7 +19176,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(\ram_reg[39][14]_i_3_n_5 ),
         .I4(\ram[38][3]_i_7_n_0 ),
         .O(\ram[38][3]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair58" *) 
+  (* SOFT_HLUTNM = "soft_lutpair57" *) 
   LUT5 #(
     .INIT(32'h01024BF4)) 
     \ram[38][3]_i_4 
@@ -19176,7 +19186,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(\ram_reg[39][14]_i_21_n_7 ),
         .I4(\ram_reg[39][14]_i_21_n_4 ),
         .O(\ram[38][3]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair57" *) 
+  (* SOFT_HLUTNM = "soft_lutpair56" *) 
   LUT5 #(
     .INIT(32'h0001A379)) 
     \ram[38][3]_i_5 
@@ -19186,7 +19196,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(\ram_reg[39][14]_i_3_n_4 ),
         .I4(\ram_reg[39][14]_i_21_n_4 ),
         .O(\ram[38][3]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair56" *) 
+  (* SOFT_HLUTNM = "soft_lutpair59" *) 
   LUT5 #(
     .INIT(32'h02D8013B)) 
     \ram[38][3]_i_6 
@@ -19196,7 +19206,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(\ram_reg[39][14]_i_21_n_4 ),
         .I4(\ram_reg[39][14]_i_21_n_7 ),
         .O(\ram[38][3]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair59" *) 
+  (* SOFT_HLUTNM = "soft_lutpair57" *) 
   LUT5 #(
     .INIT(32'h03024BF4)) 
     \ram[38][3]_i_7 
@@ -19215,7 +19225,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(\ram_reg[39][14]_i_3_n_7 ),
         .I4(\ram[38][4]_i_3_n_0 ),
         .O(p_16_in[4]));
-  (* SOFT_HLUTNM = "soft_lutpair86" *) 
+  (* SOFT_HLUTNM = "soft_lutpair84" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[38][4]_i_2 
@@ -19223,7 +19233,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(\ram_reg[39][14]_i_3_n_6 ),
         .I2(\ram[39][2]_i_4_n_0 ),
         .O(\ram[38][4]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair65" *) 
+  (* SOFT_HLUTNM = "soft_lutpair84" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[38][4]_i_3 
@@ -19259,7 +19269,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(\ram_reg[39][14]_i_3_n_5 ),
         .I4(\ram[38][5]_i_5_n_0 ),
         .O(\ram[38][5]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair71" *) 
+  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[38][5]_i_3 
@@ -19267,7 +19277,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(\ram_reg[39][14]_i_3_n_6 ),
         .I2(\ram[38][5]_i_6_n_0 ),
         .O(\ram[38][5]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair57" *) 
+  (* SOFT_HLUTNM = "soft_lutpair58" *) 
   LUT5 #(
     .INIT(32'h06023D16)) 
     \ram[38][5]_i_4 
@@ -19277,7 +19287,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(\ram_reg[39][14]_i_21_n_7 ),
         .I4(\ram_reg[39][14]_i_21_n_5 ),
         .O(\ram[38][5]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair53" *) 
+  (* SOFT_HLUTNM = "soft_lutpair54" *) 
   LUT5 #(
     .INIT(32'h0429063D)) 
     \ram[38][5]_i_5 
@@ -19306,7 +19316,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(\ram_reg[39][14]_i_3_n_7 ),
         .I4(\ram[38][6]_i_3_n_0 ),
         .O(p_16_in[6]));
-  (* SOFT_HLUTNM = "soft_lutpair68" *) 
+  (* SOFT_HLUTNM = "soft_lutpair74" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[38][6]_i_2 
@@ -19314,7 +19324,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(\ram_reg[39][14]_i_3_n_6 ),
         .I2(\ram[39][4]_i_4_n_0 ),
         .O(\ram[38][6]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair65" *) 
+  (* SOFT_HLUTNM = "soft_lutpair73" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[38][6]_i_3 
@@ -19358,7 +19368,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(\ram_reg[39][14]_i_3_n_5 ),
         .I4(\ram[38][7]_i_5_n_0 ),
         .O(\ram[38][7]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair53" *) 
+  (* SOFT_HLUTNM = "soft_lutpair54" *) 
   LUT5 #(
     .INIT(32'h54351167)) 
     \ram[38][7]_i_4 
@@ -19378,7 +19388,6 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(\ram_reg[39][14]_i_21_n_4 ),
         .I4(\ram_reg[39][14]_i_21_n_6 ),
         .O(\ram[38][7]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair81" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[38][8]_i_1 
@@ -19406,7 +19415,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_21_n_4 ),
         .I5(\ram_reg[39][14]_i_21_n_7 ),
         .O(\ram[38][8]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair64" *) 
+  (* SOFT_HLUTNM = "soft_lutpair77" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[38][9]_i_1 
@@ -19434,7 +19443,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_21_n_6 ),
         .I5(\ram_reg[39][14]_i_21_n_5 ),
         .O(\ram[38][9]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair90" *) 
+  (* SOFT_HLUTNM = "soft_lutpair88" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[39][0]_i_1 
@@ -19511,7 +19520,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_21_n_5 ),
         .I5(\ram_reg[39][14]_i_21_n_6 ),
         .O(\ram[39][10]_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair68" *) 
+  (* SOFT_HLUTNM = "soft_lutpair74" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[39][10]_i_2 
@@ -19558,7 +19567,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_21_n_5 ),
         .I5(\ram_reg[39][14]_i_21_n_7 ),
         .O(\ram[39][10]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair56" *) 
+  (* SOFT_HLUTNM = "soft_lutpair55" *) 
   LUT5 #(
     .INIT(32'h2132101F)) 
     \ram[39][10]_i_7 
@@ -19568,7 +19577,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(\ram_reg[39][14]_i_21_n_5 ),
         .I4(\ram_reg[39][14]_i_21_n_6 ),
         .O(\ram[39][10]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair55" *) 
+  (* SOFT_HLUTNM = "soft_lutpair59" *) 
   LUT5 #(
     .INIT(32'h0A0305C9)) 
     \ram[39][10]_i_8 
@@ -19627,7 +19636,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_21_n_5 ),
         .I5(\ram_reg[39][14]_i_21_n_7 ),
         .O(\ram[39][11]_i_12_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair71" *) 
+  (* SOFT_HLUTNM = "soft_lutpair85" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[39][11]_i_2 
@@ -19635,7 +19644,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(\ram_reg[39][14]_i_3_n_6 ),
         .I2(\ram[39][11]_i_6_n_0 ),
         .O(\ram[39][11]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair89" *) 
+  (* SOFT_HLUTNM = "soft_lutpair86" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[39][11]_i_3 
@@ -19742,7 +19751,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_21_n_5 ),
         .I5(\ram_reg[39][14]_i_3_n_4 ),
         .O(\ram[39][12]_i_12_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair79" *) 
+  (* SOFT_HLUTNM = "soft_lutpair80" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[39][12]_i_2 
@@ -19750,7 +19759,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(\ram_reg[39][14]_i_3_n_6 ),
         .I2(\ram[39][12]_i_6_n_0 ),
         .O(\ram[39][12]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  (* SOFT_HLUTNM = "soft_lutpair80" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[39][12]_i_3 
@@ -19857,7 +19866,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_21_n_5 ),
         .I5(\ram_reg[39][14]_i_21_n_7 ),
         .O(\ram[39][13]_i_12_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair67" *) 
+  (* SOFT_HLUTNM = "soft_lutpair85" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[39][13]_i_2 
@@ -19865,7 +19874,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(\ram_reg[39][14]_i_3_n_6 ),
         .I2(\ram[39][13]_i_6_n_0 ),
         .O(\ram[39][13]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair67" *) 
+  (* SOFT_HLUTNM = "soft_lutpair73" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[39][13]_i_3 
@@ -20089,7 +20098,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(Q[8]),
         .I5(Q[10]),
         .O(\ram[39][14]_i_25_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair89" *) 
+  (* SOFT_HLUTNM = "soft_lutpair92" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[39][14]_i_4 
@@ -20117,7 +20126,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_21_n_7 ),
         .I5(\ram_reg[39][14]_i_21_n_6 ),
         .O(\ram[39][14]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair59" *) 
+  (* SOFT_HLUTNM = "soft_lutpair58" *) 
   LUT5 #(
     .INIT(32'h0B0E0F27)) 
     \ram[39][14]_i_7 
@@ -20146,7 +20155,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(Q[9]),
         .I4(Q[12]),
         .O(\ram[39][14]_i_9_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair66" *) 
+  (* SOFT_HLUTNM = "soft_lutpair72" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[39][1]_i_1 
@@ -20174,6 +20183,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_21_n_4 ),
         .I5(\ram_reg[39][14]_i_21_n_7 ),
         .O(\ram[39][1]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair83" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[39][2]_i_1 
@@ -20231,7 +20241,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_21_n_4 ),
         .I5(\ram_reg[39][14]_i_21_n_7 ),
         .O(\ram[39][2]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair73" *) 
+  (* SOFT_HLUTNM = "soft_lutpair78" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[39][3]_i_1 
@@ -20289,7 +20299,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_21_n_4 ),
         .I5(\ram_reg[39][14]_i_3_n_4 ),
         .O(\ram[39][3]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair87" *) 
+  (* SOFT_HLUTNM = "soft_lutpair71" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[39][4]_i_1 
@@ -20347,7 +20357,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_21_n_6 ),
         .I5(\ram_reg[39][14]_i_21_n_5 ),
         .O(\ram[39][4]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair83" *) 
+  (* SOFT_HLUTNM = "soft_lutpair87" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[39][5]_i_1 
@@ -20513,7 +20523,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_21_n_5 ),
         .I5(\ram_reg[39][14]_i_21_n_6 ),
         .O(\ram[39][6]_i_9_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair64" *) 
+  (* SOFT_HLUTNM = "soft_lutpair77" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[39][7]_i_1 
@@ -20621,7 +20631,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_21_n_5 ),
         .I5(\ram_reg[39][14]_i_21_n_6 ),
         .O(\ram[39][7]_i_9_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair93" *) 
+  (* SOFT_HLUTNM = "soft_lutpair89" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[39][8]_i_1 
@@ -20719,7 +20729,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_21_n_6 ),
         .I5(\ram_reg[39][14]_i_3_n_4 ),
         .O(\ram[39][8]_i_9_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair66" *) 
+  (* SOFT_HLUTNM = "soft_lutpair75" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[39][9]_i_1 
@@ -20777,7 +20787,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_reg[39][14]_i_3_n_4 ),
         .I5(\ram_reg[39][14]_i_21_n_4 ),
         .O(\ram[39][9]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair80" *) 
+  (* SOFT_HLUTNM = "soft_lutpair66" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[40][11]_i_1 
@@ -20794,7 +20804,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(Q[8]),
         .I4(\ram[40][12]_i_4_n_0 ),
         .O(p_18_in[12]));
-  (* SOFT_HLUTNM = "soft_lutpair75" *) 
+  (* SOFT_HLUTNM = "soft_lutpair70" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[40][12]_i_2 
@@ -20802,7 +20812,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(\ram_reg[41][15]_i_8_n_6 ),
         .I2(\ram[41][12]_i_6_n_0 ),
         .O(\ram[40][12]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  (* SOFT_HLUTNM = "soft_lutpair70" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[40][12]_i_3 
@@ -20840,7 +20850,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(O[2]),
         .I5(O[1]),
         .O(\ram[40][12]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+  (* SOFT_HLUTNM = "soft_lutpair52" *) 
   LUT5 #(
     .INIT(32'hE2FFE200)) 
     \ram[40][15]_i_1 
@@ -20850,7 +20860,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(Q[8]),
         .I4(\ram[40][15]_i_4_n_0 ),
         .O(p_18_in[15]));
-  (* SOFT_HLUTNM = "soft_lutpair75" *) 
+  (* SOFT_HLUTNM = "soft_lutpair64" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[40][15]_i_2 
@@ -20858,7 +20868,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(\ram_reg[41][15]_i_8_n_6 ),
         .I2(\ram[41][15]_i_7_n_0 ),
         .O(\ram[40][15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair77" *) 
+  (* SOFT_HLUTNM = "soft_lutpair64" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[40][15]_i_3 
@@ -20896,7 +20906,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(O[3]),
         .I5(O[1]),
         .O(\ram[40][15]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair83" *) 
+  (* SOFT_HLUTNM = "soft_lutpair68" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[40][8]_i_1 
@@ -20904,7 +20914,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(Q[8]),
         .I2(\ram[41][12]_i_2_n_0 ),
         .O(p_18_in[8]));
-  (* SOFT_HLUTNM = "soft_lutpair72" *) 
+  (* SOFT_HLUTNM = "soft_lutpair65" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[41][11]_i_1 
@@ -20932,7 +20942,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(O[2]),
         .I5(O[1]),
         .O(\ram[41][11]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair76" *) 
+  (* SOFT_HLUTNM = "soft_lutpair68" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[41][12]_i_1 
@@ -21040,7 +21050,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(O[2]),
         .I5(O[0]),
         .O(\ram[41][12]_i_9_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair80" *) 
+  (* SOFT_HLUTNM = "soft_lutpair65" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[41][15]_i_1 
@@ -21154,7 +21164,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(Q[10]),
         .I4(Q[11]),
         .I5(Q[12]),
-        .O(\ram_clk_config_reg[0][14] [2]));
+        .O(DI[2]));
   LUT6 #(
     .INIT(64'hAAAAAAAAAAAAAA9A)) 
     \ram[41][15]_i_22 
@@ -21164,7 +21174,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(Q[10]),
         .I4(Q[11]),
         .I5(Q[12]),
-        .O(\ram_clk_config_reg[0][14] [1]));
+        .O(DI[1]));
   LUT6 #(
     .INIT(64'h00000001FFFFFFFE)) 
     \ram[41][15]_i_23 
@@ -21174,8 +21184,8 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(Q[8]),
         .I4(Q[9]),
         .I5(Q[13]),
-        .O(\ram_clk_config_reg[0][14] [0]));
-  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+        .O(DI[0]));
+  (* SOFT_HLUTNM = "soft_lutpair53" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \ram[41][15]_i_28 
@@ -21212,7 +21222,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(O[2]),
         .I5(O[3]),
         .O(\ram[41][15]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  (* SOFT_HLUTNM = "soft_lutpair52" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \ram[41][15]_i_6 
@@ -21248,7 +21258,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(Q[9]),
         .I4(\ram[41][4]_i_3_n_0 ),
         .O(p_19_in[4]));
-  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  (* SOFT_HLUTNM = "soft_lutpair69" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[41][4]_i_2 
@@ -21256,7 +21266,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(\ram_reg[41][15]_i_8_n_6 ),
         .I2(\ram[41][12]_i_11_n_0 ),
         .O(\ram[41][4]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair78" *) 
+  (* SOFT_HLUTNM = "soft_lutpair69" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[41][4]_i_3 
@@ -21274,7 +21284,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(O[2]),
         .I5(O[1]),
         .O(\ram[41][4]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  (* SOFT_HLUTNM = "soft_lutpair53" *) 
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \ram[41][7]_i_1 
@@ -21284,7 +21294,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(Q[9]),
         .I4(\ram[41][7]_i_3_n_0 ),
         .O(p_19_in[7]));
-  (* SOFT_HLUTNM = "soft_lutpair77" *) 
+  (* SOFT_HLUTNM = "soft_lutpair67" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[41][7]_i_2 
@@ -21292,7 +21302,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(\ram_reg[41][15]_i_8_n_6 ),
         .I2(\ram[41][15]_i_13_n_0 ),
         .O(\ram[41][7]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair78" *) 
+  (* SOFT_HLUTNM = "soft_lutpair67" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[41][7]_i_3 
@@ -21310,7 +21320,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(O[2]),
         .I5(O[3]),
         .O(\ram[41][7]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair76" *) 
+  (* SOFT_HLUTNM = "soft_lutpair66" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \ram[41][8]_i_1 
@@ -21339,82 +21349,82 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I5(O[1]),
         .O(\ram[41][8]_i_3_n_0 ));
   LUT4 #(
-    .INIT(16'h08A8)) 
+    .INIT(16'h7400)) 
     \ram_addr[0]_i_1 
-       (.I0(current_state[1]),
-        .I1(\ram_addr_reg[4]_0 ),
-        .I2(current_state[2]),
-        .I3(ram_addr[0]),
+       (.I0(ram_addr[0]),
+        .I1(current_state[2]),
+        .I2(\ram_addr_reg[2]_0 ),
+        .I3(current_state[1]),
         .O(next_ram_addr[0]));
   LUT3 #(
-    .INIT(8'h28)) 
+    .INIT(8'h60)) 
     \ram_addr[1]_i_1 
-       (.I0(current_state[2]),
-        .I1(ram_addr[1]),
-        .I2(ram_addr[0]),
+       (.I0(ram_addr[1]),
+        .I1(ram_addr[0]),
+        .I2(current_state[2]),
         .O(next_ram_addr[1]));
   LUT6 #(
-    .INIT(64'h08A8A808A808A808)) 
+    .INIT(64'h6AFF6A0000000000)) 
     \ram_addr[2]_i_1 
-       (.I0(current_state[1]),
-        .I1(\ram_addr_reg[4]_0 ),
-        .I2(current_state[2]),
-        .I3(ram_addr[2]),
-        .I4(ram_addr[0]),
-        .I5(ram_addr[1]),
+       (.I0(ram_addr[2]),
+        .I1(ram_addr[1]),
+        .I2(ram_addr[0]),
+        .I3(current_state[2]),
+        .I4(\ram_addr_reg[2]_0 ),
+        .I5(current_state[1]),
         .O(next_ram_addr[2]));
   LUT5 #(
-    .INIT(32'h28888888)) 
+    .INIT(32'h6AAA0000)) 
     \ram_addr[3]_i_1 
-       (.I0(current_state[2]),
-        .I1(ram_addr[3]),
-        .I2(ram_addr[2]),
-        .I3(ram_addr[1]),
-        .I4(ram_addr[0]),
-        .O(next_ram_addr[3]));
-  LUT5 #(
-    .INIT(32'h08A8A808)) 
-    \ram_addr[4]_i_1 
-       (.I0(current_state[1]),
-        .I1(\ram_addr_reg[4]_0 ),
-        .I2(current_state[2]),
-        .I3(ram_addr[4]),
-        .I4(\ram_addr[4]_i_2_n_0 ),
-        .O(next_ram_addr[4]));
-  (* SOFT_HLUTNM = "soft_lutpair61" *) 
-  LUT4 #(
-    .INIT(16'h8000)) 
-    \ram_addr[4]_i_2 
        (.I0(ram_addr[3]),
         .I1(ram_addr[0]),
         .I2(ram_addr[1]),
         .I3(ram_addr[2]),
+        .I4(current_state[2]),
+        .O(next_ram_addr[3]));
+  LUT5 #(
+    .INIT(32'h6F600000)) 
+    \ram_addr[4]_i_1 
+       (.I0(ram_addr[4]),
+        .I1(\ram_addr[4]_i_2_n_0 ),
+        .I2(current_state[2]),
+        .I3(\ram_addr_reg[2]_0 ),
+        .I4(current_state[1]),
+        .O(next_ram_addr[4]));
+  (* SOFT_HLUTNM = "soft_lutpair51" *) 
+  LUT4 #(
+    .INIT(16'h8000)) 
+    \ram_addr[4]_i_2 
+       (.I0(ram_addr[2]),
+        .I1(ram_addr[1]),
+        .I2(ram_addr[0]),
+        .I3(ram_addr[3]),
         .O(\ram_addr[4]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'h40444004)) 
+    .INIT(32'h0000A282)) 
     \ram_addr[5]_i_1 
-       (.I0(current_state[3]),
-        .I1(current_state[0]),
+       (.I0(current_state[0]),
+        .I1(current_state[2]),
         .I2(current_state[1]),
-        .I3(current_state[2]),
-        .I4(SEN),
+        .I3(SEN),
+        .I4(current_state[3]),
         .O(\ram_addr[5]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h2888888888888888)) 
+    .INIT(64'h6AAAAAAA00000000)) 
     \ram_addr[5]_i_2 
-       (.I0(current_state[2]),
-        .I1(ram_addr[5]),
-        .I2(ram_addr[4]),
+       (.I0(ram_addr[5]),
+        .I1(ram_addr[3]),
+        .I2(\ram_addr[5]_i_3_n_0 ),
         .I3(ram_addr[2]),
-        .I4(\ram_addr[5]_i_3_n_0 ),
-        .I5(ram_addr[3]),
+        .I4(ram_addr[4]),
+        .I5(current_state[2]),
         .O(next_ram_addr[5]));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \ram_addr[5]_i_3 
-       (.I0(ram_addr[0]),
-        .I1(ram_addr[1]),
+       (.I0(ram_addr[1]),
+        .I1(ram_addr[0]),
         .O(\ram_addr[5]_i_3_n_0 ));
   FDRE \ram_addr_reg[0] 
        (.C(s_axi_aclk),
@@ -21463,16 +21473,16 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I5(\ram_do[0]_i_4_n_0 ),
         .O(ram[0]));
   LUT6 #(
-    .INIT(64'h8888BBBBB8BB88BB)) 
+    .INIT(64'h8888B8BBBBBB88BB)) 
     \ram_do[0]_i_3 
        (.I0(\ram_do[0]_i_7_n_0 ),
         .I1(ram_addr[3]),
         .I2(\ram_reg[22]_44 [0]),
         .I3(ram_addr[2]),
-        .I4(ram_addr[1]),
-        .I5(ram_addr[0]),
+        .I4(ram_addr[0]),
+        .I5(ram_addr[1]),
         .O(\ram_do[0]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair62" *) 
+  (* SOFT_HLUTNM = "soft_lutpair63" *) 
   LUT4 #(
     .INIT(16'h7071)) 
     \ram_do[0]_i_4 
@@ -21528,12 +21538,12 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I5(\ram_do[14]_i_4_n_0 ),
         .O(ram[10]));
   LUT6 #(
-    .INIT(64'hA808FFFFA8080000)) 
+    .INIT(64'hE200FFFFE2000000)) 
     \ram_do[10]_i_2 
-       (.I0(ram_addr[1]),
-        .I1(\ram_reg[38]_28 [10]),
-        .I2(ram_addr[0]),
-        .I3(\ram_reg[39]_27 [10]),
+       (.I0(\ram_reg[38]_28 [10]),
+        .I1(ram_addr[0]),
+        .I2(\ram_reg[39]_27 [10]),
+        .I3(ram_addr[1]),
         .I4(ram_addr[2]),
         .I5(\ram_do[10]_i_4_n_0 ),
         .O(\ram_do[10]_i_2_n_0 ));
@@ -21547,6 +21557,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(ram_addr[1]),
         .I5(ram_addr[0]),
         .O(\ram_do[10]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT5 #(
     .INIT(32'hA0A0CFC0)) 
     \ram_do[10]_i_4 
@@ -21594,20 +21605,20 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(ram_addr[1]),
         .I5(ram_addr[0]),
         .O(\ram_do[11]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \ram_do[11]_i_4 
-       (.I0(ram_addr[2]),
-        .I1(ram_addr[1]),
+       (.I0(ram_addr[1]),
+        .I1(ram_addr[2]),
         .O(\ram_do[11]_i_4_n_0 ));
   LUT6 #(
-    .INIT(64'hA808FFFFA8080000)) 
+    .INIT(64'hE200FFFFE2000000)) 
     \ram_do[11]_i_5 
-       (.I0(ram_addr[1]),
-        .I1(\ram_reg[38]_28 [11]),
-        .I2(ram_addr[0]),
-        .I3(\ram_reg[39]_27 [11]),
+       (.I0(\ram_reg[38]_28 [11]),
+        .I1(ram_addr[0]),
+        .I2(\ram_reg[39]_27 [11]),
+        .I3(ram_addr[1]),
         .I4(ram_addr[2]),
         .I5(\ram_do[11]_i_8_n_0 ),
         .O(\ram_do[11]_i_5_n_0 ));
@@ -21630,6 +21641,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(ram_addr[2]),
         .I5(\ram_do[11]_i_9_n_0 ),
         .O(\ram_do[11]_i_7_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
   LUT5 #(
     .INIT(32'hA0A0CFC0)) 
     \ram_do[11]_i_8 
@@ -21658,16 +21670,15 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I5(\ram_do[12]_i_4_n_0 ),
         .O(ram[12]));
   LUT6 #(
-    .INIT(64'hC000AF00C000A000)) 
+    .INIT(64'hC0AF0000C0A00000)) 
     \ram_do[12]_i_2 
        (.I0(\ram_reg[38]_28 [12]),
         .I1(\ram_reg[39]_27 [12]),
         .I2(ram_addr[2]),
-        .I3(ram_addr[1]),
-        .I4(ram_addr[0]),
+        .I3(ram_addr[0]),
+        .I4(ram_addr[1]),
         .I5(\ram_reg[34]_32 [12]),
         .O(\ram_do[12]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT5 #(
     .INIT(32'h00004540)) 
     \ram_do[12]_i_3 
@@ -21677,14 +21688,14 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(\ram_reg[40]_26 [12]),
         .I4(ram_addr[2]),
         .O(\ram_do[12]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair51" *) 
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
   LUT5 #(
-    .INIT(32'h00002A29)) 
+    .INIT(32'h000022A9)) 
     \ram_do[12]_i_4 
        (.I0(ram_addr[4]),
         .I1(ram_addr[2]),
-        .I2(ram_addr[1]),
-        .I3(ram_addr[0]),
+        .I2(ram_addr[0]),
+        .I3(ram_addr[1]),
         .I4(ram_addr[3]),
         .O(\ram_do[12]_i_4_n_0 ));
   LUT5 #(
@@ -21697,23 +21708,23 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_do[13]_i_3_n_0 ),
         .O(ram[13]));
   LUT6 #(
-    .INIT(64'hC000AF00C000A000)) 
+    .INIT(64'hC0AF0000C0A00000)) 
     \ram_do[13]_i_2 
        (.I0(\ram_reg[38]_28 [13]),
         .I1(\ram_reg[39]_27 [13]),
         .I2(ram_addr[2]),
-        .I3(ram_addr[1]),
-        .I4(ram_addr[0]),
+        .I3(ram_addr[0]),
+        .I4(ram_addr[1]),
         .I5(\ram_reg[34]_32 [13]),
         .O(\ram_do[13]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair51" *) 
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
   LUT5 #(
-    .INIT(32'h00600221)) 
+    .INIT(32'h06000221)) 
     \ram_do[13]_i_3 
        (.I0(ram_addr[4]),
         .I1(ram_addr[3]),
-        .I2(ram_addr[0]),
-        .I3(ram_addr[1]),
+        .I2(ram_addr[1]),
+        .I3(ram_addr[0]),
         .I4(ram_addr[2]),
         .O(\ram_do[13]_i_3_n_0 ));
   LUT5 #(
@@ -21728,14 +21739,14 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
   LUT6 #(
     .INIT(64'h00000000A8080000)) 
     \ram_do[14]_i_2 
-       (.I0(ram_addr[1]),
+       (.I0(ram_addr[2]),
         .I1(\ram_reg[38]_28 [14]),
         .I2(ram_addr[0]),
         .I3(\ram_reg[39]_27 [14]),
-        .I4(ram_addr[2]),
+        .I4(ram_addr[1]),
         .I5(ram_addr[3]),
         .O(\ram_do[14]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair52" *) 
+  (* SOFT_HLUTNM = "soft_lutpair61" *) 
   LUT4 #(
     .INIT(16'h0026)) 
     \ram_do[14]_i_3 
@@ -21749,8 +21760,8 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
     .INIT(16'h0001)) 
     \ram_do[14]_i_4 
        (.I0(ram_addr[2]),
-        .I1(ram_addr[1]),
-        .I2(ram_addr[0]),
+        .I1(ram_addr[0]),
+        .I2(ram_addr[1]),
         .I3(ram_addr[3]),
         .O(\ram_do[14]_i_4_n_0 ));
   LUT4 #(
@@ -21762,23 +21773,23 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(\ram_do[15]_i_3_n_0 ),
         .O(ram[15]));
   LUT6 #(
-    .INIT(64'h0000000022200020)) 
+    .INIT(64'h0000540400000000)) 
     \ram_do[15]_i_2 
-       (.I0(ram_addr[3]),
-        .I1(ram_addr[2]),
-        .I2(\ram_reg[40]_26 [15]),
-        .I3(ram_addr[0]),
-        .I4(\ram_reg[41]_25 [15]),
-        .I5(ram_addr[1]),
+       (.I0(ram_addr[2]),
+        .I1(\ram_reg[40]_26 [15]),
+        .I2(ram_addr[0]),
+        .I3(\ram_reg[41]_25 [15]),
+        .I4(ram_addr[1]),
+        .I5(ram_addr[3]),
         .O(\ram_do[15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair52" *) 
+  (* SOFT_HLUTNM = "soft_lutpair51" *) 
   LUT5 #(
-    .INIT(32'h00000809)) 
+    .INIT(32'h00000089)) 
     \ram_do[15]_i_3 
        (.I0(ram_addr[4]),
         .I1(ram_addr[2]),
-        .I2(ram_addr[1]),
-        .I3(ram_addr[0]),
+        .I2(ram_addr[0]),
+        .I3(ram_addr[1]),
         .I4(ram_addr[3]),
         .O(\ram_do[15]_i_3_n_0 ));
   LUT6 #(
@@ -21792,23 +21803,23 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I5(\ram_do[1]_i_4_n_0 ),
         .O(ram[1]));
   LUT6 #(
-    .INIT(64'h88B8B8888888B888)) 
+    .INIT(64'h8BB888B888888888)) 
     \ram_do[1]_i_3 
        (.I0(\ram_do[1]_i_7_n_0 ),
         .I1(ram_addr[3]),
-        .I2(ram_addr[2]),
-        .I3(ram_addr[0]),
-        .I4(ram_addr[1]),
-        .I5(\ram_reg[22]_44 [1]),
+        .I2(ram_addr[0]),
+        .I3(ram_addr[1]),
+        .I4(\ram_reg[22]_44 [1]),
+        .I5(ram_addr[2]),
         .O(\ram_do[1]_i_3_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair62" *) 
   LUT4 #(
-    .INIT(16'h0083)) 
+    .INIT(16'h0803)) 
     \ram_do[1]_i_4 
        (.I0(ram_addr[0]),
         .I1(ram_addr[3]),
-        .I2(ram_addr[2]),
-        .I3(ram_addr[1]),
+        .I2(ram_addr[1]),
+        .I3(ram_addr[2]),
         .O(\ram_do[1]_i_4_n_0 ));
   LUT5 #(
     .INIT(32'hA0A0CFC0)) 
@@ -21847,14 +21858,14 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(ram_addr[0]),
         .O(\ram_do[1]_i_8_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000004000020)) 
+    .INIT(64'h0000100000000008)) 
     \ram_do[23]_i_1 
        (.I0(ram_addr[5]),
-        .I1(ram_addr[4]),
-        .I2(ram_addr[3]),
+        .I1(ram_addr[3]),
+        .I2(ram_addr[0]),
         .I3(ram_addr[1]),
-        .I4(ram_addr[0]),
-        .I5(ram_addr[2]),
+        .I4(ram_addr[2]),
+        .I5(ram_addr[4]),
         .O(ram[23]));
   LUT6 #(
     .INIT(64'h5440424201111314)) 
@@ -21867,14 +21878,14 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I5(ram_addr[0]),
         .O(ram[27]));
   LUT6 #(
-    .INIT(64'h5553435355515356)) 
+    .INIT(64'h5555435353515356)) 
     \ram_do[28]_i_1 
        (.I0(ram_addr[5]),
         .I1(ram_addr[4]),
         .I2(ram_addr[3]),
-        .I3(ram_addr[2]),
+        .I3(ram_addr[0]),
         .I4(ram_addr[1]),
-        .I5(ram_addr[0]),
+        .I5(ram_addr[2]),
         .O(ram[28]));
   LUT6 #(
     .INIT(64'h5444426201111734)) 
@@ -21897,23 +21908,23 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I5(\ram_do[2]_i_4_n_0 ),
         .O(ram[2]));
   LUT6 #(
-    .INIT(64'h88B8B8888888B888)) 
+    .INIT(64'h8BB888B888888888)) 
     \ram_do[2]_i_3 
        (.I0(\ram_do[2]_i_7_n_0 ),
         .I1(ram_addr[3]),
-        .I2(ram_addr[2]),
-        .I3(ram_addr[0]),
-        .I4(ram_addr[1]),
-        .I5(\ram_reg[22]_44 [2]),
+        .I2(ram_addr[0]),
+        .I3(ram_addr[1]),
+        .I4(\ram_reg[22]_44 [2]),
+        .I5(ram_addr[2]),
         .O(\ram_do[2]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair63" *) 
+  (* SOFT_HLUTNM = "soft_lutpair62" *) 
   LUT4 #(
     .INIT(16'h4003)) 
     \ram_do[2]_i_4 
        (.I0(ram_addr[0]),
         .I1(ram_addr[3]),
-        .I2(ram_addr[2]),
-        .I3(ram_addr[1]),
+        .I2(ram_addr[1]),
+        .I3(ram_addr[2]),
         .O(\ram_do[2]_i_4_n_0 ));
   LUT5 #(
     .INIT(32'hA0A0CFC0)) 
@@ -21982,64 +21993,64 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I5(ram_addr[0]),
         .O(ram[32]));
   LUT6 #(
-    .INIT(64'h0315000650625572)) 
+    .INIT(64'h0315506200065572)) 
     \ram_do[33]_i_1 
-       (.I0(ram_addr[5]),
-        .I1(ram_addr[4]),
-        .I2(ram_addr[3]),
-        .I3(ram_addr[2]),
-        .I4(ram_addr[0]),
-        .I5(ram_addr[1]),
-        .O(ram[33]));
-  LUT6 #(
-    .INIT(64'h1156512211425632)) 
-    \ram_do[34]_i_1 
        (.I0(ram_addr[5]),
         .I1(ram_addr[4]),
         .I2(ram_addr[3]),
         .I3(ram_addr[2]),
         .I4(ram_addr[1]),
         .I5(ram_addr[0]),
-        .O(ram[34]));
+        .O(ram[33]));
   LUT6 #(
-    .INIT(64'h0446064775757555)) 
-    \ram_do[35]_i_1 
-       (.I0(ram_addr[5]),
-        .I1(ram_addr[4]),
-        .I2(ram_addr[2]),
-        .I3(ram_addr[1]),
-        .I4(ram_addr[0]),
-        .I5(ram_addr[3]),
-        .O(ram[35]));
-  LUT6 #(
-    .INIT(64'h5252120202161404)) 
-    \ram_do[36]_i_1 
+    .INIT(64'h1111515656422232)) 
+    \ram_do[34]_i_1 
        (.I0(ram_addr[5]),
         .I1(ram_addr[4]),
         .I2(ram_addr[3]),
         .I3(ram_addr[0]),
         .I4(ram_addr[1]),
         .I5(ram_addr[2]),
+        .O(ram[34]));
+  LUT6 #(
+    .INIT(64'h0406464775757555)) 
+    \ram_do[35]_i_1 
+       (.I0(ram_addr[5]),
+        .I1(ram_addr[4]),
+        .I2(ram_addr[2]),
+        .I3(ram_addr[0]),
+        .I4(ram_addr[1]),
+        .I5(ram_addr[3]),
+        .O(ram[35]));
+  LUT6 #(
+    .INIT(64'h5510011022222644)) 
+    \ram_do[36]_i_1 
+       (.I0(ram_addr[5]),
+        .I1(ram_addr[4]),
+        .I2(ram_addr[0]),
+        .I3(ram_addr[1]),
+        .I4(ram_addr[2]),
+        .I5(ram_addr[3]),
         .O(ram[36]));
   LUT6 #(
-    .INIT(64'h0000020000400001)) 
+    .INIT(64'h0002000000004001)) 
     \ram_do[37]_i_1 
        (.I0(ram_addr[5]),
         .I1(ram_addr[4]),
         .I2(ram_addr[2]),
-        .I3(ram_addr[1]),
-        .I4(ram_addr[0]),
+        .I3(ram_addr[0]),
+        .I4(ram_addr[1]),
         .I5(ram_addr[3]),
         .O(ram[37]));
   LUT6 #(
-    .INIT(64'h0004000000200420)) 
+    .INIT(64'h0100001000080008)) 
     \ram_do[38]_i_1 
        (.I0(ram_addr[5]),
-        .I1(ram_addr[4]),
-        .I2(ram_addr[3]),
-        .I3(ram_addr[2]),
+        .I1(ram_addr[3]),
+        .I2(ram_addr[2]),
+        .I3(ram_addr[1]),
         .I4(ram_addr[0]),
-        .I5(ram_addr[1]),
+        .I5(ram_addr[4]),
         .O(ram[38]));
   LUT6 #(
     .INIT(64'h0F004F4F0F004040)) 
@@ -22071,13 +22082,13 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(ram_addr[0]),
         .O(\ram_do[3]_i_4_n_0 ));
   LUT5 #(
-    .INIT(32'hAFC0A0C0)) 
+    .INIT(32'hAFA0C0C0)) 
     \ram_do[3]_i_5 
        (.I0(\ram_reg[39]_27 [3]),
         .I1(\ram_reg[38]_28 [3]),
         .I2(ram_addr[1]),
-        .I3(ram_addr[0]),
-        .I4(\ram_reg[37]_29 [3]),
+        .I3(\ram_reg[37]_29 [3]),
+        .I4(ram_addr[0]),
         .O(\ram_do[3]_i_5_n_0 ));
   LUT6 #(
     .INIT(64'h00B8FFFF00B80000)) 
@@ -22107,24 +22118,24 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(\ram_do[14]_i_4_n_0 ),
         .O(ram[4]));
   LUT6 #(
-    .INIT(64'h0040FFFF00400000)) 
+    .INIT(64'h0400FFFF04000000)) 
     \ram_do[4]_i_2 
-       (.I0(ram_addr[1]),
+       (.I0(ram_addr[2]),
         .I1(ram_addr[0]),
-        .I2(\ram_reg[41]_25 [4]),
-        .I3(ram_addr[2]),
+        .I2(ram_addr[1]),
+        .I3(\ram_reg[41]_25 [4]),
         .I4(ram_addr[3]),
         .I5(\ram_do_reg[4]_i_4_n_0 ),
         .O(\ram_do[4]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h88B8B8888888B888)) 
+    .INIT(64'h8BB888B888888888)) 
     \ram_do[4]_i_3 
        (.I0(\ram_do[4]_i_5_n_0 ),
         .I1(ram_addr[3]),
-        .I2(ram_addr[2]),
-        .I3(ram_addr[0]),
-        .I4(ram_addr[1]),
-        .I5(\ram_reg[22]_44 [4]),
+        .I2(ram_addr[0]),
+        .I3(ram_addr[1]),
+        .I4(\ram_reg[22]_44 [4]),
+        .I5(ram_addr[2]),
         .O(\ram_do[4]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'h00B8FFFF00B80000)) 
@@ -22146,13 +22157,13 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(ram_addr[0]),
         .O(\ram_do[4]_i_6_n_0 ));
   LUT5 #(
-    .INIT(32'hAFC0A0C0)) 
+    .INIT(32'hAFA0C0C0)) 
     \ram_do[4]_i_7 
        (.I0(\ram_reg[39]_27 [4]),
         .I1(\ram_reg[38]_28 [4]),
         .I2(ram_addr[1]),
-        .I3(ram_addr[0]),
-        .I4(\ram_reg[37]_29 [4]),
+        .I3(\ram_reg[37]_29 [4]),
+        .I4(ram_addr[0]),
         .O(\ram_do[4]_i_7_n_0 ));
   LUT4 #(
     .INIT(16'h00B8)) 
@@ -22239,12 +22250,12 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .O(\ram_do[6]_i_3_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair63" *) 
   LUT4 #(
-    .INIT(16'h7FEF)) 
+    .INIT(16'h7FFB)) 
     \ram_do[6]_i_4 
        (.I0(ram_addr[3]),
-        .I1(ram_addr[2]),
-        .I2(ram_addr[1]),
-        .I3(ram_addr[0]),
+        .I1(ram_addr[1]),
+        .I2(ram_addr[0]),
+        .I3(ram_addr[2]),
         .O(\ram_do[6]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -22286,6 +22297,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(ram_addr[0]),
         .I5(\ram_reg[24]_42 [6]),
         .O(\ram_do[6]_i_8_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
   LUT5 #(
     .INIT(32'hA0F0CF00)) 
     \ram_do[6]_i_9 
@@ -22298,13 +22310,23 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \ram_do[7]_i_10 
-       (.I0(\ram_reg[31]_35 [7]),
-        .I1(\ram_reg[30]_36 [7]),
+       (.I0(\ram_reg[35]_31 [7]),
+        .I1(\ram_reg[34]_32 [7]),
         .I2(ram_addr[1]),
-        .I3(\ram_reg[29]_37 [7]),
+        .I3(\ram_reg[33]_33 [7]),
         .I4(ram_addr[0]),
-        .I5(\ram_reg[28]_38 [7]),
+        .I5(\ram_reg[32]_34 [7]),
         .O(\ram_do[7]_i_10_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \ram_do[7]_i_11 
+       (.I0(\ram_reg[39]_27 [7]),
+        .I1(\ram_reg[38]_28 [7]),
+        .I2(ram_addr[1]),
+        .I3(\ram_reg[37]_29 [7]),
+        .I4(ram_addr[0]),
+        .I5(\ram_reg[36]_30 [7]),
+        .O(\ram_do[7]_i_11_n_0 ));
   LUT6 #(
     .INIT(64'hAFC0A0C0A0C0A0CF)) 
     \ram_do[7]_i_2 
@@ -22312,17 +22334,17 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I1(\ram_do[7]_i_5_n_0 ),
         .I2(ram_addr[4]),
         .I3(ram_addr[3]),
-        .I4(ram_addr[2]),
-        .I5(ram_addr[1]),
+        .I4(ram_addr[1]),
+        .I5(ram_addr[2]),
         .O(\ram_do[7]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000FFE200E2)) 
+    .INIT(64'h000000002222E222)) 
     \ram_do[7]_i_3 
-       (.I0(\ram_do[7]_i_6_n_0 ),
-        .I1(ram_addr[2]),
-        .I2(\ram_do[7]_i_7_n_0 ),
-        .I3(ram_addr[3]),
-        .I4(\ram_do[7]_i_8_n_0 ),
+       (.I0(\ram_do_reg[7]_i_6_n_0 ),
+        .I1(ram_addr[3]),
+        .I2(\ram_reg[41]_25 [7]),
+        .I3(\ram_do[7]_i_7_n_0 ),
+        .I4(ram_addr[2]),
         .I5(ram_addr[4]),
         .O(\ram_do[7]_i_3_n_0 ));
   LUT5 #(
@@ -22334,44 +22356,32 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I3(ram_addr[2]),
         .I4(ram_addr[0]),
         .O(\ram_do[7]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \ram_do[7]_i_6 
-       (.I0(\ram_reg[35]_31 [7]),
-        .I1(\ram_reg[34]_32 [7]),
-        .I2(ram_addr[1]),
-        .I3(\ram_reg[33]_33 [7]),
-        .I4(ram_addr[0]),
-        .I5(\ram_reg[32]_34 [7]),
-        .O(\ram_do[7]_i_6_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  LUT2 #(
+    .INIT(4'h2)) 
     \ram_do[7]_i_7 
-       (.I0(\ram_reg[39]_27 [7]),
-        .I1(\ram_reg[38]_28 [7]),
-        .I2(ram_addr[1]),
-        .I3(\ram_reg[37]_29 [7]),
-        .I4(ram_addr[0]),
-        .I5(\ram_reg[36]_30 [7]),
+       (.I0(ram_addr[0]),
+        .I1(ram_addr[1]),
         .O(\ram_do[7]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair60" *) 
-  LUT4 #(
-    .INIT(16'h0040)) 
-    \ram_do[7]_i_8 
-       (.I0(ram_addr[1]),
-        .I1(ram_addr[0]),
-        .I2(\ram_reg[41]_25 [7]),
-        .I3(ram_addr[2]),
-        .O(\ram_do[7]_i_8_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \ram_do[7]_i_9 
+    \ram_do[7]_i_8 
        (.I0(\ram_reg[27]_39 [7]),
         .I1(\ram_reg[26]_40 [7]),
         .I2(ram_addr[1]),
         .I3(\ram_reg[25]_41 [7]),
         .I4(ram_addr[0]),
         .I5(\ram_reg[24]_42 [7]),
+        .O(\ram_do[7]_i_8_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \ram_do[7]_i_9 
+       (.I0(\ram_reg[31]_35 [7]),
+        .I1(\ram_reg[30]_36 [7]),
+        .I2(ram_addr[1]),
+        .I3(\ram_reg[29]_37 [7]),
+        .I4(ram_addr[0]),
+        .I5(\ram_reg[28]_38 [7]),
         .O(\ram_do[7]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hA0A0A0A0C0C0C0CF)) 
@@ -22379,8 +22389,8 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
        (.I0(\ram_do[8]_i_4_n_0 ),
         .I1(\ram_do[8]_i_5_n_0 ),
         .I2(ram_addr[4]),
-        .I3(ram_addr[1]),
-        .I4(ram_addr[2]),
+        .I3(ram_addr[2]),
+        .I4(ram_addr[1]),
         .I5(ram_addr[3]),
         .O(\ram_do[8]_i_2_n_0 ));
   LUT6 #(
@@ -22412,7 +22422,6 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I2(ram_addr[1]),
         .I3(ram_addr[0]),
         .O(\ram_do[8]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
   LUT5 #(
     .INIT(32'hA0A0CFC0)) 
     \ram_do[8]_i_6 
@@ -22468,12 +22477,13 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .I4(ram_addr[1]),
         .I5(ram_addr[0]),
         .O(\ram_do[9]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair60" *) 
   LUT4 #(
-    .INIT(16'h2001)) 
+    .INIT(16'h0801)) 
     \ram_do[9]_i_4 
        (.I0(ram_addr[3]),
-        .I1(ram_addr[0]),
-        .I2(ram_addr[1]),
+        .I1(ram_addr[1]),
+        .I2(ram_addr[0]),
         .I3(ram_addr[2]),
         .O(\ram_do[9]_i_4_n_0 ));
   LUT5 #(
@@ -22720,9 +22730,14 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .O(ram[7]),
         .S(ram_addr[5]));
   MUXF7 \ram_do_reg[7]_i_4 
-       (.I0(\ram_do[7]_i_9_n_0 ),
-        .I1(\ram_do[7]_i_10_n_0 ),
+       (.I0(\ram_do[7]_i_8_n_0 ),
+        .I1(\ram_do[7]_i_9_n_0 ),
         .O(\ram_do_reg[7]_i_4_n_0 ),
+        .S(ram_addr[2]));
+  MUXF7 \ram_do_reg[7]_i_6 
+       (.I0(\ram_do[7]_i_10_n_0 ),
+        .I1(\ram_do[7]_i_11_n_0 ),
+        .O(\ram_do_reg[7]_i_6_n_0 ),
         .S(ram_addr[2]));
   FDRE \ram_do_reg[8] 
        (.C(s_axi_aclk),
@@ -22788,6 +22803,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .D(\ram_reg[22][3]_i_1_n_4 ),
         .Q(\ram_reg[22]_44 [3]),
         .R(\ram[22][5]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \ram_reg[22][3]_i_1 
        (.CI(1'b0),
         .CO({\ram_reg[22][3]_i_1_n_0 ,\ram_reg[22][3]_i_1_n_1 ,\ram_reg[22][3]_i_1_n_2 ,\ram_reg[22][3]_i_1_n_3 }),
@@ -22809,6 +22825,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .D(\ram_reg[22][5]_i_2_n_6 ),
         .Q(\ram_reg[22]_44 [5]),
         .R(\ram[22][5]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \ram_reg[22][5]_i_2 
        (.CI(\ram_reg[22][3]_i_1_n_0 ),
         .CO({\NLW_ram_reg[22][5]_i_2_CO_UNCONNECTED [3:1],\ram_reg[22][5]_i_2_n_3 }),
@@ -22900,6 +22917,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .D(\ram_reg[24][3]_i_1_n_4 ),
         .Q(\ram_reg[24]_42 [3]),
         .R(\ram[24][5]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \ram_reg[24][3]_i_1 
        (.CI(1'b0),
         .CO({\ram_reg[24][3]_i_1_n_0 ,\ram_reg[24][3]_i_1_n_1 ,\ram_reg[24][3]_i_1_n_2 ,\ram_reg[24][3]_i_1_n_3 }),
@@ -22921,6 +22939,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .D(\ram_reg[24][5]_i_2_n_6 ),
         .Q(\ram_reg[24]_42 [5]),
         .R(\ram[24][5]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \ram_reg[24][5]_i_2 
        (.CI(\ram_reg[24][3]_i_1_n_0 ),
         .CO({\NLW_ram_reg[24][5]_i_2_CO_UNCONNECTED [3:1],\ram_reg[24][5]_i_2_n_3 }),
@@ -23012,6 +23031,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .D(\ram_reg[26][3]_i_1_n_4 ),
         .Q(\ram_reg[26]_40 [3]),
         .R(\ram[26][5]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \ram_reg[26][3]_i_1 
        (.CI(1'b0),
         .CO({\ram_reg[26][3]_i_1_n_0 ,\ram_reg[26][3]_i_1_n_1 ,\ram_reg[26][3]_i_1_n_2 ,\ram_reg[26][3]_i_1_n_3 }),
@@ -23033,6 +23053,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .D(\ram_reg[26][5]_i_2_n_6 ),
         .Q(\ram_reg[26]_40 [5]),
         .R(\ram[26][5]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \ram_reg[26][5]_i_2 
        (.CI(\ram_reg[26][3]_i_1_n_0 ),
         .CO({\NLW_ram_reg[26][5]_i_2_CO_UNCONNECTED [3:1],\ram_reg[26][5]_i_2_n_3 }),
@@ -23124,6 +23145,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .D(\ram_reg[28][3]_i_1_n_4 ),
         .Q(\ram_reg[28]_38 [3]),
         .R(\ram[28][5]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \ram_reg[28][3]_i_1 
        (.CI(1'b0),
         .CO({\ram_reg[28][3]_i_1_n_0 ,\ram_reg[28][3]_i_1_n_1 ,\ram_reg[28][3]_i_1_n_2 ,\ram_reg[28][3]_i_1_n_3 }),
@@ -23145,6 +23167,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .D(\ram_reg[28][5]_i_2_n_6 ),
         .Q(\ram_reg[28]_38 [5]),
         .R(\ram[28][5]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \ram_reg[28][5]_i_2 
        (.CI(\ram_reg[28][3]_i_1_n_0 ),
         .CO({\NLW_ram_reg[28][5]_i_2_CO_UNCONNECTED [3:1],\ram_reg[28][5]_i_2_n_3 }),
@@ -23236,6 +23259,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .D(\ram_reg[30][3]_i_1_n_4 ),
         .Q(\ram_reg[30]_36 [3]),
         .R(\ram[30][5]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \ram_reg[30][3]_i_1 
        (.CI(1'b0),
         .CO({\ram_reg[30][3]_i_1_n_0 ,\ram_reg[30][3]_i_1_n_1 ,\ram_reg[30][3]_i_1_n_2 ,\ram_reg[30][3]_i_1_n_3 }),
@@ -23257,6 +23281,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .D(\ram_reg[30][5]_i_2_n_6 ),
         .Q(\ram_reg[30]_36 [5]),
         .R(\ram[30][5]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \ram_reg[30][5]_i_2 
        (.CI(\ram_reg[30][3]_i_1_n_0 ),
         .CO({\NLW_ram_reg[30][5]_i_2_CO_UNCONNECTED [3:1],\ram_reg[30][5]_i_2_n_3 }),
@@ -23348,6 +23373,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .D(\ram_reg[32][3]_i_1_n_4 ),
         .Q(\ram_reg[32]_34 [3]),
         .R(\ram[32][5]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \ram_reg[32][3]_i_1 
        (.CI(1'b0),
         .CO({\ram_reg[32][3]_i_1_n_0 ,\ram_reg[32][3]_i_1_n_1 ,\ram_reg[32][3]_i_1_n_2 ,\ram_reg[32][3]_i_1_n_3 }),
@@ -23369,6 +23395,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .D(\ram_reg[32][5]_i_2_n_6 ),
         .Q(\ram_reg[32]_34 [5]),
         .R(\ram[32][5]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \ram_reg[32][5]_i_2 
        (.CI(\ram_reg[32][3]_i_1_n_0 ),
         .CO({\NLW_ram_reg[32][5]_i_2_CO_UNCONNECTED [3:1],\ram_reg[32][5]_i_2_n_3 }),
@@ -23474,6 +23501,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .D(\ram_reg[34][3]_i_1_n_4 ),
         .Q(\ram_reg[34]_32 [3]),
         .R(\ram[34][5]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \ram_reg[34][3]_i_1 
        (.CI(1'b0),
         .CO({\ram_reg[34][3]_i_1_n_0 ,\ram_reg[34][3]_i_1_n_1 ,\ram_reg[34][3]_i_1_n_2 ,\ram_reg[34][3]_i_1_n_3 }),
@@ -23495,6 +23523,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .D(\ram_reg[34][5]_i_2_n_6 ),
         .Q(\ram_reg[34]_32 [5]),
         .R(\ram[34][5]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \ram_reg[34][5]_i_2 
        (.CI(\ram_reg[34][3]_i_1_n_0 ),
         .CO({\NLW_ram_reg[34][5]_i_2_CO_UNCONNECTED [3:1],\ram_reg[34][5]_i_2_n_3 }),
@@ -23572,6 +23601,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .D(\ram_reg[35][3]_i_1_n_4 ),
         .Q(\ram_reg[35]_31 [3]),
         .R(\ram[35][5]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \ram_reg[35][3]_i_1 
        (.CI(1'b0),
         .CO({\ram_reg[35][3]_i_1_n_0 ,\ram_reg[35][3]_i_1_n_1 ,\ram_reg[35][3]_i_1_n_2 ,\ram_reg[35][3]_i_1_n_3 }),
@@ -23593,6 +23623,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .D(\ram_reg[35][5]_i_2_n_6 ),
         .Q(\ram_reg[35]_31 [5]),
         .R(\ram[35][5]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 \ram_reg[35][5]_i_2 
        (.CI(\ram_reg[35][3]_i_1_n_0 ),
         .CO({\NLW_ram_reg[35][5]_i_2_CO_UNCONNECTED [3:1],\ram_reg[35][5]_i_2_n_3 }),
@@ -23863,7 +23894,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
        (.CI(\ram_reg[39][14]_i_3_n_0 ),
         .CO({\NLW_ram_reg[39][14]_i_21_CO_UNCONNECTED [3],\ram_reg[39][14]_i_21_n_1 ,\ram_reg[39][14]_i_21_n_2 ,\ram_reg[39][14]_i_21_n_3 }),
         .CYINIT(1'b0),
-        .DI({1'b0,\ram_clk_config_reg[0][14] }),
+        .DI({1'b0,DI}),
         .O({\ram_reg[39][14]_i_21_n_4 ,\ram_reg[39][14]_i_21_n_5 ,\ram_reg[39][14]_i_21_n_6 ,\ram_reg[39][14]_i_21_n_7 }),
         .S({\ram[39][14]_i_22_n_0 ,\ram[39][14]_i_23_n_0 ,\ram[39][14]_i_24_n_0 ,\ram[39][14]_i_25_n_0 }));
   CARRY4 \ram_reg[39][14]_i_3 
@@ -24014,22 +24045,22 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .Q(\ram_reg[41]_25 [8]),
         .R(1'b0));
   LUT5 #(
-    .INIT(32'hAAAAAAB6)) 
+    .INIT(32'hAAABA9AA)) 
     \state_count[0]_i_1 
        (.I0(state_count[0]),
-        .I1(current_state[3]),
-        .I2(current_state[1]),
-        .I3(current_state[0]),
-        .I4(current_state[2]),
+        .I1(current_state[2]),
+        .I2(current_state[0]),
+        .I3(current_state[3]),
+        .I4(current_state[1]),
         .O(\state_count[0]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFCB00000004)) 
+    .INIT(64'hFFFCFEFF00000100)) 
     \state_count[1]_i_1 
        (.I0(state_count[0]),
-        .I1(current_state[3]),
-        .I2(current_state[1]),
-        .I3(current_state[0]),
-        .I4(current_state[2]),
+        .I1(current_state[2]),
+        .I2(current_state[0]),
+        .I3(current_state[3]),
+        .I4(current_state[1]),
         .I5(state_count[1]),
         .O(\state_count[1]_i_1_n_0 ));
   LUT5 #(
@@ -24038,44 +24069,43 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
        (.I0(state_count[2]),
         .I1(state_count[0]),
         .I2(state_count[1]),
-        .I3(\state_count[3]_i_2_n_0 ),
+        .I3(\state_count[4]_i_3_n_0 ),
         .I4(current_state[1]),
         .O(\state_count[2]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hAAA8FFFF00020000)) 
     \state_count[3]_i_1 
        (.I0(current_state[3]),
-        .I1(state_count[1]),
+        .I1(state_count[2]),
         .I2(state_count[0]),
-        .I3(state_count[2]),
-        .I4(\state_count[3]_i_2_n_0 ),
+        .I3(state_count[1]),
+        .I4(\state_count[4]_i_3_n_0 ),
         .I5(state_count[3]),
         .O(\state_count[3]_i_1_n_0 ));
-  LUT4 #(
-    .INIT(16'h0006)) 
-    \state_count[3]_i_2 
-       (.I0(current_state[3]),
-        .I1(current_state[1]),
-        .I2(current_state[0]),
-        .I3(current_state[2]),
-        .O(\state_count[3]_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'hFFAAA9AA)) 
+  LUT6 #(
+    .INIT(64'hFFFEFFFFAAAB0000)) 
     \state_count[4]_i_1 
-       (.I0(state_count[4]),
-        .I1(\state_count[4]_i_2_n_0 ),
-        .I2(state_count[3]),
-        .I3(\state_count[3]_i_2_n_0 ),
-        .I4(current_state[1]),
+       (.I0(current_state[1]),
+        .I1(state_count[3]),
+        .I2(\state_count[4]_i_2_n_0 ),
+        .I3(state_count[1]),
+        .I4(\state_count[4]_i_3_n_0 ),
+        .I5(state_count[4]),
         .O(\state_count[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair54" *) 
-  LUT3 #(
-    .INIT(8'hFE)) 
+  LUT2 #(
+    .INIT(4'hE)) 
     \state_count[4]_i_2 
-       (.I0(state_count[1]),
-        .I1(state_count[0]),
-        .I2(state_count[2]),
+       (.I0(state_count[0]),
+        .I1(state_count[2]),
         .O(\state_count[4]_i_2_n_0 ));
+  LUT4 #(
+    .INIT(16'h0110)) 
+    \state_count[4]_i_3 
+       (.I0(current_state[2]),
+        .I1(current_state[0]),
+        .I2(current_state[3]),
+        .I3(current_state[1]),
+        .O(\state_count[4]_i_3_n_0 ));
   FDRE #(
     .INIT(1'b1)) 
     \state_count_reg[0] 
@@ -24118,6 +24148,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_pll_drp
         .R(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "System_clk_wiz_0_0_slave_attachment" *) 
 module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
    (SR,
     s_axi_rresp,
@@ -24471,12 +24502,12 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
   wire ip2bus_rdack;
   wire ip2bus_wrack;
   wire ip2bus_wrack_int1;
+  wire load_enable_reg_d_i_3_n_0;
   wire load_enable_reg_d_i_4_n_0;
   wire load_enable_reg_d_i_5_n_0;
   wire load_enable_reg_d_i_6_n_0;
   wire load_enable_reg_d_i_7_n_0;
   wire load_enable_reg_d_i_8_n_0;
-  wire load_enable_reg_d_i_9_n_0;
   wire load_enable_reg_d_reg;
   wire [1:0]p_0_out;
   wire [0:0]p_1_in;
@@ -24587,7 +24618,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .I4(state1__2),
         .I5(\FSM_onehot_state_reg_n_0_[3] ),
         .O(\FSM_onehot_state[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT5 #(
     .INIT(32'h888F8888)) 
     \FSM_onehot_state[1]_i_1 
@@ -24674,7 +24705,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
        (.I0(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg_n_0_[0] ),
         .I1(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg_n_0_[1] ),
         .O(plusOp[1]));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \INCLUDE_DPHASE_TIMER.dpto_cnt[2]_i_1 
@@ -24682,7 +24713,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .I1(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg_n_0_[1] ),
         .I2(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg_n_0_[2] ),
         .O(plusOp[2]));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \INCLUDE_DPHASE_TIMER.dpto_cnt[3]_i_1 
@@ -24691,7 +24722,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .I2(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg_n_0_[2] ),
         .I3(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg_n_0_[3] ),
         .O(plusOp[3]));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \INCLUDE_DPHASE_TIMER.dpto_cnt[4]_i_1 
@@ -24717,7 +24748,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
        (.I0(state[0]),
         .I1(state[1]),
         .O(clear));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \INCLUDE_DPHASE_TIMER.dpto_cnt[6]_i_2 
@@ -24725,7 +24756,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .I1(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg_n_0_[5] ),
         .I2(timeout),
         .O(plusOp[6]));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT5 #(
     .INIT(32'h80000000)) 
     \INCLUDE_DPHASE_TIMER.dpto_cnt[6]_i_3 
@@ -24844,8 +24875,8 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .ip2bus_wrack(ip2bus_wrack),
         .ip2bus_wrack_int1(ip2bus_wrack_int1),
         .load_enable_reg_d_reg(load_enable_reg_d_reg),
-        .\load_enable_reg_reg[30] (load_enable_reg_d_i_5_n_0),
-        .\load_enable_reg_reg[30]_0 (load_enable_reg_d_i_4_n_0),
+        .\load_enable_reg_reg[30] (load_enable_reg_d_i_4_n_0),
+        .\load_enable_reg_reg[30]_0 (load_enable_reg_d_i_3_n_0),
         .\ram_clk_config_reg[0][0] (\ram_clk_config[0][31]_i_3_n_0 ),
         .\ram_clk_config_reg[11][31] (\ram_clk_config[11][31]_i_2_n_0 ),
         .\ram_clk_config_reg[13][31] ({bus2ip_addr[10:7],\bus2ip_addr_i_reg[6]_0 }),
@@ -24903,7 +24934,6 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .sw_rst_cond(sw_rst_cond),
         .sw_rst_cond_d1(sw_rst_cond_d1),
         .wrack(wrack));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \bus2ip_addr_i[0]_i_1 
@@ -24920,7 +24950,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .I3(state[1]),
         .I4(state[0]),
         .O(\bus2ip_addr_i[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \bus2ip_addr_i[10]_i_2 
@@ -24928,6 +24958,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .I1(s_axi_awaddr[10]),
         .I2(s_axi_arvalid),
         .O(\bus2ip_addr_i[10]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \bus2ip_addr_i[1]_i_1 
@@ -24935,7 +24966,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .I1(s_axi_awaddr[1]),
         .I2(s_axi_arvalid),
         .O(\bus2ip_addr_i[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \bus2ip_addr_i[2]_i_1 
@@ -24951,7 +24982,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .I1(s_axi_awaddr[3]),
         .I2(s_axi_arvalid),
         .O(\bus2ip_addr_i[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \bus2ip_addr_i[4]_i_1 
@@ -24959,7 +24990,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .I1(s_axi_awaddr[4]),
         .I2(s_axi_arvalid),
         .O(\bus2ip_addr_i[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \bus2ip_addr_i[5]_i_1 
@@ -24967,7 +24998,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .I1(s_axi_awaddr[5]),
         .I2(s_axi_arvalid),
         .O(\bus2ip_addr_i[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \bus2ip_addr_i[6]_i_1 
@@ -24975,7 +25006,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .I1(s_axi_awaddr[6]),
         .I2(s_axi_arvalid),
         .O(\bus2ip_addr_i[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \bus2ip_addr_i[7]_i_1 
@@ -25071,7 +25102,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .D(s_axi_arvalid),
         .Q(bus2ip_rnw_i_reg_n_0),
         .R(SR));
-  (* SOFT_HLUTNM = "soft_lutpair43" *) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \clkfbout_reg[6]_i_2 
@@ -25084,7 +25115,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
        (.I0(\bus2ip_addr_i_reg[6]_0 [1]),
         .I1(\bus2ip_addr_i_reg[6]_0 [0]),
         .I2(\bus2ip_addr_i_reg[6]_0 [2]),
-        .I3(load_enable_reg_d_i_8_n_0),
+        .I3(load_enable_reg_d_i_7_n_0),
         .I4(\bus2ip_addr_i_reg[6]_0 [4]),
         .I5(\bus2ip_addr_i_reg[6]_0 [3]),
         .O(\clkfbout_reg[6]_i_3_n_0 ));
@@ -25093,7 +25124,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
     \clkout0_reg[14]_i_2 
        (.I0(\clkout0_reg[14]_i_3_n_0 ),
         .I1(bus2ip_addr[9]),
-        .I2(load_enable_reg_d_i_8_n_0),
+        .I2(load_enable_reg_d_i_7_n_0),
         .I3(\bus2ip_addr_i_reg[6]_0 [0]),
         .I4(\ram_clk_config[2][31]_i_3_n_0 ),
         .I5(\interrupt_enable_reg[15]_i_3_n_0 ),
@@ -25105,6 +25136,12 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
        (.I0(\bus2ip_addr_i_reg[6]_0 [2]),
         .I1(\bus2ip_addr_i_reg[6]_0 [1]),
         .O(\clkout0_reg[14]_i_3_n_0 ));
+  LUT2 #(
+    .INIT(4'hE)) 
+    \current_state[3]_i_1 
+       (.I0(SR),
+        .I1(\current_state_reg[1] ),
+        .O(rst_reg_0));
   (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT3 #(
     .INIT(8'hFE)) 
@@ -25132,89 +25169,83 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .I3(s_axi_wstrb[3]),
         .I4(s_axi_wstrb[2]),
         .O(and_reduce_be));
-  LUT2 #(
-    .INIT(4'hE)) 
-    load_enable_reg_d_i_1
-       (.I0(SR),
-        .I1(\current_state_reg[1] ),
-        .O(rst_reg_0));
   LUT6 #(
     .INIT(64'hFFFBFFFFFFFFFFFF)) 
-    load_enable_reg_d_i_4
-       (.I0(load_enable_reg_d_i_6_n_0),
+    load_enable_reg_d_i_3
+       (.I0(load_enable_reg_d_i_5_n_0),
         .I1(bus2ip_addr[8]),
         .I2(\bus2ip_addr_i_reg[6]_0 [3]),
-        .I3(load_enable_reg_d_i_7_n_0),
-        .I4(load_enable_reg_d_i_8_n_0),
-        .I5(load_enable_reg_d_i_9_n_0),
-        .O(load_enable_reg_d_i_4_n_0));
+        .I3(load_enable_reg_d_i_6_n_0),
+        .I4(load_enable_reg_d_i_7_n_0),
+        .I5(load_enable_reg_d_i_8_n_0),
+        .O(load_enable_reg_d_i_3_n_0));
   LUT6 #(
     .INIT(64'hFFBFFFFFFFFFFFFF)) 
-    load_enable_reg_d_i_5
+    load_enable_reg_d_i_4
        (.I0(\bus2ip_addr_i_reg[6]_0 [3]),
         .I1(bus2ip_addr[9]),
         .I2(\bus2ip_addr_i_reg[6]_0 [4]),
         .I3(\interrupt_enable_reg[15]_i_3_n_0 ),
-        .I4(load_enable_reg_d_i_8_n_0),
-        .I5(load_enable_reg_d_i_9_n_0),
-        .O(load_enable_reg_d_i_5_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair43" *) 
+        .I4(load_enable_reg_d_i_7_n_0),
+        .I5(load_enable_reg_d_i_8_n_0),
+        .O(load_enable_reg_d_i_4_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT2 #(
     .INIT(4'hE)) 
-    load_enable_reg_d_i_6
+    load_enable_reg_d_i_5
        (.I0(bus2ip_addr[10]),
         .I1(bus2ip_addr[7]),
-        .O(load_enable_reg_d_i_6_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+        .O(load_enable_reg_d_i_5_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT2 #(
     .INIT(4'h7)) 
-    load_enable_reg_d_i_7
+    load_enable_reg_d_i_6
        (.I0(\bus2ip_addr_i_reg[6]_0 [4]),
         .I1(bus2ip_addr[9]),
-        .O(load_enable_reg_d_i_7_n_0));
+        .O(load_enable_reg_d_i_6_n_0));
   LUT2 #(
     .INIT(4'h1)) 
-    load_enable_reg_d_i_8
+    load_enable_reg_d_i_7
        (.I0(bus2ip_addr[1]),
         .I1(bus2ip_addr[0]),
-        .O(load_enable_reg_d_i_8_n_0));
+        .O(load_enable_reg_d_i_7_n_0));
   (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT3 #(
     .INIT(8'h80)) 
-    load_enable_reg_d_i_9
+    load_enable_reg_d_i_8
        (.I0(\bus2ip_addr_i_reg[6]_0 [0]),
         .I1(\bus2ip_addr_i_reg[6]_0 [2]),
         .I2(\bus2ip_addr_i_reg[6]_0 [1]),
-        .O(load_enable_reg_d_i_9_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+        .O(load_enable_reg_d_i_8_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \ram_clk_config[0][27]_i_1 
        (.I0(s_axi_wdata[12]),
         .I1(\bus2ip_addr_i_reg[1]_0 ),
         .O(\s_axi_wdata[31]_0 [0]));
-  (* SOFT_HLUTNM = "soft_lutpair45" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \ram_clk_config[0][28]_i_1 
        (.I0(s_axi_wdata[13]),
         .I1(\bus2ip_addr_i_reg[1]_0 ),
         .O(\s_axi_wdata[31]_0 [1]));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \ram_clk_config[0][29]_i_1 
        (.I0(s_axi_wdata[14]),
         .I1(\bus2ip_addr_i_reg[1]_0 ),
         .O(\s_axi_wdata[31]_0 [2]));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \ram_clk_config[0][30]_i_1 
        (.I0(s_axi_wdata[15]),
         .I1(\bus2ip_addr_i_reg[1]_0 ),
         .O(\s_axi_wdata[31]_0 [3]));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair45" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \ram_clk_config[0][31]_i_2 
@@ -25257,7 +25288,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
        (.I0(\bus2ip_addr_i_reg[6]_0 [1]),
         .I1(\bus2ip_addr_i_reg[6]_0 [0]),
         .O(\ram_clk_config[0][31]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \ram_clk_config[11][31]_i_2 
@@ -25278,14 +25309,14 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
        (.I0(\bus2ip_addr_i_reg[6]_0 [0]),
         .I1(\bus2ip_addr_i_reg[6]_0 [4]),
         .O(\ram_clk_config[28][31]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \ram_clk_config[29][31]_i_2 
        (.I0(\bus2ip_addr_i_reg[6]_0 [0]),
         .I1(\bus2ip_addr_i_reg[6]_0 [4]),
         .O(\ram_clk_config[29][31]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \ram_clk_config[2][19]_i_1 
@@ -25306,77 +25337,77 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
        (.I0(s_axi_wdata[6]),
         .I1(\bus2ip_addr_i_reg[3]_0 ),
         .O(\s_axi_wdata[31] [2]));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \ram_clk_config[2][22]_i_1 
        (.I0(s_axi_wdata[7]),
         .I1(\bus2ip_addr_i_reg[3]_0 ),
         .O(\s_axi_wdata[31] [3]));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \ram_clk_config[2][23]_i_1 
        (.I0(s_axi_wdata[8]),
         .I1(\bus2ip_addr_i_reg[3]_0 ),
         .O(\s_axi_wdata[31] [4]));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \ram_clk_config[2][24]_i_1 
        (.I0(s_axi_wdata[9]),
         .I1(\bus2ip_addr_i_reg[3]_0 ),
         .O(\s_axi_wdata[31] [5]));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \ram_clk_config[2][25]_i_1 
        (.I0(s_axi_wdata[10]),
         .I1(\bus2ip_addr_i_reg[3]_0 ),
         .O(\s_axi_wdata[31] [6]));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \ram_clk_config[2][26]_i_1 
        (.I0(s_axi_wdata[11]),
         .I1(\bus2ip_addr_i_reg[3]_0 ),
         .O(\s_axi_wdata[31] [7]));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \ram_clk_config[2][27]_i_1 
        (.I0(s_axi_wdata[12]),
         .I1(\bus2ip_addr_i_reg[3]_0 ),
         .O(\s_axi_wdata[31] [8]));
-  (* SOFT_HLUTNM = "soft_lutpair45" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \ram_clk_config[2][28]_i_1 
        (.I0(s_axi_wdata[13]),
         .I1(\bus2ip_addr_i_reg[3]_0 ),
         .O(\s_axi_wdata[31] [9]));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \ram_clk_config[2][29]_i_1 
        (.I0(s_axi_wdata[14]),
         .I1(\bus2ip_addr_i_reg[3]_0 ),
         .O(\s_axi_wdata[31] [10]));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \ram_clk_config[2][30]_i_1 
        (.I0(s_axi_wdata[15]),
         .I1(\bus2ip_addr_i_reg[3]_0 ),
         .O(\s_axi_wdata[31] [11]));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair45" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \ram_clk_config[2][31]_i_2 
        (.I0(s_axi_wdata[16]),
         .I1(\bus2ip_addr_i_reg[3]_0 ),
         .O(\s_axi_wdata[31] [12]));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \ram_clk_config[2][31]_i_3 
@@ -25387,7 +25418,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
     .INIT(64'h0000000000400000)) 
     \ram_clk_config[2][31]_i_4 
        (.I0(\ram_clk_config[0][31]_i_5_n_0 ),
-        .I1(load_enable_reg_d_i_8_n_0),
+        .I1(load_enable_reg_d_i_7_n_0),
         .I2(\bus2ip_addr_i_reg[6]_0 [1]),
         .I3(\bus2ip_addr_i_reg[6]_0 [2]),
         .I4(bus2ip_addr[9]),
@@ -25406,25 +25437,25 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
        (.I0(\ram_clk_config[5][31]_i_4_n_0 ),
         .I1(\bus2ip_addr_i_reg[3]_0 ),
         .I2(\ram_clk_config[5][31]_i_5_n_0 ),
-        .I3(load_enable_reg_d_i_8_n_0),
+        .I3(load_enable_reg_d_i_7_n_0),
         .I4(\clkfbout_reg[6]_i_2_n_0 ),
         .I5(\ram_clk_config[5][31]_i_6_n_0 ),
         .O(\ram_clk_config[5][31]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'h0000100000000000)) 
     \ram_clk_config[5][31]_i_4 
-       (.I0(load_enable_reg_d_i_7_n_0),
-        .I1(load_enable_reg_d_i_6_n_0),
-        .I2(load_enable_reg_d_i_8_n_0),
+       (.I0(load_enable_reg_d_i_6_n_0),
+        .I1(load_enable_reg_d_i_5_n_0),
+        .I2(load_enable_reg_d_i_7_n_0),
         .I3(bus2ip_addr[8]),
         .I4(\bus2ip_addr_i_reg[6]_0 [3]),
-        .I5(load_enable_reg_d_i_9_n_0),
+        .I5(load_enable_reg_d_i_8_n_0),
         .O(\ram_clk_config[5][31]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT5 #(
     .INIT(32'hFDFFFFFF)) 
     \ram_clk_config[5][31]_i_5 
-       (.I0(load_enable_reg_d_i_9_n_0),
+       (.I0(load_enable_reg_d_i_8_n_0),
         .I1(bus2ip_addr[7]),
         .I2(\bus2ip_addr_i_reg[6]_0 [3]),
         .I3(\bus2ip_addr_i_reg[6]_0 [4]),
@@ -25438,7 +25469,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .I2(\ram_clk_config[0][31]_i_5_n_0 ),
         .I3(\bus2ip_addr_i_reg[6]_0 [0]),
         .I4(\bus2ip_addr_i_reg[6]_0 [1]),
-        .I5(load_enable_reg_d_i_8_n_0),
+        .I5(load_enable_reg_d_i_7_n_0),
         .O(\ram_clk_config[5][31]_i_6_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
@@ -25451,7 +25482,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .D(rst_i_1_n_0),
         .Q(SR),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT2 #(
     .INIT(4'hE)) 
     s_axi_arready_INST_0
@@ -25813,7 +25844,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .D(s_axi_rvalid_i_i_1_n_0),
         .Q(s_axi_rvalid),
         .R(SR));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT2 #(
     .INIT(4'hE)) 
     s_axi_wready_INST_0
@@ -25889,9 +25920,9 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .I2(wrack_reg_1_i_4_n_0),
         .I3(\bus2ip_addr_i_reg[6]_0 [0]),
         .I4(\bus2ip_addr_i_reg[6]_0 [1]),
-        .I5(load_enable_reg_d_i_8_n_0),
+        .I5(load_enable_reg_d_i_7_n_0),
         .O(wrack_reg_1_i_3_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
     wrack_reg_1_i_4
@@ -25902,6 +25933,7 @@ module System_clk_wiz_0_0_System_clk_wiz_0_0_slave_attachment
         .O(wrack_reg_1_i_4_n_0));
 endmodule
 
+(* ORIG_REF_NAME = "System_clk_wiz_0_0_soft_reset" *) 
 module System_clk_wiz_0_0_System_clk_wiz_0_0_soft_reset
    (sw_rst_cond_d1,
     wrack,
@@ -26315,12 +26347,15 @@ module glbl ();
 
     parameter ROC_WIDTH = 100000;
     parameter TOC_WIDTH = 0;
+    parameter GRES_WIDTH = 10000;
+    parameter GRES_START = 10000;
 
 //--------   STARTUP Globals --------------
     wire GSR;
     wire GTS;
     wire GWE;
     wire PRLD;
+    wire GRESTORE;
     tri1 p_up_tmp;
     tri (weak1, strong0) PLL_LOCKG = p_up_tmp;
 
@@ -26333,6 +26368,7 @@ module glbl ();
     reg GSR_int;
     reg GTS_int;
     reg PRLD_int;
+    reg GRESTORE_int;
 
 //--------   JTAG Globals --------------
     wire JTAG_TDO_GLBL;
@@ -26360,6 +26396,7 @@ module glbl ();
     assign (strong1, weak0) GSR = GSR_int;
     assign (strong1, weak0) GTS = GTS_int;
     assign (weak1, weak0) PRLD = PRLD_int;
+    assign (strong1, weak0) GRESTORE = GRESTORE_int;
 
     initial begin
 	GSR_int = 1'b1;
@@ -26373,6 +26410,14 @@ module glbl ();
 	GTS_int = 1'b1;
 	#(TOC_WIDTH)
 	GTS_int = 1'b0;
+    end
+
+    initial begin 
+	GRESTORE_int = 1'b0;
+	#(GRES_START);
+	GRESTORE_int = 1'b1;
+	#(GRES_WIDTH);
+	GRESTORE_int = 1'b0;
     end
 
 endmodule

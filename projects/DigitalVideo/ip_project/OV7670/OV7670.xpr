@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="54" Path="H:/NextCloud/Git/ZYBO/projects/DigitalVideo/ip-project/OV7670/OV7670.xpr">
+<Project Version="7" Minor="54" Path="H:/NextCloud/Git/ZYBO/projects/DigitalVideo/ip_project/OV7670/OV7670.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="00fedf8dfdb848fd8ed7ba5be46bdf6b"/>
@@ -123,11 +123,11 @@
           <Attr Name="ImportTime" Val="1603026078"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="Simulation.bd" FileRelPathName="ip/Simulation_axi4stream_vip_slv_0/Simulation_axi4stream_vip_slv_0.xci">
-          <Proxy FileSetName="Simulation_axi4stream_vip_slv_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Simulation.bd" FileRelPathName="ip/Simulation_axi_vip_0_0/Simulation_axi_vip_0_0.xci">
           <Proxy FileSetName="Simulation_axi_vip_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="Simulation.bd" FileRelPathName="ip/Simulation_axi4stream_vip_slv_0/Simulation_axi4stream_vip_slv_0.xci">
+          <Proxy FileSetName="Simulation_axi4stream_vip_slv_0"/>
         </CompFileExtendedInfo>
       </File>
       <Config>
@@ -154,8 +154,6 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../OV7670_Interface.srcs/Interface/new/Interface_TB.sv"/>
           <Attr Name="ImportTime" Val="1608639022"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
@@ -230,42 +228,38 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="15">
-    <Run Id="Synth" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/Synth" IncludeInArchive="true" AutoIncrementalDir="C:/Users/Daniel.Kampert/Desktop/Git/ZYBO/projects/DigitalVideo/OV7670_Interface/ip-project/OV7670_Interface/OV7670_Interface.srcs/utils_1/imports/synth_1">
+    <Run Id="Synth" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" IncludeInArchive="true" AutoIncrementalDir="C:/Users/Daniel.Kampert/Desktop/Git/ZYBO/projects/DigitalVideo/OV7670_Interface/ip-project/OV7670_Interface/OV7670_Interface.srcs/utils_1/imports/synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="Simulation_axi4stream_vip_slv_0_synth_1" Type="Ft3:Synth" SrcSet="Simulation_axi4stream_vip_slv_0" Part="xc7z010clg400-1" ConstrsSet="Simulation_axi4stream_vip_slv_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Simulation_axi4stream_vip_slv_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PPRDIR/../OV7670_Control/OV7670_Control.srcs/utils_1/imports/Simulation_axi4stream_vip_slv_0_synth_1">
+    <Run Id="Simulation_axi4stream_vip_slv_0_synth_1" Type="Ft3:Synth" SrcSet="Simulation_axi4stream_vip_slv_0" Part="xc7z010clg400-1" ConstrsSet="Simulation_axi4stream_vip_slv_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" AutoIncrementalDir="$PPRDIR/../../ip-project/OV7670_Control/OV7670_Control.srcs/utils_1/imports/Simulation_axi4stream_vip_slv_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="Simulation_axi_vip_0_0_synth_1" Type="Ft3:Synth" SrcSet="Simulation_axi_vip_0_0" Part="xc7z010clg400-1" ConstrsSet="Simulation_axi_vip_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Simulation_axi_vip_0_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PPRDIR/../OV7670_Control/OV7670_Control.srcs/utils_1/imports/Simulation_axi_vip_0_0_synth_1">
+    <Run Id="Simulation_axi_vip_0_0_synth_1" Type="Ft3:Synth" SrcSet="Simulation_axi_vip_0_0" Part="xc7z010clg400-1" ConstrsSet="Simulation_axi_vip_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" AutoIncrementalDir="$PPRDIR/../../ip-project/OV7670_Control/OV7670_Control.srcs/utils_1/imports/Simulation_axi_vip_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="Video_FIFO_synth_1" Type="Ft3:Synth" SrcSet="Video_FIFO" Part="xc7z010clg400-1" ConstrsSet="Video_FIFO" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Video_FIFO_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PPRDIR/../OV7670_Control/OV7670_Control.srcs/utils_1/imports/Video_FIFO_synth_1">
+    <Run Id="Video_FIFO_synth_1" Type="Ft3:Synth" SrcSet="Video_FIFO" Part="xc7z010clg400-1" ConstrsSet="Video_FIFO" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" AutoIncrementalDir="$PPRDIR/../../ip-project/OV7670_Control/OV7670_Control.srcs/utils_1/imports/Video_FIFO_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
@@ -287,7 +281,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="Simulation_axi4stream_vip_slv_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Simulation_axi4stream_vip_slv_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Simulation_axi4stream_vip_slv_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../OV7670_Control/OV7670_Control.srcs/utils_1/imports/Simulation_axi4stream_vip_slv_0_impl_1">
+    <Run Id="Simulation_axi4stream_vip_slv_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Simulation_axi4stream_vip_slv_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Simulation_axi4stream_vip_slv_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../ip-project/OV7670_Control/OV7670_Control.srcs/utils_1/imports/Simulation_axi4stream_vip_slv_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
         <Step Id="init_design"/>
@@ -304,7 +298,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="Simulation_axi_vip_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Simulation_axi_vip_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Simulation_axi_vip_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../OV7670_Control/OV7670_Control.srcs/utils_1/imports/Simulation_axi_vip_0_0_impl_1">
+    <Run Id="Simulation_axi_vip_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Simulation_axi_vip_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Simulation_axi_vip_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../ip-project/OV7670_Control/OV7670_Control.srcs/utils_1/imports/Simulation_axi_vip_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
         <Step Id="init_design"/>
@@ -321,7 +315,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="Video_FIFO_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Video_FIFO" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Video_FIFO_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../OV7670_Control/OV7670_Control.srcs/utils_1/imports/Video_FIFO_impl_1">
+    <Run Id="Video_FIFO_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Video_FIFO" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Video_FIFO_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../ip-project/OV7670_Control/OV7670_Control.srcs/utils_1/imports/Video_FIFO_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
         <Step Id="init_design"/>

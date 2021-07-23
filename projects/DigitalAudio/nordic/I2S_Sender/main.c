@@ -11,7 +11,7 @@
 static uint32_t Tx_Buffer[I2S_DATA_BLOCK_WORDS];
 
 uint32_t PacketCounter = 0x00;
-uint8_t PacketData = 0x00;
+uint8_t PacketData = 0x03;
 
 static nrf_drv_i2s_buffers_t const Buffers = 
 {
@@ -19,7 +19,7 @@ static nrf_drv_i2s_buffers_t const Buffers =
     .p_rx_buffer = NULL,
 };
 
-static void data_handler(nrf_drv_i2s_buffers_t const* p_released, uint32_t status)
+static void DataHandler(nrf_drv_i2s_buffers_t const* p_released, uint32_t status)
 {
     // 'nrf_drv_i2s_next_buffers_set' is called directly from the handler
     // each time next buffers are requested, so data corruption is not
@@ -68,17 +68,17 @@ int main(void)
     I2S_Config.mck_setup    = NRF_I2S_MCK_32MDIV16;
     I2S_Config.ratio	    = NRF_I2S_RATIO_96X;
     I2S_Config.channels	    = NRF_I2S_CHANNELS_STEREO;
-    APP_ERROR_CHECK(nrf_drv_i2s_init(&I2S_Config, data_handler));
+    APP_ERROR_CHECK(nrf_drv_i2s_init(&I2S_Config, DataHandler));
     APP_ERROR_CHECK(nrf_drv_i2s_start(&Buffers, I2S_DATA_BLOCK_WORDS, 0));
 
     while(1)
     {
-        for(uint16_t i = 0x00; i < I2S_DATA_BLOCK_WORDS; i++)
+	for(uint16_t i = 0x00; i < I2S_DATA_BLOCK_WORDS; i++)
 	{
 	    Tx_Buffer[i] = (0x05 << 0x10) | PacketData;
 	}
 
-	if(PacketCounter >= 50)
+	if(PacketCounter >= 64)
 	{
 	    PacketData++;
 	    PacketCounter = 0x00;

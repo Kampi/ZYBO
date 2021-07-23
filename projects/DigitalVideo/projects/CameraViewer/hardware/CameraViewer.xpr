@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="54" Path="H:/NextCloud/Git/ZYBO/projects/DigitalVideo/CameraViewer/hardware/CameraViewer.xpr">
+<Project Version="7" Minor="54" Path="H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="d3659d03629e45d686ef0d9f8df149a8"/>
@@ -36,7 +36,7 @@
     <Option Name="ActiveSimSet" Val="Simulation"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../ip_repo"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../ip_repo"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
@@ -179,7 +179,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="System_VGA_Decimate_0_0_synth_1" Type="Ft3:Synth" SrcSet="System_VGA_Decimate_0_0" Part="xc7z010clg400-1" ConstrsSet="System_VGA_Decimate_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/System_VGA_Decimate_0_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/System_VGA_Decimate_0_0_synth_1">
+    <Run Id="System_VGA_Decimate_0_0_synth_1" Type="Ft3:Synth" SrcSet="System_VGA_Decimate_0_0" Part="xc7z010clg400-1" ConstrsSet="System_VGA_Decimate_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/System_VGA_Decimate_0_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PPRDIR/../../../CameraViewer/hardware/CameraViewer.srcs/utils_1/imports/System_VGA_Decimate_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
@@ -207,7 +207,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="System_VGA_Decimate_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="System_VGA_Decimate_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="System_VGA_Decimate_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/System_VGA_Decimate_0_0_impl_1">
+    <Run Id="System_VGA_Decimate_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="System_VGA_Decimate_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="System_VGA_Decimate_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../CameraViewer/hardware/CameraViewer.srcs/utils_1/imports/System_VGA_Decimate_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
         <Step Id="init_design"/>

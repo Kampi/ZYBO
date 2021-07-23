@@ -32,10 +32,9 @@
 #ifndef SD_H_
 #define SD_H_
 
- #include "ff.h"
- #include "xsdps.h"
+ #include "xil_types.h"
 
- #include "stdbool.h"
+ #include <stdbool.h>
 
  #include "Wave/Wave.h"
 

@@ -32,20 +32,9 @@
 #ifndef SSM2603_H_
 #define SSM2603_H_
 
- #include "xiicps.h"
- #include "xstatus.h"
- #include "xparameters.h"
+ #include "xil_types.h"
 
- #include "stdint.h"
- #include "stdbool.h"
-
- /** @brief I2C device address for the SSM2603 Audio Codec.
-  */
- #define SSM2603_ADDRESS					0x1A
-
- /** @brief I2C bus speed for the SSM2603 Audio Codec.
-  */
- #define SSM2603_SPEED						400000UL
+ #include <stdbool.h>
 
  /** @brief SSM2603 power management options.
   */

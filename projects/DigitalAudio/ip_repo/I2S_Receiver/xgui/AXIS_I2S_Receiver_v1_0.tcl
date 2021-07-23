@@ -8,7 +8,17 @@ proc init_gui { IPINST } {
   set WIDTH [ipgui::add_param $IPINST -name "WIDTH" -parent ${Page_0}]
   set_property tooltip {Data width per channel in bits.} ${WIDTH}
 
+  ipgui::add_param $IPINST -name "PACKET"
 
+}
+
+proc update_PARAM_VALUE.PACKET { PARAM_VALUE.PACKET } {
+	# Procedure called to update PACKET when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.PACKET { PARAM_VALUE.PACKET } {
+	# Procedure called to validate PACKET
+	return true
 }
 
 proc update_PARAM_VALUE.RATIO { PARAM_VALUE.RATIO } {
@@ -38,5 +48,10 @@ proc update_MODELPARAM_VALUE.RATIO { MODELPARAM_VALUE.RATIO PARAM_VALUE.RATIO } 
 proc update_MODELPARAM_VALUE.WIDTH { MODELPARAM_VALUE.WIDTH PARAM_VALUE.WIDTH } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.WIDTH}] ${MODELPARAM_VALUE.WIDTH}
+}
+
+proc update_MODELPARAM_VALUE.PACKET { MODELPARAM_VALUE.PACKET PARAM_VALUE.PACKET } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.PACKET}] ${MODELPARAM_VALUE.PACKET}
 }
 

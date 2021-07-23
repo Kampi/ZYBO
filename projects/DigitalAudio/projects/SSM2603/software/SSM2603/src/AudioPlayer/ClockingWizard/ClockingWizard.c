@@ -30,7 +30,14 @@
  *  @author Daniel Kampert
  */
 
+#include "xil_io.h"
+#include "xstatus.h"
+
 #include "ClockingWizard.h"
+
+/** @brief	Max. timeout for the Clocking Wizard.
+ */
+#define CLOCKINGWIZARD_TIMEOUT									10000
 
 /** @defgroup ClockingWizard
  *  @{

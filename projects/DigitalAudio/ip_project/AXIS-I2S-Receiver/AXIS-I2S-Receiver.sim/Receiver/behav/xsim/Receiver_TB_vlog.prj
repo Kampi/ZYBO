@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  --include "../../../../AXIS-I2S-Receiver.srcs/sources_1/bd/StreamReader/ipshared/8713/hdl" --include "D:/Xilinx/Vivado/2020.2/data/xilinx_vip/include" \
+"../../../../AXIS-I2S-Receiver.ip_user_files/bd/StreamReader/ip/StreamReader_axi4stream_vip_0_0/sim/StreamReader_axi4stream_vip_0_0_pkg.sv" \
+"../../../../AXIS-I2S-Receiver.ip_user_files/bd/StreamReader/ip/StreamReader_axi4stream_vip_0_0/sim/StreamReader_axi4stream_vip_0_0.sv" \
+"../../../../AXIS-I2S-Receiver.srcs/Receiver/new/Receiver_TB.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

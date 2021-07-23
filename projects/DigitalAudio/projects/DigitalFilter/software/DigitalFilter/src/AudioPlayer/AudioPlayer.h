@@ -32,28 +32,9 @@
 #ifndef AUDIOPLAYER_H_
 #define AUDIOPLAYER_H_
 
- #include "xgpio.h"
- #include "xgpiops.h"
- #include "xllfifo.h"
- #include "xscugic.h"
- #include "xstatus.h"
- #include "xparameters.h"
- #include "xil_exception.h"
+ #include "xil_types.h"
 
- #include "stdio.h"
- #include "stdbool.h"
-
- #include "SD/SD.h"
- #include "SSM2603/SSM2603.h"
- #include "ClockingWizard/ClockingWizard.h"
-
- /** @brief	Size of the FIFO buffer in bytes.
-  */
- #define AUDIOPLAYER_FIFO_BUFFER_SIZE			256
-
- /** @brief	Default volume for the speaker channel.
-  */
- #define AUDIOPLAYER_DEFAULT_SPEAKER_VOLUME		0x79
+ #include <stdbool.h>
 
  /** @brief		Initialize the I2S audio player.
   *  @return	Error code
@@ -71,11 +52,6 @@
   *  @return		Error code
   */
  u32 AudioPlayer_Mute(const bool Mute);
-
- /** @brief			Enable the audio filter.
-  *  @param Enable	Enable/Disable the filter
-  */
- void AudioPlayer_EnableFilter(const bool Enable);
 
  /** @brief		Returns the busy state.
   *  @return	#true when busy

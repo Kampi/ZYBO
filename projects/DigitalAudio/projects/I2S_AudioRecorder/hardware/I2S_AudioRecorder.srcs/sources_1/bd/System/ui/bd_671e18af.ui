@@ -1,0 +1,42 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.519588",
+   "Default View_TopLeft":"-242,0",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 6 -x 1860 -y 100 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 6 -x 1860 -y 120 -defaultsOSRD
+preplace port I2S -pg 1 -lvl 0 -x -10 -y 770 -defaultsOSRD
+preplace port MCLK -pg 1 -lvl 0 -x -10 -y 790 -defaultsOSRD
+preplace inst ProcessingSystem -pg 1 -lvl 5 -x 1630 -y 150 -defaultsOSRD
+preplace inst Reset_ProcessingSystem -pg 1 -lvl 1 -x 200 -y 660 -defaultsOSRD
+preplace inst Reset_Audio -pg 1 -lvl 1 -x 200 -y 870 -defaultsOSRD
+preplace inst ProcessingSystem_AXILite -pg 1 -lvl 2 -x 550 -y 410 -defaultsOSRD
+preplace inst ProcessingSystem_AXI -pg 1 -lvl 4 -x 1260 -y 120 -defaultsOSRD
+preplace inst AXIS_I2S_Receiver -pg 1 -lvl 2 -x 550 -y 810 -defaultsOSRD
+preplace inst AXI_DMA -pg 1 -lvl 3 -x 900 -y 150 -defaultsOSRD
+preplace netloc ProcessingSystem_FCLK_RESET0_N 1 0 6 20 550 NJ 550 NJ 550 NJ 550 NJ 550 1830
+preplace netloc Reset_Audio_peripheral_aresetn 1 1 1 400 810n
+preplace netloc ProcessingSystem_FCLK_CLK0 1 0 6 30 560 380 170 700 40 1080 260 1420 30 1840
+preplace netloc Reset_ProcessingSystem_peripheral_aresetn 1 1 3 390 190 720 50 1100
+preplace netloc MCLK_0_1 1 0 2 10 760 370
+preplace netloc AXI_DMA_s2mm_introut 1 3 2 1070J 250 1430
+preplace netloc ProcessingSystem_DDR 1 5 1 NJ 100
+preplace netloc I2S_0_1 1 0 2 NJ 770 NJ
+preplace netloc ProcessingSystem_FIXED_IO 1 5 1 NJ 120
+preplace netloc ProcessingSystem_M_AXI_GP0 1 1 5 400 30 NJ 30 1110J 240 1410J 40 1830
+preplace netloc AXIS_I2S_Receiver_AXIS_TXD 1 2 1 730 130n
+preplace netloc axi_mem_intercon_M00_AXI 1 4 1 N 120
+preplace netloc AXI_DMA_M_AXI_S2MM 1 3 1 1090 60n
+preplace netloc ProcessingSystem_AXILite_M00_AXI 1 2 1 710 110n
+levelinfo -pg 1 -10 200 550 900 1260 1630 1860
+pagesize -pg 1 -db -bbox -sgen -100 0 1980 970
+"
+}
+{
+   "da_axi4_cnt":"9",
+   "da_board_cnt":"2",
+   "da_clkrst_cnt":"15",
+   "da_ps7_cnt":"2"
+}

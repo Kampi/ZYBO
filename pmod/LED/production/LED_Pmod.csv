@@ -1,4 +1,0 @@
-Ref;Description;Value;Footprint;Mfr.;Mfr. Part Nr.;Distributor;Order Number;Qnty
-D1, D2, D3, D4, D5, D6, D7, D8;Light emitting diode;~;LED_D3.0mm;Wurth Elektronik;151033RS03000;Mouser;710-151033RS03000;8;
-R1;8 resistor network, star topology, bussed resistors, small symbol;390R;R_Array_SIP9;Bourns;4604X-102-391LF;Mouser;652-4604X-2LF-390;1;
-X1;;~;Pmod-Header-2x06;Amphenol FCI;77317-412-12LF;Mouser;649-77317-412-12LF;1;

@@ -1,0 +1,162 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Fri Jul 23 19:33:55 2021
+| Host         : PC running 64-bit major release  (build 9200)
+| Command      : report_bus_skew -warn_on_violation -file System_wrapper_bus_skew_routed.rpt -pb System_wrapper_bus_skew_routed.pb -rpx System_wrapper_bus_skew_routed.rpx
+| Design       : System_wrapper
+| Device       : 7z010-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Bus Skew Report
+
+Table of Contents
+-----------------
+1. Bus Skew Report Summary
+2. Bus Skew Report Per Constraint
+
+1. Bus Skew Report Summary
+--------------------------
+
+Id  Position  From                            To                              Corner  Requirement(ns)  Actual(ns)  Slack(ns)
+--  --------  ------------------------------  ------------------------------  ------  ---------------  ----------  ---------
+1   9         [get_cells [list {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[0]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[10]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[11]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[12]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[13]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[14]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[15]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[16]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[17]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[18]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[19]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[1]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[20]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[21]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[22]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[23]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[24]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[25]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[26]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[27]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[28]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[29]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[2]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[30]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[31]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[3]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[4]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[5]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[6]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[7]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[8]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[9]}]]
+                                              [get_cells [list {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[0]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[10]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[11]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[12]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[13]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[14]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[15]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[16]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[17]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[18]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[19]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[1]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[20]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[21]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[22]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[23]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[24]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[25]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[26]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[27]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[28]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[29]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[2]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[30]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[31]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[3]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[4]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[5]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[6]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[7]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[8]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[9]}]]
+                                                                              NA               40.000          NA         NA
+
+
+2. Bus Skew Report Per Constraint
+---------------------------------
+
+Id: 1
+set_bus_skew -from [get_cells [list {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[0]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[10]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[11]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[12]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[13]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[14]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[15]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[16]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[17]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[18]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[19]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[1]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[20]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[21]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[22]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[23]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[24]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[25]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[26]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[27]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[28]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[29]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[2]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[30]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[31]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[3]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[4]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[5]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[6]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[7]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[8]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/src_hsdata_ff_reg[9]}]] -to [get_cells [list {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[0]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[10]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[11]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[12]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[13]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[14]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[15]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[16]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[17]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[18]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[19]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[1]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[20]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[21]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[22]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[23]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[24]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[25]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[26]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[27]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[28]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[29]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[2]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[30]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[31]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[3]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[4]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[5]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[6]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[7]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[8]} \
+          {System_i/AXIS_I2S_Receiver/U0/xpm_cdc_Data/dest_hsdata_ff_reg[9]}]] 40.000
+Requirement: 40.000ns
+Endpoints: 0
+No bus skew paths found.
+
+

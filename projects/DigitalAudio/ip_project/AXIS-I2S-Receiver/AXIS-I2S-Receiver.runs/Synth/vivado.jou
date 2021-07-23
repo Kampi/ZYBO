@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat Jul 17 16:34:01 2021
+# Process ID: 20676
+# Current directory: H:/NextCloud/Git/ZYBO/projects/DigitalAudio/ip_project/AXIS-I2S-Receiver/AXIS-I2S-Receiver.runs/Synth
+# Command line: vivado.exe -log AXIS_I2S.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source AXIS_I2S.tcl
+# Log file: H:/NextCloud/Git/ZYBO/projects/DigitalAudio/ip_project/AXIS-I2S-Receiver/AXIS-I2S-Receiver.runs/Synth/AXIS_I2S.vds
+# Journal file: H:/NextCloud/Git/ZYBO/projects/DigitalAudio/ip_project/AXIS-I2S-Receiver/AXIS-I2S-Receiver.runs/Synth\vivado.jou
+#-----------------------------------------------------------
+source AXIS_I2S.tcl -notrace

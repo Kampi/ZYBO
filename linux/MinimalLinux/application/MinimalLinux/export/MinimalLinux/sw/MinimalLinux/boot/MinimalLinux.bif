@@ -1,6 +1,0 @@
-/*MinimalLinux*/
-the_ROM_image:
-{
-  [bootloader]<MinimalLinux/boot/fsbl.elf>
-   <bitstream> 
-}

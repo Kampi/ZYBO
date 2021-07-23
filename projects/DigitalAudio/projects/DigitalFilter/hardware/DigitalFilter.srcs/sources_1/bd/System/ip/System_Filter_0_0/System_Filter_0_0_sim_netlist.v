@@ -1,10 +1,10 @@
-// Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2019.2.1 (win64) Build 2729669 Thu Dec  5 04:49:17 MST 2019
-// Date        : Wed May 20 13:58:35 2020
-// Host        : 40B0341C1F56 running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+// Date        : Fri Jul 23 20:51:51 2021
+// Host        : PC running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               C:/Users/Daniel.Kampert/Desktop/Git/ZYBO/projects/DigitalAudio/DigitalFilter/hardware/DigitalFilter.srcs/sources_1/bd/System/ip/System_Filter_0_0/System_Filter_0_0_sim_netlist.v
+//               h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/DigitalFilter/hardware/DigitalFilter.srcs/sources_1/bd/System/ip/System_Filter_0_0/System_Filter_0_0_sim_netlist.v
 // Design      : System_Filter_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,7 +13,7 @@
 `timescale 1 ps / 1 ps
 
 (* CHECK_LICENSE_TYPE = "System_Filter_0_0,Filter,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "HLS" *) 
-(* x_core_info = "Filter,Vivado 2019.2.1" *) 
+(* x_core_info = "Filter,Vivado 2020.2" *) 
 (* NotValidForBitStream *)
 module System_Filter_0_0
    (ap_clk,
@@ -25,12 +25,12 @@ module System_Filter_0_0
     DataOut_TREADY,
     DataOut_TDATA,
     Enable);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 ap_clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME ap_clk, ASSOCIATED_BUSIF DataIn:DataOut, ASSOCIATED_RESET ap_rst_n, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN System_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input ap_clk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 ap_clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME ap_clk, ASSOCIATED_BUSIF DataIn:DataOut, ASSOCIATED_RESET ap_rst_n, FREQ_HZ 1e+08, PHASE 0.000, CLK_DOMAIN System_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0, FREQ_TOLERANCE_HZ 0" *) input ap_clk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 ap_rst_n RST" *) (* x_interface_parameter = "XIL_INTERFACENAME ap_rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input ap_rst_n;
-  (* x_interface_info = "xilinx.com:interface:axis:1.0 DataIn TVALID" *) (* x_interface_parameter = "XIL_INTERFACENAME DataIn, TDATA_NUM_BYTES 4, TUSER_WIDTH 0, LAYERED_METADATA undef, TDEST_WIDTH 0, TID_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN System_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input DataIn_TVALID;
+  (* x_interface_info = "xilinx.com:interface:axis:1.0 DataIn TVALID" *) (* x_interface_parameter = "XIL_INTERFACENAME DataIn, TDATA_NUM_BYTES 4, TUSER_WIDTH 0, LAYERED_METADATA undef, TDEST_WIDTH 0, TID_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 1e+08, PHASE 0.000, CLK_DOMAIN System_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input DataIn_TVALID;
   (* x_interface_info = "xilinx.com:interface:axis:1.0 DataIn TREADY" *) output DataIn_TREADY;
   (* x_interface_info = "xilinx.com:interface:axis:1.0 DataIn TDATA" *) input [31:0]DataIn_TDATA;
-  (* x_interface_info = "xilinx.com:interface:axis:1.0 DataOut TVALID" *) (* x_interface_parameter = "XIL_INTERFACENAME DataOut, TDATA_NUM_BYTES 4, TUSER_WIDTH 0, TDEST_WIDTH 0, TID_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN System_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) output DataOut_TVALID;
+  (* x_interface_info = "xilinx.com:interface:axis:1.0 DataOut TVALID" *) (* x_interface_parameter = "XIL_INTERFACENAME DataOut, TDATA_NUM_BYTES 4, TUSER_WIDTH 0, TDEST_WIDTH 0, TID_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 1e+08, PHASE 0.000, CLK_DOMAIN System_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) output DataOut_TVALID;
   (* x_interface_info = "xilinx.com:interface:axis:1.0 DataOut TREADY" *) input DataOut_TREADY;
   (* x_interface_info = "xilinx.com:interface:axis:1.0 DataOut TDATA" *) output [31:0]DataOut_TDATA;
   (* x_interface_info = "xilinx.com:signal:data:1.0 Enable DATA" *) (* x_interface_parameter = "XIL_INTERFACENAME Enable, LAYERED_METADATA undef" *) input Enable;
@@ -85,6 +85,7 @@ module System_Filter_0_0_Filter
   wire DataOut_TREADY;
   wire DataOut_TVALID;
   wire Enable;
+  wire ShiftRegLeft_V_U_n_1;
   wire ShiftRegLeft_V_U_n_10;
   wire ShiftRegLeft_V_U_n_11;
   wire ShiftRegLeft_V_U_n_12;
@@ -97,16 +98,15 @@ module System_Filter_0_0_Filter
   wire ShiftRegLeft_V_U_n_19;
   wire ShiftRegLeft_V_U_n_20;
   wire ShiftRegLeft_V_U_n_21;
-  wire ShiftRegLeft_V_U_n_22;
-  wire ShiftRegLeft_V_U_n_5;
+  wire ShiftRegLeft_V_U_n_23;
+  wire ShiftRegLeft_V_U_n_24;
   wire ShiftRegLeft_V_U_n_6;
   wire ShiftRegLeft_V_U_n_7;
   wire ShiftRegLeft_V_U_n_8;
   wire ShiftRegLeft_V_U_n_9;
-  wire ShiftRegRight_V_U_n_3;
-  wire ShiftRegRight_V_U_n_4;
-  wire ShiftRegRight_V_U_n_5;
-  wire [4:0]address0;
+  wire ShiftRegRight_V_U_n_1;
+  wire [3:0]address0;
+  wire [4:4]address0__0;
   wire \ap_CS_fsm_reg_n_1_[0] ;
   wire ap_CS_fsm_state2;
   wire ap_CS_fsm_state3;
@@ -498,35 +498,32 @@ module System_Filter_0_0_Filter
   wire [3:2]\NLW_p_Val2_s_reg_188_reg[46]_i_1_O_UNCONNECTED ;
 
   System_Filter_0_0_Filter_ShiftRegRibkb ShiftRegLeft_V_U
-       (.B({ShiftRegLeft_V_U_n_7,ShiftRegLeft_V_U_n_8,ShiftRegLeft_V_U_n_9,ShiftRegLeft_V_U_n_10,ShiftRegLeft_V_U_n_11,ShiftRegLeft_V_U_n_12,ShiftRegLeft_V_U_n_13,ShiftRegLeft_V_U_n_14,ShiftRegLeft_V_U_n_15,ShiftRegLeft_V_U_n_16,ShiftRegLeft_V_U_n_17,ShiftRegLeft_V_U_n_18,ShiftRegLeft_V_U_n_19,ShiftRegLeft_V_U_n_20,ShiftRegLeft_V_U_n_21,ShiftRegLeft_V_U_n_22}),
+       (.D({ShiftRegLeft_V_U_n_6,ShiftRegLeft_V_U_n_7,ShiftRegLeft_V_U_n_8,ShiftRegLeft_V_U_n_9,ShiftRegLeft_V_U_n_10,ShiftRegLeft_V_U_n_11,ShiftRegLeft_V_U_n_12,ShiftRegLeft_V_U_n_13,ShiftRegLeft_V_U_n_14,ShiftRegLeft_V_U_n_15,ShiftRegLeft_V_U_n_16,ShiftRegLeft_V_U_n_17,ShiftRegLeft_V_U_n_18,ShiftRegLeft_V_U_n_19,ShiftRegLeft_V_U_n_20,ShiftRegLeft_V_U_n_21}),
         .Q({tmp_2_fu_249_p31_in,\i_0_reg_200_reg_n_1_[4] ,\i_0_reg_200_reg_n_1_[3] ,\i_0_reg_200_reg_n_1_[2] ,\i_0_reg_200_reg_n_1_[1] ,\i_0_reg_200_reg_n_1_[0] }),
-        .address0(address0[3:0]),
-        .\ap_CS_fsm_reg[2] (ShiftRegLeft_V_U_n_6),
+        .address0(address0),
+        .\ap_CS_fsm_reg[2] (ShiftRegLeft_V_U_n_1),
         .ap_clk(ap_clk),
         .ce00_out(ce00_out),
-        .\i_0_reg_200_reg[4] (ShiftRegLeft_V_U_n_5),
-        .\q0[15]_i_3 ({ce0,ap_CS_fsm_state3,ap_CS_fsm_state2}),
-        .\q0_reg[0] (ShiftRegRight_V_U_n_4),
-        .\q0_reg[15] (ShiftRegRight_V_U_n_5),
-        .\q0_reg[15]_0 (address0[4]),
-        .ram_reg_0_15_0_0__30({\sext_ln20_reg_373_reg_n_1_[3] ,\sext_ln20_reg_373_reg_n_1_[2] ,\sext_ln20_reg_373_reg_n_1_[1] ,\sext_ln20_reg_373_reg_n_1_[0] }),
-        .ram_reg_0_15_0_0__30_0(ShiftRegRight_V_U_n_3),
-        .ram_reg_0_15_0_0__30_1(trunc_ln703_1_reg_368));
-  System_Filter_0_0_Filter_ShiftRegRibkb_0 ShiftRegRight_V_U
-       (.B(q00),
-        .Q({tmp_2_fu_249_p31_in,\i_0_reg_200_reg_n_1_[4] ,\i_0_reg_200_reg_n_1_[3] ,\i_0_reg_200_reg_n_1_[2] ,\i_0_reg_200_reg_n_1_[1] ,\i_0_reg_200_reg_n_1_[0] }),
-        .address0(address0[3:0]),
-        .\ap_CS_fsm_reg[2] (ShiftRegRight_V_U_n_4),
-        .\ap_CS_fsm_reg[2]_0 (ShiftRegRight_V_U_n_5),
-        .ap_clk(ap_clk),
-        .ce00_out(ce00_out),
-        .\i_0_reg_200_reg[1] (ShiftRegRight_V_U_n_3),
-        .\i_0_reg_200_reg[3] (address0[4]),
+        .\i_0_reg_200_reg[1] (ShiftRegLeft_V_U_n_24),
+        .\i_0_reg_200_reg[3] (address0__0),
+        .\i_0_reg_200_reg[4] (ShiftRegLeft_V_U_n_23),
         .icmp_ln22_reg_382(icmp_ln22_reg_382),
         .\q0_reg[0] ({ce0,ap_CS_fsm_state3,ap_CS_fsm_state2}),
-        .\q0_reg[15] (\sext_ln20_reg_373_reg_n_1_[4] ),
-        .\q0_reg[15]_0 (ShiftRegLeft_V_U_n_6),
-        .ram_reg_0_15_0_0__29(ShiftRegLeft_V_U_n_5),
+        .\q0_reg[15] (ShiftRegRight_V_U_n_1),
+        .\q0_reg[15]_0 ({\sext_ln20_reg_373_reg_n_1_[4] ,\sext_ln20_reg_373_reg_n_1_[3] ,\sext_ln20_reg_373_reg_n_1_[2] ,\sext_ln20_reg_373_reg_n_1_[1] ,\sext_ln20_reg_373_reg_n_1_[0] }),
+        .ram_reg_0_15_0_0__30(trunc_ln703_1_reg_368));
+  System_Filter_0_0_Filter_ShiftRegRibkb_0 ShiftRegRight_V_U
+       (.D(q00),
+        .E(ce00_out),
+        .Q(ap_CS_fsm_state3),
+        .address0(address0),
+        .\ap_CS_fsm_reg[2] (ShiftRegRight_V_U_n_1),
+        .ap_clk(ap_clk),
+        .icmp_ln22_reg_382(icmp_ln22_reg_382),
+        .\q0_reg[15] (ShiftRegLeft_V_U_n_1),
+        .\q0_reg[15]_0 (address0__0),
+        .ram_reg_0_15_0_0__0(ShiftRegLeft_V_U_n_23),
+        .ram_reg_0_15_0_0__0_0(ShiftRegLeft_V_U_n_24),
         .ram_reg_0_15_0_0__30(trunc_ln703_reg_363));
   LUT2 #(
     .INIT(4'h2)) 
@@ -895,7 +892,7 @@ module System_Filter_0_0_Filter
        (.I0(icmp_ln22_reg_382),
         .I1(tmp_2_fu_249_p31_in),
         .I2(ap_CS_fsm_state2),
-        .I3(ShiftRegRight_V_U_n_3),
+        .I3(ShiftRegLeft_V_U_n_24),
         .I4(\i_0_reg_200_reg_n_1_[3] ),
         .I5(\i_0_reg_200_reg_n_1_[4] ),
         .O(\icmp_ln22_reg_382[0]_i_1_n_1 ));
@@ -1012,7 +1009,7 @@ module System_Filter_0_0_Filter
         .ACIN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .ACOUT(NLW_mul_ln703_reg_441_reg_ACOUT_UNCONNECTED[29:0]),
         .ALUMODE({1'b0,1'b0,1'b0,1'b0}),
-        .B({ShiftRegLeft_V_U_n_7,ShiftRegLeft_V_U_n_7,ShiftRegLeft_V_U_n_7,ShiftRegLeft_V_U_n_8,ShiftRegLeft_V_U_n_9,ShiftRegLeft_V_U_n_10,ShiftRegLeft_V_U_n_11,ShiftRegLeft_V_U_n_12,ShiftRegLeft_V_U_n_13,ShiftRegLeft_V_U_n_14,ShiftRegLeft_V_U_n_15,ShiftRegLeft_V_U_n_16,ShiftRegLeft_V_U_n_17,ShiftRegLeft_V_U_n_18,ShiftRegLeft_V_U_n_19,ShiftRegLeft_V_U_n_20,ShiftRegLeft_V_U_n_21,ShiftRegLeft_V_U_n_22}),
+        .B({ShiftRegLeft_V_U_n_6,ShiftRegLeft_V_U_n_6,ShiftRegLeft_V_U_n_6,ShiftRegLeft_V_U_n_7,ShiftRegLeft_V_U_n_8,ShiftRegLeft_V_U_n_9,ShiftRegLeft_V_U_n_10,ShiftRegLeft_V_U_n_11,ShiftRegLeft_V_U_n_12,ShiftRegLeft_V_U_n_13,ShiftRegLeft_V_U_n_14,ShiftRegLeft_V_U_n_15,ShiftRegLeft_V_U_n_16,ShiftRegLeft_V_U_n_17,ShiftRegLeft_V_U_n_18,ShiftRegLeft_V_U_n_19,ShiftRegLeft_V_U_n_20,ShiftRegLeft_V_U_n_21}),
         .BCIN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .BCOUT(NLW_mul_ln703_reg_441_reg_BCOUT_UNCONNECTED[17:0]),
         .C({1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1}),
@@ -1261,6 +1258,7 @@ module System_Filter_0_0_Filter
         .D(\p_Val2_2_reg_176_reg[14]_i_1_n_8 ),
         .Q(\p_Val2_2_reg_176_reg_n_1_[14] ),
         .R(ap_NS_fsm13_out));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \p_Val2_2_reg_176_reg[14]_i_1 
        (.CI(1'b0),
         .CO({\p_Val2_2_reg_176_reg[14]_i_1_n_1 ,\p_Val2_2_reg_176_reg[14]_i_1_n_2 ,\p_Val2_2_reg_176_reg[14]_i_1_n_3 ,\p_Val2_2_reg_176_reg[14]_i_1_n_4 }),
@@ -1292,6 +1290,7 @@ module System_Filter_0_0_Filter
         .D(\p_Val2_2_reg_176_reg[18]_i_1_n_8 ),
         .Q(\p_Val2_2_reg_176_reg_n_1_[18] ),
         .R(ap_NS_fsm13_out));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \p_Val2_2_reg_176_reg[18]_i_1 
        (.CI(\p_Val2_2_reg_176_reg[14]_i_1_n_1 ),
         .CO({\p_Val2_2_reg_176_reg[18]_i_1_n_1 ,\p_Val2_2_reg_176_reg[18]_i_1_n_2 ,\p_Val2_2_reg_176_reg[18]_i_1_n_3 ,\p_Val2_2_reg_176_reg[18]_i_1_n_4 }),
@@ -1323,6 +1322,7 @@ module System_Filter_0_0_Filter
         .D(\p_Val2_2_reg_176_reg[22]_i_1_n_8 ),
         .Q(\p_Val2_2_reg_176_reg_n_1_[22] ),
         .R(ap_NS_fsm13_out));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \p_Val2_2_reg_176_reg[22]_i_1 
        (.CI(\p_Val2_2_reg_176_reg[18]_i_1_n_1 ),
         .CO({\p_Val2_2_reg_176_reg[22]_i_1_n_1 ,\p_Val2_2_reg_176_reg[22]_i_1_n_2 ,\p_Val2_2_reg_176_reg[22]_i_1_n_3 ,\p_Val2_2_reg_176_reg[22]_i_1_n_4 }),
@@ -1354,6 +1354,7 @@ module System_Filter_0_0_Filter
         .D(\p_Val2_2_reg_176_reg[26]_i_1_n_8 ),
         .Q(\p_Val2_2_reg_176_reg_n_1_[26] ),
         .R(ap_NS_fsm13_out));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \p_Val2_2_reg_176_reg[26]_i_1 
        (.CI(\p_Val2_2_reg_176_reg[22]_i_1_n_1 ),
         .CO({\p_Val2_2_reg_176_reg[26]_i_1_n_1 ,\p_Val2_2_reg_176_reg[26]_i_1_n_2 ,\p_Val2_2_reg_176_reg[26]_i_1_n_3 ,\p_Val2_2_reg_176_reg[26]_i_1_n_4 }),
@@ -1385,6 +1386,7 @@ module System_Filter_0_0_Filter
         .D(\p_Val2_2_reg_176_reg[30]_i_1_n_8 ),
         .Q(\p_Val2_2_reg_176_reg_n_1_[30] ),
         .R(ap_NS_fsm13_out));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \p_Val2_2_reg_176_reg[30]_i_1 
        (.CI(\p_Val2_2_reg_176_reg[26]_i_1_n_1 ),
         .CO({\p_Val2_2_reg_176_reg[30]_i_1_n_1 ,\p_Val2_2_reg_176_reg[30]_i_1_n_2 ,\p_Val2_2_reg_176_reg[30]_i_1_n_3 ,\p_Val2_2_reg_176_reg[30]_i_1_n_4 }),
@@ -1416,6 +1418,7 @@ module System_Filter_0_0_Filter
         .D(\p_Val2_2_reg_176_reg[34]_i_1_n_8 ),
         .Q(p_Val2_2_reg_176_reg[34]),
         .R(ap_NS_fsm13_out));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \p_Val2_2_reg_176_reg[34]_i_1 
        (.CI(\p_Val2_2_reg_176_reg[30]_i_1_n_1 ),
         .CO({\p_Val2_2_reg_176_reg[34]_i_1_n_1 ,\p_Val2_2_reg_176_reg[34]_i_1_n_2 ,\p_Val2_2_reg_176_reg[34]_i_1_n_3 ,\p_Val2_2_reg_176_reg[34]_i_1_n_4 }),
@@ -1447,6 +1450,7 @@ module System_Filter_0_0_Filter
         .D(\p_Val2_2_reg_176_reg[38]_i_1_n_8 ),
         .Q(p_Val2_2_reg_176_reg[38]),
         .R(ap_NS_fsm13_out));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \p_Val2_2_reg_176_reg[38]_i_1 
        (.CI(\p_Val2_2_reg_176_reg[34]_i_1_n_1 ),
         .CO({\p_Val2_2_reg_176_reg[38]_i_1_n_1 ,\p_Val2_2_reg_176_reg[38]_i_1_n_2 ,\p_Val2_2_reg_176_reg[38]_i_1_n_3 ,\p_Val2_2_reg_176_reg[38]_i_1_n_4 }),
@@ -1478,6 +1482,7 @@ module System_Filter_0_0_Filter
         .D(\p_Val2_2_reg_176_reg[42]_i_1_n_8 ),
         .Q(p_Val2_2_reg_176_reg[42]),
         .R(ap_NS_fsm13_out));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \p_Val2_2_reg_176_reg[42]_i_1 
        (.CI(\p_Val2_2_reg_176_reg[38]_i_1_n_1 ),
         .CO({\p_Val2_2_reg_176_reg[42]_i_1_n_1 ,\p_Val2_2_reg_176_reg[42]_i_1_n_2 ,\p_Val2_2_reg_176_reg[42]_i_1_n_3 ,\p_Val2_2_reg_176_reg[42]_i_1_n_4 }),
@@ -1509,6 +1514,7 @@ module System_Filter_0_0_Filter
         .D(\p_Val2_2_reg_176_reg[46]_i_1_n_8 ),
         .Q(p_Val2_2_reg_176_reg[46]),
         .R(ap_NS_fsm13_out));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \p_Val2_2_reg_176_reg[46]_i_1 
        (.CI(\p_Val2_2_reg_176_reg[42]_i_1_n_1 ),
         .CO({\NLW_p_Val2_2_reg_176_reg[46]_i_1_CO_UNCONNECTED [3:1],\p_Val2_2_reg_176_reg[46]_i_1_n_4 }),
@@ -1726,6 +1732,7 @@ module System_Filter_0_0_Filter
         .D(\p_Val2_s_reg_188_reg[14]_i_1_n_8 ),
         .Q(\p_Val2_s_reg_188_reg_n_1_[14] ),
         .R(ap_NS_fsm13_out));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \p_Val2_s_reg_188_reg[14]_i_1 
        (.CI(1'b0),
         .CO({\p_Val2_s_reg_188_reg[14]_i_1_n_1 ,\p_Val2_s_reg_188_reg[14]_i_1_n_2 ,\p_Val2_s_reg_188_reg[14]_i_1_n_3 ,\p_Val2_s_reg_188_reg[14]_i_1_n_4 }),
@@ -1757,6 +1764,7 @@ module System_Filter_0_0_Filter
         .D(\p_Val2_s_reg_188_reg[18]_i_1_n_8 ),
         .Q(\p_Val2_s_reg_188_reg_n_1_[18] ),
         .R(ap_NS_fsm13_out));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \p_Val2_s_reg_188_reg[18]_i_1 
        (.CI(\p_Val2_s_reg_188_reg[14]_i_1_n_1 ),
         .CO({\p_Val2_s_reg_188_reg[18]_i_1_n_1 ,\p_Val2_s_reg_188_reg[18]_i_1_n_2 ,\p_Val2_s_reg_188_reg[18]_i_1_n_3 ,\p_Val2_s_reg_188_reg[18]_i_1_n_4 }),
@@ -1788,6 +1796,7 @@ module System_Filter_0_0_Filter
         .D(\p_Val2_s_reg_188_reg[22]_i_1_n_8 ),
         .Q(\p_Val2_s_reg_188_reg_n_1_[22] ),
         .R(ap_NS_fsm13_out));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \p_Val2_s_reg_188_reg[22]_i_1 
        (.CI(\p_Val2_s_reg_188_reg[18]_i_1_n_1 ),
         .CO({\p_Val2_s_reg_188_reg[22]_i_1_n_1 ,\p_Val2_s_reg_188_reg[22]_i_1_n_2 ,\p_Val2_s_reg_188_reg[22]_i_1_n_3 ,\p_Val2_s_reg_188_reg[22]_i_1_n_4 }),
@@ -1819,6 +1828,7 @@ module System_Filter_0_0_Filter
         .D(\p_Val2_s_reg_188_reg[26]_i_1_n_8 ),
         .Q(\p_Val2_s_reg_188_reg_n_1_[26] ),
         .R(ap_NS_fsm13_out));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \p_Val2_s_reg_188_reg[26]_i_1 
        (.CI(\p_Val2_s_reg_188_reg[22]_i_1_n_1 ),
         .CO({\p_Val2_s_reg_188_reg[26]_i_1_n_1 ,\p_Val2_s_reg_188_reg[26]_i_1_n_2 ,\p_Val2_s_reg_188_reg[26]_i_1_n_3 ,\p_Val2_s_reg_188_reg[26]_i_1_n_4 }),
@@ -1850,6 +1860,7 @@ module System_Filter_0_0_Filter
         .D(\p_Val2_s_reg_188_reg[30]_i_1_n_8 ),
         .Q(\p_Val2_s_reg_188_reg_n_1_[30] ),
         .R(ap_NS_fsm13_out));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \p_Val2_s_reg_188_reg[30]_i_1 
        (.CI(\p_Val2_s_reg_188_reg[26]_i_1_n_1 ),
         .CO({\p_Val2_s_reg_188_reg[30]_i_1_n_1 ,\p_Val2_s_reg_188_reg[30]_i_1_n_2 ,\p_Val2_s_reg_188_reg[30]_i_1_n_3 ,\p_Val2_s_reg_188_reg[30]_i_1_n_4 }),
@@ -1881,6 +1892,7 @@ module System_Filter_0_0_Filter
         .D(\p_Val2_s_reg_188_reg[34]_i_1_n_8 ),
         .Q(p_Val2_s_reg_188_reg[34]),
         .R(ap_NS_fsm13_out));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \p_Val2_s_reg_188_reg[34]_i_1 
        (.CI(\p_Val2_s_reg_188_reg[30]_i_1_n_1 ),
         .CO({\p_Val2_s_reg_188_reg[34]_i_1_n_1 ,\p_Val2_s_reg_188_reg[34]_i_1_n_2 ,\p_Val2_s_reg_188_reg[34]_i_1_n_3 ,\p_Val2_s_reg_188_reg[34]_i_1_n_4 }),
@@ -1912,6 +1924,7 @@ module System_Filter_0_0_Filter
         .D(\p_Val2_s_reg_188_reg[38]_i_1_n_8 ),
         .Q(p_Val2_s_reg_188_reg[38]),
         .R(ap_NS_fsm13_out));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \p_Val2_s_reg_188_reg[38]_i_1 
        (.CI(\p_Val2_s_reg_188_reg[34]_i_1_n_1 ),
         .CO({\p_Val2_s_reg_188_reg[38]_i_1_n_1 ,\p_Val2_s_reg_188_reg[38]_i_1_n_2 ,\p_Val2_s_reg_188_reg[38]_i_1_n_3 ,\p_Val2_s_reg_188_reg[38]_i_1_n_4 }),
@@ -1943,6 +1956,7 @@ module System_Filter_0_0_Filter
         .D(\p_Val2_s_reg_188_reg[42]_i_1_n_8 ),
         .Q(p_Val2_s_reg_188_reg[42]),
         .R(ap_NS_fsm13_out));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \p_Val2_s_reg_188_reg[42]_i_1 
        (.CI(\p_Val2_s_reg_188_reg[38]_i_1_n_1 ),
         .CO({\p_Val2_s_reg_188_reg[42]_i_1_n_1 ,\p_Val2_s_reg_188_reg[42]_i_1_n_2 ,\p_Val2_s_reg_188_reg[42]_i_1_n_3 ,\p_Val2_s_reg_188_reg[42]_i_1_n_4 }),
@@ -1974,6 +1988,7 @@ module System_Filter_0_0_Filter
         .D(\p_Val2_s_reg_188_reg[46]_i_1_n_8 ),
         .Q(p_Val2_s_reg_188_reg[46]),
         .R(ap_NS_fsm13_out));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \p_Val2_s_reg_188_reg[46]_i_1 
        (.CI(\p_Val2_s_reg_188_reg[42]_i_1_n_1 ),
         .CO({\NLW_p_Val2_s_reg_188_reg[46]_i_1_CO_UNCONNECTED [3:1],\p_Val2_s_reg_188_reg[46]_i_1_n_4 }),
@@ -2432,182 +2447,165 @@ endmodule
 
 (* ORIG_REF_NAME = "Filter_ShiftRegRibkb" *) 
 module System_Filter_0_0_Filter_ShiftRegRibkb
-   (address0,
+   (\ap_CS_fsm_reg[2] ,
+    address0,
+    D,
+    \i_0_reg_200_reg[3] ,
     \i_0_reg_200_reg[4] ,
-    \ap_CS_fsm_reg[2] ,
-    B,
-    Q,
-    ram_reg_0_15_0_0__30,
-    ram_reg_0_15_0_0__30_0,
-    \q0[15]_i_3 ,
-    ram_reg_0_15_0_0__30_1,
+    \i_0_reg_200_reg[1] ,
     ce00_out,
     ap_clk,
-    \q0_reg[0] ,
     \q0_reg[15] ,
-    \q0_reg[15]_0 );
-  output [3:0]address0;
-  output \i_0_reg_200_reg[4] ;
-  output \ap_CS_fsm_reg[2] ;
-  output [15:0]B;
-  input [5:0]Q;
-  input [3:0]ram_reg_0_15_0_0__30;
-  input ram_reg_0_15_0_0__30_0;
-  input [2:0]\q0[15]_i_3 ;
-  input [15:0]ram_reg_0_15_0_0__30_1;
-  input ce00_out;
-  input ap_clk;
-  input \q0_reg[0] ;
-  input \q0_reg[15] ;
-  input [0:0]\q0_reg[15]_0 ;
-
-  wire [15:0]B;
-  wire [5:0]Q;
-  wire [3:0]address0;
-  wire \ap_CS_fsm_reg[2] ;
-  wire ap_clk;
-  wire ce00_out;
-  wire \i_0_reg_200_reg[4] ;
-  wire [2:0]\q0[15]_i_3 ;
-  wire \q0_reg[0] ;
-  wire \q0_reg[15] ;
-  wire [0:0]\q0_reg[15]_0 ;
-  wire [3:0]ram_reg_0_15_0_0__30;
-  wire ram_reg_0_15_0_0__30_0;
-  wire [15:0]ram_reg_0_15_0_0__30_1;
-
-  System_Filter_0_0_Filter_ShiftRegRibkb_ram_4 Filter_ShiftRegRibkb_ram_U
-       (.B(B),
-        .Q(Q),
-        .address0(address0),
-        .\ap_CS_fsm_reg[2] (\ap_CS_fsm_reg[2] ),
-        .ap_clk(ap_clk),
-        .ce00_out(ce00_out),
-        .\i_0_reg_200_reg[4] (\i_0_reg_200_reg[4] ),
-        .\q0[15]_i_3 (\q0[15]_i_3 ),
-        .\q0_reg[0]_0 (\q0_reg[0] ),
-        .\q0_reg[15]_0 (\q0_reg[15] ),
-        .\q0_reg[15]_1 (\q0_reg[15]_0 ),
-        .ram_reg_0_15_0_0__30_0(ram_reg_0_15_0_0__30),
-        .ram_reg_0_15_0_0__30_1(ram_reg_0_15_0_0__30_0),
-        .ram_reg_0_15_0_0__30_2(ram_reg_0_15_0_0__30_1));
-endmodule
-
-(* ORIG_REF_NAME = "Filter_ShiftRegRibkb" *) 
-module System_Filter_0_0_Filter_ShiftRegRibkb_0
-   (\i_0_reg_200_reg[3] ,
-    ce00_out,
-    \i_0_reg_200_reg[1] ,
-    \ap_CS_fsm_reg[2] ,
-    \ap_CS_fsm_reg[2]_0 ,
-    B,
     Q,
-    \q0_reg[15] ,
     \q0_reg[15]_0 ,
     \q0_reg[0] ,
     ram_reg_0_15_0_0__30,
-    icmp_ln22_reg_382,
-    ram_reg_0_15_0_0__29,
-    ap_clk,
-    address0);
-  output [0:0]\i_0_reg_200_reg[3] ;
-  output ce00_out;
-  output \i_0_reg_200_reg[1] ;
+    icmp_ln22_reg_382);
   output \ap_CS_fsm_reg[2] ;
-  output \ap_CS_fsm_reg[2]_0 ;
-  output [15:0]B;
+  output [3:0]address0;
+  output [15:0]D;
+  output [0:0]\i_0_reg_200_reg[3] ;
+  output \i_0_reg_200_reg[4] ;
+  output \i_0_reg_200_reg[1] ;
+  output ce00_out;
+  input ap_clk;
+  input \q0_reg[15] ;
   input [5:0]Q;
-  input [0:0]\q0_reg[15] ;
-  input \q0_reg[15]_0 ;
+  input [4:0]\q0_reg[15]_0 ;
   input [2:0]\q0_reg[0] ;
   input [15:0]ram_reg_0_15_0_0__30;
   input icmp_ln22_reg_382;
-  input ram_reg_0_15_0_0__29;
-  input ap_clk;
-  input [3:0]address0;
 
-  wire [15:0]B;
+  wire [15:0]D;
   wire [5:0]Q;
   wire [3:0]address0;
   wire \ap_CS_fsm_reg[2] ;
-  wire \ap_CS_fsm_reg[2]_0 ;
   wire ap_clk;
   wire ce00_out;
   wire \i_0_reg_200_reg[1] ;
   wire [0:0]\i_0_reg_200_reg[3] ;
+  wire \i_0_reg_200_reg[4] ;
   wire icmp_ln22_reg_382;
   wire [2:0]\q0_reg[0] ;
-  wire [0:0]\q0_reg[15] ;
-  wire \q0_reg[15]_0 ;
-  wire ram_reg_0_15_0_0__29;
+  wire \q0_reg[15] ;
+  wire [4:0]\q0_reg[15]_0 ;
   wire [15:0]ram_reg_0_15_0_0__30;
 
-  System_Filter_0_0_Filter_ShiftRegRibkb_ram Filter_ShiftRegRibkb_ram_U
-       (.B(B),
+  System_Filter_0_0_Filter_ShiftRegRibkb_ram_4 Filter_ShiftRegRibkb_ram_U
+       (.D(D),
         .E(ce00_out),
         .Q(Q),
-        .address0(address0),
         .\ap_CS_fsm_reg[2] (\ap_CS_fsm_reg[2] ),
-        .\ap_CS_fsm_reg[2]_0 (\ap_CS_fsm_reg[2]_0 ),
         .ap_clk(ap_clk),
-        .\i_0_reg_200_reg[1] (\i_0_reg_200_reg[1] ),
+        .\i_0_reg_200_reg[0] (address0[1]),
+        .\i_0_reg_200_reg[1] (address0[2]),
+        .\i_0_reg_200_reg[1]_0 (\i_0_reg_200_reg[1] ),
         .\i_0_reg_200_reg[3] (\i_0_reg_200_reg[3] ),
+        .\i_0_reg_200_reg[4] (address0[3]),
+        .\i_0_reg_200_reg[4]_0 (\i_0_reg_200_reg[4] ),
         .icmp_ln22_reg_382(icmp_ln22_reg_382),
         .\q0_reg[0]_0 (\q0_reg[0] ),
         .\q0_reg[15]_0 (\q0_reg[15] ),
         .\q0_reg[15]_1 (\q0_reg[15]_0 ),
-        .ram_reg_0_15_0_0__29_0(ram_reg_0_15_0_0__29),
+        .ram_reg_0_15_0_0__30_0(ram_reg_0_15_0_0__30),
+        .\sext_ln20_reg_373_reg[0] (address0[0]));
+endmodule
+
+(* ORIG_REF_NAME = "Filter_ShiftRegRibkb" *) 
+module System_Filter_0_0_Filter_ShiftRegRibkb_0
+   (\ap_CS_fsm_reg[2] ,
+    D,
+    ap_clk,
+    \q0_reg[15] ,
+    address0,
+    \q0_reg[15]_0 ,
+    Q,
+    icmp_ln22_reg_382,
+    ram_reg_0_15_0_0__0,
+    ram_reg_0_15_0_0__0_0,
+    ram_reg_0_15_0_0__30,
+    E);
+  output \ap_CS_fsm_reg[2] ;
+  output [15:0]D;
+  input ap_clk;
+  input \q0_reg[15] ;
+  input [3:0]address0;
+  input [0:0]\q0_reg[15]_0 ;
+  input [0:0]Q;
+  input icmp_ln22_reg_382;
+  input ram_reg_0_15_0_0__0;
+  input ram_reg_0_15_0_0__0_0;
+  input [15:0]ram_reg_0_15_0_0__30;
+  input [0:0]E;
+
+  wire [15:0]D;
+  wire [0:0]E;
+  wire [0:0]Q;
+  wire [3:0]address0;
+  wire \ap_CS_fsm_reg[2] ;
+  wire ap_clk;
+  wire icmp_ln22_reg_382;
+  wire \q0_reg[15] ;
+  wire [0:0]\q0_reg[15]_0 ;
+  wire ram_reg_0_15_0_0__0;
+  wire ram_reg_0_15_0_0__0_0;
+  wire [15:0]ram_reg_0_15_0_0__30;
+
+  System_Filter_0_0_Filter_ShiftRegRibkb_ram Filter_ShiftRegRibkb_ram_U
+       (.D(D),
+        .E(E),
+        .Q(Q),
+        .address0(address0),
+        .\ap_CS_fsm_reg[2] (\ap_CS_fsm_reg[2] ),
+        .ap_clk(ap_clk),
+        .icmp_ln22_reg_382(icmp_ln22_reg_382),
+        .\q0_reg[15]_0 (\q0_reg[15] ),
+        .\q0_reg[15]_1 (\q0_reg[15]_0 ),
+        .ram_reg_0_15_0_0__0_0(ram_reg_0_15_0_0__0),
+        .ram_reg_0_15_0_0__0_1(ram_reg_0_15_0_0__0_0),
         .ram_reg_0_15_0_0__30_0(ram_reg_0_15_0_0__30));
 endmodule
 
 (* ORIG_REF_NAME = "Filter_ShiftRegRibkb_ram" *) 
 module System_Filter_0_0_Filter_ShiftRegRibkb_ram
-   (\i_0_reg_200_reg[3] ,
-    E,
-    \i_0_reg_200_reg[1] ,
-    \ap_CS_fsm_reg[2] ,
-    \ap_CS_fsm_reg[2]_0 ,
-    B,
-    Q,
-    \q0_reg[15]_0 ,
-    \q0_reg[15]_1 ,
-    \q0_reg[0]_0 ,
-    ram_reg_0_15_0_0__30_0,
-    icmp_ln22_reg_382,
-    ram_reg_0_15_0_0__29_0,
+   (\ap_CS_fsm_reg[2] ,
+    D,
     ap_clk,
-    address0);
-  output \i_0_reg_200_reg[3] ;
-  output [0:0]E;
-  output \i_0_reg_200_reg[1] ;
+    \q0_reg[15]_0 ,
+    address0,
+    \q0_reg[15]_1 ,
+    Q,
+    icmp_ln22_reg_382,
+    ram_reg_0_15_0_0__0_0,
+    ram_reg_0_15_0_0__0_1,
+    ram_reg_0_15_0_0__30_0,
+    E);
   output \ap_CS_fsm_reg[2] ;
-  output \ap_CS_fsm_reg[2]_0 ;
-  output [15:0]B;
-  input [5:0]Q;
-  input [0:0]\q0_reg[15]_0 ;
-  input \q0_reg[15]_1 ;
-  input [2:0]\q0_reg[0]_0 ;
-  input [15:0]ram_reg_0_15_0_0__30_0;
-  input icmp_ln22_reg_382;
-  input ram_reg_0_15_0_0__29_0;
+  output [15:0]D;
   input ap_clk;
+  input \q0_reg[15]_0 ;
   input [3:0]address0;
+  input [0:0]\q0_reg[15]_1 ;
+  input [0:0]Q;
+  input icmp_ln22_reg_382;
+  input ram_reg_0_15_0_0__0_0;
+  input ram_reg_0_15_0_0__0_1;
+  input [15:0]ram_reg_0_15_0_0__30_0;
+  input [0:0]E;
 
-  wire [15:0]B;
+  wire [15:0]D;
   wire [0:0]E;
-  wire [5:0]Q;
+  wire [0:0]Q;
   wire [3:0]address0;
   wire \ap_CS_fsm_reg[2] ;
-  wire \ap_CS_fsm_reg[2]_0 ;
   wire ap_clk;
   wire [15:0]d0;
-  wire \i_0_reg_200_reg[1] ;
-  wire \i_0_reg_200_reg[3] ;
   wire icmp_ln22_reg_382;
   wire [15:0]q0;
-  wire [2:0]\q0_reg[0]_0 ;
-  wire [0:0]\q0_reg[15]_0 ;
-  wire \q0_reg[15]_1 ;
+  wire \q0_reg[15]_0 ;
+  wire [0:0]\q0_reg[15]_1 ;
+  wire ram_reg_0_15_0_0__0_0;
+  wire ram_reg_0_15_0_0__0_1;
   wire ram_reg_0_15_0_0__0_n_1;
   wire ram_reg_0_15_0_0__10_n_1;
   wire ram_reg_0_15_0_0__11_n_1;
@@ -2629,7 +2627,6 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
   wire ram_reg_0_15_0_0__26_n_1;
   wire ram_reg_0_15_0_0__27_n_1;
   wire ram_reg_0_15_0_0__28_n_1;
-  wire ram_reg_0_15_0_0__29_0;
   wire ram_reg_0_15_0_0__29_n_1;
   wire ram_reg_0_15_0_0__2_n_1;
   wire [15:0]ram_reg_0_15_0_0__30_0;
@@ -2645,232 +2642,215 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
 
   LUT3 #(
     .INIT(8'hB8)) 
-    \q0[0]_i_1 
-       (.I0(ram_reg_0_15_0_0__0_n_1),
-        .I1(\i_0_reg_200_reg[3] ),
-        .I2(ram_reg_0_15_0_0_n_1),
-        .O(B[0]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[10]_i_1 
-       (.I0(ram_reg_0_15_0_0__20_n_1),
-        .I1(\i_0_reg_200_reg[3] ),
-        .I2(ram_reg_0_15_0_0__19_n_1),
-        .O(B[10]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[11]_i_1 
-       (.I0(ram_reg_0_15_0_0__22_n_1),
-        .I1(\i_0_reg_200_reg[3] ),
-        .I2(ram_reg_0_15_0_0__21_n_1),
-        .O(B[11]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[12]_i_1 
-       (.I0(ram_reg_0_15_0_0__24_n_1),
-        .I1(\i_0_reg_200_reg[3] ),
-        .I2(ram_reg_0_15_0_0__23_n_1),
-        .O(B[12]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[13]_i_1 
-       (.I0(ram_reg_0_15_0_0__26_n_1),
-        .I1(\i_0_reg_200_reg[3] ),
-        .I2(ram_reg_0_15_0_0__25_n_1),
-        .O(B[13]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[14]_i_1 
-       (.I0(ram_reg_0_15_0_0__28_n_1),
-        .I1(\i_0_reg_200_reg[3] ),
-        .I2(ram_reg_0_15_0_0__27_n_1),
-        .O(B[14]));
-  LUT4 #(
-    .INIT(16'hEEFE)) 
-    \q0[15]_i_1__0 
-       (.I0(\q0_reg[0]_0 [2]),
-        .I1(\q0_reg[0]_0 [1]),
-        .I2(\q0_reg[0]_0 [0]),
-        .I3(Q[5]),
-        .O(E));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[15]_i_2 
-       (.I0(ram_reg_0_15_0_0__30_n_1),
-        .I1(\i_0_reg_200_reg[3] ),
-        .I2(ram_reg_0_15_0_0__29_n_1),
-        .O(B[15]));
-  LUT6 #(
-    .INIT(64'hFFFF0001FC01FC01)) 
-    \q0[15]_i_3 
-       (.I0(E),
-        .I1(\i_0_reg_200_reg[1] ),
-        .I2(Q[3]),
-        .I3(Q[4]),
-        .I4(\q0_reg[15]_0 ),
-        .I5(\q0_reg[15]_1 ),
-        .O(\i_0_reg_200_reg[3] ));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[1]_i_1 
-       (.I0(ram_reg_0_15_0_0__2_n_1),
-        .I1(\i_0_reg_200_reg[3] ),
-        .I2(ram_reg_0_15_0_0__1_n_1),
-        .O(B[1]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[2]_i_1 
-       (.I0(ram_reg_0_15_0_0__4_n_1),
-        .I1(\i_0_reg_200_reg[3] ),
-        .I2(ram_reg_0_15_0_0__3_n_1),
-        .O(B[2]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[3]_i_1 
-       (.I0(ram_reg_0_15_0_0__6_n_1),
-        .I1(\i_0_reg_200_reg[3] ),
-        .I2(ram_reg_0_15_0_0__5_n_1),
-        .O(B[3]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[4]_i_1 
-       (.I0(ram_reg_0_15_0_0__8_n_1),
-        .I1(\i_0_reg_200_reg[3] ),
-        .I2(ram_reg_0_15_0_0__7_n_1),
-        .O(B[4]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[5]_i_1 
-       (.I0(ram_reg_0_15_0_0__10_n_1),
-        .I1(\i_0_reg_200_reg[3] ),
-        .I2(ram_reg_0_15_0_0__9_n_1),
-        .O(B[5]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[6]_i_1 
-       (.I0(ram_reg_0_15_0_0__12_n_1),
-        .I1(\i_0_reg_200_reg[3] ),
-        .I2(ram_reg_0_15_0_0__11_n_1),
-        .O(B[6]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[7]_i_1 
+    mul_ln703_1_reg_436_reg_i_10
        (.I0(ram_reg_0_15_0_0__14_n_1),
-        .I1(\i_0_reg_200_reg[3] ),
+        .I1(\q0_reg[15]_1 ),
         .I2(ram_reg_0_15_0_0__13_n_1),
-        .O(B[7]));
+        .O(D[7]));
   LUT3 #(
     .INIT(8'hB8)) 
-    \q0[8]_i_1 
-       (.I0(ram_reg_0_15_0_0__16_n_1),
-        .I1(\i_0_reg_200_reg[3] ),
-        .I2(ram_reg_0_15_0_0__15_n_1),
-        .O(B[8]));
+    mul_ln703_1_reg_436_reg_i_11
+       (.I0(ram_reg_0_15_0_0__12_n_1),
+        .I1(\q0_reg[15]_1 ),
+        .I2(ram_reg_0_15_0_0__11_n_1),
+        .O(D[6]));
   LUT3 #(
     .INIT(8'hB8)) 
-    \q0[9]_i_1 
+    mul_ln703_1_reg_436_reg_i_12
+       (.I0(ram_reg_0_15_0_0__10_n_1),
+        .I1(\q0_reg[15]_1 ),
+        .I2(ram_reg_0_15_0_0__9_n_1),
+        .O(D[5]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_1_reg_436_reg_i_13
+       (.I0(ram_reg_0_15_0_0__8_n_1),
+        .I1(\q0_reg[15]_1 ),
+        .I2(ram_reg_0_15_0_0__7_n_1),
+        .O(D[4]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_1_reg_436_reg_i_14
+       (.I0(ram_reg_0_15_0_0__6_n_1),
+        .I1(\q0_reg[15]_1 ),
+        .I2(ram_reg_0_15_0_0__5_n_1),
+        .O(D[3]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_1_reg_436_reg_i_15
+       (.I0(ram_reg_0_15_0_0__4_n_1),
+        .I1(\q0_reg[15]_1 ),
+        .I2(ram_reg_0_15_0_0__3_n_1),
+        .O(D[2]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_1_reg_436_reg_i_16
+       (.I0(ram_reg_0_15_0_0__2_n_1),
+        .I1(\q0_reg[15]_1 ),
+        .I2(ram_reg_0_15_0_0__1_n_1),
+        .O(D[1]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_1_reg_436_reg_i_17
+       (.I0(ram_reg_0_15_0_0__0_n_1),
+        .I1(\q0_reg[15]_1 ),
+        .I2(ram_reg_0_15_0_0_n_1),
+        .O(D[0]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_1_reg_436_reg_i_2
+       (.I0(ram_reg_0_15_0_0__30_n_1),
+        .I1(\q0_reg[15]_1 ),
+        .I2(ram_reg_0_15_0_0__29_n_1),
+        .O(D[15]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_1_reg_436_reg_i_3
+       (.I0(ram_reg_0_15_0_0__28_n_1),
+        .I1(\q0_reg[15]_1 ),
+        .I2(ram_reg_0_15_0_0__27_n_1),
+        .O(D[14]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_1_reg_436_reg_i_4
+       (.I0(ram_reg_0_15_0_0__26_n_1),
+        .I1(\q0_reg[15]_1 ),
+        .I2(ram_reg_0_15_0_0__25_n_1),
+        .O(D[13]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_1_reg_436_reg_i_5
+       (.I0(ram_reg_0_15_0_0__24_n_1),
+        .I1(\q0_reg[15]_1 ),
+        .I2(ram_reg_0_15_0_0__23_n_1),
+        .O(D[12]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_1_reg_436_reg_i_6
+       (.I0(ram_reg_0_15_0_0__22_n_1),
+        .I1(\q0_reg[15]_1 ),
+        .I2(ram_reg_0_15_0_0__21_n_1),
+        .O(D[11]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_1_reg_436_reg_i_7
+       (.I0(ram_reg_0_15_0_0__20_n_1),
+        .I1(\q0_reg[15]_1 ),
+        .I2(ram_reg_0_15_0_0__19_n_1),
+        .O(D[10]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_1_reg_436_reg_i_8
        (.I0(ram_reg_0_15_0_0__18_n_1),
-        .I1(\i_0_reg_200_reg[3] ),
+        .I1(\q0_reg[15]_1 ),
         .I2(ram_reg_0_15_0_0__17_n_1),
-        .O(B[9]));
+        .O(D[9]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_1_reg_436_reg_i_9
+       (.I0(ram_reg_0_15_0_0__16_n_1),
+        .I1(\q0_reg[15]_1 ),
+        .I2(ram_reg_0_15_0_0__15_n_1),
+        .O(D[8]));
   FDRE \q0_reg[0] 
        (.C(ap_clk),
         .CE(E),
-        .D(B[0]),
+        .D(D[0]),
         .Q(q0[0]),
         .R(1'b0));
   FDRE \q0_reg[10] 
        (.C(ap_clk),
         .CE(E),
-        .D(B[10]),
+        .D(D[10]),
         .Q(q0[10]),
         .R(1'b0));
   FDRE \q0_reg[11] 
        (.C(ap_clk),
         .CE(E),
-        .D(B[11]),
+        .D(D[11]),
         .Q(q0[11]),
         .R(1'b0));
   FDRE \q0_reg[12] 
        (.C(ap_clk),
         .CE(E),
-        .D(B[12]),
+        .D(D[12]),
         .Q(q0[12]),
         .R(1'b0));
   FDRE \q0_reg[13] 
        (.C(ap_clk),
         .CE(E),
-        .D(B[13]),
+        .D(D[13]),
         .Q(q0[13]),
         .R(1'b0));
   FDRE \q0_reg[14] 
        (.C(ap_clk),
         .CE(E),
-        .D(B[14]),
+        .D(D[14]),
         .Q(q0[14]),
         .R(1'b0));
   FDRE \q0_reg[15] 
        (.C(ap_clk),
         .CE(E),
-        .D(B[15]),
+        .D(D[15]),
         .Q(q0[15]),
         .R(1'b0));
   FDRE \q0_reg[1] 
        (.C(ap_clk),
         .CE(E),
-        .D(B[1]),
+        .D(D[1]),
         .Q(q0[1]),
         .R(1'b0));
   FDRE \q0_reg[2] 
        (.C(ap_clk),
         .CE(E),
-        .D(B[2]),
+        .D(D[2]),
         .Q(q0[2]),
         .R(1'b0));
   FDRE \q0_reg[3] 
        (.C(ap_clk),
         .CE(E),
-        .D(B[3]),
+        .D(D[3]),
         .Q(q0[3]),
         .R(1'b0));
   FDRE \q0_reg[4] 
        (.C(ap_clk),
         .CE(E),
-        .D(B[4]),
+        .D(D[4]),
         .Q(q0[4]),
         .R(1'b0));
   FDRE \q0_reg[5] 
        (.C(ap_clk),
         .CE(E),
-        .D(B[5]),
+        .D(D[5]),
         .Q(q0[5]),
         .R(1'b0));
   FDRE \q0_reg[6] 
        (.C(ap_clk),
         .CE(E),
-        .D(B[6]),
+        .D(D[6]),
         .Q(q0[6]),
         .R(1'b0));
   FDRE \q0_reg[7] 
        (.C(ap_clk),
         .CE(E),
-        .D(B[7]),
+        .D(D[7]),
         .Q(q0[7]),
         .R(1'b0));
   FDRE \q0_reg[8] 
        (.C(ap_clk),
         .CE(E),
-        .D(B[8]),
+        .D(D[8]),
         .Q(q0[8]),
         .R(1'b0));
   FDRE \q0_reg[9] 
        (.C(ap_clk),
         .CE(E),
-        .D(B[9]),
+        .D(D[9]),
         .Q(q0[9]),
         .R(1'b0));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -2888,9 +2868,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[0]),
         .O(ram_reg_0_15_0_0_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2] ));
+        .WE(\q0_reg[15]_0 ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -2908,18 +2889,19 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[0]),
         .O(ram_reg_0_15_0_0__0_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   LUT5 #(
     .INIT(32'h222F0000)) 
     ram_reg_0_15_0_0__0_i_1
-       (.I0(\q0_reg[0]_0 [1]),
+       (.I0(Q),
         .I1(icmp_ln22_reg_382),
-        .I2(ram_reg_0_15_0_0__29_0),
-        .I3(\i_0_reg_200_reg[1] ),
-        .I4(\i_0_reg_200_reg[3] ),
-        .O(\ap_CS_fsm_reg[2]_0 ));
+        .I2(ram_reg_0_15_0_0__0_0),
+        .I3(ram_reg_0_15_0_0__0_1),
+        .I4(\q0_reg[15]_1 ),
+        .O(\ap_CS_fsm_reg[2] ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -2937,9 +2919,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[1]),
         .O(ram_reg_0_15_0_0__1_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2] ));
+        .WE(\q0_reg[15]_0 ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -2957,9 +2940,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[5]),
         .O(ram_reg_0_15_0_0__10_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -2977,16 +2961,17 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[6]),
         .O(ram_reg_0_15_0_0__11_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2] ));
+        .WE(\q0_reg[15]_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__11_i_1
        (.I0(q0[6]),
-        .I1(\q0_reg[0]_0 [1]),
+        .I1(Q),
         .I2(ram_reg_0_15_0_0__30_0[6]),
         .O(d0[6]));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -3004,9 +2989,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[6]),
         .O(ram_reg_0_15_0_0__12_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -3024,16 +3010,17 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[7]),
         .O(ram_reg_0_15_0_0__13_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2] ));
+        .WE(\q0_reg[15]_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__13_i_1
        (.I0(q0[7]),
-        .I1(\q0_reg[0]_0 [1]),
+        .I1(Q),
         .I2(ram_reg_0_15_0_0__30_0[7]),
         .O(d0[7]));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -3051,9 +3038,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[7]),
         .O(ram_reg_0_15_0_0__14_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -3071,16 +3059,17 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[8]),
         .O(ram_reg_0_15_0_0__15_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2] ));
+        .WE(\q0_reg[15]_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__15_i_1
        (.I0(q0[8]),
-        .I1(\q0_reg[0]_0 [1]),
+        .I1(Q),
         .I2(ram_reg_0_15_0_0__30_0[8]),
         .O(d0[8]));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -3098,9 +3087,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[8]),
         .O(ram_reg_0_15_0_0__16_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -3118,16 +3108,17 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[9]),
         .O(ram_reg_0_15_0_0__17_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2] ));
+        .WE(\q0_reg[15]_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__17_i_1
        (.I0(q0[9]),
-        .I1(\q0_reg[0]_0 [1]),
+        .I1(Q),
         .I2(ram_reg_0_15_0_0__30_0[9]),
         .O(d0[9]));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -3145,9 +3136,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[9]),
         .O(ram_reg_0_15_0_0__18_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -3165,23 +3157,24 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[10]),
         .O(ram_reg_0_15_0_0__19_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2] ));
+        .WE(\q0_reg[15]_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__19_i_1
        (.I0(q0[10]),
-        .I1(\q0_reg[0]_0 [1]),
+        .I1(Q),
         .I2(ram_reg_0_15_0_0__30_0[10]),
         .O(d0[10]));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__1_i_1
        (.I0(q0[1]),
-        .I1(\q0_reg[0]_0 [1]),
+        .I1(Q),
         .I2(ram_reg_0_15_0_0__30_0[1]),
         .O(d0[1]));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -3199,9 +3192,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[1]),
         .O(ram_reg_0_15_0_0__2_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -3219,9 +3213,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[10]),
         .O(ram_reg_0_15_0_0__20_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -3239,16 +3234,17 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[11]),
         .O(ram_reg_0_15_0_0__21_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2] ));
+        .WE(\q0_reg[15]_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__21_i_1
        (.I0(q0[11]),
-        .I1(\q0_reg[0]_0 [1]),
+        .I1(Q),
         .I2(ram_reg_0_15_0_0__30_0[11]),
         .O(d0[11]));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -3266,9 +3262,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[11]),
         .O(ram_reg_0_15_0_0__22_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -3286,16 +3283,17 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[12]),
         .O(ram_reg_0_15_0_0__23_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2] ));
+        .WE(\q0_reg[15]_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__23_i_1
        (.I0(q0[12]),
-        .I1(\q0_reg[0]_0 [1]),
+        .I1(Q),
         .I2(ram_reg_0_15_0_0__30_0[12]),
         .O(d0[12]));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -3313,9 +3311,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[12]),
         .O(ram_reg_0_15_0_0__24_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -3333,16 +3332,17 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[13]),
         .O(ram_reg_0_15_0_0__25_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2] ));
+        .WE(\q0_reg[15]_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__25_i_1
        (.I0(q0[13]),
-        .I1(\q0_reg[0]_0 [1]),
+        .I1(Q),
         .I2(ram_reg_0_15_0_0__30_0[13]),
         .O(d0[13]));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -3360,9 +3360,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[13]),
         .O(ram_reg_0_15_0_0__26_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -3380,16 +3381,17 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[14]),
         .O(ram_reg_0_15_0_0__27_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2] ));
+        .WE(\q0_reg[15]_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__27_i_1
        (.I0(q0[14]),
-        .I1(\q0_reg[0]_0 [1]),
+        .I1(Q),
         .I2(ram_reg_0_15_0_0__30_0[14]),
         .O(d0[14]));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -3407,9 +3409,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[14]),
         .O(ram_reg_0_15_0_0__28_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -3427,16 +3430,17 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[15]),
         .O(ram_reg_0_15_0_0__29_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2] ));
+        .WE(\q0_reg[15]_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__29_i_1
        (.I0(q0[15]),
-        .I1(\q0_reg[0]_0 [1]),
+        .I1(Q),
         .I2(ram_reg_0_15_0_0__30_0[15]),
         .O(d0[15]));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -3454,9 +3458,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[2]),
         .O(ram_reg_0_15_0_0__3_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2] ));
+        .WE(\q0_reg[15]_0 ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -3474,16 +3479,17 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[15]),
         .O(ram_reg_0_15_0_0__30_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__3_i_1
        (.I0(q0[2]),
-        .I1(\q0_reg[0]_0 [1]),
+        .I1(Q),
         .I2(ram_reg_0_15_0_0__30_0[2]),
         .O(d0[2]));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -3501,9 +3507,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[2]),
         .O(ram_reg_0_15_0_0__4_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -3521,16 +3528,17 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[3]),
         .O(ram_reg_0_15_0_0__5_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2] ));
+        .WE(\q0_reg[15]_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__5_i_1
        (.I0(q0[3]),
-        .I1(\q0_reg[0]_0 [1]),
+        .I1(Q),
         .I2(ram_reg_0_15_0_0__30_0[3]),
         .O(d0[3]));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -3548,9 +3556,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[3]),
         .O(ram_reg_0_15_0_0__6_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -3568,16 +3577,17 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[4]),
         .O(ram_reg_0_15_0_0__7_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2] ));
+        .WE(\q0_reg[15]_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__7_i_1
        (.I0(q0[4]),
-        .I1(\q0_reg[0]_0 [1]),
+        .I1(Q),
         .I2(ram_reg_0_15_0_0__30_0[4]),
         .O(d0[4]));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -3595,9 +3605,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[4]),
         .O(ram_reg_0_15_0_0__8_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegRight_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -3615,81 +3626,75 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram
         .D(d0[5]),
         .O(ram_reg_0_15_0_0__9_n_1),
         .WCLK(ap_clk),
-        .WE(\ap_CS_fsm_reg[2] ));
+        .WE(\q0_reg[15]_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__9_i_1
        (.I0(q0[5]),
-        .I1(\q0_reg[0]_0 [1]),
+        .I1(Q),
         .I2(ram_reg_0_15_0_0__30_0[5]),
         .O(d0[5]));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0_i_1
        (.I0(q0[0]),
-        .I1(\q0_reg[0]_0 [1]),
+        .I1(Q),
         .I2(ram_reg_0_15_0_0__30_0[0]),
         .O(d0[0]));
-  LUT5 #(
-    .INIT(32'h0000222F)) 
-    ram_reg_0_15_0_0_i_2
-       (.I0(\q0_reg[0]_0 [1]),
-        .I1(icmp_ln22_reg_382),
-        .I2(ram_reg_0_15_0_0__29_0),
-        .I3(\i_0_reg_200_reg[1] ),
-        .I4(\i_0_reg_200_reg[3] ),
-        .O(\ap_CS_fsm_reg[2] ));
-  LUT3 #(
-    .INIT(8'hFE)) 
-    ram_reg_0_15_0_0_i_8
-       (.I0(Q[1]),
-        .I1(Q[0]),
-        .I2(Q[2]),
-        .O(\i_0_reg_200_reg[1] ));
 endmodule
 
 (* ORIG_REF_NAME = "Filter_ShiftRegRibkb_ram" *) 
 module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
-   (address0,
+   (\ap_CS_fsm_reg[2] ,
+    \sext_ln20_reg_373_reg[0] ,
+    \i_0_reg_200_reg[0] ,
+    \i_0_reg_200_reg[1] ,
     \i_0_reg_200_reg[4] ,
-    \ap_CS_fsm_reg[2] ,
-    B,
-    Q,
-    ram_reg_0_15_0_0__30_0,
-    ram_reg_0_15_0_0__30_1,
-    \q0[15]_i_3 ,
-    ram_reg_0_15_0_0__30_2,
-    ce00_out,
+    D,
+    \i_0_reg_200_reg[3] ,
+    \i_0_reg_200_reg[4]_0 ,
+    \i_0_reg_200_reg[1]_0 ,
+    E,
     ap_clk,
-    \q0_reg[0]_0 ,
     \q0_reg[15]_0 ,
-    \q0_reg[15]_1 );
-  output [3:0]address0;
-  output \i_0_reg_200_reg[4] ;
+    Q,
+    \q0_reg[15]_1 ,
+    \q0_reg[0]_0 ,
+    ram_reg_0_15_0_0__30_0,
+    icmp_ln22_reg_382);
   output \ap_CS_fsm_reg[2] ;
-  output [15:0]B;
-  input [5:0]Q;
-  input [3:0]ram_reg_0_15_0_0__30_0;
-  input ram_reg_0_15_0_0__30_1;
-  input [2:0]\q0[15]_i_3 ;
-  input [15:0]ram_reg_0_15_0_0__30_2;
-  input ce00_out;
+  output \sext_ln20_reg_373_reg[0] ;
+  output \i_0_reg_200_reg[0] ;
+  output \i_0_reg_200_reg[1] ;
+  output \i_0_reg_200_reg[4] ;
+  output [15:0]D;
+  output \i_0_reg_200_reg[3] ;
+  output \i_0_reg_200_reg[4]_0 ;
+  output \i_0_reg_200_reg[1]_0 ;
+  output [0:0]E;
   input ap_clk;
-  input \q0_reg[0]_0 ;
   input \q0_reg[15]_0 ;
-  input [0:0]\q0_reg[15]_1 ;
+  input [5:0]Q;
+  input [4:0]\q0_reg[15]_1 ;
+  input [2:0]\q0_reg[0]_0 ;
+  input [15:0]ram_reg_0_15_0_0__30_0;
+  input icmp_ln22_reg_382;
 
-  wire [15:0]B;
+  wire [15:0]D;
+  wire [0:0]E;
   wire [5:0]Q;
-  wire [3:0]address0;
   wire \ap_CS_fsm_reg[2] ;
   wire ap_clk;
-  wire ce00_out;
+  wire \i_0_reg_200_reg[0] ;
+  wire \i_0_reg_200_reg[1] ;
+  wire \i_0_reg_200_reg[1]_0 ;
+  wire \i_0_reg_200_reg[3] ;
   wire \i_0_reg_200_reg[4] ;
-  wire [2:0]\q0[15]_i_3 ;
-  wire \q0_reg[0]_0 ;
+  wire \i_0_reg_200_reg[4]_0 ;
+  wire icmp_ln22_reg_382;
+  wire [2:0]\q0_reg[0]_0 ;
   wire \q0_reg[15]_0 ;
-  wire [0:0]\q0_reg[15]_1 ;
+  wire [4:0]\q0_reg[15]_1 ;
   wire \q0_reg_n_1_[0] ;
   wire \q0_reg_n_1_[10] ;
   wire \q0_reg_n_1_[11] ;
@@ -3740,9 +3745,7 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   wire ram_reg_0_15_0_0__29_i_1__0_n_1;
   wire ram_reg_0_15_0_0__29_n_1;
   wire ram_reg_0_15_0_0__2_n_1;
-  wire [3:0]ram_reg_0_15_0_0__30_0;
-  wire ram_reg_0_15_0_0__30_1;
-  wire [15:0]ram_reg_0_15_0_0__30_2;
+  wire [15:0]ram_reg_0_15_0_0__30_0;
   wire ram_reg_0_15_0_0__30_n_1;
   wire ram_reg_0_15_0_0__3_i_1__0_n_1;
   wire ram_reg_0_15_0_0__3_n_1;
@@ -3757,218 +3760,239 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   wire ram_reg_0_15_0_0__9_n_1;
   wire ram_reg_0_15_0_0_i_10_n_1;
   wire ram_reg_0_15_0_0_i_1__0_n_1;
+  wire ram_reg_0_15_0_0_i_9_n_1;
   wire ram_reg_0_15_0_0_n_1;
+  wire \sext_ln20_reg_373_reg[0] ;
 
+  LUT4 #(
+    .INIT(16'hEEFE)) 
+    mul_ln703_1_reg_436_reg_i_1
+       (.I0(\q0_reg[0]_0 [2]),
+        .I1(\q0_reg[0]_0 [1]),
+        .I2(\q0_reg[0]_0 [0]),
+        .I3(Q[5]),
+        .O(E));
+  LUT6 #(
+    .INIT(64'hFFFF0001FC01FC01)) 
+    mul_ln703_1_reg_436_reg_i_18
+       (.I0(E),
+        .I1(\i_0_reg_200_reg[1]_0 ),
+        .I2(Q[3]),
+        .I3(Q[4]),
+        .I4(\q0_reg[15]_1 [4]),
+        .I5(ram_reg_0_15_0_0_i_9_n_1),
+        .O(\i_0_reg_200_reg[3] ));
   LUT3 #(
     .INIT(8'hB8)) 
-    \q0[0]_i_1__0 
-       (.I0(ram_reg_0_15_0_0__0_n_1),
-        .I1(\q0_reg[15]_1 ),
-        .I2(ram_reg_0_15_0_0_n_1),
-        .O(B[0]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[10]_i_1__0 
-       (.I0(ram_reg_0_15_0_0__20_n_1),
-        .I1(\q0_reg[15]_1 ),
-        .I2(ram_reg_0_15_0_0__19_n_1),
-        .O(B[10]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[11]_i_1__0 
-       (.I0(ram_reg_0_15_0_0__22_n_1),
-        .I1(\q0_reg[15]_1 ),
-        .I2(ram_reg_0_15_0_0__21_n_1),
-        .O(B[11]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[12]_i_1__0 
-       (.I0(ram_reg_0_15_0_0__24_n_1),
-        .I1(\q0_reg[15]_1 ),
-        .I2(ram_reg_0_15_0_0__23_n_1),
-        .O(B[12]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[13]_i_1__0 
-       (.I0(ram_reg_0_15_0_0__26_n_1),
-        .I1(\q0_reg[15]_1 ),
-        .I2(ram_reg_0_15_0_0__25_n_1),
-        .O(B[13]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[14]_i_1__0 
-       (.I0(ram_reg_0_15_0_0__28_n_1),
-        .I1(\q0_reg[15]_1 ),
-        .I2(ram_reg_0_15_0_0__27_n_1),
-        .O(B[14]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[15]_i_1 
+    mul_ln703_reg_441_reg_i_1
        (.I0(ram_reg_0_15_0_0__30_n_1),
-        .I1(\q0_reg[15]_1 ),
+        .I1(\i_0_reg_200_reg[3] ),
         .I2(ram_reg_0_15_0_0__29_n_1),
-        .O(B[15]));
+        .O(D[15]));
   LUT3 #(
     .INIT(8'hB8)) 
-    \q0[1]_i_1__0 
-       (.I0(ram_reg_0_15_0_0__2_n_1),
-        .I1(\q0_reg[15]_1 ),
-        .I2(ram_reg_0_15_0_0__1_n_1),
-        .O(B[1]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[2]_i_1__0 
-       (.I0(ram_reg_0_15_0_0__4_n_1),
-        .I1(\q0_reg[15]_1 ),
-        .I2(ram_reg_0_15_0_0__3_n_1),
-        .O(B[2]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[3]_i_1__0 
-       (.I0(ram_reg_0_15_0_0__6_n_1),
-        .I1(\q0_reg[15]_1 ),
-        .I2(ram_reg_0_15_0_0__5_n_1),
-        .O(B[3]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[4]_i_1__0 
-       (.I0(ram_reg_0_15_0_0__8_n_1),
-        .I1(\q0_reg[15]_1 ),
-        .I2(ram_reg_0_15_0_0__7_n_1),
-        .O(B[4]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[5]_i_1__0 
-       (.I0(ram_reg_0_15_0_0__10_n_1),
-        .I1(\q0_reg[15]_1 ),
-        .I2(ram_reg_0_15_0_0__9_n_1),
-        .O(B[5]));
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \q0[6]_i_1__0 
+    mul_ln703_reg_441_reg_i_10
        (.I0(ram_reg_0_15_0_0__12_n_1),
-        .I1(\q0_reg[15]_1 ),
+        .I1(\i_0_reg_200_reg[3] ),
         .I2(ram_reg_0_15_0_0__11_n_1),
-        .O(B[6]));
+        .O(D[6]));
   LUT3 #(
     .INIT(8'hB8)) 
-    \q0[7]_i_1__0 
-       (.I0(ram_reg_0_15_0_0__14_n_1),
-        .I1(\q0_reg[15]_1 ),
-        .I2(ram_reg_0_15_0_0__13_n_1),
-        .O(B[7]));
+    mul_ln703_reg_441_reg_i_11
+       (.I0(ram_reg_0_15_0_0__10_n_1),
+        .I1(\i_0_reg_200_reg[3] ),
+        .I2(ram_reg_0_15_0_0__9_n_1),
+        .O(D[5]));
   LUT3 #(
     .INIT(8'hB8)) 
-    \q0[8]_i_1__0 
-       (.I0(ram_reg_0_15_0_0__16_n_1),
-        .I1(\q0_reg[15]_1 ),
-        .I2(ram_reg_0_15_0_0__15_n_1),
-        .O(B[8]));
+    mul_ln703_reg_441_reg_i_12
+       (.I0(ram_reg_0_15_0_0__8_n_1),
+        .I1(\i_0_reg_200_reg[3] ),
+        .I2(ram_reg_0_15_0_0__7_n_1),
+        .O(D[4]));
   LUT3 #(
     .INIT(8'hB8)) 
-    \q0[9]_i_1__0 
+    mul_ln703_reg_441_reg_i_13
+       (.I0(ram_reg_0_15_0_0__6_n_1),
+        .I1(\i_0_reg_200_reg[3] ),
+        .I2(ram_reg_0_15_0_0__5_n_1),
+        .O(D[3]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_reg_441_reg_i_14
+       (.I0(ram_reg_0_15_0_0__4_n_1),
+        .I1(\i_0_reg_200_reg[3] ),
+        .I2(ram_reg_0_15_0_0__3_n_1),
+        .O(D[2]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_reg_441_reg_i_15
+       (.I0(ram_reg_0_15_0_0__2_n_1),
+        .I1(\i_0_reg_200_reg[3] ),
+        .I2(ram_reg_0_15_0_0__1_n_1),
+        .O(D[1]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_reg_441_reg_i_16
+       (.I0(ram_reg_0_15_0_0__0_n_1),
+        .I1(\i_0_reg_200_reg[3] ),
+        .I2(ram_reg_0_15_0_0_n_1),
+        .O(D[0]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_reg_441_reg_i_2
+       (.I0(ram_reg_0_15_0_0__28_n_1),
+        .I1(\i_0_reg_200_reg[3] ),
+        .I2(ram_reg_0_15_0_0__27_n_1),
+        .O(D[14]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_reg_441_reg_i_3
+       (.I0(ram_reg_0_15_0_0__26_n_1),
+        .I1(\i_0_reg_200_reg[3] ),
+        .I2(ram_reg_0_15_0_0__25_n_1),
+        .O(D[13]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_reg_441_reg_i_4
+       (.I0(ram_reg_0_15_0_0__24_n_1),
+        .I1(\i_0_reg_200_reg[3] ),
+        .I2(ram_reg_0_15_0_0__23_n_1),
+        .O(D[12]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_reg_441_reg_i_5
+       (.I0(ram_reg_0_15_0_0__22_n_1),
+        .I1(\i_0_reg_200_reg[3] ),
+        .I2(ram_reg_0_15_0_0__21_n_1),
+        .O(D[11]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_reg_441_reg_i_6
+       (.I0(ram_reg_0_15_0_0__20_n_1),
+        .I1(\i_0_reg_200_reg[3] ),
+        .I2(ram_reg_0_15_0_0__19_n_1),
+        .O(D[10]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_reg_441_reg_i_7
        (.I0(ram_reg_0_15_0_0__18_n_1),
-        .I1(\q0_reg[15]_1 ),
+        .I1(\i_0_reg_200_reg[3] ),
         .I2(ram_reg_0_15_0_0__17_n_1),
-        .O(B[9]));
+        .O(D[9]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_reg_441_reg_i_8
+       (.I0(ram_reg_0_15_0_0__16_n_1),
+        .I1(\i_0_reg_200_reg[3] ),
+        .I2(ram_reg_0_15_0_0__15_n_1),
+        .O(D[8]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    mul_ln703_reg_441_reg_i_9
+       (.I0(ram_reg_0_15_0_0__14_n_1),
+        .I1(\i_0_reg_200_reg[3] ),
+        .I2(ram_reg_0_15_0_0__13_n_1),
+        .O(D[7]));
   FDRE \q0_reg[0] 
        (.C(ap_clk),
-        .CE(ce00_out),
-        .D(B[0]),
+        .CE(E),
+        .D(D[0]),
         .Q(\q0_reg_n_1_[0] ),
         .R(1'b0));
   FDRE \q0_reg[10] 
        (.C(ap_clk),
-        .CE(ce00_out),
-        .D(B[10]),
+        .CE(E),
+        .D(D[10]),
         .Q(\q0_reg_n_1_[10] ),
         .R(1'b0));
   FDRE \q0_reg[11] 
        (.C(ap_clk),
-        .CE(ce00_out),
-        .D(B[11]),
+        .CE(E),
+        .D(D[11]),
         .Q(\q0_reg_n_1_[11] ),
         .R(1'b0));
   FDRE \q0_reg[12] 
        (.C(ap_clk),
-        .CE(ce00_out),
-        .D(B[12]),
+        .CE(E),
+        .D(D[12]),
         .Q(\q0_reg_n_1_[12] ),
         .R(1'b0));
   FDRE \q0_reg[13] 
        (.C(ap_clk),
-        .CE(ce00_out),
-        .D(B[13]),
+        .CE(E),
+        .D(D[13]),
         .Q(\q0_reg_n_1_[13] ),
         .R(1'b0));
   FDRE \q0_reg[14] 
        (.C(ap_clk),
-        .CE(ce00_out),
-        .D(B[14]),
+        .CE(E),
+        .D(D[14]),
         .Q(\q0_reg_n_1_[14] ),
         .R(1'b0));
   FDRE \q0_reg[15] 
        (.C(ap_clk),
-        .CE(ce00_out),
-        .D(B[15]),
+        .CE(E),
+        .D(D[15]),
         .Q(\q0_reg_n_1_[15] ),
         .R(1'b0));
   FDRE \q0_reg[1] 
        (.C(ap_clk),
-        .CE(ce00_out),
-        .D(B[1]),
+        .CE(E),
+        .D(D[1]),
         .Q(\q0_reg_n_1_[1] ),
         .R(1'b0));
   FDRE \q0_reg[2] 
        (.C(ap_clk),
-        .CE(ce00_out),
-        .D(B[2]),
+        .CE(E),
+        .D(D[2]),
         .Q(\q0_reg_n_1_[2] ),
         .R(1'b0));
   FDRE \q0_reg[3] 
        (.C(ap_clk),
-        .CE(ce00_out),
-        .D(B[3]),
+        .CE(E),
+        .D(D[3]),
         .Q(\q0_reg_n_1_[3] ),
         .R(1'b0));
   FDRE \q0_reg[4] 
        (.C(ap_clk),
-        .CE(ce00_out),
-        .D(B[4]),
+        .CE(E),
+        .D(D[4]),
         .Q(\q0_reg_n_1_[4] ),
         .R(1'b0));
   FDRE \q0_reg[5] 
        (.C(ap_clk),
-        .CE(ce00_out),
-        .D(B[5]),
+        .CE(E),
+        .D(D[5]),
         .Q(\q0_reg_n_1_[5] ),
         .R(1'b0));
   FDRE \q0_reg[6] 
        (.C(ap_clk),
-        .CE(ce00_out),
-        .D(B[6]),
+        .CE(E),
+        .D(D[6]),
         .Q(\q0_reg_n_1_[6] ),
         .R(1'b0));
   FDRE \q0_reg[7] 
        (.C(ap_clk),
-        .CE(ce00_out),
-        .D(B[7]),
+        .CE(E),
+        .D(D[7]),
         .Q(\q0_reg_n_1_[7] ),
         .R(1'b0));
   FDRE \q0_reg[8] 
        (.C(ap_clk),
-        .CE(ce00_out),
-        .D(B[8]),
+        .CE(E),
+        .D(D[8]),
         .Q(\q0_reg_n_1_[8] ),
         .R(1'b0));
   FDRE \q0_reg[9] 
        (.C(ap_clk),
-        .CE(ce00_out),
-        .D(B[9]),
+        .CE(E),
+        .D(D[9]),
         .Q(\q0_reg_n_1_[9] ),
         .R(1'b0));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -3978,17 +4002,18 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0_i_1__0_n_1),
         .O(ram_reg_0_15_0_0_n_1),
         .WCLK(ap_clk),
-        .WE(\q0_reg[0]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -3998,10 +4023,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__0
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__0_n_1),
@@ -4009,6 +4034,7 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
         .WE(\q0_reg[15]_0 ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -4018,17 +4044,18 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__1
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__1_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__1_n_1),
         .WCLK(ap_clk),
-        .WE(\q0_reg[0]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -4038,10 +4065,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__10
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__9_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__10_n_1),
@@ -4049,6 +4076,7 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
         .WE(\q0_reg[15]_0 ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -4058,24 +4086,25 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__11
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__11_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__11_n_1),
         .WCLK(ap_clk),
-        .WE(\q0_reg[0]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__11_i_1__0
        (.I0(\q0_reg_n_1_[6] ),
-        .I1(\q0[15]_i_3 [1]),
-        .I2(ram_reg_0_15_0_0__30_2[6]),
+        .I1(\q0_reg[0]_0 [1]),
+        .I2(ram_reg_0_15_0_0__30_0[6]),
         .O(ram_reg_0_15_0_0__11_i_1__0_n_1));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -4085,10 +4114,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__12
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__11_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__12_n_1),
@@ -4096,6 +4125,7 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
         .WE(\q0_reg[15]_0 ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -4105,24 +4135,25 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__13
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__13_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__13_n_1),
         .WCLK(ap_clk),
-        .WE(\q0_reg[0]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__13_i_1__0
        (.I0(\q0_reg_n_1_[7] ),
-        .I1(\q0[15]_i_3 [1]),
-        .I2(ram_reg_0_15_0_0__30_2[7]),
+        .I1(\q0_reg[0]_0 [1]),
+        .I2(ram_reg_0_15_0_0__30_0[7]),
         .O(ram_reg_0_15_0_0__13_i_1__0_n_1));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -4132,10 +4163,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__14
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__13_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__14_n_1),
@@ -4143,6 +4174,7 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
         .WE(\q0_reg[15]_0 ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -4152,24 +4184,25 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__15
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__15_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__15_n_1),
         .WCLK(ap_clk),
-        .WE(\q0_reg[0]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__15_i_1__0
        (.I0(\q0_reg_n_1_[8] ),
-        .I1(\q0[15]_i_3 [1]),
-        .I2(ram_reg_0_15_0_0__30_2[8]),
+        .I1(\q0_reg[0]_0 [1]),
+        .I2(ram_reg_0_15_0_0__30_0[8]),
         .O(ram_reg_0_15_0_0__15_i_1__0_n_1));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -4179,10 +4212,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__16
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__15_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__16_n_1),
@@ -4190,6 +4223,7 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
         .WE(\q0_reg[15]_0 ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -4199,24 +4233,25 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__17
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__17_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__17_n_1),
         .WCLK(ap_clk),
-        .WE(\q0_reg[0]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__17_i_1__0
        (.I0(\q0_reg_n_1_[9] ),
-        .I1(\q0[15]_i_3 [1]),
-        .I2(ram_reg_0_15_0_0__30_2[9]),
+        .I1(\q0_reg[0]_0 [1]),
+        .I2(ram_reg_0_15_0_0__30_0[9]),
         .O(ram_reg_0_15_0_0__17_i_1__0_n_1));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -4226,10 +4261,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__18
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__17_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__18_n_1),
@@ -4237,6 +4272,7 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
         .WE(\q0_reg[15]_0 ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -4246,31 +4282,32 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__19
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__19_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__19_n_1),
         .WCLK(ap_clk),
-        .WE(\q0_reg[0]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__19_i_1__0
        (.I0(\q0_reg_n_1_[10] ),
-        .I1(\q0[15]_i_3 [1]),
-        .I2(ram_reg_0_15_0_0__30_2[10]),
+        .I1(\q0_reg[0]_0 [1]),
+        .I2(ram_reg_0_15_0_0__30_0[10]),
         .O(ram_reg_0_15_0_0__19_i_1__0_n_1));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__1_i_1__0
        (.I0(\q0_reg_n_1_[1] ),
-        .I1(\q0[15]_i_3 [1]),
-        .I2(ram_reg_0_15_0_0__30_2[1]),
+        .I1(\q0_reg[0]_0 [1]),
+        .I2(ram_reg_0_15_0_0__30_0[1]),
         .O(ram_reg_0_15_0_0__1_i_1__0_n_1));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -4280,10 +4317,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__2
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__1_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__2_n_1),
@@ -4291,6 +4328,7 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
         .WE(\q0_reg[15]_0 ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -4300,10 +4338,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__20
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__19_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__20_n_1),
@@ -4311,6 +4349,7 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
         .WE(\q0_reg[15]_0 ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -4320,24 +4359,25 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__21
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__21_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__21_n_1),
         .WCLK(ap_clk),
-        .WE(\q0_reg[0]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__21_i_1__0
        (.I0(\q0_reg_n_1_[11] ),
-        .I1(\q0[15]_i_3 [1]),
-        .I2(ram_reg_0_15_0_0__30_2[11]),
+        .I1(\q0_reg[0]_0 [1]),
+        .I2(ram_reg_0_15_0_0__30_0[11]),
         .O(ram_reg_0_15_0_0__21_i_1__0_n_1));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -4347,10 +4387,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__22
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__21_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__22_n_1),
@@ -4358,6 +4398,7 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
         .WE(\q0_reg[15]_0 ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -4367,24 +4408,25 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__23
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__23_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__23_n_1),
         .WCLK(ap_clk),
-        .WE(\q0_reg[0]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__23_i_1__0
        (.I0(\q0_reg_n_1_[12] ),
-        .I1(\q0[15]_i_3 [1]),
-        .I2(ram_reg_0_15_0_0__30_2[12]),
+        .I1(\q0_reg[0]_0 [1]),
+        .I2(ram_reg_0_15_0_0__30_0[12]),
         .O(ram_reg_0_15_0_0__23_i_1__0_n_1));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -4394,10 +4436,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__24
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__23_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__24_n_1),
@@ -4405,6 +4447,7 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
         .WE(\q0_reg[15]_0 ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -4414,24 +4457,25 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__25
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__25_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__25_n_1),
         .WCLK(ap_clk),
-        .WE(\q0_reg[0]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__25_i_1__0
        (.I0(\q0_reg_n_1_[13] ),
-        .I1(\q0[15]_i_3 [1]),
-        .I2(ram_reg_0_15_0_0__30_2[13]),
+        .I1(\q0_reg[0]_0 [1]),
+        .I2(ram_reg_0_15_0_0__30_0[13]),
         .O(ram_reg_0_15_0_0__25_i_1__0_n_1));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -4441,10 +4485,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__26
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__25_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__26_n_1),
@@ -4452,6 +4496,7 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
         .WE(\q0_reg[15]_0 ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -4461,24 +4506,25 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__27
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__27_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__27_n_1),
         .WCLK(ap_clk),
-        .WE(\q0_reg[0]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__27_i_1__0
        (.I0(\q0_reg_n_1_[14] ),
-        .I1(\q0[15]_i_3 [1]),
-        .I2(ram_reg_0_15_0_0__30_2[14]),
+        .I1(\q0_reg[0]_0 [1]),
+        .I2(ram_reg_0_15_0_0__30_0[14]),
         .O(ram_reg_0_15_0_0__27_i_1__0_n_1));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -4488,10 +4534,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__28
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__27_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__28_n_1),
@@ -4499,6 +4545,7 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
         .WE(\q0_reg[15]_0 ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -4508,24 +4555,25 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__29
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__29_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__29_n_1),
         .WCLK(ap_clk),
-        .WE(\q0_reg[0]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__29_i_1__0
        (.I0(\q0_reg_n_1_[15] ),
-        .I1(\q0[15]_i_3 [1]),
-        .I2(ram_reg_0_15_0_0__30_2[15]),
+        .I1(\q0_reg[0]_0 [1]),
+        .I2(ram_reg_0_15_0_0__30_0[15]),
         .O(ram_reg_0_15_0_0__29_i_1__0_n_1));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -4535,17 +4583,18 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__3
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__3_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__3_n_1),
         .WCLK(ap_clk),
-        .WE(\q0_reg[0]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -4555,10 +4604,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__30
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__29_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__30_n_1),
@@ -4568,11 +4617,12 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__3_i_1__0
        (.I0(\q0_reg_n_1_[2] ),
-        .I1(\q0[15]_i_3 [1]),
-        .I2(ram_reg_0_15_0_0__30_2[2]),
+        .I1(\q0_reg[0]_0 [1]),
+        .I2(ram_reg_0_15_0_0__30_0[2]),
         .O(ram_reg_0_15_0_0__3_i_1__0_n_1));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -4582,10 +4632,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__4
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__3_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__4_n_1),
@@ -4593,6 +4643,7 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
         .WE(\q0_reg[15]_0 ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -4602,24 +4653,25 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__5
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__5_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__5_n_1),
         .WCLK(ap_clk),
-        .WE(\q0_reg[0]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__5_i_1__0
        (.I0(\q0_reg_n_1_[3] ),
-        .I1(\q0[15]_i_3 [1]),
-        .I2(ram_reg_0_15_0_0__30_2[3]),
+        .I1(\q0_reg[0]_0 [1]),
+        .I2(ram_reg_0_15_0_0__30_0[3]),
         .O(ram_reg_0_15_0_0__5_i_1__0_n_1));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -4629,10 +4681,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__6
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__5_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__6_n_1),
@@ -4640,6 +4692,7 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
         .WE(\q0_reg[15]_0 ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -4649,24 +4702,25 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__7
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__7_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__7_n_1),
         .WCLK(ap_clk),
-        .WE(\q0_reg[0]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__7_i_1__0
        (.I0(\q0_reg_n_1_[4] ),
-        .I1(\q0[15]_i_3 [1]),
-        .I2(ram_reg_0_15_0_0__30_2[4]),
+        .I1(\q0_reg[0]_0 [1]),
+        .I2(ram_reg_0_15_0_0__30_0[4]),
         .O(ram_reg_0_15_0_0__7_i_1__0_n_1));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "16" *) 
   (* ram_addr_end = "18" *) 
@@ -4676,10 +4730,10 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__8
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__7_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__8_n_1),
@@ -4687,6 +4741,7 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
         .WE(\q0_reg[15]_0 ));
   (* RTL_RAM_BITS = "304" *) 
   (* RTL_RAM_NAME = "ShiftRegLeft_V_U/Filter_ShiftRegRibkb_ram_U/ram" *) 
+  (* RTL_RAM_TYPE = "RAM_SP" *) 
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "15" *) 
@@ -4696,91 +4751,107 @@ module System_Filter_0_0_Filter_ShiftRegRibkb_ram_4
   RAM32X1S #(
     .INIT(32'h00000000)) 
     ram_reg_0_15_0_0__9
-       (.A0(address0[0]),
-        .A1(address0[1]),
-        .A2(address0[2]),
-        .A3(address0[3]),
+       (.A0(\sext_ln20_reg_373_reg[0] ),
+        .A1(\i_0_reg_200_reg[0] ),
+        .A2(\i_0_reg_200_reg[1] ),
+        .A3(\i_0_reg_200_reg[4] ),
         .A4(1'b0),
         .D(ram_reg_0_15_0_0__9_i_1__0_n_1),
         .O(ram_reg_0_15_0_0__9_n_1),
         .WCLK(ap_clk),
-        .WE(\q0_reg[0]_0 ));
+        .WE(\ap_CS_fsm_reg[2] ));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0__9_i_1__0
        (.I0(\q0_reg_n_1_[5] ),
-        .I1(\q0[15]_i_3 [1]),
-        .I2(ram_reg_0_15_0_0__30_2[5]),
+        .I1(\q0_reg[0]_0 [1]),
+        .I2(ram_reg_0_15_0_0__30_0[5]),
         .O(ram_reg_0_15_0_0__9_i_1__0_n_1));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT2 #(
     .INIT(4'hB)) 
     ram_reg_0_15_0_0_i_10
        (.I0(Q[5]),
-        .I1(\q0[15]_i_3 [0]),
+        .I1(\q0_reg[0]_0 [0]),
         .O(ram_reg_0_15_0_0_i_10_n_1));
   LUT3 #(
     .INIT(8'hB8)) 
     ram_reg_0_15_0_0_i_1__0
        (.I0(\q0_reg_n_1_[0] ),
-        .I1(\q0[15]_i_3 [1]),
-        .I2(ram_reg_0_15_0_0__30_2[0]),
+        .I1(\q0_reg[0]_0 [1]),
+        .I2(ram_reg_0_15_0_0__30_0[0]),
         .O(ram_reg_0_15_0_0_i_1__0_n_1));
+  LUT5 #(
+    .INIT(32'h0000222F)) 
+    ram_reg_0_15_0_0_i_2
+       (.I0(\q0_reg[0]_0 [1]),
+        .I1(icmp_ln22_reg_382),
+        .I2(\i_0_reg_200_reg[4]_0 ),
+        .I3(\i_0_reg_200_reg[1]_0 ),
+        .I4(\i_0_reg_200_reg[3] ),
+        .O(\ap_CS_fsm_reg[2] ));
   LUT6 #(
     .INIT(64'hAAAA0000AAAAFFFC)) 
     ram_reg_0_15_0_0_i_3
-       (.I0(ram_reg_0_15_0_0__30_0[0]),
+       (.I0(\q0_reg[15]_1 [0]),
         .I1(Q[2]),
-        .I2(\i_0_reg_200_reg[4] ),
+        .I2(\i_0_reg_200_reg[4]_0 ),
         .I3(Q[1]),
-        .I4(\ap_CS_fsm_reg[2] ),
+        .I4(ram_reg_0_15_0_0_i_9_n_1),
         .I5(Q[0]),
-        .O(address0[0]));
+        .O(\sext_ln20_reg_373_reg[0] ));
   LUT6 #(
     .INIT(64'hFFFF000099989998)) 
     ram_reg_0_15_0_0_i_4
        (.I0(Q[0]),
         .I1(Q[1]),
         .I2(Q[2]),
-        .I3(\i_0_reg_200_reg[4] ),
-        .I4(ram_reg_0_15_0_0__30_0[1]),
-        .I5(\ap_CS_fsm_reg[2] ),
-        .O(address0[1]));
+        .I3(\i_0_reg_200_reg[4]_0 ),
+        .I4(\q0_reg[15]_1 [1]),
+        .I5(ram_reg_0_15_0_0_i_9_n_1),
+        .O(\i_0_reg_200_reg[0] ));
   LUT6 #(
     .INIT(64'hFFFF0000E1E0E1E0)) 
     ram_reg_0_15_0_0_i_5
        (.I0(Q[1]),
         .I1(Q[0]),
         .I2(Q[2]),
-        .I3(\i_0_reg_200_reg[4] ),
-        .I4(ram_reg_0_15_0_0__30_0[2]),
-        .I5(\ap_CS_fsm_reg[2] ),
-        .O(address0[2]));
+        .I3(\i_0_reg_200_reg[4]_0 ),
+        .I4(\q0_reg[15]_1 [2]),
+        .I5(ram_reg_0_15_0_0_i_9_n_1),
+        .O(\i_0_reg_200_reg[1] ));
   LUT6 #(
     .INIT(64'hFFFF0000F00EF00E)) 
     ram_reg_0_15_0_0_i_6
        (.I0(ram_reg_0_15_0_0_i_10_n_1),
         .I1(Q[4]),
         .I2(Q[3]),
-        .I3(ram_reg_0_15_0_0__30_1),
-        .I4(ram_reg_0_15_0_0__30_0[3]),
-        .I5(\ap_CS_fsm_reg[2] ),
-        .O(address0[3]));
+        .I3(\i_0_reg_200_reg[1]_0 ),
+        .I4(\q0_reg[15]_1 [3]),
+        .I5(ram_reg_0_15_0_0_i_9_n_1),
+        .O(\i_0_reg_200_reg[4] ));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
     .INIT(16'hFFEF)) 
     ram_reg_0_15_0_0_i_7
        (.I0(Q[4]),
         .I1(Q[3]),
-        .I2(\q0[15]_i_3 [0]),
+        .I2(\q0_reg[0]_0 [0]),
         .I3(Q[5]),
-        .O(\i_0_reg_200_reg[4] ));
+        .O(\i_0_reg_200_reg[4]_0 ));
+  LUT3 #(
+    .INIT(8'hFE)) 
+    ram_reg_0_15_0_0_i_8
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(Q[2]),
+        .O(\i_0_reg_200_reg[1]_0 ));
   LUT2 #(
     .INIT(4'hE)) 
     ram_reg_0_15_0_0_i_9
-       (.I0(\q0[15]_i_3 [1]),
-        .I1(\q0[15]_i_3 [2]),
-        .O(\ap_CS_fsm_reg[2] ));
+       (.I0(\q0_reg[0]_0 [1]),
+        .I1(\q0_reg[0]_0 [2]),
+        .O(ram_reg_0_15_0_0_i_9_n_1));
 endmodule
 
 (* ORIG_REF_NAME = "regslice_both" *) 
@@ -5071,7 +5142,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I2(\ap_CS_fsm_reg[0] ),
         .I3(\ap_CS_fsm_reg[8] [0]),
         .O(D[0]));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT5 #(
     .INIT(32'hDDFDFDFD)) 
     \ap_CS_fsm[0]_i_2 
@@ -5099,7 +5170,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I4(\ap_CS_fsm_reg[8] [1]),
         .I5(\ap_CS_fsm[8]_i_2_n_1 ),
         .O(D[2]));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \ap_CS_fsm[8]_i_2 
@@ -5116,7 +5187,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I4(\ap_CS_fsm_reg[8] [1]),
         .I5(\ap_CS_fsm_reg[8]_1 ),
         .O(DataOut_TREADY_0));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT5 #(
     .INIT(32'hFDDDFDFD)) 
     \count[1]_i_1 
@@ -5405,7 +5476,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I1(Q),
         .I2(\ireg_reg[31]_0 [0]),
         .O(\ap_CS_fsm_reg[7] [0]));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[10]_i_1__0 
@@ -5413,7 +5484,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I1(Q),
         .I2(\ireg_reg[31]_0 [10]),
         .O(\ap_CS_fsm_reg[7] [10]));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[11]_i_1__0 
@@ -5421,7 +5492,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I1(Q),
         .I2(\ireg_reg[31]_0 [11]),
         .O(\ap_CS_fsm_reg[7] [11]));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[12]_i_1__0 
@@ -5429,7 +5500,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I1(Q),
         .I2(\ireg_reg[31]_0 [12]),
         .O(\ap_CS_fsm_reg[7] [12]));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[13]_i_1__0 
@@ -5453,7 +5524,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I1(Q),
         .I2(\ireg_reg[31]_0 [15]),
         .O(\ap_CS_fsm_reg[7] [15]));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[16]_i_1__0 
@@ -5461,7 +5532,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I1(Q),
         .I2(\ireg_reg[31]_0 [16]),
         .O(\ap_CS_fsm_reg[7] [16]));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[17]_i_1__0 
@@ -5477,7 +5548,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I1(Q),
         .I2(\ireg_reg[31]_0 [18]),
         .O(\ap_CS_fsm_reg[7] [18]));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[19]_i_1__0 
@@ -5501,7 +5572,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I1(Q),
         .I2(\ireg_reg[31]_0 [20]),
         .O(\ap_CS_fsm_reg[7] [20]));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[21]_i_1__0 
@@ -5517,7 +5588,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I1(Q),
         .I2(\ireg_reg[31]_0 [22]),
         .O(\ap_CS_fsm_reg[7] [22]));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[23]_i_1__0 
@@ -5533,7 +5604,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I1(Q),
         .I2(\ireg_reg[31]_0 [24]),
         .O(\ap_CS_fsm_reg[7] [24]));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[25]_i_1__0 
@@ -5549,7 +5620,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I1(Q),
         .I2(\ireg_reg[31]_0 [26]),
         .O(\ap_CS_fsm_reg[7] [26]));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[27]_i_1__0 
@@ -5565,7 +5636,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I1(Q),
         .I2(\ireg_reg[31]_0 [28]),
         .O(\ap_CS_fsm_reg[7] [28]));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[29]_i_1__0 
@@ -5597,7 +5668,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I1(Q),
         .I2(\ireg_reg[31]_0 [31]),
         .O(\ap_CS_fsm_reg[7] [31]));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \odata_int[32]_i_1 
@@ -5636,7 +5707,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I1(Q),
         .I2(\ireg_reg[31]_0 [6]),
         .O(\ap_CS_fsm_reg[7] [6]));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[7]_i_1__0 
@@ -5644,7 +5715,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I1(Q),
         .I2(\ireg_reg[31]_0 [7]),
         .O(\ap_CS_fsm_reg[7] [7]));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[8]_i_1__0 
@@ -5652,7 +5723,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf
         .I1(Q),
         .I2(\ireg_reg[31]_0 [8]),
         .O(\ap_CS_fsm_reg[7] [8]));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[9]_i_1__0 
@@ -6022,7 +6093,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf_2
         .I1(Q),
         .I2(D[10]),
         .O(DataIn_TVALID[10]));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[11]_i_1 
@@ -6054,7 +6125,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf_2
         .I1(Q),
         .I2(D[14]),
         .O(DataIn_TVALID[14]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[15]_i_1 
@@ -6070,7 +6141,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf_2
         .I1(Q),
         .I2(D[16]),
         .O(DataIn_TVALID[16]));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[17]_i_1 
@@ -6086,7 +6157,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf_2
         .I1(Q),
         .I2(D[18]),
         .O(DataIn_TVALID[18]));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[19]_i_1 
@@ -6110,7 +6181,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf_2
         .I1(Q),
         .I2(D[20]),
         .O(DataIn_TVALID[20]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[21]_i_1 
@@ -6126,7 +6197,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf_2
         .I1(Q),
         .I2(D[22]),
         .O(DataIn_TVALID[22]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[23]_i_1 
@@ -6142,7 +6213,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf_2
         .I1(Q),
         .I2(D[24]),
         .O(DataIn_TVALID[24]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[25]_i_1 
@@ -6158,7 +6229,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf_2
         .I1(Q),
         .I2(D[26]),
         .O(DataIn_TVALID[26]));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[27]_i_1 
@@ -6174,7 +6245,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf_2
         .I1(Q),
         .I2(D[28]),
         .O(DataIn_TVALID[28]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[29]_i_1 
@@ -6182,7 +6253,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf_2
         .I1(Q),
         .I2(D[29]),
         .O(DataIn_TVALID[29]));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[2]_i_1 
@@ -6198,7 +6269,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf_2
         .I1(Q),
         .I2(D[30]),
         .O(DataIn_TVALID[30]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[31]_i_1__0 
@@ -6213,7 +6284,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf_2
        (.I0(D[32]),
         .I1(Q),
         .O(DataIn_TVALID[32]));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[3]_i_1 
@@ -6237,7 +6308,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf_2
         .I1(Q),
         .I2(D[5]),
         .O(DataIn_TVALID[5]));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[6]_i_1 
@@ -6245,7 +6316,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf_2
         .I1(Q),
         .I2(D[6]),
         .O(DataIn_TVALID[6]));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[7]_i_1 
@@ -6261,7 +6332,7 @@ module System_Filter_0_0_xil_defaultlib_ibuf_2
         .I1(Q),
         .I2(D[8]),
         .O(DataIn_TVALID[8]));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \odata_int[9]_i_1 
@@ -6842,7 +6913,6 @@ module System_Filter_0_0_xil_defaultlib_obuf_3
         .I3(Enable),
         .I4(\odata_int_reg[32]_0 [13]),
         .O(\p_Val2_2_reg_176_reg[47] [13]));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT5 #(
     .INIT(32'hAAEAAA2A)) 
     \storemerge_reg_212[14]_i_1 
@@ -7014,6 +7084,7 @@ module System_Filter_0_0_xil_defaultlib_obuf_3
         .I3(Enable),
         .I4(\odata_int_reg[32]_0 [30]),
         .O(\p_Val2_2_reg_176_reg[47] [30]));
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT5 #(
     .INIT(32'h8F888888)) 
     \storemerge_reg_212[31]_i_1 
@@ -7104,12 +7175,15 @@ module glbl ();
 
     parameter ROC_WIDTH = 100000;
     parameter TOC_WIDTH = 0;
+    parameter GRES_WIDTH = 10000;
+    parameter GRES_START = 10000;
 
 //--------   STARTUP Globals --------------
     wire GSR;
     wire GTS;
     wire GWE;
     wire PRLD;
+    wire GRESTORE;
     tri1 p_up_tmp;
     tri (weak1, strong0) PLL_LOCKG = p_up_tmp;
 
@@ -7122,6 +7196,7 @@ module glbl ();
     reg GSR_int;
     reg GTS_int;
     reg PRLD_int;
+    reg GRESTORE_int;
 
 //--------   JTAG Globals --------------
     wire JTAG_TDO_GLBL;
@@ -7149,6 +7224,7 @@ module glbl ();
     assign (strong1, weak0) GSR = GSR_int;
     assign (strong1, weak0) GTS = GTS_int;
     assign (weak1, weak0) PRLD = PRLD_int;
+    assign (strong1, weak0) GRESTORE = GRESTORE_int;
 
     initial begin
 	GSR_int = 1'b1;
@@ -7162,6 +7238,14 @@ module glbl ();
 	GTS_int = 1'b1;
 	#(TOC_WIDTH)
 	GTS_int = 1'b0;
+    end
+
+    initial begin 
+	GRESTORE_int = 1'b0;
+	#(GRES_START);
+	GRESTORE_int = 1'b1;
+	#(GRES_WIDTH);
+	GRESTORE_int = 1'b0;
     end
 
 endmodule

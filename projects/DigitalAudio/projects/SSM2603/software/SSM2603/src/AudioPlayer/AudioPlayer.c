@@ -28,7 +28,27 @@
  *  @author Daniel Kampert
  */
 
+#include "xgpio.h"
+#include "xgpiops.h"
+#include "xllfifo.h"
+#include "xscugic.h"
+#include "xstatus.h"
+#include "xparameters.h"
+#include "xil_exception.h"
+
+#include "SD/SD.h"
+#include "SSM2603/SSM2603.h"
+#include "ClockingWizard/ClockingWizard.h"
+
 #include "AudioPlayer.h"
+
+/** @brief	Size of the FIFO buffer in bytes.
+ */
+#define AUDIOPLAYER_FIFO_BUFFER_SIZE			256
+
+/** @brief	Default volume for the speaker channel.
+ */
+#define AUDIOPLAYER_DEFAULT_SPEAKER_VOLUME		0x79
 
 static XGpioPs_Config* _Mute_ConfigPtr;
 static XGpioPs _Mute;

@@ -1,10 +1,10 @@
-// Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2019.2.1 (win64) Build 2729669 Thu Dec  5 04:49:17 MST 2019
-// Date        : Mon Mar 30 09:21:35 2020
-// Host        : 40B0341C1F56 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top System_clk_wiz_0_0 -prefix
-//               System_clk_wiz_0_0_ System_clk_wiz_0_0_stub.v
+// Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+// Date        : Fri Jul 23 20:56:45 2021
+// Host        : PC running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub
+//               h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/DigitalFilter/hardware/DigitalFilter.srcs/sources_1/bd/System/ip/System_clk_wiz_0_0/System_clk_wiz_0_0_stub.v
 // Design      : System_clk_wiz_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1
