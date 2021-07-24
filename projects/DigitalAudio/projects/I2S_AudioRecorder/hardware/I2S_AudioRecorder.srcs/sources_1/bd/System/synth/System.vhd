@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
---Date        : Fri Jul 23 19:27:43 2021
+--Date        : Sat Jul 24 20:43:20 2021
 --Host        : PC running 64-bit major release  (build 9200)
 --Command     : generate_target System.bd
 --Design      : System
@@ -1526,7 +1526,7 @@ entity System is
     MCLK : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of System : entity is "System,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=System,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=14,numReposBlks=8,numNonXlnxBlks=1,numHierBlks=6,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=9,da_board_cnt=2,da_clkrst_cnt=15,da_ps7_cnt=2,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of System : entity is "System,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=System,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=15,numReposBlks=9,numNonXlnxBlks=1,numHierBlks=6,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=9,da_board_cnt=2,da_clkrst_cnt=15,da_ps7_cnt=2,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of System : entity is "System.hwdef";
 end System;
@@ -1667,21 +1667,6 @@ architecture STRUCTURE of System is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component System_Reset_ProcessingSystem_0;
-  component System_AXIS_I2S_Receiver_0_0 is
-  port (
-    MCLK : in STD_LOGIC;
-    nReset : in STD_LOGIC;
-    LRCLK : in STD_LOGIC;
-    SCLK : in STD_LOGIC;
-    SD : in STD_LOGIC;
-    ACLK : in STD_LOGIC;
-    ARESETn : in STD_LOGIC;
-    TDATA_TXD : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    TREADY_TXD : in STD_LOGIC;
-    TVALID_TXD : out STD_LOGIC;
-    TLAST_TXD : out STD_LOGIC
-  );
-  end component System_AXIS_I2S_Receiver_0_0;
   component System_axi_dma_0_0 is
   port (
     s_axi_lite_aclk : in STD_LOGIC;
@@ -1728,6 +1713,28 @@ architecture STRUCTURE of System is
     s2mm_introut : out STD_LOGIC
   );
   end component System_axi_dma_0_0;
+  component System_vio_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    probe_out0 : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component System_vio_0_0;
+  component System_AXIS_I2S_Receiver_0_0 is
+  port (
+    Enable : in STD_LOGIC;
+    MCLK : in STD_LOGIC;
+    nReset : in STD_LOGIC;
+    LRCLK : in STD_LOGIC;
+    SCLK : in STD_LOGIC;
+    SD : in STD_LOGIC;
+    ACLK : in STD_LOGIC;
+    ARESETn : in STD_LOGIC;
+    TDATA_TXD : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    TREADY_TXD : in STD_LOGIC;
+    TVALID_TXD : out STD_LOGIC;
+    TLAST_TXD : out STD_LOGIC
+  );
+  end component System_AXIS_I2S_Receiver_0_0;
   signal AXIS_I2S_Receiver_AXIS_TXD_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal AXIS_I2S_Receiver_AXIS_TXD_TLAST : STD_LOGIC;
   signal AXIS_I2S_Receiver_AXIS_TXD_TREADY : STD_LOGIC;
@@ -1832,6 +1839,7 @@ architecture STRUCTURE of System is
   signal ProcessingSystem_M_AXI_GP0_WVALID : STD_LOGIC;
   signal Reset_Audio_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal Reset_ProcessingSystem_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal VIO_probe_out0 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal axi_mem_intercon_M00_AXI_AWADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal axi_mem_intercon_M00_AXI_AWBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal axi_mem_intercon_M00_AXI_AWCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -1898,7 +1906,7 @@ architecture STRUCTURE of System is
   attribute X_INTERFACE_INFO of I2S_sclk : signal is "www.kampis-elektroecke.de:Kampis-Elektroecke:I2S:1.0 I2S SCLK";
   attribute X_INTERFACE_INFO of I2S_sd : signal is "www.kampis-elektroecke.de:Kampis-Elektroecke:I2S:1.0 I2S SD";
   attribute X_INTERFACE_INFO of MCLK : signal is "xilinx.com:signal:clock:1.0 CLK.MCLK CLK";
-  attribute X_INTERFACE_PARAMETER of MCLK : signal is "XIL_INTERFACENAME CLK.MCLK, CLK_DOMAIN System_MCLK_0, FREQ_HZ 12288013, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0";
+  attribute X_INTERFACE_PARAMETER of MCLK : signal is "XIL_INTERFACENAME CLK.MCLK, CLK_DOMAIN System_MCLK, FREQ_HZ 12288013, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0";
   attribute X_INTERFACE_INFO of DDR_addr : signal is "xilinx.com:interface:ddrx:1.0 DDR ADDR";
   attribute X_INTERFACE_PARAMETER of DDR_addr : signal is "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250";
   attribute X_INTERFACE_INFO of DDR_ba : signal is "xilinx.com:interface:ddrx:1.0 DDR BA";
@@ -1916,6 +1924,7 @@ AXIS_I2S_Receiver: component System_AXIS_I2S_Receiver_0_0
      port map (
       ACLK => ProcessingSystem_FCLK_CLK0,
       ARESETn => Reset_ProcessingSystem_peripheral_aresetn(0),
+      Enable => VIO_probe_out0(0),
       LRCLK => I2S_0_1_LRCLK,
       MCLK => MCLK_0_1,
       SCLK => I2S_0_1_SCLK,
@@ -2229,5 +2238,10 @@ Reset_ProcessingSystem: component System_rst_ProcessingSystem_100M_0
       peripheral_aresetn(0) => Reset_ProcessingSystem_peripheral_aresetn(0),
       peripheral_reset(0) => NLW_Reset_ProcessingSystem_peripheral_reset_UNCONNECTED(0),
       slowest_sync_clk => ProcessingSystem_FCLK_CLK0
+    );
+VIO: component System_vio_0_0
+     port map (
+      clk => ProcessingSystem_FCLK_CLK0,
+      probe_out0(0) => VIO_probe_out0(0)
     );
 end STRUCTURE;

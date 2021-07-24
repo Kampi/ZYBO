@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Thu Jul 22 20:42:16 2021
+// Date        : Sat Jul 24 20:44:08 2021
 // Host        : PC running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.srcs/sources_1/bd/System/ip/System_AXIS_I2S_Receiver_0_0/System_AXIS_I2S_Receiver_0_0_sim_netlist.v
@@ -12,11 +12,12 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "System_AXIS_I2S_Receiver_0_0,AXIS_I2S,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "package_project" *) 
-(* x_core_info = "AXIS_I2S,Vivado 2020.2" *) 
+(* CHECK_LICENSE_TYPE = "System_AXIS_I2S_Receiver_0_0,AXIS_I2S_Receiver,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "package_project" *) 
+(* x_core_info = "AXIS_I2S_Receiver,Vivado 2020.2" *) 
 (* NotValidForBitStream *)
 module System_AXIS_I2S_Receiver_0_0
-   (MCLK,
+   (Enable,
+    MCLK,
     nReset,
     LRCLK,
     SCLK,
@@ -27,20 +28,22 @@ module System_AXIS_I2S_Receiver_0_0
     TREADY_TXD,
     TVALID_TXD,
     TLAST_TXD);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 Audio_MCLK CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME Audio_MCLK, ASSOCIATED_RESET nReset, ASSOCIATED_BUSIF I2S, FREQ_HZ 12288013, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN System_MCLK_0, INSERT_VIP 0" *) input MCLK;
+  input Enable;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 Audio_MCLK CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME Audio_MCLK, ASSOCIATED_RESET nReset, ASSOCIATED_BUSIF I2S, FREQ_HZ 12288013, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN System_MCLK, INSERT_VIP 0" *) input MCLK;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 Audio_nReset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME Audio_nReset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input nReset;
   (* x_interface_info = "www.kampis-elektroecke.de:Kampis-Elektroecke:I2S:1.0 I2S LRCLK" *) input LRCLK;
   (* x_interface_info = "www.kampis-elektroecke.de:Kampis-Elektroecke:I2S:1.0 I2S SCLK" *) input SCLK;
   (* x_interface_info = "www.kampis-elektroecke.de:Kampis-Elektroecke:I2S:1.0 I2S SD" *) input SD;
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 ACLK CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME ACLK, ASSOCIATED_RESET ARESETn, ASSOCIATED_BUSIF AXIS_TXD, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN System_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input ACLK;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 ACLK CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME ACLK, ASSOCIATED_RESET ARESETn, ASSOCIATED_BUSIF AXIS_TXD, FREQ_HZ 1e+08, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN System_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input ACLK;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 ARESETn RST" *) (* x_interface_parameter = "XIL_INTERFACENAME ARESETn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input ARESETn;
-  (* x_interface_info = "xilinx.com:interface:axis:1.0 AXIS_TXD TDATA" *) (* x_interface_parameter = "XIL_INTERFACENAME AXIS_TXD, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN System_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *) output [31:0]TDATA_TXD;
+  (* x_interface_info = "xilinx.com:interface:axis:1.0 AXIS_TXD TDATA" *) (* x_interface_parameter = "XIL_INTERFACENAME AXIS_TXD, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 1e+08, PHASE 0.000, CLK_DOMAIN System_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *) output [31:0]TDATA_TXD;
   (* x_interface_info = "xilinx.com:interface:axis:1.0 AXIS_TXD TREADY" *) input TREADY_TXD;
   (* x_interface_info = "xilinx.com:interface:axis:1.0 AXIS_TXD TVALID" *) output TVALID_TXD;
   (* x_interface_info = "xilinx.com:interface:axis:1.0 AXIS_TXD TLAST" *) output TLAST_TXD;
 
   wire ACLK;
   wire ARESETn;
+  wire Enable;
   wire LRCLK;
   wire MCLK;
   wire SCLK;
@@ -51,9 +54,11 @@ module System_AXIS_I2S_Receiver_0_0
   wire TVALID_TXD;
   wire nReset;
 
-  System_AXIS_I2S_Receiver_0_0_AXIS_I2S U0
+  System_AXIS_I2S_Receiver_0_0_AXIS_I2S_Receiver U0
        (.ACLK(ACLK),
         .ARESETn(ARESETn),
+        .Enable(Enable),
+        .\FSM_onehot_CurrentState_reg[2]_0 (TVALID_TXD),
         .LRCLK(LRCLK),
         .MCLK(MCLK),
         .SCLK(SCLK),
@@ -61,42 +66,45 @@ module System_AXIS_I2S_Receiver_0_0
         .TDATA_TXD(TDATA_TXD),
         .TLAST_TXD(TLAST_TXD),
         .TREADY_TXD(TREADY_TXD),
-        .TVALID_TXD(TVALID_TXD),
         .nReset(nReset));
 endmodule
 
-(* ORIG_REF_NAME = "AXIS_I2S" *) 
-module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
-   (TVALID_TXD,
+(* ORIG_REF_NAME = "AXIS_I2S_Receiver" *) 
+module System_AXIS_I2S_Receiver_0_0_AXIS_I2S_Receiver
+   (\FSM_onehot_CurrentState_reg[2]_0 ,
     TDATA_TXD,
     TLAST_TXD,
     MCLK,
     ACLK,
+    TREADY_TXD,
+    ARESETn,
+    Enable,
     LRCLK,
     SCLK,
     SD,
-    TREADY_TXD,
-    ARESETn,
     nReset);
-  output TVALID_TXD;
+  output \FSM_onehot_CurrentState_reg[2]_0 ;
   output [31:0]TDATA_TXD;
   output TLAST_TXD;
   input MCLK;
   input ACLK;
+  input TREADY_TXD;
+  input ARESETn;
+  input Enable;
   input LRCLK;
   input SCLK;
   input SD;
-  input TREADY_TXD;
-  input ARESETn;
   input nReset;
 
   wire ACLK;
   wire ARESETn;
-  wire \AXIS_Data_reg[31]_i_1_n_0 ;
-  wire \CurrentState[0]_i_1_n_0 ;
-  wire \CurrentState[1]_i_1_n_0 ;
-  wire \CurrentState_reg_n_0_[0] ;
-  wire \CurrentState_reg_n_0_[1] ;
+  wire AXIS_Data;
+  wire Enable;
+  wire \FSM_onehot_CurrentState[0]_i_1_n_0 ;
+  wire \FSM_onehot_CurrentState[1]_i_1_n_0 ;
+  wire \FSM_onehot_CurrentState[2]_i_1_n_0 ;
+  wire \FSM_onehot_CurrentState_reg[2]_0 ;
+  wire \FSM_onehot_CurrentState_reg_n_0_[0] ;
   wire LRCLK;
   wire [15:0]Left;
   wire MCLK;
@@ -113,8 +121,8 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
   wire TLAST_TXD_INST_0_i_6_n_0;
   wire TLAST_TXD_INST_0_i_7_n_0;
   wire TREADY_TXD;
-  wire TVALID_TXD;
   wire Valid_Slow;
+  wire WordCounter;
   wire WordCounter1;
   wire WordCounter1_carry__0_i_1_n_0;
   wire WordCounter1_carry__0_i_2_n_0;
@@ -151,7 +159,7 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
   wire WordCounter1_carry_n_1;
   wire WordCounter1_carry_n_2;
   wire WordCounter1_carry_n_3;
-  wire \WordCounter[0]_i_2_n_0 ;
+  wire \WordCounter[0]_i_1_n_0 ;
   wire \WordCounter[0]_i_4_n_0 ;
   wire \WordCounter[0]_i_5_n_0 ;
   wire \WordCounter[0]_i_6_n_0 ;
@@ -248,7 +256,6 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
   wire \WordCounter_reg[8]_i_1_n_5 ;
   wire \WordCounter_reg[8]_i_1_n_6 ;
   wire \WordCounter_reg[8]_i_1_n_7 ;
-  wire clear;
   wire [31:0]dest_out;
   wire dest_req;
   wire nReset;
@@ -259,333 +266,314 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
   wire [3:3]\NLW_WordCounter_reg[28]_i_1_CO_UNCONNECTED ;
   wire NLW_xpm_cdc_Data_src_rcv_UNCONNECTED;
 
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[0] 
-       (.CLR(1'b0),
-        .D(dest_out[0]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[0]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[10] 
-       (.CLR(1'b0),
-        .D(dest_out[10]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[10]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[11] 
-       (.CLR(1'b0),
-        .D(dest_out[11]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[11]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[12] 
-       (.CLR(1'b0),
-        .D(dest_out[12]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[12]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[13] 
-       (.CLR(1'b0),
-        .D(dest_out[13]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[13]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[14] 
-       (.CLR(1'b0),
-        .D(dest_out[14]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[14]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[15] 
-       (.CLR(1'b0),
-        .D(dest_out[15]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[15]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[16] 
-       (.CLR(1'b0),
-        .D(dest_out[16]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[16]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[17] 
-       (.CLR(1'b0),
-        .D(dest_out[17]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[17]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[18] 
-       (.CLR(1'b0),
-        .D(dest_out[18]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[18]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[19] 
-       (.CLR(1'b0),
-        .D(dest_out[19]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[19]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[1] 
-       (.CLR(1'b0),
-        .D(dest_out[1]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[1]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[20] 
-       (.CLR(1'b0),
-        .D(dest_out[20]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[20]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[21] 
-       (.CLR(1'b0),
-        .D(dest_out[21]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[21]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[22] 
-       (.CLR(1'b0),
-        .D(dest_out[22]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[22]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[23] 
-       (.CLR(1'b0),
-        .D(dest_out[23]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[23]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[24] 
-       (.CLR(1'b0),
-        .D(dest_out[24]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[24]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[25] 
-       (.CLR(1'b0),
-        .D(dest_out[25]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[25]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[26] 
-       (.CLR(1'b0),
-        .D(dest_out[26]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[26]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[27] 
-       (.CLR(1'b0),
-        .D(dest_out[27]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[27]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[28] 
-       (.CLR(1'b0),
-        .D(dest_out[28]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[28]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[29] 
-       (.CLR(1'b0),
-        .D(dest_out[29]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[29]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[2] 
-       (.CLR(1'b0),
-        .D(dest_out[2]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[2]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[30] 
-       (.CLR(1'b0),
-        .D(dest_out[30]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[30]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[31] 
-       (.CLR(1'b0),
-        .D(dest_out[31]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[31]));
-  LUT2 #(
-    .INIT(4'h2)) 
-    \AXIS_Data_reg[31]_i_1 
-       (.I0(\CurrentState_reg_n_0_[0] ),
-        .I1(\CurrentState_reg_n_0_[1] ),
-        .O(\AXIS_Data_reg[31]_i_1_n_0 ));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[3] 
-       (.CLR(1'b0),
-        .D(dest_out[3]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[3]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[4] 
-       (.CLR(1'b0),
-        .D(dest_out[4]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[4]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[5] 
-       (.CLR(1'b0),
-        .D(dest_out[5]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[5]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[6] 
-       (.CLR(1'b0),
-        .D(dest_out[6]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[6]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[7] 
-       (.CLR(1'b0),
-        .D(dest_out[7]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[7]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[8] 
-       (.CLR(1'b0),
-        .D(dest_out[8]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[8]));
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \AXIS_Data_reg[9] 
-       (.CLR(1'b0),
-        .D(dest_out[9]),
-        .G(\AXIS_Data_reg[31]_i_1_n_0 ),
-        .GE(1'b1),
-        .Q(TDATA_TXD[9]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT4 #(
-    .INIT(16'h0200)) 
-    \CurrentState[0]_i_1 
-       (.I0(dest_req),
-        .I1(\CurrentState_reg_n_0_[0] ),
-        .I2(\CurrentState_reg_n_0_[1] ),
-        .I3(ARESETn),
-        .O(\CurrentState[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT4 #(
-    .INIT(16'h3400)) 
-    \CurrentState[1]_i_1 
-       (.I0(TREADY_TXD),
-        .I1(\CurrentState_reg_n_0_[1] ),
-        .I2(\CurrentState_reg_n_0_[0] ),
-        .I3(ARESETn),
-        .O(\CurrentState[1]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
-    \CurrentState_reg[0] 
+    \AXIS_Data_reg[0] 
        (.C(ACLK),
-        .CE(1'b1),
-        .D(\CurrentState[0]_i_1_n_0 ),
-        .Q(\CurrentState_reg_n_0_[0] ),
+        .CE(AXIS_Data),
+        .D(dest_out[0]),
+        .Q(TDATA_TXD[0]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \CurrentState_reg[1] 
+    \AXIS_Data_reg[10] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[10]),
+        .Q(TDATA_TXD[10]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[11] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[11]),
+        .Q(TDATA_TXD[11]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[12] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[12]),
+        .Q(TDATA_TXD[12]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[13] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[13]),
+        .Q(TDATA_TXD[13]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[14] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[14]),
+        .Q(TDATA_TXD[14]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[15] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[15]),
+        .Q(TDATA_TXD[15]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[16] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[16]),
+        .Q(TDATA_TXD[16]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[17] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[17]),
+        .Q(TDATA_TXD[17]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[18] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[18]),
+        .Q(TDATA_TXD[18]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[19] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[19]),
+        .Q(TDATA_TXD[19]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[1] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[1]),
+        .Q(TDATA_TXD[1]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[20] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[20]),
+        .Q(TDATA_TXD[20]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[21] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[21]),
+        .Q(TDATA_TXD[21]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[22] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[22]),
+        .Q(TDATA_TXD[22]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[23] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[23]),
+        .Q(TDATA_TXD[23]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[24] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[24]),
+        .Q(TDATA_TXD[24]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[25] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[25]),
+        .Q(TDATA_TXD[25]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[26] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[26]),
+        .Q(TDATA_TXD[26]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[27] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[27]),
+        .Q(TDATA_TXD[27]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[28] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[28]),
+        .Q(TDATA_TXD[28]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[29] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[29]),
+        .Q(TDATA_TXD[29]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[2] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[2]),
+        .Q(TDATA_TXD[2]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[30] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[30]),
+        .Q(TDATA_TXD[30]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[31] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[31]),
+        .Q(TDATA_TXD[31]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[3] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[3]),
+        .Q(TDATA_TXD[3]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[4] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[4]),
+        .Q(TDATA_TXD[4]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[5] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[5]),
+        .Q(TDATA_TXD[5]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[6] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[6]),
+        .Q(TDATA_TXD[6]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[7] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[7]),
+        .Q(TDATA_TXD[7]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[8] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[8]),
+        .Q(TDATA_TXD[8]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \AXIS_Data_reg[9] 
+       (.C(ACLK),
+        .CE(AXIS_Data),
+        .D(dest_out[9]),
+        .Q(TDATA_TXD[9]),
+        .R(1'b0));
+  LUT6 #(
+    .INIT(64'hFF707070FFFFFFFF)) 
+    \FSM_onehot_CurrentState[0]_i_1 
+       (.I0(Enable),
+        .I1(dest_req),
+        .I2(\FSM_onehot_CurrentState_reg_n_0_[0] ),
+        .I3(\FSM_onehot_CurrentState_reg[2]_0 ),
+        .I4(TREADY_TXD),
+        .I5(ARESETn),
+        .O(\FSM_onehot_CurrentState[0]_i_1_n_0 ));
+  LUT4 #(
+    .INIT(16'h8000)) 
+    \FSM_onehot_CurrentState[1]_i_1 
+       (.I0(dest_req),
+        .I1(Enable),
+        .I2(\FSM_onehot_CurrentState_reg_n_0_[0] ),
+        .I3(ARESETn),
+        .O(\FSM_onehot_CurrentState[1]_i_1_n_0 ));
+  LUT4 #(
+    .INIT(16'hAE00)) 
+    \FSM_onehot_CurrentState[2]_i_1 
+       (.I0(AXIS_Data),
+        .I1(\FSM_onehot_CurrentState_reg[2]_0 ),
+        .I2(TREADY_TXD),
+        .I3(ARESETn),
+        .O(\FSM_onehot_CurrentState[2]_i_1_n_0 ));
+  (* FSM_ENCODED_STATES = "state_data_ready:010,state_wait_handshake:100,state_wait_sync:001" *) 
+  FDRE #(
+    .INIT(1'b1)) 
+    \FSM_onehot_CurrentState_reg[0] 
        (.C(ACLK),
         .CE(1'b1),
-        .D(\CurrentState[1]_i_1_n_0 ),
-        .Q(\CurrentState_reg_n_0_[1] ),
+        .D(\FSM_onehot_CurrentState[0]_i_1_n_0 ),
+        .Q(\FSM_onehot_CurrentState_reg_n_0_[0] ),
+        .R(1'b0));
+  (* FSM_ENCODED_STATES = "state_data_ready:010,state_wait_handshake:100,state_wait_sync:001" *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \FSM_onehot_CurrentState_reg[1] 
+       (.C(ACLK),
+        .CE(1'b1),
+        .D(\FSM_onehot_CurrentState[1]_i_1_n_0 ),
+        .Q(AXIS_Data),
+        .R(1'b0));
+  (* FSM_ENCODED_STATES = "state_data_ready:010,state_wait_handshake:100,state_wait_sync:001" *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \FSM_onehot_CurrentState_reg[2] 
+       (.C(ACLK),
+        .CE(1'b1),
+        .D(\FSM_onehot_CurrentState[2]_i_1_n_0 ),
+        .Q(\FSM_onehot_CurrentState_reg[2]_0 ),
         .R(1'b0));
   System_AXIS_I2S_Receiver_0_0_I2S_Receiver Receiver
        (.LRCLK(LRCLK),
@@ -607,22 +595,22 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
   LUT6 #(
     .INIT(64'h0000000000000001)) 
     TLAST_TXD_INST_0_i_1
-       (.I0(WordCounter_reg[28]),
-        .I1(WordCounter_reg[29]),
-        .I2(WordCounter_reg[26]),
-        .I3(WordCounter_reg[27]),
-        .I4(WordCounter_reg[31]),
-        .I5(WordCounter_reg[30]),
-        .O(TLAST_TXD_INST_0_i_1_n_0));
-  LUT6 #(
-    .INIT(64'h0000000000000001)) 
-    TLAST_TXD_INST_0_i_2
        (.I0(WordCounter_reg[22]),
         .I1(WordCounter_reg[23]),
         .I2(WordCounter_reg[20]),
         .I3(WordCounter_reg[21]),
         .I4(WordCounter_reg[25]),
         .I5(WordCounter_reg[24]),
+        .O(TLAST_TXD_INST_0_i_1_n_0));
+  LUT6 #(
+    .INIT(64'h0000000000000001)) 
+    TLAST_TXD_INST_0_i_2
+       (.I0(WordCounter_reg[28]),
+        .I1(WordCounter_reg[29]),
+        .I2(WordCounter_reg[26]),
+        .I3(WordCounter_reg[27]),
+        .I4(WordCounter_reg[31]),
+        .I5(WordCounter_reg[30]),
         .O(TLAST_TXD_INST_0_i_2_n_0));
   LUT6 #(
     .INIT(64'h0000000000000001)) 
@@ -635,43 +623,37 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
         .I5(WordCounter_reg[18]),
         .O(TLAST_TXD_INST_0_i_3_n_0));
   LUT6 #(
-    .INIT(64'h0000000000000001)) 
+    .INIT(64'h0000000000008000)) 
     TLAST_TXD_INST_0_i_4
+       (.I0(WordCounter_reg[4]),
+        .I1(WordCounter_reg[5]),
+        .I2(WordCounter_reg[6]),
+        .I3(WordCounter_reg[7]),
+        .I4(TLAST_TXD_INST_0_i_6_n_0),
+        .I5(TLAST_TXD_INST_0_i_7_n_0),
+        .O(TLAST_TXD_INST_0_i_4_n_0));
+  LUT6 #(
+    .INIT(64'h0000000000000001)) 
+    TLAST_TXD_INST_0_i_5
        (.I0(WordCounter_reg[10]),
         .I1(WordCounter_reg[11]),
         .I2(WordCounter_reg[8]),
         .I3(WordCounter_reg[9]),
         .I4(WordCounter_reg[13]),
         .I5(WordCounter_reg[12]),
-        .O(TLAST_TXD_INST_0_i_4_n_0));
-  LUT6 #(
-    .INIT(64'h0000000000400000)) 
-    TLAST_TXD_INST_0_i_5
-       (.I0(TLAST_TXD_INST_0_i_6_n_0),
-        .I1(WordCounter_reg[4]),
-        .I2(WordCounter_reg[5]),
-        .I3(TLAST_TXD_INST_0_i_7_n_0),
-        .I4(WordCounter_reg[6]),
-        .I5(WordCounter_reg[7]),
         .O(TLAST_TXD_INST_0_i_5_n_0));
   LUT2 #(
     .INIT(4'h7)) 
     TLAST_TXD_INST_0_i_6
-       (.I0(WordCounter_reg[2]),
-        .I1(WordCounter_reg[3]),
+       (.I0(WordCounter_reg[0]),
+        .I1(WordCounter_reg[1]),
         .O(TLAST_TXD_INST_0_i_6_n_0));
   LUT2 #(
     .INIT(4'h7)) 
     TLAST_TXD_INST_0_i_7
-       (.I0(WordCounter_reg[0]),
-        .I1(WordCounter_reg[1]),
+       (.I0(WordCounter_reg[2]),
+        .I1(WordCounter_reg[3]),
         .O(TLAST_TXD_INST_0_i_7_n_0));
-  LUT2 #(
-    .INIT(4'h2)) 
-    TVALID_TXD_INST_0
-       (.I0(\CurrentState_reg_n_0_[1] ),
-        .I1(\CurrentState_reg_n_0_[0] ),
-        .O(TVALID_TXD));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 WordCounter1_carry
        (.CI(1'b0),
@@ -777,7 +759,7 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
         .I1(WordCounter_reg[25]),
         .O(WordCounter1_carry__2_i_4_n_0));
   LUT2 #(
-    .INIT(4'h1)) 
+    .INIT(4'h7)) 
     WordCounter1_carry_i_1
        (.I0(WordCounter_reg[6]),
         .I1(WordCounter_reg[7]),
@@ -801,10 +783,10 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
         .I1(WordCounter_reg[1]),
         .O(WordCounter1_carry_i_4_n_0));
   LUT2 #(
-    .INIT(4'h2)) 
+    .INIT(4'h8)) 
     WordCounter1_carry_i_5
-       (.I0(WordCounter_reg[6]),
-        .I1(WordCounter_reg[7]),
+       (.I0(WordCounter_reg[7]),
+        .I1(WordCounter_reg[6]),
         .O(WordCounter1_carry_i_5_n_0));
   LUT2 #(
     .INIT(4'h8)) 
@@ -828,14 +810,13 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
     .INIT(2'h1)) 
     \WordCounter[0]_i_1 
        (.I0(ARESETn),
-        .O(clear));
-  LUT3 #(
-    .INIT(8'h40)) 
+        .O(\WordCounter[0]_i_1_n_0 ));
+  LUT2 #(
+    .INIT(4'h8)) 
     \WordCounter[0]_i_2 
-       (.I0(\CurrentState_reg_n_0_[0] ),
-        .I1(\CurrentState_reg_n_0_[1] ),
-        .I2(TREADY_TXD),
-        .O(\WordCounter[0]_i_2_n_0 ));
+       (.I0(\FSM_onehot_CurrentState_reg[2]_0 ),
+        .I1(TREADY_TXD),
+        .O(WordCounter));
   LUT2 #(
     .INIT(4'h8)) 
     \WordCounter[0]_i_4 
@@ -1032,10 +1013,10 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
     .INIT(1'b0)) 
     \WordCounter_reg[0] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[0]_i_3_n_7 ),
         .Q(WordCounter_reg[0]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \WordCounter_reg[0]_i_3 
        (.CI(1'b0),
@@ -1048,26 +1029,26 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
     .INIT(1'b0)) 
     \WordCounter_reg[10] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[8]_i_1_n_5 ),
         .Q(WordCounter_reg[10]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[11] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[8]_i_1_n_4 ),
         .Q(WordCounter_reg[11]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[12] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[12]_i_1_n_7 ),
         .Q(WordCounter_reg[12]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \WordCounter_reg[12]_i_1 
        (.CI(\WordCounter_reg[8]_i_1_n_0 ),
@@ -1080,34 +1061,34 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
     .INIT(1'b0)) 
     \WordCounter_reg[13] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[12]_i_1_n_6 ),
         .Q(WordCounter_reg[13]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[14] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[12]_i_1_n_5 ),
         .Q(WordCounter_reg[14]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[15] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[12]_i_1_n_4 ),
         .Q(WordCounter_reg[15]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[16] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[16]_i_1_n_7 ),
         .Q(WordCounter_reg[16]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \WordCounter_reg[16]_i_1 
        (.CI(\WordCounter_reg[12]_i_1_n_0 ),
@@ -1120,42 +1101,42 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
     .INIT(1'b0)) 
     \WordCounter_reg[17] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[16]_i_1_n_6 ),
         .Q(WordCounter_reg[17]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[18] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[16]_i_1_n_5 ),
         .Q(WordCounter_reg[18]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[19] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[16]_i_1_n_4 ),
         .Q(WordCounter_reg[19]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[1] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[0]_i_3_n_6 ),
         .Q(WordCounter_reg[1]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[20] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[20]_i_1_n_7 ),
         .Q(WordCounter_reg[20]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \WordCounter_reg[20]_i_1 
        (.CI(\WordCounter_reg[16]_i_1_n_0 ),
@@ -1168,34 +1149,34 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
     .INIT(1'b0)) 
     \WordCounter_reg[21] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[20]_i_1_n_6 ),
         .Q(WordCounter_reg[21]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[22] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[20]_i_1_n_5 ),
         .Q(WordCounter_reg[22]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[23] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[20]_i_1_n_4 ),
         .Q(WordCounter_reg[23]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[24] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[24]_i_1_n_7 ),
         .Q(WordCounter_reg[24]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \WordCounter_reg[24]_i_1 
        (.CI(\WordCounter_reg[20]_i_1_n_0 ),
@@ -1208,34 +1189,34 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
     .INIT(1'b0)) 
     \WordCounter_reg[25] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[24]_i_1_n_6 ),
         .Q(WordCounter_reg[25]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[26] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[24]_i_1_n_5 ),
         .Q(WordCounter_reg[26]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[27] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[24]_i_1_n_4 ),
         .Q(WordCounter_reg[27]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[28] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[28]_i_1_n_7 ),
         .Q(WordCounter_reg[28]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \WordCounter_reg[28]_i_1 
        (.CI(\WordCounter_reg[24]_i_1_n_0 ),
@@ -1248,50 +1229,50 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
     .INIT(1'b0)) 
     \WordCounter_reg[29] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[28]_i_1_n_6 ),
         .Q(WordCounter_reg[29]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[2] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[0]_i_3_n_5 ),
         .Q(WordCounter_reg[2]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[30] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[28]_i_1_n_5 ),
         .Q(WordCounter_reg[30]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[31] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[28]_i_1_n_4 ),
         .Q(WordCounter_reg[31]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[3] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[0]_i_3_n_4 ),
         .Q(WordCounter_reg[3]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[4] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[4]_i_1_n_7 ),
         .Q(WordCounter_reg[4]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \WordCounter_reg[4]_i_1 
        (.CI(\WordCounter_reg[0]_i_3_n_0 ),
@@ -1304,34 +1285,34 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
     .INIT(1'b0)) 
     \WordCounter_reg[5] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[4]_i_1_n_6 ),
         .Q(WordCounter_reg[5]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[6] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[4]_i_1_n_5 ),
         .Q(WordCounter_reg[6]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[7] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[4]_i_1_n_4 ),
         .Q(WordCounter_reg[7]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \WordCounter_reg[8] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[8]_i_1_n_7 ),
         .Q(WordCounter_reg[8]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \WordCounter_reg[8]_i_1 
        (.CI(\WordCounter_reg[4]_i_1_n_0 ),
@@ -1344,10 +1325,10 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S
     .INIT(1'b0)) 
     \WordCounter_reg[9] 
        (.C(ACLK),
-        .CE(\WordCounter[0]_i_2_n_0 ),
+        .CE(WordCounter),
         .D(\WordCounter_reg[8]_i_1_n_6 ),
         .Q(WordCounter_reg[9]),
-        .R(clear));
+        .R(\WordCounter[0]_i_1_n_0 ));
   (* DEST_EXT_HSK = "0" *) 
   (* DEST_SYNC_FF = "4" *) 
   (* INIT_SYNC_FF = "0" *) 

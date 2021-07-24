@@ -70,6 +70,9 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "Synth" START { ROLLUP_AUTO }
+set_param tcl.collectionResultDisplayLimit 0
+set_param chipscope.maxJobs 2
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z010clg400-1
 
@@ -98,11 +101,13 @@ set_property used_in_implementation false [get_files -all h:/NextCloud/Git/ZYBO/
 set_property used_in_implementation false [get_files -all h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.srcs/sources_1/bd/System/ip/System_Reset_ProcessingSystem_0/System_Reset_ProcessingSystem_0.xdc]
 set_property used_in_implementation false [get_files -all h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.srcs/sources_1/bd/System/ip/System_Reset_ProcessingSystem_0/System_Reset_ProcessingSystem_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.srcs/sources_1/bd/System/ip/System_xbar_0/System_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.srcs/sources_1/bd/System/ip/System_auto_pc_0/System_auto_pc_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.srcs/sources_1/bd/System/ip/System_auto_pc_1/System_auto_pc_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.srcs/sources_1/bd/System/ip/System_axi_dma_0_0/System_axi_dma_0_0.xdc]
 set_property used_in_implementation false [get_files -all h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.srcs/sources_1/bd/System/ip/System_axi_dma_0_0/System_axi_dma_0_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.srcs/sources_1/bd/System/ip/System_axi_dma_0_0/System_axi_dma_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.srcs/sources_1/bd/System/ip/System_vio_0_0/System_vio_0_0.xdc]
+set_property used_in_implementation false [get_files -all h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.srcs/sources_1/bd/System/ip/System_vio_0_0/System_vio_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.srcs/sources_1/bd/System/ip/System_auto_pc_0/System_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.srcs/sources_1/bd/System/ip/System_auto_pc_1/System_auto_pc_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.srcs/sources_1/bd/System/System_ooc.xdc]
 
 OPTRACE "Adding files" END { }

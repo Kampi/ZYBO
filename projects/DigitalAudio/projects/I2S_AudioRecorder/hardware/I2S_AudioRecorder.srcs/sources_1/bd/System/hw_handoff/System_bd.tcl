@@ -170,6 +170,9 @@ proc create_root_design { parentCell } {
 
   # Create instance: AXIS_I2S_Receiver, and set properties
   set AXIS_I2S_Receiver [ create_bd_cell -type ip -vlnv www.kampis-elektroecke.de:Kampis-Elektroecke:AXIS_I2S_Receiver:1.0 AXIS_I2S_Receiver ]
+  set_property -dict [ list \
+   CONFIG.LENGTH {256} \
+ ] $AXIS_I2S_Receiver
 
   # Create instance: AXI_DMA, and set properties
   set AXI_DMA [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 AXI_DMA ]
@@ -800,6 +803,13 @@ proc create_root_design { parentCell } {
   # Create instance: Reset_ProcessingSystem, and set properties
   set Reset_ProcessingSystem [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 Reset_ProcessingSystem ]
 
+  # Create instance: VIO, and set properties
+  set VIO [ create_bd_cell -type ip -vlnv xilinx.com:ip:vio:3.0 VIO ]
+  set_property -dict [ list \
+   CONFIG.C_EN_PROBE_IN_ACTIVITY {0} \
+   CONFIG.C_NUM_PROBE_IN {0} \
+ ] $VIO
+
   # Create interface connections
   connect_bd_intf_net -intf_net AXIS_I2S_Receiver_AXIS_TXD [get_bd_intf_pins AXIS_I2S_Receiver/AXIS_TXD] [get_bd_intf_pins AXI_DMA/S_AXIS_S2MM]
   connect_bd_intf_net -intf_net AXI_DMA_M_AXI_S2MM [get_bd_intf_pins AXI_DMA/M_AXI_S2MM] [get_bd_intf_pins ProcessingSystem_AXI/S00_AXI]
@@ -813,10 +823,11 @@ proc create_root_design { parentCell } {
   # Create port connections
   connect_bd_net -net AXI_DMA_s2mm_introut [get_bd_pins AXI_DMA/s2mm_introut] [get_bd_pins ProcessingSystem/IRQ_F2P]
   connect_bd_net -net MCLK_0_1 [get_bd_ports MCLK] [get_bd_pins AXIS_I2S_Receiver/MCLK] [get_bd_pins Reset_Audio/slowest_sync_clk]
-  connect_bd_net -net ProcessingSystem_FCLK_CLK0 [get_bd_pins AXIS_I2S_Receiver/ACLK] [get_bd_pins AXI_DMA/m_axi_s2mm_aclk] [get_bd_pins AXI_DMA/s_axi_lite_aclk] [get_bd_pins ProcessingSystem/FCLK_CLK0] [get_bd_pins ProcessingSystem/M_AXI_GP0_ACLK] [get_bd_pins ProcessingSystem/S_AXI_GP0_ACLK] [get_bd_pins ProcessingSystem_AXI/ACLK] [get_bd_pins ProcessingSystem_AXI/M00_ACLK] [get_bd_pins ProcessingSystem_AXI/S00_ACLK] [get_bd_pins ProcessingSystem_AXILite/ACLK] [get_bd_pins ProcessingSystem_AXILite/M00_ACLK] [get_bd_pins ProcessingSystem_AXILite/M01_ACLK] [get_bd_pins ProcessingSystem_AXILite/S00_ACLK] [get_bd_pins Reset_ProcessingSystem/slowest_sync_clk]
+  connect_bd_net -net ProcessingSystem_FCLK_CLK0 [get_bd_pins AXIS_I2S_Receiver/ACLK] [get_bd_pins AXI_DMA/m_axi_s2mm_aclk] [get_bd_pins AXI_DMA/s_axi_lite_aclk] [get_bd_pins ProcessingSystem/FCLK_CLK0] [get_bd_pins ProcessingSystem/M_AXI_GP0_ACLK] [get_bd_pins ProcessingSystem/S_AXI_GP0_ACLK] [get_bd_pins ProcessingSystem_AXI/ACLK] [get_bd_pins ProcessingSystem_AXI/M00_ACLK] [get_bd_pins ProcessingSystem_AXI/S00_ACLK] [get_bd_pins ProcessingSystem_AXILite/ACLK] [get_bd_pins ProcessingSystem_AXILite/M00_ACLK] [get_bd_pins ProcessingSystem_AXILite/M01_ACLK] [get_bd_pins ProcessingSystem_AXILite/S00_ACLK] [get_bd_pins Reset_ProcessingSystem/slowest_sync_clk] [get_bd_pins VIO/clk]
   connect_bd_net -net ProcessingSystem_FCLK_RESET0_N [get_bd_pins ProcessingSystem/FCLK_RESET0_N] [get_bd_pins Reset_Audio/ext_reset_in] [get_bd_pins Reset_ProcessingSystem/ext_reset_in]
   connect_bd_net -net Reset_Audio_peripheral_aresetn [get_bd_pins AXIS_I2S_Receiver/nReset] [get_bd_pins Reset_Audio/peripheral_aresetn]
   connect_bd_net -net Reset_ProcessingSystem_peripheral_aresetn [get_bd_pins AXIS_I2S_Receiver/ARESETn] [get_bd_pins AXI_DMA/axi_resetn] [get_bd_pins ProcessingSystem_AXI/ARESETN] [get_bd_pins ProcessingSystem_AXI/M00_ARESETN] [get_bd_pins ProcessingSystem_AXI/S00_ARESETN] [get_bd_pins ProcessingSystem_AXILite/ARESETN] [get_bd_pins ProcessingSystem_AXILite/M00_ARESETN] [get_bd_pins ProcessingSystem_AXILite/M01_ARESETN] [get_bd_pins ProcessingSystem_AXILite/S00_ARESETN] [get_bd_pins Reset_ProcessingSystem/peripheral_aresetn]
+  connect_bd_net -net VIO_probe_out0 [get_bd_pins AXIS_I2S_Receiver/Enable] [get_bd_pins VIO/probe_out0]
 
   # Create address segments
   assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces AXI_DMA/Data_S2MM] [get_bd_addr_segs ProcessingSystem/S_AXI_GP0/GP0_DDR_LOWOCM] -force

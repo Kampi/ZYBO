@@ -14,13 +14,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="501653334fs"></ZoomStartTime>
-      <ZoomEndTime time="569253335fs"></ZoomEndTime>
-      <Cursor1Time time="519253334fs"></Cursor1Time>
+      <ZoomStartTime time="496304000fs"></ZoomStartTime>
+      <ZoomEndTime time="530304001fs"></ZoomEndTime>
+      <Cursor1Time time="524604000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="261"></NameColumnWidth>
-      <ValueColumnWidth column_width="91"></ValueColumnWidth>
+      <ValueColumnWidth column_width="87"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="4" />
    <wvobject fp_name="group10" type="group">
@@ -89,6 +89,10 @@
       <wvobject fp_name="/Receiver_TB/DUT/CurrentState" type="other">
          <obj_property name="ElementShortName">CurrentState</obj_property>
          <obj_property name="ObjectShortName">CurrentState</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Receiver_TB/DUT/WordCounter" type="other">
+         <obj_property name="ElementShortName">WordCounter</obj_property>
+         <obj_property name="ObjectShortName">WordCounter</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>

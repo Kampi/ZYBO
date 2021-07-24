@@ -4,7 +4,7 @@
 -- 
 -- Create Date:         20.06.2021 09:00:02
 -- Design Name: 
--- Module Name:         AXIS_I2S - AXIS_I2S_Arch
+-- Module Name:         AXIS_I2S_Receiver - AXIS_I2S_Receiver_Arch
 -- Project Name: 
 -- Target Devices:      XC7Z010CLG400-1
 -- Tool Versions:       Vivado 2020.2
@@ -25,7 +25,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -35,12 +35,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 library xpm;
 use xpm.vcomponents.all;
 
-entity AXIS_I2S is
+entity AXIS_I2S_Receiver is
     Generic (   RATIO   : INTEGER := 8;                                         -- MCLK / SCLK ratio as integer value
                 WIDTH   : INTEGER := 16;                                        -- Data width per channel
-                PACKET  : INTEGER := 128
+                LENGTH  : INTEGER := 128                                        -- AXI-Stream transmission length
                 );
-    Port (  -- Audio interface
+    Port (  -- Control interface
+            Enable      : in STD_LOGIC;
+
+            -- Audio interface
             MCLK        : in STD_LOGIC;                                         -- Audio clock
             nReset      : in STD_LOGIC;                                         -- Audio reset (active low)
             LRCLK       : in STD_LOGIC;                                         -- L/R clock
@@ -50,14 +53,14 @@ entity AXIS_I2S is
             -- AXI-Stream master interface
             ACLK        : in STD_LOGIC;                                         -- AXI-Stream clock
             ARESETn     : in STD_LOGIC;                                         -- AXI-Stream reset (active low)
-            TDATA_TXD   : out STD_LOGIC_VECTOR(((2 * WIDTH) - 1) downto 0);     -- AXI-Stream TDATA
+            TDATA_TXD   : out STD_LOGIC_VECTOR(((2 * WIDTH) - 1) downto 0);     -- AXI-Stream TDATA bus
             TREADY_TXD  : in STD_LOGIC;                                         -- AXI-Stream TREADY handshake
             TVALID_TXD  : out STD_LOGIC;                                        -- AXI-Stream TVALID handshake
-            TLAST_TXD   : out STD_LOGIC                                         -- AXI-Stream TLAST
+            TLAST_TXD   : out STD_LOGIC                                         -- AXI-Stream TLAST signal
             );
-end AXIS_I2S;
+end AXIS_I2S_Receiver;
 
-architecture AXIS_I2S_Arch of AXIS_I2S is
+architecture AXIS_I2S_Receiver_Arch of AXIS_I2S_Receiver is
 
     type AXIS_State_t is (STATE_WAIT_SYNC, STATE_DATA_READY, STATE_WAIT_HANDSHAKE);
 
@@ -74,8 +77,6 @@ architecture AXIS_I2S_Arch of AXIS_I2S is
 
     -- AXIS signals
     signal AXIS_Data            : STD_LOGIC_VECTOR(((2 * WIDTH) - 1) downto 0)      := (others => '0');
-    signal AXIS_TVALID          : STD_LOGIC                                         := '0';
-    signal AXIS_TLAST           : STD_LOGIC                                         := '0';
 
     -- CDC handshake signals
     signal Data_src_rcv         : STD_LOGIC                                         := '0';
@@ -144,15 +145,14 @@ begin
 
     -- TVALID generation
     -- TVALID is asserted new data are shifted into TDATA
-    AXIS_TVALID <= '1' when (CurrentState = STATE_WAIT_HANDSHAKE) else '0';
+    TVALID_TXD <= '1' when (CurrentState = STATE_WAIT_HANDSHAKE) else '0';
 
     -- TDATA generation
     -- Get the data from the right and the left channel and combine them
-    AXIS_Data <= Data_Fast when (CurrentState = STATE_DATA_READY);
+    TDATA_TXD <= AXIS_Data;
 
     -- TLAST generation
-    -- Assert TLAST when the packet counter is reached
-    AXIS_TLAST <= '1' when (WordCounter = (PACKET - 1)) else '0';
+    TLAST_TXD <= '1' when (WordCounter = (LENGTH - 1)) else '0';
 
     AXIS_Proc : process
     begin
@@ -160,24 +160,26 @@ begin
 
         case CurrentState is
             when STATE_WAIT_SYNC =>
-                if(Data_dest_req = '1') then
+                if((Data_dest_req = '1') and (Enable = '1')) then
                     CurrentState <= STATE_DATA_READY;
                 else
                     CurrentState <= STATE_WAIT_SYNC;
                 end if;
 
             when STATE_DATA_READY =>
+                AXIS_Data <= Data_Fast;
+
                 CurrentState <= STATE_WAIT_HANDSHAKE;
 
             when STATE_WAIT_HANDSHAKE =>
                 if(TREADY_TXD = '1') then
-                    CurrentState <= STATE_WAIT_SYNC;
-
-                    if(WordCounter < (PACKET - 1)) then
+                    if(WordCounter < (LENGTH - 1)) then
                         WordCounter <= WordCounter + 1;
                     else
                         WordCounter <= 0;
                     end if;
+
+                    CurrentState <= STATE_WAIT_SYNC;
                 else
                     CurrentState <= STATE_WAIT_HANDSHAKE;
                 end if;
@@ -188,13 +190,8 @@ begin
         end case;
 
         if(ARESETn = '0') then
+            WordCounter <= 0;
             CurrentState <= STATE_WAIT_SYNC;
         end if;
     end process;
-
-    -- I/O assignment
-    TDATA_TXD <= AXIS_Data;
-    TVALID_TXD <= AXIS_TVALID;
-    TLAST_TXD <= AXIS_TLAST;
-
-end AXIS_I2S_Arch;
+end AXIS_I2S_Receiver_Arch;

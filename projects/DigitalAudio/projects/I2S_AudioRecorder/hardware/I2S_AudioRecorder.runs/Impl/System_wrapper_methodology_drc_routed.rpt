@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Fri Jul 23 19:33:52 2021
+| Date         : Sat Jul 24 20:46:53 2021
 | Host         : PC running 64-bit major release  (build 9200)
 | Command      : report_methodology -file System_wrapper_methodology_drc_routed.rpt -pb System_wrapper_methodology_drc_routed.pb -rpx System_wrapper_methodology_drc_routed.rpx
 | Design       : System_wrapper
@@ -23,14 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 157
-+-----------+------------------+------------------------------+------------+
-| Rule      | Severity         | Description                  | Violations |
-+-----------+------------------+------------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell  | 123        |
-| LUTAR-1   | Warning          | LUT drives async reset alert | 2          |
-| TIMING-20 | Warning          | Non-clocked latch            | 32         |
-+-----------+------------------+------------------------------+------------+
+             Violations found: 139
++-----------+------------------+-------------------------------------------------+------------+
+| Rule      | Severity         | Description                                     | Violations |
++-----------+------------------+-------------------------------------------------+------------+
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                     | 123        |
+| LUTAR-1   | Warning          | LUT drives async reset alert                    | 6          |
+| PDRC-190  | Warning          | Suboptimally placed synchronized register chain | 10         |
++-----------+------------------+-------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -689,164 +689,82 @@ System_i/ProcessingSystem_AXI/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_
  (the first 15 of 32 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
-TIMING-20#1 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[0] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[0]/G is not reached by a timing clock
+LUTAR-1#3 Warning
+LUT drives async reset alert  
+LUT cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].rrst_inst/ngwrdrst.grst.g7serrst.rd_rst_reg[2]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[0]/PRE,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[1]/PRE
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[2]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
-TIMING-20#2 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[10] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[10]/G is not reached by a timing clock
+LUTAR-1#4 Warning
+LUT drives async reset alert  
+LUT cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].wrst_inst/ngwrdrst.grst.g7serrst.wr_rst_reg[2]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[0]/PRE,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[1]/PRE
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[2]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
-TIMING-20#3 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[11] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[11]/G is not reached by a timing clock
+LUTAR-1#5 Warning
+LUT drives async reset alert  
+LUT cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].rrst_inst/ngwrdrst.grst.g7serrst.rd_rst_reg[2]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[0]/PRE,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[1]/PRE
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[2]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
-TIMING-20#4 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[12] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[12]/G is not reached by a timing clock
+LUTAR-1#6 Warning
+LUT drives async reset alert  
+LUT cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].wrst_inst/ngwrdrst.grst.g7serrst.wr_rst_reg[2]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[0]/PRE,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[1]/PRE
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[2]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
-TIMING-20#5 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[13] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[13]/G is not reached by a timing clock
+PDRC-190#1 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[0] in site SLICE_X26Y52 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
 Related violations: <none>
 
-TIMING-20#6 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[14] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[14]/G is not reached by a timing clock
+PDRC-190#2 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[1] in site SLICE_X27Y51 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
 Related violations: <none>
 
-TIMING-20#7 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[15] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[15]/G is not reached by a timing clock
+PDRC-190#3 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[2] in site SLICE_X27Y53 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
 Related violations: <none>
 
-TIMING-20#8 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[16] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[16]/G is not reached by a timing clock
+PDRC-190#4 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[3] in site SLICE_X27Y48 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[3] is not placed in the same (SLICE) site.
 Related violations: <none>
 
-TIMING-20#9 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[17] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[17]/G is not reached by a timing clock
+PDRC-190#5 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[0] in site SLICE_X28Y50 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
 Related violations: <none>
 
-TIMING-20#10 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[18] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[18]/G is not reached by a timing clock
+PDRC-190#6 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[1] in site SLICE_X26Y50 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
 Related violations: <none>
 
-TIMING-20#11 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[19] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[19]/G is not reached by a timing clock
+PDRC-190#7 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[2] in site SLICE_X29Y50 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
 Related violations: <none>
 
-TIMING-20#12 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[1] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[1]/G is not reached by a timing clock
+PDRC-190#8 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[0] in site SLICE_X31Y49 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
 Related violations: <none>
 
-TIMING-20#13 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[20] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[20]/G is not reached by a timing clock
+PDRC-190#9 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[1] in site SLICE_X29Y48 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
 Related violations: <none>
 
-TIMING-20#14 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[21] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[21]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#15 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[22] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[22]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#16 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[23] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[23]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#17 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[24] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[24]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#18 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[25] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[25]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#19 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[26] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[26]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#20 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[27] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[27]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#21 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[28] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[28]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#22 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[29] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[29]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#23 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[2] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#24 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[30] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[30]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#25 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[31] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[31]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#26 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[3] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#27 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[4] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#28 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[5] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#29 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[6] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#30 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[7] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[7]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#31 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[8] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[8]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#32 Warning
-Non-clocked latch  
-The latch System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[9] cannot be properly analyzed as its control pin System_i/AXIS_I2S_Receiver/U0/AXIS_Data_reg[9]/G is not reached by a timing clock
+PDRC-190#10 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[2] in site SLICE_X28Y48 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 

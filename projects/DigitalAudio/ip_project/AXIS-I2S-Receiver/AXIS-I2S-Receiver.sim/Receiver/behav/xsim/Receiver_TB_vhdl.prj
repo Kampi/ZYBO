@@ -1,8 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../AXIS-I2S-Receiver.ip_user_files/bd/StreamReader/sim/StreamReader.vhd" \
-"../../../../AXIS-I2S-Receiver.srcs/sources_1/new/AXIS_I2S_Receiver.vhd" \
-"../../../../../../projects/I2S_Receiver/I2S_Receiver.srcs/sources_1/new/I2S_Receiver.vhd" \
-
-# Do not sort compile order
-nosort

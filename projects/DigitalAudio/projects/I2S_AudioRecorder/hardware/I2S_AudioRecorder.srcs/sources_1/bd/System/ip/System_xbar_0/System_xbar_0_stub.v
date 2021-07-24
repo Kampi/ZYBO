@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Fri Jul 23 19:30:57 2021
+// Date        : Fri Jul 23 21:55:43 2021
 // Host        : PC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.srcs/sources_1/bd/System/ip/System_xbar_0/System_xbar_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top System_xbar_0 -prefix
+//               System_xbar_0_ System_xbar_0_stub.v
 // Design      : System_xbar_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1

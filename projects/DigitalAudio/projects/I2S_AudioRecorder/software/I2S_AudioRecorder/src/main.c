@@ -32,6 +32,8 @@
  */
 
 #include "xstatus.h"
+#include "xil_printf.h"
+
 #include "AudioRecorder/AudioRecorder.h"
 
 int main(void)
@@ -47,7 +49,7 @@ int main(void)
 
 	while(1)
 	{
-		A();
+		AudioRecorder_RecordFrame();
 	}
 
 	return XST_SUCCESS;

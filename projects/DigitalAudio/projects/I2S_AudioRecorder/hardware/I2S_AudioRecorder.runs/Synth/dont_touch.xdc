@@ -27,13 +27,16 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==System_AXIS
 # IP: bd/System/ip/System_axi_mem_intercon_0/System_axi_mem_intercon_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==System_axi_mem_intercon_0 || ORIG_REF_NAME==System_axi_mem_intercon_0} -quiet] -quiet
 
+# IP: bd/System/ip/System_axi_dma_0_0/System_axi_dma_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==System_axi_dma_0_0 || ORIG_REF_NAME==System_axi_dma_0_0} -quiet] -quiet
+
+# IP: bd/System/ip/System_vio_0_0/System_vio_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==System_vio_0_0 || ORIG_REF_NAME==System_vio_0_0} -quiet] -quiet
+
 # IP: bd/System/ip/System_auto_pc_0/System_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==System_auto_pc_0 || ORIG_REF_NAME==System_auto_pc_0} -quiet] -quiet
 
 # IP: bd/System/ip/System_auto_pc_1/System_auto_pc_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==System_auto_pc_1 || ORIG_REF_NAME==System_auto_pc_1} -quiet] -quiet
-
-# IP: bd/System/ip/System_axi_dma_0_0/System_axi_dma_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==System_axi_dma_0_0 || ORIG_REF_NAME==System_axi_dma_0_0} -quiet] -quiet
 
 # XDC: bd/System/System_ooc.xdc

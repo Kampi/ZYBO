@@ -5,35 +5,35 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 5 -x 1470 -y 490 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 5 -x 1470 -y 510 -defaultsOSRD
-preplace port I2S -pg 1 -lvl 5 -x 1470 -y 100 -defaultsOSRD
+preplace port DDR -pg 1 -lvl 5 -x 1480 -y 490 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 5 -x 1480 -y 510 -defaultsOSRD
+preplace port I2S -pg 1 -lvl 5 -x 1480 -y 100 -defaultsOSRD
 preplace port Clock125 -pg 1 -lvl 0 -x 0 -y 850 -defaultsOSRD
-preplace port MCLK -pg 1 -lvl 5 -x 1470 -y 260 -defaultsOSRD
+preplace port MCLK -pg 1 -lvl 5 -x 1480 -y 260 -defaultsOSRD
 preplace inst ProcessingSystem -pg 1 -lvl 1 -x 240 -y 540 -defaultsOSRD
 preplace inst Reset_ProcessingSystem -pg 1 -lvl 1 -x 240 -y 750 -defaultsOSRD
 preplace inst Reset_Audio -pg 1 -lvl 3 -x 1010 -y 360 -defaultsOSRD
 preplace inst ProcessingSystem_AXILite -pg 1 -lvl 2 -x 630 -y 230 -defaultsOSRD
 preplace inst FIFO -pg 1 -lvl 3 -x 1010 -y 80 -defaultsOSRD
-preplace inst ClockingWizard -pg 1 -lvl 4 -x 1330 -y 270 -defaultsOSRD
-preplace inst AXIS_I2S_Transmitter -pg 1 -lvl 4 -x 1330 -y 100 -defaultsOSRD
-preplace netloc FIFO_interrupt 1 0 4 20 90 NJ 90 780J 160 1180
-preplace netloc clk_in1_0_1 1 0 4 NJ 850 460J 470 NJ 470 1220J
-preplace netloc ProcessingSystem_FCLK_RESET0_N 1 0 3 40 650 450 380 810J
-preplace netloc Reset_Audio_peripheral_aresetn 1 3 1 1190 100n
-preplace netloc ProcessingSystem_FCLK_CLK0 1 0 4 30 430 420 80 790 250 1220
-preplace netloc Reset_ProcessingSystem_peripheral_aresetn 1 1 3 440 370 800 260 1210
-preplace netloc ClockingWizard_locked 1 2 3 830 480 NJ 480 1440
-preplace netloc ClockingWizard_ClkAudio 1 2 3 820 460 1200 500 1450
+preplace inst ClockingWizard -pg 1 -lvl 4 -x 1340 -y 270 -defaultsOSRD
+preplace inst AXIS_I2S_Transmitter -pg 1 -lvl 4 -x 1340 -y 100 -defaultsOSRD
+preplace netloc FIFO_interrupt 1 0 4 30 380 NJ 380 790J 220 1180
+preplace netloc clk_in1_0_1 1 0 4 20J 430 NJ 430 810J 260 1190J
+preplace netloc ProcessingSystem_FCLK_RESET0_N 1 0 3 40 850 470 370 800J
+preplace netloc Reset_Audio_peripheral_aresetn 1 3 1 1200 100n
+preplace netloc ProcessingSystem_FCLK_CLK0 1 0 4 40 650 440 80 830 160 1220
+preplace netloc Reset_ProcessingSystem_peripheral_aresetn 1 1 3 460 90 790 170 1230
+preplace netloc ClockingWizard_locked 1 2 3 830 250 1180J 370 1450
+preplace netloc ClockingWizard_ClkAudio 1 2 3 820 230 1210 360 1460
 preplace netloc FIFO_AXI_STR_TXD 1 3 1 N 60
 preplace netloc ProcessingSystem_FIXED_IO 1 1 4 NJ 510 NJ 510 NJ 510 NJ
-preplace netloc ProcessingSystem_axi_periph_M00_AXI 1 2 1 770 60n
+preplace netloc ProcessingSystem_axi_periph_M00_AXI 1 2 1 780 60n
 preplace netloc ProcessingSystem_AXILite_M01_AXI 1 2 2 NJ 240 N
 preplace netloc ProcessingSystem_DDR 1 1 4 NJ 490 NJ 490 NJ 490 NJ
-preplace netloc ProcessingSystem_M_AXI_GP0 1 1 1 430 150n
+preplace netloc ProcessingSystem_M_AXI_GP0 1 1 1 450 150n
 preplace netloc AXIS_I2S_Transmitter_I2S 1 4 1 NJ 100
-levelinfo -pg 1 0 240 630 1010 1330 1470
-pagesize -pg 1 -db -bbox -sgen -110 0 1580 870
+levelinfo -pg 1 0 240 630 1010 1340 1480
+pagesize -pg 1 -db -bbox -sgen -110 0 1600 870
 "
 }
 {

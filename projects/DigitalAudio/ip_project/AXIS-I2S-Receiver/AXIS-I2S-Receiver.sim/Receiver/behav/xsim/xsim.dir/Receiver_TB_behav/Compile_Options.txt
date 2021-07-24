@@ -1,1 +1,0 @@
--wto "20fb8d8f55fa480d95ea810ffc33cf2c" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "axis_infrastructure_v1_1_0" -L "axi4stream_vip_v1_1_8" -L "uvm" -L "xilinx_vip" -L "unisims_ver" -L "unimacro_ver" -L "secureip" -L "xpm" --snapshot "Receiver_TB_behav" "xil_defaultlib.Receiver_TB" "xil_defaultlib.glbl" -log "elaborate.log" 

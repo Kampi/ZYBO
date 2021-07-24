@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="Impl" LaunchPart="xc7z010clg400-1" LaunchTime="1627061310">
+<GenRun Id="Impl" LaunchPart="xc7z010clg400-1" LaunchTime="1627152206">
   <File Type="BITSTR-BMM" Name="System_wrapper_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="System_wrapper_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="System_wrapper_timing_summary_init.rpt"/>
@@ -132,9 +132,6 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="System_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="System_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="System_vio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="System_AXIS_I2S_Receiver_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="System_axi_dma_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="System_auto_pc_1"/>
 </GenRun>

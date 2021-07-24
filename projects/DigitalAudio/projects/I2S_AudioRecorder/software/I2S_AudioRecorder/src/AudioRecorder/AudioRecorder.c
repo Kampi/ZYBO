@@ -36,9 +36,17 @@
 
 #include "AudioRecorder.h"
 
-#define MEM_BASE_ADDR		0x01000000
+/** @brief	AXI-Stream transmission length settings of the I2S IP-core.
+ */
+#define TRANSMISSION_LENGTH			256
 
-#define RX_BUFFER_BASE		(MEM_BASE_ADDR + 0x00300000)
+/** @brief
+ */
+struct
+{
+	u32 Rx1[TRANSMISSION_LENGTH];
+	u32 Rx2[TRANSMISSION_LENGTH];
+} Dma_RxBuffers __attribute__((section(".data")));
 
 static XAxiDma_Config* _Dma_ConfigPtr;
 static XAxiDma _Dma;
@@ -46,56 +54,70 @@ static XAxiDma _Dma;
 static XScuGic_Config* _GIC_ConfigPtr;
 static XScuGic _GIC;
 
-static u32 DestinationBuffer[100 * 32];
+static volatile u32* NextBuffer;
 
-/** @brief 				FIFO callback handler for data transmission handling.
+static bool _RxComplete = false;
+
+static u32 _PacketCounter = 0;
+
+/** @brief 				DMA receive channel callback handler for data transmission handling.
  *  @param CallbackRef	Pointer to callback reference
  */
-static void AudioRecorder_FifoHandler(void* CallbackRef)
+static void AudioRecorder_DmaRxHandler(void* CallbackRef)
 {
-	XLlFifo* InstancePtr = (XLlFifo*)CallbackRef;
+	u32 IRQ;
+	XAxiDma *AxiDmaInst = (XAxiDma *)CallbackRef;
 
-	u32 Pending = XLlFifo_IntPending(InstancePtr);
-	while(Pending)
+	IRQ = XAxiDma_IntrGetIrq(AxiDmaInst, XAXIDMA_DEVICE_TO_DMA);
+	XAxiDma_IntrAckIrq(AxiDmaInst, IRQ, XAXIDMA_DEVICE_TO_DMA);
+
+	if(!(IRQ & XAXIDMA_IRQ_ALL_MASK))
 	{
-		if(Pending & XLLF_INT_TC_MASK)
+		return;
+	}
+	else if((IRQ & XAXIDMA_IRQ_ERROR_MASK))
+	{
+		return;
+	}
+	else if((IRQ & XAXIDMA_IRQ_IOC_MASK))
+	{
+		xil_printf("Complete!\n\r");
+
+		if(NextBuffer == Dma_RxBuffers.Rx1)
 		{
-			XLlFifo_IntClear(InstancePtr, XLLF_INT_TC_MASK);
-		}
-		else if(Pending & XLLF_INT_TFPE_MASK)
-		{
-			XLlFifo_IntClear(InstancePtr, XLLF_INT_TFPE_MASK);
-		}
-		else if(Pending & XLLF_INT_ERROR_MASK)
-		{
-			xil_printf("	Error: %lu!\n\r", Pending);
-			XLlFifo_IntClear(InstancePtr, XLLF_INT_ERROR_MASK);
+			NextBuffer = (u32*)Dma_RxBuffers.Rx2;
 		}
 		else
 		{
-			XLlFifo_IntClear(InstancePtr, Pending);
+			NextBuffer = (u32*)Dma_RxBuffers.Rx1;
 		}
 
-		Pending = XLlFifo_IntPending(InstancePtr);
+		_RxComplete = true;
 	}
 }
 
 u32 AudioRecorder_Init(void)
 {
-	xil_printf("[INFO] Looking for FIFO configuration...\r\n");
-	_Fifo_ConfigPtr = XLlFfio_LookupConfig(XPAR_FIFO_DEVICE_ID);
-	if(_Fifo_ConfigPtr == NULL)
+	_RxComplete = false;
+
+	xil_printf("[INFO] Looking for DMA configuration...\r\n");
+	_Dma_ConfigPtr = XAxiDma_LookupConfig(XPAR_AXI_DMA_DEVICE_ID);
+	if(_Dma_ConfigPtr == NULL)
 	{
-		xil_printf("[ERROR] Invalid FIFO configuration!\r\n");
+		xil_printf("[ERROR] Invalid DMA configuration!\r\n");
 		return XST_FAILURE;
 	}
 
-	xil_printf("[INFO] Initialize FIFO...\r\n");
-	if(XLlFifo_CfgInitialize(&_Fifo, _Fifo_ConfigPtr, _Fifo_ConfigPtr->BaseAddress) != XST_SUCCESS)
+	xil_printf("[INFO] Initialize DMA...\r\n");
+	if(XAxiDma_CfgInitialize(&_Dma, _Dma_ConfigPtr) != XST_SUCCESS)
 	{
-		xil_printf("[ERROR] FIFO initialization failed!\n\r");
+		xil_printf("[ERROR] DMA initialization failed!\n\r");
 		return XST_FAILURE;
 	}
+
+	XAxiDma_IntrDisable(&_Dma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
+	XAxiDma_IntrDisable(&_Dma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
+	XAxiDma_IntrEnable(&_Dma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
 
 	xil_printf("[INFO] Looking for GIC configuration...\r\n");
 	_GIC_ConfigPtr = XScuGic_LookupConfig(XPAR_PS7_SCUGIC_0_DEVICE_ID);
@@ -112,20 +134,15 @@ u32 AudioRecorder_Init(void)
 		return XST_FAILURE;
 	}
 
-	XLlFifo_Reset(&_Fifo);
-	XLlFifo_RxReset(&_Fifo);
-	XLlFifo_IntClear(&_Fifo, 0xFFFFFFFF);
-
 	// Setup the interrupt
-	/*
 	xil_printf("[INFO] Setup interrupt handler...\r\n");
-	XScuGic_SetPriorityTriggerType(&_GIC, XPAR_FABRIC_FIFO_INTERRUPT_INTR, 0xA0, 0x03);
-	if(XScuGic_Connect(&_GIC, XPAR_FABRIC_FIFO_INTERRUPT_INTR, (Xil_ExceptionHandler)AudioPlayer_FifoHandler, &_Fifo) != XST_SUCCESS)
+	XScuGic_SetPriorityTriggerType(&_GIC, XPAR_FABRIC_AXI_DMA_S2MM_INTROUT_INTR, 0xA0, 0x03);
+	if(XScuGic_Connect(&_GIC, XPAR_FABRIC_AXI_DMA_S2MM_INTROUT_INTR, (Xil_ExceptionHandler)AudioRecorder_DmaRxHandler, &_Dma) != XST_SUCCESS)
 	{
 		xil_printf("[ERROR] Can not connect interrupt handler!\n\r");
 		return XST_FAILURE;
 	}
-	XScuGic_Enable(&_GIC, XPAR_FABRIC_FIFO_INTERRUPT_INTR);*/
+	XScuGic_Enable(&_GIC, XPAR_FABRIC_AXI_DMA_S2MM_INTROUT_INTR);
 
 	// Enable exceptions
 	xil_printf("[INFO] Enable exceptions...\r\n");
@@ -133,36 +150,57 @@ u32 AudioRecorder_Init(void)
 	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT, (Xil_ExceptionHandler)XScuGic_InterruptHandler, &_GIC);
 	Xil_ExceptionEnable();
 
-	// Enable FIFO interrupts
-	//xil_printf("[INFO] Enable FIFO interrupts...\r\n");
-	//XLlFifo_IntClear(&_Fifo, XLLF_INT_ALL_MASK);
+	NextBuffer = (u32*)Dma_RxBuffers.Rx1;
+	u32 Status = XAxiDma_SimpleTransfer(&_Dma, (UINTPTR)NextBuffer, TRANSMISSION_LENGTH * sizeof(u32), XAXIDMA_DEVICE_TO_DMA);
+	if(Status != XST_SUCCESS)
+	{
+		xil_printf("[ERROR] Transmission failed!\n\r");
+		return XST_FAILURE;
+	}
 
 	return XST_SUCCESS;
 }
 
-void A(void)
+u32 AudioRecorder_RecordFrame(void)
 {
-	uint32_t Status;
-
-	Status = XLlFifo_Status(&_Fifo);
-
-	xil_printf("Status: 0x%x\n\r", Status);
-
-	if(Status & (0x01 << 26))
+	if(_RxComplete)
 	{
-		xil_printf(" Receiving data ....\n\r");
-		Bytes = XLlFifo_RxGetLen(&_Fifo);
-		XLlFifo_Read(&_Fifo, DestinationBuffer, Bytes);
-		xil_printf("Length: 0x%X\n\r", Bytes);
-		xil_printf("Occupancy: 0x%X\n\r", XLlFifo_RxOccupancy(&_Fifo));
+		_RxComplete = false;
 
-		XLlFifo_IntClear(&_Fifo, (0x01 << 26));
-
-		for(uint32_t i = 0x00; i < Bytes; i++)
+		if(_PacketCounter == 1)
 		{
-			xil_printf("%u - %u\n\r", i, DestinationBuffer[i]);
+			for(u32 i = 0x00; i < TRANSMISSION_LENGTH; i = i + 8)
+			{
+				for(u32 j = 0x00; j < 8; j++)
+				{
+					xil_printf("Data %u: 0x%08x\t", i + j, Dma_RxBuffers.Rx1[i + j]);
+				}
+
+				xil_printf("\n\r");
+			}
+
+			for(u32 i = 0x00; i < TRANSMISSION_LENGTH; i = i + 8)
+			{
+				for(u32 j = 0x00; j < 8; j++)
+				{
+					xil_printf("Data %u: 0x%08x\t", i + j, Dma_RxBuffers.Rx2[i + j]);
+				}
+
+				xil_printf("\n\r");
+			}
+
+			for(u32 i = 0x00; i < 0xFFFFFFFF; i++);
+		}
+		else
+		{
+			_PacketCounter++;
+
+			if(XAxiDma_SimpleTransfer(&_Dma, (UINTPTR)NextBuffer, TRANSMISSION_LENGTH * sizeof(u32), XAXIDMA_DEVICE_TO_DMA) != XST_SUCCESS)
+			{
+				return XST_FAILURE;
+			}
 		}
 	}
 
-	//for(uint32_t i = 0x00; i < 0xFFFFFF; i++);
+	return XST_SUCCESS;
 }

@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Thu Jul 22 20:42:16 2021
+// Date        : Sat Jul 24 20:44:08 2021
 // Host        : PC running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.srcs/sources_1/bd/System/ip/System_AXIS_I2S_Receiver_0_0/System_AXIS_I2S_Receiver_0_0_stub.v
@@ -13,10 +13,11 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* x_core_info = "AXIS_I2S,Vivado 2020.2" *)
-module System_AXIS_I2S_Receiver_0_0(MCLK, nReset, LRCLK, SCLK, SD, ACLK, ARESETn, 
+(* x_core_info = "AXIS_I2S_Receiver,Vivado 2020.2" *)
+module System_AXIS_I2S_Receiver_0_0(Enable, MCLK, nReset, LRCLK, SCLK, SD, ACLK, ARESETn, 
   TDATA_TXD, TREADY_TXD, TVALID_TXD, TLAST_TXD)
-/* synthesis syn_black_box black_box_pad_pin="MCLK,nReset,LRCLK,SCLK,SD,ACLK,ARESETn,TDATA_TXD[31:0],TREADY_TXD,TVALID_TXD,TLAST_TXD" */;
+/* synthesis syn_black_box black_box_pad_pin="Enable,MCLK,nReset,LRCLK,SCLK,SD,ACLK,ARESETn,TDATA_TXD[31:0],TREADY_TXD,TVALID_TXD,TLAST_TXD" */;
+  input Enable;
   input MCLK;
   input nReset;
   input LRCLK;

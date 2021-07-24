@@ -40,6 +40,9 @@
   */
  u32 AudioRecorder_Init(void);
 
- void A();
+ /** @brief
+  *  @return
+  */
+ u32 AudioRecorder_RecordFrame(void);
 
 #endif /* AUDIORECORDER_H_ */

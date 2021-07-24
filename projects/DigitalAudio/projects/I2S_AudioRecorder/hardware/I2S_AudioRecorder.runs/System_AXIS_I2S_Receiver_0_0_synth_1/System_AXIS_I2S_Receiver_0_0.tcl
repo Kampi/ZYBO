@@ -70,8 +70,9 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "System_AXIS_I2S_Receiver_0_0_synth_1" START { ROLLUP_AUTO }
+set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 2
-set_msg_config -id {Common 17-41} -limit 10000000
+set_param xicom.use_bs_reader 1
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z010clg400-1

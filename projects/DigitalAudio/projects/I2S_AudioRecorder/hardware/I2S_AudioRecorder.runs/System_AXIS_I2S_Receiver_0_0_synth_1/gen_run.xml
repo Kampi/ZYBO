@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="System_AXIS_I2S_Receiver_0_0_synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1626979258">
+<GenRun Id="System_AXIS_I2S_Receiver_0_0_synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1627152204">
   <File Type="PA-TCL" Name="System_AXIS_I2S_Receiver_0_0.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="System_AXIS_I2S_Receiver_0_0_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="System_AXIS_I2S_Receiver_0_0_reports.tcl"/>
   <File Type="RDS-RDS" Name="System_AXIS_I2S_Receiver_0_0.vds"/>
   <File Type="RDS-UTIL" Name="System_AXIS_I2S_Receiver_0_0_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="System_AXIS_I2S_Receiver_0_0_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="System_AXIS_I2S_Receiver_0_0.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="System_AXIS_I2S_Receiver_0_0_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="System_AXIS_I2S_Receiver_0_0_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/System_AXIS_I2S_Receiver_0_0">
     <File Path="$PSRCDIR/sources_1/bd/System/ip/System_AXIS_I2S_Receiver_0_0/System_AXIS_I2S_Receiver_0_0.xci">
       <FileInfo>
@@ -47,7 +50,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

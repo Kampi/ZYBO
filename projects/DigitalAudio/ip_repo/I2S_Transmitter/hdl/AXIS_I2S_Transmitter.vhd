@@ -4,7 +4,7 @@
 -- 
 -- Create Date:         04.03.2020 09:00:02
 -- Design Name: 
--- Module Name:         AXIS_I2S - AXIS_I2S_Arch
+-- Module Name:         AXIS_I2S_Transmitter - AXIS_I2S_Transmitter_Arch
 -- Project Name: 
 -- Target Devices:      XC7Z010CLG400-1
 -- Tool Versions:       Vivado 2020.2
@@ -36,7 +36,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 library xpm;
 use xpm.vcomponents.all;
 
-entity AXIS_I2S is
+entity AXIS_I2S_Transmitter is
     Generic (   RATIO   : INTEGER := 8;                                         -- MCLK / SCLK ratio as integer value
                 WIDTH   : INTEGER := 16                                         -- Data width per channel
                 );
@@ -54,9 +54,9 @@ entity AXIS_I2S is
             TREADY_RXD  : out STD_LOGIC;                                        -- AXI-Stream TREADY handshake
             TVALID_RXD  : in STD_LOGIC                                          -- AXI-Stream TVALID handshake
             );
-end AXIS_I2S;
+end AXIS_I2S_Transmitter;
 
-architecture AXIS_I2S_Arch of AXIS_I2S is
+architecture AXIS_I2S_Transmitter_Arch of AXIS_I2S_Transmitter is
 
     type AXIS_State_t is (STATE_WAIT_TRANSMITTER_READY, STATE_WAIT_VALID, STATE_WAIT_TRANSMITTER_BUSY);
 
@@ -216,4 +216,4 @@ begin
     -- I/O Connections assignments
     TREADY_RXD <= AXIS_TREADY;
 
-end AXIS_I2S_Arch;
+end AXIS_I2S_Transmitter_Arch;
