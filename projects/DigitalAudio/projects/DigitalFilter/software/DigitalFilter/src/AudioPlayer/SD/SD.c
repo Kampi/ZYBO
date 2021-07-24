@@ -28,12 +28,17 @@
  *  @author Daniel Kampert
  */
 
-#include "SD.h"
+#include "ff.h"
+#include "xsdps.h"
+
 #include <stdio.h>
+
+#include "SD.h"
 
 static FATFS _FileSystem;
 static FIL _FileHandle;
 static UINT _BytesRead;
+static FILINFO fno;
 
 static u32 _RemainingBytes;
 
@@ -41,10 +46,14 @@ static bool _IsBusy;
 
 u32 SD_Init(void)
 {
+	FRESULT Result;
 	_IsBusy = false;
 
-	if(f_mount(&_FileSystem, "", 0x01) != FR_OK)
+	Result = f_mount(&_FileSystem, "", 0x01);
+
+	if(Result != FR_OK)
 	{
+		xil_printf("[ERROR] Can not mount SD card! Error: %lu\n\r", Result);
 		return XST_FAILURE;
 	}
 
@@ -54,7 +63,6 @@ u32 SD_Init(void)
 u32 SD_ScanFiles(char* Buffer)
 {
     DIR dir;
-    static FILINFO fno;
 
     if(f_opendir(&dir, Buffer) == FR_OK)
     {

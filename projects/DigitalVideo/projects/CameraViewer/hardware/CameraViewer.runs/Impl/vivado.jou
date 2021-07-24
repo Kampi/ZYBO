@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Jun  4 20:49:37 2021
+# Process ID: 20300
+# Current directory: H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Impl
+# Command line: vivado.exe -log System_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source System_wrapper.tcl -notrace
+# Log file: H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Impl/System_wrapper.vdi
+# Journal file: H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Impl\vivado.jou
+#-----------------------------------------------------------
+source System_wrapper.tcl -notrace

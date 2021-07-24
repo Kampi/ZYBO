@@ -34,7 +34,7 @@ This directory contains the following projects:
 
 | **Project** | **Description** |
 |---|---|
-| DigitalAudio | A full I2S digital audio project for the FPGA and the Processing System (receiver will be added later) based on my tutorial. |
+| DigitalAudio | A full I2S digital audio project for the FPGA and the Processing System based on [my tutorial](https://www.kampis-elektroecke.de/fpga/digitale-audioverarbeitung/). |
 | DigitalVideo | A digital video processing project including VGA video output and OV7670 camera sensor input for the FPGA and the Processing System. |
 
 ## Pmod

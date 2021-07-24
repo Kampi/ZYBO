@@ -28,8 +28,12 @@
  *  @author Daniel Kampert
  */
 
-#include "SD.h"
+#include "ff.h"
+#include "xsdps.h"
+
 #include <stdio.h>
+
+#include "SD.h"
 
 static FATFS _FileSystem;
 static FIL _FileHandle;

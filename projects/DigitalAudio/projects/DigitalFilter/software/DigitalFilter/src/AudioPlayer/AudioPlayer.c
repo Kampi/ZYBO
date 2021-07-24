@@ -28,16 +28,33 @@
  *  @author Daniel Kampert
  */
 
+#include "xgpio.h"
+#include "xgpiops.h"
+#include "xllfifo.h"
+#include "xscugic.h"
+#include "xstatus.h"
+#include "xparameters.h"
+#include "xil_exception.h"
+
+#include "SD/SD.h"
+#include "SSM2603/SSM2603.h"
+#include "ClockingWizard/ClockingWizard.h"
+
 #include "AudioPlayer.h"
+
+/** @brief	Size of the FIFO buffer in bytes.
+ */
+#define AUDIOPLAYER_FIFO_BUFFER_SIZE			256
+
+/** @brief	Default volume for the speaker channel.
+ */
+#define AUDIOPLAYER_DEFAULT_SPEAKER_VOLUME		0x79
 
 static XGpioPs_Config* _Mute_ConfigPtr;
 static XGpioPs _Mute;
 
 static XGpio_Config* _IO_ConfigPtr;
 static XGpio _IO;
-
-static XGpio_Config* _Filter_ConfigPtr;
-static XGpio _Filter;
 
 static XLlFifo_Config* _Fifo_ConfigPtr;
 static XLlFifo _Fifo;
@@ -205,15 +222,14 @@ static u32 AudioPlayer_InitGPIO(void)
 	xil_printf("[INFO] Looking for GPIO configuration...\r\n");
 	_Mute_ConfigPtr = XGpioPs_LookupConfig(XPAR_PS7_GPIO_0_DEVICE_ID);
 	_IO_ConfigPtr = XGpio_LookupConfig(XPAR_IO_DEVICE_ID);
-	_Filter_ConfigPtr = XGpio_LookupConfig(XPAR_ENABLEFILTER_DEVICE_ID);
-	if((_Mute_ConfigPtr == NULL) || (_IO_ConfigPtr == NULL) || (_Filter_ConfigPtr == NULL))
+	if((_Mute_ConfigPtr == NULL) || (_IO_ConfigPtr == NULL))
 	{
 		xil_printf("[ERROR] Invalid GPIO configuration!\r\n");
 		return XST_FAILURE;
 	}
 
 	xil_printf("[INFO] Initialize GPIO...\r\n");
-	if((XGpioPs_CfgInitialize(&_Mute, _Mute_ConfigPtr, _Mute_ConfigPtr->BaseAddr) != XST_SUCCESS) || (XGpio_CfgInitialize(&_IO, _IO_ConfigPtr, _IO_ConfigPtr->BaseAddress) != XST_SUCCESS) || (XGpio_CfgInitialize(&_Filter, _Filter_ConfigPtr, _Filter_ConfigPtr->BaseAddress) != XST_SUCCESS))
+	if((XGpioPs_CfgInitialize(&_Mute, _Mute_ConfigPtr, _Mute_ConfigPtr->BaseAddr) != XST_SUCCESS) || (XGpio_CfgInitialize(&_IO, _IO_ConfigPtr, _IO_ConfigPtr->BaseAddress) != XST_SUCCESS))
 	{
 		xil_printf("[ERROR] GPIO initialization failed!\n\r");
 		return XST_FAILURE;
@@ -276,31 +292,15 @@ static void AudioPlayer_GpioHandler(void* CallbackRef)
 
 	if(Status & XGPIO_IR_CH1_MASK)
 	{
-		if(Status & XGPIO_IR_CH1_MASK)
+		if(XGpio_DiscreteRead(&_IO, 1) & 0x01)
 		{
-			u32 GPIO = XGpio_DiscreteRead(&_IO, 1);
-			xil_printf("%lu\n\r", GPIO);
-			if(GPIO & 0x01)
-			{
-				AudioPlayer_Mute(true);
-				xil_printf("[INFO] Mute enabled!\n\r");
-			}
-			else
-			{
-				AudioPlayer_Mute(false);
-				xil_printf("[INFO] Mute disabled!\n\r");
-			}
-
-			if(GPIO & 0x02)
-			{
-				AudioPlayer_EnableFilter(true);
-				xil_printf("[INFO] Filter enabled!\n\r");
-			}
-			else
-			{
-				AudioPlayer_EnableFilter(false);
-				xil_printf("[INFO] Filter disabled!\n\r");
-			}
+			AudioPlayer_Mute(true);
+			xil_printf("[INFO] Mute enabled!\n\r");
+		}
+		else
+		{
+			AudioPlayer_Mute(false);
+			xil_printf("[INFO] Mute disabled!\n\r");
 		}
 	}
 	else if(Status & XGPIO_IR_CH2_MASK)
@@ -341,7 +341,6 @@ static void AudioPlayer_FifoHandler(void* CallbackRef)
 		if(Pending & XLLF_INT_TC_MASK)
 		{
 			SD_CopyDataIntoBuffer(_FifoBuffer, AUDIOPLAYER_FIFO_BUFFER_SIZE);
-
 			XLlFifo_IntClear(InstancePtr, XLLF_INT_TC_MASK);
 		}
 		else if(Pending & XLLF_INT_TFPE_MASK)
@@ -356,7 +355,6 @@ static void AudioPlayer_FifoHandler(void* CallbackRef)
 			}
 
 			XLlFifo_IntClear(InstancePtr, XLLF_INT_TFPE_MASK);
-
 		}
 		else if(Pending & XLLF_INT_ERROR_MASK)
 		{
@@ -400,7 +398,6 @@ u32 AudioPlayer_Init(void)
 	xil_printf("[INFO] Mount SD card...\r\n");
 	if(SD_Init())
 	{
-		xil_printf("[ERROR] Can not mount SD card!\n\r");
 		return XST_FAILURE;
 	}
 
@@ -416,8 +413,8 @@ u32 AudioPlayer_Init(void)
 	xil_printf("[INFO] Initialization successful!\n\r");
 	xil_printf("	Press 'BTN0' to increase the volume of the left speaker channel\n\r");
 	xil_printf("	Press 'BTN1' to decrease the volume of the left speaker channel\n\r");
-	xil_printf("	Press 'BTN0' to increase the volume of the right speaker channel\n\r");
-	xil_printf("	Press 'BTN0' to decrease the volume of the right speaker channel\n\r");
+	xil_printf("	Press 'BTN2' to increase the volume of the right speaker channel\n\r");
+	xil_printf("	Press 'BTN3' to decrease the volume of the right speaker channel\n\r");
 	xil_printf("	Switch 'SW0' to mute the speaker\n\r");
 
 	return AudioPlayer_Mute(_MuteState);
@@ -429,7 +426,6 @@ u32 AudioPlayer_LoadFile(const char* File)
 
 	if(SD_LoadFileFromCard(File, &_File))
 	{
-		xil_printf("[ERROR] Can not open Audio file!\n\r");
 		return XST_FAILURE;
 	}
 
@@ -482,11 +478,6 @@ u32 AudioPlayer_Mute(const bool Mute)
 	}
 
 	return XST_SUCCESS;
-}
-
-void AudioPlayer_EnableFilter(const bool Enable)
-{
-	XGpio_DiscreteWrite(&_Filter, 1, Enable);
 }
 
 bool AudioPlayer_IsBusy(void)

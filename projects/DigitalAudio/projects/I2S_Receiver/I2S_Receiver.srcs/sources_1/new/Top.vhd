@@ -2,7 +2,7 @@
 -- Company:             https://www.kampis-elektroecke.de
 -- Engineer:            Daniel Kampert          
 -- 
--- Create Date:         26.06.2019 15:35:01
+-- Create Date:         20.06.2021 19:54:00
 -- Design Name: 
 -- Module Name:         Top - Top_Arch
 -- Project Name: 
@@ -36,10 +36,9 @@ entity Top is
     Generic (   RATIO   : INTEGER := 8;
                 WIDTH   : INTEGER := 16
                 );
-    Port (  Clock   : in STD_LOGIC;                                         -- System clock
-            nReset  : in STD_LOGIC;                                         -- System reset (active low)
+    Port (  nReset      : in STD_LOGIC;                                     -- System reset (active low)
 
-            MCLK    : out STD_LOGIC;                                        -- Audio master clock
+            MCLK        : in STD_LOGIC;                                     -- Audio master clock
 
             -- I2S interface
             LRCLK       : in STD_LOGIC;                                     -- I2S L/R clock
@@ -53,47 +52,50 @@ end Top;
 
 architecture Top_Arch of Top is
 
-    signal nSystemReset : STD_LOGIC := '0';
-    signal MCLK_DCM     : STD_LOGIC := '0';
-    signal Locked       : STD_LOGIC := '0';
+    signal Valid            : STD_LOGIC                                     := '0';
+
+    signal Data_Left        : STD_LOGIC_VECTOR((WIDTH - 1) downto 0)        := (others => '0');
+    signal Data_Right       : STD_LOGIC_VECTOR((WIDTH - 1) downto 0)        := (others => '0');
 
     component I2S_Receiver is
         Generic (   WIDTH   : INTEGER := 16
                     );
-        Port (  MCLK    : in STD_LOGIC;
-                nReset  : in STD_LOGIC;
-                LRCLK   : in STD_LOGIC;
-                SCLK    : in STD_LOGIC;
-                SD      : in STD_LOGIC
-                );
-    end component;
-
-    component MasterClock is
-        Port (  ClockIn     : in STD_LOGIC;
-                Locked      : out STD_LOGIC;
-                MCLK        : out STD_LOGIC;
-                nReset      : in STD_LOGIC
+        Port (  MCLK        : in STD_LOGIC;
+                nReset      : in STD_LOGIC;
+                Valid       : out STD_LOGIC;
+                Left        : out STD_LOGIC_VECTOR((WIDTH - 1) downto 0);
+                Right       : out STD_LOGIC_VECTOR((WIDTH - 1) downto 0);
+                LRCLK       : in STD_LOGIC;
+                SCLK        : in STD_LOGIC;
+                SD          : in STD_LOGIC
                 );
     end component;
 
 begin
 
-    MCLK_Gen : MasterClock port map ( ClockIn => Clock,
-                                      nReset => nReset,
-                                      MCLK => MCLK_DCM,
-                                      Locked => Locked
-                                      );
-
     Receiver : I2S_Receiver generic map(    WIDTH => WIDTH
                                             )
-                                  port map( MCLK => MCLK_DCM,
+                                  port map( MCLK => MCLK,
                                             nReset => nReset,
+                                            Left => Data_Left,
+                                            Right => Data_Right,
+                                            Valid => Valid,
                                             LRCLK => LRCLK,
                                             SCLK => SCLK,
                                             SD => SD
                                             );
 
-    nSystemReset <= nReset and Locked;
-    MCLK <= MCLK_DCM;
+    process
+    begin
+        wait until rising_edge(MCLK);
+
+        if(Valid = '1') then
+            Data <= Data_Left(7 downto 0);
+        end if;
+
+        if(nReset = '0') then
+            Data <= (others => '0');
+        end if;
+    end process;
 
 end Top_Arch;

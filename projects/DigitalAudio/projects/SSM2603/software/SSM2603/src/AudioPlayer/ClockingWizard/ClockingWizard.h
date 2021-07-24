@@ -34,13 +34,8 @@
 #ifndef _CLOCKINGWIZARD_H_
 #define _CLOCKINGWIZARD_H_
 
- #include "xil_io.h"
- #include "xstatus.h"
  #include "xil_types.h"
 
- /** @brief	Max. timeout for the Clocking Wizard.
-  */
- #define CLOCKINGWIZARD_TIMEOUT									10000
 
  /** @brief	Clocking Wizard driver instance.
   */

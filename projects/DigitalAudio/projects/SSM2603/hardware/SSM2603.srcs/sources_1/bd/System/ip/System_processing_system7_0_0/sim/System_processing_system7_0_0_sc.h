@@ -1,7 +1,7 @@
 #ifndef IP_SYSTEM_PROCESSING_SYSTEM7_0_0_SC_H_
 #define IP_SYSTEM_PROCESSING_SYSTEM7_0_0_SC_H_
 
-// (c) Copyright 1995-2020 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2021 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -49,10 +49,10 @@
 // 
 // DO NOT MODIFY THIS FILE.
 
+
 #ifndef XTLM
 #include "xtlm.h"
 #endif
-
 #ifndef SYSTEMC_INCLUDED
 #include <systemc>
 #endif
@@ -74,10 +74,13 @@ public:
   System_processing_system7_0_0_sc(const sc_core::sc_module_name& nm);
   virtual ~System_processing_system7_0_0_sc();
 
-public: // module socket-to-socket TLM interface
+  // module socket-to-socket AXI TLM interfaces
 
   xtlm::xtlm_aximm_initiator_socket* M_AXI_GP0_rd_socket;
   xtlm::xtlm_aximm_initiator_socket* M_AXI_GP0_wr_socket;
+
+  // module socket-to-socket TLM interfaces
+
 
 protected:
 

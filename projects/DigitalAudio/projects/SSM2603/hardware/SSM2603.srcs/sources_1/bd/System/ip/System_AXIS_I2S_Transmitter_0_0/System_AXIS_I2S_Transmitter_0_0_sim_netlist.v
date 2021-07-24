@@ -1,10 +1,10 @@
-// Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Sat Feb 13 22:12:05 2021
+// Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+// Date        : Fri Jul 23 20:39:51 2021
 // Host        : PC running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               H:/NextCloud/Git/ZYBO/projects/DigitalAudio/SSM2603/hardware/SSM2603.srcs/sources_1/bd/System/ip/System_AXIS_I2S_Transmitter_0_0/System_AXIS_I2S_Transmitter_0_0_sim_netlist.v
+//               h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/SSM2603/hardware/SSM2603.srcs/sources_1/bd/System/ip/System_AXIS_I2S_Transmitter_0_0/System_AXIS_I2S_Transmitter_0_0_sim_netlist.v
 // Design      : System_AXIS_I2S_Transmitter_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,7 +12,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "System_AXIS_I2S_Transmitter_0_0,AXIS_I2S,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "AXIS_I2S,Vivado 2019.2" *) 
+(* CHECK_LICENSE_TYPE = "System_AXIS_I2S_Transmitter_0_0,AXIS_I2S,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "AXIS_I2S,Vivado 2020.2" *) 
 (* NotValidForBitStream *)
 module System_AXIS_I2S_Transmitter_0_0
    (MCLK,
@@ -25,13 +25,13 @@ module System_AXIS_I2S_Transmitter_0_0
     TDATA_RXD,
     TREADY_RXD,
     TVALID_RXD);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 Audio_MCLK CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME Audio_MCLK, ASSOCIATED_RESET nReset, ASSOCIATED_BUSIF I2S, PHASE 0.0, CLK_DOMAIN /ClockingWizard_clk_out1, INSERT_VIP 0" *) input MCLK;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 Audio_nReset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME Audio_nReset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input nReset;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 Audio_MCLK CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME Audio_MCLK, ASSOCIATED_RESET nReset, ASSOCIATED_BUSIF I2S, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /ClockingWizard_clk_out1, INSERT_VIP 0" *) input MCLK;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 ARESETn RST, xilinx.com:signal:reset:1.0 Audio_nReset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME ARESETn, POLARITY ACTIVE_LOW, INSERT_VIP 0, XIL_INTERFACENAME Audio_nReset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input nReset;
   (* x_interface_info = "www.kampis-elektroecke.de:Kampis-Elektroecke:I2S:1.0 I2S LRCLK" *) output LRCLK;
   (* x_interface_info = "www.kampis-elektroecke.de:Kampis-Elektroecke:I2S:1.0 I2S SCLK" *) output SCLK;
   (* x_interface_info = "www.kampis-elektroecke.de:Kampis-Elektroecke:I2S:1.0 I2S SD" *) output SD;
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 aclk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME aclk, ASSOCIATED_BUSIF AXIS_RXD, ASSOCIATED_RESET aresetn, PHASE 0.000, CLK_DOMAIN System_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input ACLK;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 aresetn RST" *) (* x_interface_parameter = "XIL_INTERFACENAME aresetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input ARESETn;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 ACLK CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME ACLK, ASSOCIATED_BUSIF AXIS_RXD, ASSOCIATED_RESET aresetn, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN System_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input ACLK;
+  input ARESETn;
   (* x_interface_info = "xilinx.com:interface:axis:1.0 AXIS_RXD TDATA" *) (* x_interface_parameter = "XIL_INTERFACENAME AXIS_RXD, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, PHASE 0.000, CLK_DOMAIN System_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *) input [31:0]TDATA_RXD;
   (* x_interface_info = "xilinx.com:interface:axis:1.0 AXIS_RXD TREADY" *) output TREADY_RXD;
   (* x_interface_info = "xilinx.com:interface:axis:1.0 AXIS_RXD TVALID" *) input TVALID_RXD;
@@ -119,72 +119,6 @@ module System_AXIS_I2S_Transmitter_0_0_AXIS_I2S
   wire Counter1_carry_n_1;
   wire Counter1_carry_n_2;
   wire Counter1_carry_n_3;
-  wire \Counter[0]_i_1_n_0 ;
-  wire \Counter[0]_i_3_n_0 ;
-  wire [31:0]Counter_reg;
-  wire \Counter_reg[0]_i_2_n_0 ;
-  wire \Counter_reg[0]_i_2_n_1 ;
-  wire \Counter_reg[0]_i_2_n_2 ;
-  wire \Counter_reg[0]_i_2_n_3 ;
-  wire \Counter_reg[0]_i_2_n_4 ;
-  wire \Counter_reg[0]_i_2_n_5 ;
-  wire \Counter_reg[0]_i_2_n_6 ;
-  wire \Counter_reg[0]_i_2_n_7 ;
-  wire \Counter_reg[12]_i_1_n_0 ;
-  wire \Counter_reg[12]_i_1_n_1 ;
-  wire \Counter_reg[12]_i_1_n_2 ;
-  wire \Counter_reg[12]_i_1_n_3 ;
-  wire \Counter_reg[12]_i_1_n_4 ;
-  wire \Counter_reg[12]_i_1_n_5 ;
-  wire \Counter_reg[12]_i_1_n_6 ;
-  wire \Counter_reg[12]_i_1_n_7 ;
-  wire \Counter_reg[16]_i_1_n_0 ;
-  wire \Counter_reg[16]_i_1_n_1 ;
-  wire \Counter_reg[16]_i_1_n_2 ;
-  wire \Counter_reg[16]_i_1_n_3 ;
-  wire \Counter_reg[16]_i_1_n_4 ;
-  wire \Counter_reg[16]_i_1_n_5 ;
-  wire \Counter_reg[16]_i_1_n_6 ;
-  wire \Counter_reg[16]_i_1_n_7 ;
-  wire \Counter_reg[20]_i_1_n_0 ;
-  wire \Counter_reg[20]_i_1_n_1 ;
-  wire \Counter_reg[20]_i_1_n_2 ;
-  wire \Counter_reg[20]_i_1_n_3 ;
-  wire \Counter_reg[20]_i_1_n_4 ;
-  wire \Counter_reg[20]_i_1_n_5 ;
-  wire \Counter_reg[20]_i_1_n_6 ;
-  wire \Counter_reg[20]_i_1_n_7 ;
-  wire \Counter_reg[24]_i_1_n_0 ;
-  wire \Counter_reg[24]_i_1_n_1 ;
-  wire \Counter_reg[24]_i_1_n_2 ;
-  wire \Counter_reg[24]_i_1_n_3 ;
-  wire \Counter_reg[24]_i_1_n_4 ;
-  wire \Counter_reg[24]_i_1_n_5 ;
-  wire \Counter_reg[24]_i_1_n_6 ;
-  wire \Counter_reg[24]_i_1_n_7 ;
-  wire \Counter_reg[28]_i_1_n_1 ;
-  wire \Counter_reg[28]_i_1_n_2 ;
-  wire \Counter_reg[28]_i_1_n_3 ;
-  wire \Counter_reg[28]_i_1_n_4 ;
-  wire \Counter_reg[28]_i_1_n_5 ;
-  wire \Counter_reg[28]_i_1_n_6 ;
-  wire \Counter_reg[28]_i_1_n_7 ;
-  wire \Counter_reg[4]_i_1_n_0 ;
-  wire \Counter_reg[4]_i_1_n_1 ;
-  wire \Counter_reg[4]_i_1_n_2 ;
-  wire \Counter_reg[4]_i_1_n_3 ;
-  wire \Counter_reg[4]_i_1_n_4 ;
-  wire \Counter_reg[4]_i_1_n_5 ;
-  wire \Counter_reg[4]_i_1_n_6 ;
-  wire \Counter_reg[4]_i_1_n_7 ;
-  wire \Counter_reg[8]_i_1_n_0 ;
-  wire \Counter_reg[8]_i_1_n_1 ;
-  wire \Counter_reg[8]_i_1_n_2 ;
-  wire \Counter_reg[8]_i_1_n_3 ;
-  wire \Counter_reg[8]_i_1_n_4 ;
-  wire \Counter_reg[8]_i_1_n_5 ;
-  wire \Counter_reg[8]_i_1_n_6 ;
-  wire \Counter_reg[8]_i_1_n_7 ;
   wire [1:0]CurrentState;
   wire Data_Fast;
   wire \Data_Fast_reg_n_0_[0] ;
@@ -221,6 +155,72 @@ module System_AXIS_I2S_Transmitter_0_0_AXIS_I2S
   wire \Data_Fast_reg_n_0_[9] ;
   wire \FSM_sequential_CurrentState[0]_i_1_n_0 ;
   wire \FSM_sequential_CurrentState[1]_i_1_n_0 ;
+  wire \GenSCLK_Proc.Counter[0]_i_1_n_0 ;
+  wire \GenSCLK_Proc.Counter[0]_i_3_n_0 ;
+  wire [31:0]\GenSCLK_Proc.Counter_reg ;
+  wire \GenSCLK_Proc.Counter_reg[0]_i_2_n_0 ;
+  wire \GenSCLK_Proc.Counter_reg[0]_i_2_n_1 ;
+  wire \GenSCLK_Proc.Counter_reg[0]_i_2_n_2 ;
+  wire \GenSCLK_Proc.Counter_reg[0]_i_2_n_3 ;
+  wire \GenSCLK_Proc.Counter_reg[0]_i_2_n_4 ;
+  wire \GenSCLK_Proc.Counter_reg[0]_i_2_n_5 ;
+  wire \GenSCLK_Proc.Counter_reg[0]_i_2_n_6 ;
+  wire \GenSCLK_Proc.Counter_reg[0]_i_2_n_7 ;
+  wire \GenSCLK_Proc.Counter_reg[12]_i_1_n_0 ;
+  wire \GenSCLK_Proc.Counter_reg[12]_i_1_n_1 ;
+  wire \GenSCLK_Proc.Counter_reg[12]_i_1_n_2 ;
+  wire \GenSCLK_Proc.Counter_reg[12]_i_1_n_3 ;
+  wire \GenSCLK_Proc.Counter_reg[12]_i_1_n_4 ;
+  wire \GenSCLK_Proc.Counter_reg[12]_i_1_n_5 ;
+  wire \GenSCLK_Proc.Counter_reg[12]_i_1_n_6 ;
+  wire \GenSCLK_Proc.Counter_reg[12]_i_1_n_7 ;
+  wire \GenSCLK_Proc.Counter_reg[16]_i_1_n_0 ;
+  wire \GenSCLK_Proc.Counter_reg[16]_i_1_n_1 ;
+  wire \GenSCLK_Proc.Counter_reg[16]_i_1_n_2 ;
+  wire \GenSCLK_Proc.Counter_reg[16]_i_1_n_3 ;
+  wire \GenSCLK_Proc.Counter_reg[16]_i_1_n_4 ;
+  wire \GenSCLK_Proc.Counter_reg[16]_i_1_n_5 ;
+  wire \GenSCLK_Proc.Counter_reg[16]_i_1_n_6 ;
+  wire \GenSCLK_Proc.Counter_reg[16]_i_1_n_7 ;
+  wire \GenSCLK_Proc.Counter_reg[20]_i_1_n_0 ;
+  wire \GenSCLK_Proc.Counter_reg[20]_i_1_n_1 ;
+  wire \GenSCLK_Proc.Counter_reg[20]_i_1_n_2 ;
+  wire \GenSCLK_Proc.Counter_reg[20]_i_1_n_3 ;
+  wire \GenSCLK_Proc.Counter_reg[20]_i_1_n_4 ;
+  wire \GenSCLK_Proc.Counter_reg[20]_i_1_n_5 ;
+  wire \GenSCLK_Proc.Counter_reg[20]_i_1_n_6 ;
+  wire \GenSCLK_Proc.Counter_reg[20]_i_1_n_7 ;
+  wire \GenSCLK_Proc.Counter_reg[24]_i_1_n_0 ;
+  wire \GenSCLK_Proc.Counter_reg[24]_i_1_n_1 ;
+  wire \GenSCLK_Proc.Counter_reg[24]_i_1_n_2 ;
+  wire \GenSCLK_Proc.Counter_reg[24]_i_1_n_3 ;
+  wire \GenSCLK_Proc.Counter_reg[24]_i_1_n_4 ;
+  wire \GenSCLK_Proc.Counter_reg[24]_i_1_n_5 ;
+  wire \GenSCLK_Proc.Counter_reg[24]_i_1_n_6 ;
+  wire \GenSCLK_Proc.Counter_reg[24]_i_1_n_7 ;
+  wire \GenSCLK_Proc.Counter_reg[28]_i_1_n_1 ;
+  wire \GenSCLK_Proc.Counter_reg[28]_i_1_n_2 ;
+  wire \GenSCLK_Proc.Counter_reg[28]_i_1_n_3 ;
+  wire \GenSCLK_Proc.Counter_reg[28]_i_1_n_4 ;
+  wire \GenSCLK_Proc.Counter_reg[28]_i_1_n_5 ;
+  wire \GenSCLK_Proc.Counter_reg[28]_i_1_n_6 ;
+  wire \GenSCLK_Proc.Counter_reg[28]_i_1_n_7 ;
+  wire \GenSCLK_Proc.Counter_reg[4]_i_1_n_0 ;
+  wire \GenSCLK_Proc.Counter_reg[4]_i_1_n_1 ;
+  wire \GenSCLK_Proc.Counter_reg[4]_i_1_n_2 ;
+  wire \GenSCLK_Proc.Counter_reg[4]_i_1_n_3 ;
+  wire \GenSCLK_Proc.Counter_reg[4]_i_1_n_4 ;
+  wire \GenSCLK_Proc.Counter_reg[4]_i_1_n_5 ;
+  wire \GenSCLK_Proc.Counter_reg[4]_i_1_n_6 ;
+  wire \GenSCLK_Proc.Counter_reg[4]_i_1_n_7 ;
+  wire \GenSCLK_Proc.Counter_reg[8]_i_1_n_0 ;
+  wire \GenSCLK_Proc.Counter_reg[8]_i_1_n_1 ;
+  wire \GenSCLK_Proc.Counter_reg[8]_i_1_n_2 ;
+  wire \GenSCLK_Proc.Counter_reg[8]_i_1_n_3 ;
+  wire \GenSCLK_Proc.Counter_reg[8]_i_1_n_4 ;
+  wire \GenSCLK_Proc.Counter_reg[8]_i_1_n_5 ;
+  wire \GenSCLK_Proc.Counter_reg[8]_i_1_n_6 ;
+  wire \GenSCLK_Proc.Counter_reg[8]_i_1_n_7 ;
   wire LRCLK;
   wire MCLK;
   wire Ready_Fast;
@@ -243,7 +243,7 @@ module System_AXIS_I2S_Transmitter_0_0_AXIS_I2S
   wire [3:0]NLW_Counter1_carry__2_O_UNCONNECTED;
   wire [3:0]NLW_Counter1_carry__3_CO_UNCONNECTED;
   wire [3:1]NLW_Counter1_carry__3_O_UNCONNECTED;
-  wire [3:3]\NLW_Counter_reg[28]_i_1_CO_UNCONNECTED ;
+  wire [3:3]\NLW_GenSCLK_Proc.Counter_reg[28]_i_1_CO_UNCONNECTED ;
   wire NLW_xpm_cdc_Data_dest_req_UNCONNECTED;
 
   LUT3 #(
@@ -270,26 +270,26 @@ module System_AXIS_I2S_Transmitter_0_0_AXIS_I2S
   LUT2 #(
     .INIT(4'h1)) 
     Counter1_carry__0_i_1
-       (.I0(Counter_reg[14]),
-        .I1(Counter_reg[15]),
+       (.I0(\GenSCLK_Proc.Counter_reg [14]),
+        .I1(\GenSCLK_Proc.Counter_reg [15]),
         .O(Counter1_carry__0_i_1_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     Counter1_carry__0_i_2
-       (.I0(Counter_reg[12]),
-        .I1(Counter_reg[13]),
+       (.I0(\GenSCLK_Proc.Counter_reg [12]),
+        .I1(\GenSCLK_Proc.Counter_reg [13]),
         .O(Counter1_carry__0_i_2_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     Counter1_carry__0_i_3
-       (.I0(Counter_reg[10]),
-        .I1(Counter_reg[11]),
+       (.I0(\GenSCLK_Proc.Counter_reg [10]),
+        .I1(\GenSCLK_Proc.Counter_reg [11]),
         .O(Counter1_carry__0_i_3_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     Counter1_carry__0_i_4
-       (.I0(Counter_reg[8]),
-        .I1(Counter_reg[9]),
+       (.I0(\GenSCLK_Proc.Counter_reg [8]),
+        .I1(\GenSCLK_Proc.Counter_reg [9]),
         .O(Counter1_carry__0_i_4_n_0));
   CARRY4 Counter1_carry__1
        (.CI(Counter1_carry__0_n_0),
@@ -301,57 +301,57 @@ module System_AXIS_I2S_Transmitter_0_0_AXIS_I2S
   LUT2 #(
     .INIT(4'h1)) 
     Counter1_carry__1_i_1
-       (.I0(Counter_reg[22]),
-        .I1(Counter_reg[23]),
+       (.I0(\GenSCLK_Proc.Counter_reg [22]),
+        .I1(\GenSCLK_Proc.Counter_reg [23]),
         .O(Counter1_carry__1_i_1_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     Counter1_carry__1_i_2
-       (.I0(Counter_reg[20]),
-        .I1(Counter_reg[21]),
+       (.I0(\GenSCLK_Proc.Counter_reg [20]),
+        .I1(\GenSCLK_Proc.Counter_reg [21]),
         .O(Counter1_carry__1_i_2_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     Counter1_carry__1_i_3
-       (.I0(Counter_reg[18]),
-        .I1(Counter_reg[19]),
+       (.I0(\GenSCLK_Proc.Counter_reg [18]),
+        .I1(\GenSCLK_Proc.Counter_reg [19]),
         .O(Counter1_carry__1_i_3_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     Counter1_carry__1_i_4
-       (.I0(Counter_reg[16]),
-        .I1(Counter_reg[17]),
+       (.I0(\GenSCLK_Proc.Counter_reg [16]),
+        .I1(\GenSCLK_Proc.Counter_reg [17]),
         .O(Counter1_carry__1_i_4_n_0));
   CARRY4 Counter1_carry__2
        (.CI(Counter1_carry__1_n_0),
         .CO({Counter1,Counter1_carry__2_n_1,Counter1_carry__2_n_2,Counter1_carry__2_n_3}),
         .CYINIT(1'b0),
-        .DI({Counter_reg[31],1'b0,1'b0,1'b0}),
+        .DI({\GenSCLK_Proc.Counter_reg [31],1'b0,1'b0,1'b0}),
         .O(NLW_Counter1_carry__2_O_UNCONNECTED[3:0]),
         .S({Counter1_carry__2_i_1_n_0,Counter1_carry__2_i_2_n_0,Counter1_carry__2_i_3_n_0,Counter1_carry__2_i_4_n_0}));
   LUT2 #(
     .INIT(4'h1)) 
     Counter1_carry__2_i_1
-       (.I0(Counter_reg[30]),
-        .I1(Counter_reg[31]),
+       (.I0(\GenSCLK_Proc.Counter_reg [30]),
+        .I1(\GenSCLK_Proc.Counter_reg [31]),
         .O(Counter1_carry__2_i_1_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     Counter1_carry__2_i_2
-       (.I0(Counter_reg[28]),
-        .I1(Counter_reg[29]),
+       (.I0(\GenSCLK_Proc.Counter_reg [28]),
+        .I1(\GenSCLK_Proc.Counter_reg [29]),
         .O(Counter1_carry__2_i_2_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     Counter1_carry__2_i_3
-       (.I0(Counter_reg[26]),
-        .I1(Counter_reg[27]),
+       (.I0(\GenSCLK_Proc.Counter_reg [26]),
+        .I1(\GenSCLK_Proc.Counter_reg [27]),
         .O(Counter1_carry__2_i_3_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     Counter1_carry__2_i_4
-       (.I0(Counter_reg[24]),
-        .I1(Counter_reg[25]),
+       (.I0(\GenSCLK_Proc.Counter_reg [24]),
+        .I1(\GenSCLK_Proc.Counter_reg [25]),
         .O(Counter1_carry__2_i_4_n_0));
   CARRY4 Counter1_carry__3
        (.CI(Counter1),
@@ -363,356 +363,33 @@ module System_AXIS_I2S_Transmitter_0_0_AXIS_I2S
   LUT2 #(
     .INIT(4'h7)) 
     Counter1_carry_i_1
-       (.I0(Counter_reg[0]),
-        .I1(Counter_reg[1]),
+       (.I0(\GenSCLK_Proc.Counter_reg [0]),
+        .I1(\GenSCLK_Proc.Counter_reg [1]),
         .O(Counter1_carry_i_1_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     Counter1_carry_i_2
-       (.I0(Counter_reg[6]),
-        .I1(Counter_reg[7]),
+       (.I0(\GenSCLK_Proc.Counter_reg [6]),
+        .I1(\GenSCLK_Proc.Counter_reg [7]),
         .O(Counter1_carry_i_2_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     Counter1_carry_i_3
-       (.I0(Counter_reg[4]),
-        .I1(Counter_reg[5]),
+       (.I0(\GenSCLK_Proc.Counter_reg [4]),
+        .I1(\GenSCLK_Proc.Counter_reg [5]),
         .O(Counter1_carry_i_3_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     Counter1_carry_i_4
-       (.I0(Counter_reg[2]),
-        .I1(Counter_reg[3]),
+       (.I0(\GenSCLK_Proc.Counter_reg [2]),
+        .I1(\GenSCLK_Proc.Counter_reg [3]),
         .O(Counter1_carry_i_4_n_0));
   LUT2 #(
     .INIT(4'h8)) 
     Counter1_carry_i_5
-       (.I0(Counter_reg[0]),
-        .I1(Counter_reg[1]),
+       (.I0(\GenSCLK_Proc.Counter_reg [0]),
+        .I1(\GenSCLK_Proc.Counter_reg [1]),
         .O(Counter1_carry_i_5_n_0));
-  LUT2 #(
-    .INIT(4'hB)) 
-    \Counter[0]_i_1 
-       (.I0(Counter1_carry__3_n_7),
-        .I1(nReset),
-        .O(\Counter[0]_i_1_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \Counter[0]_i_3 
-       (.I0(Counter_reg[0]),
-        .O(\Counter[0]_i_3_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[0] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[0]_i_2_n_7 ),
-        .Q(Counter_reg[0]),
-        .R(\Counter[0]_i_1_n_0 ));
-  CARRY4 \Counter_reg[0]_i_2 
-       (.CI(1'b0),
-        .CO({\Counter_reg[0]_i_2_n_0 ,\Counter_reg[0]_i_2_n_1 ,\Counter_reg[0]_i_2_n_2 ,\Counter_reg[0]_i_2_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b1}),
-        .O({\Counter_reg[0]_i_2_n_4 ,\Counter_reg[0]_i_2_n_5 ,\Counter_reg[0]_i_2_n_6 ,\Counter_reg[0]_i_2_n_7 }),
-        .S({Counter_reg[3:1],\Counter[0]_i_3_n_0 }));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[10] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[8]_i_1_n_5 ),
-        .Q(Counter_reg[10]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[11] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[8]_i_1_n_4 ),
-        .Q(Counter_reg[11]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[12] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[12]_i_1_n_7 ),
-        .Q(Counter_reg[12]),
-        .R(\Counter[0]_i_1_n_0 ));
-  CARRY4 \Counter_reg[12]_i_1 
-       (.CI(\Counter_reg[8]_i_1_n_0 ),
-        .CO({\Counter_reg[12]_i_1_n_0 ,\Counter_reg[12]_i_1_n_1 ,\Counter_reg[12]_i_1_n_2 ,\Counter_reg[12]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\Counter_reg[12]_i_1_n_4 ,\Counter_reg[12]_i_1_n_5 ,\Counter_reg[12]_i_1_n_6 ,\Counter_reg[12]_i_1_n_7 }),
-        .S(Counter_reg[15:12]));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[13] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[12]_i_1_n_6 ),
-        .Q(Counter_reg[13]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[14] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[12]_i_1_n_5 ),
-        .Q(Counter_reg[14]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[15] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[12]_i_1_n_4 ),
-        .Q(Counter_reg[15]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[16] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[16]_i_1_n_7 ),
-        .Q(Counter_reg[16]),
-        .R(\Counter[0]_i_1_n_0 ));
-  CARRY4 \Counter_reg[16]_i_1 
-       (.CI(\Counter_reg[12]_i_1_n_0 ),
-        .CO({\Counter_reg[16]_i_1_n_0 ,\Counter_reg[16]_i_1_n_1 ,\Counter_reg[16]_i_1_n_2 ,\Counter_reg[16]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\Counter_reg[16]_i_1_n_4 ,\Counter_reg[16]_i_1_n_5 ,\Counter_reg[16]_i_1_n_6 ,\Counter_reg[16]_i_1_n_7 }),
-        .S(Counter_reg[19:16]));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[17] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[16]_i_1_n_6 ),
-        .Q(Counter_reg[17]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[18] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[16]_i_1_n_5 ),
-        .Q(Counter_reg[18]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[19] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[16]_i_1_n_4 ),
-        .Q(Counter_reg[19]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[1] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[0]_i_2_n_6 ),
-        .Q(Counter_reg[1]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[20] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[20]_i_1_n_7 ),
-        .Q(Counter_reg[20]),
-        .R(\Counter[0]_i_1_n_0 ));
-  CARRY4 \Counter_reg[20]_i_1 
-       (.CI(\Counter_reg[16]_i_1_n_0 ),
-        .CO({\Counter_reg[20]_i_1_n_0 ,\Counter_reg[20]_i_1_n_1 ,\Counter_reg[20]_i_1_n_2 ,\Counter_reg[20]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\Counter_reg[20]_i_1_n_4 ,\Counter_reg[20]_i_1_n_5 ,\Counter_reg[20]_i_1_n_6 ,\Counter_reg[20]_i_1_n_7 }),
-        .S(Counter_reg[23:20]));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[21] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[20]_i_1_n_6 ),
-        .Q(Counter_reg[21]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[22] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[20]_i_1_n_5 ),
-        .Q(Counter_reg[22]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[23] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[20]_i_1_n_4 ),
-        .Q(Counter_reg[23]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[24] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[24]_i_1_n_7 ),
-        .Q(Counter_reg[24]),
-        .R(\Counter[0]_i_1_n_0 ));
-  CARRY4 \Counter_reg[24]_i_1 
-       (.CI(\Counter_reg[20]_i_1_n_0 ),
-        .CO({\Counter_reg[24]_i_1_n_0 ,\Counter_reg[24]_i_1_n_1 ,\Counter_reg[24]_i_1_n_2 ,\Counter_reg[24]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\Counter_reg[24]_i_1_n_4 ,\Counter_reg[24]_i_1_n_5 ,\Counter_reg[24]_i_1_n_6 ,\Counter_reg[24]_i_1_n_7 }),
-        .S(Counter_reg[27:24]));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[25] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[24]_i_1_n_6 ),
-        .Q(Counter_reg[25]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[26] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[24]_i_1_n_5 ),
-        .Q(Counter_reg[26]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[27] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[24]_i_1_n_4 ),
-        .Q(Counter_reg[27]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[28] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[28]_i_1_n_7 ),
-        .Q(Counter_reg[28]),
-        .R(\Counter[0]_i_1_n_0 ));
-  CARRY4 \Counter_reg[28]_i_1 
-       (.CI(\Counter_reg[24]_i_1_n_0 ),
-        .CO({\NLW_Counter_reg[28]_i_1_CO_UNCONNECTED [3],\Counter_reg[28]_i_1_n_1 ,\Counter_reg[28]_i_1_n_2 ,\Counter_reg[28]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\Counter_reg[28]_i_1_n_4 ,\Counter_reg[28]_i_1_n_5 ,\Counter_reg[28]_i_1_n_6 ,\Counter_reg[28]_i_1_n_7 }),
-        .S(Counter_reg[31:28]));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[29] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[28]_i_1_n_6 ),
-        .Q(Counter_reg[29]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[2] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[0]_i_2_n_5 ),
-        .Q(Counter_reg[2]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[30] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[28]_i_1_n_5 ),
-        .Q(Counter_reg[30]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[31] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[28]_i_1_n_4 ),
-        .Q(Counter_reg[31]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[3] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[0]_i_2_n_4 ),
-        .Q(Counter_reg[3]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[4] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[4]_i_1_n_7 ),
-        .Q(Counter_reg[4]),
-        .R(\Counter[0]_i_1_n_0 ));
-  CARRY4 \Counter_reg[4]_i_1 
-       (.CI(\Counter_reg[0]_i_2_n_0 ),
-        .CO({\Counter_reg[4]_i_1_n_0 ,\Counter_reg[4]_i_1_n_1 ,\Counter_reg[4]_i_1_n_2 ,\Counter_reg[4]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\Counter_reg[4]_i_1_n_4 ,\Counter_reg[4]_i_1_n_5 ,\Counter_reg[4]_i_1_n_6 ,\Counter_reg[4]_i_1_n_7 }),
-        .S(Counter_reg[7:4]));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[5] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[4]_i_1_n_6 ),
-        .Q(Counter_reg[5]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[6] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[4]_i_1_n_5 ),
-        .Q(Counter_reg[6]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[7] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[4]_i_1_n_4 ),
-        .Q(Counter_reg[7]),
-        .R(\Counter[0]_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[8] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[8]_i_1_n_7 ),
-        .Q(Counter_reg[8]),
-        .R(\Counter[0]_i_1_n_0 ));
-  CARRY4 \Counter_reg[8]_i_1 
-       (.CI(\Counter_reg[4]_i_1_n_0 ),
-        .CO({\Counter_reg[8]_i_1_n_0 ,\Counter_reg[8]_i_1_n_1 ,\Counter_reg[8]_i_1_n_2 ,\Counter_reg[8]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\Counter_reg[8]_i_1_n_4 ,\Counter_reg[8]_i_1_n_5 ,\Counter_reg[8]_i_1_n_6 ,\Counter_reg[8]_i_1_n_7 }),
-        .S(Counter_reg[11:8]));
-  FDRE #(
-    .INIT(1'b0)) 
-    \Counter_reg[9] 
-       (.C(MCLK),
-        .CE(1'b1),
-        .D(\Counter_reg[8]_i_1_n_6 ),
-        .Q(Counter_reg[9]),
-        .R(\Counter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \Data_Fast_reg[0] 
@@ -1007,6 +684,337 @@ module System_AXIS_I2S_Transmitter_0_0_AXIS_I2S
         .D(\FSM_sequential_CurrentState[1]_i_1_n_0 ),
         .Q(CurrentState[1]),
         .R(1'b0));
+  LUT2 #(
+    .INIT(4'hB)) 
+    \GenSCLK_Proc.Counter[0]_i_1 
+       (.I0(Counter1_carry__3_n_7),
+        .I1(nReset),
+        .O(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \GenSCLK_Proc.Counter[0]_i_3 
+       (.I0(\GenSCLK_Proc.Counter_reg [0]),
+        .O(\GenSCLK_Proc.Counter[0]_i_3_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[0] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[0]_i_2_n_7 ),
+        .Q(\GenSCLK_Proc.Counter_reg [0]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \GenSCLK_Proc.Counter_reg[0]_i_2 
+       (.CI(1'b0),
+        .CO({\GenSCLK_Proc.Counter_reg[0]_i_2_n_0 ,\GenSCLK_Proc.Counter_reg[0]_i_2_n_1 ,\GenSCLK_Proc.Counter_reg[0]_i_2_n_2 ,\GenSCLK_Proc.Counter_reg[0]_i_2_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b1}),
+        .O({\GenSCLK_Proc.Counter_reg[0]_i_2_n_4 ,\GenSCLK_Proc.Counter_reg[0]_i_2_n_5 ,\GenSCLK_Proc.Counter_reg[0]_i_2_n_6 ,\GenSCLK_Proc.Counter_reg[0]_i_2_n_7 }),
+        .S({\GenSCLK_Proc.Counter_reg [3:1],\GenSCLK_Proc.Counter[0]_i_3_n_0 }));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[10] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[8]_i_1_n_5 ),
+        .Q(\GenSCLK_Proc.Counter_reg [10]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[11] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[8]_i_1_n_4 ),
+        .Q(\GenSCLK_Proc.Counter_reg [11]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[12] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[12]_i_1_n_7 ),
+        .Q(\GenSCLK_Proc.Counter_reg [12]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \GenSCLK_Proc.Counter_reg[12]_i_1 
+       (.CI(\GenSCLK_Proc.Counter_reg[8]_i_1_n_0 ),
+        .CO({\GenSCLK_Proc.Counter_reg[12]_i_1_n_0 ,\GenSCLK_Proc.Counter_reg[12]_i_1_n_1 ,\GenSCLK_Proc.Counter_reg[12]_i_1_n_2 ,\GenSCLK_Proc.Counter_reg[12]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\GenSCLK_Proc.Counter_reg[12]_i_1_n_4 ,\GenSCLK_Proc.Counter_reg[12]_i_1_n_5 ,\GenSCLK_Proc.Counter_reg[12]_i_1_n_6 ,\GenSCLK_Proc.Counter_reg[12]_i_1_n_7 }),
+        .S(\GenSCLK_Proc.Counter_reg [15:12]));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[13] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[12]_i_1_n_6 ),
+        .Q(\GenSCLK_Proc.Counter_reg [13]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[14] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[12]_i_1_n_5 ),
+        .Q(\GenSCLK_Proc.Counter_reg [14]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[15] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[12]_i_1_n_4 ),
+        .Q(\GenSCLK_Proc.Counter_reg [15]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[16] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[16]_i_1_n_7 ),
+        .Q(\GenSCLK_Proc.Counter_reg [16]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \GenSCLK_Proc.Counter_reg[16]_i_1 
+       (.CI(\GenSCLK_Proc.Counter_reg[12]_i_1_n_0 ),
+        .CO({\GenSCLK_Proc.Counter_reg[16]_i_1_n_0 ,\GenSCLK_Proc.Counter_reg[16]_i_1_n_1 ,\GenSCLK_Proc.Counter_reg[16]_i_1_n_2 ,\GenSCLK_Proc.Counter_reg[16]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\GenSCLK_Proc.Counter_reg[16]_i_1_n_4 ,\GenSCLK_Proc.Counter_reg[16]_i_1_n_5 ,\GenSCLK_Proc.Counter_reg[16]_i_1_n_6 ,\GenSCLK_Proc.Counter_reg[16]_i_1_n_7 }),
+        .S(\GenSCLK_Proc.Counter_reg [19:16]));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[17] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[16]_i_1_n_6 ),
+        .Q(\GenSCLK_Proc.Counter_reg [17]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[18] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[16]_i_1_n_5 ),
+        .Q(\GenSCLK_Proc.Counter_reg [18]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[19] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[16]_i_1_n_4 ),
+        .Q(\GenSCLK_Proc.Counter_reg [19]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[1] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[0]_i_2_n_6 ),
+        .Q(\GenSCLK_Proc.Counter_reg [1]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[20] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[20]_i_1_n_7 ),
+        .Q(\GenSCLK_Proc.Counter_reg [20]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \GenSCLK_Proc.Counter_reg[20]_i_1 
+       (.CI(\GenSCLK_Proc.Counter_reg[16]_i_1_n_0 ),
+        .CO({\GenSCLK_Proc.Counter_reg[20]_i_1_n_0 ,\GenSCLK_Proc.Counter_reg[20]_i_1_n_1 ,\GenSCLK_Proc.Counter_reg[20]_i_1_n_2 ,\GenSCLK_Proc.Counter_reg[20]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\GenSCLK_Proc.Counter_reg[20]_i_1_n_4 ,\GenSCLK_Proc.Counter_reg[20]_i_1_n_5 ,\GenSCLK_Proc.Counter_reg[20]_i_1_n_6 ,\GenSCLK_Proc.Counter_reg[20]_i_1_n_7 }),
+        .S(\GenSCLK_Proc.Counter_reg [23:20]));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[21] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[20]_i_1_n_6 ),
+        .Q(\GenSCLK_Proc.Counter_reg [21]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[22] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[20]_i_1_n_5 ),
+        .Q(\GenSCLK_Proc.Counter_reg [22]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[23] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[20]_i_1_n_4 ),
+        .Q(\GenSCLK_Proc.Counter_reg [23]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[24] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[24]_i_1_n_7 ),
+        .Q(\GenSCLK_Proc.Counter_reg [24]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \GenSCLK_Proc.Counter_reg[24]_i_1 
+       (.CI(\GenSCLK_Proc.Counter_reg[20]_i_1_n_0 ),
+        .CO({\GenSCLK_Proc.Counter_reg[24]_i_1_n_0 ,\GenSCLK_Proc.Counter_reg[24]_i_1_n_1 ,\GenSCLK_Proc.Counter_reg[24]_i_1_n_2 ,\GenSCLK_Proc.Counter_reg[24]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\GenSCLK_Proc.Counter_reg[24]_i_1_n_4 ,\GenSCLK_Proc.Counter_reg[24]_i_1_n_5 ,\GenSCLK_Proc.Counter_reg[24]_i_1_n_6 ,\GenSCLK_Proc.Counter_reg[24]_i_1_n_7 }),
+        .S(\GenSCLK_Proc.Counter_reg [27:24]));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[25] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[24]_i_1_n_6 ),
+        .Q(\GenSCLK_Proc.Counter_reg [25]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[26] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[24]_i_1_n_5 ),
+        .Q(\GenSCLK_Proc.Counter_reg [26]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[27] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[24]_i_1_n_4 ),
+        .Q(\GenSCLK_Proc.Counter_reg [27]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[28] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[28]_i_1_n_7 ),
+        .Q(\GenSCLK_Proc.Counter_reg [28]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \GenSCLK_Proc.Counter_reg[28]_i_1 
+       (.CI(\GenSCLK_Proc.Counter_reg[24]_i_1_n_0 ),
+        .CO({\NLW_GenSCLK_Proc.Counter_reg[28]_i_1_CO_UNCONNECTED [3],\GenSCLK_Proc.Counter_reg[28]_i_1_n_1 ,\GenSCLK_Proc.Counter_reg[28]_i_1_n_2 ,\GenSCLK_Proc.Counter_reg[28]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\GenSCLK_Proc.Counter_reg[28]_i_1_n_4 ,\GenSCLK_Proc.Counter_reg[28]_i_1_n_5 ,\GenSCLK_Proc.Counter_reg[28]_i_1_n_6 ,\GenSCLK_Proc.Counter_reg[28]_i_1_n_7 }),
+        .S(\GenSCLK_Proc.Counter_reg [31:28]));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[29] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[28]_i_1_n_6 ),
+        .Q(\GenSCLK_Proc.Counter_reg [29]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[2] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[0]_i_2_n_5 ),
+        .Q(\GenSCLK_Proc.Counter_reg [2]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[30] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[28]_i_1_n_5 ),
+        .Q(\GenSCLK_Proc.Counter_reg [30]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[31] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[28]_i_1_n_4 ),
+        .Q(\GenSCLK_Proc.Counter_reg [31]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[3] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[0]_i_2_n_4 ),
+        .Q(\GenSCLK_Proc.Counter_reg [3]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[4] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[4]_i_1_n_7 ),
+        .Q(\GenSCLK_Proc.Counter_reg [4]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \GenSCLK_Proc.Counter_reg[4]_i_1 
+       (.CI(\GenSCLK_Proc.Counter_reg[0]_i_2_n_0 ),
+        .CO({\GenSCLK_Proc.Counter_reg[4]_i_1_n_0 ,\GenSCLK_Proc.Counter_reg[4]_i_1_n_1 ,\GenSCLK_Proc.Counter_reg[4]_i_1_n_2 ,\GenSCLK_Proc.Counter_reg[4]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\GenSCLK_Proc.Counter_reg[4]_i_1_n_4 ,\GenSCLK_Proc.Counter_reg[4]_i_1_n_5 ,\GenSCLK_Proc.Counter_reg[4]_i_1_n_6 ,\GenSCLK_Proc.Counter_reg[4]_i_1_n_7 }),
+        .S(\GenSCLK_Proc.Counter_reg [7:4]));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[5] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[4]_i_1_n_6 ),
+        .Q(\GenSCLK_Proc.Counter_reg [5]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[6] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[4]_i_1_n_5 ),
+        .Q(\GenSCLK_Proc.Counter_reg [6]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[7] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[4]_i_1_n_4 ),
+        .Q(\GenSCLK_Proc.Counter_reg [7]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[8] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[8]_i_1_n_7 ),
+        .Q(\GenSCLK_Proc.Counter_reg [8]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \GenSCLK_Proc.Counter_reg[8]_i_1 
+       (.CI(\GenSCLK_Proc.Counter_reg[4]_i_1_n_0 ),
+        .CO({\GenSCLK_Proc.Counter_reg[8]_i_1_n_0 ,\GenSCLK_Proc.Counter_reg[8]_i_1_n_1 ,\GenSCLK_Proc.Counter_reg[8]_i_1_n_2 ,\GenSCLK_Proc.Counter_reg[8]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\GenSCLK_Proc.Counter_reg[8]_i_1_n_4 ,\GenSCLK_Proc.Counter_reg[8]_i_1_n_5 ,\GenSCLK_Proc.Counter_reg[8]_i_1_n_6 ,\GenSCLK_Proc.Counter_reg[8]_i_1_n_7 }),
+        .S(\GenSCLK_Proc.Counter_reg [11:8]));
+  FDRE #(
+    .INIT(1'b0)) 
+    \GenSCLK_Proc.Counter_reg[9] 
+       (.C(MCLK),
+        .CE(1'b1),
+        .D(\GenSCLK_Proc.Counter_reg[8]_i_1_n_6 ),
+        .Q(\GenSCLK_Proc.Counter_reg [9]),
+        .R(\GenSCLK_Proc.Counter[0]_i_1_n_0 ));
   LUT3 #(
     .INIT(8'h60)) 
     SCLK_Int_i_1
@@ -1387,6 +1395,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .D(\BitCounter_reg[0]_i_2_n_7 ),
         .Q(BitCounter_reg[0]),
         .R(BitCounter));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \BitCounter_reg[0]_i_2 
        (.CI(1'b0),
         .CO({\BitCounter_reg[0]_i_2_n_0 ,\BitCounter_reg[0]_i_2_n_1 ,\BitCounter_reg[0]_i_2_n_2 ,\BitCounter_reg[0]_i_2_n_3 }),
@@ -1421,6 +1430,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .D(\BitCounter_reg[12]_i_1_n_7 ),
         .Q(BitCounter_reg[12]),
         .R(BitCounter));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \BitCounter_reg[12]_i_1 
        (.CI(\BitCounter_reg[8]_i_1_n_0 ),
         .CO({\BitCounter_reg[12]_i_1_n_0 ,\BitCounter_reg[12]_i_1_n_1 ,\BitCounter_reg[12]_i_1_n_2 ,\BitCounter_reg[12]_i_1_n_3 }),
@@ -1464,6 +1474,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .D(\BitCounter_reg[16]_i_1_n_7 ),
         .Q(BitCounter_reg[16]),
         .R(BitCounter));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \BitCounter_reg[16]_i_1 
        (.CI(\BitCounter_reg[12]_i_1_n_0 ),
         .CO({\BitCounter_reg[16]_i_1_n_0 ,\BitCounter_reg[16]_i_1_n_1 ,\BitCounter_reg[16]_i_1_n_2 ,\BitCounter_reg[16]_i_1_n_3 }),
@@ -1516,6 +1527,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .D(\BitCounter_reg[20]_i_1_n_7 ),
         .Q(BitCounter_reg[20]),
         .R(BitCounter));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \BitCounter_reg[20]_i_1 
        (.CI(\BitCounter_reg[16]_i_1_n_0 ),
         .CO({\BitCounter_reg[20]_i_1_n_0 ,\BitCounter_reg[20]_i_1_n_1 ,\BitCounter_reg[20]_i_1_n_2 ,\BitCounter_reg[20]_i_1_n_3 }),
@@ -1559,6 +1571,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .D(\BitCounter_reg[24]_i_1_n_7 ),
         .Q(BitCounter_reg[24]),
         .R(BitCounter));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \BitCounter_reg[24]_i_1 
        (.CI(\BitCounter_reg[20]_i_1_n_0 ),
         .CO({\BitCounter_reg[24]_i_1_n_0 ,\BitCounter_reg[24]_i_1_n_1 ,\BitCounter_reg[24]_i_1_n_2 ,\BitCounter_reg[24]_i_1_n_3 }),
@@ -1602,6 +1615,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .D(\BitCounter_reg[28]_i_1_n_7 ),
         .Q(BitCounter_reg[28]),
         .R(BitCounter));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \BitCounter_reg[28]_i_1 
        (.CI(\BitCounter_reg[24]_i_1_n_0 ),
         .CO({\NLW_BitCounter_reg[28]_i_1_CO_UNCONNECTED [3],\BitCounter_reg[28]_i_1_n_1 ,\BitCounter_reg[28]_i_1_n_2 ,\BitCounter_reg[28]_i_1_n_3 }),
@@ -1663,6 +1677,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .D(\BitCounter_reg[4]_i_1_n_7 ),
         .Q(BitCounter_reg[4]),
         .R(BitCounter));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \BitCounter_reg[4]_i_1 
        (.CI(\BitCounter_reg[0]_i_2_n_0 ),
         .CO({\BitCounter_reg[4]_i_1_n_0 ,\BitCounter_reg[4]_i_1_n_1 ,\BitCounter_reg[4]_i_1_n_2 ,\BitCounter_reg[4]_i_1_n_3 }),
@@ -1706,6 +1721,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .D(\BitCounter_reg[8]_i_1_n_7 ),
         .Q(BitCounter_reg[8]),
         .R(BitCounter));
+  (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \BitCounter_reg[8]_i_1 
        (.CI(\BitCounter_reg[4]_i_1_n_0 ),
         .CO({\BitCounter_reg[8]_i_1_n_0 ,\BitCounter_reg[8]_i_1_n_1 ,\BitCounter_reg[8]_i_1_n_2 ,\BitCounter_reg[8]_i_1_n_3 }),
@@ -1722,6 +1738,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .D(\BitCounter_reg[8]_i_1_n_6 ),
         .Q(BitCounter_reg[9]),
         .R(BitCounter));
+  (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 CurrentState0_carry
        (.CI(1'b0),
         .CO({CurrentState0_carry_n_0,CurrentState0_carry_n_1,CurrentState0_carry_n_2,CurrentState0_carry_n_3}),
@@ -1729,6 +1746,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .DI({1'b0,CurrentState0_carry_i_1_n_0,CurrentState0_carry_i_2_n_0,CurrentState0_carry_i_3_n_0}),
         .O(NLW_CurrentState0_carry_O_UNCONNECTED[3:0]),
         .S({CurrentState0_carry_i_4_n_0,CurrentState0_carry_i_5_n_0,CurrentState0_carry_i_6_n_0,CurrentState0_carry_i_7_n_0}));
+  (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 CurrentState0_carry__0
        (.CI(CurrentState0_carry_n_0),
         .CO({CurrentState0_carry__0_n_0,CurrentState0_carry__0_n_1,CurrentState0_carry__0_n_2,CurrentState0_carry__0_n_3}),
@@ -1760,6 +1778,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
        (.I0(p_0_in[8]),
         .I1(p_0_in[9]),
         .O(CurrentState0_carry__0_i_4_n_0));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 CurrentState0_carry__0_i_5
        (.CI(CurrentState0_carry__0_i_6_n_0),
         .CO({CurrentState0_carry__0_i_5_n_0,CurrentState0_carry__0_i_5_n_1,CurrentState0_carry__0_i_5_n_2,CurrentState0_carry__0_i_5_n_3}),
@@ -1767,6 +1786,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(p_0_in[16:13]),
         .S(BitCounter_reg[16:13]));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 CurrentState0_carry__0_i_6
        (.CI(CurrentState0_carry_i_9_n_0),
         .CO({CurrentState0_carry__0_i_6_n_0,CurrentState0_carry__0_i_6_n_1,CurrentState0_carry__0_i_6_n_2,CurrentState0_carry__0_i_6_n_3}),
@@ -1774,6 +1794,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(p_0_in[12:9]),
         .S(BitCounter_reg[12:9]));
+  (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 CurrentState0_carry__1
        (.CI(CurrentState0_carry__0_n_0),
         .CO({CurrentState0_carry__1_n_0,CurrentState0_carry__1_n_1,CurrentState0_carry__1_n_2,CurrentState0_carry__1_n_3}),
@@ -1805,6 +1826,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
        (.I0(p_0_in[16]),
         .I1(p_0_in[17]),
         .O(CurrentState0_carry__1_i_4_n_0));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 CurrentState0_carry__1_i_5
        (.CI(CurrentState0_carry__1_i_6_n_0),
         .CO({CurrentState0_carry__1_i_5_n_0,CurrentState0_carry__1_i_5_n_1,CurrentState0_carry__1_i_5_n_2,CurrentState0_carry__1_i_5_n_3}),
@@ -1812,6 +1834,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(p_0_in[24:21]),
         .S(BitCounter_reg[24:21]));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 CurrentState0_carry__1_i_6
        (.CI(CurrentState0_carry__0_i_5_n_0),
         .CO({CurrentState0_carry__1_i_6_n_0,CurrentState0_carry__1_i_6_n_1,CurrentState0_carry__1_i_6_n_2,CurrentState0_carry__1_i_6_n_3}),
@@ -1819,6 +1842,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(p_0_in[20:17]),
         .S(BitCounter_reg[20:17]));
+  (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 CurrentState0_carry__2
        (.CI(CurrentState0_carry__1_n_0),
         .CO({CurrentState0_carry__2_n_0,CurrentState0_carry__2_n_1,CurrentState0_carry__2_n_2,CurrentState0_carry__2_n_3}),
@@ -1826,6 +1850,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .DI({p_0_in[31],1'b0,1'b0,1'b0}),
         .O(NLW_CurrentState0_carry__2_O_UNCONNECTED[3:0]),
         .S({CurrentState0_carry__2_i_2_n_0,CurrentState0_carry__2_i_3_n_0,CurrentState0_carry__2_i_4_n_0,CurrentState0_carry__2_i_5_n_0}));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 CurrentState0_carry__2_i_1
        (.CI(CurrentState0_carry__2_i_6_n_0),
         .CO({NLW_CurrentState0_carry__2_i_1_CO_UNCONNECTED[3:2],CurrentState0_carry__2_i_1_n_2,CurrentState0_carry__2_i_1_n_3}),
@@ -1857,6 +1882,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
        (.I0(p_0_in[24]),
         .I1(p_0_in[25]),
         .O(CurrentState0_carry__2_i_5_n_0));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 CurrentState0_carry__2_i_6
        (.CI(CurrentState0_carry__1_i_5_n_0),
         .CO({CurrentState0_carry__2_i_6_n_0,CurrentState0_carry__2_i_6_n_1,CurrentState0_carry__2_i_6_n_2,CurrentState0_carry__2_i_6_n_3}),
@@ -1906,6 +1932,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
        (.I0(p_0_in[1]),
         .I1(BitCounter_reg[0]),
         .O(CurrentState0_carry_i_7_n_0));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 CurrentState0_carry_i_8
        (.CI(1'b0),
         .CO({CurrentState0_carry_i_8_n_0,CurrentState0_carry_i_8_n_1,CurrentState0_carry_i_8_n_2,CurrentState0_carry_i_8_n_3}),
@@ -1913,6 +1940,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(p_0_in[4:1]),
         .S(BitCounter_reg[4:1]));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 CurrentState0_carry_i_9
        (.CI(CurrentState0_carry_i_8_n_0),
         .CO({CurrentState0_carry_i_9_n_0,CurrentState0_carry_i_9_n_1,CurrentState0_carry_i_9_n_2,CurrentState0_carry_i_9_n_3}),
@@ -1920,7 +1948,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(p_0_in[8:5]),
         .S(BitCounter_reg[8:5]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT2 #(
     .INIT(4'hB)) 
     CurrentState_i_1
@@ -1945,6 +1973,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .D(Enable),
         .Q(Enable),
         .S(LRCLK_Int_i_1_n_0));
+  (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 LRCLK_Int0_carry
        (.CI(1'b0),
         .CO({LRCLK_Int0_carry_n_0,LRCLK_Int0_carry_n_1,LRCLK_Int0_carry_n_2,LRCLK_Int0_carry_n_3}),
@@ -1952,6 +1981,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .DI({LRCLK_Int0_carry_i_1_n_0,LRCLK_Int0_carry_i_2_n_0,LRCLK_Int0_carry_i_3_n_0,LRCLK_Int0_carry_i_4_n_0}),
         .O(NLW_LRCLK_Int0_carry_O_UNCONNECTED[3:0]),
         .S({LRCLK_Int0_carry_i_5_n_0,LRCLK_Int0_carry_i_6_n_0,LRCLK_Int0_carry_i_7_n_0,LRCLK_Int0_carry_i_8_n_0}));
+  (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 LRCLK_Int0_carry__0
        (.CI(LRCLK_Int0_carry_n_0),
         .CO({LRCLK_Int0_carry__0_n_0,LRCLK_Int0_carry__0_n_1,LRCLK_Int0_carry__0_n_2,LRCLK_Int0_carry__0_n_3}),
@@ -2007,6 +2037,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
        (.I0(p_0_in[12]),
         .I1(p_0_in[13]),
         .O(LRCLK_Int0_carry__0_i_8_n_0));
+  (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 LRCLK_Int0_carry__1
        (.CI(LRCLK_Int0_carry__0_n_0),
         .CO({LRCLK_Int0_carry__1_n_0,LRCLK_Int0_carry__1_n_1,LRCLK_Int0_carry__1_n_2,LRCLK_Int0_carry__1_n_3}),
@@ -2062,6 +2093,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
        (.I0(p_0_in[20]),
         .I1(p_0_in[21]),
         .O(LRCLK_Int0_carry__1_i_8_n_0));
+  (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 LRCLK_Int0_carry__2
        (.CI(LRCLK_Int0_carry__1_n_0),
         .CO({NLW_LRCLK_Int0_carry__2_CO_UNCONNECTED[3:2],LRCLK_Int0_carry__2_n_2,LRCLK_Int0_carry__2_n_3}),
@@ -2146,7 +2178,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
     LRCLK_Int_i_1
        (.I0(nReset),
         .O(LRCLK_Int_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT3 #(
     .INIT(8'hC8)) 
     LRCLK_Int_i_2
@@ -2186,7 +2218,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
        (.I0(clk),
         .I1(Enable),
         .O(SCLK));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     SD_Int_i_1
@@ -2209,7 +2241,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
        (.I0(dest_out[0]),
         .I1(CurrentState),
         .O(\Tx_Int[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[10]_i_1 
@@ -2217,7 +2249,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[10]),
         .O(\Tx_Int[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[11]_i_1 
@@ -2225,7 +2257,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[11]),
         .O(\Tx_Int[11]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[12]_i_1 
@@ -2233,7 +2265,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[12]),
         .O(\Tx_Int[12]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[13]_i_1 
@@ -2241,7 +2273,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[13]),
         .O(\Tx_Int[13]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[14]_i_1 
@@ -2265,7 +2297,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[16]),
         .O(\Tx_Int[16]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[17]_i_1 
@@ -2273,7 +2305,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[17]),
         .O(\Tx_Int[17]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[18]_i_1 
@@ -2281,7 +2313,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[18]),
         .O(\Tx_Int[18]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[19]_i_1 
@@ -2297,7 +2329,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[1]),
         .O(\Tx_Int[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[20]_i_1 
@@ -2305,7 +2337,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[20]),
         .O(\Tx_Int[20]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[21]_i_1 
@@ -2313,7 +2345,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[21]),
         .O(\Tx_Int[21]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[22]_i_1 
@@ -2321,7 +2353,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[22]),
         .O(\Tx_Int[22]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[23]_i_1 
@@ -2337,7 +2369,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[24]),
         .O(\Tx_Int[24]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[25]_i_1 
@@ -2345,7 +2377,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[25]),
         .O(\Tx_Int[25]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[26]_i_1 
@@ -2369,7 +2401,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[28]),
         .O(\Tx_Int[28]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[29]_i_1 
@@ -2377,7 +2409,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[29]),
         .O(\Tx_Int[29]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[2]_i_1 
@@ -2393,7 +2425,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[30]),
         .O(\Tx_Int[30]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[31]_i_1 
@@ -2401,7 +2433,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[31]),
         .O(\Tx_Int[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[3]_i_1 
@@ -2409,7 +2441,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[3]),
         .O(\Tx_Int[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[4]_i_1 
@@ -2417,7 +2449,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[4]),
         .O(\Tx_Int[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[5]_i_1 
@@ -2425,7 +2457,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[5]),
         .O(\Tx_Int[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[6]_i_1 
@@ -2433,7 +2465,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[6]),
         .O(\Tx_Int[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[7]_i_1 
@@ -2441,7 +2473,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[7]),
         .O(\Tx_Int[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[8]_i_1 
@@ -2449,7 +2481,7 @@ module System_AXIS_I2S_Transmitter_0_0_I2S_Transmitter
         .I1(CurrentState),
         .I2(dest_out[8]),
         .O(\Tx_Int[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Tx_Int[9]_i_1 
@@ -2750,7 +2782,7 @@ endmodule
 (* DEST_EXT_HSK = "0" *) (* DEST_SYNC_FF = "4" *) (* INIT_SYNC_FF = "0" *) 
 (* ORIG_REF_NAME = "xpm_cdc_handshake" *) (* SIM_ASSERT_CHK = "0" *) (* SRC_SYNC_FF = "4" *) 
 (* VERSION = "0" *) (* WIDTH = "32" *) (* XPM_MODULE = "TRUE" *) 
-(* xpm_cdc = "HANDSHAKE" *) 
+(* keep_hierarchy = "true" *) (* xpm_cdc = "HANDSHAKE" *) 
 module System_AXIS_I2S_Transmitter_0_0_xpm_cdc_handshake
    (src_clk,
     src_in,
@@ -3271,7 +3303,7 @@ module System_AXIS_I2S_Transmitter_0_0_xpm_cdc_handshake
   System_AXIS_I2S_Transmitter_0_0_xpm_cdc_single xpm_cdc_single_dest2src_inst
        (.dest_clk(src_clk),
         .dest_out(src_rcv),
-        .src_clk(dest_clk),
+        .src_clk(1'b0),
         .src_in(dest_req_ff));
   (* DEST_SYNC_FF = "4" *) 
   (* INIT_SYNC_FF = "0" *) 
@@ -3283,13 +3315,13 @@ module System_AXIS_I2S_Transmitter_0_0_xpm_cdc_handshake
   System_AXIS_I2S_Transmitter_0_0_xpm_cdc_single__2 xpm_cdc_single_src2dest_inst
        (.dest_clk(dest_clk),
         .dest_out(dest_req_nxt),
-        .src_clk(src_clk),
+        .src_clk(1'b0),
         .src_in(src_sendd_ff));
 endmodule
 
 (* DEST_SYNC_FF = "4" *) (* INIT_SYNC_FF = "0" *) (* ORIG_REF_NAME = "xpm_cdc_single" *) 
 (* SIM_ASSERT_CHK = "0" *) (* SRC_INPUT_REG = "0" *) (* VERSION = "0" *) 
-(* XPM_MODULE = "TRUE" *) (* xpm_cdc = "SINGLE" *) 
+(* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "true" *) (* xpm_cdc = "SINGLE" *) 
 module System_AXIS_I2S_Transmitter_0_0_xpm_cdc_single
    (src_clk,
     src_in,
@@ -3345,7 +3377,7 @@ endmodule
 
 (* DEST_SYNC_FF = "4" *) (* INIT_SYNC_FF = "0" *) (* ORIG_REF_NAME = "xpm_cdc_single" *) 
 (* SIM_ASSERT_CHK = "0" *) (* SRC_INPUT_REG = "0" *) (* VERSION = "0" *) 
-(* XPM_MODULE = "TRUE" *) (* xpm_cdc = "SINGLE" *) 
+(* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "true" *) (* xpm_cdc = "SINGLE" *) 
 module System_AXIS_I2S_Transmitter_0_0_xpm_cdc_single__2
    (src_clk,
     src_in,
@@ -3401,7 +3433,7 @@ endmodule
 
 (* DEST_SYNC_FF = "4" *) (* INIT_SYNC_FF = "0" *) (* ORIG_REF_NAME = "xpm_cdc_single" *) 
 (* SIM_ASSERT_CHK = "0" *) (* SRC_INPUT_REG = "1" *) (* VERSION = "0" *) 
-(* XPM_MODULE = "TRUE" *) (* xpm_cdc = "SINGLE" *) 
+(* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "true" *) (* xpm_cdc = "SINGLE" *) 
 module System_AXIS_I2S_Transmitter_0_0_xpm_cdc_single__parameterized1
    (src_clk,
     src_in,
@@ -3470,12 +3502,15 @@ module glbl ();
 
     parameter ROC_WIDTH = 100000;
     parameter TOC_WIDTH = 0;
+    parameter GRES_WIDTH = 10000;
+    parameter GRES_START = 10000;
 
 //--------   STARTUP Globals --------------
     wire GSR;
     wire GTS;
     wire GWE;
     wire PRLD;
+    wire GRESTORE;
     tri1 p_up_tmp;
     tri (weak1, strong0) PLL_LOCKG = p_up_tmp;
 
@@ -3488,6 +3523,7 @@ module glbl ();
     reg GSR_int;
     reg GTS_int;
     reg PRLD_int;
+    reg GRESTORE_int;
 
 //--------   JTAG Globals --------------
     wire JTAG_TDO_GLBL;
@@ -3515,6 +3551,7 @@ module glbl ();
     assign (strong1, weak0) GSR = GSR_int;
     assign (strong1, weak0) GTS = GTS_int;
     assign (weak1, weak0) PRLD = PRLD_int;
+    assign (strong1, weak0) GRESTORE = GRESTORE_int;
 
     initial begin
 	GSR_int = 1'b1;
@@ -3528,6 +3565,14 @@ module glbl ();
 	GTS_int = 1'b1;
 	#(TOC_WIDTH)
 	GTS_int = 1'b0;
+    end
+
+    initial begin 
+	GRESTORE_int = 1'b0;
+	#(GRES_START);
+	GRESTORE_int = 1'b1;
+	#(GRES_WIDTH);
+	GRESTORE_int = 1'b0;
     end
 
 endmodule

@@ -16,14 +16,14 @@ set_property PULLUP true [get_ports I2C_sda_io]
 set_property PACKAGE_PIN T19 [get_ports MCLK]
 set_property IOSTANDARD LVCMOS33 [get_ports MCLK]
 
-set_property PACKAGE_PIN L17 [get_ports Tx_LRCLK]
-set_property IOSTANDARD LVCMOS33 [get_ports Tx_LRCLK]
+set_property PACKAGE_PIN L17 [get_ports I2S_lrclk]
+set_property IOSTANDARD LVCMOS33 [get_ports I2S_lrclk]
 
-set_property PACKAGE_PIN K18 [get_ports Tx_SCLK]
-set_property IOSTANDARD LVCMOS33 [get_ports Tx_SCLK]
+set_property PACKAGE_PIN K18 [get_ports I2S_sclk]
+set_property IOSTANDARD LVCMOS33 [get_ports I2S_sclk]
 
-set_property PACKAGE_PIN M17 [get_ports Tx_SD]
-set_property IOSTANDARD LVCMOS33 [get_ports Tx_SD]
+set_property PACKAGE_PIN M17 [get_ports I2S_sd]
+set_property IOSTANDARD LVCMOS33 [get_ports I2S_sd]
 
 # SSM2603 MUTE
 # MUTE signal for the audio codec

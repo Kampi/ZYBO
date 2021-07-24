@@ -28,7 +28,19 @@
  *  @author Daniel Kampert
  */
 
+#include "xiicps.h"
+#include "xstatus.h"
+#include "xparameters.h"
+
 #include "SSM2603.h"
+
+/** @brief I2C device address for the SSM2603 Audio Codec.
+ */
+#define SSM2603_ADDRESS					0x1A
+
+/** @brief I2C bus speed for the SSM2603 Audio Codec.
+ */
+#define SSM2603_SPEED						400000UL
 
 /** @defgroup SSM2603
  *  @{

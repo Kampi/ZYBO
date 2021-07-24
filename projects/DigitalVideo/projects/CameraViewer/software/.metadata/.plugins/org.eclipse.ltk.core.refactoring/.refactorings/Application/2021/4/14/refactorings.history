@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Application/src/OV7670/OV7670_SCCB&apos; to &apos;OV7670_SCCB.c&apos;" description="Rename resource &apos;OV7670_SCCB&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/OV7670/OV7670_SCCB" name="OV7670_SCCB.c" stamp="1617691421186" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Application/src/OV7670/OV7670.h&apos; to &apos;ov7670.h&apos;" description="Rename resource &apos;OV7670.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/OV7670/OV7670.h" name="ov7670.h" stamp="1617695082639" updateReferences="true"/>
-</session>

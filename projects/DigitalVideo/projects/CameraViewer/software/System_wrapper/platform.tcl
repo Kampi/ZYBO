@@ -678,3 +678,6 @@ platform generate -domains standalone_ps7_cortexa9_0
 platform clean
 platform generate
 platform generate -domains standalone_ps7_cortexa9_0 
+platform active {System_wrapper}
+platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/System_wrapper.xsa}
+platform generate

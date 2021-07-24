@@ -6,15 +6,14 @@
       "name": "Simulation",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2020.2",
-      "validated": "true"
+      "tool_version": "2020.2"
     },
     "design_tree": {
       "AXI_Stream_Reader": "",
       "AXI_Lite_Reader": ""
     },
     "interface_ports": {
-      "AXIS": {
+      "S_AXIS": {
         "mode": "Slave",
         "vlnv": "xilinx.com:interface:axis_rtl:1.0",
         "parameters": {
@@ -35,10 +34,6 @@
           },
           "HAS_TSTRB": {
             "value": "0"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
           },
           "LAYERED_METADATA": {
             "value": "undef"
@@ -68,18 +63,6 @@
           "ADDR_WIDTH": {
             "value": "32"
           },
-          "ARUSER_WIDTH": {
-            "value": "0",
-            "value_src": "auto_prop"
-          },
-          "AWUSER_WIDTH": {
-            "value": "0",
-            "value_src": "auto_prop"
-          },
-          "BUSER_WIDTH": {
-            "value": "0",
-            "value_src": "auto_prop"
-          },
           "CLK_DOMAIN": {
             "value": "design_sim_clk_wiz_0_0_clk_out1"
           },
@@ -88,10 +71,6 @@
           },
           "FREQ_HZ": {
             "value": "300000000"
-          },
-          "HAS_BRESP": {
-            "value": "1",
-            "value_src": "auto_prop"
           },
           "HAS_BURST": {
             "value": "0"
@@ -102,79 +81,23 @@
           "HAS_LOCK": {
             "value": "0"
           },
-          "HAS_PROT": {
-            "value": "1",
-            "value_src": "auto_prop"
-          },
           "HAS_QOS": {
             "value": "0"
           },
           "HAS_REGION": {
             "value": "0"
           },
-          "HAS_RRESP": {
-            "value": "1",
-            "value_src": "auto_prop"
-          },
-          "HAS_WSTRB": {
-            "value": "1",
-            "value_src": "auto_prop"
-          },
-          "ID_WIDTH": {
-            "value": "0",
-            "value_src": "auto_prop"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "MAX_BURST_LENGTH": {
-            "value": "1",
-            "value_src": "default"
-          },
           "NUM_READ_OUTSTANDING": {
             "value": "2"
           },
-          "NUM_READ_THREADS": {
-            "value": "1",
-            "value_src": "default"
-          },
           "NUM_WRITE_OUTSTANDING": {
             "value": "2"
-          },
-          "NUM_WRITE_THREADS": {
-            "value": "1",
-            "value_src": "default"
           },
           "PHASE": {
             "value": "0.0"
           },
           "PROTOCOL": {
             "value": "AXI4LITE"
-          },
-          "READ_WRITE_MODE": {
-            "value": "READ_WRITE",
-            "value_src": "auto_prop"
-          },
-          "RUSER_BITS_PER_BYTE": {
-            "value": "0",
-            "value_src": "user_prop"
-          },
-          "RUSER_WIDTH": {
-            "value": "0",
-            "value_src": "auto_prop"
-          },
-          "SUPPORTS_NARROW_BURST": {
-            "value": "0",
-            "value_src": "user_prop"
-          },
-          "WUSER_BITS_PER_BYTE": {
-            "value": "0",
-            "value_src": "user_prop"
-          },
-          "WUSER_WIDTH": {
-            "value": "0",
-            "value_src": "auto_prop"
           }
         }
       }
@@ -185,25 +108,13 @@
         "direction": "I",
         "parameters": {
           "ASSOCIATED_BUSIF": {
-            "value": "AXIS:M_AXI_Lite"
-          },
-          "ASSOCIATED_RESET": {
-            "value": "aresetn",
-            "value_src": "default"
+            "value": "S_AXIS:M_AXI_Lite"
           },
           "CLK_DOMAIN": {
             "value": "design_sim_clk_wiz_0_0_clk_out1"
           },
           "FREQ_HZ": {
             "value": "300000000"
-          },
-          "FREQ_TOLERANCE_HZ": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
           },
           "PHASE": {
             "value": "0.0"
@@ -214,10 +125,6 @@
         "type": "rst",
         "direction": "I",
         "parameters": {
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
           "POLARITY": {
             "value": "ACTIVE_LOW"
           }
@@ -305,7 +212,7 @@
     "interface_nets": {
       "S_AXIS_0_1": {
         "interface_ports": [
-          "AXIS",
+          "S_AXIS",
           "AXI_Stream_Reader/S_AXIS"
         ]
       },

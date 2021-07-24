@@ -1,8 +1,8 @@
---Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2019.2.1 (win64) Build 2729669 Thu Dec  5 04:49:17 MST 2019
---Date        : Wed May 20 13:56:33 2020
---Host        : 40B0341C1F56 running 64-bit major release  (build 9200)
+--Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+--Date        : Fri Jul 23 20:49:09 2021
+--Host        : PC running 64-bit major release  (build 9200)
 --Command     : generate_target System_wrapper.bd
 --Design      : System_wrapper
 --Purpose     : IP block netlist
@@ -55,14 +55,6 @@ architecture STRUCTURE of System_wrapper is
     Tx_SCLK : out STD_LOGIC;
     Tx_SD : out STD_LOGIC;
     MCLK : out STD_LOGIC;
-    Switches_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    Buttons_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    I2C_sda_i : in STD_LOGIC;
-    I2C_sda_o : out STD_LOGIC;
-    I2C_sda_t : out STD_LOGIC;
-    I2C_scl_i : in STD_LOGIC;
-    I2C_scl_o : out STD_LOGIC;
-    I2C_scl_t : out STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
@@ -72,6 +64,14 @@ architecture STRUCTURE of System_wrapper is
     Mute_tri_i : in STD_LOGIC_VECTOR ( 1 downto 0 );
     Mute_tri_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
     Mute_tri_t : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    Switches_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    Buttons_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    I2C_sda_i : in STD_LOGIC;
+    I2C_sda_o : out STD_LOGIC;
+    I2C_sda_t : out STD_LOGIC;
+    I2C_scl_i : in STD_LOGIC;
+    I2C_scl_o : out STD_LOGIC;
+    I2C_scl_t : out STD_LOGIC;
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;

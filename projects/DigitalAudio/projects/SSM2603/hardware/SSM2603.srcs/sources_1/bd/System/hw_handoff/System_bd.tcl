@@ -20,12 +20,12 @@ set script_folder [_tcl::get_script_folder]
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2019.2
+set scripts_vivado_version 2020.2
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
    puts ""
-   catch {common::send_msg_id "BD_TCL-109" "ERROR" "This script was generated using Vivado <$scripts_vivado_version> and is being run in <$current_vivado_version> of Vivado. Please run the script in Vivado <$scripts_vivado_version> then open the design in Vivado <$current_vivado_version>. Upgrade the design by running \"Tools => Report => Report IP Status...\", then run write_bd_tcl to create an updated script."}
+   catch {common::send_gid_msg -ssname BD::TCL -id 2041 -severity "ERROR" "This script was generated using Vivado <$scripts_vivado_version> and is being run in <$current_vivado_version> of Vivado. Please run the script in Vivado <$scripts_vivado_version> then open the design in Vivado <$current_vivado_version>. Upgrade the design by running \"Tools => Report => Report IP Status...\", then run write_bd_tcl to create an updated script."}
 
    return 1
 }
@@ -76,10 +76,10 @@ if { ${design_name} eq "" } {
    #    4): Current design opened AND is empty AND names diff; design_name exists in project.
 
    if { $cur_design ne $design_name } {
-      common::send_msg_id "BD_TCL-001" "INFO" "Changing value of <design_name> from <$design_name> to <$cur_design> since current design is empty."
+      common::send_gid_msg -ssname BD::TCL -id 2001 -severity "INFO" "Changing value of <design_name> from <$design_name> to <$cur_design> since current design is empty."
       set design_name [get_property NAME $cur_design]
    }
-   common::send_msg_id "BD_TCL-002" "INFO" "Constructing design in IPI design <$cur_design>..."
+   common::send_gid_msg -ssname BD::TCL -id 2002 -severity "INFO" "Constructing design in IPI design <$cur_design>..."
 
 } elseif { ${cur_design} ne "" && $list_cells ne "" && $cur_design eq $design_name } {
    # USE CASES:
@@ -100,19 +100,19 @@ if { ${design_name} eq "" } {
    #    8) No opened design, design_name not in project.
    #    9) Current opened design, has components, but diff names, design_name not in project.
 
-   common::send_msg_id "BD_TCL-003" "INFO" "Currently there is no design <$design_name> in project, so creating one..."
+   common::send_gid_msg -ssname BD::TCL -id 2003 -severity "INFO" "Currently there is no design <$design_name> in project, so creating one..."
 
    create_bd_design $design_name
 
-   common::send_msg_id "BD_TCL-004" "INFO" "Making design <$design_name> as current_bd_design."
+   common::send_gid_msg -ssname BD::TCL -id 2004 -severity "INFO" "Making design <$design_name> as current_bd_design."
    current_bd_design $design_name
 
 }
 
-common::send_msg_id "BD_TCL-005" "INFO" "Currently the variable <design_name> is equal to \"$design_name\"."
+common::send_gid_msg -ssname BD::TCL -id 2005 -severity "INFO" "Currently the variable <design_name> is equal to \"$design_name\"."
 
 if { $nRet != 0 } {
-   catch {common::send_msg_id "BD_TCL-114" "ERROR" $errMsg}
+   catch {common::send_gid_msg -ssname BD::TCL -id 2006 -severity "ERROR" $errMsg}
    return $nRet
 }
 
@@ -136,14 +136,14 @@ proc create_root_design { parentCell } {
   # Get object for parentCell
   set parentObj [get_bd_cells $parentCell]
   if { $parentObj == "" } {
-     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     catch {common::send_gid_msg -ssname BD::TCL -id 2090 -severity "ERROR" "Unable to find parent cell <$parentCell>!"}
      return
   }
 
   # Make sure parentObj is hier blk
   set parentType [get_property TYPE $parentObj]
   if { $parentType ne "hier" } {
-     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     catch {common::send_gid_msg -ssname BD::TCL -id 2091 -severity "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
      return
   }
 
@@ -163,6 +163,8 @@ proc create_root_design { parentCell } {
 
   set I2C [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:iic_rtl:1.0 I2C ]
 
+  set I2S [ create_bd_intf_port -mode Master -vlnv www.kampis-elektroecke.de:Kampis-Elektroecke:I2S_rtl:1.0 I2S ]
+
   set Mute [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 Mute ]
 
   set Switches [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 Switches ]
@@ -174,9 +176,6 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.FREQ_HZ {12286324} \
  ] $MCLK
-  set Tx_LRCLK [ create_bd_port -dir O Tx_LRCLK ]
-  set Tx_SCLK [ create_bd_port -dir O Tx_SCLK ]
-  set Tx_SD [ create_bd_port -dir O Tx_SD ]
 
   # Create instance: AXIS_I2S_Transmitter, and set properties
   set AXIS_I2S_Transmitter [ create_bd_cell -type ip -vlnv www.Kampis-Elektroecke.com:Kampis-Elektroecke:AXIS_I2S_Transmitter:1.0 AXIS_I2S_Transmitter ]
@@ -187,6 +186,7 @@ proc create_root_design { parentCell } {
   # Create instance: ClockingWizard, and set properties
   set ClockingWizard [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 ClockingWizard ]
   set_property -dict [ list \
+   CONFIG.CLKIN1_JITTER_PS {80.0} \
    CONFIG.CLKOUT1_DRIVES {BUFG} \
    CONFIG.CLKOUT1_JITTER {273.836} \
    CONFIG.CLKOUT1_PHASE_ERROR {192.574} \
@@ -200,6 +200,7 @@ proc create_root_design { parentCell } {
    CONFIG.CLK_OUT1_PORT {ClkAudio} \
    CONFIG.MMCM_BANDWIDTH {OPTIMIZED} \
    CONFIG.MMCM_CLKFBOUT_MULT_F {23} \
+   CONFIG.MMCM_CLKIN1_PERIOD {8.000} \
    CONFIG.MMCM_CLKIN2_PERIOD {10.0} \
    CONFIG.MMCM_CLKOUT0_DIVIDE_F {78} \
    CONFIG.MMCM_COMPENSATION {ZHOLD} \
@@ -227,7 +228,7 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.C_ALL_INPUTS {1} \
    CONFIG.C_ALL_INPUTS_2 {1} \
-   CONFIG.C_DOUT_DEFAULT {0x00000006} \
+   CONFIG.C_DOUT_DEFAULT {0x00000000} \
    CONFIG.C_GPIO2_WIDTH {4} \
    CONFIG.C_GPIO_WIDTH {4} \
    CONFIG.C_INTERRUPT_PRESENT {1} \
@@ -638,7 +639,19 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_MIO_9_IOTYPE {LVCMOS 3.3V} \
    CONFIG.PCW_MIO_9_PULLUP {enabled} \
    CONFIG.PCW_MIO_9_SLEW {slow} \
-   CONFIG.PCW_MIO_TREE_PERIPHERALS {GPIO#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#SD 0#SD 0#SD 0#SD 0#SD 0#SD 0#GPIO#SD 0#UART 1#UART 1#GPIO#GPIO#GPIO#GPIO} \
+   CONFIG.PCW_MIO_TREE_PERIPHERALS { \
+     0#GPIO#SD 0#UART \
+     0#SD 0#SD \
+     0#SD 0#SD \
+     1#UART 1#GPIO#GPIO#GPIO#GPIO \
+     Flash#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#SD 0#SD \
+     Flash#Quad SPI \
+     Flash#Quad SPI \
+     Flash#Quad SPI \
+     Flash#Quad SPI \
+     Flash#Quad SPI \
+     GPIO#Quad SPI \
+   } \
    CONFIG.PCW_MIO_TREE_SIGNALS {gpio[0]#qspi0_ss_b#qspi0_io[0]#qspi0_io[1]#qspi0_io[2]#qspi0_io[3]/HOLD_B#qspi0_sclk#gpio[7]#gpio[8]#gpio[9]#gpio[10]#gpio[11]#gpio[12]#gpio[13]#gpio[14]#gpio[15]#gpio[16]#gpio[17]#gpio[18]#gpio[19]#gpio[20]#gpio[21]#gpio[22]#gpio[23]#gpio[24]#gpio[25]#gpio[26]#gpio[27]#gpio[28]#gpio[29]#gpio[30]#gpio[31]#gpio[32]#gpio[33]#gpio[34]#gpio[35]#gpio[36]#gpio[37]#gpio[38]#gpio[39]#clk#cmd#data[0]#data[1]#data[2]#data[3]#gpio[46]#cd#tx#rx#gpio[50]#gpio[51]#gpio[52]#gpio[53]} \
    CONFIG.PCW_NAND_CYCLES_T_AR {1} \
    CONFIG.PCW_NAND_CYCLES_T_CLR {1} \
@@ -898,6 +911,7 @@ proc create_root_design { parentCell } {
   set Reset_ProcessingSystem [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 Reset_ProcessingSystem ]
 
   # Create interface connections
+  connect_bd_intf_net -intf_net AXIS_I2S_Transmitter_I2S [get_bd_intf_ports I2S] [get_bd_intf_pins AXIS_I2S_Transmitter/I2S]
   connect_bd_intf_net -intf_net FIFO_AXI_STR_TXD [get_bd_intf_pins AXIS_I2S_Transmitter/AXIS_RXD] [get_bd_intf_pins FIFO/AXI_STR_TXD]
   connect_bd_intf_net -intf_net Mute_GPIO [get_bd_intf_ports Switches] [get_bd_intf_pins IO/GPIO]
   connect_bd_intf_net -intf_net Mute_GPIO2 [get_bd_intf_ports Buttons] [get_bd_intf_pins IO/GPIO2]
@@ -911,9 +925,6 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net ProcessingSystem_axi_periph_M00_AXI [get_bd_intf_pins FIFO/S_AXI] [get_bd_intf_pins ProcessingSystem_AXILite/M00_AXI]
 
   # Create port connections
-  connect_bd_net -net AXIS_I2S_Transmitter_0_LRCLK [get_bd_ports Tx_LRCLK] [get_bd_pins AXIS_I2S_Transmitter/LRCLK]
-  connect_bd_net -net AXIS_I2S_Transmitter_0_SCLK [get_bd_ports Tx_SCLK] [get_bd_pins AXIS_I2S_Transmitter/SCLK]
-  connect_bd_net -net AXIS_I2S_Transmitter_0_SD [get_bd_ports Tx_SD] [get_bd_pins AXIS_I2S_Transmitter/SD]
   connect_bd_net -net ClockingWizard_ClkAudio [get_bd_ports MCLK] [get_bd_pins AXIS_I2S_Transmitter/MCLK] [get_bd_pins ClockingWizard/ClkAudio] [get_bd_pins Reset_Audio/slowest_sync_clk]
   connect_bd_net -net ClockingWizard_locked [get_bd_pins ClockingWizard/locked] [get_bd_pins Reset_Audio/dcm_locked]
   connect_bd_net -net Concat_Interrupt_dout [get_bd_pins Concat_Interrupt/dout] [get_bd_pins ProcessingSystem/IRQ_F2P]
