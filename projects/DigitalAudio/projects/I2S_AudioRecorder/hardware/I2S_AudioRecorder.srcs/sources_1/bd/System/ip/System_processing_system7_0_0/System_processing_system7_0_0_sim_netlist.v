@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Fri Jul 23 21:55:33 2021
+// Date        : Sun Jul 25 21:29:53 2021
 // Host        : PC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top System_processing_system7_0_0 -prefix
-//               System_processing_system7_0_0_ System_processing_system7_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.srcs/sources_1/bd/System/ip/System_processing_system7_0_0/System_processing_system7_0_0_sim_netlist.v
 // Design      : System_processing_system7_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -1392,8 +1392,8 @@ endmodule
 (* C_USE_DEFAULT_ACP_USER_VAL = "0" *) (* C_USE_M_AXI_GP0 = "1" *) (* C_USE_M_AXI_GP1 = "0" *) 
 (* C_USE_S_AXI_ACP = "0" *) (* C_USE_S_AXI_GP0 = "1" *) (* C_USE_S_AXI_GP1 = "0" *) 
 (* C_USE_S_AXI_HP0 = "0" *) (* C_USE_S_AXI_HP1 = "0" *) (* C_USE_S_AXI_HP2 = "0" *) 
-(* C_USE_S_AXI_HP3 = "0" *) (* HW_HANDOFF = "System_processing_system7_0_0.hwdef" *) (* POWER = "<PROCESSOR name={system} numA9Cores={2} clockFreq={650.000000} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={32} clockFreq={525.000000} readRate={0.5} writeRate={0.5} /><IO interface={UART} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS18} bidis={7} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS33} bidis={6} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={1300.000} /><PLL domain={Memory} vco={1050.000} /><PLL domain={IO} vco={1600.000} /><AXI interface={S_AXI_GP0} dataWidth={32} clockFreq={100.0} usageRate={0.5} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={100.0} usageRate={0.5} />/>" *) 
-(* USE_TRACE_DATA_EDGE_DETECTOR = "0" *) 
+(* C_USE_S_AXI_HP3 = "0" *) (* HW_HANDOFF = "System_processing_system7_0_0.hwdef" *) (* ORIG_REF_NAME = "processing_system7_v5_5_processing_system7" *) 
+(* POWER = "<PROCESSOR name={system} numA9Cores={2} clockFreq={650.000000} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={32} clockFreq={525.000000} readRate={0.5} writeRate={0.5} /><IO interface={UART} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS18} bidis={7} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS33} bidis={6} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={1300.000} /><PLL domain={Memory} vco={1050.000} /><PLL domain={IO} vco={1600.000} /><AXI interface={S_AXI_GP0} dataWidth={32} clockFreq={100.0} usageRate={0.5} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={100.0} usageRate={0.5} />/>" *) (* USE_TRACE_DATA_EDGE_DETECTOR = "0" *) 
 module System_processing_system7_0_0_processing_system7_v5_5_processing_system7
    (CAN0_PHY_TX,
     CAN0_PHY_RX,

@@ -41,8 +41,10 @@
  u32 AudioRecorder_Init(void);
 
  /** @brief
-  *  @return
+  *  @param Path	Output file path
+  *  @param Packets	Packet count to record
+  *  @return		Error code
   */
- u32 AudioRecorder_RecordFrame(void);
+ u32 AudioRecorder_Record(const char* Path, u32 Packets);
 
 #endif /* AUDIORECORDER_H_ */

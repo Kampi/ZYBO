@@ -3,7 +3,7 @@
  *
  *  Copyright (C) Daniel Kampert, 2020
  *  Website: www.kampis-elektroecke.de
- *  File info: Wave file format definitions for the I2S audio player project.
+ *  File info: Wave file format definitions.
 
   GNU GENERAL PUBLIC LICENSE:
   This program is free software: you can redistribute it and/or modify
@@ -23,7 +23,7 @@
  */
 
 /** @file AudioPlayer/SD/Wave/Wave.h
- *  @brief Wave file format definitions for the I2S audio player project.
+ *  @brief Wave file format definitions.
  *
  *  @author Daniel Kampert
  *  @bug No known bugs
@@ -40,7 +40,7 @@
  {
      WAVE_FORMAT_UNKNOWN = 0x00,		/**< Unknown audio format */
 	 WAVE_FORMAT_PCM	 = 0x01,		/**< PCM format */
- } SD_CardType_t;
+ } Wave_Format_t;
 
  /** @brief Wave file chunk header.
   *			NOTE: Please check http://soundfile.sapp.org/doc/WaveFormat if you need additional information.
@@ -69,11 +69,11 @@
 	 uint16_t AudioFormat;				/**< PCM = 1 (i.e. Linear quantization). Values other than 1 indicate some form of compression. */
 	 uint16_t NumChannels;				/**< Mono = 1, Stereo = 2, etc. */
 	 uint32_t SampleRate;				/**< 8000, 44100, etc. */
-	 uint32_t ByteRate;        			/**< \ref Wave_Format_t.ByteRate = \ref Wave_Format_t.SampleRate * \ref Wave_Format_t.NumChannels * \ref Wave_Format_t.BitsPerSample / 8 */
-	 uint16_t BlockAlign;		       	/**< \ref Wave_Format_t.BlockAlign = \ref Wave_Format_t.NumChannels * \ref Wave_Format_t.BitsPerSample / 8
+	 uint32_t ByteRate;        			/**< \ref Wave_FMT_t.ByteRate = \ref Wave_FMT_t.SampleRate * \ref Wave_FMT_t.NumChannels * \ref Wave_FMT_t.BitsPerSample / 8 */
+	 uint16_t BlockAlign;		       	/**< \ref Wave_FMT_t.BlockAlign = \ref Wave_FMT_t.NumChannels * \ref Wave_FMT_t.BitsPerSample / 8
              	 	 	 	 	 	 	 	 The number of bytes for one sample including all channels. */
 	 uint16_t BitsPerSample;			/**< 8 bits = 8, 16 bits = 16, etc. */
- } __attribute__((packed)) Wave_Format_t;
+ } __attribute__((packed)) Wave_FMT_t;
 
  /** @brief Wave file list chunk.
   *			NOTE: Please check https://www.recordingblogs.com/wiki/list-chunk-of-a-wave-file if you need additional information.

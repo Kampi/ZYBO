@@ -100,7 +100,7 @@ u32 SD_LoadFileFromCard(const char* FileName, Wave_t* File)
 		return XST_FAILURE;
 	}
 
-	if(f_read(&_FileHandle, &File->RIFF, sizeof(Wave_RIFF_t), &_BytesRead) || f_read(&_FileHandle, &File->Format, sizeof(Wave_Format_t), &_BytesRead))
+	if(f_read(&_FileHandle, &File->RIFF, sizeof(Wave_RIFF_t), &_BytesRead) || f_read(&_FileHandle, &File->Format, sizeof(Wave_FMT_t), &_BytesRead))
 	{
 		xil_printf("[ERROR] Can not read SD card!\n\r");
 		return XST_FAILURE;
@@ -108,7 +108,7 @@ u32 SD_LoadFileFromCard(const char* FileName, Wave_t* File)
 
 	// Read the next header name
 	Wave_Header_t Header;
-	uint32_t Offset = sizeof(Wave_RIFF_t) + sizeof(Wave_Format_t);
+	uint32_t Offset = sizeof(Wave_RIFF_t) + sizeof(Wave_FMT_t);
 	if(f_read(&_FileHandle, Header.ChunkID, sizeof(Wave_Header_t), &_BytesRead) || f_lseek(&_FileHandle, Offset))
 	{
 		xil_printf("[ERROR] Can not read SD card!\n\r");
@@ -132,12 +132,6 @@ u32 SD_LoadFileFromCard(const char* FileName, Wave_t* File)
 	if(f_read(&_FileHandle, &File->DataHeader, sizeof(Wave_Header_t), &_BytesRead))
 	{
 		xil_printf("[ERROR] Can not read SD card!\n\r");
-		return XST_FAILURE;
-	}
-
-	if(File->Format.AudioFormat != WAVE_FORMAT_PCM)
-	{
-		xil_printf("[ERROR] Audio format not supported! Keep sure that the file use the PCM format!\n\r");
 		return XST_FAILURE;
 	}
 

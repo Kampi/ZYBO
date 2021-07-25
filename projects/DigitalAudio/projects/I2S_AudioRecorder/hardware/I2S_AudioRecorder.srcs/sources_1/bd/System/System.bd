@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xD7F43A0DEC25A923",
+      "boundary_crc": "0x88DD8119FEF5F557",
       "device": "xc7z010clg400-1",
       "name": "System",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
@@ -27,8 +27,8 @@
         }
       },
       "AXI_DMA": "",
-      "VIO": "",
-      "AXIS_I2S_Receiver": ""
+      "AXIS_I2S_Receiver": "",
+      "Buttons": ""
     },
     "interface_ports": {
       "DDR": {
@@ -98,6 +98,10 @@
       "I2S": {
         "mode": "Slave",
         "vlnv": "www.kampis-elektroecke.de:Kampis-Elektroecke:I2S_rtl:1.0"
+      },
+      "Buttons": {
+        "mode": "Master",
+        "vlnv": "xilinx.com:interface:gpio_rtl:1.0"
       }
     },
     "ports": {
@@ -124,6 +128,9 @@
             "value": "0.0"
           }
         }
+      },
+      "Enable": {
+        "direction": "I"
       }
     },
     "components": {
@@ -1478,16 +1485,16 @@
               }
             },
             "interface_nets": {
-              "s00_couplers_to_auto_pc": {
-                "interface_ports": [
-                  "S_AXI",
-                  "auto_pc/S_AXI"
-                ]
-              },
               "auto_pc_to_s00_couplers": {
                 "interface_ports": [
                   "M_AXI",
                   "auto_pc/M_AXI"
+                ]
+              },
+              "s00_couplers_to_auto_pc": {
+                "interface_ports": [
+                  "S_AXI",
+                  "auto_pc/S_AXI"
                 ]
               }
             },
@@ -1616,24 +1623,6 @@
           }
         },
         "interface_nets": {
-          "xbar_to_m00_couplers": {
-            "interface_ports": [
-              "xbar/M00_AXI",
-              "m00_couplers/S_AXI"
-            ]
-          },
-          "m01_couplers_to_ProcessingSystem_AXILite": {
-            "interface_ports": [
-              "M01_AXI",
-              "m01_couplers/M_AXI"
-            ]
-          },
-          "xbar_to_m01_couplers": {
-            "interface_ports": [
-              "xbar/M01_AXI",
-              "m01_couplers/S_AXI"
-            ]
-          },
           "ProcessingSystem_AXILite_to_s00_couplers": {
             "interface_ports": [
               "S00_AXI",
@@ -1650,6 +1639,24 @@
             "interface_ports": [
               "M00_AXI",
               "m00_couplers/M_AXI"
+            ]
+          },
+          "m01_couplers_to_ProcessingSystem_AXILite": {
+            "interface_ports": [
+              "M01_AXI",
+              "m01_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m00_couplers": {
+            "interface_ports": [
+              "xbar/M00_AXI",
+              "m00_couplers/S_AXI"
+            ]
+          },
+          "xbar_to_m01_couplers": {
+            "interface_ports": [
+              "xbar/M01_AXI",
+              "m01_couplers/S_AXI"
             ]
           }
         },
@@ -1915,60 +1922,33 @@
           }
         }
       },
-      "VIO": {
-        "vlnv": "xilinx.com:ip:vio:3.0",
-        "xci_name": "System_vio_0_0",
-        "parameters": {
-          "C_NUM_PROBE_IN": {
-            "value": "0"
-          }
-        }
-      },
       "AXIS_I2S_Receiver": {
         "vlnv": "www.kampis-elektroecke.de:Kampis-Elektroecke:AXIS_I2S_Receiver:1.0",
         "xci_name": "System_AXIS_I2S_Receiver_0_0",
         "parameters": {
           "LENGTH": {
-            "value": "256"
+            "value": "512"
+          }
+        }
+      },
+      "Buttons": {
+        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
+        "xci_name": "System_axi_gpio_0_0",
+        "parameters": {
+          "C_ALL_INPUTS": {
+            "value": "1"
+          },
+          "C_GPIO_WIDTH": {
+            "value": "4"
           }
         }
       }
     },
     "interface_nets": {
-      "I2S_0_1": {
-        "interface_ports": [
-          "I2S",
-          "AXIS_I2S_Receiver/I2S"
-        ]
-      },
-      "AXIS_I2S_Receiver_AXIS_TXD": {
-        "interface_ports": [
-          "AXIS_I2S_Receiver/AXIS_TXD",
-          "AXI_DMA/S_AXIS_S2MM"
-        ]
-      },
-      "AXI_DMA_M_AXI_S2MM": {
-        "interface_ports": [
-          "AXI_DMA/M_AXI_S2MM",
-          "ProcessingSystem_AXI/S00_AXI"
-        ]
-      },
-      "ProcessingSystem_M_AXI_GP0": {
-        "interface_ports": [
-          "ProcessingSystem/M_AXI_GP0",
-          "ProcessingSystem_AXILite/S00_AXI"
-        ]
-      },
       "ProcessingSystem_AXILite_M00_AXI": {
         "interface_ports": [
           "ProcessingSystem_AXILite/M00_AXI",
           "AXI_DMA/S_AXI_LITE"
-        ]
-      },
-      "ProcessingSystem_DDR": {
-        "interface_ports": [
-          "DDR",
-          "ProcessingSystem/DDR"
         ]
       },
       "ProcessingSystem_FIXED_IO": {
@@ -1977,10 +1957,52 @@
           "ProcessingSystem/FIXED_IO"
         ]
       },
+      "AXI_DMA_M_AXI_S2MM": {
+        "interface_ports": [
+          "AXI_DMA/M_AXI_S2MM",
+          "ProcessingSystem_AXI/S00_AXI"
+        ]
+      },
+      "AXIS_I2S_Receiver_AXIS_TXD": {
+        "interface_ports": [
+          "AXIS_I2S_Receiver/AXIS_TXD",
+          "AXI_DMA/S_AXIS_S2MM"
+        ]
+      },
+      "Buttons_GPIO": {
+        "interface_ports": [
+          "Buttons",
+          "Buttons/GPIO"
+        ]
+      },
+      "ProcessingSystem_AXILite_M01_AXI": {
+        "interface_ports": [
+          "ProcessingSystem_AXILite/M01_AXI",
+          "Buttons/S_AXI"
+        ]
+      },
+      "ProcessingSystem_M_AXI_GP0": {
+        "interface_ports": [
+          "ProcessingSystem/M_AXI_GP0",
+          "ProcessingSystem_AXILite/S00_AXI"
+        ]
+      },
+      "I2S_0_1": {
+        "interface_ports": [
+          "I2S",
+          "AXIS_I2S_Receiver/I2S"
+        ]
+      },
       "axi_mem_intercon_M00_AXI": {
         "interface_ports": [
           "ProcessingSystem_AXI/M00_AXI",
           "ProcessingSystem/S_AXI_GP0"
+        ]
+      },
+      "ProcessingSystem_DDR": {
+        "interface_ports": [
+          "DDR",
+          "ProcessingSystem/DDR"
         ]
       }
     },
@@ -2013,8 +2035,8 @@
           "ProcessingSystem_AXI/ACLK",
           "AXI_DMA/m_axi_s2mm_aclk",
           "AXI_DMA/s_axi_lite_aclk",
-          "VIO/clk",
-          "AXIS_I2S_Receiver/ACLK"
+          "AXIS_I2S_Receiver/ACLK",
+          "Buttons/s_axi_aclk"
         ]
       },
       "Reset_ProcessingSystem_peripheral_aresetn": {
@@ -2028,7 +2050,8 @@
           "ProcessingSystem_AXI/M00_ARESETN",
           "ProcessingSystem_AXI/ARESETN",
           "AXI_DMA/axi_resetn",
-          "AXIS_I2S_Receiver/ARESETn"
+          "AXIS_I2S_Receiver/ARESETn",
+          "Buttons/s_axi_aresetn"
         ]
       },
       "MCLK_0_1": {
@@ -2044,9 +2067,9 @@
           "ProcessingSystem/IRQ_F2P"
         ]
       },
-      "VIO_probe_out0": {
+      "Enable_0_1": {
         "ports": [
-          "VIO/probe_out0",
+          "Enable",
           "AXIS_I2S_Receiver/Enable"
         ]
       }
@@ -2059,6 +2082,11 @@
               "SEG_AXI_DMA_Reg": {
                 "address_block": "/AXI_DMA/S_AXI_LITE/Reg",
                 "offset": "0x40400000",
+                "range": "64K"
+              },
+              "SEG_Buttons_Reg": {
+                "address_block": "/Buttons/S_AXI/Reg",
+                "offset": "0x41200000",
                 "range": "64K"
               }
             }

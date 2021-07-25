@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
---Date        : Fri Jul 23 20:49:09 2021
+--Date        : Sun Jul 25 22:08:28 2021
 --Host        : PC running 64-bit major release  (build 9200)
 --Command     : generate_target System_wrapper.bd
 --Design      : System_wrapper
@@ -38,12 +38,12 @@ entity System_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     I2C_scl_io : inout STD_LOGIC;
     I2C_sda_io : inout STD_LOGIC;
+    I2S_lrclk : out STD_LOGIC;
+    I2S_sclk : out STD_LOGIC;
+    I2S_sd : out STD_LOGIC;
     MCLK : out STD_LOGIC;
     Mute_tri_io : inout STD_LOGIC_VECTOR ( 1 downto 0 );
-    Switches_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    Tx_LRCLK : out STD_LOGIC;
-    Tx_SCLK : out STD_LOGIC;
-    Tx_SD : out STD_LOGIC
+    Switches_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
 end System_wrapper;
 
@@ -51,21 +51,7 @@ architecture STRUCTURE of System_wrapper is
   component System is
   port (
     Clock125 : in STD_LOGIC;
-    Tx_LRCLK : out STD_LOGIC;
-    Tx_SCLK : out STD_LOGIC;
-    Tx_SD : out STD_LOGIC;
     MCLK : out STD_LOGIC;
-    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
-    FIXED_IO_ddr_vrn : inout STD_LOGIC;
-    FIXED_IO_ddr_vrp : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC;
-    FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC;
-    Mute_tri_i : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Mute_tri_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    Mute_tri_t : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    Switches_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    Buttons_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
     I2C_sda_i : in STD_LOGIC;
     I2C_sda_o : out STD_LOGIC;
     I2C_sda_t : out STD_LOGIC;
@@ -86,7 +72,21 @@ architecture STRUCTURE of System_wrapper is
     DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 )
+    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    Mute_tri_i : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    Mute_tri_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    Mute_tri_t : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+    FIXED_IO_ddr_vrn : inout STD_LOGIC;
+    FIXED_IO_ddr_vrp : inout STD_LOGIC;
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    FIXED_IO_ps_clk : inout STD_LOGIC;
+    FIXED_IO_ps_porb : inout STD_LOGIC;
+    Buttons_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    Switches_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    I2S_sclk : out STD_LOGIC;
+    I2S_lrclk : out STD_LOGIC;
+    I2S_sd : out STD_LOGIC
   );
   end component System;
   component IOBUF is
@@ -171,6 +171,9 @@ System_i: component System
       I2C_sda_i => I2C_sda_i,
       I2C_sda_o => I2C_sda_o,
       I2C_sda_t => I2C_sda_t,
+      I2S_lrclk => I2S_lrclk,
+      I2S_sclk => I2S_sclk,
+      I2S_sd => I2S_sd,
       MCLK => MCLK,
       Mute_tri_i(1) => Mute_tri_i_1(1),
       Mute_tri_i(0) => Mute_tri_i_0(0),
@@ -178,9 +181,6 @@ System_i: component System
       Mute_tri_o(0) => Mute_tri_o_0(0),
       Mute_tri_t(1) => Mute_tri_t_1(1),
       Mute_tri_t(0) => Mute_tri_t_0(0),
-      Switches_tri_i(3 downto 0) => Switches_tri_i(3 downto 0),
-      Tx_LRCLK => Tx_LRCLK,
-      Tx_SCLK => Tx_SCLK,
-      Tx_SD => Tx_SD
+      Switches_tri_i(3 downto 0) => Switches_tri_i(3 downto 0)
     );
 end STRUCTURE;

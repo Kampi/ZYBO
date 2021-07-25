@@ -47,9 +47,15 @@ int main(void)
 		return XST_FAILURE;
 	}
 
+	if(AudioRecorder_Record("Record.wav", 50) != XST_SUCCESS)
+	{
+		xil_printf("[ERROR] Can not record audio file!");
+	}
+
+	xil_printf("[INFO] Finish!\n\r");
+
 	while(1)
 	{
-		AudioRecorder_RecordFrame();
 	}
 
 	return XST_SUCCESS;

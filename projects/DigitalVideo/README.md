@@ -1,4 +1,4 @@
-# Digital Video signal processing
+# Digital video processing
 
 ## Table of Contents
 

@@ -6,10 +6,11 @@
 #include "nrf_log_ctrl.h"
 #include "nrf_log_default_backends.h"
 
+#include "math.h"
+
 #define I2S_DATA_BLOCK_WORDS    128
 
-static uint32_t Offset = 0;
-static uint32_t Tx_Buffer[2][I2S_DATA_BLOCK_WORDS];
+static uint32_t Tx_Buffer[I2S_DATA_BLOCK_WORDS];
 
 static volatile uint32_t* NextBlock = NULL;
 
@@ -35,12 +36,12 @@ static void DataHandler(nrf_drv_i2s_buffers_t const* p_released, uint32_t status
     if (!p_released->p_rx_buffer)
     {
         nrf_drv_i2s_buffers_t const NextBuffer = {
-            .p_tx_buffer = Tx_Buffer[1],
+            .p_tx_buffer = Tx_Buffer,
 	    .p_rx_buffer = NULL,
         };
         APP_ERROR_CHECK(nrf_drv_i2s_next_buffers_set(&NextBuffer));
 
-        NextBlock = Tx_Buffer[1];
+        NextBlock = Tx_Buffer;
     }
     else
     {
@@ -53,7 +54,16 @@ static void DataHandler(nrf_drv_i2s_buffers_t const* p_released, uint32_t status
         // modify the content it is pointing to (it is marked in the structure
         // as pointing to constant data because the driver is not supposed to
         // modify the provided data).
-        NextBlock = (uint32_t *)p_released->p_tx_buffer;
+        NextBlock = (uint32_t*)p_released->p_tx_buffer;
+    }
+}
+
+static void FillBuffer(volatile uint32_t* Buffer)
+{
+    for(uint32_t i = 0x00; i < I2S_DATA_BLOCK_WORDS; i++)
+    {
+	int16_t Sample = (int16_t)(32768 * sin(2.0 * 3.14 * (double)i / ((double)I2S_DATA_BLOCK_WORDS)));
+	Buffer[i] = (uint32_t)(0x0000 | (Sample & 0xFFFF));
     }
 }
 
@@ -61,7 +71,7 @@ int main(void)
 {
     APP_ERROR_CHECK(NRF_LOG_INIT(NULL));
     NRF_LOG_DEFAULT_BACKENDS_INIT();
-    NRF_LOG_INFO("I2S-Sender started...");
+    NRF_LOG_INFO("I2S sender started...");
 
     nrf_drv_i2s_config_t I2S_Config = NRF_DRV_I2S_DEFAULT_CONFIG;
     I2S_Config.sdin_pin	    = NRFX_I2S_PIN_NOT_USED;
@@ -74,13 +84,10 @@ int main(void)
     I2S_Config.channels	    = NRF_I2S_CHANNELS_STEREO;
     APP_ERROR_CHECK(nrf_drv_i2s_init(&I2S_Config, DataHandler));
 
-    for(uint32_t i = 0x00; i < I2S_DATA_BLOCK_WORDS; i++)
-    {
-	Tx_Buffer[0][i] = Offset + i;
-    }
+    FillBuffer(Tx_Buffer);
 
     nrf_drv_i2s_buffers_t const InitialBuffer = {
-	.p_tx_buffer = Tx_Buffer[0],
+	.p_tx_buffer = Tx_Buffer,
         .p_rx_buffer = NULL,
     };
     APP_ERROR_CHECK(nrf_drv_i2s_start(&InitialBuffer, I2S_DATA_BLOCK_WORDS, 0));
@@ -93,19 +100,7 @@ int main(void)
 
 	if(NextBlock)
 	{
-	    for(uint32_t i = 0x00; i < I2S_DATA_BLOCK_WORDS; i++)
-	    {
-		NextBlock[i] = Offset + i;
-	    }
-
-	    if((Offset + I2S_DATA_BLOCK_WORDS) < 0xFFFF)
-	    {
-		//Offset += I2S_DATA_BLOCK_WORDS;
-	    }
-	    else
-	    {
-		Offset = 0x00;
-	    }
+	    FillBuffer(NextBlock);
 
             NextBlock = NULL;
         }

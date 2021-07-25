@@ -28,33 +28,32 @@
  *  @author Daniel Kampert
  */
 
+#include "xgpio.h"
 #include "xaxidma.h"
 #include "xscugic.h"
 #include "xstatus.h"
 #include "xparameters.h"
 #include "xil_exception.h"
 
+#include "SD/SD.h"
 #include "AudioRecorder.h"
 
 /** @brief	AXI-Stream transmission length settings of the I2S IP-core.
  */
-#define TRANSMISSION_LENGTH			256
+#define WORDS_PER_TRANSMISSION			512
 
 /** @brief
  */
-struct
-{
-	u32 Rx1[TRANSMISSION_LENGTH];
-	u32 Rx2[TRANSMISSION_LENGTH];
-} Dma_RxBuffers __attribute__((section(".data")));
+static u32 DmaBuffer[WORDS_PER_TRANSMISSION] __attribute__((section(".data")));
+
+static XGpio_Config* _Gpio_ConfigPtr;
+static XGpio _Gpio;
 
 static XAxiDma_Config* _Dma_ConfigPtr;
 static XAxiDma _Dma;
 
 static XScuGic_Config* _GIC_ConfigPtr;
 static XScuGic _GIC;
-
-static volatile u32* NextBuffer;
 
 static bool _RxComplete = false;
 
@@ -81,17 +80,6 @@ static void AudioRecorder_DmaRxHandler(void* CallbackRef)
 	}
 	else if((IRQ & XAXIDMA_IRQ_IOC_MASK))
 	{
-		xil_printf("Complete!\n\r");
-
-		if(NextBuffer == Dma_RxBuffers.Rx1)
-		{
-			NextBuffer = (u32*)Dma_RxBuffers.Rx2;
-		}
-		else
-		{
-			NextBuffer = (u32*)Dma_RxBuffers.Rx1;
-		}
-
 		_RxComplete = true;
 	}
 }
@@ -150,57 +138,59 @@ u32 AudioRecorder_Init(void)
 	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT, (Xil_ExceptionHandler)XScuGic_InterruptHandler, &_GIC);
 	Xil_ExceptionEnable();
 
-	NextBuffer = (u32*)Dma_RxBuffers.Rx1;
-	u32 Status = XAxiDma_SimpleTransfer(&_Dma, (UINTPTR)NextBuffer, TRANSMISSION_LENGTH * sizeof(u32), XAXIDMA_DEVICE_TO_DMA);
-	if(Status != XST_SUCCESS)
+	// Initialize the SD card
+	xil_printf("[INFO] Mount SD card...\r\n");
+	if(SD_Init())
 	{
-		xil_printf("[ERROR] Transmission failed!\n\r");
+		xil_printf("[ERROR] Can not initialize SD card!\n\r");
 		return XST_FAILURE;
 	}
 
 	return XST_SUCCESS;
 }
 
-u32 AudioRecorder_RecordFrame(void)
+u32 AudioRecorder_Record(const char* Path, u32 Packets)
 {
-	if(_RxComplete)
+	if(SD_CreateWave(Path) != XST_SUCCESS)
 	{
-		_RxComplete = false;
+		return XST_FAILURE;
+	}
 
-		if(_PacketCounter == 1)
+	if(XAxiDma_SimpleTransfer(&_Dma, (UINTPTR)DmaBuffer, WORDS_PER_TRANSMISSION * sizeof(u32), XAXIDMA_DEVICE_TO_DMA) != XST_SUCCESS)
+	{
+		return XST_FAILURE;
+	}
+
+	while(_PacketCounter < Packets)
+	{
+		if(_RxComplete)
 		{
-			for(u32 i = 0x00; i < TRANSMISSION_LENGTH; i = i + 8)
+			_RxComplete = false;
+
+			Xil_DCacheFlushRange((UINTPTR)DmaBuffer, WORDS_PER_TRANSMISSION * sizeof(u32));
+
+			xil_printf("Packet %u / %u complete...\n\r", ++_PacketCounter, Packets);
+
+			/*
+			for(u32 i = 0x00; i < WORDS_PER_TRANSMISSION; i = i + 0x08)
 			{
-				for(u32 j = 0x00; j < 8; j++)
+				for(u32 j = 0x00; j < 0x08; j++)
 				{
 					xil_printf("Data %u: 0x%08x\t", i + j, Dma_RxBuffers.Rx1[i + j]);
 				}
 
 				xil_printf("\n\r");
-			}
+			}*/
 
-			for(u32 i = 0x00; i < TRANSMISSION_LENGTH; i = i + 8)
-			{
-				for(u32 j = 0x00; j < 8; j++)
-				{
-					xil_printf("Data %u: 0x%08x\t", i + j, Dma_RxBuffers.Rx2[i + j]);
-				}
-
-				xil_printf("\n\r");
-			}
-
-			for(u32 i = 0x00; i < 0xFFFFFFFF; i++);
-		}
-		else
-		{
-			_PacketCounter++;
-
-			if(XAxiDma_SimpleTransfer(&_Dma, (UINTPTR)NextBuffer, TRANSMISSION_LENGTH * sizeof(u32), XAXIDMA_DEVICE_TO_DMA) != XST_SUCCESS)
+			if(XAxiDma_SimpleTransfer(&_Dma, (UINTPTR)DmaBuffer, WORDS_PER_TRANSMISSION * sizeof(u32), XAXIDMA_DEVICE_TO_DMA) != XST_SUCCESS)
 			{
 				return XST_FAILURE;
 			}
+
+			// Copy the data into the wave file
+			SD_AddSamples(DmaBuffer, WORDS_PER_TRANSMISSION);
 		}
 	}
 
-	return XST_SUCCESS;
+	return SD_CloseWave();
 }

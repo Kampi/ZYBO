@@ -119,7 +119,7 @@ BEGIN
     GENERIC MAP (
       RATIO => 8,
       WIDTH => 16,
-      LENGTH => 256
+      LENGTH => 512
     )
     PORT MAP (
       Enable => Enable,

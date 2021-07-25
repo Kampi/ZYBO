@@ -233,6 +233,29 @@
 
 /******************************************************************/
 
+/* Definitions for driver GPIO */
+#define XPAR_XGPIO_NUM_INSTANCES 1
+
+/* Definitions for peripheral BUTTONS */
+#define XPAR_BUTTONS_BASEADDR 0x41200000
+#define XPAR_BUTTONS_HIGHADDR 0x4120FFFF
+#define XPAR_BUTTONS_DEVICE_ID 0
+#define XPAR_BUTTONS_INTERRUPT_PRESENT 0
+#define XPAR_BUTTONS_IS_DUAL 0
+
+
+/******************************************************************/
+
+/* Canonical definitions for peripheral BUTTONS */
+#define XPAR_GPIO_0_BASEADDR 0x41200000
+#define XPAR_GPIO_0_HIGHADDR 0x4120FFFF
+#define XPAR_GPIO_0_DEVICE_ID XPAR_BUTTONS_DEVICE_ID
+#define XPAR_GPIO_0_INTERRUPT_PRESENT 0
+#define XPAR_GPIO_0_IS_DUAL 0
+
+
+/******************************************************************/
+
 /* Definitions for driver QSPIPS */
 #define XPAR_XQSPIPS_NUM_INSTANCES 1
 
@@ -403,4 +426,12 @@
 
 /******************************************************************/
 
+/* Xilinx FAT File System Library (XilFFs) User Settings */
+#define FILE_SYSTEM_INTERFACE_SD
+#define FILE_SYSTEM_USE_LFN 1
+#define FILE_SYSTEM_USE_MKFS
+#define FILE_SYSTEM_NUM_LOGIC_VOL 2
+#define FILE_SYSTEM_USE_STRFUNC 0
+#define FILE_SYSTEM_SET_FS_RPATH 0
+#define FILE_SYSTEM_WORD_ACCESS
 #endif  /* end of protection macro */

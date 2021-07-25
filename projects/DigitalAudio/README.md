@@ -1,4 +1,4 @@
-# Digital Audio signal processing
+# Digital audio processing
 
 ## Table of Contents
 
@@ -23,7 +23,7 @@ Please check write an e-mail to [DanielKampert@kampis-elektroecke.de](DanielKamp
   - The AXI-Stream I2S receiver from the [ ]() tutorial part.
 - **hls** - The Vivado HSL project for the digital filter.
 - **ip_project** - Directory for the IP core projects.
-- **samples** - Some audio samples as wave files.
+- **samples** - Different audio samples for the project.
 - **nordic** - I2S master project for developing purposes.
 - **projects** - Contains the different subprojects.
  - **I2S_AudioPlayer** - Yes, that´s what you think. Use the AXI-Stream I2S transmitter to create a simple audio player for your ZYNQ. Complete project from the [third](https://www.kampis-elektroecke.de/fpga/digitale-audioverarbeitung/abspielen-von-wave-dateien/) tutorial part.
@@ -34,6 +34,7 @@ Please check write an e-mail to [DanielKampert@kampis-elektroecke.de](DanielKamp
  - **I2S_Receiver** - The source code for the [I2S receiver project](https://www.kampis-elektroecke.de/fpga/digitale-audioverarbeitung/design-des-i2s-empfaengers/). This project uses a nRF52 based SoC as I2S master for data generation.
 - **Signals.xlsx** - Excel sheet to calculate the values for a sine wave C array.
 - **AudioGenerator.py** - Python application to generate new samples.
+- **AudioInspector.py** - Python application to analyze and visualize wave files.
 
 ## Samples
 
@@ -43,6 +44,7 @@ Please check write an e-mail to [DanielKampert@kampis-elektroecke.de](DanielKamp
 | Single_Right.wav | A single sine wave with a frequency of 1 kHz, a sampling rate of 44.1 kHz, a voltage level of -6 dBFs and a duration of 1 s for the right audio channel. |
 | Dual.wav | Two independent sine waves with a frequency of 1 kHz (right) and 1.5 kHz (left), a sampling rate of 44.1 kHz, a voltage level of -6 dBFs and a duration of 1 s. |
 | Mixed.wav | A 8 kHz carrier which is modulated with a 10 kHz signal to create a 2 kHz signal with a 18 kHz distortion. The signal has a duration of 3 s for the right audio channel and is sampled at a rate of 48 kHz at a voltage level of 0 dBFs. |
+| SineWave.coe | Memory initialization file with sine wave data for the I2S transmitter example project. |
 
 ## Maintainer
 

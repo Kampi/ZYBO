@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Sat Jul 24 20:44:08 2021
+// Date        : Sun Jul 25 21:45:58 2021
 // Host        : PC running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               h:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.srcs/sources_1/bd/System/ip/System_AXIS_I2S_Receiver_0_0/System_AXIS_I2S_Receiver_0_0_sim_netlist.v
@@ -128,6 +128,7 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S_Receiver
   wire WordCounter1_carry__0_i_2_n_0;
   wire WordCounter1_carry__0_i_3_n_0;
   wire WordCounter1_carry__0_i_4_n_0;
+  wire WordCounter1_carry__0_i_5_n_0;
   wire WordCounter1_carry__0_n_0;
   wire WordCounter1_carry__0_n_1;
   wire WordCounter1_carry__0_n_2;
@@ -633,7 +634,7 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S_Receiver
         .I5(TLAST_TXD_INST_0_i_7_n_0),
         .O(TLAST_TXD_INST_0_i_4_n_0));
   LUT6 #(
-    .INIT(64'h0000000000000001)) 
+    .INIT(64'h0000000000000010)) 
     TLAST_TXD_INST_0_i_5
        (.I0(WordCounter_reg[10]),
         .I1(WordCounter_reg[11]),
@@ -667,33 +668,39 @@ module System_AXIS_I2S_Receiver_0_0_AXIS_I2S_Receiver
        (.CI(WordCounter1_carry_n_0),
         .CO({WordCounter1_carry__0_n_0,WordCounter1_carry__0_n_1,WordCounter1_carry__0_n_2,WordCounter1_carry__0_n_3}),
         .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .DI({1'b0,1'b0,1'b0,WordCounter1_carry__0_i_1_n_0}),
         .O(NLW_WordCounter1_carry__0_O_UNCONNECTED[3:0]),
-        .S({WordCounter1_carry__0_i_1_n_0,WordCounter1_carry__0_i_2_n_0,WordCounter1_carry__0_i_3_n_0,WordCounter1_carry__0_i_4_n_0}));
+        .S({WordCounter1_carry__0_i_2_n_0,WordCounter1_carry__0_i_3_n_0,WordCounter1_carry__0_i_4_n_0,WordCounter1_carry__0_i_5_n_0}));
   LUT2 #(
     .INIT(4'h1)) 
     WordCounter1_carry__0_i_1
-       (.I0(WordCounter_reg[14]),
-        .I1(WordCounter_reg[15]),
+       (.I0(WordCounter_reg[8]),
+        .I1(WordCounter_reg[9]),
         .O(WordCounter1_carry__0_i_1_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     WordCounter1_carry__0_i_2
-       (.I0(WordCounter_reg[12]),
-        .I1(WordCounter_reg[13]),
+       (.I0(WordCounter_reg[14]),
+        .I1(WordCounter_reg[15]),
         .O(WordCounter1_carry__0_i_2_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     WordCounter1_carry__0_i_3
-       (.I0(WordCounter_reg[10]),
-        .I1(WordCounter_reg[11]),
+       (.I0(WordCounter_reg[12]),
+        .I1(WordCounter_reg[13]),
         .O(WordCounter1_carry__0_i_3_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     WordCounter1_carry__0_i_4
+       (.I0(WordCounter_reg[10]),
+        .I1(WordCounter_reg[11]),
+        .O(WordCounter1_carry__0_i_4_n_0));
+  LUT2 #(
+    .INIT(4'h2)) 
+    WordCounter1_carry__0_i_5
        (.I0(WordCounter_reg[8]),
         .I1(WordCounter_reg[9]),
-        .O(WordCounter1_carry__0_i_4_n_0));
+        .O(WordCounter1_carry__0_i_5_n_0));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 WordCounter1_carry__1
        (.CI(WordCounter1_carry__0_n_0),
