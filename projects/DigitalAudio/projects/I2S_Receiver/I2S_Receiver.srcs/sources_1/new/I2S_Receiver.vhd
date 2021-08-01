@@ -9,7 +9,7 @@
 -- Target Devices:      XC7Z010CLG400-1
 -- Tool Versions:       Vivado 2020.2
 -- Description:         I2S receiver module from
---                      <>
+--                      https://www.kampis-elektroecke.de/fpga/digitale-audioverarbeitung/design-des-i2s-empfaengers/
 -- 
 -- Dependencies: 
 -- 
@@ -94,7 +94,8 @@ begin
         end if;
     end process;
 
-    process
+    -- Delay the LRCLK signal
+    I2S_Delay_Proc : process
     begin
         wait until falling_edge(MCLK);
 

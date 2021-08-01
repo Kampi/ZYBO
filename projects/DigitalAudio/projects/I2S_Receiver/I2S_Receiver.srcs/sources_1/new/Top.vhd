@@ -9,7 +9,7 @@
 -- Target Devices: 
 -- Tool Versions: 
 -- Description:         Top design for the hardware implementation of the I2S receiver project from
---                      <>
+--                      https://www.kampis-elektroecke.de/fpga/digitale-audioverarbeitung/design-des-i2s-empfaengers/
 -- Dependencies: 
 -- 
 -- Revision:
