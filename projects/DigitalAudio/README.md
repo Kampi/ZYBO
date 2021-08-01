@@ -20,11 +20,11 @@ Please check write an e-mail to [DanielKampert@kampis-elektroecke.de](DanielKamp
 - **docs** - Additional documentation
 - **ip_repo** - The IP repository for the generated IP cores 
   - The AXI-Stream I2S transmitter from the [second](https://www.kampis-elektroecke.de/fpga/digitale-audioverarbeitung/axi-stream-interface-fuer-den-sender/) tutorial part.
-  - The AXI-Stream I2S receiver from the [ ]() tutorial part.
+  - The AXI-Stream I2S receiver from the [seventh part]() tutorial part.
 - **hls** - The Vivado HSL project for the digital filter.
 - **ip_project** - Directory for the IP core projects.
 - **samples** - Different audio samples for the project.
-- **nordic** - I2S master project for developing purposes.
+- **nordic** - I2S master projects for developing purposes.
 - **projects** - Contains the different subprojects.
  - **I2S_AudioPlayer** - Yes, that´s what you think. Use the AXI-Stream I2S transmitter to create a simple audio player for your ZYNQ. Complete project from the [third](https://www.kampis-elektroecke.de/fpga/digitale-audioverarbeitung/abspielen-von-wave-dateien/) tutorial part.
  - **I2S_AudioRecorder** - 
