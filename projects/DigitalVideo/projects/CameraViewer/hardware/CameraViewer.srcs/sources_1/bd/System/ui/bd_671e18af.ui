@@ -56,25 +56,25 @@ preplace netloc VideoClock_ClockXCLK 1 1 5 220 1220 NJ 1220 980 1520 NJ 1520 NJ
 preplace netloc ProcessingSystem_FCLK_CLK0 1 1 5 240 800 580 960 1010 1040 1460 840 1950
 preplace netloc AXI_GPIO_ip2intc_irpt 1 3 3 1020 1220 NJ 1220 1940
 preplace netloc Reset_Camera_peripheral_aresetn 1 4 1 1470 1070n
-preplace netloc processing_system7_0_DDR 1 5 1 NJ 660
-preplace netloc AXI_Lite_M02_AXI 1 4 1 1420 840n
-preplace netloc ProcessingSystem_M_AXI_GP0 1 3 3 1020 640 1380J 600 1950
 preplace netloc AXI_GPIO_GPIO2 1 5 1 NJ 1300
-preplace netloc processing_system7_0_FIXED_IO 1 5 1 NJ 680
 preplace netloc axi_mem_intercon_M00_AXI 1 4 1 1460 480n
-preplace netloc OV7670_0_OV7670 1 5 1 NJ 1090
+preplace netloc processing_system7_0_FIXED_IO 1 5 1 NJ 680
+preplace netloc AXI_Lite_M02_AXI 1 4 1 1420 840n
 preplace netloc AXI_GPIO_Output_GPIO 1 5 1 NJ 930
-preplace netloc VDMA_Camera_M_AXI_S2MM 1 3 1 1000 410n
-preplace netloc ProcessingSystem_axi_periph_M00_AXI 1 2 3 600 950 960J 1190 1360
+preplace netloc OV7670_0_OV7670 1 5 1 NJ 1090
+preplace netloc ProcessingSystem_M_AXI_GP0 1 3 3 1020 640 1380J 600 1950
+preplace netloc processing_system7_0_DDR 1 5 1 NJ 660
+preplace netloc VideoTiming_vtiming_out 1 3 1 N 120
 preplace netloc OV7670_0_M_AXIS 1 2 4 600 1210 NJ 1210 NJ 1210 1940
-preplace netloc ProcessingSystem_axi_periph_M01_AXI 1 2 3 600 630 NJ 630 1370
 preplace netloc AXI_Lite_M04_AXI 1 4 1 1400 880n
+preplace netloc VDMA_M_AXIS_MM2S 1 3 1 970 100n
+preplace netloc VDMA_Camera_M_AXI_S2MM 1 3 1 1000 410n
 preplace netloc AXI_GPIO_GPIO 1 5 1 NJ 1280
+preplace netloc AXI_Lite_M03_AXI 1 4 1 1440 860n
 preplace netloc VDMA_Display_M_AXI_MM2S 1 3 1 980 390n
 preplace netloc ProcessingSystem_IIC_0 1 5 1 NJ 700
-preplace netloc VDMA_M_AXIS_MM2S 1 3 1 970 100n
-preplace netloc AXI_Lite_M03_AXI 1 4 1 1440 860n
-preplace netloc VideoTiming_vtiming_out 1 3 1 N 120
+preplace netloc ProcessingSystem_axi_periph_M01_AXI 1 2 3 600 630 NJ 630 1370
+preplace netloc ProcessingSystem_axi_periph_M00_AXI 1 2 3 600 950 960J 1190 1360
 levelinfo -pg 1 0 120 410 780 1190 1710 1970
 pagesize -pg 1 -db -bbox -sgen -110 0 2140 1540
 "

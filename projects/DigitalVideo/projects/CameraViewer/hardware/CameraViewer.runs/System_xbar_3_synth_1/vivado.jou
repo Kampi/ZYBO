@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Dec 16 19:51:03 2021
+# Process ID: 15768
+# Current directory: H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_xbar_3_synth_1
+# Command line: vivado.exe -log System_xbar_3.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source System_xbar_3.tcl
+# Log file: H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_xbar_3_synth_1/System_xbar_3.vds
+# Journal file: H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_xbar_3_synth_1\vivado.jou
+#-----------------------------------------------------------
+source System_xbar_3.tcl -notrace

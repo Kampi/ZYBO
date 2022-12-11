@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Sun Mar 14 11:36:10 2021
+// Date        : Thu Dec 16 19:49:25 2021
 // Host        : PC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top System_clk_wiz_0_0 -prefix
-//               System_clk_wiz_0_0_ System_clk_wiz_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_clk_wiz_0_0/System_clk_wiz_0_0_sim_netlist.v
 // Design      : System_clk_wiz_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -35,6 +35,7 @@ module System_clk_wiz_0_0
         .locked(locked));
 endmodule
 
+(* ORIG_REF_NAME = "System_clk_wiz_0_0_clk_wiz" *) 
 module System_clk_wiz_0_0_System_clk_wiz_0_0_clk_wiz
    (ClockVGA,
     ClockXCLK,

@@ -42,9 +42,8 @@
 
  /** @brief
   *  @param Path	Output file path
-  *  @param Packets	Packet count to record
   *  @return		Error code
   */
- u32 AudioRecorder_Record(const char* Path, u32 Packets);
+ u32 AudioRecorder_Record(const char* Path);
 
 #endif /* AUDIORECORDER_H_ */

@@ -13,7 +13,7 @@ set_property PACKAGE_PIN T20 [get_ports I2S_sd]
 set_property IOSTANDARD LVCMOS33 [get_ports I2S_sd]
 
 # Switches
-set_property PACKAGE_PIN G15 [get_ports Enable]
+set_property PACKAGE_PIN V15 [get_ports Enable]
 set_property IOSTANDARD LVCMOS33 [get_ports Enable]
 
 # Buttons

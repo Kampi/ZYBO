@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Dec 16 19:49:38 2021
+# Process ID: 4120
+# Current directory: H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_axi_gpio_0_0_synth_1
+# Command line: vivado.exe -log System_axi_gpio_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source System_axi_gpio_0_0.tcl
+# Log file: H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_axi_gpio_0_0_synth_1/System_axi_gpio_0_0.vds
+# Journal file: H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_axi_gpio_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source System_axi_gpio_0_0.tcl -notrace

@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Sun Mar 14 11:39:15 2021
+// Date        : Thu Dec 16 19:46:16 2021
 // Host        : PC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top System_Reset_ProcessingSystem_0 -prefix
-//               System_Reset_ProcessingSystem_0_ System_Reset_ProcessingSystem_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_Reset_ProcessingSystem_0/System_Reset_ProcessingSystem_0_sim_netlist.v
 // Design      : System_Reset_ProcessingSystem_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -69,6 +69,7 @@ module System_Reset_ProcessingSystem_0
         .slowest_sync_clk(slowest_sync_clk));
 endmodule
 
+(* ORIG_REF_NAME = "cdc_sync" *) 
 module System_Reset_ProcessingSystem_0_cdc_sync
    (lpf_asr_reg,
     scndry_out,
@@ -256,6 +257,7 @@ module System_Reset_ProcessingSystem_0_cdc_sync_0
         .O(lpf_exr_reg));
 endmodule
 
+(* ORIG_REF_NAME = "lpf" *) 
 module System_Reset_ProcessingSystem_0_lpf
    (lpf_int,
     slowest_sync_clk,
@@ -409,6 +411,7 @@ endmodule
 (* C_AUX_RESET_HIGH = "1'b0" *) (* C_AUX_RST_WIDTH = "4" *) (* C_EXT_RESET_HIGH = "1'b0" *) 
 (* C_EXT_RST_WIDTH = "4" *) (* C_FAMILY = "zynq" *) (* C_NUM_BUS_RST = "1" *) 
 (* C_NUM_INTERCONNECT_ARESETN = "1" *) (* C_NUM_PERP_ARESETN = "1" *) (* C_NUM_PERP_RST = "1" *) 
+(* ORIG_REF_NAME = "proc_sys_reset" *) 
 module System_Reset_ProcessingSystem_0_proc_sys_reset
    (slowest_sync_clk,
     ext_reset_in,
@@ -525,6 +528,7 @@ module System_Reset_ProcessingSystem_0_proc_sys_reset
         .slowest_sync_clk(slowest_sync_clk));
 endmodule
 
+(* ORIG_REF_NAME = "sequence_psr" *) 
 module System_Reset_ProcessingSystem_0_sequence_psr
    (MB_out,
     Bsr_out,
@@ -765,6 +769,7 @@ module System_Reset_ProcessingSystem_0_sequence_psr
         .R(lpf_int));
 endmodule
 
+(* ORIG_REF_NAME = "upcnt_n" *) 
 module System_Reset_ProcessingSystem_0_upcnt_n
    (Q,
     seq_clr,

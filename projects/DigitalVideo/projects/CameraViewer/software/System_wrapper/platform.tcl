@@ -681,3 +681,48 @@ platform generate -domains standalone_ps7_cortexa9_0
 platform active {System_wrapper}
 platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/System_wrapper.xsa}
 platform generate
+platform active {System_wrapper}
+platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/System_wrapper.xsa}
+platform generate -domains 
+platform active {System_wrapper}
+platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/System_wrapper.xsa}
+platform generate -domains 
+bsp reload
+bsp setlib -name lwip211 -ver 1.3
+bsp write
+bsp reload
+catch {bsp regenerate}
+bsp reload
+platform generate -domains standalone_ps7_cortexa9_0 
+bsp reload
+platform clean
+platform generate
+bsp reload
+bsp config phy_link_speed "CONFIG_LINKSPEED100"
+bsp write
+bsp reload
+catch {bsp regenerate}
+platform generate -domains standalone_ps7_cortexa9_0 
+bsp config phy_link_speed "CONFIG_LINKSPEED1000"
+bsp write
+bsp reload
+catch {bsp regenerate}
+platform generate -domains standalone_ps7_cortexa9_0 
+bsp write
+platform generate -domains 
+bsp config phy_link_speed "CONFIG_LINKSPEED100"
+bsp write
+bsp reload
+catch {bsp regenerate}
+platform generate -domains standalone_ps7_cortexa9_0 
+bsp config phy_link_speed "CONFIG_LINKSPEED1000"
+bsp write
+bsp reload
+catch {bsp regenerate}
+platform generate -domains standalone_ps7_cortexa9_0 
+bsp config phy_link_speed "CONFIG_LINKSPEED_AUTODETECT"
+bsp write
+bsp reload
+catch {bsp regenerate}
+platform generate -domains standalone_ps7_cortexa9_0 
+bsp reload

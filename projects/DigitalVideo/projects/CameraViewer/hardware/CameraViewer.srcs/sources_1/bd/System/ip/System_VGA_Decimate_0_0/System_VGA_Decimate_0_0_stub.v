@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
 // Date        : Fri Jun  4 20:48:39 2021
 // Host        : PC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_VGA_Decimate_0_0/System_VGA_Decimate_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top System_VGA_Decimate_0_0 -prefix
+//               System_VGA_Decimate_0_0_ System_VGA_Decimate_0_0_stub.v
 // Design      : System_VGA_Decimate_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1

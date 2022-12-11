@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Fri Jun  4 20:52:01 2021
+| Date             : Sat Dec 18 00:03:15 2021
 | Host             : PC running 64-bit major release  (build 9200)
 | Command          : report_power -file System_wrapper_power_routed.rpt -pb System_wrapper_power_summary_routed.pb -rpx System_wrapper_power_routed.rpx
 | Design           : System_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.784        |
+| Total On-Chip Power (W)  | 1.826        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.662        |
-| Device Static (W)        | 0.123        |
+| Dynamic (W)              | 1.702        |
+| Device Static (W)        | 0.124        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 64.4         |
-| Junction Temperature (C) | 45.6         |
+| Max Ambient (C)          | 63.9         |
+| Junction Temperature (C) | 46.1         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -65,9 +65,9 @@ Table of Contents
 | Block RAM                |     0.001 |        5 |        60 |            8.33 |
 | MMCM                     |     0.115 |        1 |         2 |           50.00 |
 | I/O                      |     0.005 |       47 |       100 |           47.00 |
-| PS7                      |     1.513 |        1 |       --- |             --- |
-| Static Power             |     0.123 |          |           |                 |
-| Total                    |     1.784 |          |           |                 |
+| PS7                      |     1.553 |        1 |       --- |             --- |
+| Static Power             |     0.124 |          |           |                 |
+| Total                    |     1.826 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,7 +78,7 @@ Table of Contents
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Vccint    |       1.000 |     0.036 |       0.029 |      0.008 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.072 |       0.064 |      0.008 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.073 |       0.064 |      0.008 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -90,12 +90,12 @@ Table of Contents
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccpint   |       1.000 |     0.744 |       0.712 |      0.031 |       NA    | Unspecified | NA         |
-| Vccpaux   |       1.800 |     0.060 |       0.049 |      0.010 |       NA    | Unspecified | NA         |
-| Vccpll    |       1.800 |     0.018 |       0.015 |      0.003 |       NA    | Unspecified | NA         |
+| Vccpint   |       1.000 |     0.739 |       0.707 |      0.032 |       NA    | Unspecified | NA         |
+| Vccpaux   |       1.800 |     0.084 |       0.074 |      0.010 |       NA    | Unspecified | NA         |
+| Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |       NA    | Unspecified | NA         |
 | Vcco_ddr  |       1.500 |     0.458 |       0.456 |      0.002 |       NA    | Unspecified | NA         |
 | Vcco_mio0 |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco_mio1 |       1.800 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco_mio1 |       1.800 |     0.004 |       0.003 |      0.001 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 
@@ -157,8 +157,8 @@ Table of Contents
 +----------------------+-----------+
 | Name                 | Power (W) |
 +----------------------+-----------+
-| System_wrapper       |     1.662 |
-|   System_i           |     1.657 |
+| System_wrapper       |     1.702 |
+|   System_i           |     1.697 |
 |     AXI              |     0.003 |
 |       m00_couplers   |     0.001 |
 |       xbar           |     0.001 |
@@ -166,8 +166,8 @@ Table of Contents
 |       s00_couplers   |     0.003 |
 |     OV7670           |     0.001 |
 |       U0             |     0.001 |
-|     ProcessingSystem |     1.514 |
-|       inst           |     1.514 |
+|     ProcessingSystem |     1.554 |
+|       inst           |     1.554 |
 |     VDMA_Camera      |     0.010 |
 |       U0             |     0.010 |
 |     VDMA_Display     |     0.006 |

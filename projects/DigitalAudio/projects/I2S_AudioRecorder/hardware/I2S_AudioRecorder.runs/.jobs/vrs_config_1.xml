@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="System_AXIS_I2S_Receiver_0_0_synth_1" LaunchDir="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.runs/System_AXIS_I2S_Receiver_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_rst_ProcessingSystem_100M_0_synth_1" LaunchDir="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.runs/System_rst_ProcessingSystem_100M_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_Reset_ProcessingSystem_0_synth_1" LaunchDir="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.runs/System_Reset_ProcessingSystem_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_processing_system7_0_0_synth_1" LaunchDir="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.runs/System_processing_system7_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_axi_dma_0_0_synth_1" LaunchDir="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.runs/System_axi_dma_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_axi_gpio_0_0_synth_1" LaunchDir="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.runs/System_axi_gpio_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_auto_pc_2_synth_1" LaunchDir="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.runs/System_auto_pc_2_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_auto_pc_0_synth_1" LaunchDir="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.runs/System_auto_pc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_auto_pc_3_synth_1" LaunchDir="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.runs/System_auto_pc_3_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_auto_pc_1_synth_1" LaunchDir="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.runs/System_auto_pc_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="System_auto_pc_0_synth_1"/>
+	</Run>
+	<Run Id="System_auto_us_1_synth_1" LaunchDir="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.runs/System_auto_us_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_auto_us_0_synth_1" LaunchDir="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.runs/System_auto_us_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_xbar_4_synth_1" LaunchDir="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.runs/System_xbar_4_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_xbar_5_synth_1" LaunchDir="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.runs/System_xbar_5_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Synth" LaunchDir="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.runs/Synth" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="System_AXIS_I2S_Receiver_0_0_synth_1"/>
+		<Parent Id="System_rst_ProcessingSystem_100M_0_synth_1"/>
+		<Parent Id="System_Reset_ProcessingSystem_0_synth_1"/>
+		<Parent Id="System_processing_system7_0_0_synth_1"/>
+		<Parent Id="System_axi_dma_0_0_synth_1"/>
+		<Parent Id="System_axi_gpio_0_0_synth_1"/>
+		<Parent Id="System_auto_pc_2_synth_1"/>
+		<Parent Id="System_auto_pc_0_synth_1"/>
+		<Parent Id="System_auto_pc_3_synth_1"/>
+		<Parent Id="System_auto_pc_1_synth_1"/>
+		<Parent Id="System_auto_us_1_synth_1"/>
+		<Parent Id="System_auto_us_0_synth_1"/>
+		<Parent Id="System_xbar_4_synth_1"/>
+		<Parent Id="System_xbar_5_synth_1"/>
+	</Run>
+	<Run Id="Impl" LaunchDir="H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/I2S_AudioRecorder.runs/Impl" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
+		<Parent Id="Synth"/>
+		<Parent Id="System_AXIS_I2S_Receiver_0_0_synth_1"/>
+		<Parent Id="System_rst_ProcessingSystem_100M_0_synth_1"/>
+		<Parent Id="System_Reset_ProcessingSystem_0_synth_1"/>
+		<Parent Id="System_processing_system7_0_0_synth_1"/>
+		<Parent Id="System_axi_dma_0_0_synth_1"/>
+		<Parent Id="System_axi_gpio_0_0_synth_1"/>
+		<Parent Id="System_auto_pc_2_synth_1"/>
+		<Parent Id="System_auto_pc_0_synth_1"/>
+		<Parent Id="System_auto_pc_3_synth_1"/>
+		<Parent Id="System_auto_pc_1_synth_1"/>
+		<Parent Id="System_auto_us_1_synth_1"/>
+		<Parent Id="System_auto_us_0_synth_1"/>
+		<Parent Id="System_xbar_4_synth_1"/>
+		<Parent Id="System_xbar_5_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+		<Parameter Name="runs.enableClusterConf" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

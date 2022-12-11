@@ -25,5 +25,4 @@ ps7_post_config
 targets -set -nocase -filter {name =~ "*A9*#0"}
 dow H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/software/Application/Debug/Application.elf
 configparams force-mem-access 0
-targets -set -nocase -filter {name =~ "*A9*#0"}
-con
+bpadd -addr &main

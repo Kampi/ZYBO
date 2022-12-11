@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
---Date        : Tue Apr  6 19:14:00 2021
+--Date        : Fri Dec 17 23:56:16 2021
 --Host        : PC running 64-bit major release  (build 9200)
 --Command     : generate_target System_wrapper.bd
 --Design      : System_wrapper
@@ -65,6 +65,20 @@ architecture STRUCTURE of System_wrapper is
     Video_Blue : out STD_LOGIC_VECTOR ( 4 downto 0 );
     Video_Green : out STD_LOGIC_VECTOR ( 5 downto 0 );
     OV7670_XCLK : out STD_LOGIC;
+    Buttons_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+    FIXED_IO_ddr_vrn : inout STD_LOGIC;
+    FIXED_IO_ddr_vrp : inout STD_LOGIC;
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    FIXED_IO_ps_clk : inout STD_LOGIC;
+    FIXED_IO_ps_porb : inout STD_LOGIC;
+    LED_tri_o : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    OV7670_href : in STD_LOGIC;
+    OV7670_vsync : in STD_LOGIC;
+    OV7670_d : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    OV7670_pclk : in STD_LOGIC;
+    OV7670_nreset : out STD_LOGIC;
+    OV7670_pwdn : out STD_LOGIC;
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -80,20 +94,6 @@ architecture STRUCTURE of System_wrapper is
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    Buttons_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
-    FIXED_IO_ddr_vrn : inout STD_LOGIC;
-    FIXED_IO_ddr_vrp : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC;
-    FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC;
-    OV7670_href : in STD_LOGIC;
-    OV7670_vsync : in STD_LOGIC;
-    OV7670_d : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    OV7670_pclk : in STD_LOGIC;
-    OV7670_nreset : out STD_LOGIC;
-    OV7670_pwdn : out STD_LOGIC;
-    LED_tri_o : out STD_LOGIC_VECTOR ( 3 downto 0 );
     Switches_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
     IIC_sda_i : in STD_LOGIC;
     IIC_sda_o : out STD_LOGIC;

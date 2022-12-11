@@ -240,7 +240,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_ACT_APU_PERIPHERAL_FREQMHZ {650.000000} \
    CONFIG.PCW_ACT_CAN_PERIPHERAL_FREQMHZ {10.000000} \
    CONFIG.PCW_ACT_DCI_PERIPHERAL_FREQMHZ {10.096154} \
-   CONFIG.PCW_ACT_ENET0_PERIPHERAL_FREQMHZ {10.000000} \
+   CONFIG.PCW_ACT_ENET0_PERIPHERAL_FREQMHZ {125.000000} \
    CONFIG.PCW_ACT_ENET1_PERIPHERAL_FREQMHZ {10.000000} \
    CONFIG.PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ {100.000000} \
    CONFIG.PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ {10.000000} \
@@ -303,13 +303,13 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_DDR_PORT3_HPR_ENABLE {0} \
    CONFIG.PCW_DDR_RAM_HIGHADDR {0x1FFFFFFF} \
    CONFIG.PCW_DDR_WRITE_TO_CRITICAL_PRIORITY_LEVEL {2} \
-   CONFIG.PCW_ENET0_ENET0_IO {<Select>} \
-   CONFIG.PCW_ENET0_GRP_MDIO_ENABLE {0} \
-   CONFIG.PCW_ENET0_GRP_MDIO_IO {<Select>} \
+   CONFIG.PCW_ENET0_ENET0_IO {MIO 16 .. 27} \
+   CONFIG.PCW_ENET0_GRP_MDIO_ENABLE {1} \
+   CONFIG.PCW_ENET0_GRP_MDIO_IO {MIO 52 .. 53} \
    CONFIG.PCW_ENET0_PERIPHERAL_CLKSRC {IO PLL} \
-   CONFIG.PCW_ENET0_PERIPHERAL_DIVISOR0 {1} \
+   CONFIG.PCW_ENET0_PERIPHERAL_DIVISOR0 {8} \
    CONFIG.PCW_ENET0_PERIPHERAL_DIVISOR1 {1} \
-   CONFIG.PCW_ENET0_PERIPHERAL_ENABLE {0} \
+   CONFIG.PCW_ENET0_PERIPHERAL_ENABLE {1} \
    CONFIG.PCW_ENET0_PERIPHERAL_FREQMHZ {1000 Mbps} \
    CONFIG.PCW_ENET0_RESET_ENABLE {0} \
    CONFIG.PCW_ENET1_GRP_MDIO_ENABLE {0} \
@@ -354,7 +354,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_EN_EMIO_WDT {0} \
    CONFIG.PCW_EN_EMIO_WP_SDIO0 {1} \
    CONFIG.PCW_EN_EMIO_WP_SDIO1 {0} \
-   CONFIG.PCW_EN_ENET0 {0} \
+   CONFIG.PCW_EN_ENET0 {1} \
    CONFIG.PCW_EN_ENET1 {0} \
    CONFIG.PCW_EN_GPIO {0} \
    CONFIG.PCW_EN_I2C0 {1} \
@@ -377,8 +377,8 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_EN_USB1 {0} \
    CONFIG.PCW_EN_WDT {0} \
    CONFIG.PCW_FCLK0_PERIPHERAL_CLKSRC {IO PLL} \
-   CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR0 {4} \
-   CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR1 {4} \
+   CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR0 {5} \
+   CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR1 {2} \
    CONFIG.PCW_FCLK1_PERIPHERAL_CLKSRC {DDR PLL} \
    CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR0 {1} \
    CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR1 {1} \
@@ -415,9 +415,9 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_I2C_PERIPHERAL_FREQMHZ {108.333336} \
    CONFIG.PCW_I2C_RESET_ENABLE {0} \
    CONFIG.PCW_I2C_RESET_POLARITY {Active Low} \
-   CONFIG.PCW_IMPORT_BOARD_PRESET {G:/Dropbox/Git/ZYBO/res/Zybo.xml} \
-   CONFIG.PCW_IOPLL_CTRL_FBDIV {32} \
-   CONFIG.PCW_IO_IO_PLL_FREQMHZ {1600.000} \
+   CONFIG.PCW_IMPORT_BOARD_PRESET {H:/NextCloud/Git/ZYBO/res/Zybo.xml} \
+   CONFIG.PCW_IOPLL_CTRL_FBDIV {20} \
+   CONFIG.PCW_IO_IO_PLL_FREQMHZ {1000.000} \
    CONFIG.PCW_IRQ_F2P_INTR {1} \
    CONFIG.PCW_IRQ_F2P_MODE {DIRECT} \
    CONFIG.PCW_MIO_16_DIRECTION {out} \
@@ -472,58 +472,58 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_MIO_27_IOTYPE {HSTL 1.8V} \
    CONFIG.PCW_MIO_27_PULLUP {disabled} \
    CONFIG.PCW_MIO_27_SLEW {fast} \
-   CONFIG.PCW_MIO_28_DIRECTION {inout} \
-   CONFIG.PCW_MIO_28_IOTYPE {LVCMOS 1.8V} \
-   CONFIG.PCW_MIO_28_PULLUP {disabled} \
-   CONFIG.PCW_MIO_28_SLEW {fast} \
-   CONFIG.PCW_MIO_29_DIRECTION {in} \
-   CONFIG.PCW_MIO_29_IOTYPE {LVCMOS 1.8V} \
-   CONFIG.PCW_MIO_29_PULLUP {disabled} \
-   CONFIG.PCW_MIO_29_SLEW {fast} \
+   CONFIG.PCW_MIO_28_DIRECTION {<Select>} \
+   CONFIG.PCW_MIO_28_IOTYPE {<Select>} \
+   CONFIG.PCW_MIO_28_PULLUP {<Select>} \
+   CONFIG.PCW_MIO_28_SLEW {<Select>} \
+   CONFIG.PCW_MIO_29_DIRECTION {<Select>} \
+   CONFIG.PCW_MIO_29_IOTYPE {<Select>} \
+   CONFIG.PCW_MIO_29_PULLUP {<Select>} \
+   CONFIG.PCW_MIO_29_SLEW {<Select>} \
    CONFIG.PCW_MIO_2_DIRECTION {<Select>} \
    CONFIG.PCW_MIO_2_IOTYPE {<Select>} \
    CONFIG.PCW_MIO_2_PULLUP {<Select>} \
    CONFIG.PCW_MIO_2_SLEW {<Select>} \
-   CONFIG.PCW_MIO_30_DIRECTION {out} \
-   CONFIG.PCW_MIO_30_IOTYPE {LVCMOS 1.8V} \
-   CONFIG.PCW_MIO_30_PULLUP {disabled} \
-   CONFIG.PCW_MIO_30_SLEW {fast} \
-   CONFIG.PCW_MIO_31_DIRECTION {in} \
-   CONFIG.PCW_MIO_31_IOTYPE {LVCMOS 1.8V} \
-   CONFIG.PCW_MIO_31_PULLUP {disabled} \
-   CONFIG.PCW_MIO_31_SLEW {fast} \
-   CONFIG.PCW_MIO_32_DIRECTION {inout} \
-   CONFIG.PCW_MIO_32_IOTYPE {LVCMOS 1.8V} \
-   CONFIG.PCW_MIO_32_PULLUP {disabled} \
-   CONFIG.PCW_MIO_32_SLEW {fast} \
-   CONFIG.PCW_MIO_33_DIRECTION {inout} \
-   CONFIG.PCW_MIO_33_IOTYPE {LVCMOS 1.8V} \
-   CONFIG.PCW_MIO_33_PULLUP {disabled} \
-   CONFIG.PCW_MIO_33_SLEW {fast} \
-   CONFIG.PCW_MIO_34_DIRECTION {inout} \
-   CONFIG.PCW_MIO_34_IOTYPE {LVCMOS 1.8V} \
-   CONFIG.PCW_MIO_34_PULLUP {disabled} \
-   CONFIG.PCW_MIO_34_SLEW {fast} \
-   CONFIG.PCW_MIO_35_DIRECTION {inout} \
-   CONFIG.PCW_MIO_35_IOTYPE {LVCMOS 1.8V} \
-   CONFIG.PCW_MIO_35_PULLUP {disabled} \
-   CONFIG.PCW_MIO_35_SLEW {fast} \
-   CONFIG.PCW_MIO_36_DIRECTION {in} \
-   CONFIG.PCW_MIO_36_IOTYPE {LVCMOS 1.8V} \
-   CONFIG.PCW_MIO_36_PULLUP {disabled} \
-   CONFIG.PCW_MIO_36_SLEW {fast} \
-   CONFIG.PCW_MIO_37_DIRECTION {inout} \
-   CONFIG.PCW_MIO_37_IOTYPE {LVCMOS 1.8V} \
-   CONFIG.PCW_MIO_37_PULLUP {disabled} \
-   CONFIG.PCW_MIO_37_SLEW {fast} \
-   CONFIG.PCW_MIO_38_DIRECTION {inout} \
-   CONFIG.PCW_MIO_38_IOTYPE {LVCMOS 1.8V} \
-   CONFIG.PCW_MIO_38_PULLUP {disabled} \
-   CONFIG.PCW_MIO_38_SLEW {fast} \
-   CONFIG.PCW_MIO_39_DIRECTION {inout} \
-   CONFIG.PCW_MIO_39_IOTYPE {LVCMOS 1.8V} \
-   CONFIG.PCW_MIO_39_PULLUP {disabled} \
-   CONFIG.PCW_MIO_39_SLEW {fast} \
+   CONFIG.PCW_MIO_30_DIRECTION {<Select>} \
+   CONFIG.PCW_MIO_30_IOTYPE {<Select>} \
+   CONFIG.PCW_MIO_30_PULLUP {<Select>} \
+   CONFIG.PCW_MIO_30_SLEW {<Select>} \
+   CONFIG.PCW_MIO_31_DIRECTION {<Select>} \
+   CONFIG.PCW_MIO_31_IOTYPE {<Select>} \
+   CONFIG.PCW_MIO_31_PULLUP {<Select>} \
+   CONFIG.PCW_MIO_31_SLEW {<Select>} \
+   CONFIG.PCW_MIO_32_DIRECTION {<Select>} \
+   CONFIG.PCW_MIO_32_IOTYPE {<Select>} \
+   CONFIG.PCW_MIO_32_PULLUP {<Select>} \
+   CONFIG.PCW_MIO_32_SLEW {<Select>} \
+   CONFIG.PCW_MIO_33_DIRECTION {<Select>} \
+   CONFIG.PCW_MIO_33_IOTYPE {<Select>} \
+   CONFIG.PCW_MIO_33_PULLUP {<Select>} \
+   CONFIG.PCW_MIO_33_SLEW {<Select>} \
+   CONFIG.PCW_MIO_34_DIRECTION {<Select>} \
+   CONFIG.PCW_MIO_34_IOTYPE {<Select>} \
+   CONFIG.PCW_MIO_34_PULLUP {<Select>} \
+   CONFIG.PCW_MIO_34_SLEW {<Select>} \
+   CONFIG.PCW_MIO_35_DIRECTION {<Select>} \
+   CONFIG.PCW_MIO_35_IOTYPE {<Select>} \
+   CONFIG.PCW_MIO_35_PULLUP {<Select>} \
+   CONFIG.PCW_MIO_35_SLEW {<Select>} \
+   CONFIG.PCW_MIO_36_DIRECTION {<Select>} \
+   CONFIG.PCW_MIO_36_IOTYPE {<Select>} \
+   CONFIG.PCW_MIO_36_PULLUP {<Select>} \
+   CONFIG.PCW_MIO_36_SLEW {<Select>} \
+   CONFIG.PCW_MIO_37_DIRECTION {<Select>} \
+   CONFIG.PCW_MIO_37_IOTYPE {<Select>} \
+   CONFIG.PCW_MIO_37_PULLUP {<Select>} \
+   CONFIG.PCW_MIO_37_SLEW {<Select>} \
+   CONFIG.PCW_MIO_38_DIRECTION {<Select>} \
+   CONFIG.PCW_MIO_38_IOTYPE {<Select>} \
+   CONFIG.PCW_MIO_38_PULLUP {<Select>} \
+   CONFIG.PCW_MIO_38_SLEW {<Select>} \
+   CONFIG.PCW_MIO_39_DIRECTION {<Select>} \
+   CONFIG.PCW_MIO_39_IOTYPE {<Select>} \
+   CONFIG.PCW_MIO_39_PULLUP {<Select>} \
+   CONFIG.PCW_MIO_39_SLEW {<Select>} \
    CONFIG.PCW_MIO_3_DIRECTION {<Select>} \
    CONFIG.PCW_MIO_3_IOTYPE {<Select>} \
    CONFIG.PCW_MIO_3_PULLUP {<Select>} \
@@ -585,13 +585,20 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_MIO_6_PULLUP {<Select>} \
    CONFIG.PCW_MIO_6_SLEW {<Select>} \
    CONFIG.PCW_MIO_TREE_PERIPHERALS { \
+     0#Enet 0 \
+     0#Enet 0 \
+     0#Enet 0 \
+     0#Enet 0 \
+     0#Enet 0 \
+     0#Enet 0 \
      0#SD 0#SD \
      0#SD 0#SD \
      0#unassigned#SD 0#UART \
-     1#UART 1#unassigned#unassigned#unassigned#unassigned \
-     unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#SD 0#SD \
+     0#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#SD 0#SD \
+     1#UART 1#unassigned#unassigned#Enet \
+     unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#Enet 0#Enet \
    } \
-   CONFIG.PCW_MIO_TREE_SIGNALS {unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#clk#cmd#data[0]#data[1]#data[2]#data[3]#unassigned#cd#tx#rx#unassigned#unassigned#unassigned#unassigned} \
+   CONFIG.PCW_MIO_TREE_SIGNALS {unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#tx_clk#txd[0]#txd[1]#txd[2]#txd[3]#tx_ctl#rx_clk#rxd[0]#rxd[1]#rxd[2]#rxd[3]#rx_ctl#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#clk#cmd#data[0]#data[1]#data[2]#data[3]#unassigned#cd#tx#rx#unassigned#unassigned#mdc#mdio} \
    CONFIG.PCW_NAND_CYCLES_T_AR {1} \
    CONFIG.PCW_NAND_CYCLES_T_CLR {1} \
    CONFIG.PCW_NAND_CYCLES_T_RC {11} \
@@ -646,7 +653,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_2 {-0.034} \
    CONFIG.PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_3 {-0.095} \
    CONFIG.PCW_PCAP_PERIPHERAL_CLKSRC {IO PLL} \
-   CONFIG.PCW_PCAP_PERIPHERAL_DIVISOR0 {8} \
+   CONFIG.PCW_PCAP_PERIPHERAL_DIVISOR0 {5} \
    CONFIG.PCW_PCAP_PERIPHERAL_FREQMHZ {200} \
    CONFIG.PCW_PJTAG_PERIPHERAL_ENABLE {0} \
    CONFIG.PCW_PLL_BYPASSMODE_ENABLE {0} \
@@ -675,7 +682,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_SD1_GRP_WP_ENABLE {0} \
    CONFIG.PCW_SD1_PERIPHERAL_ENABLE {0} \
    CONFIG.PCW_SDIO_PERIPHERAL_CLKSRC {IO PLL} \
-   CONFIG.PCW_SDIO_PERIPHERAL_DIVISOR0 {32} \
+   CONFIG.PCW_SDIO_PERIPHERAL_DIVISOR0 {20} \
    CONFIG.PCW_SDIO_PERIPHERAL_FREQMHZ {50} \
    CONFIG.PCW_SDIO_PERIPHERAL_VALID {1} \
    CONFIG.PCW_SINGLE_QSPI_DATA_MODE {<Select>} \
@@ -738,7 +745,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_UART1_PERIPHERAL_ENABLE {1} \
    CONFIG.PCW_UART1_UART1_IO {MIO 48 .. 49} \
    CONFIG.PCW_UART_PERIPHERAL_CLKSRC {IO PLL} \
-   CONFIG.PCW_UART_PERIPHERAL_DIVISOR0 {32} \
+   CONFIG.PCW_UART_PERIPHERAL_DIVISOR0 {20} \
    CONFIG.PCW_UART_PERIPHERAL_FREQMHZ {50} \
    CONFIG.PCW_UART_PERIPHERAL_VALID {1} \
    CONFIG.PCW_UIPARAM_ACT_DDR_FREQ_MHZ {525.000000} \

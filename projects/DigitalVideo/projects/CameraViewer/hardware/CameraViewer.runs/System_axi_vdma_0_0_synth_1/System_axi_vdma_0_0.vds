@@ -1,0 +1,1772 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Dec 16 19:44:49 2021
+# Process ID: 17000
+# Current directory: H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_axi_vdma_0_0_synth_1
+# Command line: vivado.exe -log System_axi_vdma_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source System_axi_vdma_0_0.tcl
+# Log file: H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_axi_vdma_0_0_synth_1/System_axi_vdma_0_0.vds
+# Journal file: H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_axi_vdma_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source System_axi_vdma_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'h:/NextCloud/Git/ZYBO/projects/DigitalVideo/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2020.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.cache/ip 
+Command: synth_design -top System_axi_vdma_0_0 -part xc7z010clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 11400
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 1014.566 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'System_axi_vdma_0_0' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_axi_vdma_0_0/synth/System_axi_vdma_0_0.vhd:106]
+	Parameter C_S_AXI_LITE_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_LITE_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_DLYTMR_RESOLUTION bound to: 125 - type: integer 
+	Parameter C_PRMRY_IS_ACLK_ASYNC bound to: 0 - type: integer 
+	Parameter C_ENABLE_VIDPRMTR_READS bound to: 1 - type: integer 
+	Parameter C_DYNAMIC_RESOLUTION bound to: 1 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 1 - type: integer 
+	Parameter C_USE_FSYNC bound to: 1 - type: integer 
+	Parameter C_USE_MM2S_FSYNC bound to: 0 - type: integer 
+	Parameter C_USE_S2MM_FSYNC bound to: 2 - type: integer 
+	Parameter C_FLUSH_ON_FSYNC bound to: 1 - type: integer 
+	Parameter C_INCLUDE_INTERNAL_GENLOCK bound to: 1 - type: integer 
+	Parameter C_INCLUDE_SG bound to: 0 - type: integer 
+	Parameter C_M_AXI_SG_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_SG_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_INCLUDE_MM2S bound to: 1 - type: integer 
+	Parameter C_MM2S_GENLOCK_MODE bound to: 3 - type: integer 
+	Parameter C_MM2S_GENLOCK_NUM_MASTERS bound to: 1 - type: integer 
+	Parameter C_MM2S_GENLOCK_REPEAT_EN bound to: 0 - type: integer 
+	Parameter C_MM2S_SOF_ENABLE bound to: 1 - type: integer 
+	Parameter C_INCLUDE_MM2S_DRE bound to: 0 - type: integer 
+	Parameter C_INCLUDE_MM2S_SF bound to: 0 - type: integer 
+	Parameter C_MM2S_LINEBUFFER_DEPTH bound to: 512 - type: integer 
+	Parameter C_MM2S_LINEBUFFER_THRESH bound to: 4 - type: integer 
+	Parameter C_MM2S_MAX_BURST_LENGTH bound to: 16 - type: integer 
+	Parameter C_M_AXI_MM2S_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_MM2S_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_MM2S_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_M_AXIS_MM2S_TUSER_BITS bound to: 1 - type: integer 
+	Parameter C_INCLUDE_S2MM bound to: 0 - type: integer 
+	Parameter C_S2MM_GENLOCK_MODE bound to: 0 - type: integer 
+	Parameter C_S2MM_GENLOCK_NUM_MASTERS bound to: 1 - type: integer 
+	Parameter C_S2MM_GENLOCK_REPEAT_EN bound to: 1 - type: integer 
+	Parameter C_S2MM_SOF_ENABLE bound to: 1 - type: integer 
+	Parameter C_INCLUDE_S2MM_DRE bound to: 0 - type: integer 
+	Parameter C_INCLUDE_S2MM_SF bound to: 1 - type: integer 
+	Parameter C_S2MM_LINEBUFFER_DEPTH bound to: 512 - type: integer 
+	Parameter C_S2MM_LINEBUFFER_THRESH bound to: 4 - type: integer 
+	Parameter C_S2MM_MAX_BURST_LENGTH bound to: 8 - type: integer 
+	Parameter C_M_AXI_S2MM_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_S2MM_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_S_AXIS_S2MM_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXIS_S2MM_TUSER_BITS bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_ALL bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_0 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_1 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_2 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_3 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_4 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_5 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_6 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_7 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_8 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_9 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_10 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_11 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_12 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_13 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_14 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_15 bound to: 1 - type: integer 
+	Parameter C_INSTANCE bound to: axi_vdma - type: string 
+	Parameter C_SELECT_XPM bound to: 0 - type: integer 
+	Parameter C_ENABLE_VERT_FLIP bound to: 0 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-3491] module 'axi_vdma' declared at 'h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:69488' bound to instance 'U0' of component 'axi_vdma' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_axi_vdma_0_0/synth/System_axi_vdma_0_0.vhd:339]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:69927]
+	Parameter C_S_AXI_LITE_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_LITE_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_DLYTMR_RESOLUTION bound to: 125 - type: integer 
+	Parameter C_PRMRY_IS_ACLK_ASYNC bound to: 0 - type: integer 
+	Parameter C_ENABLE_VIDPRMTR_READS bound to: 1 - type: integer 
+	Parameter C_DYNAMIC_RESOLUTION bound to: 1 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 1 - type: integer 
+	Parameter C_USE_FSYNC bound to: 1 - type: integer 
+	Parameter C_USE_MM2S_FSYNC bound to: 0 - type: integer 
+	Parameter C_USE_S2MM_FSYNC bound to: 2 - type: integer 
+	Parameter C_FLUSH_ON_FSYNC bound to: 1 - type: integer 
+	Parameter C_INCLUDE_INTERNAL_GENLOCK bound to: 1 - type: integer 
+	Parameter C_INCLUDE_SG bound to: 0 - type: integer 
+	Parameter C_M_AXI_SG_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_SG_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_INCLUDE_MM2S bound to: 1 - type: integer 
+	Parameter C_MM2S_GENLOCK_MODE bound to: 3 - type: integer 
+	Parameter C_MM2S_GENLOCK_NUM_MASTERS bound to: 1 - type: integer 
+	Parameter C_MM2S_GENLOCK_REPEAT_EN bound to: 0 - type: integer 
+	Parameter C_MM2S_SOF_ENABLE bound to: 1 - type: integer 
+	Parameter C_INCLUDE_MM2S_DRE bound to: 0 - type: integer 
+	Parameter C_INCLUDE_MM2S_SF bound to: 0 - type: integer 
+	Parameter C_MM2S_LINEBUFFER_DEPTH bound to: 512 - type: integer 
+	Parameter C_MM2S_LINEBUFFER_THRESH bound to: 4 - type: integer 
+	Parameter C_MM2S_MAX_BURST_LENGTH bound to: 16 - type: integer 
+	Parameter C_M_AXI_MM2S_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_MM2S_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_MM2S_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_M_AXIS_MM2S_TUSER_BITS bound to: 1 - type: integer 
+	Parameter C_INCLUDE_S2MM bound to: 0 - type: integer 
+	Parameter C_S2MM_GENLOCK_MODE bound to: 0 - type: integer 
+	Parameter C_S2MM_GENLOCK_NUM_MASTERS bound to: 1 - type: integer 
+	Parameter C_S2MM_GENLOCK_REPEAT_EN bound to: 1 - type: integer 
+	Parameter C_S2MM_SOF_ENABLE bound to: 1 - type: integer 
+	Parameter C_INCLUDE_S2MM_DRE bound to: 0 - type: integer 
+	Parameter C_INCLUDE_S2MM_SF bound to: 1 - type: integer 
+	Parameter C_S2MM_LINEBUFFER_DEPTH bound to: 512 - type: integer 
+	Parameter C_S2MM_LINEBUFFER_THRESH bound to: 4 - type: integer 
+	Parameter C_S2MM_MAX_BURST_LENGTH bound to: 8 - type: integer 
+	Parameter C_M_AXI_S2MM_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_S2MM_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_S_AXIS_S2MM_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXIS_S2MM_TUSER_BITS bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_ALL bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_0 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_1 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_2 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_3 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_4 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_5 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_6 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_7 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_8 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_9 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_10 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_11 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_12 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_13 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_14 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_15 bound to: 1 - type: integer 
+	Parameter C_INSTANCE bound to: axi_vdma - type: string 
+	Parameter C_SELECT_XPM bound to: 0 - type: integer 
+	Parameter C_ENABLE_VERT_FLIP bound to: 0 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_rst_module' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:16461]
+	Parameter C_INCLUDE_MM2S bound to: 1 - type: integer 
+	Parameter C_INCLUDE_S2MM bound to: 0 - type: integer 
+	Parameter C_INCLUDE_SG bound to: 0 - type: integer 
+	Parameter C_PRMRY_IS_ACLK_ASYNC bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_reset' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:14866]
+	Parameter C_PRMRY_IS_ACLK_ASYNC bound to: 1 - type: integer 
+	Parameter C_INCLUDE_SG bound to: 0 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'cdc_sync' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter C_CDC_TYPE bound to: 0 - type: integer 
+	Parameter C_RESET_STATE bound to: 0 - type: integer 
+	Parameter C_SINGLE_BIT bound to: 1 - type: integer 
+	Parameter C_FLOP_INPUT bound to: 1 - type: integer 
+	Parameter C_VECTOR_WIDTH bound to: 32 - type: integer 
+	Parameter C_MTBF_STAGES bound to: 4 - type: integer 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'REG_P_IN_cdc_from' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:219]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'REG_P_IN2_cdc_to' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:232]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'P_IN_CROSS2SCNDRY_s_out_d2' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:269]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'P_IN_CROSS2SCNDRY_s_out_d3' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:279]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'P_IN_CROSS2SCNDRY_s_out_d4' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:289]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'P_IN_CROSS2SCNDRY_s_out_d5' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:299]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'P_IN_CROSS2SCNDRY_s_out_d6' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:309]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'P_IN_CROSS2SCNDRY_s_out_d7' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:320]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'P_IN_CROSS2SCNDRY_scndry_out' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:330]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 's_rst_d1' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:339]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 's_rst_d2' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:347]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 's_rst_d3' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:355]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 's_rst_d4' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:364]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 's_rst_d5' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:374]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 's_rst_d6' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:383]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 's_rst_d7' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:392]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (1#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized0' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter C_CDC_TYPE bound to: 1 - type: integer 
+	Parameter C_RESET_STATE bound to: 0 - type: integer 
+	Parameter C_SINGLE_BIT bound to: 1 - type: integer 
+	Parameter C_FLOP_INPUT bound to: 1 - type: integer 
+	Parameter C_VECTOR_WIDTH bound to: 32 - type: integer 
+	Parameter C_MTBF_STAGES bound to: 4 - type: integer 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'REG_PLEVEL_IN_cdc_from' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:491]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:514]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:545]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:554]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:564]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:574]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:584]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized0' (1#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_reset' (2#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:14866]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_rst_module' (3#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:16461]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_reg_if' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:39917]
+	Parameter C_INCLUDE_MM2S bound to: 1 - type: integer 
+	Parameter C_INCLUDE_S2MM bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_ALL bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_0 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_1 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_2 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_3 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_4 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_5 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_6 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_7 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_8 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_9 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_10 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_11 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_12 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_13 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_14 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_15 bound to: 1 - type: integer 
+	Parameter C_INCLUDE_SG bound to: 0 - type: integer 
+	Parameter C_ENABLE_VIDPRMTR_READS bound to: 1 - type: integer 
+	Parameter C_TOTAL_NUM_REGISTER bound to: 62 - type: integer 
+	Parameter C_PRMRY_IS_ACLK_ASYNC bound to: 1 - type: integer 
+	Parameter C_S_AXI_LITE_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_LITE_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_VERSION_MAJOR bound to: 4'b0110 
+	Parameter C_VERSION_MINOR bound to: 8'b00100000 
+	Parameter C_VERSION_REVISION bound to: 4'b0000 
+	Parameter C_REVISION_NUMBER bound to: Build Number: P80 - type: string 
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_lite_if' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:16956]
+	Parameter C_MM2S_IS bound to: 1 - type: integer 
+	Parameter C_S2MM_IS bound to: 0 - type: integer 
+	Parameter C_PRMRY_IS_ACLK_ASYNC bound to: 1 - type: integer 
+	Parameter C_NUM_CE bound to: 62 - type: integer 
+	Parameter C_S_AXI_LITE_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_LITE_DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized1' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter C_CDC_TYPE bound to: 0 - type: integer 
+	Parameter C_RESET_STATE bound to: 1 - type: integer 
+	Parameter C_SINGLE_BIT bound to: 1 - type: integer 
+	Parameter C_FLOP_INPUT bound to: 1 - type: integer 
+	Parameter C_VECTOR_WIDTH bound to: 32 - type: integer 
+	Parameter C_MTBF_STAGES bound to: 4 - type: integer 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'REG_P_IN_cdc_from' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:219]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'REG_P_IN2_cdc_to' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:232]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'P_IN_CROSS2SCNDRY_s_out_d2' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:269]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'P_IN_CROSS2SCNDRY_s_out_d3' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:279]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'P_IN_CROSS2SCNDRY_s_out_d4' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:289]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'P_IN_CROSS2SCNDRY_s_out_d5' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:299]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'P_IN_CROSS2SCNDRY_s_out_d6' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:309]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'P_IN_CROSS2SCNDRY_s_out_d7' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:320]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'P_IN_CROSS2SCNDRY_scndry_out' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:330]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 's_rst_d1' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:339]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 's_rst_d2' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:347]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 's_rst_d3' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:355]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 's_rst_d4' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:364]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 's_rst_d5' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:374]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 's_rst_d6' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:383]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 's_rst_d7' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:392]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized1' (3#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_lite_if' (4#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:16956]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized2' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter C_CDC_TYPE bound to: 1 - type: integer 
+	Parameter C_RESET_STATE bound to: 1 - type: integer 
+	Parameter C_SINGLE_BIT bound to: 1 - type: integer 
+	Parameter C_FLOP_INPUT bound to: 1 - type: integer 
+	Parameter C_VECTOR_WIDTH bound to: 32 - type: integer 
+	Parameter C_MTBF_STAGES bound to: 3 - type: integer 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'REG_PLEVEL_IN_cdc_from' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:491]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:514]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:545]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:554]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:564]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:574]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6' to cell 'FDR' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:584]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized2' (4#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_reg_if' (5#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:39917]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_intrpt' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:40643]
+	Parameter C_INCLUDE_CH1 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_ALL bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_0 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_1 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_2 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_3 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_4 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_5 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_6 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_7 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_8 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_9 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_10 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_11 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_12 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_13 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_14 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_15 bound to: 1 - type: integer 
+	Parameter C_INCLUDE_CH2 bound to: 0 - type: integer 
+	Parameter C_INCLUDE_DLYTMR bound to: 1 - type: integer 
+	Parameter C_DLYTMR_RESOLUTION bound to: 125 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_intrpt' (6#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:40643]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_mm2s_axis_dwidth_converter' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:68616]
+	Parameter C_M_AXIS_MM2S_TDATA_WIDTH_CALCULATED bound to: 32 - type: integer 
+	Parameter C_M_AXIS_MM2S_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_M_AXIS_MM2S_TDATA_WIDTH_div_by_8 bound to: 3 - type: integer 
+	Parameter C_MM2S_SOF_ENABLE bound to: 1 - type: integer 
+	Parameter ENABLE_FLUSH_ON_FSYNC bound to: 0 - type: integer 
+	Parameter C_M_AXIS_MM2S_TDATA_WIDTH_CALCULATED_div_by_8 bound to: 4 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 4 - type: integer 
+	Parameter C_M_AXIS_TUSER_WIDTH bound to: 3 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-3491] module 'axi_vdma_v6_3_10_axis_dwidth_converter_v1_0_axis_dwidth_converter' declared at 'h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:1938' bound to instance 'MM2S_AXIS_DWIDTH_CONVERTER_I' of component 'axi_vdma_v6_3_10_axis_dwidth_converter_v1_0_axis_dwidth_converter' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:68707]
+INFO: [Synth 8-6157] synthesizing module 'axi_vdma_v6_3_10_axis_dwidth_converter_v1_0_axis_dwidth_converter' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:1938]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 4 - type: integer 
+	Parameter C_M_AXIS_TUSER_WIDTH bound to: 3 - type: integer 
+	Parameter C_AXIS_SIGNAL_SET bound to: 255 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERROR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_SS_TKEEP_REQUIRED bound to: 8 - type: integer 
+	Parameter P_AXIS_SIGNAL_SET bound to: 32'b00000000000000000000000011111111 
+	Parameter P_S_RATIO bound to: 3 - type: integer 
+	Parameter P_M_RATIO bound to: 4 - type: integer 
+	Parameter P_D2_TDATA_WIDTH bound to: 96 - type: integer 
+	Parameter P_D1_TUSER_WIDTH bound to: 4 - type: integer 
+	Parameter P_D2_TUSER_WIDTH bound to: 12 - type: integer 
+	Parameter P_D3_TUSER_WIDTH bound to: 3 - type: integer 
+	Parameter P_D1_REG_CONFIG bound to: 0 - type: integer 
+	Parameter P_D3_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_vdma_v6_3_10_axis_dwidth_converter_v1_0_axisc_upsizer' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:1191]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 96 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 4 - type: integer 
+	Parameter C_M_AXIS_TUSER_WIDTH bound to: 12 - type: integer 
+	Parameter C_AXIS_SIGNAL_SET bound to: 32'b00000000000000000000000011111111 
+	Parameter C_RATIO bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERROR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_READY_EXIST bound to: 1'b1 
+	Parameter P_DATA_EXIST bound to: 1'b1 
+	Parameter P_STRB_EXIST bound to: 1'b1 
+	Parameter P_KEEP_EXIST bound to: 1'b1 
+	Parameter P_LAST_EXIST bound to: 1'b1 
+	Parameter P_ID_EXIST bound to: 1'b1 
+	Parameter P_DEST_EXIST bound to: 1'b1 
+	Parameter P_USER_EXIST bound to: 1'b1 
+	Parameter P_S_AXIS_TSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter P_M_AXIS_TSTRB_WIDTH bound to: 12 - type: integer 
+	Parameter SM_RESET bound to: 3'b000 
+	Parameter SM_IDLE bound to: 3'b001 
+	Parameter SM_ACTIVE bound to: 3'b101 
+	Parameter SM_END bound to: 3'b011 
+	Parameter SM_END_TO_ACTIVE bound to: 3'b010 
+INFO: [Synth 8-6155] done synthesizing module 'axi_vdma_v6_3_10_axis_dwidth_converter_v1_0_axisc_upsizer' (7#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:1191]
+INFO: [Synth 8-6157] synthesizing module 'axi_vdma_v6_3_10_axis_dwidth_converter_v1_0_axisc_downsizer' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:1558]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 96 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXIS_TUSER_WIDTH bound to: 12 - type: integer 
+	Parameter C_M_AXIS_TUSER_WIDTH bound to: 3 - type: integer 
+	Parameter C_AXIS_SIGNAL_SET bound to: 32'b00000000000000000000000011111111 
+	Parameter C_RATIO bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERROR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_S_AXIS_TSTRB_WIDTH bound to: 12 - type: integer 
+	Parameter P_M_AXIS_TSTRB_WIDTH bound to: 3 - type: integer 
+	Parameter P_RATIO_WIDTH bound to: 2 - type: integer 
+	Parameter SM_RESET bound to: 3'b000 
+	Parameter SM_IDLE bound to: 3'b001 
+	Parameter SM_ACTIVE bound to: 3'b010 
+	Parameter SM_END bound to: 3'b011 
+	Parameter SM_END_TO_ACTIVE bound to: 3'b110 
+INFO: [Synth 8-6155] done synthesizing module 'axi_vdma_v6_3_10_axis_dwidth_converter_v1_0_axisc_downsizer' (8#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:1558]
+INFO: [Synth 8-6157] synthesizing module 'axi_vdma_v6_3_10_axis_register_slice_v1_0_axis_register_slice' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:979]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TUSER_WIDTH bound to: 4 - type: integer 
+	Parameter C_AXIS_SIGNAL_SET bound to: 32'b00000000000000000000000011111111 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERROR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TPAYLOAD_WIDTH bound to: 47 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_vdma_v6_3_10_axis_infrastructure_v1_0_util_axis2vector' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:63]
+	Parameter C_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_TUSER_WIDTH bound to: 4 - type: integer 
+	Parameter C_TPAYLOAD_WIDTH bound to: 47 - type: integer 
+	Parameter C_SIGNAL_SET bound to: 32'b00000000000000000000000011111111 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERROR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TDATA_INDX bound to: 0 - type: integer 
+	Parameter P_TSTRB_INDX bound to: 32 - type: integer 
+	Parameter P_TKEEP_INDX bound to: 36 - type: integer 
+	Parameter P_TLAST_INDX bound to: 40 - type: integer 
+	Parameter P_TID_INDX bound to: 41 - type: integer 
+	Parameter P_TDEST_INDX bound to: 42 - type: integer 
+	Parameter P_TUSER_INDX bound to: 43 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_vdma_v6_3_10_axis_infrastructure_v1_0_util_axis2vector' (9#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:63]
+INFO: [Synth 8-6157] synthesizing module 'axi_vdma_v6_3_10_axis_register_slice_v1_0_axisc_register_slice' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:391]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_DATA_WIDTH bound to: 47 - type: integer 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_vdma_v6_3_10_axis_register_slice_v1_0_axisc_register_slice' (10#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:391]
+INFO: [Synth 8-6157] synthesizing module 'axi_vdma_v6_3_10_axis_infrastructure_v1_0_util_vector2axis' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:228]
+	Parameter C_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_TUSER_WIDTH bound to: 4 - type: integer 
+	Parameter C_TPAYLOAD_WIDTH bound to: 47 - type: integer 
+	Parameter C_SIGNAL_SET bound to: 32'b00000000000000000000000011111111 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERROR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TDATA_INDX bound to: 0 - type: integer 
+	Parameter P_TSTRB_INDX bound to: 32 - type: integer 
+	Parameter P_TKEEP_INDX bound to: 36 - type: integer 
+	Parameter P_TLAST_INDX bound to: 40 - type: integer 
+	Parameter P_TID_INDX bound to: 41 - type: integer 
+	Parameter P_TDEST_INDX bound to: 42 - type: integer 
+	Parameter P_TUSER_INDX bound to: 43 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_vdma_v6_3_10_axis_infrastructure_v1_0_util_vector2axis' (11#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:228]
+INFO: [Synth 8-6155] done synthesizing module 'axi_vdma_v6_3_10_axis_register_slice_v1_0_axis_register_slice' (12#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:979]
+INFO: [Synth 8-6157] synthesizing module 'axi_vdma_v6_3_10_axis_register_slice_v1_0_axis_register_slice__parameterized0' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:979]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_AXIS_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TUSER_WIDTH bound to: 3 - type: integer 
+	Parameter C_AXIS_SIGNAL_SET bound to: 32'b00000000000000000000000011111111 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERROR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TPAYLOAD_WIDTH bound to: 36 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_vdma_v6_3_10_axis_infrastructure_v1_0_util_axis2vector__parameterized0' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:63]
+	Parameter C_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_TUSER_WIDTH bound to: 3 - type: integer 
+	Parameter C_TPAYLOAD_WIDTH bound to: 36 - type: integer 
+	Parameter C_SIGNAL_SET bound to: 32'b00000000000000000000000011111111 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERROR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TDATA_INDX bound to: 0 - type: integer 
+	Parameter P_TSTRB_INDX bound to: 24 - type: integer 
+	Parameter P_TKEEP_INDX bound to: 27 - type: integer 
+	Parameter P_TLAST_INDX bound to: 30 - type: integer 
+	Parameter P_TID_INDX bound to: 31 - type: integer 
+	Parameter P_TDEST_INDX bound to: 32 - type: integer 
+	Parameter P_TUSER_INDX bound to: 33 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_vdma_v6_3_10_axis_infrastructure_v1_0_util_axis2vector__parameterized0' (12#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:63]
+INFO: [Synth 8-6157] synthesizing module 'axi_vdma_v6_3_10_axis_register_slice_v1_0_axisc_register_slice__parameterized0' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:391]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_DATA_WIDTH bound to: 36 - type: integer 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_vdma_v6_3_10_axis_register_slice_v1_0_axisc_register_slice__parameterized0' (12#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:391]
+INFO: [Synth 8-6157] synthesizing module 'axi_vdma_v6_3_10_axis_infrastructure_v1_0_util_vector2axis__parameterized0' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:228]
+	Parameter C_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_TUSER_WIDTH bound to: 3 - type: integer 
+	Parameter C_TPAYLOAD_WIDTH bound to: 36 - type: integer 
+	Parameter C_SIGNAL_SET bound to: 32'b00000000000000000000000011111111 
+	Parameter G_INDX_SS_TREADY bound to: 0 - type: integer 
+	Parameter G_INDX_SS_TDATA bound to: 1 - type: integer 
+	Parameter G_INDX_SS_TSTRB bound to: 2 - type: integer 
+	Parameter G_INDX_SS_TKEEP bound to: 3 - type: integer 
+	Parameter G_INDX_SS_TLAST bound to: 4 - type: integer 
+	Parameter G_INDX_SS_TID bound to: 5 - type: integer 
+	Parameter G_INDX_SS_TDEST bound to: 6 - type: integer 
+	Parameter G_INDX_SS_TUSER bound to: 7 - type: integer 
+	Parameter G_MASK_SS_TREADY bound to: 1 - type: integer 
+	Parameter G_MASK_SS_TDATA bound to: 2 - type: integer 
+	Parameter G_MASK_SS_TSTRB bound to: 4 - type: integer 
+	Parameter G_MASK_SS_TKEEP bound to: 8 - type: integer 
+	Parameter G_MASK_SS_TLAST bound to: 16 - type: integer 
+	Parameter G_MASK_SS_TID bound to: 32 - type: integer 
+	Parameter G_MASK_SS_TDEST bound to: 64 - type: integer 
+	Parameter G_MASK_SS_TUSER bound to: 128 - type: integer 
+	Parameter G_TASK_SEVERITY_ERROR bound to: 2 - type: integer 
+	Parameter G_TASK_SEVERITY_WARNING bound to: 1 - type: integer 
+	Parameter G_TASK_SEVERITY_INFO bound to: 0 - type: integer 
+	Parameter P_TDATA_INDX bound to: 0 - type: integer 
+	Parameter P_TSTRB_INDX bound to: 24 - type: integer 
+	Parameter P_TKEEP_INDX bound to: 27 - type: integer 
+	Parameter P_TLAST_INDX bound to: 30 - type: integer 
+	Parameter P_TID_INDX bound to: 31 - type: integer 
+	Parameter P_TDEST_INDX bound to: 32 - type: integer 
+	Parameter P_TUSER_INDX bound to: 33 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_vdma_v6_3_10_axis_infrastructure_v1_0_util_vector2axis__parameterized0' (12#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:228]
+INFO: [Synth 8-6155] done synthesizing module 'axi_vdma_v6_3_10_axis_register_slice_v1_0_axis_register_slice__parameterized0' (12#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:979]
+INFO: [Synth 8-6155] done synthesizing module 'axi_vdma_v6_3_10_axis_dwidth_converter_v1_0_axis_dwidth_converter' (13#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.v:1938]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_mm2s_axis_dwidth_converter' (14#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:68616]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_reg_module' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:39071]
+	Parameter C_TOTAL_NUM_REGISTER bound to: 62 - type: integer 
+	Parameter C_INCLUDE_SG bound to: 0 - type: integer 
+	Parameter C_CHANNEL_IS_MM2S bound to: 1 - type: integer 
+	Parameter C_ENABLE_FLUSH_ON_FSYNC bound to: 0 - type: integer 
+	Parameter C_ENABLE_VIDPRMTR_READS bound to: 1 - type: integer 
+	Parameter C_INTERNAL_GENLOCK_ENABLE bound to: 0 - type: integer 
+	Parameter C_DYNAMIC_RESOLUTION bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_ALL bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_0 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_1 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_2 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_3 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_4 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_5 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_6 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_7 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_8 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_9 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_10 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_11 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_12 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_13 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_14 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_15 bound to: 1 - type: integer 
+	Parameter C_ENABLE_VERT_FLIP bound to: 0 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 1 - type: integer 
+	Parameter C_NUM_FSTORES_64 bound to: 1 - type: integer 
+	Parameter C_LINEBUFFER_THRESH bound to: 4 - type: integer 
+	Parameter C_GENLOCK_MODE bound to: 3 - type: integer 
+	Parameter C_S_AXI_LITE_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_LITE_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_SG_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_register' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:18717]
+	Parameter C_NUM_REGISTERS bound to: 8 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 1 - type: integer 
+	Parameter C_NUM_FSTORES_64 bound to: 1 - type: integer 
+	Parameter C_CHANNEL_IS_MM2S bound to: 1 - type: integer 
+	Parameter C_LINEBUFFER_THRESH bound to: 4 - type: integer 
+	Parameter C_ENABLE_DEBUG_ALL bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_0 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_1 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_2 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_3 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_4 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_5 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_6 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_7 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_8 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_9 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_10 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_11 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_12 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_13 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_14 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_15 bound to: 1 - type: integer 
+	Parameter C_INTERNAL_GENLOCK_ENABLE bound to: 0 - type: integer 
+	Parameter C_INCLUDE_SG bound to: 0 - type: integer 
+	Parameter C_GENLOCK_MODE bound to: 3 - type: integer 
+	Parameter C_ENABLE_FLUSH_ON_FSYNC bound to: 0 - type: integer 
+	Parameter C_S_AXI_LITE_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_SG_ADDR_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_register' (15#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:18717]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_regdirect' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:20533]
+	Parameter C_NUM_REGISTERS bound to: 19 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 1 - type: integer 
+	Parameter C_NUM_FSTORES_64 bound to: 1 - type: integer 
+	Parameter C_GENLOCK_MODE bound to: 3 - type: integer 
+	Parameter C_DYNAMIC_RESOLUTION bound to: 1 - type: integer 
+	Parameter C_S_AXI_LITE_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_regdirect' (16#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:20533]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_reg_mux' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:29596]
+	Parameter C_TOTAL_NUM_REGISTER bound to: 62 - type: integer 
+	Parameter C_INCLUDE_SG bound to: 0 - type: integer 
+	Parameter C_CHANNEL_IS_MM2S bound to: 1 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 1 - type: integer 
+	Parameter C_NUM_FSTORES_64 bound to: 1 - type: integer 
+	Parameter C_ENABLE_VIDPRMTR_READS bound to: 1 - type: integer 
+	Parameter C_S_AXI_LITE_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_LITE_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_SG_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_reg_mux' (17#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:29596]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_reg_module' (18#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:39071]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_mngr' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:64248]
+	Parameter C_PRMRY_IS_ACLK_ASYNC bound to: 0 - type: integer 
+	Parameter C_PRMY_CMDFIFO_DEPTH bound to: 4 - type: integer 
+	Parameter C_INCLUDE_SF bound to: 0 - type: integer 
+	Parameter C_USE_FSYNC bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_ALL bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_0 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_1 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_2 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_3 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_4 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_5 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_6 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_7 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_8 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_9 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_10 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_11 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_12 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_13 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_14 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_15 bound to: 1 - type: integer 
+	Parameter C_ENABLE_VERT_FLIP bound to: 0 - type: integer 
+	Parameter C_ENABLE_FLUSH_ON_FSYNC bound to: 0 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 1 - type: integer 
+	Parameter C_GENLOCK_MODE bound to: 3 - type: integer 
+	Parameter C_GENLOCK_NUM_MASTERS bound to: 1 - type: integer 
+	Parameter C_DYNAMIC_RESOLUTION bound to: 1 - type: integer 
+	Parameter C_INTERNAL_GENLOCK_ENABLE bound to: 0 - type: integer 
+	Parameter C_EXTEND_DM_COMMAND bound to: 0 - type: integer 
+	Parameter C_INCLUDE_SG bound to: 0 - type: integer 
+	Parameter C_M_AXI_SG_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_SG_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_DM_STATUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_S2MM_SOF_ENABLE bound to: 0 - type: integer 
+	Parameter C_MM2S_SOF_ENABLE bound to: 1 - type: integer 
+	Parameter C_INCLUDE_MM2S bound to: 1 - type: integer 
+	Parameter C_INCLUDE_S2MM bound to: 0 - type: integer 
+	Parameter C_SELECT_XPM bound to: 0 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_sm' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:61909]
+	Parameter C_INCLUDE_SF bound to: 0 - type: integer 
+	Parameter C_USE_FSYNC bound to: 0 - type: integer 
+	Parameter C_ENABLE_FLUSH_ON_FSYNC bound to: 0 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_EXTEND_DM_COMMAND bound to: 0 - type: integer 
+	Parameter C_PRMY_CMDFIFO_DEPTH bound to: 4 - type: integer 
+	Parameter C_PRMRY_IS_ACLK_ASYNC bound to: 0 - type: integer 
+	Parameter C_S2MM_SOF_ENABLE bound to: 0 - type: integer 
+	Parameter C_MM2S_SOF_ENABLE bound to: 1 - type: integer 
+	Parameter C_ENABLE_VERT_FLIP bound to: 0 - type: integer 
+	Parameter C_INCLUDE_MM2S bound to: 1 - type: integer 
+	Parameter C_INCLUDE_S2MM bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_sm' (19#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:61909]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_cmdsts_if' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:63125]
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_DM_STATUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_INCLUDE_MM2S bound to: 1 - type: integer 
+	Parameter C_INCLUDE_S2MM bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_ALL bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_0 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_1 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_2 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_3 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_4 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_5 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_6 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_7 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_8 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_9 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_10 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_11 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_12 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_13 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_14 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_15 bound to: 1 - type: integer 
+	Parameter C_ENABLE_FLUSH_ON_FSYNC bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_cmdsts_if' (20#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:63125]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_sts_mngr' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:63632]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_sts_mngr' (21#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:63632]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_vidreg_module' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:56087]
+	Parameter C_INCLUDE_SG bound to: 0 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 1 - type: integer 
+	Parameter C_DYNAMIC_RESOLUTION bound to: 1 - type: integer 
+	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_SELECT_XPM bound to: 0 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_vregister' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:53973]
+	Parameter C_NUM_FSTORES bound to: 1 - type: integer 
+	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_vregister' (22#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:53973]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_vaddrreg_mux' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:55564]
+	Parameter C_NUM_FSTORES bound to: 1 - type: integer 
+	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_vaddrreg_mux' (23#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:55564]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_vidreg_module' (24#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:56087]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_genlock_mngr' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:58630]
+	Parameter C_GENLOCK_MODE bound to: 3 - type: integer 
+	Parameter C_GENLOCK_NUM_MASTERS bound to: 1 - type: integer 
+	Parameter C_INTERNAL_GENLOCK_ENABLE bound to: 0 - type: integer 
+	Parameter C_NUM_FSTORES bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_genlock_mux' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:57368]
+	Parameter C_GENLOCK_NUM_MASTERS bound to: 1 - type: integer 
+	Parameter C_INTERNAL_GENLOCK_ENABLE bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_genlock_mux' (25#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:57368]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_greycoder' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:58343]
+	Parameter C_DWIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_greycoder' (26#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:58343]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_genlock_mngr' (27#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:58630]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_mngr' (28#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:64248]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_fsync_gen' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:53102]
+	Parameter C_USE_FSYNC bound to: 0 - type: integer 
+	Parameter ENABLE_FLUSH_ON_MM2S_FSYNC bound to: 0 - type: integer 
+	Parameter ENABLE_FLUSH_ON_S2MM_FSYNC bound to: 0 - type: integer 
+	Parameter C_INCLUDE_S2MM bound to: 0 - type: integer 
+	Parameter C_INCLUDE_MM2S bound to: 1 - type: integer 
+	Parameter C_SOF_ENABLE bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_fsync_gen' (29#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:53102]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_vid_cdc' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:13253]
+	Parameter C_PRMRY_IS_ACLK_ASYNC bound to: 0 - type: integer 
+	Parameter C_GENLOCK_MSTR_PTR_DWIDTH bound to: 6 - type: integer 
+	Parameter C_GENLOCK_SLVE_PTR_DWIDTH bound to: 6 - type: integer 
+	Parameter C_INTERNAL_GENLOCK_ENABLE bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_vid_cdc' (30#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:13253]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_sof_gen' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:41253]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_sof_gen' (31#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:41253]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_mm2s_linebuf' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:46414]
+	Parameter C_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_MM2S_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_INCLUDE_S2MM bound to: 0 - type: integer 
+	Parameter C_INCLUDE_MM2S_SF bound to: 0 - type: integer 
+	Parameter C_INCLUDE_MM2S_DRE bound to: 1 - type: integer 
+	Parameter C_MM2S_SOF_ENABLE bound to: 1 - type: integer 
+	Parameter C_M_AXIS_MM2S_TUSER_BITS bound to: 1 - type: integer 
+	Parameter C_TOPLVL_LINEBUFFER_DEPTH bound to: 512 - type: integer 
+	Parameter C_LINEBUFFER_DEPTH bound to: 512 - type: integer 
+	Parameter C_LINEBUFFER_AE_THRESH bound to: 4 - type: integer 
+	Parameter C_PRMRY_IS_ACLK_ASYNC bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_ALL bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_0 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_1 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_2 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_3 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_4 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_5 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_6 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_7 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_8 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_9 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_10 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_11 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_12 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_13 bound to: 0 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_14 bound to: 1 - type: integer 
+	Parameter C_ENABLE_DEBUG_INFO_15 bound to: 1 - type: integer 
+	Parameter ENABLE_FLUSH_ON_FSYNC bound to: 0 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_sfifo' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:42057]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_FULL_FLAGS_RST_VAL bound to: 1 - type: integer 
+	Parameter UW_DATA_WIDTH bound to: 38 - type: integer 
+	Parameter UW_FIFO_DEPTH bound to: 512 - type: integer 
+	Parameter FIFO_MEMORY_TYPE bound to: auto - type: string 
+	Parameter FIFO_WRITE_DEPTH bound to: 512 - type: integer 
+	Parameter CASCADE_HEIGHT bound to: 0 - type: integer 
+	Parameter WRITE_DATA_WIDTH bound to: 38 - type: integer 
+	Parameter READ_MODE bound to: fwft - type: string 
+	Parameter FIFO_READ_LATENCY bound to: 0 - type: integer 
+	Parameter FULL_RESET_VALUE bound to: 0 - type: integer 
+	Parameter USE_ADV_FEATURES bound to: 1717 - type: string 
+	Parameter READ_DATA_WIDTH bound to: 38 - type: integer 
+	Parameter WR_DATA_COUNT_WIDTH bound to: 10 - type: integer 
+	Parameter PROG_FULL_THRESH bound to: 10 - type: integer 
+	Parameter RD_DATA_COUNT_WIDTH bound to: 10 - type: integer 
+	Parameter PROG_EMPTY_THRESH bound to: 10 - type: integer 
+	Parameter DOUT_RESET_VALUE bound to: 0 - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
+	Parameter WAKEUP_TIME bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'xpm_fifo_sync' declared at 'D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1947' bound to instance 'xpm_fifo_sync_inst' of component 'xpm_fifo_sync' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:42264]
+INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_sync' [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1947]
+	Parameter FIFO_MEMORY_TYPE bound to: auto - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
+	Parameter CASCADE_HEIGHT bound to: 0 - type: integer 
+	Parameter FIFO_WRITE_DEPTH bound to: 512 - type: integer 
+	Parameter WRITE_DATA_WIDTH bound to: 38 - type: integer 
+	Parameter WR_DATA_COUNT_WIDTH bound to: 10 - type: integer 
+	Parameter PROG_FULL_THRESH bound to: 10 - type: integer 
+	Parameter FULL_RESET_VALUE bound to: 0 - type: integer 
+	Parameter USE_ADV_FEATURES bound to: 1717 - type: string 
+	Parameter READ_MODE bound to: fwft - type: string 
+	Parameter FIFO_READ_LATENCY bound to: 0 - type: integer 
+	Parameter READ_DATA_WIDTH bound to: 38 - type: integer 
+	Parameter RD_DATA_COUNT_WIDTH bound to: 10 - type: integer 
+	Parameter PROG_EMPTY_THRESH bound to: 10 - type: integer 
+	Parameter DOUT_RESET_VALUE bound to: 0 - type: string 
+	Parameter WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter EN_ADV_FEATURE_SYNC bound to: 16'b0001011100010111 
+	Parameter P_FIFO_MEMORY_TYPE bound to: 0 - type: integer 
+	Parameter P_COMMON_CLOCK bound to: 1 - type: integer 
+	Parameter P_ECC_MODE bound to: 0 - type: integer 
+	Parameter P_READ_MODE bound to: 1 - type: integer 
+	Parameter P_WAKEUP_TIME bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_base' [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:56]
+	Parameter COMMON_CLOCK bound to: 1 - type: integer 
+	Parameter RELATED_CLOCKS bound to: 0 - type: integer 
+	Parameter FIFO_MEMORY_TYPE bound to: 0 - type: integer 
+	Parameter ECC_MODE bound to: 0 - type: integer 
+	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
+	Parameter CASCADE_HEIGHT bound to: 0 - type: integer 
+	Parameter FIFO_WRITE_DEPTH bound to: 512 - type: integer 
+	Parameter WRITE_DATA_WIDTH bound to: 38 - type: integer 
+	Parameter WR_DATA_COUNT_WIDTH bound to: 10 - type: integer 
+	Parameter PROG_FULL_THRESH bound to: 10 - type: integer 
+	Parameter USE_ADV_FEATURES bound to: 1717 - type: string 
+	Parameter READ_MODE bound to: 1 - type: integer 
+	Parameter FIFO_READ_LATENCY bound to: 0 - type: integer 
+	Parameter READ_DATA_WIDTH bound to: 38 - type: integer 
+	Parameter RD_DATA_COUNT_WIDTH bound to: 10 - type: integer 
+	Parameter PROG_EMPTY_THRESH bound to: 10 - type: integer 
+	Parameter DOUT_RESET_VALUE bound to: 0 - type: string 
+	Parameter CDC_DEST_SYNC_FF bound to: 2 - type: integer 
+	Parameter FULL_RESET_VALUE bound to: 0 - type: integer 
+	Parameter REMOVE_WR_RD_PROT_LOGIC bound to: 0 - type: integer 
+	Parameter WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter VERSION bound to: 0 - type: integer 
+	Parameter invalid bound to: 0 - type: integer 
+	Parameter stage1_valid bound to: 2 - type: integer 
+	Parameter stage2_valid bound to: 1 - type: integer 
+	Parameter both_stages_valid bound to: 3 - type: integer 
+	Parameter FIFO_MEM_TYPE bound to: 0 - type: integer 
+	Parameter RD_MODE bound to: 1 - type: integer 
+	Parameter ENABLE_ECC bound to: 0 - type: integer 
+	Parameter FIFO_READ_DEPTH bound to: 512 - type: integer 
+	Parameter FIFO_SIZE bound to: 19456 - type: integer 
+	Parameter WR_WIDTH_LOG bound to: 6 - type: integer 
+	Parameter WR_DEPTH_LOG bound to: 9 - type: integer 
+	Parameter WR_PNTR_WIDTH bound to: 9 - type: integer 
+	Parameter RD_PNTR_WIDTH bound to: 9 - type: integer 
+	Parameter FULL_RST_VAL bound to: 1'b0 
+	Parameter WR_RD_RATIO bound to: 0 - type: integer 
+	Parameter READ_MODE_LL bound to: 1 - type: integer 
+	Parameter PF_THRESH_ADJ bound to: 8 - type: integer 
+	Parameter PE_THRESH_ADJ bound to: 8 - type: integer 
+	Parameter PF_THRESH_MIN bound to: 5 - type: integer 
+	Parameter PF_THRESH_MAX bound to: 507 - type: integer 
+	Parameter PE_THRESH_MIN bound to: 5 - type: integer 
+	Parameter PE_THRESH_MAX bound to: 507 - type: integer 
+	Parameter WR_DC_WIDTH_EXT bound to: 10 - type: integer 
+	Parameter RD_DC_WIDTH_EXT bound to: 10 - type: integer 
+	Parameter RD_LATENCY bound to: 2 - type: integer 
+	Parameter WIDTH_RATIO bound to: 1 - type: integer 
+	Parameter EN_ADV_FEATURE bound to: 16'b0001011100010111 
+	Parameter EN_OF bound to: 1'b1 
+	Parameter EN_PF bound to: 1'b1 
+	Parameter EN_WDC bound to: 1'b1 
+	Parameter EN_AF bound to: 1'b0 
+	Parameter EN_WACK bound to: 1'b1 
+	Parameter FG_EQ_ASYM_DOUT bound to: 1'b0 
+	Parameter EN_UF bound to: 1'b1 
+	Parameter EN_PE bound to: 1'b1 
+	Parameter EN_RDC bound to: 1'b1 
+	Parameter EN_AE bound to: 1'b0 
+	Parameter EN_DVLD bound to: 1'b1 
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base' [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+	Parameter MEMORY_TYPE bound to: 1 - type: integer 
+	Parameter MEMORY_SIZE bound to: 19456 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: 0 - type: integer 
+	Parameter CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter ECC_MODE bound to: 0 - type: integer 
+	Parameter MEMORY_INIT_FILE bound to: none - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: (null) - type: string 
+	Parameter USE_MEM_INIT_MMI bound to: 0 - type: integer 
+	Parameter USE_MEM_INIT bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter VERSION bound to: 0 - type: integer 
+	Parameter USE_EMBEDDED_CONSTRAINT bound to: 0 - type: integer 
+	Parameter CASCADE_HEIGHT bound to: 0 - type: integer 
+	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
+	Parameter WRITE_PROTECT bound to: 1 - type: integer 
+	Parameter WRITE_DATA_WIDTH_A bound to: 38 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 38 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 38 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 9 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: 2 - type: integer 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter WRITE_DATA_WIDTH_B bound to: 38 - type: integer 
+	Parameter READ_DATA_WIDTH_B bound to: 38 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_B bound to: 38 - type: integer 
+	Parameter ADDR_WIDTH_B bound to: 9 - type: integer 
+	Parameter READ_RESET_VALUE_B bound to: 0 - type: string 
+	Parameter READ_LATENCY_B bound to: 2 - type: integer 
+	Parameter WRITE_MODE_B bound to: 2 - type: integer 
+	Parameter RST_MODE_B bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: auto - type: string 
+	Parameter P_MIN_WIDTH_DATA_A bound to: 38 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_B bound to: 38 - type: integer 
+	Parameter P_MIN_WIDTH_DATA bound to: 38 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_ECC bound to: 38 - type: integer 
+	Parameter P_MAX_DEPTH_DATA bound to: 512 - type: integer 
+	Parameter P_ECC_MODE bound to: no_ecc - type: string 
+	Parameter P_MEMORY_OPT bound to: yes - type: string 
+	Parameter P_WIDTH_COL_WRITE_A bound to: 38 - type: integer 
+	Parameter P_WIDTH_COL_WRITE_B bound to: 38 - type: integer 
+	Parameter P_NUM_COLS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_COLS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_B bound to: 1 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_A bound to: 9 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_B bound to: 9 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_A bound to: 9 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_B bound to: 9 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_B bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_B bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_A bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_B bound to: 0 - type: integer 
+	Parameter P_SDP_WRITE_MODE bound to: yes - type: string 
+	Parameter rsta_loop_iter bound to: 40 - type: integer 
+	Parameter rstb_loop_iter bound to: 40 - type: integer 
+	Parameter NUM_CHAR_LOC bound to: 0 - type: integer 
+	Parameter MAX_NUM_CHAR bound to: 0 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_SHFT bound to: 38 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_LDW bound to: 4 - type: integer 
+INFO: [Synth 8-6059] Synth Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value.   [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:488]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base' (32#1) [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-226] default block is never used [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1204]
+INFO: [Synth 8-226] default block is never used [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1271]
+INFO: [Synth 8-226] default block is never used [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1293]
+INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_reg_bit' [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1902]
+	Parameter RST_VALUE bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_reg_bit' (33#1) [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1902]
+INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn' [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1854]
+	Parameter COUNTER_WIDTH bound to: 2 - type: integer 
+	Parameter RESET_VALUE bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn' (34#1) [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1854]
+INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_rst' [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1618]
+	Parameter COMMON_CLOCK bound to: 1 - type: integer 
+	Parameter CDC_DEST_SYNC_FF bound to: 2 - type: integer 
+	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_rst' (35#1) [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1618]
+INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized0' [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1854]
+	Parameter COUNTER_WIDTH bound to: 10 - type: integer 
+	Parameter RESET_VALUE bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized0' (35#1) [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1854]
+INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized1' [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1854]
+	Parameter COUNTER_WIDTH bound to: 9 - type: integer 
+	Parameter RESET_VALUE bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized1' (35#1) [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1854]
+INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized2' [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1854]
+	Parameter COUNTER_WIDTH bound to: 9 - type: integer 
+	Parameter RESET_VALUE bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized2' (35#1) [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1854]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_base' (36#1) [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:56]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_sync' (37#1) [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1947]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_sfifo' (38#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:42057]
+INFO: [Synth 8-638] synthesizing module 'axi_vdma_skid_buf' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:41500]
+	Parameter C_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_TUSER_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_skid_buf' (39#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:41500]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma_mm2s_linebuf' (40#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:46414]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:55436]
+	Parameter C_INCLUDE_MM2S bound to: 1 - type: integer 
+	Parameter C_M_AXI_MM2S_ARID bound to: 0 - type: integer 
+	Parameter C_M_AXI_MM2S_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_M_AXI_MM2S_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_MM2S_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_MM2S_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_INCLUDE_MM2S_STSFIFO bound to: 1 - type: integer 
+	Parameter C_MM2S_STSCMD_FIFO_DEPTH bound to: 4 - type: integer 
+	Parameter C_MM2S_STSCMD_IS_ASYNC bound to: 0 - type: integer 
+	Parameter C_INCLUDE_MM2S_DRE bound to: 0 - type: integer 
+	Parameter C_MM2S_BURST_SIZE bound to: 16 - type: integer 
+	Parameter C_MM2S_BTT_USED bound to: 16 - type: integer 
+	Parameter C_MM2S_ADDR_PIPE_DEPTH bound to: 4 - type: integer 
+	Parameter C_MM2S_INCLUDE_SF bound to: 0 - type: integer 
+	Parameter C_INCLUDE_S2MM bound to: 0 - type: integer 
+	Parameter C_M_AXI_S2MM_AWID bound to: 1 - type: integer 
+	Parameter C_M_AXI_S2MM_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_M_AXI_S2MM_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_S2MM_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_S_AXIS_S2MM_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_INCLUDE_S2MM_STSFIFO bound to: 1 - type: integer 
+	Parameter C_S2MM_STSCMD_FIFO_DEPTH bound to: 4 - type: integer 
+	Parameter C_S2MM_STSCMD_IS_ASYNC bound to: 0 - type: integer 
+	Parameter C_INCLUDE_S2MM_DRE bound to: 0 - type: integer 
+	Parameter C_S2MM_BURST_SIZE bound to: 8 - type: integer 
+	Parameter C_S2MM_BTT_USED bound to: 16 - type: integer 
+	Parameter C_S2MM_SUPPORT_INDET_BTT bound to: 1 - type: integer 
+	Parameter C_S2MM_ADDR_PIPE_DEPTH bound to: 4 - type: integer 
+	Parameter C_S2MM_INCLUDE_SF bound to: 1 - type: integer 
+	Parameter C_ENABLE_CACHE_USER bound to: 0 - type: integer 
+	Parameter C_ENABLE_SKID_BUF bound to: 11100 - type: string 
+	Parameter C_ENABLE_MM2S_TKEEP bound to: 1 - type: integer 
+	Parameter C_ENABLE_S2MM_TKEEP bound to: 0 - type: integer 
+	Parameter C_ENABLE_S2MM_ADV_SIG bound to: 0 - type: integer 
+	Parameter C_ENABLE_MM2S_ADV_SIG bound to: 0 - type: integer 
+	Parameter C_MICRO_DMA bound to: 0 - type: integer 
+	Parameter C_CMD_WIDTH bound to: 72 - type: integer 
+	Parameter C_MCDMA bound to: 0 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_mm2s_full_wrap' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:53572]
+	Parameter C_INCLUDE_MM2S bound to: 1 - type: integer 
+	Parameter C_MM2S_ARID bound to: 0 - type: integer 
+	Parameter C_MM2S_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_MM2S_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_MM2S_MDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_MM2S_SDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_INCLUDE_MM2S_STSFIFO bound to: 1 - type: integer 
+	Parameter C_MM2S_STSCMD_FIFO_DEPTH bound to: 4 - type: integer 
+	Parameter C_MM2S_STSCMD_IS_ASYNC bound to: 0 - type: integer 
+	Parameter C_INCLUDE_MM2S_DRE bound to: 0 - type: integer 
+	Parameter C_MM2S_BURST_SIZE bound to: 16 - type: integer 
+	Parameter C_MM2S_BTT_USED bound to: 16 - type: integer 
+	Parameter C_MM2S_ADDR_PIPE_DEPTH bound to: 4 - type: integer 
+	Parameter C_TAG_WIDTH bound to: 4 - type: integer 
+	Parameter C_INCLUDE_MM2S_GP_SF bound to: 0 - type: integer 
+	Parameter C_ENABLE_CACHE_USER bound to: 0 - type: integer 
+	Parameter C_ENABLE_MM2S_TKEEP bound to: 1 - type: integer 
+	Parameter C_ENABLE_SKID_BUF bound to: 11100 - type: string 
+	Parameter C_MCDMA bound to: 0 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_reset' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:153]
+	Parameter C_STSCMD_IS_ASYNC bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_reset' (41#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:153]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_cmd_status' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:2698]
+	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_INCLUDE_STSFIFO bound to: 1 - type: integer 
+	Parameter C_STSCMD_FIFO_DEPTH bound to: 4 - type: integer 
+	Parameter C_STSCMD_IS_ASYNC bound to: 0 - type: integer 
+	Parameter C_CMD_WIDTH bound to: 68 - type: integer 
+	Parameter C_STS_WIDTH bound to: 8 - type: integer 
+	Parameter C_ENABLE_CACHE_USER bound to: 0 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+	Parameter C_DWIDTH bound to: 68 - type: integer 
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_IS_ASYNC bound to: 0 - type: integer 
+	Parameter C_PRIM_TYPE bound to: 2 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+	Parameter C_DWIDTH bound to: 68 - type: integer 
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+	Parameter C_DWIDTH bound to: 68 - type: integer 
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'cntr_incr_decr_addn_f' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
+	Parameter C_SIZE bound to: 3 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-256] done synthesizing module 'cntr_incr_decr_addn_f' (42#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_DWIDTH bound to: 68 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f' (43#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f' (44#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f' (45#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo' (46#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized0' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+	Parameter C_DWIDTH bound to: 8 - type: integer 
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_IS_ASYNC bound to: 0 - type: integer 
+	Parameter C_PRIM_TYPE bound to: 2 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f__parameterized0' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+	Parameter C_DWIDTH bound to: 8 - type: integer 
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f__parameterized0' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+	Parameter C_DWIDTH bound to: 8 - type: integer 
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized0' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_DWIDTH bound to: 8 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized0' (46#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized0' (46#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized0' (46#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized0' (46#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_cmd_status' (47#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:2698]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_rd_status_cntl' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:13746]
+	Parameter C_STS_WIDTH bound to: 8 - type: integer 
+	Parameter C_TAG_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_rd_status_cntl' (48#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:13746]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_pcc' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:7416]
+	Parameter C_IS_MM2S bound to: 1 - type: integer 
+	Parameter C_DRE_ALIGN_WIDTH bound to: 1 - type: integer 
+	Parameter C_SEL_ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_STREAM_DWIDTH bound to: 32 - type: integer 
+	Parameter C_MAX_BURST_LEN bound to: 16 - type: integer 
+	Parameter C_CMD_WIDTH bound to: 68 - type: integer 
+	Parameter C_TAG_WIDTH bound to: 4 - type: integer 
+	Parameter C_BTT_USED bound to: 16 - type: integer 
+	Parameter C_SUPPORT_INDET_BTT bound to: 0 - type: integer 
+	Parameter C_NATIVE_XFER_WIDTH bound to: 32 - type: integer 
+	Parameter C_STRT_SF_OFFSET_WIDTH bound to: 1 - type: integer 
+	Parameter C_MCDMA bound to: 0 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_strb_gen2' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:4342]
+	Parameter C_OP_MODE bound to: 0 - type: integer 
+	Parameter C_STRB_WIDTH bound to: 4 - type: integer 
+	Parameter C_OFFSET_WIDTH bound to: 2 - type: integer 
+	Parameter C_NUM_BYTES_WIDTH bound to: 3 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_strb_gen2' (49#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:4342]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_strb_gen2__parameterized0' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:4342]
+	Parameter C_OP_MODE bound to: 1 - type: integer 
+	Parameter C_STRB_WIDTH bound to: 4 - type: integer 
+	Parameter C_OFFSET_WIDTH bound to: 2 - type: integer 
+	Parameter C_NUM_BYTES_WIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_strb_gen2__parameterized0' (49#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:4342]
+INFO: [Synth 8-226] default block is never used [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:9490]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_pcc' (50#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:7416]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_addr_cntl' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:10000]
+	Parameter C_ADDR_FIFO_DEPTH bound to: 4 - type: integer 
+	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_ADDR_ID bound to: 0 - type: integer 
+	Parameter C_ADDR_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_TAG_WIDTH bound to: 4 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized1' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+	Parameter C_DWIDTH bound to: 59 - type: integer 
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_IS_ASYNC bound to: 0 - type: integer 
+	Parameter C_PRIM_TYPE bound to: 2 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f__parameterized1' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+	Parameter C_DWIDTH bound to: 59 - type: integer 
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f__parameterized1' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+	Parameter C_DWIDTH bound to: 59 - type: integer 
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized1' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_DWIDTH bound to: 59 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized1' (50#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized1' (50#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized1' (50#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized1' (50#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_addr_cntl' (51#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:10000]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_rddata_cntl' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:12185]
+	Parameter C_INCLUDE_DRE bound to: 0 - type: integer 
+	Parameter C_ALIGN_WIDTH bound to: 1 - type: integer 
+	Parameter C_SEL_ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter C_DATA_CNTL_FIFO_DEPTH bound to: 4 - type: integer 
+	Parameter C_MMAP_DWIDTH bound to: 32 - type: integer 
+	Parameter C_STREAM_DWIDTH bound to: 32 - type: integer 
+	Parameter C_TAG_WIDTH bound to: 4 - type: integer 
+	Parameter C_ENABLE_MM2S_TKEEP bound to: 1 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_rdmux' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:10681]
+	Parameter C_SEL_ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter C_MMAP_DWIDTH bound to: 32 - type: integer 
+	Parameter C_STREAM_DWIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_rdmux' (52#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:10681]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized2' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+	Parameter C_DWIDTH bound to: 29 - type: integer 
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_IS_ASYNC bound to: 0 - type: integer 
+	Parameter C_PRIM_TYPE bound to: 2 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f__parameterized2' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+	Parameter C_DWIDTH bound to: 29 - type: integer 
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f__parameterized2' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+	Parameter C_DWIDTH bound to: 29 - type: integer 
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized2' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+	Parameter C_DEPTH bound to: 4 - type: integer 
+	Parameter C_DWIDTH bound to: 29 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized2' (52#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized2' (52#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized2' (52#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized2' (52#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_rddata_cntl' (53#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:12185]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_mm2s_full_wrap' (54#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:53572]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_s2mm_omit_wrap' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:49604]
+	Parameter C_INCLUDE_S2MM bound to: 0 - type: integer 
+	Parameter C_S2MM_AWID bound to: 1 - type: integer 
+	Parameter C_S2MM_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_S2MM_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S2MM_MDATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_S2MM_SDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_INCLUDE_S2MM_STSFIFO bound to: 1 - type: integer 
+	Parameter C_S2MM_STSCMD_FIFO_DEPTH bound to: 4 - type: integer 
+	Parameter C_S2MM_STSCMD_IS_ASYNC bound to: 0 - type: integer 
+	Parameter C_INCLUDE_S2MM_DRE bound to: 0 - type: integer 
+	Parameter C_S2MM_BURST_SIZE bound to: 8 - type: integer 
+	Parameter C_S2MM_SUPPORT_INDET_BTT bound to: 1 - type: integer 
+	Parameter C_S2MM_ADDR_PIPE_DEPTH bound to: 4 - type: integer 
+	Parameter C_TAG_WIDTH bound to: 4 - type: integer 
+	Parameter C_ENABLE_CACHE_USER bound to: 0 - type: integer 
+	Parameter C_MCDMA bound to: 0 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_s2mm_omit_wrap' (55#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:49604]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover' (56#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4ab6/hdl/axi_datamover_v5_1_vh_rfs.vhd:55436]
+INFO: [Synth 8-256] done synthesizing module 'axi_vdma' (57#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/7860/hdl/axi_vdma_v6_3_rfs.vhd:69927]
+INFO: [Synth 8-256] done synthesizing module 'System_axi_vdma_0_0' (58#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_axi_vdma_0_0/synth/System_axi_vdma_0_0.vhd:106]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:32 ; elapsed = 00:00:42 . Memory (MB): peak = 1133.898 ; gain = 119.332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:43 . Memory (MB): peak = 1133.898 ; gain = 119.332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:33 ; elapsed = 00:00:43 . Memory (MB): peak = 1133.898 ; gain = 119.332
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.397 . Memory (MB): peak = 1133.898 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 129 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_axi_vdma_0_0/System_axi_vdma_0_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_axi_vdma_0_0/System_axi_vdma_0_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_axi_vdma_0_0/System_axi_vdma_0_0.xdc] for cell 'U0'
+Finished Parsing XDC File [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_axi_vdma_0_0/System_axi_vdma_0_0.xdc] for cell 'U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_axi_vdma_0_0/System_axi_vdma_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/System_axi_vdma_0_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/System_axi_vdma_0_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_axi_vdma_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_axi_vdma_0_0_synth_1/dont_touch.xdc]
+Parsing XDC File [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_axi_vdma_0_0/System_axi_vdma_0_0_clocks.xdc] for cell 'U0'
+Finished Parsing XDC File [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_axi_vdma_0_0/System_axi_vdma_0_0_clocks.xdc] for cell 'U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/System_axi_vdma_0_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/System_axi_vdma_0_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-1715] 1 XPM XDC files have been applied to the design.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1226.945 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 129 instances were transformed.
+  FDR => FDRE: 129 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.146 . Memory (MB): peak = 1226.945 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:49 ; elapsed = 00:01:01 . Memory (MB): peak = 1226.945 ; gain = 212.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:49 ; elapsed = 00:01:01 . Memory (MB): peak = 1226.945 ; gain = 212.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_axi_vdma_0_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property KEEP_HIERARCHY = SOFT for U0/\GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I /\GEN_LINEBUF_NO_SOF.GEN_LINEBUFFER.GEN_SYNC_FIFO.I_LINEBUFFER_FIFO /xpm_fifo_sync_inst. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:49 ; elapsed = 00:01:01 . Memory (MB): peak = 1226.945 ; gain = 212.379
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_vdma_v6_3_10_axis_dwidth_converter_v1_0_axisc_upsizer'
+INFO: [Synth 8-802] inferred FSM for state register 'dmacntrl_cs_reg' in module 'axi_vdma_sm'
+INFO: [Synth 8-802] inferred FSM for state register 'gen_fwft.curr_fwft_state_reg' in module 'xpm_fifo_base'
+INFO: [Synth 8-802] inferred FSM for state register 'sig_pcc_sm_state_reg' in module 'axi_datamover_pcc'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                SM_RESET |                            10000 |                              000
+                 SM_IDLE |                            00001 |                              001
+               SM_ACTIVE |                            00100 |                              101
+                  SM_END |                            01000 |                              011
+        SM_END_TO_ACTIVE |                            00010 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axi_vdma_v6_3_10_axis_dwidth_converter_v1_0_axisc_upsizer'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                              000 |                              000
+              wait_pipe1 |                              001 |                              001
+              wait_pipe2 |                              010 |                              010
+            execute_xfer |                              011 |                              100
+              check_done |                              100 |                              101
+           calc_cmd_addr |                              101 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'dmacntrl_cs_reg' using encoding 'sequential' in module 'axi_vdma_sm'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 invalid |                               00 |                               00
+            stage1_valid |                               01 |                               10
+       both_stages_valid |                               10 |                               11
+            stage2_valid |                               11 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'gen_fwft.curr_fwft_state_reg' using encoding 'sequential' in module 'xpm_fifo_base'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    init |                         00000001 |                              000
+            wait_for_cmd |                         00000010 |                              001
+                  calc_1 |                         00000100 |                              010
+                  calc_2 |                         00001000 |                              011
+                  calc_3 |                         00010000 |                              100
+       wait_on_xfer_push |                         00100000 |                              101
+             chk_if_done |                         01000000 |                              110
+              error_trap |                         10000000 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'sig_pcc_sm_state_reg' using encoding 'one-hot' in module 'axi_datamover_pcc'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:55 ; elapsed = 00:01:07 . Memory (MB): peak = 1226.945 ; gain = 212.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   16 Bit       Adders := 2     
+	   2 Input   13 Bit       Adders := 2     
+	   4 Input   10 Bit       Adders := 4     
+	   2 Input   10 Bit       Adders := 1     
+	   4 Input    9 Bit       Adders := 3     
+	   3 Input    9 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 4     
+	   2 Input    7 Bit       Adders := 2     
+	   2 Input    6 Bit       Adders := 1     
+	   3 Input    5 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 3     
+	   3 Input    3 Bit       Adders := 5     
+	   2 Input    3 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 3     
+	   4 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 10    
++---Registers : 
+	               96 Bit    Registers := 1     
+	               72 Bit    Registers := 2     
+	               38 Bit    Registers := 2     
+	               32 Bit    Registers := 16    
+	               24 Bit    Registers := 1     
+	               16 Bit    Registers := 10    
+	               13 Bit    Registers := 4     
+	               12 Bit    Registers := 3     
+	               10 Bit    Registers := 5     
+	                9 Bit    Registers := 6     
+	                8 Bit    Registers := 5     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 7     
+	                5 Bit    Registers := 15    
+	                4 Bit    Registers := 32    
+	                3 Bit    Registers := 14    
+	                2 Bit    Registers := 8     
+	                1 Bit    Registers := 259   
++---RAMs : 
+	              19K Bit	(512 X 38 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input   72 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 8     
+	   2 Input   16 Bit        Muxes := 4     
+	   2 Input   13 Bit        Muxes := 4     
+	   2 Input   11 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 10    
+	   8 Input    8 Bit        Muxes := 1     
+	   5 Input    5 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 15    
+	   2 Input    4 Bit        Muxes := 13    
+	   4 Input    4 Bit        Muxes := 4     
+	   2 Input    3 Bit        Muxes := 14    
+	   4 Input    3 Bit        Muxes := 3     
+	   6 Input    3 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 37    
+	   3 Input    2 Bit        Muxes := 2     
+	   4 Input    2 Bit        Muxes := 7     
+	   2 Input    1 Bit        Muxes := 159   
+	   9 Input    1 Bit        Muxes := 1     
+	   6 Input    1 Bit        Muxes := 5     
+	   4 Input    1 Bit        Muxes := 2     
+	   8 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:11 ; elapsed = 00:01:25 . Memory (MB): peak = 1226.945 ; gain = 212.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping	Report (see note below)
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                                                                                                                                                                        | RTL Object                       | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|U0/\GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_NO_SOF.GEN_LINEBUFFER.GEN_SYNC_FIFO.I_LINEBUFFER_FIFO/xpm_fifo_sync_inst /xpm_fifo_base_inst/\gen_sdpram.xpm_memory_base_inst  | gen_wr_a.gen_word_narrow.mem_reg | 512 x 38(READ_FIRST)   | W |   | 512 x 38(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:27 ; elapsed = 00:01:42 . Memory (MB): peak = 1226.945 ; gain = 212.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:43 ; elapsed = 00:01:58 . Memory (MB): peak = 1226.945 ; gain = 212.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping	Report
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                                                                                                                                                                        | RTL Object                       | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|U0/\GEN_SPRT_FOR_MM2S.MM2S_LINEBUFFER_I/GEN_LINEBUF_NO_SOF.GEN_LINEBUFFER.GEN_SYNC_FIFO.I_LINEBUFFER_FIFO/xpm_fifo_sync_inst /xpm_fifo_base_inst/\gen_sdpram.xpm_memory_base_inst  | gen_wr_a.gen_word_narrow.mem_reg | 512 x 38(READ_FIRST)   | W |   | 512 x 38(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:45 ; elapsed = 00:02:00 . Memory (MB): peak = 1226.945 ; gain = 212.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:53 ; elapsed = 00:02:08 . Memory (MB): peak = 1226.945 ; gain = 212.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:53 ; elapsed = 00:02:08 . Memory (MB): peak = 1226.945 ; gain = 212.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:53 ; elapsed = 00:02:09 . Memory (MB): peak = 1226.945 ; gain = 212.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:53 ; elapsed = 00:02:09 . Memory (MB): peak = 1226.945 ; gain = 212.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:54 ; elapsed = 00:02:09 . Memory (MB): peak = 1226.945 ; gain = 212.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:54 ; elapsed = 00:02:09 . Memory (MB): peak = 1226.945 ; gain = 212.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                                                                                                                | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|axi_vdma    | AXI_LITE_REG_INTERFACE_I/GEN_AXI_LITE_IF.AXI_LITE_IF_I/GEN_LITE_IS_ASYNC.GEN_MM2S_ONLY_ASYNC_LITE_ACCESS.prepare_wrce_pulse_lite_d6_reg | 6      | 1     | NO           | NO                 | NO                | 1      | 0       | 
+|axi_vdma    | AXI_LITE_REG_INTERFACE_I/GEN_AXI_LITE_IF.AXI_LITE_IF_I/GEN_LITE_IS_ASYNC.GEN_MM2S_ONLY_ASYNC_LITE_ACCESS.sig_arvalid_arrived_d4_reg     | 3      | 1     | NO           | NO                 | NO                | 1      | 0       | 
++------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+
+Dynamic Shift Register Report:
++------------+--------------------------+--------+------------+--------+---------+--------+--------+--------+
+|Module Name | RTL Name                 | Length | Data Width | SRL16E | SRLC32E | Mux F7 | Mux F8 | Mux F9 | 
++------------+--------------------------+--------+------------+--------+---------+--------+--------+--------+
+|dsrl        | INFERRED_GEN.data_reg[3] | 68     | 68         | 68     | 0       | 0      | 0      | 0      | 
+|dsrl__1     | INFERRED_GEN.data_reg[3] | 8      | 8          | 8      | 0       | 0      | 0      | 0      | 
+|dsrl__2     | INFERRED_GEN.data_reg[3] | 59     | 59         | 59     | 0       | 0      | 0      | 0      | 
+|dsrl__3     | INFERRED_GEN.data_reg[3] | 29     | 29         | 29     | 0       | 0      | 0      | 0      | 
++------------+--------------------------+--------+------------+--------+---------+--------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |    33|
+|2     |LUT1     |   228|
+|3     |LUT2     |   146|
+|4     |LUT3     |   198|
+|5     |LUT4     |   171|
+|6     |LUT5     |   175|
+|7     |LUT6     |   263|
+|8     |RAMB36E1 |     1|
+|9     |SRL16E   |   110|
+|10    |FDR      |    94|
+|11    |FDRE     |  1387|
+|12    |FDSE     |    39|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:54 ; elapsed = 00:02:09 . Memory (MB): peak = 1226.945 ; gain = 212.379
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:13 ; elapsed = 00:02:02 . Memory (MB): peak = 1226.945 ; gain = 119.332
+Synthesis Optimization Complete : Time (s): cpu = 00:01:54 ; elapsed = 00:02:10 . Memory (MB): peak = 1226.945 ; gain = 212.379
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.183 . Memory (MB): peak = 1226.945 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 128 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1226.945 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 94 instances were transformed.
+  FDR => FDRE: 94 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+246 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:07 ; elapsed = 00:02:26 . Memory (MB): peak = 1226.945 ; gain = 212.379
+INFO: [Common 17-1381] The checkpoint 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_axi_vdma_0_0_synth_1/System_axi_vdma_0_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP System_axi_vdma_0_0, cache-ID = d43927977b62c4b6
+INFO: [Coretcl 2-1174] Renamed 77 cell refs.
+INFO: [Common 17-1381] The checkpoint 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_axi_vdma_0_0_synth_1/System_axi_vdma_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file System_axi_vdma_0_0_utilization_synth.rpt -pb System_axi_vdma_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 16 19:47:33 2021...

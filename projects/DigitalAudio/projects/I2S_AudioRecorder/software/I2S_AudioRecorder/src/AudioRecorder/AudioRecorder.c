@@ -35,16 +35,30 @@
 #include "xparameters.h"
 #include "xil_exception.h"
 
+#include <stdbool.h>
+
 #include "SD/SD.h"
 #include "AudioRecorder.h"
 
-/** @brief	AXI-Stream transmission length settings of the I2S IP-core.
+/** @brief AXI-Stream transmission length settings of the I2S IP-core.
  */
-#define WORDS_PER_TRANSMISSION			512
+#define WORDS_PER_TRANSMISSION			128
 
-/** @brief
- */
-static u32 DmaBuffer[WORDS_PER_TRANSMISSION] __attribute__((section(".data")));
+#define RESET_TIMEOUT_COUNTER			10000
+#define DELAY_TIMER_COUNT				100
+
+#define MEM_BASE_ADDR					0x01000000
+#define RX_BD_SPACE_BASE				(MEM_BASE_ADDR)
+#define RX_BD_SPACE_HIGH				(MEM_BASE_ADDR + 0x0000FFFF)
+#define RX_BUFFER_BASE					(MEM_BASE_ADDR + 0x00300000)
+
+#define NUMBER_OF_BDS_PER_PKT			1
+#define NUMBER_OF_PKTS_TO_TRANSFER 		32
+#define NUMBER_OF_BDS_TO_TRANSFER		(NUMBER_OF_PKTS_TO_TRANSFER * NUMBER_OF_BDS_PER_PKT)
+#define NUMBER_OF_CYCLIC_TRANSFERS		1
+#define COALESCING_COUNT				NUMBER_OF_PKTS_TO_TRANSFER
+
+//static u32 DmaBuffer[3][WORDS_PER_TRANSMISSION] __attribute__((section(".data")));
 
 static XGpio_Config* _Gpio_ConfigPtr;
 static XGpio _Gpio;
@@ -55,51 +69,208 @@ static XAxiDma _Dma;
 static XScuGic_Config* _GIC_ConfigPtr;
 static XScuGic _GIC;
 
-static bool _RxComplete = false;
+static volatile bool Error;
+static volatile int RxDone;
 
-static u32 _PacketCounter = 0;
-
-/** @brief 				DMA receive channel callback handler for data transmission handling.
+/** @brief
  *  @param CallbackRef	Pointer to callback reference
  */
 static void AudioRecorder_DmaRxHandler(void* CallbackRef)
 {
-	u32 IRQ;
-	XAxiDma *AxiDmaInst = (XAxiDma *)CallbackRef;
+	u32 Status;
+	u32 TimeOut;
+	XAxiDma_BdRing* Instance = (XAxiDma_BdRing*)CallbackRef;
 
-	IRQ = XAxiDma_IntrGetIrq(AxiDmaInst, XAXIDMA_DEVICE_TO_DMA);
-	XAxiDma_IntrAckIrq(AxiDmaInst, IRQ, XAXIDMA_DEVICE_TO_DMA);
+	// Get the interrupts
+	Status = XAxiDma_BdRingGetIrq(Instance);
 
-	if(!(IRQ & XAXIDMA_IRQ_ALL_MASK))
+	// Clear all pending interrupts
+	XAxiDma_BdRingAckIrq(Instance, Status);
+
+	// No interrupt
+	if(!(Status & XAXIDMA_IRQ_ALL_MASK))
 	{
 		return;
 	}
-	else if((IRQ & XAXIDMA_IRQ_ERROR_MASK))
+	// Error interrupt
+	else if((Status & XAXIDMA_IRQ_ERROR_MASK))
 	{
+		XAxiDma_BdRingDumpRegs(Instance);
+
+		Error = TRUE;
+
+		/* Reset could fail and hang
+		 * NEED a way to handle this or do not call it??
+		 */
+		XAxiDma_Reset(&_Dma);
+
+		TimeOut = RESET_TIMEOUT_COUNTER;
+
+		while(TimeOut)
+		{
+			if(XAxiDma_ResetIsDone(&_Dma))
+			{
+				break;
+			}
+
+			TimeOut -= 1;
+		}
+
 		return;
 	}
-	else if((IRQ & XAXIDMA_IRQ_IOC_MASK))
+	// Complete interrupt
+	else if((Status & (XAXIDMA_IRQ_DELAY_MASK | XAXIDMA_IRQ_IOC_MASK)))
 	{
-		_RxComplete = true;
+		u32 BdCount;
+		XAxiDma_Bd* BdPtr;
+
+		/* Get finished BDs from hardware */
+		BdCount = XAxiDma_BdRingFromHw(CallbackRef, XAXIDMA_ALL_BDS, &BdPtr);
+		RxDone += BdCount;
 	}
+}
+
+static int CopyDataToSD(void)
+{
+	u32* RxPacket = (u32*)RX_BUFFER_BASE;
+
+	Xil_DCacheInvalidateRange((UINTPTR)RxPacket, NUMBER_OF_PKTS_TO_TRANSFER * WORDS_PER_TRANSMISSION * sizeof(u32));
+
+	SD_AddSamples(RxPacket, WORDS_PER_TRANSMISSION * NUMBER_OF_PKTS_TO_TRANSFER);
+
+	return XST_SUCCESS;
+}
+
+static int DMA_SetupRxChannel(u32 Buffers)
+{
+	u32 Status;
+	u32 BdCount;
+	u32 FreeBdCount;
+
+	XAxiDma_Bd BdTemplate;
+	XAxiDma_Bd* BdPtr;
+	XAxiDma_Bd* BdCurPtr;
+	XAxiDma_BdRing* RxRingPtr;
+	UINTPTR RxBufferPtr;
+
+	RxRingPtr = XAxiDma_GetRxRing(&_Dma);
+
+	XAxiDma_BdRingIntDisable(RxRingPtr, XAXIDMA_IRQ_ALL_MASK);
+
+	BdCount = XAxiDma_BdRingCntCalc(XAXIDMA_BD_MINIMUM_ALIGNMENT, RX_BD_SPACE_HIGH - RX_BD_SPACE_BASE + 1);
+	xil_printf("	%u free Buffer Descriptors can be used...\n\r", BdCount);
+
+	if(XAxiDma_BdRingCreate(RxRingPtr, RX_BD_SPACE_BASE, RX_BD_SPACE_BASE, XAXIDMA_BD_MINIMUM_ALIGNMENT, NUMBER_OF_BDS_TO_TRANSFER) != XST_SUCCESS)
+	{
+		xil_printf("[ERROR] Can not create BD ring!\r\n");
+
+		return XST_FAILURE;
+	}
+
+	// Setup a BD template for the Rx channel. Then copy it to every Rx BD
+	XAxiDma_BdClear(&BdTemplate);
+	Status = XAxiDma_BdRingClone(RxRingPtr, &BdTemplate);
+	if(Status != XST_SUCCESS)
+	{
+		xil_printf("Rx BD clone failed with %d\r\n", Status);
+
+		return XST_FAILURE;
+	}
+
+	// Attach buffers to Rx BD ring so we are ready to receive packets
+	FreeBdCount = XAxiDma_BdRingGetFreeCnt(RxRingPtr);
+	Status = XAxiDma_BdRingAlloc(RxRingPtr, FreeBdCount, &BdPtr);
+	if(Status != XST_SUCCESS)
+	{
+		xil_printf("[ERROR] Rx BD alloc failed with %d!\r\n", Status);
+
+		return XST_FAILURE;
+	}
+
+	BdCurPtr = BdPtr;
+	RxBufferPtr = RX_BUFFER_BASE;
+
+	for(u32 Index = 0; Index < FreeBdCount; Index++)
+	{
+		xil_printf("	Set Rx buffer addr 0x%x on BD 0x%x...\r\n", (unsigned int)RxBufferPtr, (UINTPTR)BdCurPtr);
+		if(XAxiDma_BdSetBufAddr(BdCurPtr, RxBufferPtr) != XST_SUCCESS)
+		{
+			return XST_FAILURE;
+		}
+
+		Status = XAxiDma_BdSetLength(BdCurPtr, WORDS_PER_TRANSMISSION * sizeof(u32), RxRingPtr->MaxTransferLen);
+		if(Status != XST_SUCCESS)
+		{
+			xil_printf("	[ERROR] Rx set length %d on BD %x failed %d!\r\n", WORDS_PER_TRANSMISSION * sizeof(u32), (UINTPTR)BdCurPtr, Status);
+
+			return XST_FAILURE;
+		}
+
+		/* Receive BDs do not need to set anything for the control
+		 * The hardware will set the SOF/EOF bits per stream status
+		 */
+		XAxiDma_BdSetCtrl(BdCurPtr, 0);
+		XAxiDma_BdSetId(BdCurPtr, RxBufferPtr);
+
+		RxBufferPtr += WORDS_PER_TRANSMISSION * sizeof(u32);
+		BdCurPtr = (XAxiDma_Bd*)XAxiDma_BdRingNext(RxRingPtr, BdCurPtr);
+	}
+
+	/*
+	 * Set the coalescing threshold
+	 *
+	 * If you would like to have multiple interrupts to happen, change
+	 * the COALESCING_COUNT to be a smaller value
+	 */
+	Status = XAxiDma_BdRingSetCoalesce(RxRingPtr, NUMBER_OF_PKTS_TO_TRANSFER, DELAY_TIMER_COUNT);
+	if(Status != XST_SUCCESS)
+	{
+		xil_printf("[ERROR] Rx set coalesce failed with %d!\r\n", Status);
+
+		return XST_FAILURE;
+	}
+
+	Status = XAxiDma_BdRingToHw(RxRingPtr, FreeBdCount, BdPtr);
+	if(Status != XST_SUCCESS)
+	{
+		xil_printf("[ERROR] Rx To Hw failed with %d!\r\n", Status);
+
+		return XST_FAILURE;
+	}
+
+	XAxiDma_BdRingIntEnable(RxRingPtr, XAXIDMA_IRQ_ALL_MASK);
+	XAxiDma_BdRingEnableCyclicDMA(RxRingPtr);
+	XAxiDma_SelectCyclicMode(&_Dma, XAXIDMA_DEVICE_TO_DMA, 1);
+
+	return XAxiDma_BdRingStart(RxRingPtr);
 }
 
 u32 AudioRecorder_Init(void)
 {
-	_RxComplete = false;
+	XAxiDma_BdRing* RxRingPtr = XAxiDma_GetRxRing(&_Dma);
 
 	xil_printf("[INFO] Looking for DMA configuration...\r\n");
 	_Dma_ConfigPtr = XAxiDma_LookupConfig(XPAR_AXI_DMA_DEVICE_ID);
 	if(_Dma_ConfigPtr == NULL)
 	{
 		xil_printf("[ERROR] Invalid DMA configuration!\r\n");
+
 		return XST_FAILURE;
 	}
 
 	xil_printf("[INFO] Initialize DMA...\r\n");
+	XAxiDma_Reset(&_Dma);
 	if(XAxiDma_CfgInitialize(&_Dma, _Dma_ConfigPtr) != XST_SUCCESS)
 	{
-		xil_printf("[ERROR] DMA initialization failed!\n\r");
+		xil_printf("[ERROR] DMA initialization failed!\r\n");
+
+		return XST_FAILURE;
+	}
+
+	if(!XAxiDma_HasSg(&_Dma))
+	{
+		xil_printf("[ERROR] Device configured as Simple mode!\r\n");
+
 		return XST_FAILURE;
 	}
 
@@ -107,27 +278,38 @@ u32 AudioRecorder_Init(void)
 	XAxiDma_IntrDisable(&_Dma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
 	XAxiDma_IntrEnable(&_Dma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
 
+	xil_printf("[INFO] Setup DMA RX channel...\r\n");
+	if(DMA_SetupRxChannel(0) != XST_SUCCESS)
+	{
+		xil_printf("[ERROR] Can not initialize DMA RX channel!\r\n");
+
+		return XST_FAILURE;
+	}
+
 	xil_printf("[INFO] Looking for GIC configuration...\r\n");
 	_GIC_ConfigPtr = XScuGic_LookupConfig(XPAR_PS7_SCUGIC_0_DEVICE_ID);
 	if(_GIC_ConfigPtr == NULL)
 	{
-		xil_printf("[ERROR] Invalid GIC configuration!\n\r");
+		xil_printf("[ERROR] Invalid GIC configuration!\r\n");
+
 		return XST_FAILURE;
 	}
 
 	xil_printf("[INFO] Initialize GIC...\r\n");
 	if(XScuGic_CfgInitialize(&_GIC, _GIC_ConfigPtr, _GIC_ConfigPtr->CpuBaseAddress) != XST_SUCCESS)
 	{
-		xil_printf("[ERROR] GIC initialization failed!\n\r");
+		xil_printf("[ERROR] GIC initialization failed!\r\n");
+
 		return XST_FAILURE;
 	}
 
 	// Setup the interrupt
 	xil_printf("[INFO] Setup interrupt handler...\r\n");
 	XScuGic_SetPriorityTriggerType(&_GIC, XPAR_FABRIC_AXI_DMA_S2MM_INTROUT_INTR, 0xA0, 0x03);
-	if(XScuGic_Connect(&_GIC, XPAR_FABRIC_AXI_DMA_S2MM_INTROUT_INTR, (Xil_ExceptionHandler)AudioRecorder_DmaRxHandler, &_Dma) != XST_SUCCESS)
+	if(XScuGic_Connect(&_GIC, XPAR_FABRIC_AXI_DMA_S2MM_INTROUT_INTR, (Xil_ExceptionHandler)AudioRecorder_DmaRxHandler, RxRingPtr) != XST_SUCCESS)
 	{
-		xil_printf("[ERROR] Can not connect interrupt handler!\n\r");
+		xil_printf("[ERROR] Can not connect interrupt handler!\r\n");
+
 		return XST_FAILURE;
 	}
 	XScuGic_Enable(&_GIC, XPAR_FABRIC_AXI_DMA_S2MM_INTROUT_INTR);
@@ -142,54 +324,30 @@ u32 AudioRecorder_Init(void)
 	xil_printf("[INFO] Mount SD card...\r\n");
 	if(SD_Init())
 	{
-		xil_printf("[ERROR] Can not initialize SD card!\n\r");
+		xil_printf("[ERROR] Can not initialize SD card!\r\n");
+
 		return XST_FAILURE;
 	}
 
 	return XST_SUCCESS;
 }
 
-u32 AudioRecorder_Record(const char* Path, u32 Packets)
+u32 AudioRecorder_Record(const char* Path)
 {
 	if(SD_CreateWave(Path) != XST_SUCCESS)
 	{
 		return XST_FAILURE;
 	}
 
-	if(XAxiDma_SimpleTransfer(&_Dma, (UINTPTR)DmaBuffer, WORDS_PER_TRANSMISSION * sizeof(u32), XAXIDMA_DEVICE_TO_DMA) != XST_SUCCESS)
+	RxDone = 0;
+	Error = 0;
+
+	for(uint32_t i = 0x00; i < 32; i++)
 	{
-		return XST_FAILURE;
-	}
-
-	while(_PacketCounter < Packets)
-	{
-		if(_RxComplete)
-		{
-			_RxComplete = false;
-
-			Xil_DCacheFlushRange((UINTPTR)DmaBuffer, WORDS_PER_TRANSMISSION * sizeof(u32));
-
-			xil_printf("Packet %u / %u complete...\n\r", ++_PacketCounter, Packets);
-
-			/*
-			for(u32 i = 0x00; i < WORDS_PER_TRANSMISSION; i = i + 0x08)
-			{
-				for(u32 j = 0x00; j < 0x08; j++)
-				{
-					xil_printf("Data %u: 0x%08x\t", i + j, Dma_RxBuffers.Rx1[i + j]);
-				}
-
-				xil_printf("\n\r");
-			}*/
-
-			if(XAxiDma_SimpleTransfer(&_Dma, (UINTPTR)DmaBuffer, WORDS_PER_TRANSMISSION * sizeof(u32), XAXIDMA_DEVICE_TO_DMA) != XST_SUCCESS)
-			{
-				return XST_FAILURE;
-			}
-
-			// Copy the data into the wave file
-			SD_AddSamples(DmaBuffer, WORDS_PER_TRANSMISSION);
-		}
+		while(RxDone == 0);
+		xil_printf("[INFO] Transmission: %u - Samples: %u\r\n", i, RxDone);
+		CopyDataToSD();
+		RxDone = 0;
 	}
 
 	return SD_CloseWave();

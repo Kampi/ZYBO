@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Fri Jun  4 20:48:43 2021
-# Process ID: 15812
+# Start of session at: Fri Dec 17 23:58:38 2021
+# Process ID: 12324
 # Current directory: H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth
 # Command line: vivado.exe -log System_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source System_wrapper.tcl
 # Log file: H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/System_wrapper.vds
@@ -15,6 +15,7 @@ INFO: [IP_Flow 19-1700] Loaded user IP repository 'h:/NextCloud/Git/ZYBO/project
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2020.2/data/ip'.
 WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
 Current IP cache path is h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.cache/ip 
+add_files: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1018.051 ; gain = 0.000
 Command: synth_design -top System_wrapper -part xc7z010clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
@@ -22,9 +23,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 21956
+INFO: [Synth 8-7075] Helper process launched with PID 9528
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1018.926 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1018.051 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'System_wrapper' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/hdl/System_wrapper.vhd:58]
 INFO: [Synth 8-3491] module 'IOBUF' declared at 'D:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:36242' bound to instance 'IIC_scl_iobuf' of component 'IOBUF' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/hdl/System_wrapper.vhd:121]
@@ -39,22 +40,22 @@ INFO: [Synth 8-3491] module 'System' declared at 'H:/NextCloud/Git/ZYBO/projects
 INFO: [Synth 8-638] synthesizing module 'System' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:3168]
 INFO: [Synth 8-638] synthesizing module 'System_axi_mem_intercon_1' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:2538]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1RKK5NY' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:100]
-INFO: [Synth 8-3491] module 'System_auto_pc_1' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_auto_pc_1_stub.vhdl:5' bound to instance 'auto_pc' of component 'System_auto_pc_1' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:343]
-INFO: [Synth 8-638] synthesizing module 'System_auto_pc_1' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_auto_pc_1_stub.vhdl:90]
+INFO: [Synth 8-3491] module 'System_auto_pc_1' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_auto_pc_1_stub.vhdl:5' bound to instance 'auto_pc' of component 'System_auto_pc_1' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:343]
+INFO: [Synth 8-638] synthesizing module 'System_auto_pc_1' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_auto_pc_1_stub.vhdl:90]
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1RKK5NY' (2#1) [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:100]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_1MFD9A7' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:972]
-INFO: [Synth 8-3491] module 'System_auto_us_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_auto_us_0_stub.vhdl:5' bound to instance 'auto_us' of component 'System_auto_us_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:1073]
-INFO: [Synth 8-638] synthesizing module 'System_auto_us_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_auto_us_0_stub.vhdl:45]
+INFO: [Synth 8-3491] module 'System_auto_us_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_auto_us_0_stub.vhdl:5' bound to instance 'auto_us' of component 'System_auto_us_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:1073]
+INFO: [Synth 8-638] synthesizing module 'System_auto_us_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_auto_us_0_stub.vhdl:45]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1MFD9A7' (3#1) [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:972]
 INFO: [Synth 8-638] synthesizing module 's01_couplers_imp_YOF1RI' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:1472]
 INFO: [Synth 8-256] done synthesizing module 's01_couplers_imp_YOF1RI' (4#1) [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:1472]
-INFO: [Synth 8-3491] module 'System_xbar_3' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_xbar_3_stub.vhdl:5' bound to instance 'xbar' of component 'System_xbar_3' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:2999]
-INFO: [Synth 8-638] synthesizing module 'System_xbar_3' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_xbar_3_stub.vhdl:89]
+INFO: [Synth 8-3491] module 'System_xbar_3' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_xbar_3_stub.vhdl:5' bound to instance 'xbar' of component 'System_xbar_3' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:2999]
+INFO: [Synth 8-638] synthesizing module 'System_xbar_3' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_xbar_3_stub.vhdl:89]
 INFO: [Synth 8-256] done synthesizing module 'System_axi_mem_intercon_1' (5#1) [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:2538]
-INFO: [Synth 8-3491] module 'System_axi_gpio_0_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_axi_gpio_0_0_stub.vhdl:5' bound to instance 'AXI_GPIO_Input' of component 'System_axi_gpio_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4025]
-INFO: [Synth 8-638] synthesizing module 'System_axi_gpio_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_axi_gpio_0_0_stub.vhdl:33]
-INFO: [Synth 8-3491] module 'System_AXI_GPIO_Input_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_AXI_GPIO_Input_0_stub.vhdl:5' bound to instance 'AXI_GPIO_Output' of component 'System_AXI_GPIO_Input_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4050]
-INFO: [Synth 8-638] synthesizing module 'System_AXI_GPIO_Input_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_AXI_GPIO_Input_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'System_axi_gpio_0_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_axi_gpio_0_0_stub.vhdl:5' bound to instance 'AXI_GPIO_Input' of component 'System_axi_gpio_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4025]
+INFO: [Synth 8-638] synthesizing module 'System_axi_gpio_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_axi_gpio_0_0_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'System_AXI_GPIO_Input_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_AXI_GPIO_Input_0_stub.vhdl:5' bound to instance 'AXI_GPIO_Output' of component 'System_AXI_GPIO_Input_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4050]
+INFO: [Synth 8-638] synthesizing module 'System_AXI_GPIO_Input_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_AXI_GPIO_Input_0_stub.vhdl:31]
 INFO: [Synth 8-638] synthesizing module 'System_ProcessingSystem_axi_periph_1' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:1669]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_Z1HVRD' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:471]
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_Z1HVRD' (6#1) [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:471]
@@ -67,14 +68,14 @@ INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_OA3YT7' (9#1) [H:
 INFO: [Synth 8-638] synthesizing module 'm04_couplers_imp_1BAWH3I' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:871]
 INFO: [Synth 8-256] done synthesizing module 'm04_couplers_imp_1BAWH3I' (10#1) [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:871]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_KGUEU0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:1181]
-INFO: [Synth 8-3491] module 'System_auto_pc_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'System_auto_pc_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:1364]
-INFO: [Synth 8-638] synthesizing module 'System_auto_pc_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_auto_pc_0_stub.vhdl:70]
+INFO: [Synth 8-3491] module 'System_auto_pc_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'System_auto_pc_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:1364]
+INFO: [Synth 8-638] synthesizing module 'System_auto_pc_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_auto_pc_0_stub.vhdl:70]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_KGUEU0' (11#1) [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:1181]
-INFO: [Synth 8-3491] module 'System_xbar_2' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_xbar_2_stub.vhdl:5' bound to instance 'xbar' of component 'System_xbar_2' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:2341]
-INFO: [Synth 8-638] synthesizing module 'System_xbar_2' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_xbar_2_stub.vhdl:51]
+INFO: [Synth 8-3491] module 'System_xbar_2' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_xbar_2_stub.vhdl:5' bound to instance 'xbar' of component 'System_xbar_2' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:2341]
+INFO: [Synth 8-638] synthesizing module 'System_xbar_2' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_xbar_2_stub.vhdl:51]
 INFO: [Synth 8-256] done synthesizing module 'System_ProcessingSystem_axi_periph_1' (12#1) [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:1669]
-INFO: [Synth 8-3491] module 'System_xlconcat_0_0' declared at 'h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_xlconcat_0_0/synth/System_xlconcat_0_0.v:57' bound to instance 'Interrupts' of component 'System_xlconcat_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4213]
-INFO: [Synth 8-6157] synthesizing module 'System_xlconcat_0_0' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_xlconcat_0_0/synth/System_xlconcat_0_0.v:57]
+INFO: [Synth 8-3491] module 'System_xlconcat_0_0' declared at 'h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_xlconcat_0_0/synth/System_xlconcat_0_0.v:60' bound to instance 'Interrupts' of component 'System_xlconcat_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4213]
+INFO: [Synth 8-6157] synthesizing module 'System_xlconcat_0_0' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_xlconcat_0_0/synth/System_xlconcat_0_0.v:60]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_4_xlconcat' [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 1 - type: integer 
 	Parameter IN1_WIDTH bound to: 1 - type: integer 
@@ -207,44 +208,44 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_4_xlconcat' [h:/NextClou
 	Parameter dout_width bound to: 2 - type: integer 
 	Parameter NUM_PORTS bound to: 2 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_4_xlconcat' (13#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'System_xlconcat_0_0' (14#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_xlconcat_0_0/synth/System_xlconcat_0_0.v:57]
-INFO: [Synth 8-3491] module 'System_OV7670_0_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_OV7670_0_0_stub.vhdl:5' bound to instance 'OV7670' of component 'System_OV7670_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4219]
-INFO: [Synth 8-638] synthesizing module 'System_OV7670_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_OV7670_0_0_stub.vhdl:46]
-INFO: [Synth 8-3491] module 'System_processing_system7_0_1' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_processing_system7_0_1_stub.vhdl:5' bound to instance 'ProcessingSystem' of component 'System_processing_system7_0_1' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4257]
-INFO: [Synth 8-638] synthesizing module 'System_processing_system7_0_1' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_processing_system7_0_1_stub.vhdl:126]
-INFO: [Synth 8-3491] module 'System_Reset_Video_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_Reset_Video_0_stub.vhdl:5' bound to instance 'Reset_Camera' of component 'System_Reset_Video_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4378]
-INFO: [Synth 8-638] synthesizing module 'System_Reset_Video_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_Reset_Video_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'System_rst_ProcessingSystem_50M_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_rst_ProcessingSystem_50M_0_stub.vhdl:5' bound to instance 'Reset_ProcessingSystem' of component 'System_rst_ProcessingSystem_50M_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4391]
-INFO: [Synth 8-638] synthesizing module 'System_rst_ProcessingSystem_50M_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_rst_ProcessingSystem_50M_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'System_Reset_ProcessingSystem_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_Reset_ProcessingSystem_0_stub.vhdl:5' bound to instance 'Reset_Video' of component 'System_Reset_ProcessingSystem_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4404]
-INFO: [Synth 8-638] synthesizing module 'System_Reset_ProcessingSystem_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_Reset_ProcessingSystem_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'System_VDMA_Display_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_VDMA_Display_0_stub.vhdl:5' bound to instance 'VDMA_Camera' of component 'System_VDMA_Display_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4417]
-INFO: [Synth 8-638] synthesizing module 'System_VDMA_Display_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_VDMA_Display_0_stub.vhdl:56]
-INFO: [Synth 8-3491] module 'System_axi_vdma_0_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_axi_vdma_0_0_stub.vhdl:5' bound to instance 'VDMA_Display' of component 'System_axi_vdma_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4465]
-INFO: [Synth 8-638] synthesizing module 'System_axi_vdma_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_axi_vdma_0_0_stub.vhdl:53]
-INFO: [Synth 8-3491] module 'System_VGA_Decimate_0_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_VGA_Decimate_0_0_stub.vhdl:5' bound to instance 'VGA_Decimate' of component 'System_VGA_Decimate_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4510]
-INFO: [Synth 8-638] synthesizing module 'System_VGA_Decimate_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_VGA_Decimate_0_0_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'System_clk_wiz_0_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_clk_wiz_0_0_stub.vhdl:5' bound to instance 'VideoClock' of component 'System_clk_wiz_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4518]
-INFO: [Synth 8-638] synthesizing module 'System_clk_wiz_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_clk_wiz_0_0_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'System_v_axi4s_vid_out_0_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_v_axi4s_vid_out_0_0_stub.vhdl:5' bound to instance 'VideoOut' of component 'System_v_axi4s_vid_out_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4525]
-INFO: [Synth 8-638] synthesizing module 'System_v_axi4s_vid_out_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_v_axi4s_vid_out_0_0_stub.vhdl:43]
-INFO: [Synth 8-3491] module 'System_v_tc_0_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_v_tc_0_0_stub.vhdl:5' bound to instance 'VideoTiming' of component 'System_v_tc_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4560]
-INFO: [Synth 8-638] synthesizing module 'System_v_tc_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-15812-PC/realtime/System_v_tc_0_0_stub.vhdl:22]
+INFO: [Synth 8-6155] done synthesizing module 'System_xlconcat_0_0' (14#1) [h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_xlconcat_0_0/synth/System_xlconcat_0_0.v:60]
+INFO: [Synth 8-3491] module 'System_OV7670_0_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_OV7670_0_0_stub.vhdl:5' bound to instance 'OV7670' of component 'System_OV7670_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4219]
+INFO: [Synth 8-638] synthesizing module 'System_OV7670_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_OV7670_0_0_stub.vhdl:46]
+INFO: [Synth 8-3491] module 'System_processing_system7_0_1' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_processing_system7_0_1_stub.vhdl:5' bound to instance 'ProcessingSystem' of component 'System_processing_system7_0_1' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4257]
+INFO: [Synth 8-638] synthesizing module 'System_processing_system7_0_1' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_processing_system7_0_1_stub.vhdl:126]
+INFO: [Synth 8-3491] module 'System_Reset_Video_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_Reset_Video_0_stub.vhdl:5' bound to instance 'Reset_Camera' of component 'System_Reset_Video_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4378]
+INFO: [Synth 8-638] synthesizing module 'System_Reset_Video_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_Reset_Video_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'System_rst_ProcessingSystem_50M_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_rst_ProcessingSystem_50M_0_stub.vhdl:5' bound to instance 'Reset_ProcessingSystem' of component 'System_rst_ProcessingSystem_50M_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4391]
+INFO: [Synth 8-638] synthesizing module 'System_rst_ProcessingSystem_50M_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_rst_ProcessingSystem_50M_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'System_Reset_ProcessingSystem_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_Reset_ProcessingSystem_0_stub.vhdl:5' bound to instance 'Reset_Video' of component 'System_Reset_ProcessingSystem_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4404]
+INFO: [Synth 8-638] synthesizing module 'System_Reset_ProcessingSystem_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_Reset_ProcessingSystem_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'System_VDMA_Display_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_VDMA_Display_0_stub.vhdl:5' bound to instance 'VDMA_Camera' of component 'System_VDMA_Display_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4417]
+INFO: [Synth 8-638] synthesizing module 'System_VDMA_Display_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_VDMA_Display_0_stub.vhdl:56]
+INFO: [Synth 8-3491] module 'System_axi_vdma_0_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_axi_vdma_0_0_stub.vhdl:5' bound to instance 'VDMA_Display' of component 'System_axi_vdma_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4465]
+INFO: [Synth 8-638] synthesizing module 'System_axi_vdma_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_axi_vdma_0_0_stub.vhdl:53]
+INFO: [Synth 8-3491] module 'System_VGA_Decimate_0_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_VGA_Decimate_0_0_stub.vhdl:5' bound to instance 'VGA_Decimate' of component 'System_VGA_Decimate_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4510]
+INFO: [Synth 8-638] synthesizing module 'System_VGA_Decimate_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_VGA_Decimate_0_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'System_clk_wiz_0_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_clk_wiz_0_0_stub.vhdl:5' bound to instance 'VideoClock' of component 'System_clk_wiz_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4518]
+INFO: [Synth 8-638] synthesizing module 'System_clk_wiz_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_clk_wiz_0_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'System_v_axi4s_vid_out_0_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_v_axi4s_vid_out_0_0_stub.vhdl:5' bound to instance 'VideoOut' of component 'System_v_axi4s_vid_out_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4525]
+INFO: [Synth 8-638] synthesizing module 'System_v_axi4s_vid_out_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_v_axi4s_vid_out_0_0_stub.vhdl:43]
+INFO: [Synth 8-3491] module 'System_v_tc_0_0' declared at 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_v_tc_0_0_stub.vhdl:5' bound to instance 'VideoTiming' of component 'System_v_tc_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:4560]
+INFO: [Synth 8-638] synthesizing module 'System_v_tc_0_0' [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/.Xil/Vivado-12324-PC/realtime/System_v_tc_0_0_stub.vhdl:22]
 INFO: [Synth 8-256] done synthesizing module 'System' (15#1) [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/synth/System.vhd:3168]
 INFO: [Synth 8-256] done synthesizing module 'System_wrapper' (16#1) [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/hdl/System_wrapper.vhd:58]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1018.926 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1018.051 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1018.926 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1018.051 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1018.926 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1018.051 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.065 . Memory (MB): peak = 1020.621 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.083 . Memory (MB): peak = 1018.051 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -295,21 +296,21 @@ Parsing XDC File [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraVie
 Finished Parsing XDC File [H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1076.238 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1054.254 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1076.238 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1054.254 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1076.238 ; gain = 57.312
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1054.254 ; gain = 36.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1076.238 ; gain = 57.312
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1054.254 ; gain = 36.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -599,10 +600,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for System_i/AXI_Lite/s00_couplers/au
 Applied set_property KEEP_HIERARCHY = SOFT for System_i/AXI/s00_couplers/auto_us. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for System_i/AXI/m00_couplers/auto_pc. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1076.238 ; gain = 57.312
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1054.254 ; gain = 36.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1076.238 ; gain = 57.312
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1054.254 ; gain = 36.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -624,26 +625,26 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1076.238 ; gain = 57.312
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1054.254 ; gain = 36.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-565] redefining clock 'Clock125'
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1076.238 ; gain = 57.312
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1062.320 ; gain = 44.270
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1076.238 ; gain = 57.312
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1063.195 ; gain = 45.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1089.980 ; gain = 71.055
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1082.711 ; gain = 64.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -661,37 +662,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1094.809 ; gain = 75.883
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1087.516 ; gain = 69.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1094.809 ; gain = 75.883
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1087.516 ; gain = 69.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1094.809 ; gain = 75.883
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1087.516 ; gain = 69.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1094.809 ; gain = 75.883
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1087.516 ; gain = 69.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1094.809 ; gain = 75.883
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1087.516 ; gain = 69.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1094.809 ; gain = 75.883
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1087.516 ; gain = 69.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -748,18 +749,18 @@ Report Cell Usage:
 |21    |OBUF                                   |    25|
 +------+---------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1094.809 ; gain = 75.883
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1087.516 ; gain = 69.465
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 1094.809 ; gain = 18.570
-Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1094.809 ; gain = 75.883
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:30 . Memory (MB): peak = 1087.516 ; gain = 33.262
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1087.516 ; gain = 69.465
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 1094.809 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 1087.516 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1114.664 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1109.770 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
@@ -767,7 +768,7 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 92 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1114.664 ; gain = 95.738
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 1109.770 ; gain = 91.719
 INFO: [Common 17-1381] The checkpoint 'H:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth/System_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file System_wrapper_utilization_synth.rpt -pb System_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jun  4 20:49:29 2021...
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 17 23:59:36 2021...

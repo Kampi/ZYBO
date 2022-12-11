@@ -38,25 +38,17 @@
 
 int main(void)
 {
-	xil_printf("-----------I2S Audio recorder-----------\r\n");
-	xil_printf("\r\n");
-
 	if(AudioRecorder_Init() != XST_SUCCESS)
 	{
-		xil_printf("[ERROR] Can not initialize audio recorder. Abort...\n\r");
-		return XST_FAILURE;
+		xil_printf("Can not initialize audio recorder!\n\r");
+
+		return -1;
 	}
 
-	if(AudioRecorder_Record("Record.wav", 50) != XST_SUCCESS)
-	{
-		xil_printf("[ERROR] Can not record audio file!");
-	}
-
-	xil_printf("[INFO] Finish!\n\r");
+	AudioRecorder_Record("Record.wav");
+	xil_printf("Finish\n\r");
 
 	while(1)
 	{
 	}
-
-	return XST_SUCCESS;
 }

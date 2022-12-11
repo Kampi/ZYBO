@@ -135,137 +135,105 @@
 // <h> nRF_Drivers 
 
 //==========================================================
-// <e> I2S_ENABLED - nrf_drv_i2s - I2S peripheral driver - legacy layer
+// <e> NRFX_PPI_ENABLED - nrfx_ppi - PPI peripheral allocator
 //==========================================================
-#ifndef I2S_ENABLED
-#define I2S_ENABLED 1
+#ifndef NRFX_PPI_ENABLED
+#define NRFX_PPI_ENABLED 1
 #endif
-// <o> I2S_CONFIG_SCK_PIN - SCK pin  <0-31> 
-
-
-#ifndef I2S_CONFIG_SCK_PIN
-#define I2S_CONFIG_SCK_PIN 31
+// <e> NRFX_PPI_CONFIG_LOG_ENABLED - Enables logging in the module.
+//==========================================================
+#ifndef NRFX_PPI_CONFIG_LOG_ENABLED
+#define NRFX_PPI_CONFIG_LOG_ENABLED 0
 #endif
-
-// <o> I2S_CONFIG_LRCK_PIN - LRCK pin  <1-31> 
-
-
-#ifndef I2S_CONFIG_LRCK_PIN
-#define I2S_CONFIG_LRCK_PIN 30
-#endif
-
-// <o> I2S_CONFIG_MCK_PIN - MCK pin 
-#ifndef I2S_CONFIG_MCK_PIN
-#define I2S_CONFIG_MCK_PIN 255
-#endif
-
-// <o> I2S_CONFIG_SDOUT_PIN - SDOUT pin  <0-31> 
-
-
-#ifndef I2S_CONFIG_SDOUT_PIN
-#define I2S_CONFIG_SDOUT_PIN 29
-#endif
-
-// <o> I2S_CONFIG_SDIN_PIN - SDIN pin  <0-31> 
-
-
-#ifndef I2S_CONFIG_SDIN_PIN
-#define I2S_CONFIG_SDIN_PIN 28
-#endif
-
-// <o> I2S_CONFIG_MASTER  - Mode
+// <o> NRFX_PPI_CONFIG_LOG_LEVEL  - Default Severity level
  
-// <0=> Master 
-// <1=> Slave 
+// <0=> Off 
+// <1=> Error 
+// <2=> Warning 
+// <3=> Info 
+// <4=> Debug 
 
-#ifndef I2S_CONFIG_MASTER
-#define I2S_CONFIG_MASTER 0
+#ifndef NRFX_PPI_CONFIG_LOG_LEVEL
+#define NRFX_PPI_CONFIG_LOG_LEVEL 3
 #endif
 
-// <o> I2S_CONFIG_FORMAT  - Format
+// <o> NRFX_PPI_CONFIG_INFO_COLOR  - ANSI escape code prefix.
  
-// <0=> I2S 
-// <1=> Aligned 
+// <0=> Default 
+// <1=> Black 
+// <2=> Red 
+// <3=> Green 
+// <4=> Yellow 
+// <5=> Blue 
+// <6=> Magenta 
+// <7=> Cyan 
+// <8=> White 
 
-#ifndef I2S_CONFIG_FORMAT
-#define I2S_CONFIG_FORMAT 0
+#ifndef NRFX_PPI_CONFIG_INFO_COLOR
+#define NRFX_PPI_CONFIG_INFO_COLOR 0
 #endif
 
-// <o> I2S_CONFIG_ALIGN  - Alignment
+// <o> NRFX_PPI_CONFIG_DEBUG_COLOR  - ANSI escape code prefix.
  
-// <0=> Left 
-// <1=> Right 
+// <0=> Default 
+// <1=> Black 
+// <2=> Red 
+// <3=> Green 
+// <4=> Yellow 
+// <5=> Blue 
+// <6=> Magenta 
+// <7=> Cyan 
+// <8=> White 
 
-#ifndef I2S_CONFIG_ALIGN
-#define I2S_CONFIG_ALIGN 0
+#ifndef NRFX_PPI_CONFIG_DEBUG_COLOR
+#define NRFX_PPI_CONFIG_DEBUG_COLOR 0
 #endif
 
-// <o> I2S_CONFIG_SWIDTH  - Sample width (bits)
+// </e>
+
+// </e>
+
+// <e> NRFX_SAADC_ENABLED - nrfx_saadc - SAADC peripheral driver
+//==========================================================
+#ifndef NRFX_SAADC_ENABLED
+#define NRFX_SAADC_ENABLED 1
+#endif
+// <o> NRFX_SAADC_CONFIG_RESOLUTION  - Resolution
  
-// <0=> 8 
-// <1=> 16 
-// <2=> 24 
+// <0=> 8 bit 
+// <1=> 10 bit 
+// <2=> 12 bit 
+// <3=> 14 bit 
 
-#ifndef I2S_CONFIG_SWIDTH
-#define I2S_CONFIG_SWIDTH 1
+#ifndef NRFX_SAADC_CONFIG_RESOLUTION
+#define NRFX_SAADC_CONFIG_RESOLUTION 3
 #endif
 
-// <o> I2S_CONFIG_CHANNELS  - Channels
- 
-// <0=> Stereo 
-// <1=> Left 
-// <2=> Right 
-
-#ifndef I2S_CONFIG_CHANNELS
-#define I2S_CONFIG_CHANNELS 1
-#endif
-
-// <o> I2S_CONFIG_MCK_SETUP  - MCK behavior
+// <o> NRFX_SAADC_CONFIG_OVERSAMPLE  - Sample period
  
 // <0=> Disabled 
-// <2147483648=> 32MHz/2 
-// <1342177280=> 32MHz/3 
-// <1073741824=> 32MHz/4 
-// <805306368=> 32MHz/5 
-// <671088640=> 32MHz/6 
-// <536870912=> 32MHz/8 
-// <402653184=> 32MHz/10 
-// <369098752=> 32MHz/11 
-// <285212672=> 32MHz/15 
-// <268435456=> 32MHz/16 
-// <201326592=> 32MHz/21 
-// <184549376=> 32MHz/23 
-// <142606336=> 32MHz/30 
-// <138412032=> 32MHz/31 
-// <134217728=> 32MHz/32 
-// <100663296=> 32MHz/42 
-// <68157440=> 32MHz/63 
-// <34340864=> 32MHz/125 
+// <1=> 2x 
+// <2=> 4x 
+// <3=> 8x 
+// <4=> 16x 
+// <5=> 32x 
+// <6=> 64x 
+// <7=> 128x 
+// <8=> 256x 
 
-#ifndef I2S_CONFIG_MCK_SETUP
-#define I2S_CONFIG_MCK_SETUP 536870912
+#ifndef NRFX_SAADC_CONFIG_OVERSAMPLE
+#define NRFX_SAADC_CONFIG_OVERSAMPLE 1
 #endif
 
-// <o> I2S_CONFIG_RATIO  - MCK/LRCK ratio
+// <q> NRFX_SAADC_CONFIG_LP_MODE  - Enabling low power mode
  
-// <0=> 32x 
-// <1=> 48x 
-// <2=> 64x 
-// <3=> 96x 
-// <4=> 128x 
-// <5=> 192x 
-// <6=> 256x 
-// <7=> 384x 
-// <8=> 512x 
 
-#ifndef I2S_CONFIG_RATIO
-#define I2S_CONFIG_RATIO 2000
+#ifndef NRFX_SAADC_CONFIG_LP_MODE
+#define NRFX_SAADC_CONFIG_LP_MODE 0
 #endif
 
-// <o> I2S_CONFIG_IRQ_PRIORITY  - Interrupt priority
+// <o> NRFX_SAADC_CONFIG_IRQ_PRIORITY  - Interrupt priority
  
-
-// <i> Priorities 0,2 (nRF51) and 0,1,4,5 (nRF52) are reserved for SoftDevice
 // <0=> 0 (highest) 
 // <1=> 1 
 // <2=> 2 
@@ -275,16 +243,16 @@
 // <6=> 6 
 // <7=> 7 
 
-#ifndef I2S_CONFIG_IRQ_PRIORITY
-#define I2S_CONFIG_IRQ_PRIORITY 6
+#ifndef NRFX_SAADC_CONFIG_IRQ_PRIORITY
+#define NRFX_SAADC_CONFIG_IRQ_PRIORITY 6
 #endif
 
-// <e> I2S_CONFIG_LOG_ENABLED - Enables logging in the module.
+// <e> NRFX_SAADC_CONFIG_LOG_ENABLED - Enables logging in the module.
 //==========================================================
-#ifndef I2S_CONFIG_LOG_ENABLED
-#define I2S_CONFIG_LOG_ENABLED 0
+#ifndef NRFX_SAADC_CONFIG_LOG_ENABLED
+#define NRFX_SAADC_CONFIG_LOG_ENABLED 0
 #endif
-// <o> I2S_CONFIG_LOG_LEVEL  - Default Severity level
+// <o> NRFX_SAADC_CONFIG_LOG_LEVEL  - Default Severity level
  
 // <0=> Off 
 // <1=> Error 
@@ -292,11 +260,11 @@
 // <3=> Info 
 // <4=> Debug 
 
-#ifndef I2S_CONFIG_LOG_LEVEL
-#define I2S_CONFIG_LOG_LEVEL 3
+#ifndef NRFX_SAADC_CONFIG_LOG_LEVEL
+#define NRFX_SAADC_CONFIG_LOG_LEVEL 3
 #endif
 
-// <o> I2S_CONFIG_INFO_COLOR  - ANSI escape code prefix.
+// <o> NRFX_SAADC_CONFIG_INFO_COLOR  - ANSI escape code prefix.
  
 // <0=> Default 
 // <1=> Black 
@@ -308,11 +276,11 @@
 // <7=> Cyan 
 // <8=> White 
 
-#ifndef I2S_CONFIG_INFO_COLOR
-#define I2S_CONFIG_INFO_COLOR 0
+#ifndef NRFX_SAADC_CONFIG_INFO_COLOR
+#define NRFX_SAADC_CONFIG_INFO_COLOR 0
 #endif
 
-// <o> I2S_CONFIG_DEBUG_COLOR  - ANSI escape code prefix.
+// <o> NRFX_SAADC_CONFIG_DEBUG_COLOR  - ANSI escape code prefix.
  
 // <0=> Default 
 // <1=> Black 
@@ -324,8 +292,8 @@
 // <7=> Cyan 
 // <8=> White 
 
-#ifndef I2S_CONFIG_DEBUG_COLOR
-#define I2S_CONFIG_DEBUG_COLOR 0
+#ifndef NRFX_SAADC_CONFIG_DEBUG_COLOR
+#define NRFX_SAADC_CONFIG_DEBUG_COLOR 0
 #endif
 
 // </e>
@@ -735,6 +703,151 @@
 
 #ifndef NRFX_UARTE_CONFIG_DEBUG_COLOR
 #define NRFX_UARTE_CONFIG_DEBUG_COLOR 0
+#endif
+
+// </e>
+
+// </e>
+
+// <e> NRFX_TIMER_ENABLED - nrfx_timer - TIMER periperal driver
+//==========================================================
+#ifndef NRFX_TIMER_ENABLED
+#define NRFX_TIMER_ENABLED 1
+#endif
+// <q> NRFX_TIMER0_ENABLED  - Enable TIMER0 instance
+ 
+
+#ifndef NRFX_TIMER0_ENABLED
+#define NRFX_TIMER0_ENABLED 1
+#endif
+
+// <q> NRFX_TIMER1_ENABLED  - Enable TIMER1 instance
+ 
+
+#ifndef NRFX_TIMER1_ENABLED
+#define NRFX_TIMER1_ENABLED 0
+#endif
+
+// <q> NRFX_TIMER2_ENABLED  - Enable TIMER2 instance
+ 
+
+#ifndef NRFX_TIMER2_ENABLED
+#define NRFX_TIMER2_ENABLED 0
+#endif
+
+// <q> NRFX_TIMER3_ENABLED  - Enable TIMER3 instance
+ 
+
+#ifndef NRFX_TIMER3_ENABLED
+#define NRFX_TIMER3_ENABLED 0
+#endif
+
+// <q> NRFX_TIMER4_ENABLED  - Enable TIMER4 instance
+ 
+
+#ifndef NRFX_TIMER4_ENABLED
+#define NRFX_TIMER4_ENABLED 0
+#endif
+
+// <o> NRFX_TIMER_DEFAULT_CONFIG_FREQUENCY  - Timer frequency if in Timer mode
+ 
+// <0=> 16 MHz 
+// <1=> 8 MHz 
+// <2=> 4 MHz 
+// <3=> 2 MHz 
+// <4=> 1 MHz 
+// <5=> 500 kHz 
+// <6=> 250 kHz 
+// <7=> 125 kHz 
+// <8=> 62.5 kHz 
+// <9=> 31.25 kHz 
+
+#ifndef NRFX_TIMER_DEFAULT_CONFIG_FREQUENCY
+#define NRFX_TIMER_DEFAULT_CONFIG_FREQUENCY 0
+#endif
+
+// <o> NRFX_TIMER_DEFAULT_CONFIG_MODE  - Timer mode or operation
+ 
+// <0=> Timer 
+// <1=> Counter 
+
+#ifndef NRFX_TIMER_DEFAULT_CONFIG_MODE
+#define NRFX_TIMER_DEFAULT_CONFIG_MODE 0
+#endif
+
+// <o> NRFX_TIMER_DEFAULT_CONFIG_BIT_WIDTH  - Timer counter bit width
+ 
+// <0=> 16 bit 
+// <1=> 8 bit 
+// <2=> 24 bit 
+// <3=> 32 bit 
+
+#ifndef NRFX_TIMER_DEFAULT_CONFIG_BIT_WIDTH
+#define NRFX_TIMER_DEFAULT_CONFIG_BIT_WIDTH 0
+#endif
+
+// <o> NRFX_TIMER_DEFAULT_CONFIG_IRQ_PRIORITY  - Interrupt priority
+ 
+// <0=> 0 (highest) 
+// <1=> 1 
+// <2=> 2 
+// <3=> 3 
+// <4=> 4 
+// <5=> 5 
+// <6=> 6 
+// <7=> 7 
+
+#ifndef NRFX_TIMER_DEFAULT_CONFIG_IRQ_PRIORITY
+#define NRFX_TIMER_DEFAULT_CONFIG_IRQ_PRIORITY 6
+#endif
+
+// <e> NRFX_TIMER_CONFIG_LOG_ENABLED - Enables logging in the module.
+//==========================================================
+#ifndef NRFX_TIMER_CONFIG_LOG_ENABLED
+#define NRFX_TIMER_CONFIG_LOG_ENABLED 0
+#endif
+// <o> NRFX_TIMER_CONFIG_LOG_LEVEL  - Default Severity level
+ 
+// <0=> Off 
+// <1=> Error 
+// <2=> Warning 
+// <3=> Info 
+// <4=> Debug 
+
+#ifndef NRFX_TIMER_CONFIG_LOG_LEVEL
+#define NRFX_TIMER_CONFIG_LOG_LEVEL 3
+#endif
+
+// <o> NRFX_TIMER_CONFIG_INFO_COLOR  - ANSI escape code prefix.
+ 
+// <0=> Default 
+// <1=> Black 
+// <2=> Red 
+// <3=> Green 
+// <4=> Yellow 
+// <5=> Blue 
+// <6=> Magenta 
+// <7=> Cyan 
+// <8=> White 
+
+#ifndef NRFX_TIMER_CONFIG_INFO_COLOR
+#define NRFX_TIMER_CONFIG_INFO_COLOR 0
+#endif
+
+// <o> NRFX_TIMER_CONFIG_DEBUG_COLOR  - ANSI escape code prefix.
+ 
+// <0=> Default 
+// <1=> Black 
+// <2=> Red 
+// <3=> Green 
+// <4=> Yellow 
+// <5=> Blue 
+// <6=> Magenta 
+// <7=> Cyan 
+// <8=> White 
+
+#ifndef NRFX_TIMER_CONFIG_DEBUG_COLOR
+#define NRFX_TIMER_CONFIG_DEBUG_COLOR 0
 #endif
 
 // </e>
@@ -4081,14 +4194,6 @@
 #ifndef SER_HAL_TRANSPORT_CONFIG_DEBUG_COLOR
 #define SER_HAL_TRANSPORT_CONFIG_DEBUG_COLOR 0
 #endif
-
-// </e>
-
-// </h> 
-//==========================================================
-
-// </h> 
-//==========================================================
 
 // </e>
 

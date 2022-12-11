@@ -98,3 +98,53 @@ platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/
 platform generate -domains 
 platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/System_wrapper.xsa}
 platform generate -domains 
+platform active {System_wrapper}
+platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/System_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/System_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/System_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/System_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/System_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/System_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/System_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/System_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/System_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/System_wrapper.xsa}
+platform generate -domains 
+platform active {System_wrapper}
+bsp reload
+platform generate -domains 
+platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/System_wrapper.xsa}
+platform generate -domains 
+domain active {zynq_fsbl}
+bsp reload
+domain active {standalone_ps7_cortexa9_0}
+bsp reload
+platform generate -domains 
+platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/System_wrapper.xsa}
+platform generate -domains 
+bsp reload
+platform active {System_wrapper}
+platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/System_wrapper.xsa}
+platform generate -domains 
+platform generate -domains standalone_ps7_cortexa9_0 
+platform active {System_wrapper}
+platform generate -domains 
+platform clean
+platform generate
+platform clean
+platform generate
+platform generate
+platform clean
+platform generate
+platform active {System_wrapper}
+platform config -updatehw {H:/NextCloud/Git/ZYBO/projects/DigitalAudio/projects/I2S_AudioRecorder/hardware/System_wrapper.xsa}
+platform generate -domains 

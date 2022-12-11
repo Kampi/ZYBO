@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Sun Mar 21 15:03:26 2021
+// Date        : Fri Dec 17 23:58:33 2021
 // Host        : PC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top System_processing_system7_0_1 -prefix
-//               System_processing_system7_0_1_ System_processing_system7_0_1_stub.v
+// Command     : write_verilog -force -mode synth_stub
+//               h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_processing_system7_0_1/System_processing_system7_0_1_stub.v
 // Design      : System_processing_system7_0_1
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1

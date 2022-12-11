@@ -1,48 +1,51 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.488987",
-   "Default View_TopLeft":"-92,-176",
+   "Default View_ScaleFactor":"0.466565",
+   "Default View_TopLeft":"-92,-161",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 8 -x 2300 -y 300 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 8 -x 2300 -y 320 -defaultsOSRD
-preplace port I2S -pg 1 -lvl 0 -x 0 -y 210 -defaultsOSRD
-preplace port Buttons -pg 1 -lvl 8 -x 2300 -y 490 -defaultsOSRD
-preplace port MCLK -pg 1 -lvl 0 -x 0 -y 250 -defaultsOSRD
-preplace port Enable -pg 1 -lvl 0 -x 0 -y 230 -defaultsOSRD
-preplace inst ProcessingSystem -pg 1 -lvl 5 -x 1520 -y 350 -defaultsOSRD
-preplace inst Reset_ProcessingSystem -pg 1 -lvl 1 -x 200 -y 100 -defaultsOSRD
-preplace inst Reset_Audio -pg 1 -lvl 1 -x 200 -y 580 -defaultsOSRD
-preplace inst ProcessingSystem_AXILite -pg 1 -lvl 6 -x 1900 -y 460 -defaultsOSRD
-preplace inst ProcessingSystem_AXI -pg 1 -lvl 4 -x 1160 -y 320 -defaultsOSRD
-preplace inst AXI_DMA -pg 1 -lvl 3 -x 820 -y 280 -defaultsOSRD
-preplace inst AXIS_I2S_Receiver -pg 1 -lvl 2 -x 510 -y 260 -defaultsOSRD
-preplace inst Buttons -pg 1 -lvl 7 -x 2170 -y 490 -defaultsOSRD
-preplace netloc ProcessingSystem_FCLK_RESET0_N 1 0 6 30 460 NJ 460 NJ 460 NJ 460 NJ 460 1720
-preplace netloc Reset_Audio_peripheral_aresetn 1 1 1 380 270n
-preplace netloc ProcessingSystem_FCLK_CLK0 1 0 7 20 200 390 150 630 160 1010 440 1320 470 1740 600 2050
-preplace netloc Reset_ProcessingSystem_peripheral_aresetn 1 1 6 370 140 640 170 1000 480 NJ 480 1730 610 2060J
-preplace netloc MCLK_0_1 1 0 2 20 250 NJ
-preplace netloc AXI_DMA_s2mm_introut 1 3 2 990 200 1310J
-preplace netloc Enable_0_1 1 0 2 NJ 230 NJ
-preplace netloc I2S_0_1 1 0 2 NJ 210 NJ
-preplace netloc axi_mem_intercon_M00_AXI 1 4 1 N 320
-preplace netloc ProcessingSystem_DDR 1 5 3 NJ 300 NJ 300 NJ
-preplace netloc ProcessingSystem_AXILite_M00_AXI 1 2 5 650 180 NJ 180 NJ 180 NJ 180 2050
-preplace netloc ProcessingSystem_FIXED_IO 1 5 3 NJ 320 NJ 320 NJ
-preplace netloc AXI_DMA_M_AXI_S2MM 1 3 1 N 260
-preplace netloc ProcessingSystem_M_AXI_GP0 1 5 1 1750 360n
-preplace netloc AXIS_I2S_Receiver_AXIS_TXD 1 2 1 N 260
-preplace netloc Buttons_GPIO 1 7 1 NJ 490
-preplace netloc ProcessingSystem_AXILite_M01_AXI 1 6 1 N 470
-levelinfo -pg 1 0 200 510 820 1160 1520 1900 2170 2300
-pagesize -pg 1 -db -bbox -sgen -100 0 2420 680
+preplace port DDR -pg 1 -lvl 8 -x 2420 -y 400 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 8 -x 2420 -y 420 -defaultsOSRD
+preplace port I2S -pg 1 -lvl 0 -x -10 -y 340 -defaultsOSRD
+preplace port Buttons -pg 1 -lvl 8 -x 2420 -y 180 -defaultsOSRD
+preplace port MCLK -pg 1 -lvl 0 -x -10 -y 380 -defaultsOSRD
+preplace port Enable -pg 1 -lvl 0 -x -10 -y 360 -defaultsOSRD
+preplace inst ProcessingSystem -pg 1 -lvl 5 -x 1610 -y 450 -defaultsOSRD
+preplace inst Reset_ProcessingSystem -pg 1 -lvl 1 -x 200 -y 230 -defaultsOSRD
+preplace inst Reset_Audio -pg 1 -lvl 1 -x 200 -y 660 -defaultsOSRD
+preplace inst ProcessingSystem_AXILite -pg 1 -lvl 6 -x 2010 -y 160 -defaultsOSRD
+preplace inst AXI_DMA -pg 1 -lvl 3 -x 870 -y 110 -defaultsOSRD
+preplace inst Buttons -pg 1 -lvl 7 -x 2290 -y 180 -defaultsOSRD
+preplace inst ProcessingSystem_AXI -pg 1 -lvl 4 -x 1210 -y 170 -defaultsOSRD
+preplace inst system_ila_0 -pg 1 -lvl 3 -x 870 -y 410 -defaultsOSRD
+preplace inst AXIS_I2S_Receiver -pg 1 -lvl 2 -x 510 -y 390 -defaultsOSRD
+preplace netloc AXI_DMA_s2mm_introut 1 3 2 1040 20 1360J
+preplace netloc Enable_0_1 1 0 2 NJ 360 NJ
+preplace netloc MCLK_0_1 1 0 2 10 380 NJ
+preplace netloc ProcessingSystem_FCLK_CLK0 1 0 7 20 390 370 500 640 220 1050 330 1380 330 1850 340 2170
+preplace netloc ProcessingSystem_FCLK_RESET0_N 1 0 6 30 560 NJ 560 NJ 560 NJ 560 NJ 560 1850
+preplace netloc Reset_Audio_peripheral_aresetn 1 1 1 380 400n
+preplace netloc Reset_ProcessingSystem_peripheral_aresetn 1 1 6 390 270 650 230 1060 10 NJ 10 1860 330 2180J
+preplace netloc AXI_DMA_M_AXI_SG 1 3 1 N 80
+preplace netloc ProcessingSystem_M_AXI_GP0 1 5 1 1840 60n
+preplace netloc ProcessingSystem_AXILite_M00_AXI 1 2 5 660 320 NJ 320 NJ 320 NJ 320 2160
+preplace netloc I2S_0_1 1 0 2 NJ 340 NJ
+preplace netloc AXIS_I2S_Receiver_AXIS_TXD 1 2 1 630 80n
+preplace netloc ProcessingSystem_DDR 1 5 3 NJ 400 NJ 400 NJ
+preplace netloc Buttons_GPIO 1 7 1 NJ 180
+preplace netloc ProcessingSystem_AXI_M00_AXI 1 4 1 1370 170n
+preplace netloc AXI_DMA_M_AXI_S2MM 1 3 1 N 100
+preplace netloc ProcessingSystem_AXILite_M01_AXI 1 6 1 N 160
+preplace netloc ProcessingSystem_FIXED_IO 1 5 3 NJ 420 NJ 420 NJ
+levelinfo -pg 1 -10 200 510 870 1210 1610 2010 2290 2420
+pagesize -pg 1 -db -bbox -sgen -110 0 2540 760
 "
 }
 {
-   "da_axi4_cnt":"10",
+   "da_axi4_cnt":"13",
    "da_board_cnt":"3",
-   "da_clkrst_cnt":"15",
+   "da_bram_cntlr_cnt":"2",
+   "da_clkrst_cnt":"18",
    "da_ps7_cnt":"2"
 }

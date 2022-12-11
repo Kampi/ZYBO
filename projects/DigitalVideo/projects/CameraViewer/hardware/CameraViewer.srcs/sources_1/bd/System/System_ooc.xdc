@@ -7,6 +7,7 @@
 # of Vivado)
 ################################################################################
 create_clock -name Clock125 -period 8 [get_ports Clock125]
+create_clock -name OV7670_pclk -period 10 [get_ports OV7670_pclk]
 create_clock -name ProcessingSystem_FCLK_CLK0 -period 10 [get_pins ProcessingSystem/FCLK_CLK0]
 
 ################################################################################

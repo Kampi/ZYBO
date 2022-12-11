@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="41"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="waiting"/>
+			<item value="public const byte"/>
+			<item value="0x40"/>
+			<item value="0x42,"/>
+			<item value="byte"/>
+			<item value="public"/>
 			<item value="41"/>
 			<item value="OV7670_REG_COM15"/>
 			<item value="OV7670_Write"/>
@@ -17,14 +23,11 @@
 			<item value="OV7670"/>
 			<item value="XGPIO_IR_MASK"/>
 			<item value="XGPIO_IR"/>
-			<item value="interrupt"/>
-			<item value="gpio"/>
-			<item value="OV7670_SetImageFormat"/>
-			<item value="rgb"/>
-			<item value="TDEST"/>
-			<item value="Video_Init"/>
 		</list>
 		<list key="replacehistory">
+			<item value="const uint8_t"/>
+			<item value=""/>
+			<item value="uint8_t"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

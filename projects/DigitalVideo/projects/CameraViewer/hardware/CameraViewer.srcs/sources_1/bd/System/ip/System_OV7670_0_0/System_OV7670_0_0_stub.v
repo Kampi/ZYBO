@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Tue Apr  6 18:55:29 2021
+// Date        : Thu Dec 16 19:53:04 2021
 // Host        : PC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top System_OV7670_0_0 -prefix
-//               System_OV7670_0_0_ System_OV7670_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub
+//               h:/NextCloud/Git/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.srcs/sources_1/bd/System/ip/System_OV7670_0_0/System_OV7670_0_0_stub.v
 // Design      : System_OV7670_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1

@@ -45,7 +45,7 @@
 #define XPAR_AXI_DMA_INCLUDE_S2MM 1
 #define XPAR_AXI_DMA_M_AXI_MM2S_DATA_WIDTH 32
 #define XPAR_AXI_DMA_M_AXI_S2MM_DATA_WIDTH 32
-#define XPAR_AXI_DMA_INCLUDE_SG 0
+#define XPAR_AXI_DMA_INCLUDE_SG 1
 #define XPAR_AXI_DMA_ENABLE_MULTI_CHANNEL 0
 #define XPAR_AXI_DMA_NUM_MM2S_CHANNELS 1
 #define XPAR_AXI_DMA_NUM_S2MM_CHANNELS 1
@@ -68,7 +68,7 @@
 #define XPAR_AXIDMA_0_INCLUDE_S2MM 1
 #define XPAR_AXIDMA_0_INCLUDE_S2MM_DRE 0
 #define XPAR_AXIDMA_0_M_AXI_S2MM_DATA_WIDTH 32
-#define XPAR_AXIDMA_0_INCLUDE_SG 0
+#define XPAR_AXIDMA_0_INCLUDE_SG 1
 #define XPAR_AXIDMA_0_ENABLE_MULTI_CHANNEL 0
 #define XPAR_AXIDMA_0_NUM_MM2S_CHANNELS 1
 #define XPAR_AXIDMA_0_NUM_S2MM_CHANNELS 1
@@ -229,6 +229,29 @@
 /* Definitions for peripheral PS7_SLCR_0 */
 #define XPAR_PS7_SLCR_0_S_AXI_BASEADDR 0xF8000000
 #define XPAR_PS7_SLCR_0_S_AXI_HIGHADDR 0xF8000FFF
+
+
+/******************************************************************/
+
+/* Definitions for driver GPIO */
+#define XPAR_XGPIO_NUM_INSTANCES 1
+
+/* Definitions for peripheral BUTTONS */
+#define XPAR_BUTTONS_BASEADDR 0x41200000
+#define XPAR_BUTTONS_HIGHADDR 0x4120FFFF
+#define XPAR_BUTTONS_DEVICE_ID 0
+#define XPAR_BUTTONS_INTERRUPT_PRESENT 0
+#define XPAR_BUTTONS_IS_DUAL 0
+
+
+/******************************************************************/
+
+/* Canonical definitions for peripheral BUTTONS */
+#define XPAR_GPIO_0_BASEADDR 0x41200000
+#define XPAR_GPIO_0_HIGHADDR 0x4120FFFF
+#define XPAR_GPIO_0_DEVICE_ID XPAR_BUTTONS_DEVICE_ID
+#define XPAR_GPIO_0_INTERRUPT_PRESENT 0
+#define XPAR_GPIO_0_IS_DUAL 0
 
 
 /******************************************************************/
