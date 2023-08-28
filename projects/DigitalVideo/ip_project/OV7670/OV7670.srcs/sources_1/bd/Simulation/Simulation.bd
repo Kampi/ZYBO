@@ -1,0 +1,272 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xFFB04F53F71B777D",
+      "device": "xc7z010clg400-1",
+      "name": "Simulation",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2020.2"
+    },
+    "design_tree": {
+      "AXI_Stream_Reader": "",
+      "AXI_Lite_Reader": ""
+    },
+    "interface_ports": {
+      "S_AXIS": {
+        "mode": "Slave",
+        "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_sim_clk_wiz_0_0_clk_out1"
+          },
+          "FREQ_HZ": {
+            "value": "300000000"
+          },
+          "HAS_TKEEP": {
+            "value": "0"
+          },
+          "HAS_TLAST": {
+            "value": "1"
+          },
+          "HAS_TREADY": {
+            "value": "1"
+          },
+          "HAS_TSTRB": {
+            "value": "0"
+          },
+          "LAYERED_METADATA": {
+            "value": "undef"
+          },
+          "PHASE": {
+            "value": "0.0"
+          },
+          "TDATA_NUM_BYTES": {
+            "value": "3"
+          },
+          "TDEST_WIDTH": {
+            "value": "0"
+          },
+          "TID_WIDTH": {
+            "value": "0"
+          },
+          "TUSER_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "M_AXI_Lite": {
+        "mode": "Master",
+        "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+        "memory_map_ref": "M_AXI_Lite",
+        "parameters": {
+          "ADDR_WIDTH": {
+            "value": "32"
+          },
+          "CLK_DOMAIN": {
+            "value": "design_sim_clk_wiz_0_0_clk_out1"
+          },
+          "DATA_WIDTH": {
+            "value": "32"
+          },
+          "FREQ_HZ": {
+            "value": "300000000"
+          },
+          "HAS_BURST": {
+            "value": "0"
+          },
+          "HAS_CACHE": {
+            "value": "0"
+          },
+          "HAS_LOCK": {
+            "value": "0"
+          },
+          "HAS_QOS": {
+            "value": "0"
+          },
+          "HAS_REGION": {
+            "value": "0"
+          },
+          "NUM_READ_OUTSTANDING": {
+            "value": "2"
+          },
+          "NUM_WRITE_OUTSTANDING": {
+            "value": "2"
+          },
+          "PHASE": {
+            "value": "0.0"
+          },
+          "PROTOCOL": {
+            "value": "AXI4LITE"
+          }
+        }
+      }
+    },
+    "ports": {
+      "aclk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_BUSIF": {
+            "value": "S_AXIS:M_AXI_Lite"
+          },
+          "CLK_DOMAIN": {
+            "value": "design_sim_clk_wiz_0_0_clk_out1"
+          },
+          "FREQ_HZ": {
+            "value": "300000000"
+          },
+          "PHASE": {
+            "value": "0.0"
+          }
+        }
+      },
+      "aresetn": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "POLARITY": {
+            "value": "ACTIVE_LOW"
+          }
+        }
+      }
+    },
+    "components": {
+      "AXI_Stream_Reader": {
+        "vlnv": "xilinx.com:ip:axi4stream_vip:1.1",
+        "xci_name": "Simulation_axi4stream_vip_slv_0",
+        "parameters": {
+          "HAS_ACLKEN": {
+            "value": "0"
+          },
+          "HAS_ARESETN": {
+            "value": "1"
+          },
+          "HAS_TUSER_BITS_PER_BYTE": {
+            "value": "0"
+          },
+          "INTERFACE_MODE": {
+            "value": "SLAVE"
+          },
+          "TDATA_NUM_BYTES": {
+            "value": "3"
+          },
+          "TUSER_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "AXI_Lite_Reader": {
+        "vlnv": "xilinx.com:ip:axi_vip:1.1",
+        "xci_name": "Simulation_axi_vip_0_0",
+        "parameters": {
+          "ADDR_WIDTH": {
+            "value": "32"
+          },
+          "DATA_WIDTH": {
+            "value": "32"
+          },
+          "HAS_BRESP": {
+            "value": "1"
+          },
+          "HAS_PROT": {
+            "value": "1"
+          },
+          "HAS_RRESP": {
+            "value": "1"
+          },
+          "HAS_WSTRB": {
+            "value": "1"
+          },
+          "INTERFACE_MODE": {
+            "value": "MASTER"
+          },
+          "PROTOCOL": {
+            "value": "AXI4LITE"
+          },
+          "READ_WRITE_MODE": {
+            "value": "READ_WRITE"
+          }
+        },
+        "addressing": {
+          "address_spaces": {
+            "Master_AXI": {
+              "range": "4G",
+              "width": "32"
+            }
+          }
+        },
+        "interface_ports": {
+          "M_AXI": {
+            "mode": "Master",
+            "address_space_ref": "Master_AXI",
+            "base_address": {
+              "minimum": "0x00000000",
+              "maximum": "0xFFFFFFFF",
+              "width": "32"
+            }
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "S_AXIS_0_1": {
+        "interface_ports": [
+          "S_AXIS",
+          "AXI_Stream_Reader/S_AXIS"
+        ]
+      },
+      "AXI_Lite_Reader_M_AXI": {
+        "interface_ports": [
+          "M_AXI_Lite",
+          "AXI_Lite_Reader/M_AXI"
+        ]
+      }
+    },
+    "nets": {
+      "aclk_1": {
+        "ports": [
+          "aclk",
+          "AXI_Stream_Reader/aclk",
+          "AXI_Lite_Reader/aclk"
+        ]
+      },
+      "aresetn_1": {
+        "ports": [
+          "aresetn",
+          "AXI_Stream_Reader/aresetn",
+          "AXI_Lite_Reader/aresetn"
+        ]
+      }
+    },
+    "addressing": {
+      "/": {
+        "memory_maps": {
+          "M_AXI_Lite": {
+            "address_blocks": {
+              "Reg": {
+                "base_address": "0",
+                "range": "64K",
+                "width": "16",
+                "usage": "register"
+              }
+            }
+          }
+        }
+      },
+      "/AXI_Lite_Reader": {
+        "address_spaces": {
+          "Master_AXI": {
+            "segments": {
+              "SEG_M_AXI_Lite_Reg": {
+                "address_block": "/M_AXI_Lite/Reg",
+                "offset": "0x44A00000",
+                "range": "64K"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "schema": "xilinx.com:schema:json_instance:1.0",
+  "ip_inst": {
+    "xci_name": "System_VGA_Decimate_0_0",
+    "cell_name": "VGA_Decimate",
+    "component_reference": "www.kampis-elektroecke.de:Kampis-Elektroecke:VGA_Decimate:1.0",
+    "ip_revision": "1",
+    "gen_directory": "../../../../../../CameraViewer.gen/sources_1/bd/System/ip/System_VGA_Decimate_0_0",
+    "parameters": {
+      "component_parameters": {
+        "Component_Name": [ { "value": "System_VGA_Decimate_0_0", "resolve_type": "user", "usage": "all" } ],
+        "INPUT_SIZE": [ { "value": "24", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "COLOR_SIZE": [ { "value": "8", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "RED_WIDTH": [ { "value": "5", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "GREEN_WIDTH": [ { "value": "6", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "BLUE_WIDTH": [ { "value": "5", "resolve_type": "user", "format": "long", "usage": "all" } ]
+      },
+      "model_parameters": {
+        "INPUT_SIZE": [ { "value": "24", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "COLOR_SIZE": [ { "value": "8", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "RED_WIDTH": [ { "value": "5", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "GREEN_WIDTH": [ { "value": "6", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "BLUE_WIDTH": [ { "value": "5", "resolve_type": "generated", "format": "long", "usage": "all" } ]
+      },
+      "project_parameters": {
+        "ARCHITECTURE": [ { "value": "zynq" } ],
+        "BASE_BOARD_PART": [ { "value": "" } ],
+        "BOARD_CONNECTIONS": [ { "value": "" } ],
+        "DEVICE": [ { "value": "xc7z010" } ],
+        "PACKAGE": [ { "value": "clg400" } ],
+        "PREFHDL": [ { "value": "VHDL" } ],
+        "SILICON_REVISION": [ { "value": "" } ],
+        "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
+        "SPEEDGRADE": [ { "value": "-1" } ],
+        "STATIC_POWER": [ { "value": "" } ],
+        "TEMPERATURE_GRADE": [ { "value": "" } ],
+        "USE_RDI_CUSTOMIZATION": [ { "value": "TRUE" } ],
+        "USE_RDI_GENERATION": [ { "value": "TRUE" } ]
+      },
+      "runtime_parameters": {
+        "IPCONTEXT": [ { "value": "IP_Integrator" } ],
+        "IPREVISION": [ { "value": "1" } ],
+        "MANAGED": [ { "value": "TRUE" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../CameraViewer.gen/sources_1/bd/System/ip/System_VGA_Decimate_0_0" } ],
+        "SELECTEDSIMMODEL": [ { "value": "" } ],
+        "SHAREDDIR": [ { "value": "../../ipshared" } ],
+        "SWVERSION": [ { "value": "2023.1.1" } ],
+        "SYNTHESISFLOW": [ { "value": "OUT_OF_CONTEXT" } ]
+      }
+    },
+    "boundary": {
+      "ports": {
+        "Enable": [ { "direction": "in", "size_left": "0", "size_right": "0" } ],
+        "Data_In": [ { "direction": "in", "size_left": "23", "size_right": "0" } ],
+        "Red": [ { "direction": "out", "size_left": "4", "size_right": "0" } ],
+        "Blue": [ { "direction": "out", "size_left": "4", "size_right": "0" } ],
+        "Green": [ { "direction": "out", "size_left": "5", "size_right": "0" } ]
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="scw_hwspec" value="G:\Nextcloud_\Git\ZYBO\linux\MinimalLinux\hardware"/>
+	<item key="linux_rootfs" value="G:\Nextcloud\Git\ZYBO\linux\MinimalLinux\rootfs"/>
+	<item key="platform_editor" value="G:\Nextcloud\Git\ZYBO\linux\MinimalLinux\sdk\sysroots\cortexa9t2hf-neon-xilinx-linux-gnueabi"/>
+	<item key="sysroot_directory" value="G:\Nextcloud\Git\ZYBO\linux\MinimalLinux\sdk\sysroots\cortexa9t2hf-neon-xilinx-linux-gnueabi"/>
+</section>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="System_OV7670_0_0_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_OV7670_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Synth" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="System_OV7670_0_0_synth_1"/>
+	</Run>
+	<Run Id="Impl" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Impl" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
+		<Parent Id="Synth"/>
+		<Parent Id="System_OV7670_0_0_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+		<Parameter Name="runs.enableClusterConf" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

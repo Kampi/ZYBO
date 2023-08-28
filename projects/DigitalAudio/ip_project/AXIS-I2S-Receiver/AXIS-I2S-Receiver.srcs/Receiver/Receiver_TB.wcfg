@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Receiver_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Receiver_TB" />
+            <top_module name="axi4stream_vip_pkg" />
+            <top_module name="glbl" />
+            <top_module name="vcomponents" />
+            <top_module name="xil_common_vip_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="496304000fs"></ZoomStartTime>
+      <ZoomEndTime time="530304001fs"></ZoomEndTime>
+      <Cursor1Time time="524604000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="261"></NameColumnWidth>
+      <ValueColumnWidth column_width="87"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="4" />
+   <wvobject fp_name="group10" type="group">
+      <obj_property name="label">Simulation input</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/Receiver_TB/AXI_nReset" type="logic">
+         <obj_property name="ElementShortName">AXI_nReset</obj_property>
+         <obj_property name="ObjectShortName">AXI_nReset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Receiver_TB/AXI_Clock" type="logic">
+         <obj_property name="ElementShortName">AXI_Clock</obj_property>
+         <obj_property name="ObjectShortName">AXI_Clock</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Receiver_TB/SimulationData" type="array">
+         <obj_property name="ElementShortName">SimulationData[1:0][0:31]</obj_property>
+         <obj_property name="ObjectShortName">SimulationData[1:0][0:31]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group104" type="group">
+      <obj_property name="label">AXI-Stream</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/Receiver_TB/TDATA" type="array">
+         <obj_property name="ElementShortName">TDATA[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TDATA[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Receiver_TB/TREADY" type="array">
+         <obj_property name="ElementShortName">TREADY[0:0]</obj_property>
+         <obj_property name="ObjectShortName">TREADY[0:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Receiver_TB/TVALID" type="array">
+         <obj_property name="ElementShortName">TVALID[0:0]</obj_property>
+         <obj_property name="ObjectShortName">TVALID[0:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Receiver_TB/TLAST" type="array">
+         <obj_property name="ElementShortName">TLAST[0:0]</obj_property>
+         <obj_property name="ObjectShortName">TLAST[0:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group10" type="group">
+      <obj_property name="label">I2S</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/Receiver_TB/MCLK" type="logic">
+         <obj_property name="ElementShortName">MCLK</obj_property>
+         <obj_property name="ObjectShortName">MCLK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Receiver_TB/SCLK" type="logic">
+         <obj_property name="ElementShortName">SCLK</obj_property>
+         <obj_property name="ObjectShortName">SCLK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Receiver_TB/LRCLK" type="logic">
+         <obj_property name="ElementShortName">LRCLK</obj_property>
+         <obj_property name="ObjectShortName">LRCLK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Receiver_TB/SD" type="logic">
+         <obj_property name="ElementShortName">SD</obj_property>
+         <obj_property name="ObjectShortName">SD</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group22" type="group">
+      <obj_property name="label">DUT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/Receiver_TB/DUT/CurrentState" type="other">
+         <obj_property name="ElementShortName">CurrentState</obj_property>
+         <obj_property name="ObjectShortName">CurrentState</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Receiver_TB/DUT/WordCounter" type="other">
+         <obj_property name="ElementShortName">WordCounter</obj_property>
+         <obj_property name="ObjectShortName">WordCounter</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

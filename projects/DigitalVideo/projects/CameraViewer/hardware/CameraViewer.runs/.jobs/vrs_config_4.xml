@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="System_Reset_ProcessingSystem_0_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_Reset_ProcessingSystem_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_rst_ProcessingSystem_50M_0_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_rst_ProcessingSystem_50M_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_processing_system7_0_1_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_processing_system7_0_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_Reset_Video_0_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_Reset_Video_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_xbar_4_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_xbar_4_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_VDMA_Display_0_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_VDMA_Display_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_clk_wiz_0_0_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_clk_wiz_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_v_tc_0_0_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_v_tc_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_axi_gpio_0_0_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_axi_gpio_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_VGA_Decimate_0_0_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_VGA_Decimate_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_axi_vdma_0_0_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_axi_vdma_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_OV7670_0_0_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_OV7670_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_AXI_GPIO_Input_0_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_AXI_GPIO_Input_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_v_axi4s_vid_out_0_0_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_v_axi4s_vid_out_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_xbar_5_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_xbar_5_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_auto_us_0_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_auto_us_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_auto_pc_1_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_auto_pc_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_auto_pc_0_synth_1" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/System_auto_pc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Synth" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Synth" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="System_Reset_ProcessingSystem_0_synth_1"/>
+		<Parent Id="System_rst_ProcessingSystem_50M_0_synth_1"/>
+		<Parent Id="System_processing_system7_0_1_synth_1"/>
+		<Parent Id="System_Reset_Video_0_synth_1"/>
+		<Parent Id="System_xbar_4_synth_1"/>
+		<Parent Id="System_VDMA_Display_0_synth_1"/>
+		<Parent Id="System_clk_wiz_0_0_synth_1"/>
+		<Parent Id="System_v_tc_0_0_synth_1"/>
+		<Parent Id="System_axi_gpio_0_0_synth_1"/>
+		<Parent Id="System_VGA_Decimate_0_0_synth_1"/>
+		<Parent Id="System_axi_vdma_0_0_synth_1"/>
+		<Parent Id="System_OV7670_0_0_synth_1"/>
+		<Parent Id="System_AXI_GPIO_Input_0_synth_1"/>
+		<Parent Id="System_v_axi4s_vid_out_0_0_synth_1"/>
+		<Parent Id="System_xbar_5_synth_1"/>
+		<Parent Id="System_auto_us_0_synth_1"/>
+		<Parent Id="System_auto_pc_1_synth_1"/>
+		<Parent Id="System_auto_pc_0_synth_1"/>
+	</Run>
+	<Run Id="Impl" LaunchDir="/home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/CameraViewer/hardware/CameraViewer.runs/Impl" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
+		<Parent Id="Synth"/>
+		<Parent Id="System_Reset_ProcessingSystem_0_synth_1"/>
+		<Parent Id="System_rst_ProcessingSystem_50M_0_synth_1"/>
+		<Parent Id="System_processing_system7_0_1_synth_1"/>
+		<Parent Id="System_Reset_Video_0_synth_1"/>
+		<Parent Id="System_xbar_4_synth_1"/>
+		<Parent Id="System_VDMA_Display_0_synth_1"/>
+		<Parent Id="System_clk_wiz_0_0_synth_1"/>
+		<Parent Id="System_v_tc_0_0_synth_1"/>
+		<Parent Id="System_axi_gpio_0_0_synth_1"/>
+		<Parent Id="System_VGA_Decimate_0_0_synth_1"/>
+		<Parent Id="System_axi_vdma_0_0_synth_1"/>
+		<Parent Id="System_OV7670_0_0_synth_1"/>
+		<Parent Id="System_AXI_GPIO_Input_0_synth_1"/>
+		<Parent Id="System_v_axi4s_vid_out_0_0_synth_1"/>
+		<Parent Id="System_xbar_5_synth_1"/>
+		<Parent Id="System_auto_us_0_synth_1"/>
+		<Parent Id="System_auto_pc_1_synth_1"/>
+		<Parent Id="System_auto_pc_0_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+		<Parameter Name="runs.enableClusterConf" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

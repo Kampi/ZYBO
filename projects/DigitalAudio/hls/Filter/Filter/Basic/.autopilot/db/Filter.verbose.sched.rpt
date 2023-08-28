@@ -1,0 +1,246 @@
+
+
+================================================================
+== Vivado HLS Report for 'Filter'
+================================================================
+* Date:           Wed May 20 13:45:02 2020
+
+* Version:        2019.2.1 (Build 2724168 on Thu Dec 05 05:19:09 MST 2019)
+* Project:        Filter
+* Solution:       Basic
+* Product family: zynq
+* Target device:  xc7z010-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 8.00 ns | 6.380 ns |   1.00 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max   | min | max |   Type  |
+    +---------+---------+-----------+----------+-----+-----+---------+
+    |        2|      117| 16.000 ns | 0.936 us |    2|  117|   none  |
+    +---------+---------+-----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Shift_Accum_Loop  |      114|      114|         6|          -|          -|    19|    no    |
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 9
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 8 2 
+2 --> 3 8 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 2 
+8 --> 9 
+9 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %DataIn) nounwind, !map !83"   --->   Operation 10 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %DataOut) nounwind, !map !89"   --->   Operation 11 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1 %Enable) nounwind, !map !95"   --->   Operation 12 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([7 x i8]* @Filter_str) nounwind"   --->   Operation 13 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%Enable_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %Enable) nounwind" [src/Filter.cpp:3]   --->   Operation 14 'read' 'Enable_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%DataIn_read = call i32 @_ssdm_op_Read.axis.i32(i32 %DataIn) nounwind" [src/Filter.cpp:3]   --->   Operation 15 'read' 'DataIn_read' <Predicate = true> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [13 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [src/Filter.cpp:5]   --->   Operation 16 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %DataIn, [5 x i8]* @p_str2, i32 1, i32 1, [5 x i8]* @p_str3, i32 0, i32 1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [src/Filter.cpp:5]   --->   Operation 17 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %DataOut, [5 x i8]* @p_str2, i32 1, i32 1, [5 x i8]* @p_str3, i32 0, i32 1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [src/Filter.cpp:5]   --->   Operation 18 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (1.76ns)   --->   "br i1 %Enable_read, label %.preheader.preheader, label %_ZN8ap_fixedILi48ELi16EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit._crit_edge" [src/Filter.cpp:18]   --->   Operation 19 'br' <Predicate = true> <Delay = 1.76>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%trunc_ln703 = trunc i32 %DataIn_read to i16" [src/Filter.cpp:24]   --->   Operation 20 'trunc' 'trunc_ln703' <Predicate = (Enable_read)> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%trunc_ln703_1 = call i16 @_ssdm_op_PartSelect.i16.i32.i32.i32(i32 %DataIn_read, i32 16, i32 31)" [src/Filter.cpp:25]   --->   Operation 21 'partselect' 'trunc_ln703_1' <Predicate = (Enable_read)> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (1.76ns)   --->   "br label %.preheader" [src/Filter.cpp:20]   --->   Operation 22 'br' <Predicate = (Enable_read)> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 4.14>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%p_Val2_2 = phi i48 [ %AccLeft_V, %_ZN13ap_fixed_baseILi50ELi18ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi48ELi16ELb1ELS0_5ELS1_3ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.i.i32 ], [ 0, %.preheader.preheader ]"   --->   Operation 23 'phi' 'p_Val2_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%p_Val2_s = phi i48 [ %AccRight_V, %_ZN13ap_fixed_baseILi50ELi18ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi48ELi16ELb1ELS0_5ELS1_3ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.i.i32 ], [ 0, %.preheader.preheader ]"   --->   Operation 24 'phi' 'p_Val2_s' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%i_0 = phi i6 [ %i, %_ZN13ap_fixed_baseILi50ELi18ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi48ELi16ELb1ELS0_5ELS1_3ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.i.i32 ], [ 18, %.preheader.preheader ]"   --->   Operation 25 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%sext_ln20 = sext i6 %i_0 to i32" [src/Filter.cpp:20]   --->   Operation 26 'sext' 'sext_ln20' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%tmp_2 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %i_0, i32 5)" [src/Filter.cpp:20]   --->   Operation 27 'bitselect' 'tmp_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 19, i64 19, i64 19) nounwind"   --->   Operation 28 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "br i1 %tmp_2, label %2, label %0" [src/Filter.cpp:20]   --->   Operation 29 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str4) nounwind" [src/Filter.cpp:21]   --->   Operation 30 'specloopname' <Predicate = (!tmp_2)> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (1.42ns)   --->   "%icmp_ln22 = icmp eq i6 %i_0, 0" [src/Filter.cpp:22]   --->   Operation 31 'icmp' 'icmp_ln22' <Predicate = (!tmp_2)> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "br i1 %icmp_ln22, label %_ZN8ap_fixedILi16ELi16EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit, label %1" [src/Filter.cpp:22]   --->   Operation 32 'br' <Predicate = (!tmp_2)> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (1.82ns)   --->   "%add_ln29 = add i6 %i_0, -1" [src/Filter.cpp:29]   --->   Operation 33 'add' 'add_ln29' <Predicate = (!tmp_2 & !icmp_ln22)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%zext_ln29_1 = zext i6 %add_ln29 to i64" [src/Filter.cpp:29]   --->   Operation 34 'zext' 'zext_ln29_1' <Predicate = (!tmp_2 & !icmp_ln22)> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%ShiftRegRight_V_addr = getelementptr [19 x i16]* @ShiftRegRight_V, i64 0, i64 %zext_ln29_1" [src/Filter.cpp:29]   --->   Operation 35 'getelementptr' 'ShiftRegRight_V_addr' <Predicate = (!tmp_2 & !icmp_ln22)> <Delay = 0.00>
+ST_2 : Operation 36 [2/2] (2.32ns)   --->   "%ShiftRegRight_V_load = load i16* %ShiftRegRight_V_addr, align 2" [src/Filter.cpp:29]   --->   Operation 36 'load' 'ShiftRegRight_V_load' <Predicate = (!tmp_2 & !icmp_ln22)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 19> <RAM>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%ShiftRegLeft_V_addr = getelementptr [19 x i16]* @ShiftRegLeft_V, i64 0, i64 %zext_ln29_1" [src/Filter.cpp:30]   --->   Operation 37 'getelementptr' 'ShiftRegLeft_V_addr' <Predicate = (!tmp_2 & !icmp_ln22)> <Delay = 0.00>
+ST_2 : Operation 38 [2/2] (2.32ns)   --->   "%ShiftRegLeft_V_load = load i16* %ShiftRegLeft_V_addr, align 2" [src/Filter.cpp:30]   --->   Operation 38 'load' 'ShiftRegLeft_V_load' <Predicate = (!tmp_2 & !icmp_ln22)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 19> <RAM>
+ST_2 : Operation 39 [1/1] (2.32ns)   --->   "store i16 %trunc_ln703, i16* getelementptr inbounds ([19 x i16]* @ShiftRegRight_V, i64 0, i64 0), align 16" [src/Filter.cpp:24]   --->   Operation 39 'store' <Predicate = (!tmp_2 & icmp_ln22)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 19> <RAM>
+ST_2 : Operation 40 [1/1] (2.32ns)   --->   "store i16 %trunc_ln703_1, i16* getelementptr inbounds ([19 x i16]* @ShiftRegLeft_V, i64 0, i64 0), align 16" [src/Filter.cpp:25]   --->   Operation 40 'store' <Predicate = (!tmp_2 & icmp_ln22)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 19> <RAM>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "br label %_ZN13ap_fixed_baseILi50ELi18ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi48ELi16ELb1ELS0_5ELS1_3ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.i.i32" [src/Filter.cpp:26]   --->   Operation 41 'br' <Predicate = (!tmp_2 & icmp_ln22)> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%tmp = call i16 @_ssdm_op_PartSelect.i16.i48.i32.i32(i48 %p_Val2_s, i32 32, i32 47)" [src/Filter.cpp:37]   --->   Operation 42 'partselect' 'tmp' <Predicate = (tmp_2)> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_1 = call i16 @_ssdm_op_PartSelect.i16.i48.i32.i32(i48 %p_Val2_2, i32 32, i32 47)" [src/Filter.cpp:37]   --->   Operation 43 'partselect' 'tmp_1' <Predicate = (tmp_2)> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%or_ln = call i32 @_ssdm_op_BitConcatenate.i32.i16.i16(i16 %tmp_1, i16 %tmp)" [src/Filter.cpp:37]   --->   Operation 44 'bitconcatenate' 'or_ln' <Predicate = (tmp_2)> <Delay = 0.00>
+ST_2 : Operation 45 [1/1] (1.76ns)   --->   "br label %_ZN8ap_fixedILi48ELi16EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit._crit_edge" [src/Filter.cpp:38]   --->   Operation 45 'br' <Predicate = (tmp_2)> <Delay = 1.76>
+
+State 3 <SV = 2> <Delay = 4.64>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%zext_ln29 = zext i32 %sext_ln20 to i64" [src/Filter.cpp:29]   --->   Operation 46 'zext' 'zext_ln29' <Predicate = (!icmp_ln22)> <Delay = 0.00>
+ST_3 : Operation 47 [1/2] (2.32ns)   --->   "%ShiftRegRight_V_load = load i16* %ShiftRegRight_V_addr, align 2" [src/Filter.cpp:29]   --->   Operation 47 'load' 'ShiftRegRight_V_load' <Predicate = (!icmp_ln22)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 19> <RAM>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%ShiftRegRight_V_addr_1 = getelementptr [19 x i16]* @ShiftRegRight_V, i64 0, i64 %zext_ln29" [src/Filter.cpp:29]   --->   Operation 48 'getelementptr' 'ShiftRegRight_V_addr_1' <Predicate = (!icmp_ln22)> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (2.32ns)   --->   "store i16 %ShiftRegRight_V_load, i16* %ShiftRegRight_V_addr_1, align 2" [src/Filter.cpp:29]   --->   Operation 49 'store' <Predicate = (!icmp_ln22)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 19> <RAM>
+ST_3 : Operation 50 [1/2] (2.32ns)   --->   "%ShiftRegLeft_V_load = load i16* %ShiftRegLeft_V_addr, align 2" [src/Filter.cpp:30]   --->   Operation 50 'load' 'ShiftRegLeft_V_load' <Predicate = (!icmp_ln22)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 19> <RAM>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%ShiftRegLeft_V_addr_1 = getelementptr [19 x i16]* @ShiftRegLeft_V, i64 0, i64 %zext_ln29" [src/Filter.cpp:30]   --->   Operation 51 'getelementptr' 'ShiftRegLeft_V_addr_1' <Predicate = (!icmp_ln22)> <Delay = 0.00>
+ST_3 : Operation 52 [1/1] (2.32ns)   --->   "store i16 %ShiftRegLeft_V_load, i16* %ShiftRegLeft_V_addr_1, align 2" [src/Filter.cpp:30]   --->   Operation 52 'store' <Predicate = (!icmp_ln22)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 19> <RAM>
+ST_3 : Operation 53 [1/1] (0.00ns)   --->   "br label %_ZN13ap_fixed_baseILi50ELi18ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi48ELi16ELb1ELS0_5ELS1_3ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.i.i32"   --->   Operation 53 'br' <Predicate = (!icmp_ln22)> <Delay = 0.00>
+ST_3 : Operation 54 [1/1] (1.82ns)   --->   "%i = add i6 %i_0, -1" [src/Filter.cpp:20]   --->   Operation 54 'add' 'i' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 3.25>
+ST_4 : Operation 55 [1/1] (0.00ns)   --->   "%zext_ln33 = zext i32 %sext_ln20 to i64" [src/Filter.cpp:33]   --->   Operation 55 'zext' 'zext_ln33' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 56 [1/1] (0.00ns)   --->   "%ShiftRegRight_V_addr_2 = getelementptr [19 x i16]* @ShiftRegRight_V, i64 0, i64 %zext_ln33" [src/Filter.cpp:33]   --->   Operation 56 'getelementptr' 'ShiftRegRight_V_addr_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 57 [2/2] (2.32ns)   --->   "%ShiftRegRight_V_load_1 = load i16* %ShiftRegRight_V_addr_2, align 2" [src/Filter.cpp:33]   --->   Operation 57 'load' 'ShiftRegRight_V_load_1' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 19> <RAM>
+ST_4 : Operation 58 [1/1] (0.00ns)   --->   "%Coefficients_V_addr = getelementptr [19 x i18]* @Coefficients_V, i64 0, i64 %zext_ln33" [src/Filter.cpp:33]   --->   Operation 58 'getelementptr' 'Coefficients_V_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 59 [2/2] (3.25ns)   --->   "%Coefficients_V_load = load i18* %Coefficients_V_addr, align 4" [src/Filter.cpp:33]   --->   Operation 59 'load' 'Coefficients_V_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 18> <Depth = 19> <ROM>
+ST_4 : Operation 60 [1/1] (0.00ns)   --->   "%ShiftRegLeft_V_addr_2 = getelementptr [19 x i16]* @ShiftRegLeft_V, i64 0, i64 %zext_ln33" [src/Filter.cpp:34]   --->   Operation 60 'getelementptr' 'ShiftRegLeft_V_addr_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 61 [2/2] (2.32ns)   --->   "%ShiftRegLeft_V_load_1 = load i16* %ShiftRegLeft_V_addr_2, align 2" [src/Filter.cpp:34]   --->   Operation 61 'load' 'ShiftRegLeft_V_load_1' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 19> <RAM>
+
+State 5 <SV = 4> <Delay = 3.25>
+ST_5 : Operation 62 [1/2] (2.32ns)   --->   "%ShiftRegRight_V_load_1 = load i16* %ShiftRegRight_V_addr_2, align 2" [src/Filter.cpp:33]   --->   Operation 62 'load' 'ShiftRegRight_V_load_1' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 19> <RAM>
+ST_5 : Operation 63 [1/2] (3.25ns)   --->   "%Coefficients_V_load = load i18* %Coefficients_V_addr, align 4" [src/Filter.cpp:33]   --->   Operation 63 'load' 'Coefficients_V_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 18> <Depth = 19> <ROM>
+ST_5 : Operation 64 [1/2] (2.32ns)   --->   "%ShiftRegLeft_V_load_1 = load i16* %ShiftRegLeft_V_addr_2, align 2" [src/Filter.cpp:34]   --->   Operation 64 'load' 'ShiftRegLeft_V_load_1' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 19> <RAM>
+
+State 6 <SV = 5> <Delay = 6.38>
+ST_6 : Operation 65 [1/1] (0.00ns)   --->   "%sext_ln1118 = sext i18 %Coefficients_V_load to i33" [src/Filter.cpp:33]   --->   Operation 65 'sext' 'sext_ln1118' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 66 [1/1] (0.00ns)   --->   "%sext_ln1118_1 = sext i16 %ShiftRegRight_V_load_1 to i33" [src/Filter.cpp:33]   --->   Operation 66 'sext' 'sext_ln1118_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 67 [1/1] (6.38ns) (root node of the DSP)   --->   "%mul_ln703_1 = mul i33 %sext_ln1118_1, %sext_ln1118" [src/Filter.cpp:33]   --->   Operation 67 'mul' 'mul_ln703_1' <Predicate = true> <Delay = 6.38> <Core = "DSP48">   --->   Core 88 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 68 [1/1] (0.00ns)   --->   "%sext_ln1118_2 = sext i16 %ShiftRegLeft_V_load_1 to i33" [src/Filter.cpp:34]   --->   Operation 68 'sext' 'sext_ln1118_2' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 69 [1/1] (6.38ns) (root node of the DSP)   --->   "%mul_ln703 = mul i33 %sext_ln1118_2, %sext_ln1118" [src/Filter.cpp:34]   --->   Operation 69 'mul' 'mul_ln703' <Predicate = true> <Delay = 6.38> <Core = "DSP48">   --->   Core 88 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 7 <SV = 6> <Delay = 3.10>
+ST_7 : Operation 70 [1/1] (0.00ns)   --->   "%shl_ln = call i48 @_ssdm_op_BitConcatenate.i48.i33.i15(i33 %mul_ln703_1, i15 0)" [src/Filter.cpp:33]   --->   Operation 70 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 71 [1/1] (3.10ns)   --->   "%AccRight_V = add i48 %p_Val2_s, %shl_ln" [src/Filter.cpp:33]   --->   Operation 71 'add' 'AccRight_V' <Predicate = true> <Delay = 3.10> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 72 [1/1] (0.00ns)   --->   "%shl_ln703_1 = call i48 @_ssdm_op_BitConcatenate.i48.i33.i15(i33 %mul_ln703, i15 0)" [src/Filter.cpp:34]   --->   Operation 72 'bitconcatenate' 'shl_ln703_1' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 73 [1/1] (3.10ns)   --->   "%AccLeft_V = add i48 %p_Val2_2, %shl_ln703_1" [src/Filter.cpp:34]   --->   Operation 73 'add' 'AccLeft_V' <Predicate = true> <Delay = 3.10> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 74 [1/1] (0.00ns)   --->   "br label %.preheader" [src/Filter.cpp:20]   --->   Operation 74 'br' <Predicate = true> <Delay = 0.00>
+
+State 8 <SV = 2> <Delay = 0.00>
+ST_8 : Operation 75 [1/1] (0.00ns)   --->   "%storemerge = phi i32 [ %or_ln, %2 ], [ %DataIn_read, %codeRepl ]" [src/Filter.cpp:37]   --->   Operation 75 'phi' 'storemerge' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 76 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.i32P(i32* %DataOut, i32 %storemerge) nounwind" [src/Filter.cpp:37]   --->   Operation 76 'write' <Predicate = true> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 9 <SV = 3> <Delay = 0.00>
+ST_9 : Operation 77 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.i32P(i32* %DataOut, i32 %storemerge) nounwind" [src/Filter.cpp:37]   --->   Operation 77 'write' <Predicate = true> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_9 : Operation 78 [1/1] (0.00ns)   --->   "ret void" [src/Filter.cpp:43]   --->   Operation 78 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 8ns, clock uncertainty: 1ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	wire read on port 'Enable' (src/Filter.cpp:3) [13]  (0 ns)
+	multiplexor before 'phi' operation ('storemerge', src/Filter.cpp:37) with incoming values : ('DataIn', src/Filter.cpp:3) ('or_ln', src/Filter.cpp:37) [77]  (1.77 ns)
+
+ <State 2>: 4.15ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', src/Filter.cpp:20) [26]  (0 ns)
+	'add' operation ('add_ln29', src/Filter.cpp:29) [37]  (1.83 ns)
+	'getelementptr' operation ('ShiftRegRight_V_addr', src/Filter.cpp:29) [39]  (0 ns)
+	'load' operation ('ShiftRegRight_V_load', src/Filter.cpp:29) on array 'ShiftRegRight_V' [40]  (2.32 ns)
+
+ <State 3>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('ShiftRegRight_V_load', src/Filter.cpp:29) on array 'ShiftRegRight_V' [40]  (2.32 ns)
+	'store' operation ('store_ln29', src/Filter.cpp:29) of variable 'ShiftRegRight_V_load', src/Filter.cpp:29 on array 'ShiftRegRight_V' [42]  (2.32 ns)
+
+ <State 4>: 3.25ns
+The critical path consists of the following:
+	'getelementptr' operation ('Coefficients_V_addr', src/Filter.cpp:33) [56]  (0 ns)
+	'load' operation ('Coefficients_V_load', src/Filter.cpp:33) on array 'Coefficients_V' [57]  (3.25 ns)
+
+ <State 5>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('Coefficients_V_load', src/Filter.cpp:33) on array 'Coefficients_V' [57]  (3.25 ns)
+
+ <State 6>: 6.38ns
+The critical path consists of the following:
+	'mul' operation of DSP[60] ('mul_ln703_1', src/Filter.cpp:33) [60]  (6.38 ns)
+
+ <State 7>: 3.1ns
+The critical path consists of the following:
+	'add' operation ('AccRight.V', src/Filter.cpp:33) [62]  (3.1 ns)
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
