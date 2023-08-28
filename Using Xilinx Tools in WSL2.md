@@ -141,7 +141,7 @@ sudo chmod 755 ./petalinux-...-final-installer.run
 - Open a new Ubuntu shell
 - Execute `vivado &`
 
-![image(1).png](images/wsl/image(1).png)
+![image(1).png](images/wsl/Image(1).png)
 
 ## Attach device to WSL for debugging
 
@@ -164,7 +164,7 @@ BUSID  VID:PID    DEVICE                                                        
 - Search for the BUS ID of the target device
 - Connect the device by executing `usbipd wsl attach --busid <busid>`
 
-![image(2).png](images/wsl/image(2).png)
+![image(2).png](images/wsl/Image(2).png)
 
 ## Maintainer
 
