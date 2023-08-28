@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="SobelFilter" xd:componentRef="SobelFilter" xd:initiationInterval="2" xd:clockPeriod="8.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
-  <xd:controlReg xd:name="control" xd:interfaceRef="ap_ctrl" xd:busTypeRef="acc_handshake" xd:type="acc_handshake"/>
-  <xd:arg xd:name="DataIn" xd:originalName="DataIn" xd:direction="in" xd:interfaceRef="DataIn" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="1"/>
-  <xd:arg xd:name="DataOut" xd:originalName="DataOut" xd:direction="out" xd:interfaceRef="DataOut" xd:busTypeRef="axis" xd:dataWidth="1"/>
-  <xd:latencyEstimates xd:best-case="1" xd:worst-case="1" xd:average-case="1"/>
-  <xd:resourceEstimates xd:LUT="36" xd:FF="34" xd:BRAM="0" xd:DSP="0"/>
-</xd:acceleratorMap>
