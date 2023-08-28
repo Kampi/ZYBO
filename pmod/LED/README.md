@@ -13,7 +13,7 @@
 
 LED-Pmod for for the ZYBO.
 
-![Overview](docs/imagesLED_Pmod.png)
+![Overview](docs/images/LED_Pmod.png)
 
 ## Pinout
 
