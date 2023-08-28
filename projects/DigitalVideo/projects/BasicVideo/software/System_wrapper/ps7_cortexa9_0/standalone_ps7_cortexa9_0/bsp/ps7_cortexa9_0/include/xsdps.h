@@ -1,5 +1,6 @@
 /******************************************************************************
-* Copyright (C) 2013 - 2020 Xilinx, Inc.  All rights reserved.
+* Copyright (C) 2013 - 2022 Xilinx, Inc.  All rights reserved.
+* Copyright (c) 2022 - 2023 Advanced Micro Devices, Inc. All Rights Reserved.
 * SPDX-License-Identifier: MIT
 ******************************************************************************/
 
@@ -7,11 +8,13 @@
 /**
 *
 * @file xsdps.h
-* @addtogroup sdps_v3_10
+* @addtogroup sdps Overview
 * @{
 * @details
 *
-* This file contains the implementation of XSdPs driver.
+* This section explains the implementation of the XSdPs driver.
+* See xsdps.h for a detailed description of the device and driver.
+*
 * This driver is used initialize read from and write to the SD card.
 * Features such as switching bus width to 4-bit and switching to high speed,
 * changing clock frequency, block size etc. are supported.
@@ -25,7 +28,8 @@
 * line) can be sent, most often to obtain status.
 * This driver does not support multi card slots at present.
 *
-* Initialization:
+* <b>Initialization & Configuration</b>
+*
 * This includes initialization on the host controller side to select
 * clock frequency, bus power and default transfer related parameters.
 * The default voltage is 3.3V.
@@ -33,7 +37,8 @@
 * implemented. This resets the card, gives it a unique address/ID and
 * identifies key card related specifications.
 *
-* Data transfer:
+* <b>Data transfer</b>
+*
 * The SD card is put in transfer state to read from or write to it.
 * The default block size is 512 bytes and if supported,
 * default bus width is 4-bit and bus speed is High speed.
@@ -46,7 +51,8 @@
 * event one of them is set, driver will clear the interrupt status and
 * communicate failure to the upper layer.
 *
-* File system use:
+* <b>File system use</b>
+*
 * This driver can be used with xilffs library to read and write files to SD.
 * (Please refer to procedure in diskio.c). The file system read/write example
 * in polled mode can used for reference.
@@ -61,7 +67,8 @@
 * Interrupt mode is not supported because it offers no improvement when used
 * with file system.
 *
-* eMMC support:
+* <b>eMMC support</b>
+*
 * SD driver supports SD and eMMC based on the "enable MMC" parameter in SDK.
 * The features of eMMC supported by the driver will depend on those supported
 * by the host controller. The current driver supports read/write on eMMC card
@@ -132,6 +139,28 @@
 * 3.10  mn     06/05/20 Check Transfer completion separately from XSdPs_Read and
 *                       XSdPs_Write APIs
 *       mn     06/05/20 Modified code for SD Non-Blocking Read support
+* 3.11  sk     12/01/20 Tap programming sequence updates like disable OTAPEN
+*                       always, write zero to tap register for zero tap value.
+*       sk     12/07/20 Fix eMMC DDR52 mode write/read issue.
+*       sk     12/17/20 Removed checking platform specific SD macros and used
+*                       Baseaddress instead.
+* 3.12  sk     01/28/21 Added support for non-blocking write.
+*       sk     02/12/21 Fix the issue in reading CID and CSD.
+*       sk     04/08/21 Fixed doxygen warnings in all source files.
+*       sk     05/25/21 Fix the compilation issue in Cortex-A72 + EL1_NS by
+*                       removing the DLL reset logic (Dead code for Versal).
+* 3.13  sk     08/10/21 Limit the SD operating frequency to 19MHz for Versal.
+* 3.14  sk     10/22/21 Add support for Erase feature.
+*       sk     11/29/21 Fix compilation warnings reported with "-Wundef" flag.
+*       sk     01/10/22 Add support to read slot_type parameter.
+* 4.0   sk     02/25/22 Add support for eMMC5.1.
+*       sk     04/07/22 Add support to read custom tap delay values from design
+*                       for SD/eMMC.
+*       sk     06/03/22 Fix issue in internal clock divider calculation logic.
+* 4.1   sk     11/10/22 Add SD/eMMC Tap delay support for Versal Net.
+* 4.1   sa     01/03/23 Report error if Transfer size is greater than 2MB.
+* 4.1	sa     12/19/22 Enable eMMC HS400 mode for Versal Net.
+* 	sa     01/25/23	Use instance structure to store DMA descriptor tables.
 *
 * </pre>
 *
@@ -161,39 +190,54 @@ extern "C" {
 #define XSDPS_CT_ERROR	0x2L	/**< Command timeout flag */
 #define MAX_TUNING_COUNT	40U		/**< Maximum Tuning count */
 #define MAX_TIMEOUT		0x1FFFFFFFU		/**< Maximum Timeout */
-#define XSDPS_CMD8_VOL_PATTERN	0x1AAU
-#define XSDPS_RESPOCR_READY	0x80000000U
-#define XSDPS_ACMD41_HCS	0x40000000U
-#define XSDPS_ACMD41_3V3	0x00300000U
-#define XSDPS_CMD1_HIGH_VOL	0x00FF8000U
-#define XSDPS_CMD1_DUAL_VOL	0x00FF8010U
-#define HIGH_SPEED_SUPPORT	0x2U
-#define UHS_SDR12_SUPPORT	0x1U
-#define UHS_SDR25_SUPPORT	0x2U
-#define UHS_SDR50_SUPPORT	0x4U
-#define UHS_SDR104_SUPPORT	0x8U
-#define UHS_DDR50_SUPPORT	0x10U
-#define WIDTH_4_BIT_SUPPORT	0x4U
-#define SD_CLK_25_MHZ		25000000U
-#define SD_CLK_19_MHZ		19000000U
-#define SD_CLK_26_MHZ		26000000U
-#define EXT_CSD_DEVICE_TYPE_BYTE	196U
-#define EXT_CSD_SEC_COUNT_BYTE1		212U
-#define EXT_CSD_SEC_COUNT_BYTE2		213U
-#define EXT_CSD_SEC_COUNT_BYTE3		214U
-#define EXT_CSD_SEC_COUNT_BYTE4		215U
-#define EXT_CSD_DEVICE_TYPE_HIGH_SPEED			0x2U
-#define EXT_CSD_DEVICE_TYPE_DDR_1V8_HIGH_SPEED	0x4U
-#define EXT_CSD_DEVICE_TYPE_DDR_1V2_HIGH_SPEED	0x8U
-#define EXT_CSD_DEVICE_TYPE_SDR_1V8_HS200		0x10U
-#define EXT_CSD_DEVICE_TYPE_SDR_1V2_HS200		0x20U
-#define CSD_SPEC_VER_3		0x3U
-#define SCR_SPEC_VER_3		0x80U
-#define ADDRESS_BEYOND_32BIT	0x100000000U
+#define XSDPS_CMD8_VOL_PATTERN	0x1AAU		/**< CMD8 voltage pattern */
+#define XSDPS_RESPOCR_READY	0x80000000U	/**< Ready response */
+#define XSDPS_ACMD41_HCS	0x40000000U	/**< High Capacity Support */
+#define XSDPS_ACMD41_3V3	0x00300000U	/**< 3.3 voltage support */
+#define XSDPS_CMD1_HIGH_VOL	0x00FF8000U	/**< CMD1 for High voltage */
+#define XSDPS_CMD1_DUAL_VOL	0x00FF8010U	/**< CMD1 for Dual voltage */
+#define HIGH_SPEED_SUPPORT	0x2U		/**< High Speed support */
+#define UHS_SDR12_SUPPORT	0x1U		/**< SDR12 support */
+#define UHS_SDR25_SUPPORT	0x2U		/**< SDR25 support */
+#define UHS_SDR50_SUPPORT	0x4U		/**< SDR50 support */
+#define UHS_SDR104_SUPPORT	0x8U		/**< SDR104 support */
+#define UHS_DDR50_SUPPORT	0x10U		/**< DDR50 support */
+#define WIDTH_4_BIT_SUPPORT	0x4U		/**< 4-bit width support */
+#define SD_CLK_25_MHZ		25000000U	/**< 25MHz clock */
+#define SD_CLK_19_MHZ		19000000U	/**< 19MHz clock */
+#define SD_CLK_26_MHZ		26000000U	/**< 26MHz clock */
+#define EXT_CSD_DEVICE_TYPE_BYTE	196U	/**< CSD Device Type byte number */
+#define EXT_CSD_SEC_COUNT_BYTE1		212U	/**< CSD Sector count byte 1 */
+#define EXT_CSD_SEC_COUNT_BYTE2		213U	/**< CSD Sector count byte 2 */
+#define EXT_CSD_SEC_COUNT_BYTE3		214U	/**< CSD Sector count byte 3 */
+#define EXT_CSD_SEC_COUNT_BYTE4		215U	/**< CSD Sector count byte 4 */
+#define EXT_CSD_DEVICE_TYPE_HIGH_SPEED			0x2U	/**< CSD Device type HS */
+#define EXT_CSD_DEVICE_TYPE_DDR_1V8_HIGH_SPEED	0x4U	/**< CSD Dev type DDR 1.8v speed */
+#define EXT_CSD_DEVICE_TYPE_DDR_1V2_HIGH_SPEED	0x8U	/**< CSD Dev type DDR 1.2v speed */
+#define EXT_CSD_DEVICE_TYPE_SDR_1V8_HS200		0x10U	/**< CSD SDR 1.8v HS200 */
+#define EXT_CSD_DEVICE_TYPE_SDR_1V2_HS200		0x20U	/**< CSD SDR 1.2v HS200 */
+#define EXT_CSD_DEVICE_TYPE_DDR_1V8_HS400		0x40U	/**< CSD SDR 1.8v HS400 */
+#define EXT_CSD_DEVICE_TYPE_DDR_1V2_HS400		0x80U	/**< CSD SDR 1.2v HS400 */
+#define CSD_SPEC_VER_3		0x3U		/**< CSD card spec ver 3 */
+#define SCR_SPEC_VER_3		0x80U		/**< SCR spec ver 3 */
+#define ADDRESS_BEYOND_32BIT	0x100000000U	/**< Macro used for beyond 32-bit addr */
+
+#define XSDPS_ZYNQMP_SD0_BASE		0xFF160000U	/**< ZynqMP SD0 Baseaddress */
+#define XSDPS_ZYNQMP_SD1_BASE		0xFF170000U	/**< ZynqMP SD1 Baseaddress */
+#define XSDPS_VERSAL_SD0_BASE		0xF1040000U	/**< Versal SD0 Baseaddress */
+#define XSDPS_VERSAL_SD1_BASE		0xF1050000U	/**< Versal SD1 Baseaddress */
+
+/** @name Block size mask for 512 bytes
+ *
+ * Block size mask for 512 bytes - This is the default block size.
+ * @{
+ */
+
+#define XSDPS_BLK_SIZE_512_MASK	0x200U	/**< Blk Size 512 */
+
+/** @} */
 
 /**************************** Type Definitions *******************************/
-
-typedef void (*XSdPs_ConfigTap) (u32 Bank, u32 DeviceId, u32 CardType);
 
 /**
  * This typedef contains configuration information for the device.
@@ -207,13 +251,22 @@ typedef struct {
 	u32 BusWidth;			/**< Bus Width */
 	u32 BankNumber;			/**< MIO Bank selection for SD */
 	u32 HasEMIO;			/**< If SD is connected to EMIO */
+	u8 SlotType;			/**< Slot type */
 	u8 IsCacheCoherent; 		/**< If SD is Cache Coherent or not */
 #if defined  (XCLOCKING)
 	u32 RefClk;			/**< Input clocks */
 #endif
+	u32 ITapDly_SDR_Clk50;	/**< Input Tap delay for HSD/SDR25 modes */
+	u32 OTapDly_SDR_Clk50;	/**< Output Tap delay for HSD/SDR25 modes */
+	u32 ITapDly_DDR_Clk50;	/**< Input Tap delay for DDR50 modes */
+	u32 OTapDly_DDR_Clk50;	/**< Output Tap delay for DDR50 modes */
+	u32 OTapDly_SDR_Clk100;	/**< Input Tap delay for SDR50 modes */
+	u32 OTapDly_SDR_Clk200;	/**< Input Tap delay for SDR104/HS200 modes */
 } XSdPs_Config;
 
-/* ADMA2 32-Bit descriptor table */
+/**
+ * ADMA2 32-Bit descriptor table
+ */
 typedef struct {
 	u16 Attribute;		/**< Attributes of descriptor */
 	u16 Length;		/**< Length of current dma transfer */
@@ -225,7 +278,9 @@ typedef struct {
 }  __attribute__((__packed__))XSdPs_Adma2Descriptor32;
 #endif
 
-/* ADMA2 64-Bit descriptor table */
+/**
+ * ADMA2 64-Bit descriptor table
+ */
 typedef struct {
 	u16 Attribute;		/**< Attributes of descriptor */
 	u16 Length;		/**< Length of current dma transfer */
@@ -267,9 +322,38 @@ typedef struct {
 	u32 SlcrBaseAddr;	/**< SLCR base address*/
 	u8  IsBusy;			/**< Busy Flag*/
 	u32 BlkSize;		/**< Block Size*/
+	u8  IsTuningDone;	/**< Flag to indicate HS200 tuning complete */
+#ifdef __ICCARM__
+#pragma data_alignment = 32
+	XSdPs_Adma2Descriptor32 Adma2_DescrTbl32[32];
+	XSdPs_Adma2Descriptor64 Adma2_DescrTbl64[32];
+#else
+	XSdPs_Adma2Descriptor32 Adma2_DescrTbl32[32] __attribute__ ((aligned(32)));
+	XSdPs_Adma2Descriptor64 Adma2_DescrTbl64[32] __attribute__ ((aligned(32)));
+#endif
 } XSdPs;
 
 /***************** Macros (Inline Functions) Definitions *********************/
+/**
+ * @name SD High Speed mode configuration options
+ * @{
+ */
+/**
+ * User configuration option to enable or disable SD HS mode.
+ * By default SD HS mode is disabled for Versal and enabled for
+ * other platforms.
+ */
+#ifdef versal
+#define SD_HS_MODE_ENABLE	0
+#else
+#define SD_HS_MODE_ENABLE	1
+#endif
+/** @} */
+
+/**
+ * Enable eMMC HS400 mode for Versal Net platform
+ */
+#define ENABLE_HS400_MODE
 
 /************************** Function Prototypes ******************************/
 XSdPs_Config *XSdPs_LookupConfig(u16 DeviceId);
@@ -293,6 +377,9 @@ s32 XSdPs_Get_Status(XSdPs *InstancePtr, u8 *SdStatReg);
 s32 XSdPs_Select_Card(XSdPs *InstancePtr);
 s32 XSdPs_StartReadTransfer(XSdPs *InstancePtr, u32 Arg, u32 BlkCnt, u8 *Buff);
 s32 XSdPs_CheckReadTransfer(XSdPs *InstancePtr);
+s32 XSdPs_StartWriteTransfer(XSdPs *InstancePtr, u32 Arg, u32 BlkCnt, u8 *Buff);
+s32 XSdPs_CheckWriteTransfer(XSdPs *InstancePtr);
+s32 XSdPs_Erase(XSdPs *InstancePtr, u32 StartAddr, u32 EndAddr);
 
 #ifdef __cplusplus
 }

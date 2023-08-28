@@ -1,65 +1,65 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.615572",
-   "Default View_TopLeft":"893,122",
+   "Default View_ScaleFactor":"0.909285",
+   "Default View_TopLeft":"-134,0",
    "ExpandedHierarchyInLayout":"",
-   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+   "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 8 -x 2580 -y 390 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 8 -x 2580 -y 410 -defaultsOSRD
-preplace port Switches -pg 1 -lvl 8 -x 2580 -y 630 -defaultsOSRD
-preplace port Buttons -pg 1 -lvl 8 -x 2580 -y 650 -defaultsOSRD
-preplace port VideoHSync -pg 1 -lvl 8 -x 2580 -y 160 -defaultsOSRD
-preplace port VideoVSync -pg 1 -lvl 8 -x 2580 -y 180 -defaultsOSRD
-preplace port Clock125 -pg 1 -lvl 0 -x 0 -y 330 -defaultsOSRD
-preplace portBus Red -pg 1 -lvl 8 -x 2580 -y 480 -defaultsOSRD
-preplace portBus Blue -pg 1 -lvl 8 -x 2580 -y 500 -defaultsOSRD
-preplace portBus Green -pg 1 -lvl 8 -x 2580 -y 520 -defaultsOSRD
-preplace inst ProcessingSystem -pg 1 -lvl 4 -x 1300 -y 470 -defaultsOSRD
-preplace inst Reset_Video -pg 1 -lvl 4 -x 1300 -y 180 -defaultsOSRD
-preplace inst Reset_ProcessingSystem -pg 1 -lvl 1 -x 200 -y 830 -defaultsOSRD
-preplace inst AXI_Peripherals -pg 1 -lvl 3 -x 940 -y 700 -defaultsOSRD
-preplace inst AXILite_Peripherals -pg 1 -lvl 5 -x 1680 -y 630 -defaultsOSRD
-preplace inst Inputs -pg 1 -lvl 6 -x 2040 -y 650 -defaultsOSRD
-preplace inst VideoDMA -pg 1 -lvl 2 -x 590 -y 830 -defaultsOSRD
-preplace inst VideoOut -pg 1 -lvl 7 -x 2380 -y 210 -defaultsOSRD
-preplace inst VideoTiming -pg 1 -lvl 6 -x 2040 -y 170 -defaultsOSRD
-preplace inst VideoClock -pg 1 -lvl 6 -x 2040 -y 500 -defaultsOSRD
-preplace inst Concat_Interrupt -pg 1 -lvl 2 -x 590 -y 500 -defaultsOSRD
-preplace inst VGA_Decimate -pg 1 -lvl 7 -x 2380 -y 500 -defaultsOSRD
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 5 20 320 NJ 320 NJ 320 1080 320 1510
-preplace netloc VideoOut_vid_active_video 1 6 2 2210 30 2540
-preplace netloc VideoOut_vid_data 1 6 2 2220 40 2530
-preplace netloc VideoOut_vtg_ce 1 5 3 1910 20 NJ 20 2550
+preplace port DDR -pg 1 -lvl 8 -x 2690 -y 400 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 8 -x 2690 -y 580 -defaultsOSRD
+preplace port Switches -pg 1 -lvl 8 -x 2690 -y 640 -defaultsOSRD
+preplace port Buttons -pg 1 -lvl 8 -x 2690 -y 660 -defaultsOSRD
+preplace port port-id_VideoHSync -pg 1 -lvl 8 -x 2690 -y 160 -defaultsOSRD
+preplace port port-id_VideoVSync -pg 1 -lvl 8 -x 2690 -y 180 -defaultsOSRD
+preplace port port-id_Clock125 -pg 1 -lvl 0 -x 0 -y 350 -defaultsOSRD
+preplace portBus Red -pg 1 -lvl 8 -x 2690 -y 460 -defaultsOSRD
+preplace portBus Blue -pg 1 -lvl 8 -x 2690 -y 480 -defaultsOSRD
+preplace portBus Green -pg 1 -lvl 8 -x 2690 -y 500 -defaultsOSRD
+preplace inst ProcessingSystem -pg 1 -lvl 4 -x 1370 -y 460 -defaultsOSRD
+preplace inst Reset_Video -pg 1 -lvl 4 -x 1370 -y 180 -defaultsOSRD
+preplace inst Reset_ProcessingSystem -pg 1 -lvl 1 -x 210 -y 700 -defaultsOSRD
+preplace inst Concat_Interrupt -pg 1 -lvl 2 -x 620 -y 510 -defaultsOSRD
+preplace inst VGA_Decimate -pg 1 -lvl 7 -x 2500 -y 480 -defaultsOSRD
+preplace inst AXI_Peripherals -pg 1 -lvl 3 -x 990 -y 430 -defaultsOSRD
+preplace inst AXILite_Peripherals -pg 1 -lvl 5 -x 1770 -y 630 -defaultsOSRD
+preplace inst Inputs -pg 1 -lvl 6 -x 2150 -y 660 -defaultsOSRD
+preplace inst VideoDMA -pg 1 -lvl 2 -x 620 -y 830 -defaultsOSRD
+preplace inst VideoOut -pg 1 -lvl 7 -x 2500 -y 210 -defaultsOSRD
+preplace inst VideoTiming -pg 1 -lvl 6 -x 2150 -y 170 -defaultsOSRD
+preplace inst VideoClock -pg 1 -lvl 6 -x 2150 -y 490 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 5 20 590 NJ 590 NJ 590 1150 570 1570
+preplace netloc VideoOut_vid_active_video 1 6 2 2340 40 2660
+preplace netloc VideoOut_vid_data 1 6 2 2330 380 2660
+preplace netloc VideoOut_vtg_ce 1 5 3 2010 20 NJ 20 2670
 preplace netloc VideoOut_vid_hsync 1 7 1 NJ 160
 preplace netloc VideoOut_vid_vsync 1 7 1 NJ 180
-preplace netloc ProcessorReset_peripheral_aresetn 1 1 6 380 710 800 780 NJ 780 1530 830 1890 350 2180J
-preplace netloc ProcessingSystem_FCLK_CLK0 1 0 7 30 730 370 700 800 620 1090 620 1520 820 1870 340 2170J
+preplace netloc ProcessorReset_peripheral_aresetn 1 1 6 410 600 850 600 NJ 600 1620 820 1990 340 2300J
+preplace netloc ProcessingSystem_FCLK_CLK0 1 0 7 30 600 400 450 820 350 1140 580 1610 830 1980 330 2290J
 preplace netloc VideoReset_peripheral_aresetn 1 4 2 NJ 220 N
-preplace netloc VideoReset_peripheral_reset 1 4 3 NJ 180 1900J 320 2190
-preplace netloc MainClock_ClockVideo 1 3 4 1080 80 NJ 80 1840 330 2200
-preplace netloc clk_in1_0_1 1 0 6 NJ 330 NJ 330 NJ 330 NJ 330 NJ 330 1830J
-preplace netloc clk_wiz_0_locked 1 3 4 1090 310 NJ 310 1860J 360 2180
-preplace netloc Concat_Interrupt_dout 1 2 2 NJ 500 NJ
-preplace netloc Inputs_ip2intc_irpt 1 1 6 390 940 NJ 940 NJ 940 NJ 940 NJ 940 2180
-preplace netloc VGA_Decimate_Red 1 7 1 NJ 480
-preplace netloc VGA_Decimate_Blue 1 7 1 NJ 500
-preplace netloc VGA_Decimate_Green 1 7 1 NJ 520
+preplace netloc VideoReset_peripheral_reset 1 4 3 NJ 180 2000J 320 2310
+preplace netloc MainClock_ClockVideo 1 3 4 1170 80 NJ 80 1930 350 2320
+preplace netloc clk_in1_0_1 1 0 6 20J 340 NJ 340 NJ 340 NJ 340 NJ 340 1960J
+preplace netloc clk_wiz_0_locked 1 3 4 1170 850 NJ 850 NJ 850 2320
+preplace netloc Concat_Interrupt_dout 1 2 2 NJ 510 1160J
+preplace netloc Inputs_ip2intc_irpt 1 1 6 420 710 NJ 710 NJ 710 1570J 840 NJ 840 2290
+preplace netloc VGA_Decimate_Red 1 7 1 NJ 460
+preplace netloc VGA_Decimate_Blue 1 7 1 NJ 480
+preplace netloc VGA_Decimate_Green 1 7 1 NJ 500
+preplace netloc processing_system7_0_FIXED_IO 1 4 4 NJ 430 1970J 400 NJ 400 2660J
+preplace netloc VideoDMA_M_AXIS_MM2S 1 2 5 830J 10 NJ 10 NJ 10 NJ 10 2290
+preplace netloc processing_system7_0_M_AXI_GP0 1 4 1 1620 470n
+preplace netloc Switches_GPIO 1 6 2 NJ 640 NJ
+preplace netloc AXI_Lite_M02_AXI 1 5 1 1940 80n
+preplace netloc axi_smc_M00_AXI 1 3 1 N 430
+preplace netloc Inputs_GPIO2 1 6 2 NJ 660 NJ
+preplace netloc VideoDMA_M_AXI_MM2S 1 2 1 840 410n
+preplace netloc ps7_0_axi_periph_M01_AXI 1 1 5 420 720 NJ 720 NJ 720 1580J 810 1920
 preplace netloc VideoTiming_vtiming_out 1 6 1 N 150
-preplace netloc AXILite_Peripherals_M03_AXI 1 5 1 1880 470n
-preplace netloc AXI_Lite_M00_AXI 1 5 1 1840 600n
-preplace netloc processing_system7_0_DDR 1 4 4 NJ 390 NJ 390 NJ 390 NJ
-preplace netloc processing_system7_0_FIXED_IO 1 4 4 NJ 410 NJ 410 NJ 410 NJ
-preplace netloc VideoDMA_M_AXIS_MM2S 1 2 5 780J 10 NJ 10 NJ 10 NJ 10 2170
-preplace netloc ps7_0_axi_periph_M01_AXI 1 1 5 400 720 770J 810 NJ 810 NJ 810 1830
-preplace netloc processing_system7_0_M_AXI_GP0 1 4 1 1520 450n
-preplace netloc Switches_GPIO 1 6 2 NJ 630 NJ
-preplace netloc axi_smc_M00_AXI 1 3 1 1080 440n
-preplace netloc Inputs_GPIO2 1 6 2 NJ 650 NJ
-preplace netloc AXI_Lite_M02_AXI 1 5 1 1850 80n
-preplace netloc VideoDMA_M_AXI_MM2S 1 2 1 790 680n
-levelinfo -pg 1 0 200 590 940 1300 1680 2040 2380 2580
-pagesize -pg 1 -db -bbox -sgen -110 0 2710 950
+preplace netloc AXILite_Peripherals_M03_AXI 1 5 1 1930 460n
+preplace netloc AXI_Lite_M00_AXI 1 5 1 1950 600n
+preplace netloc processing_system7_0_DDR 1 4 4 NJ 410 1950J 390 NJ 390 2670J
+levelinfo -pg 1 0 210 620 990 1370 1770 2150 2500 2690
+pagesize -pg 1 -db -bbox -sgen -120 0 2830 940
 "
 }
 {

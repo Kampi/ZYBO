@@ -1,5 +1,5 @@
 /******************************************************************************
-* Copyright (c) 2017 - 2020 Xilinx, Inc.  All rights reserved.
+* Copyright (c) 2017 - 2022 Xilinx, Inc.  All rights reserved.
 * SPDX-License-Identifier: MIT
 ******************************************************************************/
 
@@ -20,10 +20,17 @@
 * ----- ---- -------- -------------------------------------------------------
 * 6.6	srm  10/18/17 First Release.
 * 7.0   mus  01/07/19 Add cpp extern macro
+* 7.7	sk   01/10/22 Add explicit parentheses for EL3==1 to fix
+* 		      misra_c_2012_rule_12_1 violation.
+* 7.7	sk   01/10/22 Add void to XTime_StartTTCTimer function declaration
+* 		      to fix misra_c_2012_rule_8_2 violation.
 *
 * </pre>
 *****************************************************************************/
 
+/**
+ *@cond nocomments
+ */
 #ifndef XIL_SLEEPTIMER_H		/* prevent circular inclusions */
 #define XIL_SLEEPTIMER_H		/* by using protection macros */
 
@@ -49,7 +56,7 @@ extern "C" {
 #define XCntrVal 			    u16
 #endif
 
-#if defined(ARMR5) || (defined (__aarch64__) && EL3==1) || defined (ARMA53_32)
+#if defined(ARMR5) || (defined (__aarch64__) && (EL3==1)) || defined (ARMA53_32)
 #if defined (versal)
 #define CRL_TTC_RST    0xFF5E0344U
 #define CRL_TTC_BASE_RST_MASK    0x1U
@@ -91,11 +98,13 @@ extern "C" {
 /* @} */
 
 /**************************** Type Definitions *******************************/
-
+/**
+ *@endcond
+ */
 /************************** Function Prototypes ******************************/
 
 void Xil_SleepTTCCommon(u32 delay, u64 frequency);
-void XTime_StartTTCTimer();
+void XTime_StartTTCTimer(void);
 
 #endif
 

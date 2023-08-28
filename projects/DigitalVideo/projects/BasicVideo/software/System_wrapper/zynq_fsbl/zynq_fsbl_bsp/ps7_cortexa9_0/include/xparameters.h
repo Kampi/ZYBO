@@ -225,96 +225,135 @@
 /******************************************************************/
 
 
-/* Definitions for peripheral PS7_AFI_0 */
+/* Peripheral Definitions for peripheral PS7_AFI_0 */
 #define XPAR_PS7_AFI_0_S_AXI_BASEADDR 0xF8008000
 #define XPAR_PS7_AFI_0_S_AXI_HIGHADDR 0xF8008FFF
 
 
-/* Definitions for peripheral PS7_AFI_1 */
+/* Peripheral Definitions for peripheral PS7_AFI_1 */
 #define XPAR_PS7_AFI_1_S_AXI_BASEADDR 0xF8009000
 #define XPAR_PS7_AFI_1_S_AXI_HIGHADDR 0xF8009FFF
 
 
-/* Definitions for peripheral PS7_AFI_2 */
+/* Peripheral Definitions for peripheral PS7_AFI_2 */
 #define XPAR_PS7_AFI_2_S_AXI_BASEADDR 0xF800A000
 #define XPAR_PS7_AFI_2_S_AXI_HIGHADDR 0xF800AFFF
 
 
-/* Definitions for peripheral PS7_AFI_3 */
+/* Peripheral Definitions for peripheral PS7_AFI_3 */
 #define XPAR_PS7_AFI_3_S_AXI_BASEADDR 0xF800B000
 #define XPAR_PS7_AFI_3_S_AXI_HIGHADDR 0xF800BFFF
 
 
-/* Definitions for peripheral PS7_DDRC_0 */
+/* Peripheral Definitions for peripheral PS7_DDRC_0 */
 #define XPAR_PS7_DDRC_0_S_AXI_BASEADDR 0xF8006000
 #define XPAR_PS7_DDRC_0_S_AXI_HIGHADDR 0xF8006FFF
 
 
-/* Definitions for peripheral PS7_GLOBALTIMER_0 */
+/* Peripheral Definitions for peripheral PS7_GLOBALTIMER_0 */
 #define XPAR_PS7_GLOBALTIMER_0_S_AXI_BASEADDR 0xF8F00200
 #define XPAR_PS7_GLOBALTIMER_0_S_AXI_HIGHADDR 0xF8F002FF
 
 
-/* Definitions for peripheral PS7_GPV_0 */
+/* Peripheral Definitions for peripheral PS7_GPV_0 */
 #define XPAR_PS7_GPV_0_S_AXI_BASEADDR 0xF8900000
 #define XPAR_PS7_GPV_0_S_AXI_HIGHADDR 0xF89FFFFF
 
 
-/* Definitions for peripheral PS7_INTC_DIST_0 */
+/* Peripheral Definitions for peripheral PS7_INTC_DIST_0 */
 #define XPAR_PS7_INTC_DIST_0_S_AXI_BASEADDR 0xF8F01000
 #define XPAR_PS7_INTC_DIST_0_S_AXI_HIGHADDR 0xF8F01FFF
 
 
-/* Definitions for peripheral PS7_IOP_BUS_CONFIG_0 */
+/* Peripheral Definitions for peripheral PS7_IOP_BUS_CONFIG_0 */
 #define XPAR_PS7_IOP_BUS_CONFIG_0_S_AXI_BASEADDR 0xE0200000
 #define XPAR_PS7_IOP_BUS_CONFIG_0_S_AXI_HIGHADDR 0xE0200FFF
 
 
-/* Definitions for peripheral PS7_L2CACHEC_0 */
+/* Peripheral Definitions for peripheral PS7_L2CACHEC_0 */
 #define XPAR_PS7_L2CACHEC_0_S_AXI_BASEADDR 0xF8F02000
 #define XPAR_PS7_L2CACHEC_0_S_AXI_HIGHADDR 0xF8F02FFF
 
 
-/* Definitions for peripheral PS7_OCMC_0 */
+/* Peripheral Definitions for peripheral PS7_OCMC_0 */
 #define XPAR_PS7_OCMC_0_S_AXI_BASEADDR 0xF800C000
 #define XPAR_PS7_OCMC_0_S_AXI_HIGHADDR 0xF800CFFF
 
 
-/* Definitions for peripheral PS7_PL310_0 */
+/* Peripheral Definitions for peripheral PS7_PL310_0 */
 #define XPAR_PS7_PL310_0_S_AXI_BASEADDR 0xF8F02000
 #define XPAR_PS7_PL310_0_S_AXI_HIGHADDR 0xF8F02FFF
 
 
-/* Definitions for peripheral PS7_PMU_0 */
+/* Peripheral Definitions for peripheral PS7_PMU_0 */
 #define XPAR_PS7_PMU_0_S_AXI_BASEADDR 0xF8891000
 #define XPAR_PS7_PMU_0_S_AXI_HIGHADDR 0xF8891FFF
 #define XPAR_PS7_PMU_0_PMU1_S_AXI_BASEADDR 0xF8893000
 #define XPAR_PS7_PMU_0_PMU1_S_AXI_HIGHADDR 0xF8893FFF
 
 
-/* Definitions for peripheral PS7_QSPI_LINEAR_0 */
+/* Peripheral Definitions for peripheral PS7_QSPI_LINEAR_0 */
 #define XPAR_PS7_QSPI_LINEAR_0_S_AXI_BASEADDR 0xFC000000
 #define XPAR_PS7_QSPI_LINEAR_0_S_AXI_HIGHADDR 0xFCFFFFFF
 
 
-/* Definitions for peripheral PS7_RAM_0 */
+/* Peripheral Definitions for peripheral PS7_RAM_0 */
 #define XPAR_PS7_RAM_0_S_AXI_BASEADDR 0x00000000
 #define XPAR_PS7_RAM_0_S_AXI_HIGHADDR 0x0003FFFF
 
 
-/* Definitions for peripheral PS7_RAM_1 */
+/* Peripheral Definitions for peripheral PS7_RAM_1 */
 #define XPAR_PS7_RAM_1_S_AXI_BASEADDR 0xFFFC0000
 #define XPAR_PS7_RAM_1_S_AXI_HIGHADDR 0xFFFFFFFF
 
 
-/* Definitions for peripheral PS7_SCUC_0 */
+/* Peripheral Definitions for peripheral PS7_SCUC_0 */
 #define XPAR_PS7_SCUC_0_S_AXI_BASEADDR 0xF8F00000
 #define XPAR_PS7_SCUC_0_S_AXI_HIGHADDR 0xF8F000FC
 
 
-/* Definitions for peripheral PS7_SLCR_0 */
+/* Peripheral Definitions for peripheral PS7_SLCR_0 */
 #define XPAR_PS7_SLCR_0_S_AXI_BASEADDR 0xF8000000
 #define XPAR_PS7_SLCR_0_S_AXI_HIGHADDR 0xF8000FFF
+
+
+/******************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /******************************************************************/
@@ -449,6 +488,13 @@
 #define XPAR_PS7_SD_0_BUS_WIDTH 0
 #define XPAR_PS7_SD_0_MIO_BANK 0
 #define XPAR_PS7_SD_0_HAS_EMIO 0
+#define XPAR_PS7_SD_0_SLOT_TYPE 0
+#define XPAR_PS7_SD_0_CLK_50_SDR_ITAP_DLY 0
+#define XPAR_PS7_SD_0_CLK_50_SDR_OTAP_DLY 0
+#define XPAR_PS7_SD_0_CLK_50_DDR_ITAP_DLY 0
+#define XPAR_PS7_SD_0_CLK_50_DDR_OTAP_DLY 0
+#define XPAR_PS7_SD_0_CLK_100_SDR_OTAP_DLY 0
+#define XPAR_PS7_SD_0_CLK_200_SDR_OTAP_DLY 0
 
 
 /******************************************************************/
@@ -464,7 +510,14 @@
 #define XPAR_XSDPS_0_BUS_WIDTH 0
 #define XPAR_XSDPS_0_MIO_BANK 0
 #define XPAR_XSDPS_0_HAS_EMIO 0
+#define XPAR_XSDPS_0_SLOT_TYPE 0
 #define XPAR_XSDPS_0_IS_CACHE_COHERENT 0
+#define XPAR_XSDPS_0_CLK_50_SDR_ITAP_DLY 0
+#define XPAR_XSDPS_0_CLK_50_SDR_OTAP_DLY 0
+#define XPAR_XSDPS_0_CLK_50_DDR_ITAP_DLY 0
+#define XPAR_XSDPS_0_CLK_50_DDR_OTAP_DLY 0
+#define XPAR_XSDPS_0_CLK_100_SDR_OTAP_DLY 0
+#define XPAR_XSDPS_0_CLK_200_SDR_OTAP_DLY 0
 
 
 /******************************************************************/

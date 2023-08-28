@@ -1,5 +1,6 @@
 /******************************************************************************
-* Copyright (c) 2014 - 2020 Xilinx, Inc.  All rights reserved.
+* Copyright (c) 2014 - 2022 Xilinx, Inc.  All rights reserved.
+* Copyright (c) 2023 Advanced Micro Devices, Inc. All Rights Reserved.
 * SPDX-License-Identifier: MIT
 ******************************************************************************/
 
@@ -8,7 +9,9 @@
 *
 * @file xplatform_info.h
 *
+*
 * @addtogroup common_platform_info APIs to Get Platform Information
+*
 *
 * The xplatform_info.h file contains definitions for various available Xilinx&reg;
 * platforms. Also, it contains prototype of APIs, which can be used to get the
@@ -23,9 +26,23 @@
 * 6.4    ms   05/23/17 Added PSU_PMU macro to support XGetPSVersion_Info
 *                      function for PMUFW.
 * 7.2    adk  08/01/20 Added versal support for the XGetPSVersion_Info function.
+* 7.6    mus  08/23/21 Updated prototypes for functions which are not taking any
+*                      arguments with void keyword. This has been done to fix
+*                      compilation warnings with "-Wstrict-prototypes" flag.
+*                      It fixes CR#1108601.
+* 7.6    mus  08/30/21 Updated flag checking to fix compilation warnings
+*                      reported with "-Wundef" flag.
+* 7.7	 sk   01/10/22 Update XPLAT_INFO_MASK from signed to unsigned to fix
+*		       misra_c_2012_rule_10_4 violation.
+* 8.1    mus  02/13/23 Added new API's XGetCoreId and XGetClusterId. As of now
+*                      they are supported only for VERSAL_NET APU and RPU.
 * </pre>
 *
 ******************************************************************************/
+
+/**
+ *@cond nocomments
+ */
 
 #ifndef XPLATFORM_INFO_H		/* prevent circular inclusions */
 #define XPLATFORM_INFO_H		/* by using protection macros */
@@ -60,7 +77,7 @@ extern "C" {
 
 #define XPS_VERSION_1 0x0
 #define XPS_VERSION_2 0x1
-#define XPLAT_INFO_MASK (0xF)
+#define XPLAT_INFO_MASK (0xFU)
 
 #if defined (versal)
 #define XPS_VERSION_INFO_MASK 0xFF00U
@@ -73,19 +90,27 @@ extern "C" {
 #endif
 
 /**************************** Type Definitions *******************************/
-
+/**
+ *@endcond
+ */
 /***************** Macros (Inline Functions) Definitions *********************/
 
 
 u32 XGetPlatform_Info(void);
 
-#if defined (ARMR5) || (__aarch64__) || (ARMA53_32) || (PSU_PMU) || defined(versal)
-u32 XGetPSVersion_Info();
+#if defined (ARMR5) || defined (__aarch64__) || defined (ARMA53_32) || defined (PSU_PMU) || defined (versal)
+u32 XGetPSVersion_Info(void);
 #endif
 
-#if defined (ARMR5) || (__aarch64__) || (ARMA53_32)
-u32 XGet_Zynq_UltraMp_Platform_info();
+#if defined (ARMR5) || defined (__aarch64__) || defined (ARMA53_32)
+u32 XGet_Zynq_UltraMp_Platform_info(void);
 #endif
+
+#if (defined (__aarch64__) && defined (VERSAL_NET)) || defined (ARMR52)
+u8 XGetClusterId(void);
+u8 XGetCoreId(void);
+#endif
+
 /************************** Function Prototypes ******************************/
 
 

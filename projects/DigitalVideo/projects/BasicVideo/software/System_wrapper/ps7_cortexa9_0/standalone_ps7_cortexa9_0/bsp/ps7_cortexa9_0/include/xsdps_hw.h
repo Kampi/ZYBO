@@ -1,5 +1,6 @@
 /******************************************************************************
-* Copyright (C) 2013 - 2020 Xilinx, Inc.  All rights reserved.
+* Copyright (C) 2013 - 2022 Xilinx, Inc.  All rights reserved.
+* Copyright (c) 2022 - 2023 Advanced Micro Devices, Inc. All Rights Reserved.
 * SPDX-License-Identifier: MIT
 ******************************************************************************/
 
@@ -7,10 +8,10 @@
 /**
 *
 * @file xsdps_hw.h
-* @addtogroup sdps_v3_10
-* @{
+* @addtogroup sdps Overview
+* @{{
 *
-* This header file contains the identifiers and basic HW access driver
+* The xsdps_hw.h header file contains the identifiers and basic HW access driver
 * functions (or  macros) that can be used to access the device. Other driver
 * functions are defined in xsdps.h.
 *
@@ -40,11 +41,16 @@
 *       mn     05/21/19 Disable DLL Reset code for Versal
 *       mn     07/03/19 Update Input Tap Delays for Versal
 * 3.9   mn     03/03/20 Restructured the code for more readability and modularity
+* 3.14  mn     11/28/21 Fix MISRA-C violations.
+* 4.0   sk     02/25/22 Add support for eMMC5.1.
+*       sk     04/07/22 Fix typo in 'XSDPS_MMC_1_BIT_BUS_ARG' macro definition.
+* 4.1   sk     11/10/22 Add SD/eMMC Tap delay support for Versal Net.
 *
 * </pre>
 *
 ******************************************************************************/
 
+/** @cond INTERNAL */
 #ifndef SD_HW_H_
 #define SD_HW_H_
 
@@ -144,8 +150,12 @@ extern "C" {
 							Register */
 #define XSDPS_HOST_CTRL_VER_OFFSET	0xFEU	/**< Host Controller Version
 							Register */
+#ifdef VERSAL_NET
+#define XSDPS_PHYCTRLREG1_OFFSET	0x270U	/**< PHY Control register2 */
+#define XSDPS_PHYCTRLREG2_OFFSET	0x274U	/**< PHY Control register2 */
+#endif
 
-/* @} */
+/** @} */
 
 /** @name Control Register - Host control, Power control,
  * 			Block Gap control and Wakeup control
@@ -188,7 +198,7 @@ extern "C" {
 #define XSDPS_WC_WUP_ON_INSRT_MASK	0x00000002U /**< Wakeup Card Insert */
 #define XSDPS_WC_WUP_ON_REM_MASK	0x00000004U /**< Wakeup Card Removal */
 
-/* @} */
+/** @} */
 
 /** @name Control Register - Clock control, Timeout control & Software reset
  *
@@ -198,35 +208,35 @@ extern "C" {
  * @{
  */
 
-#define XSDPS_CC_INT_CLK_EN_MASK		0x00000001U
-#define XSDPS_CC_INT_CLK_STABLE_MASK	0x00000002U
-#define XSDPS_CC_SD_CLK_EN_MASK			0x00000004U
-#define XSDPS_CC_SD_CLK_GEN_SEL_MASK		0x00000020U
-#define XSDPS_CC_SDCLK_FREQ_SEL_EXT_MASK	0x00000003U
-#define XSDPS_CC_SDCLK_FREQ_SEL_MASK		0x000000FFU
-#define XSDPS_CC_SDCLK_FREQ_D256_MASK		0x00008000U
-#define XSDPS_CC_SDCLK_FREQ_D128_MASK		0x00004000U
-#define XSDPS_CC_SDCLK_FREQ_D64_MASK		0x00002000U
-#define XSDPS_CC_SDCLK_FREQ_D32_MASK		0x00001000U
-#define XSDPS_CC_SDCLK_FREQ_D16_MASK		0x00000800U
-#define XSDPS_CC_SDCLK_FREQ_D8_MASK		0x00000400U
-#define XSDPS_CC_SDCLK_FREQ_D4_MASK		0x00000200U
-#define XSDPS_CC_SDCLK_FREQ_D2_MASK		0x00000100U
-#define XSDPS_CC_SDCLK_FREQ_BASE_MASK	0x00000000U
-#define XSDPS_CC_MAX_DIV_CNT			256U
-#define XSDPS_CC_EXT_MAX_DIV_CNT		2046U
-#define XSDPS_CC_EXT_DIV_SHIFT			6U
+#define XSDPS_CC_INT_CLK_EN_MASK		0x00000001U /**< INT clk enable */
+#define XSDPS_CC_INT_CLK_STABLE_MASK	0x00000002U	    /**< INT clk stable */
+#define XSDPS_CC_SD_CLK_EN_MASK			0x00000004U /**< SD clk enable */
+#define XSDPS_CC_SD_CLK_GEN_SEL_MASK		0x00000020U /**< SD clk gen selection */
+#define XSDPS_CC_SDCLK_FREQ_SEL_EXT_MASK	0x00000003U /**< SD clk freq sel upper */
+#define XSDPS_CC_SDCLK_FREQ_SEL_MASK		0x000000FFU /**< SD clk freq sel */
+#define XSDPS_CC_SDCLK_FREQ_D256_MASK		0x00008000U /**< Divider 256 */
+#define XSDPS_CC_SDCLK_FREQ_D128_MASK		0x00004000U /**< Divider 128 */
+#define XSDPS_CC_SDCLK_FREQ_D64_MASK		0x00002000U /**< Divider 64 */
+#define XSDPS_CC_SDCLK_FREQ_D32_MASK		0x00001000U /**< Divider 32 */
+#define XSDPS_CC_SDCLK_FREQ_D16_MASK		0x00000800U /**< Divider 16 */
+#define XSDPS_CC_SDCLK_FREQ_D8_MASK		0x00000400U /**< Divider 8 */
+#define XSDPS_CC_SDCLK_FREQ_D4_MASK		0x00000200U /**< Divider 4 */
+#define XSDPS_CC_SDCLK_FREQ_D2_MASK		0x00000100U /**< Divider 2 */
+#define XSDPS_CC_SDCLK_FREQ_BASE_MASK	0x00000000U	/**< Base clock */
+#define XSDPS_CC_MAX_DIV_CNT			256U	/**< Max divider count */
+#define XSDPS_CC_EXT_MAX_DIV_CNT		2046U	/**< Max extended divider count */
+#define XSDPS_CC_EXT_DIV_SHIFT			6U	/**< Ext divider shift */
 
-#define XSDPS_TC_CNTR_VAL_MASK			0x0000000FU
+#define XSDPS_TC_CNTR_VAL_MASK			0x0000000FU /**< Data timeout counter */
 
-#define XSDPS_SWRST_ALL_MASK			0x00000001U
-#define XSDPS_SWRST_CMD_LINE_MASK		0x00000002U
-#define XSDPS_SWRST_DAT_LINE_MASK		0x00000004U
+#define XSDPS_SWRST_ALL_MASK			0x00000001U /**< Software Reset All */
+#define XSDPS_SWRST_CMD_LINE_MASK		0x00000002U /**< Software reset for CMD line */
+#define XSDPS_SWRST_DAT_LINE_MASK		0x00000004U /**< Software reset for DAT line */
 
-#define XSDPS_CC_MAX_NUM_OF_DIV		9U
-#define XSDPS_CC_DIV_SHIFT		8U
+#define XSDPS_CC_MAX_NUM_OF_DIV		9U	/**< Max number of Clock dividers */
+#define XSDPS_CC_DIV_SHIFT		8U	/**< Clock Divider shift */
 
-/* @} */
+/** @} */
 
 /** @name SD Interrupt Registers
  *
@@ -287,7 +297,7 @@ extern "C" {
 #define XSDPS_INTR_VEND_SPF_ERR_MASK	0x0000E000U /**< Vendor Specific
 							Error */
 #define XSDPS_ERROR_INTR_ALL_MASK	0x0000F3FFU /**< Mask for error bits */
-/* @} */
+/** @} */
 
 /** @name Block Size and Block Count Register
  *
@@ -304,7 +314,7 @@ extern "C" {
 #define XSDPS_BLK_CNT_MASK		0x0000FFFFU /**< Block Count for
 								Current Transfer */
 
-/* @} */
+/** @} */
 
 /** @name Transfer Mode and Command Register
  *
@@ -344,7 +354,7 @@ extern "C" {
 							Set to CMD0-63,
 							AMCD0-63 */
 
-/* @} */
+/** @} */
 
 /** @name Auto CMD Error Status Register
  *
@@ -363,7 +373,7 @@ extern "C" {
 #define XSDPS_AUTO_CMD_IND_MASK		0x0010U /**< Auto CMD Index Error */
 #define XSDPS_AUTO_CMD_CNI_ERR_MASK	0x0080U /**< Command not issued by
 							Auto CMD12 Error */
-/* @} */
+/** @} */
 
 /** @name Host Control2 Register
  *
@@ -377,6 +387,7 @@ extern "C" {
 #define XSDPS_HC2_UHS_MODE_SDR50_MASK	0x0002U /**< SDR50 UHS Mode */
 #define XSDPS_HC2_UHS_MODE_SDR104_MASK	0x0003U /**< SDR104 UHS Mode */
 #define XSDPS_HC2_UHS_MODE_DDR50_MASK	0x0004U /**< DDR50 UHS Mode */
+#define XSDPS_HC2_HS400_MASK		0x0005U /**< HS400 Mode */
 #define XSDPS_HC2_1V8_EN_MASK		0x0008U /**< 1.8V Signal Enable */
 #define XSDPS_HC2_DRV_STR_SEL_MASK	0x0030U /**< Driver Strength
 							Selection */
@@ -391,7 +402,7 @@ extern "C" {
 							Enable */
 #define XSDPS_HC2_PRE_VAL_EN_MASK	0x8000U /**< Preset Value Enable */
 
-/* @} */
+/** @} */
 
 /** @name Capabilities Register
  *
@@ -459,7 +470,7 @@ extern "C" {
 #define XSDPS_ECAPS_SPI_MODE_MASK	0x01000000U /**< SPI mode */
 #define XSDPS_ECAPS_SPI_BLK_MODE_MASK	0x02000000U /**< SPI block mode */
 
-/* @} */
+/** @} */
 
 /** @name Present State Register
  *
@@ -485,7 +496,7 @@ extern "C" {
 #define XSDPS_PSR_CMD_SG_LVL_MASK	0x01000000U /**< Cmd Line signal lvl */
 #define XSDPS_PSR_DAT74_SG_LVL_MASK	0x1E000000U /**< Data 7:4 signal lvl */
 
-/* @} */
+/** @} */
 
 /** @name Maximum Current Capabilities Register
  *
@@ -500,7 +511,7 @@ extern "C" {
 							Capability at 3.0V */
 #define XSDPS_MAX_CUR_CAPS_3V3_MASK	0x0000000FU /**< Maximum Current
 							Capability at 3.3V */
-/* @} */
+/** @} */
 
 
 /** @name Force Event for Auto CMD Error Status Register
@@ -520,7 +531,7 @@ extern "C" {
 #define XSDPS_FE_AUTO_CMD_IND_MASK	0x0010U /**< Auto CMD Index Error */
 #define XSDPS_FE_AUTO_CMD_CNI_ERR_MASK	0x0080U /**< Command not issued by
 							Auto CMD12 Error */
-/* @} */
+/** @} */
 
 
 
@@ -547,7 +558,7 @@ extern "C" {
 #define XSDPS_FE_INTR_VEND_SPF_ERR_MASK	0xE000U /**< Vendor Specific
 							Error */
 
-/* @} */
+/** @} */
 
 /** @name ADMA Error Status Register
  *
@@ -565,7 +576,7 @@ extern "C" {
 							FDS */
 #define XSDPS_ADMA_ERR_STATE_TFR_MASK	0x03U /**< ADMA Error State
 							TFR */
-/* @} */
+/** @} */
 
 /** @name Preset Values Register
  *
@@ -581,7 +592,7 @@ extern "C" {
 #define XSDPS_PRE_VAL_DRV_STR_SEL_MASK	0xC000U /**< Driver Strength
 							Select Value */
 
-/* @} */
+/** @} */
 
 /** @name Slot Interrupt Status Register
  *
@@ -593,7 +604,7 @@ extern "C" {
 #define XSDPS_SLOT_INTR_STS_INT_MASK	0x0007U /**< Interrupt Signal
 							mask */
 
-/* @} */
+/** @} */
 
 /** @name Host Controller Version Register
  *
@@ -608,24 +619,59 @@ extern "C" {
 #define XSDPS_HC_SPEC_VER_MASK		0x00FFU /**< Host
 							Specification
 							version mask */
-#define XSDPS_HC_SPEC_V3		0x0002U
-#define XSDPS_HC_SPEC_V2		0x0001U
-#define XSDPS_HC_SPEC_V1		0x0000U
+#define XSDPS_HC_SPEC_V3		0x0002U	/**< HC spec version 3 */
+#define XSDPS_HC_SPEC_V2		0x0001U	/**< HC spec version 2 */
+#define XSDPS_HC_SPEC_V1		0x0000U	/**< HC spec version 1 */
+/** @} */
 
-/** @name Block size mask for 512 bytes
+/** @name PHYCTRL Register1 - OTAP, ITAP and SROBE SEL
  *
- * Block size mask for 512 bytes - This is the default block size.
+ * This register contains bits for input tap, output tap and strobe sel.
  * @{
  */
 
-#define XSDPS_BLK_SIZE_512_MASK	0x200U
+#define XSDPS_PHYREG1_STROBE_SEL_MASK		0xFF0000U /**< STROBE Sel Mask */
+#define XSDPS_PHYREG1_STROBE_SEL_SHIFT		16U /**< STROBE Sel Shift */
+#define XSDPS_PHYREG1_ITAP_CHGWIN_MASK		0x40U /**< Input Tap Change Window */
+#define XSDPS_PHYREG1_ITAP_EN_MASK		0x1U /**< Input Tap Enable Mask */
+#define XSDPS_PHYREG1_ITAP_DLY_MASK		0x2EU /**< Input Tap Delay Mask */
+#define XSDPS_PHYREG1_ITAP_DLY_SHIFT		1U /**< Input Tap Delay Shift */
+#define XSDPS_PHYREG1_OTAP_EN_MASK		0x100U /**< Output Tap Enable Mask */
+#define XSDPS_PHYREG1_OTAP_DLY_MASK		0xF000U /**< Output Tap Delay Mask */
+#define XSDPS_PHYREG1_OTAP_DLY_SHIFT		12U /**< Output Tap Delay Shift */
 
-/* @} */
+/** @} */
+
+/** @name PHYCTRL Register2 - DLL enable, FREQ_SEL, Tx and Rx Dly Chain Sel
+ *
+ * This register contains bits for cDLL enable, FREQ_SEL, Tx and Rx Dly Chain Sel
+ * and DLL Ready.
+ * @{
+ */
+
+#define XSDPS_PHYREG2_DLL_EN_MASK		0x00000001U /**< DLL enable */
+#define XSDPS_PHYREG2_DLL_RDY_MASK		0x00000002U /**< DLL Ready */
+#define XSDPS_PHYREG2_FREQ_SEL_MASK		0x00000070U /**< Freq selection */
+#define XSDPS_PHYREG2_FREQ_SEL_SHIFT	4U		/**< Freq selection shift */
+#define XSDPS_FREQ_SEL_170MHZ_200MHz	0U	/**< Macro to select between 170MHz to 200MHz */
+#define XSDPS_FREQ_SEL_140MHZ_169MHz	1U	/**< Macro to select between 140MHz to 169MHz */
+#define XSDPS_FREQ_SEL_110MHZ_139MHz	2U	/**< Macro to select between 110MHz to 139MHz */
+#define XSDPS_FREQ_SEL_80MHZ_109MHz		3U	/**< Macro to select between 80MHz to 109MHz */
+#define XSDPS_FREQ_SEL_50MHZ_79MHz		4U	/**< Macro to select between 50MHz to 79MHz */
+#define XSDPS_PHYREG2_TRIM_ICP_MASK		0x00000F00U /**< DLL TRIM ICP */
+#define XSDPS_PHYREG2_TRIM_ICP_DEF_VAL	8U	/**< DLL TRIM ICP default value */
+#define XSDPS_PHYREG2_TRIM_ICP_SHIFT	8U	/**< DLL TRIM ICP shift */
+#define XSDPS_PHYREG2_DLYTX_SEL_MASK	0x00010000U /**< Delay Chain based Tx Clk */
+#define XSDPS_PHYREG2_DLYRX_SEL_MASK	0x00020000U /**< Delay Chain based Rx Clk */
+/** @} */
 
 /** @name Commands
  *
  * Constant definitions for commands and response related to SD
  * @{
+ */
+/**
+ * Command/Response related to SD/eMMC
  */
 
 #define XSDPS_APP_CMD_PREFIX	 0x8000U
@@ -653,6 +699,11 @@ extern "C" {
 #define ACMD23	 (XSDPS_APP_CMD_PREFIX + 0x1700U)
 #define CMD24	 0x1800U
 #define CMD25	 0x1900U
+#define CMD32	 0x2000U
+#define CMD33	 0x2100U
+#define CMD35	 0x2300U
+#define CMD36	 0x2400U
+#define CMD38	 0x2600U
 #define CMD41	 0x2900U
 #define ACMD41	 (XSDPS_APP_CMD_PREFIX + 0x2900U)
 #define ACMD42	 (XSDPS_APP_CMD_PREFIX + 0x2A00U)
@@ -674,32 +725,52 @@ extern "C" {
 #define RESP_R6		(u32)XSDPS_CMD_RESP_L48_BSY_CHK_MASK | \
 			(u32)XSDPS_CMD_CRC_CHK_EN_MASK | (u32)XSDPS_CMD_INX_CHK_EN_MASK
 
-/* @} */
+/** @} */
 
-/* Card Interface Conditions Definitions */
+/**
+ * @name Card Interface
+ * @{
+ */
+/**
+ * Card Interface Conditions Definitions
+ */
 #define XSDPS_CIC_CHK_PATTERN	0xAAU
 #define XSDPS_CIC_VOLT_MASK	(0xFU<<8)
 #define XSDPS_CIC_VOLT_2V7_3V6	(1U<<8)
 #define XSDPS_CIC_VOLT_LOW	(1U<<9)
+/** @} */
 
-/* Operation Conditions Register Definitions */
-#define XSDPS_OCR_PWRUP_STS	(1U<<31)
-#define XSDPS_OCR_CC_STS	(1U<<30)
-#define XSDPS_OCR_S18		(1U<<24)
-#define XSDPS_OCR_3V5_3V6	(1U<<23)
-#define XSDPS_OCR_3V4_3V5	(1U<<22)
-#define XSDPS_OCR_3V3_3V4	(1U<<21)
-#define XSDPS_OCR_3V2_3V3	(1U<<20)
-#define XSDPS_OCR_3V1_3V2	(1U<<19)
-#define XSDPS_OCR_3V0_3V1	(1U<<18)
-#define XSDPS_OCR_2V9_3V0	(1U<<17)
-#define XSDPS_OCR_2V8_2V9	(1U<<16)
-#define XSDPS_OCR_2V7_2V8	(1U<<15)
-#define XSDPS_OCR_1V7_1V95	(1U<<7)
+/**
+ * @name OCR
+ * @{
+ */
+/**
+ * Operation Conditions Register Definitions
+ */
+#define XSDPS_OCR_PWRUP_STS	(0x00000001U << 31)
+#define XSDPS_OCR_CC_STS	(0x00000001U << 30)
+#define XSDPS_OCR_S18		(0x00000001U << 24)
+#define XSDPS_OCR_3V5_3V6	(0x00000001U << 23)
+#define XSDPS_OCR_3V4_3V5	(0x00000001U << 22)
+#define XSDPS_OCR_3V3_3V4	(0x00000001U << 21)
+#define XSDPS_OCR_3V2_3V3	(0x00000001U << 20)
+#define XSDPS_OCR_3V1_3V2	(0x00000001U << 19)
+#define XSDPS_OCR_3V0_3V1	(0x00000001U << 18)
+#define XSDPS_OCR_2V9_3V0	(0x00000001U << 17)
+#define XSDPS_OCR_2V8_2V9	(0x00000001U << 16)
+#define XSDPS_OCR_2V7_2V8	(0x00000001U << 15)
+#define XSDPS_OCR_1V7_1V95	(0x00000001U << 7)
 #define XSDPS_OCR_HIGH_VOL	0x00FF8000U
 #define XSDPS_OCR_LOW_VOL	0x00000080U
+/** @} */
 
-/* SD Card Configuration Register Definitions */
+/**
+ * @name Card Configuration
+ * @{
+ */
+/**
+ * SD Card Configuration Register Definitions
+ */
 #define XSDPS_SCR_REG_LEN		8U
 #define XSDPS_SCR_STRUCT_MASK		(0xFU<<28)
 #define XSDPS_SCR_SPEC_MASK		(0xFU<<24)
@@ -721,8 +792,15 @@ extern "C" {
 #define XSDPS_SCR_CMD_SUPP_MASK		0x3U
 #define XSDPS_SCR_CMD23_SUPP		(1U<<1)
 #define XSDPS_SCR_CMD20_SUPP		(1U<<0)
+/** @} */
 
-/* Card Status Register Definitions */
+/**
+ * @name Card Status
+ * @{
+ */
+/**
+ * Card Status Register Definitions
+ */
 #define XSDPS_CD_STS_OUT_OF_RANGE	(1U<<31)
 #define XSDPS_CD_STS_ADDR_ERR		(1U<<30)
 #define XSDPS_CD_STS_BLK_LEN_ERR	(1U<<29)
@@ -744,13 +822,28 @@ extern "C" {
 #define XSDPS_CD_STS_RDY_FOR_DATA	(1U<<8)
 #define XSDPS_CD_STS_APP_CMD		(1U<<5)
 #define XSDPS_CD_STS_AKE_SEQ_ERR	(1U<<2)
+/** @} */
 
-/* Switch Function Definitions CMD6 */
+/**
+ * @name Switch function
+ * @{
+ */
+/**
+ * Switch Function Definitions CMD6
+ */
 #define XSDPS_SWITCH_SD_RESP_LEN	64U
 
 #define XSDPS_SWITCH_FUNC_SWITCH	(1U<<31)
 #define XSDPS_SWITCH_FUNC_CHECK		0U
+/** @} */
 
+/**
+ * @name Mode Function
+ * @{
+ */
+/**
+ * Mode function groups definitions.
+ */
 #define XSDPS_MODE_FUNC_GRP1		1U
 #define XSDPS_MODE_FUNC_GRP2		2U
 #define XSDPS_MODE_FUNC_GRP3		3U
@@ -760,13 +853,30 @@ extern "C" {
 
 #define XSDPS_FUNC_GRP_DEF_VAL		0xFU
 #define XSDPS_FUNC_ALL_GRP_DEF_VAL	0xFFFFFFU
+/** @} */
 
+/**
+ * @name Operating modes
+ * @{
+ */
+/**
+ * SD operating modes in UHS.
+ */
 #define XSDPS_ACC_MODE_DEF_SDR12	0U
 #define XSDPS_ACC_MODE_HS_SDR25		1U
 #define XSDPS_ACC_MODE_SDR50		2U
 #define XSDPS_ACC_MODE_SDR104		3U
 #define XSDPS_ACC_MODE_DDR50		4U
+/** @} */
 
+/**
+ * @name General definitions
+ * @{
+ */
+/**
+ * Definitions related to Driver strength, Current limit and
+ * CSD specific data.
+ */
 #define XSDPS_CMD_SYS_ARG_SHIFT		4U
 #define XSDPS_CMD_SYS_DEF		0U
 #define XSDPS_CMD_SYS_eC		1U
@@ -793,8 +903,18 @@ extern "C" {
 #define C_SIZE_UPPER_MASK		0x00000003U
 #define CSD_STRUCT_MASK			0x00C00000U
 #define CSD_V2_C_SIZE_MASK		0x3FFFFF00U
+#define CSD_CCC_MASK			0xFFF00000U
+#define CSD_CCC_SHIFT			20U
+#define CSD_CCC_CLASS5_MASK		0x20U
+/** @} */
 
-/* EXT_CSD field definitions */
+/**
+ * @name Extended Card Specific Data
+ * @{
+ */
+/**
+ * EXT_CSD field definitions
+ */
 #define XSDPS_EXT_CSD_SIZE		512U
 
 #define EXT_CSD_WR_REL_PARAM_EN		(1U<<2)
@@ -851,6 +971,7 @@ extern "C" {
 #define EXT_CSD_HS_TIMING_DEF		0U
 #define EXT_CSD_HS_TIMING_HIGH		1U	/* Card is in high speed mode */
 #define EXT_CSD_HS_TIMING_HS200		2U	/* Card is in HS200 mode */
+#define EXT_CSD_HS_TIMING_HS400		3U	/* Card is in HS200 mode */
 
 #define EXT_CSD_RST_N_FUN_BYTE		162U
 #define EXT_CSD_RST_N_FUN_TEMP_DIS	0U	/* RST_n signal is temporarily disabled */
@@ -861,7 +982,15 @@ extern "C" {
 #define XSDPS_EXT_CSD_SET_BITS		1U
 #define XSDPS_EXT_CSD_CLR_BITS		2U
 #define XSDPS_EXT_CSD_WRITE_BYTE	3U
+/** @} */
 
+/**
+ * @name SD/eMMC Bus Speed and Bus Width Arguments
+ * @{
+ */
+/**
+ * SD/MMC Arguments for Bus Speed and Bus Width.
+ */
 #define XSDPS_MMC_DEF_SPEED_ARG		(((u32)XSDPS_EXT_CSD_WRITE_BYTE << 24) \
 					| ((u32)EXT_CSD_HS_TIMING_BYTE << 16) \
 					| ((u32)EXT_CSD_HS_TIMING_DEF << 8))
@@ -874,9 +1003,13 @@ extern "C" {
 					 | ((u32)EXT_CSD_HS_TIMING_BYTE << 16) \
 					 | ((u32)EXT_CSD_HS_TIMING_HS200 << 8))
 
+#define XSDPS_MMC_HS400_ARG		(((u32)XSDPS_EXT_CSD_WRITE_BYTE << 24) \
+					 | ((u32)EXT_CSD_HS_TIMING_BYTE << 16) \
+					 | ((u32)EXT_CSD_HS_TIMING_HS400 << 8))
+
 #define XSDPS_MMC_1_BIT_BUS_ARG		(((u32)XSDPS_EXT_CSD_WRITE_BYTE << 24) \
 					 | ((u32)EXT_CSD_BUS_WIDTH_BYTE << 16) \
-					 | ((u32)EXT_CSD_BUS_WITH_1_BIT << 8))
+					 | ((u32)EXT_CSD_BUS_WIDTH_1_BIT << 8))
 
 #define XSDPS_MMC_4_BIT_BUS_ARG		(((u32)XSDPS_EXT_CSD_WRITE_BYTE << 24) \
 					 | ((u32)EXT_CSD_BUS_WIDTH_BYTE << 16) \
@@ -900,29 +1033,37 @@ extern "C" {
 
 #define XSDPS_MMC_DELAY_FOR_SWITCH	1000U
 
-/* @} */
+/** @} */
 
-/* @400KHz, in usec */
+/**
+ * @name General Delay definitions
+ * @{
+ */
+/**
+ * @400KHz, in usec
+ */
 #define XSDPS_74CLK_DELAY	2960U
 #define XSDPS_100CLK_DELAY	4000U
 #define XSDPS_INIT_DELAY	10000U
+/** @} */
 
-#define XSDPS_DEF_VOLT_LVL	XSDPS_PC_BUS_VSEL_3V0_MASK
-#define XSDPS_CARD_DEF_ADDR	0x1234U
+#define XSDPS_DEF_VOLT_LVL	XSDPS_PC_BUS_VSEL_3V0_MASK /**< Default voltage level */
+#define XSDPS_CARD_DEF_ADDR	0x1234U	/**< Card Default address */
 
-#define XSDPS_CARD_SD		1U
-#define XSDPS_CARD_MMC		2U
-#define XSDPS_CARD_SDIO		3U
-#define XSDPS_CARD_SDCOMBO	4U
-#define XSDPS_CHIP_EMMC		5U
+#define XSDPS_CARD_SD		1U	/**< SD card */
+#define XSDPS_CARD_MMC		2U	/**< MMC card */
+#define XSDPS_CARD_SDIO		3U	/**< SDIO card */
+#define XSDPS_CARD_SDCOMBO	4U	/**< SDCOMBO card */
+#define XSDPS_CHIP_EMMC		5U	/**< EMMC chip */
 
 
-/** @name ADMA2 Descriptor related definitions
- *
- * ADMA2 Descriptor related definitions
+/**
+ *@name ADMA2 Descriptor related definitions
  * @{
  */
-
+/**
+ * ADMA2 Descriptor related definitions
+ */
 #define XSDPS_DESC_MAX_LENGTH 65536U
 
 #define XSDPS_DESC_VALID     	(0x1U << 0)
@@ -930,7 +1071,7 @@ extern "C" {
 #define XSDPS_DESC_INT       	(0x1U << 2)
 #define XSDPS_DESC_TRAN  	(0x2U << 4)
 
-/* @} */
+/** @} */
 
 /* For changing clock frequencies */
 #define XSDPS_CLK_400_KHZ		400000U		/**< 400 KHZ */
@@ -938,73 +1079,83 @@ extern "C" {
 #define XSDPS_CLK_52_MHZ		52000000U	/**< 52 MHZ */
 #define XSDPS_SD_VER_1_0		0x1U		/**< SD ver 1 */
 #define XSDPS_SD_VER_2_0		0x2U		/**< SD ver 2 */
-#define XSDPS_SCR_BLKCNT	1U
-#define XSDPS_SCR_BLKSIZE	8U
-#define XSDPS_1_BIT_WIDTH	0x1U
-#define XSDPS_4_BIT_WIDTH	0x2U
-#define XSDPS_8_BIT_WIDTH	0x3U
-#define XSDPS_UHS_SPEED_MODE_SDR12	0x0U
-#define XSDPS_UHS_SPEED_MODE_SDR25	0x1U
-#define XSDPS_UHS_SPEED_MODE_SDR50	0x2U
-#define XSDPS_UHS_SPEED_MODE_SDR104	0x3U
-#define XSDPS_UHS_SPEED_MODE_DDR50	0x4U
-#define XSDPS_HIGH_SPEED_MODE		0x5U
-#define XSDPS_DEFAULT_SPEED_MODE	0x6U
-#define XSDPS_HS200_MODE			0x7U
-#define XSDPS_DDR52_MODE			0x4U
-#define XSDPS_SWITCH_CMD_BLKCNT		1U
-#define XSDPS_SWITCH_CMD_BLKSIZE	64U
-#define XSDPS_SWITCH_CMD_HS_GET		0x00FFFFF0U
-#define XSDPS_SWITCH_CMD_HS_SET		0x80FFFFF1U
-#define XSDPS_SWITCH_CMD_SDR12_SET		0x80FFFFF0U
-#define XSDPS_SWITCH_CMD_SDR25_SET		0x80FFFFF1U
-#define XSDPS_SWITCH_CMD_SDR50_SET		0x80FFFFF2U
-#define XSDPS_SWITCH_CMD_SDR104_SET		0x80FFFFF3U
-#define XSDPS_SWITCH_CMD_DDR50_SET		0x80FFFFF4U
-#define XSDPS_EXT_CSD_CMD_BLKCNT	1U
-#define XSDPS_EXT_CSD_CMD_BLKSIZE	512U
-#define XSDPS_TUNING_CMD_BLKCNT		1U
-#define XSDPS_TUNING_CMD_BLKSIZE	64U
-#define XSDPS_SD_STATUS_BLKCNT		1U
-#define XSDPS_SD_STATUS_BLKSIZE		64U
+#define XSDPS_SCR_BLKCNT	1U	/**< SCR Block Count */
+#define XSDPS_SCR_BLKSIZE	8U	/**< SCR Block Size */
+#define XSDPS_1_BIT_WIDTH	0x1U	/**< Bus Width 1 */
+#define XSDPS_4_BIT_WIDTH	0x2U	/**< Bus Width 4 */
+#define XSDPS_8_BIT_WIDTH	0x3U	/**< Bus Width 8 */
+#define XSDPS_UHS_SPEED_MODE_SDR12	0x0U	/**< SDR12 mode */
+#define XSDPS_UHS_SPEED_MODE_SDR25	0x1U	/**< SDR25 mode */
+#define XSDPS_UHS_SPEED_MODE_SDR50	0x2U	/**< SDR50 mode */
+#define XSDPS_UHS_SPEED_MODE_SDR104	0x3U	/**< SDR104 mode */
+#define XSDPS_UHS_SPEED_MODE_DDR50	0x4U	/**< DDR50 mode */
+#define XSDPS_HIGH_SPEED_MODE		0x5U	/**< High Speed mode */
+#define XSDPS_DEFAULT_SPEED_MODE	0x6U	/**< Default speed mode */
+#define XSDPS_HS200_MODE			0x7U	/**< eMMC HS200 mode */
+#define XSDPS_HS400_MODE			0x8U	/**< eMMC HS400 mode */
+#define XSDPS_DDR52_MODE			0x4U	/**< eMMC DDR52 mode */
+#define XSDPS_SWITCH_CMD_BLKCNT		1U	/**< Blk cnt for SWITCH cmd */
+#define XSDPS_SWITCH_CMD_BLKSIZE	64U	/**< Blk sz for SWITCH cmd */
+#define XSDPS_SWITCH_CMD_HS_GET		0x00FFFFF0U /**< SWITCH cmd to Get HS */
+#define XSDPS_SWITCH_CMD_HS_SET		0x80FFFFF1U /**< SWITCH cmd to Set HS */
+#define XSDPS_SWITCH_CMD_SDR12_SET		0x80FFFFF0U /**< SWITCH cmd to Set SDR12 */
+#define XSDPS_SWITCH_CMD_SDR25_SET		0x80FFFFF1U /**< SWITCH cmd to Set SDR25 */
+#define XSDPS_SWITCH_CMD_SDR50_SET		0x80FFFFF2U /**< SWITCH cmd to Set SDR50 */
+#define XSDPS_SWITCH_CMD_SDR104_SET		0x80FFFFF3U /**< SWITCH cmd to Set SDR104 */
+#define XSDPS_SWITCH_CMD_DDR50_SET		0x80FFFFF4U /**< SWITCH cmd to Set DDR50 */
+#define XSDPS_EXT_CSD_CMD_BLKCNT	1U	/**< Blk Cnt for EXT CSD */
+#define XSDPS_EXT_CSD_CMD_BLKSIZE	512U	/**< Blk Sz for EXT CSD */
+#define XSDPS_TUNING_CMD_BLKCNT		1U	/**< Blk Cnt for Tuning cmd */
+#define XSDPS_TUNING_CMD_BLKSIZE	64U	/**< Blk Sz for Tuning cmd */
+#define XSDPS_SD_STATUS_BLKCNT		1U	/**< Blk Cnt for SD status */
+#define XSDPS_SD_STATUS_BLKSIZE		64U	/**< Blk Sz for SD status */
 
-#define XSDPS_HIGH_SPEED_MAX_CLK	50000000U
-#define XSDPS_UHS_SDR104_MAX_CLK	208000000U
-#define XSDPS_UHS_SDR50_MAX_CLK		100000000U
-#define XSDPS_UHS_DDR50_MAX_CLK		50000000U
-#define XSDPS_UHS_SDR25_MAX_CLK		50000000U
-#define XSDPS_UHS_SDR12_MAX_CLK		25000000U
+#define XSDPS_HIGH_SPEED_MAX_CLK	50000000U /**< Max clk for HS mode */
+#define XSDPS_UHS_SDR104_MAX_CLK	208000000U /**< Max clk for SDR104 mode */
+#define XSDPS_UHS_SDR50_MAX_CLK		100000000U /**< Max clk for SDR50 mode */
+#define XSDPS_UHS_DDR50_MAX_CLK		50000000U /**< Max clk for DDR50 mode */
+#define XSDPS_UHS_SDR25_MAX_CLK		50000000U /**< Max clk for SDR25 mode */
+#define XSDPS_UHS_SDR12_MAX_CLK		25000000U /**< Max clk for SDR12 mode */
 
-#define SD_DRIVER_TYPE_B	0x01U
-#define SD_DRIVER_TYPE_A	0x02U
-#define SD_DRIVER_TYPE_C	0x04U
-#define SD_DRIVER_TYPE_D	0x08U
-#define SD_SET_CURRENT_LIMIT_200	0U
-#define SD_SET_CURRENT_LIMIT_400	1U
-#define SD_SET_CURRENT_LIMIT_600	2U
-#define SD_SET_CURRENT_LIMIT_800	3U
+#define SD_DRIVER_TYPE_B	0x01U	/**< Driver Type B */
+#define SD_DRIVER_TYPE_A	0x02U	/**< Driver Type A */
+#define SD_DRIVER_TYPE_C	0x04U	/**< Driver Type C */
+#define SD_DRIVER_TYPE_D	0x08U	/**< Driver Type D */
+#define SD_SET_CURRENT_LIMIT_200	0U /**< Current limit 200mA */
+#define SD_SET_CURRENT_LIMIT_400	1U /**< Current limit 400mA */
+#define SD_SET_CURRENT_LIMIT_600	2U /**< Current limit 600mA */
+#define SD_SET_CURRENT_LIMIT_800	3U /**< Current limit 800mA */
 
-#define SD_MAX_CURRENT_200	(1U << SD_SET_CURRENT_LIMIT_200)
-#define SD_MAX_CURRENT_400	(1U << SD_SET_CURRENT_LIMIT_400)
-#define SD_MAX_CURRENT_600	(1U << SD_SET_CURRENT_LIMIT_600)
-#define SD_MAX_CURRENT_800	(1U << SD_SET_CURRENT_LIMIT_800)
+#define SD_MAX_CURRENT_200	(1U << SD_SET_CURRENT_LIMIT_200) /**< Current limit 200mA Arg */
+#define SD_MAX_CURRENT_400	(1U << SD_SET_CURRENT_LIMIT_400) /**< Current limit 400mA Arg */
+#define SD_MAX_CURRENT_600	(1U << SD_SET_CURRENT_LIMIT_600) /**< Current limit 600mA Arg */
+#define SD_MAX_CURRENT_800	(1U << SD_SET_CURRENT_LIMIT_800) /**< Current limit 800mA Arg */
 
-#define XSDPS_SD_SDR12_MAX_CLK	25000000U
-#define XSDPS_SD_SDR25_MAX_CLK	50000000U
-#define XSDPS_SD_SDR50_MAX_CLK	100000000U
-#define XSDPS_SD_DDR50_MAX_CLK	50000000U
-#define XSDPS_SD_SDR104_MAX_CLK	208000000U
-/*
+#define XSDPS_SD_SDR12_MAX_CLK	25000000U /**< Max clk for SDR12 mode */
+#define XSDPS_SD_SDR25_MAX_CLK	50000000U /**< Max clk for SDR25 mode */
+#define XSDPS_SD_SDR50_MAX_CLK	100000000U /**< Max clk for SDR50 mode */
+#define XSDPS_SD_DDR50_MAX_CLK	50000000U /**< Max clk for DDR50 mode */
+#define XSDPS_SD_SDR104_MAX_CLK	208000000U /**< Max clk for SDR104 mode */
+/**
  * XSDPS_SD_INPUT_MAX_CLK is set to 175000000 in order to keep it smaller
  * than the clock value coming from the core. This value is kept to safely
  * switch to SDR104 mode if the SD card supports it.
  */
 #define XSDPS_SD_INPUT_MAX_CLK	175000000U
 
-#define XSDPS_MMC_HS200_MAX_CLK	200000000U
-#define XSDPS_MMC_HSD_MAX_CLK	52000000U
-#define XSDPS_MMC_DDR_MAX_CLK	52000000U
+#define XSDPS_MMC_HS200_MAX_CLK	200000000U /**< Max clk for MMC HS200 mode */
+#define XSDPS_MMC_HSD_MAX_CLK	52000000U /**< Max clk for MMC HSD mode */
+#define XSDPS_MMC_DDR_MAX_CLK	52000000U /**< Max clk for MMC DDR52 mode */
 
+#define XSDPD_MIN_DLL_MODE_CLK	50000000U	/**< Min clk for DLL mode */
+
+/**
+ * @name Card states
+ * @{
+ */
+/**
+ * Definition for Card state.
+ */
 #define XSDPS_CARD_STATE_IDLE		0U
 #define XSDPS_CARD_STATE_RDY		1U
 #define XSDPS_CARD_STATE_IDEN		2U
@@ -1016,15 +1167,53 @@ extern "C" {
 #define XSDPS_CARD_STATE_DIS		8U
 #define XSDPS_CARD_STATE_BTST		9U
 #define XSDPS_CARD_STATE_SLP		10U
+/** @} */
 
-#define XSDPS_SLOT_REM			0U
-#define XSDPS_SLOT_EMB			1U
+#define XSDPS_SLOT_REM			0U	/**< Removable slot */
+#define XSDPS_SLOT_EMB			1U	/**< Embedded slot */
 
-#define XSDPS_WIDTH_8		8U
-#define XSDPS_WIDTH_4		4U
+#define XSDPS_WIDTH_8		8U	/**< Bus width 8 */
+#define XSDPS_WIDTH_4		4U	/**< Bus width 4 */
 
+#define XSDPS_SLOTTYPE_SDADIR		4U	/**< SD3.0 Auto Direction */
 
-#ifdef versal
+/**
+ * @name Tap delays
+ * @{
+ */
+/**
+ * SD/eMMC ITAP and OTAP delays for different operating modes
+ * for both Versal and ZynqMP platforms.
+ */
+#ifdef VERSAL_NET
+#define SD_ITAPDLY_SEL_MASK		0x000000FFU
+#define SD_OTAPDLY_SEL_MASK		0x0000003FU
+#define SD_ITAPDLY			0x0000F0F8U
+#define SD_OTAPDLY			0x0000F0FCU
+#define SD0_DLL_CTRL 			0x00000448U
+#define SD1_DLL_CTRL 			0x000004C8U
+#define SD_DLL_RST			0x00000004U
+#define SD_ITAPCHGWIN			0x00000200U
+#define SD_ITAPDLYENA			0x00000100U
+#define SD_OTAPDLYENA			0x00000040U
+#define SD_OTAPDLYSEL_HS200_B0		0x00000007U
+#define SD_OTAPDLYSEL_HS200_B2		0x00000007U
+#define SD_OTAPDLYSEL_HS400		0x00000004U
+#define SD_ITAPDLYSEL_SD50		0x0000000EU
+#define SD_OTAPDLYSEL_SD50		0x00000003U
+#define SD_ITAPDLYSEL_SD_DDR50		0x00000036U
+#define SD_ITAPDLYSEL_EMMC_DDR50	0x00000003U
+#define SD_OTAPDLYSEL_SD_DDR50		0x00000003U
+#define SD_OTAPDLYSEL_EMMC_DDR50	0x00000005U
+#define SD_ITAPDLYSEL_HSD		0x0000002CU
+#define SD_ITAPDLYSEL_EMMC_HSD		0x00000000U
+#define SD_OTAPDLYSEL_SD_HSD		0x00000004U
+#define SD_OTAPDLYSEL_EMMC_HSD		0x00000005U
+#define SD_AUTODIR_ITAPDLYSEL_HSD	0x00000025U
+#define SD_AUTODIR_ITAPDLYSEL_SDR25	0x00000026U
+#define SD_AUTODIR_ITAPDLYSEL_DDR50	0x0000002AU
+#define PHY_STRB_SEL_SIG			0x00000077U
+#elif defined (versal)
 #define SD_ITAPDLY_SEL_MASK			0x000000FFU
 #define SD_OTAPDLY_SEL_MASK			0x0000003FU
 #define SD_ITAPDLY					0x0000F0F8U
@@ -1044,8 +1233,12 @@ extern "C" {
 #define SD_OTAPDLYSEL_SD_DDR50		0x00000003U
 #define SD_OTAPDLYSEL_EMMC_DDR50	0x00000005U
 #define SD_ITAPDLYSEL_HSD			0x0000002CU
+#define SD_ITAPDLYSEL_EMMC_HSD		0x0000002CU
 #define SD_OTAPDLYSEL_SD_HSD		0x00000004U
 #define SD_OTAPDLYSEL_EMMC_HSD		0x00000005U
+#define SD_AUTODIR_ITAPDLYSEL_HSD	0x00000025U
+#define SD_AUTODIR_ITAPDLYSEL_SDR25	0x00000026U
+#define SD_AUTODIR_ITAPDLYSEL_DDR50	0x0000002AU
 #else
 #define SD0_ITAPDLY_SEL_MASK		0x000000FFU
 #define SD0_OTAPDLY_SEL_MASK		0x0000003FU
@@ -1071,28 +1264,33 @@ extern "C" {
 #define SD_OTAPDLYSEL_SD_DDR50		0x00000004U
 #define SD_OTAPDLYSEL_EMMC_DDR50	0x00000006U
 #define SD_ITAPDLYSEL_HSD			0x00000015U
+#define SD_ITAPDLYSEL_EMMC_HSD		0x00000015U
 #define SD_OTAPDLYSEL_SD_HSD		0x00000005U
 #define SD_OTAPDLYSEL_EMMC_HSD		0x00000006U
+#define SD_AUTODIR_ITAPDLYSEL_HSD	0x00000028U
+#define SD_AUTODIR_ITAPDLYSEL_SDR25	0x0000002CU
+#define SD_AUTODIR_ITAPDLYSEL_DDR50	0x00000033U
 #endif
+/** @} */
 
 #ifdef __MICROBLAZE__
-#define XPS_SYS_CTRL_BASEADDR	0xFF180000U
+#define XPS_SYS_CTRL_BASEADDR	0xFF180000U	/**< System controller Baseaddress */
 #endif
 
 /**************************** Type Definitions *******************************/
 
 /***************** Macros (Inline Functions) Definitions *********************/
-#define XSdPs_In64 Xil_In64
-#define XSdPs_Out64 Xil_Out64
+#define XSdPs_In64 Xil_In64	/**< Low level 64-bit data read */
+#define XSdPs_Out64 Xil_Out64	/**< Low level 64-bit data write */
 
-#define XSdPs_In32 Xil_In32
-#define XSdPs_Out32 Xil_Out32
+#define XSdPs_In32 Xil_In32	/**< Low level 32-bit data read */
+#define XSdPs_Out32 Xil_Out32	/**< Low level 32-bit data write */
 
-#define XSdPs_In16 Xil_In16
-#define XSdPs_Out16 Xil_Out16
+#define XSdPs_In16 Xil_In16	/**< Low level 16-bit data read */
+#define XSdPs_Out16 Xil_Out16	/**< Low level 16-bit data write */
 
-#define XSdPs_In8 Xil_In8
-#define XSdPs_Out8 Xil_Out8
+#define XSdPs_In8 Xil_In8	/**< Low level 8-bit data read */
+#define XSdPs_Out8 Xil_Out8	/**< Low level 8-bit data write */
 
 /****************************************************************************/
 /**
@@ -1146,7 +1344,7 @@ extern "C" {
 *
 ******************************************************************************/
 #define XSdPs_ReadReg(BaseAddress, RegOffset) \
-	XSdPs_In32((BaseAddress) + (RegOffset))
+	XSdPs_In32((UINTPTR)(BaseAddress) + (UINTPTR)(RegOffset))
 
 /***************************************************************************/
 /**
@@ -1165,7 +1363,7 @@ extern "C" {
 *
 ******************************************************************************/
 #define XSdPs_WriteReg(BaseAddress, RegOffset, RegisterValue) \
-	XSdPs_Out32((BaseAddress) + (RegOffset), (RegisterValue))
+	XSdPs_Out32((UINTPTR)(BaseAddress) + (UINTPTR)(RegOffset), (RegisterValue))
 
 /****************************************************************************/
 /**
@@ -1190,7 +1388,7 @@ static INLINE u16 XSdPs_ReadReg16(u32 BaseAddress, u8 RegOffset)
 	Reg >>= ((RegOffset & 0x3)*8);
 	return (u16)Reg;
 #else
-	return XSdPs_In16((BaseAddress) + (RegOffset));
+	return XSdPs_In16((UINTPTR)(BaseAddress) + (UINTPTR)(RegOffset));
 #endif
 }
 
@@ -1217,11 +1415,11 @@ static INLINE void XSdPs_WriteReg16(u32 BaseAddress, u8 RegOffset, u16 RegisterV
 	u32 Reg;
 	BaseAddress += RegOffset & 0xFC;
 	Reg = XSdPs_In32(BaseAddress);
-	Reg &= ~(0xFFFF<<((RegOffset & 0x3)*8));
+	Reg &= ~(0xFFFFU<<((RegOffset & 0x3)*8));
 	Reg |= RegisterValue <<((RegOffset & 0x3)*8);
 	XSdPs_Out32(BaseAddress, Reg);
 #else
-	XSdPs_Out16((BaseAddress) + (RegOffset), (RegisterValue));
+	XSdPs_Out16((UINTPTR)(BaseAddress) + (UINTPTR)(RegOffset), (RegisterValue));
 #endif
 }
 
@@ -1248,7 +1446,7 @@ static INLINE u8 XSdPs_ReadReg8(u32 BaseAddress, u8 RegOffset)
 	Reg >>= ((RegOffset & 0x3)*8);
 	return (u8)Reg;
 #else
-	return XSdPs_In8((BaseAddress) + (RegOffset));
+	return XSdPs_In8((UINTPTR)(BaseAddress) + (UINTPTR)(RegOffset));
 #endif
 }
 /***************************************************************************/
@@ -1273,11 +1471,11 @@ static INLINE void XSdPs_WriteReg8(u32 BaseAddress, u8 RegOffset, u8 RegisterVal
 	u32 Reg;
 	BaseAddress += RegOffset & 0xFC;
 	Reg = XSdPs_In32(BaseAddress);
-	Reg &= ~(0xFF<<((RegOffset & 0x3)*8));
+	Reg &= ~(0xFFU<<((RegOffset & 0x3)*8));
 	Reg |= RegisterValue <<((RegOffset & 0x3)*8);
 	XSdPs_Out32(BaseAddress, Reg);
 #else
-	XSdPs_Out8((BaseAddress) + (RegOffset), (RegisterValue));
+	XSdPs_Out8((UINTPTR)(BaseAddress) + (UINTPTR)(RegOffset), (RegisterValue));
 #endif
 }
 /***************************************************************************/
@@ -1305,4 +1503,5 @@ static INLINE void XSdPs_WriteReg8(u32 BaseAddress, u8 RegOffset, u8 RegisterVal
 #endif
 
 #endif /* SD_HW_H_ */
+/** @endcond */
 /** @} */

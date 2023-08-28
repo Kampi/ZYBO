@@ -1,5 +1,6 @@
 /******************************************************************************
-* Copyright (c) 2010 - 2020 Xilinx, Inc.  All rights reserved.
+* Copyright (c) 2010 - 2021 Xilinx, Inc.  All rights reserved.
+* Copyright (C) 2022 - 2023 Advanced Micro Devices, Inc. All Rights Reserved.
 * SPDX-License-Identifier: MIT
 ******************************************************************************/
 
@@ -30,6 +31,10 @@
  * Please refer the corresponding driver document for replacement.
  *
  *********************************************************************/
+
+/**
+ *@cond nocomments
+ */
 
 #ifndef XIL_MACROBACK_H
 #define XIL_MACROBACK_H
@@ -1103,3 +1108,6 @@ typedef  XPmonPsv XpsvPmon;
 #endif
 
 #endif
+/**
+ *@endcond
+ */

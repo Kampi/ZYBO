@@ -1,5 +1,5 @@
 /******************************************************************************
-* Copyright (c) 2009 - 2020 Xilinx, Inc.  All rights reserved.
+* Copyright (c) 2009 - 2021 Xilinx, Inc.  All rights reserved.
 * SPDX-License-Identifier: MIT
 ******************************************************************************/
 
@@ -7,15 +7,21 @@
 /**
 *
 * @file xil_testmem.h
-* @addtogroup common_test_utils
+* @addtogroup common_test_utils Test Utilities for Memory and Caches
 *
-* <h2>Memory test</h2>
+* - Cache test: xil_testcache.h contains utility functions to test cache.
 *
-* The xil_testmem.h file contains utility functions to test memory.
-* A subset of the memory tests can be selected or all of the tests can be run
-* in order. If there is an error detected by a subtest, the test stops and the
-* failure code is returned. Further tests are not run even if all of the tests
-* are selected.
+* - I/O test: The Xil_testio.h file contains endian related memory IO functions. A
+*	subset of the memory tests can be selected or all of the tests can be run in order.
+*	If there is an error detected by a subtest, the test stops and the failure code is
+*	returned. Further tests are not run even if all of the tests are selected.
+*
+* - Memory test: The xil_testmem.h file contains utility functions to test memory.
+*	A subset of the memory tests can be selected or all of the tests can be run
+*	in order. If there is an error detected by a subtest, the test stops and the
+*	failure code is returned. Further tests are not run even if all of the tests are selected.
+*
+*
 * Following list describes the supported memory tests:
 *
 *  - XIL_TESTMEM_ALLMEMTESTS: This test runs all of the subtests.
@@ -73,9 +79,20 @@
 * Ver    Who    Date    Changes
 * ----- ---- -------- -----------------------------------------------
 * 1.00a hbm  08/25/09 First release
+* 7.5   mus  03/10/21 Added new set of Xil_TestMem32, Xil_TestMem16 and
+*                     Xil_TestMem8 APIs to support memory test for memory
+*                     regions mapped at extended addresses
+*                     (addresses > 4 GB). These new set of APIs would be
+*                     compiled only for 32 bit Microblaze processor, if
+*                     XPAR_MICROBLAZE_ADDR_SIZE is greater than 32.
+*                     It fixes CR#1089129.
 * </pre>
 *
 ******************************************************************************/
+
+/**
+ *@cond nocomments
+ */
 
 #ifndef XIL_TESTMEM_H	/* prevent circular inclusions */
 #define XIL_TESTMEM_H	/* by using protection macros */
@@ -86,6 +103,7 @@ extern "C" {
 
 /***************************** Include Files *********************************/
 #include "xil_types.h"
+#include "xparameters.h"
 
 /************************** Constant Definitions *****************************/
 
@@ -111,16 +129,31 @@ extern "C" {
 #define XIL_TESTMEM_MAXTEST         XIL_TESTMEM_FIXEDPATTERN
 /* @} */
 
+#if !defined(__aarch64__) && !defined(__arch64__)
+#define	NUM_OF_BITS_IN_BYTE	8U
+#define	NUM_OF_BYTES_IN_HW	2U
+#define	NUM_OF_BITS_IN_HW	16U
+#define	NUM_OF_BYTES_IN_WORD	4U
+#define	NUM_OF_BITS_IN_WORD	32U
+#endif
 /***************** Macros (Inline Functions) Definitions *********************/
 
+/**
+ *@endcond
+ */
 
 /************************** Function Prototypes ******************************/
 
 /* xutil_testmem prototypes */
-
+#if defined(__MICROBLAZE__) && !defined(__arch64__) && (XPAR_MICROBLAZE_ADDR_SIZE > 32)
+extern s32 Xil_TestMem32(u32 AddrLow, u32 AddrHigh, u32 Words, u32 Pattern, u8 Subtest);
+extern s32 Xil_TestMem16(u32 AddrLow, u32 AddrHigh, u32 Words, u16 Pattern, u8 Subtest);
+extern s32 Xil_TestMem8(u32 AddrLow, u32 AddrHigh, u32 Words, u8 Pattern, u8 Subtest);
+#else
 extern s32 Xil_TestMem32(u32 *Addr, u32 Words, u32 Pattern, u8 Subtest);
 extern s32 Xil_TestMem16(u16 *Addr, u32 Words, u16 Pattern, u8 Subtest);
 extern s32 Xil_TestMem8(u8 *Addr, u32 Words, u8 Pattern, u8 Subtest);
+#endif
 
 #ifdef __cplusplus
 }

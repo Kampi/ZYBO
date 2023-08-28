@@ -1,16 +1,17 @@
 /******************************************************************************
-* Copyright (C) 2013 - 2020 Xilinx, Inc.  All rights reserved.
+* Copyright (C) 2013 - 2022 Xilinx, Inc.  All rights reserved.
+* Copyright (c) 2022 - 2023 Advanced Micro Devices, Inc. All Rights Reserved.
 * SPDX-License-Identifier: MIT
 ******************************************************************************/
 
 /*****************************************************************************/
 /**
 *
-* @file xsdps_include.h
-* @addtogroup sdps_v3_10
+* @file xsdps_core.h
+* @addtogroup sdps Overview
 * @{
 *
-* This header file contains the identifiers and basic HW access driver
+* The xsdps_core.h header file contains the identifiers and basic HW access driver
 * functions (or  macros) that can be used to access the device. Other driver
 * functions are defined in xsdps.h.
 *
@@ -21,11 +22,16 @@
 * ----- ---    -------- -----------------------------------------------
 * 3.9   mn     03/03/20 Restructured the code for more readability and modularity
 *       mn     03/16/20 Move XSdPs_Select_Card API to User APIs
-*
+* 3.12  sk     01/28/21 Added support for non-blocking write.
+* 3.14  sk     10/22/21 Add support for Erase feature.
+*       mn     11/28/21 Fix MISRA-C violations.
+* 4.0   sk     02/25/22 Add support for eMMC5.1.
+* 4.1   sa     01/06/23 Include xil_util.h in this file.
 * </pre>
 *
 ******************************************************************************/
 
+/** @cond INTERNAL */
 #ifndef SDPS_INCLUDE_H_
 #define SDPS_INCLUDE_H_
 
@@ -38,7 +44,8 @@ extern "C" {
 #include "xil_smc.h"
 #endif
 
-/** @cond INTERNAL */
+#include "xil_util.h"
+
 s32 XSdPs_SdCardInitialize(XSdPs *InstancePtr);
 s32 XSdPs_MmcCardInitialize(XSdPs *InstancePtr);
 s32 XSdPs_IdentifyCard(XSdPs *InstancePtr);
@@ -46,8 +53,8 @@ s32 XSdPs_CmdTransfer(XSdPs *InstancePtr, u32 Cmd, u32 Arg, u32 BlkCnt);
 s32 XSdPs_SetupTransfer(XSdPs *InstancePtr);
 s32 XSdPs_Read(XSdPs *InstancePtr, u32 Arg, u32 BlkCnt, u8 *Buff);
 s32 XSdPs_Write(XSdPs *InstancePtr, u32 Arg, u32 BlkCnt, const u8 *Buff);
+s32 XSdPs_CheckTransferComplete(XSdPs *InstancePtr);
 void XSdPs_Identify_UhsMode(XSdPs *InstancePtr, u8 *ReadBuff);
-s32 XSdPs_Uhs_ModeInit(XSdPs *InstancePtr, u8 Mode);
 s32 XSdPs_DllReset(XSdPs *InstancePtr);
 s32 XSdPs_Switch_Voltage(XSdPs *InstancePtr);
 void XSdPs_SetupADMA2DescTbl64Bit(XSdPs *InstancePtr, u32 BlkCnt);
@@ -93,8 +100,6 @@ s32 XSdPs_Change_MmcBusSpeed(XSdPs *InstancePtr);
 s32 XSdPs_CalcBusSpeed(XSdPs *InstancePtr, u32 *Arg);
 void XSdPs_SetupReadDma(XSdPs *InstancePtr, u16 BlkCnt, u16 BlkSize, u8 *Buff);
 void XSdPs_SetupWriteDma(XSdPs *InstancePtr, u16 BlkCnt, u16 BlkSize, const u8 *Buff);
-s32 XSdPs_DoDmaTransfer(XSdPs *InstancePtr, u32 Cmd, u32 Arg, u32 BlkCnt);
-s32 XSdPs_DoCmdTransfer(XSdPs *InstancePtr, u32 Cmd, u32 Arg, u32 BlkCnt);
 s32 XSdPs_SetVoltage18(XSdPs *InstancePtr);
 s32 XSdPs_SendCmd(XSdPs *InstancePtr, u32 Cmd);
 void XSdPs_IdentifyEmmcMode(XSdPs *InstancePtr, const u8 *ExtCsd);
@@ -102,14 +107,21 @@ s32 XSdPs_CheckEmmcTiming(XSdPs *InstancePtr, u8 *ExtCsd);
 void XSdPs_ConfigPower(XSdPs *InstancePtr);
 void XSdPs_ConfigDma(XSdPs *InstancePtr);
 void XSdPs_ConfigInterrupt(XSdPs *InstancePtr);
+s32 XSdPs_SendErase(XSdPs *InstancePtr);
+s32 XSdPs_SetEndAddr(XSdPs *InstancePtr, u32 EndAddr);
+s32 XSdPs_SetStartAddr(XSdPs *InstancePtr, u32 StartAddr);
+#ifdef VERSAL_NET
+u32 XSdPs_Select_HS400(XSdPs *InstancePtr);
+#endif
 
-#if EL1_NONSECURE && defined (__aarch64__)
+#if defined (__aarch64__) && (EL1_NONSECURE == 1)
 void XSdps_Smc(XSdPs *InstancePtr, u32 RegOffset, u32 Mask, u32 Val);
 #endif
-/** @endcond */
 
 #ifdef __cplusplus
 }
 #endif
 
 #endif
+/** @endcond */
+/** @} */

@@ -1,5 +1,6 @@
 /******************************************************************************
-* Copyright (C) 2010 - 2020 Xilinx, Inc.  All rights reserved.
+* Copyright (C) 2010 - 2022 Xilinx, Inc.  All rights reserved.
+* Copyright (c) 2022 - 2023 Advanced Micro Devices, Inc. All Rights Reserved.
 * SPDX-License-Identifier: MIT
 ******************************************************************************/
 
@@ -7,7 +8,7 @@
 /**
 *
 * @file xscugic_hw.h
-* @addtogroup scugic_v4_3
+* @addtogroup scugic Overview
 * @{
 *
 * This header file contains identifiers and HW access functions (or
@@ -55,6 +56,19 @@
 *                     XScuGic_DisableIntr. These are now C functions. This
 *                     change was to fix CR-1024716.
 * 4.1   mus  06/12/19 Updated XSCUGIC_MAX_NUM_INTR_INPUTS for Versal.
+* 4.6	sk   06/07/21 Delete the commented macro code to fix the MISRA-C warning.
+* 4.6	sk   08/05/21 Fix Scugic Misrac violations.
+* 4.7	sk   12/10/21 Update XSCUGIC_SPI_INT_ID_START macro from signed to unsigned
+* 		      to fix misrac violation.
+* 4.7   mus  03/17/22 GICv3 coupled with A72 has different redistributor for
+*                     each core, and each redistributor has different address,
+*                     Updated #define for re-distributor address to have correct
+*                     value based on the cpu number. It fixes CR#1126156.
+* 5.0   mus  22/02/22 Added support for VERSAL NET
+* 5.1   mus  02/13/23 Added #defines required for logic to find redistributor
+*                     based address for specific CPU core. Also, added new macro
+*                     XScuGic_ReadReg64 to read 64 bit value from specific address.
+* 5.1   mus  02/15/23 Added support for VERSAL_NET APU and RPU GIC.
 *
 * </pre>
 *
@@ -76,8 +90,20 @@ extern "C" {
 #include "bspconfig.h"
 
 /************************** Constant Definitions *****************************/
-#if defined (versal) && !defined(ARMR5)
+#if (defined (versal) && !defined(ARMR5)) || defined (ARMR52)
 #define GICv3
+#endif
+
+#if defined (VERSAL_NET) && ! defined (ARMR52)
+#define GIC600
+#endif
+
+#if defined (VERSAL_NET)
+#if defined (ARMR52)
+#define XSCUGIC_NUM_OF_CORES_PER_CLUSTER 2U
+#else
+#define XSCUGIC_NUM_OF_CORES_PER_CLUSTER 4U
+#endif
 #endif
 
 /*
@@ -85,6 +111,8 @@ extern "C" {
  */
 #ifdef PLATFORM_ZYNQ
 #define XSCUGIC_MAX_NUM_INTR_INPUTS    	95U /* Maximum number of interrupt defined by Zynq */
+#elif defined (VERSAL_NET)
+#define XSCUGIC_MAX_NUM_INTR_INPUTS    	256U /* Maximum number of interrupt sources in VERSAL NET */
 #elif defined (versal)
 #define XSCUGIC_MAX_NUM_INTR_INPUTS    	192U
 #else
@@ -94,7 +122,7 @@ extern "C" {
 /*
  * First Interrupt Id for SPI interrupts.
  */
-#define XSCUGIC_SPI_INT_ID_START	0x20
+#define XSCUGIC_SPI_INT_ID_START	0x20U
 /*
  * The maximum priority value that can be used in the GIC.
  */
@@ -418,14 +446,6 @@ extern "C" {
 #define XSCUGIC_CNTR_EN_S_MASK		0x00000001U    /**< Secure enable, 0=Disabled, 1=Enabled */
 /* @} */
 
-/** @name Priority Mask Register
- * Priority Mask register definitions
- * The CPU interface does not send interrupt if the level of the interrupt is
- * lower than the level of the register.
- * @{
- */
-/*#define XSCUGIC_PRIORITY_MASK		0x000000FFU*/   /**< All interrupts */
-/* @} */
 
 /** @name Binary Point Register
  * Binary Point register definitions
@@ -479,29 +499,43 @@ extern "C" {
  * Identifies the interrupt priority of the highest priority pending interrupt
  */
 #define XSCUGIC_PEND_INTID_MASK		0x000003FFU /**< Pending Interrupt ID */
-/*#define XSCUGIC_CPUID_MASK		0x00000C00U */	 /**< CPU ID */
 /* @} */
 #if defined (GICv3)
 /** @name ReDistributor Interface Register Map
  *
  * @{
  */
-#define XSCUGIC_RDIST_OFFSET              0x80000U
-#define XSCUGIC_RDIST_BASE_ADDRESS        (XPAR_SCUGIC_0_DIST_BASEADDR + XSCUGIC_RDIST_OFFSET)
-#define XSCUGIC_RDIST_SGI_PPI_OFFSET              0x90000U
-#define XSCUGIC_RDIST_SGI_PPI_BASE_ADDRESS    (XPAR_SCUGIC_0_DIST_BASEADDR + XSCUGIC_RDIST_SGI_PPI_OFFSET)
+#if defined (VERSAL_NET) && ! defined (ARMR52)
+#define XSCUGIC_RDIST_START_ADDR	0xE2060000U
+#define XSCUGIC_RDIST_END_ADDR		0xE2260000U
+#elif defined (ARMR52)
+#define XSCUGIC_RDIST_START_ADDR        0xE2100000U
+#define XSCUGIC_RDIST_END_ADDR          0xE2130000U
+#else
+#define XSCUGIC_RDIST_START_ADDR        0xF9080000U
+#define XSCUGIC_RDIST_END_ADDR          0xF90B0000U
+#endif
+#define XSCUGIC_RDIST_OFFSET		0x20000U /* offset between consecutive redistributors */
+#define XSCUGIC_RDIST_SGI_PPI_OFFSET	0x10000U  /* offset between control redistributor and SGI/PPI redistributor */
+#define XSCUGIC_GICR_TYPER_AFFINITY_SHIFT 32U
+#define XSCUGIC_GICR_TYPER_AFFINITY_MASK 0xFFFFFFFF00000000UL
+
 #define XSCUGIC_RDIST_ISENABLE_OFFSET     0x100U
 #define XSCUGIC_RDIST_IPRIORITYR_OFFSET   0x400U
 #define XSCUGIC_RDIST_IGROUPR_OFFSET      0x80U
 #define XSCUGIC_RDIST_GRPMODR_OFFSET      0xD00U
 #define XSCUGIC_RDIST_INT_CONFIG_OFFSET   0xC00U
+#define XSCUGIC_RDIST_TYPER_OFFSET        0x8U
 #define XSCUGIC_RDIST_WAKER_OFFSET        0x14U
 #define XSCUGIC_SGIR_EL1_INITID_SHIFT    24U
 
+#if defined (GIC600)
+#define XSCUGIC_RDIST_PWRR_OFFSET	0x24U
+#endif
 /*
  * GICR_IGROUPR  register definitions
  */
-#if EL3
+#if (defined(ARMR52) || EL3)
 #define XSCUGIC_DEFAULT_SECURITY    0x0U
 #else
 #define XSCUGIC_DEFAULT_SECURITY    0xFFFFFFFFU
@@ -510,6 +544,7 @@ extern "C" {
  * GICR_WAKER  register definitions
  */
 #define XSCUGIC_RDIST_WAKER_LOW_POWER_STATE_MASK    0x7
+#define XSCUGIC_RDIST_PWRR_RDPD_MASK	0x1U
 #endif
 /***************** Macros (Inline Functions) Definitions *********************/
 
@@ -650,6 +685,23 @@ extern "C" {
 #define XScuGic_ReadReg(BaseAddress, RegOffset) \
 	(Xil_In32((BaseAddress) + (RegOffset)))
 
+/****************************************************************************/
+/**
+*
+* Read the given Intc register.
+*
+* @param        BaseAddress is the base address of the device.
+* @param        RegOffset is the register offset to be read
+*
+* @return       The 64-bit value of the register
+*
+* @note
+* C-style signature:
+*    u32 XScuGic_ReadReg64(UINTPTR BaseAddress, u32 RegOffset)
+*
+*****************************************************************************/
+#define XScuGic_ReadReg64(BaseAddress, RegOffset) \
+        (Xil_In64((BaseAddress) + (RegOffset)))
 
 /****************************************************************************/
 /**
@@ -676,7 +728,7 @@ extern "C" {
 void XScuGic_DeviceInterruptHandler(void *DeviceId);
 s32  XScuGic_DeviceInitialize(u32 DeviceId);
 void XScuGic_RegisterHandler(u32 BaseAddress, s32 InterruptID,
-			     Xil_InterruptHandler Handler, void *CallBackRef);
+			     Xil_InterruptHandler IntrHandler, void *CallBackRef);
 void XScuGic_SetPriTrigTypeByDistAddr(u32 DistBaseAddress, u32 Int_Id,
                                         u8 Priority, u8 Trigger);
 void XScuGic_GetPriTrigTypeByDistAddr(u32 DistBaseAddress, u32 Int_Id,
@@ -689,6 +741,9 @@ void XScuGic_UnmapAllInterruptsFromCpuByDistAddr(u32 DistBaseAddress,
 												u8 Cpu_Id);
 void XScuGic_EnableIntr (u32 DistBaseAddress, u32 Int_Id);
 void XScuGic_DisableIntr (u32 DistBaseAddress, u32 Int_Id);
+#if defined(GICv3)
+UINTPTR XScuGic_GetRedistBaseAddr(void);
+#endif
 /************************** Variable Definitions *****************************/
 #ifdef __cplusplus
 }

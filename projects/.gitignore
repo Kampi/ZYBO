@@ -1,13 +1,10 @@
-#########################################################################################################
-##	This is an example .gitignore file for Vivado, please treat it as an example as 
-##	it might not be complete. In addition, XAPP 1165 should be followed.
-#########################################################################################################
 #########
 #Exclude all
 #########
 *
 !*/
 !.gitignore
+
 ###########################################################################
 ##	VIVADO
 ###########################################################################
@@ -70,6 +67,7 @@
 #Journal - files
 #########
 *.jou
+
 #########
 #Reports
 #########
@@ -85,3 +83,23 @@
 !*.bmm
 !*.xmp
 {"mode":"full","isActive":false}
+
+#########
+#Design runs
+#########
+.Xil/
+.cache/
+fsm_encoding.os
+tab_*/
+webtalk.*
+vivado_pid*.str
+hs_err_pid*
+xelab.*
+xsim.*
+xvlog.*
+*.cache
+*.sim
+*.runs
+*.hw
+*.backup.*
+*.debug

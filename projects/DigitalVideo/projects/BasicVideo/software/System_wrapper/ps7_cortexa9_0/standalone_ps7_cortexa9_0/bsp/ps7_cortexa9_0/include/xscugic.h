@@ -1,5 +1,6 @@
 /******************************************************************************
-* Copyright (C) 2010 - 2020 Xilinx, Inc.  All rights reserved.
+* Copyright (C) 2010 - 2022 Xilinx, Inc.  All rights reserved.
+* Copyright (c) 2022 - 2023 Advanced Micro Devices, Inc. All Rights Reserved.
 * SPDX-License-Identifier: MIT
 ******************************************************************************/
 
@@ -7,7 +8,7 @@
 /**
 *
 * @file xscugic.h
-* @addtogroup scugic_v4_3
+* @addtogroup scugic Overview
 * @{
 * @details
 *
@@ -166,7 +167,29 @@
 * 4.1   mus  06/19/19 Added API's XScuGic_MarkCoreAsleep and
 *                     XScuGic_MarkCoreAwake to mark processor core as
 *                     asleep or awake. Fix for CR#1027220.
-*
+* 4.5   asa  03/07/21 Included a header file xil_spinlock.h to ensure that
+*                     GIC driver can use newly introduced spinlock
+*                     functionality.
+* 4.6	sk   08/05/21 Fix scugic misrac violations.
+* 4.7   dp   11/22/21 Added new API XScuGic_IsInitialized() to check and return
+*                     the GIC initialization status.
+* 5.0   mus  22/02/22 Add support for VERSAL NET
+* 	adk  04/18/22 Replace infinite while loops in the examples with
+* 		      Xil_WaitForEventSet() API.
+*       dp   04/25/22 Correct Trigger index calculation in macro
+*                     XScuGic_Get_Rdist_Int_Trigger_Index
+* 5.0   dp   11/07/22 Add macros for accessing the GIC Binary Point and
+*                     Running Priority registers of Cortex-R52.
+* 5.1   mus  02/13/23 Updated XScuGic_CfgInitialize, XScuGic_Enable and
+*                     XScuGic_Disable to support interrupts on each core
+*                     of all CortexA78/CortexR52 clusters in VERSAL NET SoC.
+*                     While at it, modified interrupt routing logic to make
+*                     use of CPU affinity register instead of XPAR_CPU_ID macro.
+*                     Also, XScuGic_CfgInitialize has been updated to find
+*                     redistributor base address of core on which API is
+*                     executed, redistributor address will be stored in newly
+*                     added member of XScuGic data structure "RedistBaseAddr".
+*                     It fixes CR#1150432.
 * </pre>
 *
 ******************************************************************************/
@@ -185,6 +208,7 @@ extern "C" {
 #include "xil_io.h"
 #include "xscugic_hw.h"
 #include "xil_exception.h"
+#include "xil_spinlock.h"
 
 /************************** Constant Definitions *****************************/
 
@@ -197,6 +221,22 @@ extern "C" {
 
 #define XSCUGIC500_DCTLR_ARE_NS_ENABLE  0x20
 #define XSCUGIC500_DCTLR_ARE_S_ENABLE  0x10
+
+#if defined (VERSAL_NET)
+#define XSCUGIC_CLUSTERID_MASK 0xF0U
+#define XSCUGIC_COREID_MASK 0xFU
+#define XSCUGIC_CLUSTERID_SHIFT 4U
+#define XSCUGIC_COREID_SHIFT 0U
+
+#define XSCUGIC_SGI1R_AFFINITY1_SHIFT 16U
+#define XSCUGIC_SGI1R_AFFINITY2_SHIFT 32U
+
+#define XSCUGIC_IROUTER_AFFINITY1_SHIFT 8U
+#define XSCUGIC_IROUTER_AFFINITY2_SHIFT 16U
+
+#define XSCUGIC_IROUTER_IRM_MASK 0x80000000U
+#endif
+
 /**************************** Type Definitions *******************************/
 
 /* The following data type defines each entry in an interrupt vector table.
@@ -229,9 +269,16 @@ typedef struct
 typedef struct
 {
 	XScuGic_Config *Config;  /**< Configuration table entry */
+#if defined (GICv3)
+	UINTPTR RedistBaseAddr;
+#endif
 	u32 IsReady;		 /**< Device is initialized and ready */
 	u32 UnhandledInterrupts; /**< Intc Statistics */
 } XScuGic;
+
+/************************** Variable Definitions *****************************/
+
+extern XScuGic_Config XScuGic_ConfigTable[];	/**< Config table */
 
 /***************** Macros (Inline Functions) Definitions *********************/
 
@@ -311,6 +358,7 @@ typedef struct
 #define XScuGic_DistReadReg(InstancePtr, RegOffset) \
 (XScuGic_ReadReg(((InstancePtr)->Config->DistBaseAddress), (RegOffset)))
 
+#if defined (GICv3)
 /****************************************************************************/
 /**
 *
@@ -328,8 +376,7 @@ typedef struct
 *
 *****************************************************************************/
 #define XScuGic_ReDistWriteReg(InstancePtr, RegOffset, Data) \
-(XScuGic_WriteReg(((InstancePtr)->Config->DistBaseAddress)+ \
-				   XSCUGIC_RDIST_OFFSET, (RegOffset), ((u32)(Data))))
+(XScuGic_WriteReg(InstancePtr->RedistBaseAddr, RegOffset, (u32)Data))
 
 /****************************************************************************/
 /**
@@ -347,8 +394,7 @@ typedef struct
 *
 *****************************************************************************/
 #define XScuGic_ReDistReadReg(InstancePtr, RegOffset) \
-(XScuGic_ReadReg((((InstancePtr)->Config->DistBaseAddress)+ \
-XSCUGIC_RDIST_OFFSET), (RegOffset)))
+(XScuGic_ReadReg(InstancePtr->RedistBaseAddr, RegOffset))
 
 /****************************************************************************/
 /**
@@ -367,7 +413,7 @@ XSCUGIC_RDIST_OFFSET), (RegOffset)))
 *
 *****************************************************************************/
 #define XScuGic_ReDistSGIPPIWriteReg(InstancePtr, RegOffset, Data) \
-(XScuGic_WriteReg(((InstancePtr)->Config->DistBaseAddress)+ \
+(XScuGic_WriteReg(InstancePtr->RedistBaseAddr + \
 				   XSCUGIC_RDIST_SGI_PPI_OFFSET, (RegOffset), ((u32)(Data))))
 
 /****************************************************************************/
@@ -386,9 +432,35 @@ XSCUGIC_RDIST_OFFSET), (RegOffset)))
 *
 *****************************************************************************/
 #define XScuGic_ReDistSGIPPIReadReg(InstancePtr, RegOffset) \
-(XScuGic_ReadReg((((InstancePtr)->Config->DistBaseAddress)+ \
-					XSCUGIC_RDIST_SGI_PPI_OFFSET), (RegOffset)))
+(XScuGic_ReadReg(InstancePtr->RedistBaseAddr + XSCUGIC_RDIST_SGI_PPI_OFFSET, \
+		 RegOffset))
 
+#if defined(ARMR52)
+#define XREG_ICC_SRE_EL1	"p15, 0, %0,  c12,  c12, 5"
+#define XREG_ICC_IGRPEN0_EL1	"p15, 0, %0,  c12,  c12, 6"
+#define XREG_ICC_IGRPEN1_EL1	"p15, 0, %0,  c12,  c12, 7"
+#define XREG_ICC_SGI0R_EL1	"p15, 2, %0,  %1,  c12"
+#define XREG_ICC_SGI1R_EL1	"p15, 0, %0,  %1,  c12"
+#define XREG_ICC_PMR_EL1	"p15, 0, %0,  c4,  c6, 0"
+#define XREG_ICC_IAR0_EL1	"p15, 0, %0,  c12,  c8, 0"
+#define XREG_ICC_EOIR0_EL1	"p15, 0, %0,  c12,  c8, 1"
+#define XREG_IMP_CBAR		"p15, 1, %0, c15, c3, 0"
+#define XREG_ICC_BPR0_EL1	"p15, 0, %0, c12, c8, 3"
+#define XREG_ICC_RPR_EL1	"p15, 0, %0, c12, c11, 3"
+#else
+#define XREG_ICC_SRE_EL1	"S3_0_C12_C12_5"
+#define XREG_ICC_SRE_EL3	"S3_6_C12_C12_5"
+#define XREG_ICC_IGRPEN0_EL1	"S3_0_C12_C12_6"
+#define XREG_ICC_IGRPEN1_EL1	"S3_0_C12_C12_7"
+#define XREG_ICC_IGRPEN1_EL3	"S3_6_C12_C12_7"
+#define XREG_ICC_SGI0R_EL1	"S3_0_C12_C11_7"
+#define XREG_ICC_SGI1R_EL1	"S3_0_C12_C11_5"
+#define XREG_ICC_PMR_EL1	"S3_0_C4_C6_0"
+#define XREG_ICC_IAR0_EL1	"S3_0_C12_C8_0"
+#define XREG_ICC_IAR1_EL1	"S3_0_C12_C12_0"
+#define XREG_ICC_EOIR0_EL1	"S3_0_C12_C8_1"
+#define XREG_ICC_EOIR1_EL1	"S3_0_C12_C12_1"
+#endif
 /****************************************************************************/
 /**
 * This function enables system register interface for GIC CPU Interface
@@ -400,8 +472,12 @@ XSCUGIC_RDIST_OFFSET), (RegOffset)))
 * @note        None.
 *
 *****************************************************************************/
-#define XScuGic_Enable_SystemReg_CPU_Interface_EL3() mtcp(S3_6_C12_C12_5, 0xF);
-#define XScuGic_Enable_SystemReg_CPU_Interface_EL1() mtcp(S3_0_C12_C12_5, 0xF);
+#if defined (__aarch64__)
+#define XScuGic_Enable_SystemReg_CPU_Interface_EL3() mtcpnotoken(XREG_ICC_SRE_EL3, 0xF);
+#define XScuGic_Enable_SystemReg_CPU_Interface_EL1() mtcpnotoken(XREG_ICC_SRE_EL1, 0xF);
+#elif defined (ARMR52)
+#define XScuGic_Enable_SystemReg_CPU_Interface_EL1() mtcp(XREG_ICC_SRE_EL1, 0xF);
+#endif
 /****************************************************************************/
 /**
 * This function enables Grou0 interrupts
@@ -413,7 +489,11 @@ XSCUGIC_RDIST_OFFSET), (RegOffset)))
 * @note        None.
 *
 *****************************************************************************/
-#define XScuGic_Enable_Group0_Interrupts() mtcp(S3_0_C12_C12_6,0x1);
+#if defined(ARMR52)
+#define XScuGic_Enable_Group0_Interrupts() mtcp(XREG_ICC_IGRPEN0_EL1,0x1);
+#else
+#define XScuGic_Enable_Group0_Interrupts() mtcpnotoken(XREG_ICC_IGRPEN0_EL1,0x1);
+#endif
 /****************************************************************************/
 /**
 * This function enables Group1 interrupts
@@ -425,14 +505,16 @@ XSCUGIC_RDIST_OFFSET), (RegOffset)))
 * @note        None.
 *
 *****************************************************************************/
-#if defined (__aarch64__)
-#if EL1_NONSECURE
+#if defined (ARMR52)
+
 #define XScuGic_Enable_Group1_Interrupts() \
-		mtcp (S3_0_C12_C12_7, 0x1 | mfcp(S3_0_C12_C12_7) );
+		mtcp (XREG_ICC_IGRPEN1_EL1, 0x1 | mfcp(XREG_ICC_IGRPEN1_EL1) );
+#elif EL1_NONSECURE
+#define XScuGic_Enable_Group1_Interrupts() \
+                mtcpnotoken(XREG_ICC_IGRPEN1_EL1, 0x1 | mfcpnotoken(XREG_ICC_IGRPEN1_EL1) );
 #else
 #define XScuGic_Enable_Group1_Interrupts() \
-		mtcp (S3_6_C12_C12_7, 0x1 | mfcp(S3_6_C12_C12_7) );
-#endif
+		mtcpnotoken(XREG_ICC_IGRPEN1_EL3, 0x1 | mfcpnotoken(XREG_ICC_IGRPEN1_EL3) );
 #endif
 /****************************************************************************/
 /**
@@ -445,7 +527,11 @@ XSCUGIC_RDIST_OFFSET), (RegOffset)))
 * @note     None.
 *
 *****************************************************************************/
-#define XScuGic_WriteICC_SGI0R_EL1(val) mtcp(S3_0_C12_C11_7,val)
+#if defined(ARMR52)
+#define XScuGic_WriteICC_SGI0R_EL1(val) mtcp2(XREG_ICC_SGI0R_EL1,val)
+#else
+#define XScuGic_WriteICC_SGI0R_EL1(val) mtcpnotoken(XREG_ICC_SGI0R_EL1,val)
+#endif
 
 /****************************************************************************/
 /**
@@ -458,7 +544,11 @@ XSCUGIC_RDIST_OFFSET), (RegOffset)))
 * @note        None.
 *
 *****************************************************************************/
-#define XScuGic_WriteICC_SGI1R_EL1(val) mtcp(S3_0_C12_C11_5,val)
+#if defined(ARMR52)
+#define XScuGic_WriteICC_SGI1R_EL1(val) mtcp2(XREG_ICC_SGI1R_EL1,val)
+#else
+#define XScuGic_WriteICC_SGI1R_EL1(val) mtcpnotoken(XREG_ICC_SGI1R_EL1,val)
+#endif
 
 /****************************************************************************/
 /**
@@ -471,7 +561,11 @@ XSCUGIC_RDIST_OFFSET), (RegOffset)))
 * @note        None.
 *
 *****************************************************************************/
-#define XScuGic_ReadICC_SGI1R_EL1() mfcp(S3_0_C12_C11_5)
+#if defined (ARMR52)
+#define XScuGic_ReadICC_SGI1R_EL1() mfcp(XREG_ICC_SGI1R_EL1)
+#else
+#define XScuGic_ReadICC_SGI1R_EL1() mfcpnotoken(XREG_ICC_SGI1R_EL1)
+#endif
 /****************************************************************************/
 /**
 * This function sets interrupt priority filter
@@ -483,7 +577,11 @@ XSCUGIC_RDIST_OFFSET), (RegOffset)))
 * @note        None.
 *
 *****************************************************************************/
-#define XScuGic_set_priority_filter(val)  __asm__ __volatile__("msr  S3_0_C4_C6_0,%0"  : : "r" (val))
+#if defined (ARMR52)
+#define XScuGic_set_priority_filter(val)  mtcp(XREG_ICC_PMR_EL1, val)
+#else
+#define XScuGic_set_priority_filter(val)  mtcpnotoken(XREG_ICC_PMR_EL1, val)
+#endif
 /****************************************************************************/
 /**
 * This function returns interrupt id of highest priority pending interrupt
@@ -495,12 +593,12 @@ XSCUGIC_RDIST_OFFSET), (RegOffset)))
 * @note        None.
 *
 *****************************************************************************/
-#if defined (__aarch64__)
-#if EL3
-#define XScuGic_get_IntID()  mfcp(S3_0_C12_C8_0)
+#if defined(ARMR52)
+#define XScuGic_get_IntID()  mfcp(XREG_ICC_IAR0_EL1)
+#elif EL3
+#define XScuGic_get_IntID()  mfcpnotoken(XREG_ICC_IAR0_EL1)
 #else
-#define XScuGic_get_IntID()  mfcp(S3_0_C12_C12_0)
-#endif
+#define XScuGic_get_IntID()  mfcpnotoken(XREG_ICC_IAR1_EL1)
 #endif
 /****************************************************************************/
 /**
@@ -513,12 +611,12 @@ XSCUGIC_RDIST_OFFSET), (RegOffset)))
 * @note        None.
 *
 *****************************************************************************/
-#if  defined (__aarch64__)
-#if EL3
-#define XScuGic_ack_Int(val)   mtcp(S3_0_C12_C8_1,val)
+#if defined(ARMR52)
+#define XScuGic_ack_Int(val)   mtcp(XREG_ICC_EOIR0_EL1,val)
+#elif EL3
+#define XScuGic_ack_Int(val)   mtcpnotoken(XREG_ICC_EOIR0_EL1,val)
 #else
-#define XScuGic_ack_Int(val)   mtcp(S3_0_C12_C12_1,val)
-#endif
+#define XScuGic_ack_Int(val)   mtcpnotoken(XREG_ICC_EOIR1_EL1,val)
 #endif
 /****************************************************************************/
 /**
@@ -532,7 +630,8 @@ XSCUGIC_RDIST_OFFSET), (RegOffset)))
 * @note        None.
 *
 *****************************************************************************/
-#define XScuGic_Get_Rdist_Int_Trigger_Index(IntrId)  (((Int_Id%16) & 0x1f) << 2) +1
+#define XScuGic_Get_Rdist_Int_Trigger_Index(IntrId)  ((Int_Id%16) * 2U)
+#endif
 /************************** Function Prototypes ******************************/
 
 /*
@@ -549,22 +648,24 @@ void XScuGic_Disable(XScuGic *InstancePtr, u32 Int_Id);
 s32  XScuGic_CfgInitialize(XScuGic *InstancePtr, XScuGic_Config *ConfigPtr,
 							u32 EffectiveAddr);
 
-s32  XScuGic_SoftwareIntr(XScuGic *InstancePtr, u32 Int_Id, u32 Cpu_Id);
+s32  XScuGic_SoftwareIntr(XScuGic *InstancePtr, u32 Int_Id, u32 Cpu_Identifier);
 
 void XScuGic_GetPriorityTriggerType(XScuGic *InstancePtr, u32 Int_Id,
 					u8 *Priority, u8 *Trigger);
 void XScuGic_SetPriorityTriggerType(XScuGic *InstancePtr, u32 Int_Id,
 					u8 Priority, u8 Trigger);
-void XScuGic_InterruptMaptoCpu(XScuGic *InstancePtr, u8 Cpu_Id, u32 Int_Id);
-void XScuGic_InterruptUnmapFromCpu(XScuGic *InstancePtr, u8 Cpu_Id, u32 Int_Id);
-void XScuGic_UnmapAllInterruptsFromCpu(XScuGic *InstancePtr, u8 Cpu_Id);
+void XScuGic_InterruptMaptoCpu(XScuGic *InstancePtr, u8 Cpu_Identifier, u32 Int_Id);
+void XScuGic_InterruptUnmapFromCpu(XScuGic *InstancePtr, u8 Cpu_Identifier, u32 Int_Id);
+void XScuGic_UnmapAllInterruptsFromCpu(XScuGic *InstancePtr, u8 Cpu_Identifier);
 void XScuGic_Stop(XScuGic *InstancePtr);
 void XScuGic_SetCpuID(u32 CpuCoreId);
 u32 XScuGic_GetCpuID(void);
+u8 XScuGic_IsInitialized(u32 DeviceId);
 /*
  * Initialization functions in xscugic_sinit.c
  */
 XScuGic_Config *XScuGic_LookupConfig(u16 DeviceId);
+XScuGic_Config *XScuGic_LookupConfigBaseAddr(UINTPTR BaseAddress);
 
 /*
  * Interrupt functions in xscugic_intr.c
@@ -576,8 +677,6 @@ void XScuGic_InterruptHandler(XScuGic *InstancePtr);
  */
 s32  XScuGic_SelfTest(XScuGic *InstancePtr);
 
-void XScuGic_EnableSGI_PPI(XScuGic *InstancePtr,u32 ID);
-void XScuGic_SetPPI_SGI_Priority(XScuGic *InstancePtr,u32 ID, u32 priority);
 #if defined (GICv3)
 void XScuGic_MarkCoreAsleep(XScuGic *InstancePtr);
 void XScuGic_MarkCoreAwake(XScuGic *InstancePtr);

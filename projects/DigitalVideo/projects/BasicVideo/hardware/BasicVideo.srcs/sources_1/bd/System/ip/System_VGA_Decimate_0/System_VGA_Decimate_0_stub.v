@@ -1,10 +1,11 @@
-// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+// Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Sun Apr 18 20:46:35 2021
-// Host        : PC running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2023.1.1 (lin64) Build 3900603 Fri Jun 16 19:30:25 MDT 2023
+// Date        : Mon Aug 28 13:13:55 2023
+// Host        : PC-Daniel running 64-bit Ubuntu 22.04.3 LTS
 // Command     : write_verilog -force -mode synth_stub
-//               h:/NextCloud/Git/ZYBO/projects/DigitalVideo/BasicVideo/hardware/BasicVideo.srcs/sources_1/bd/System/ip/System_VGA_Decimate_0/System_VGA_Decimate_0_stub.v
+//               /home/daniel/Projects/ZYBO/projects/DigitalVideo/projects/BasicVideo/hardware/BasicVideo.srcs/sources_1/bd/System/ip/System_VGA_Decimate_0/System_VGA_Decimate_0_stub.v
 // Design      : System_VGA_Decimate_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1
