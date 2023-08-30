@@ -1,0 +1,539 @@
+TRACE::2023-08-30.09:06:54::SCWPlatform::Trying to open the hw design at C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:54::SCWPlatform::DSA given C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:54::SCWPlatform::DSA absoulate path C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:54::SCWPlatform::DSA directory C:/Users/konta/Desktop/a/MinimalLinux/hw
+TRACE::2023-08-30.09:06:54::SCWPlatform:: Platform Path C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:54::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2023-08-30.09:06:54::SCWPlatform::Do not have an existing db opened. 
+TRACE::2023-08-30.09:06:56::SCWPlatform::Opened new HwDB with name System_wrapper_0
+TRACE::2023-08-30.09:06:56::SCWWriter::formatted JSON is {
+	"platformName":	"MinimalLinux",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"MinimalLinux",
+	"platHandOff":	"//wsl.localhost/Ubuntu/home/daniel/Projects/ZYBO/linux/MinimalLinux/hardware/System_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/System_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"true",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	""
+}
+TRACE::2023-08-30.09:06:56::SCWWriter::formatted JSON is {
+	"platformName":	"MinimalLinux",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"MinimalLinux",
+	"platHandOff":	"//wsl.localhost/Ubuntu/home/daniel/Projects/ZYBO/linux/MinimalLinux/hardware/System_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/System_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"true",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"MinimalLinux",
+	"systems":	[{
+			"systemName":	"MinimalLinux",
+			"systemDesc":	"MinimalLinux",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"MinimalLinux"
+		}]
+}
+TRACE::2023-08-30.09:06:56::SCWPlatform::Trying to open the hw design at C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform::DSA given C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform::DSA absoulate path C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform::DSA directory C:/Users/konta/Desktop/a/MinimalLinux/hw
+TRACE::2023-08-30.09:06:56::SCWPlatform:: Platform Path C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2023-08-30.09:06:56::SCWPlatform::Trying to set the existing hwdb with name System_wrapper_0
+TRACE::2023-08-30.09:06:56::SCWPlatform::Opened existing hwdb System_wrapper_0
+TRACE::2023-08-30.09:06:56::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2023-08-30.09:06:56::SCWPlatform::Trying to open the hw design at C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform::DSA given C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform::DSA absoulate path C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform::DSA directory C:/Users/konta/Desktop/a/MinimalLinux/hw
+TRACE::2023-08-30.09:06:56::SCWPlatform:: Platform Path C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2023-08-30.09:06:56::SCWPlatform::Trying to set the existing hwdb with name System_wrapper_0
+TRACE::2023-08-30.09:06:56::SCWPlatform::Opened existing hwdb System_wrapper_0
+TRACE::2023-08-30.09:06:56::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2023-08-30.09:06:56::SCWDomain::checking for install qemu data   : 
+TRACE::2023-08-30.09:06:56::SCWDomain:: Using the QEMU Data from install at  : E:/Xilinx/Vitis/2023.1/data/emulation/platforms/zynq/sw/a9_linux/qemu/
+TRACE::2023-08-30.09:06:56::SCWDomain:: Using the QEMU args  from install at  : E:/Xilinx/Vitis/2023.1/data/emulation/platforms/zynq/sw/a9_linux/qemu/qemu_args.txt
+TRACE::2023-08-30.09:06:56::SCWPlatform::Trying to open the hw design at C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform::DSA given C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform::DSA absoulate path C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform::DSA directory C:/Users/konta/Desktop/a/MinimalLinux/hw
+TRACE::2023-08-30.09:06:56::SCWPlatform:: Platform Path C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2023-08-30.09:06:56::SCWPlatform::Trying to set the existing hwdb with name System_wrapper_0
+TRACE::2023-08-30.09:06:56::SCWPlatform::Opened existing hwdb System_wrapper_0
+TRACE::2023-08-30.09:06:56::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2023-08-30.09:06:56::SCWDomain::Qemu Directory name is changed from "" to "qemu"
+TRACE::2023-08-30.09:06:56::SCWWriter::formatted JSON is {
+	"platformName":	"MinimalLinux",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"MinimalLinux",
+	"platHandOff":	"//wsl.localhost/Ubuntu/home/daniel/Projects/ZYBO/linux/MinimalLinux/hardware/System_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/System_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"true",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"MinimalLinux",
+	"systems":	[{
+			"systemName":	"MinimalLinux",
+			"systemDesc":	"MinimalLinux",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"MinimalLinux",
+			"sysActiveDom":	"linux_domain",
+			"sysDefaultDom":	"linux_domain",
+			"domains":	[{
+					"domainName":	"linux_domain",
+					"domainDispName":	"linux_domain",
+					"domainDesc":	"linux_domain",
+					"processors":	"ps7_cortexa9",
+					"os":	"linux",
+					"sdxOs":	"linux",
+					"qemuArgs":	"<platformDir>/resources/MinimalLinux/linux_domain/qemu_args.txt",
+					"qemuData":	"<platformDir>/resources/MinimalLinux/linux_domain/qemu",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"isLinuxConfigured":	"true",
+					"isBuildFlow":	"false",
+					"sysBootDir":	"",
+					"isMicroBlaze":	"false",
+					"bootmode":	"sd",
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2023-08-30.09:06:56::SCWWriter::formatted JSON is {
+	"platformName":	"MinimalLinux",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"MinimalLinux",
+	"platHandOff":	"//wsl.localhost/Ubuntu/home/daniel/Projects/ZYBO/linux/MinimalLinux/hardware/System_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/System_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"true",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"MinimalLinux",
+	"systems":	[{
+			"systemName":	"MinimalLinux",
+			"systemDesc":	"MinimalLinux",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"MinimalLinux",
+			"sysActiveDom":	"linux_domain",
+			"sysDefaultDom":	"linux_domain",
+			"domains":	[{
+					"domainName":	"linux_domain",
+					"domainDispName":	"linux on ps7_cortexa9",
+					"domainDesc":	"linux_domain",
+					"processors":	"ps7_cortexa9",
+					"os":	"linux",
+					"sdxOs":	"linux",
+					"qemuArgs":	"<platformDir>/resources/MinimalLinux/linux_domain/qemu_args.txt",
+					"qemuData":	"<platformDir>/resources/MinimalLinux/linux_domain/qemu",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"isLinuxConfigured":	"true",
+					"isBuildFlow":	"false",
+					"sysBootDir":	"",
+					"isMicroBlaze":	"false",
+					"bootmode":	"sd",
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2023-08-30.09:06:56::SCWWriter::formatted JSON is {
+	"platformName":	"MinimalLinux",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"MinimalLinux",
+	"platHandOff":	"//wsl.localhost/Ubuntu/home/daniel/Projects/ZYBO/linux/MinimalLinux/hardware/System_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/System_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"true",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"MinimalLinux",
+	"systems":	[{
+			"systemName":	"MinimalLinux",
+			"systemDesc":	"MinimalLinux",
+			"sysIsBootAutoGen":	"false",
+			"systemDispName":	"MinimalLinux",
+			"sysActiveDom":	"linux_domain",
+			"sysDefaultDom":	"linux_domain",
+			"domains":	[{
+					"domainName":	"linux_domain",
+					"domainDispName":	"linux on ps7_cortexa9",
+					"domainDesc":	"linux_domain",
+					"processors":	"ps7_cortexa9",
+					"os":	"linux",
+					"sdxOs":	"linux",
+					"qemuArgs":	"<platformDir>/resources/MinimalLinux/linux_domain/qemu_args.txt",
+					"qemuData":	"<platformDir>/resources/MinimalLinux/linux_domain/qemu",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"isLinuxConfigured":	"true",
+					"isBuildFlow":	"false",
+					"sysBootDir":	"",
+					"isMicroBlaze":	"false",
+					"bootmode":	"sd",
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2023-08-30.09:06:56::SCWWriter::formatted JSON is {
+	"platformName":	"MinimalLinux",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"MinimalLinux",
+	"platHandOff":	"//wsl.localhost/Ubuntu/home/daniel/Projects/ZYBO/linux/MinimalLinux/hardware/System_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/System_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"true",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"MinimalLinux",
+	"systems":	[{
+			"systemName":	"MinimalLinux",
+			"systemDesc":	"MinimalLinux",
+			"sysIsBootAutoGen":	"false",
+			"systemDispName":	"MinimalLinux",
+			"sysActiveDom":	"linux_domain",
+			"sysDefaultDom":	"linux_domain",
+			"domains":	[{
+					"domainName":	"linux_domain",
+					"domainDispName":	"linux on ps7_cortexa9",
+					"domainDesc":	"linux_domain",
+					"processors":	"ps7_cortexa9",
+					"os":	"linux",
+					"sdxOs":	"linux",
+					"qemuArgs":	"<platformDir>/resources/MinimalLinux/linux_domain/qemu_args.txt",
+					"qemuData":	"<platformDir>/resources/MinimalLinux/linux_domain/qemu",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"isLinuxConfigured":	"true",
+					"isBuildFlow":	"false",
+					"sysBootDir":	"",
+					"isMicroBlaze":	"false",
+					"bootmode":	"sd",
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2023-08-30.09:06:56::SCWPlatform::Clearing the existing platform
+TRACE::2023-08-30.09:06:56::SCWSystem::Clearing the existing sysconfig
+TRACE::2023-08-30.09:06:56::SCWSystem::Clearing the domains completed.
+TRACE::2023-08-30.09:06:56::SCWPlatform::Clearing the opened hw db.
+TRACE::2023-08-30.09:06:56::SCWPlatform::DSA given C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform::DSA absoulate path C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform:: Platform location is C:/Users/konta/Desktop/a/MinimalLinux/hw
+TRACE::2023-08-30.09:06:56::SCWPlatform:: Platform Path C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2023-08-30.09:06:56::SCWPlatform::Removing the HwDB with name C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform::Trying to open the hw design at C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform::DSA given C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform::DSA absoulate path C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform::DSA directory C:/Users/konta/Desktop/a/MinimalLinux/hw
+TRACE::2023-08-30.09:06:56::SCWPlatform:: Platform Path C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:56::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2023-08-30.09:06:56::SCWPlatform::Do not have an existing db opened. 
+TRACE::2023-08-30.09:06:58::SCWPlatform::Opened new HwDB with name System_wrapper_1
+TRACE::2023-08-30.09:06:58::SCWReader::Active system found as  MinimalLinux
+TRACE::2023-08-30.09:06:58::SCWReader::Handling sysconfig MinimalLinux
+TRACE::2023-08-30.09:06:58::SCWDomain::checking for install qemu data   : 
+TRACE::2023-08-30.09:06:58::SCWDomain:: Using the QEMU Data from install at  : E:/Xilinx/Vitis/2023.1/data/emulation/platforms/zynq/sw/a9_linux/qemu/
+TRACE::2023-08-30.09:06:58::SCWDomain:: Using the QEMU args  from install at  : E:/Xilinx/Vitis/2023.1/data/emulation/platforms/zynq/sw/a9_linux/qemu/qemu_args.txt
+TRACE::2023-08-30.09:06:58::SCWPlatform::Trying to open the hw design at C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:58::SCWPlatform::DSA given C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:58::SCWPlatform::DSA absoulate path C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:58::SCWPlatform::DSA directory C:/Users/konta/Desktop/a/MinimalLinux/hw
+TRACE::2023-08-30.09:06:58::SCWPlatform:: Platform Path C:/Users/konta/Desktop/a/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:06:58::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2023-08-30.09:06:58::SCWPlatform::Trying to set the existing hwdb with name System_wrapper_1
+TRACE::2023-08-30.09:06:58::SCWPlatform::Opened existing hwdb System_wrapper_1
+TRACE::2023-08-30.09:06:58::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2023-08-30.09:06:58::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2023-08-30.09:06:58::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2023-08-30.09:06:58::SCWReader::No isolation master present  
+TRACE::2023-08-30.09:08:51::SCWPlatform::Trying to open the hw design at /home/daniel/Projects/ZYBO/linux/MinimalLinux/application/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:08:51::SCWPlatform::DSA given /home/daniel/Projects/ZYBO/linux/MinimalLinux/application/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:08:51::SCWPlatform::DSA absoulate path /home/daniel/Projects/ZYBO/linux/MinimalLinux/application/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:08:51::SCWPlatform::DSA directory /home/daniel/Projects/ZYBO/linux/MinimalLinux/application/MinimalLinux/hw
+TRACE::2023-08-30.09:08:51::SCWPlatform:: Platform Path /home/daniel/Projects/ZYBO/linux/MinimalLinux/application/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:08:51::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2023-08-30.09:08:51::SCWPlatform::Do not have an existing db opened. 
+TRACE::2023-08-30.09:08:52::SCWPlatform::Opened new HwDB with name System_wrapper
+TRACE::2023-08-30.09:08:52::SCWReader::Active system found as  MinimalLinux
+TRACE::2023-08-30.09:08:52::SCWReader::Handling sysconfig MinimalLinux
+TRACE::2023-08-30.09:08:52::SCWDomain::checking for install qemu data   : 
+TRACE::2023-08-30.09:08:52::SCWDomain:: Using the QEMU Data from install at  : /tools/xilinx/Vitis/2023.1/data/emulation/platforms/zynq/sw/a9_linux/qemu/
+TRACE::2023-08-30.09:08:52::SCWDomain:: Using the QEMU args  from install at  : /tools/xilinx/Vitis/2023.1/data/emulation/platforms/zynq/sw/a9_linux/qemu/qemu_args.txt
+TRACE::2023-08-30.09:08:52::SCWPlatform::Trying to open the hw design at /home/daniel/Projects/ZYBO/linux/MinimalLinux/application/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:08:52::SCWPlatform::DSA given /home/daniel/Projects/ZYBO/linux/MinimalLinux/application/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:08:52::SCWPlatform::DSA absoulate path /home/daniel/Projects/ZYBO/linux/MinimalLinux/application/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:08:52::SCWPlatform::DSA directory /home/daniel/Projects/ZYBO/linux/MinimalLinux/application/MinimalLinux/hw
+TRACE::2023-08-30.09:08:52::SCWPlatform:: Platform Path /home/daniel/Projects/ZYBO/linux/MinimalLinux/application/MinimalLinux/hw/System_wrapper.xsa
+TRACE::2023-08-30.09:08:52::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2023-08-30.09:08:52::SCWPlatform::Trying to set the existing hwdb with name System_wrapper
+TRACE::2023-08-30.09:08:52::SCWPlatform::Opened existing hwdb System_wrapper
+TRACE::2023-08-30.09:08:52::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2023-08-30.09:08:52::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2023-08-30.09:08:52::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2023-08-30.09:08:52::SCWReader::No isolation master present  
+TRACE::2023-08-30.09:11:11::SCWWriter::formatted JSON is {
+	"platformName":	"MinimalLinux",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"MinimalLinux",
+	"platHandOff":	"//wsl.localhost/Ubuntu/home/daniel/Projects/ZYBO/linux/MinimalLinux/hardware/System_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/System_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"true",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"MinimalLinux",
+	"systems":	[{
+			"systemName":	"MinimalLinux",
+			"systemDesc":	"MinimalLinux",
+			"sysIsBootAutoGen":	"false",
+			"systemDispName":	"MinimalLinux",
+			"sysActiveDom":	"linux_domain",
+			"sysDefaultDom":	"linux_domain",
+			"domains":	[{
+					"domainName":	"linux_domain",
+					"domainDispName":	"linux on ps7_cortexa9",
+					"domainDesc":	"linux_domain",
+					"processors":	"ps7_cortexa9",
+					"os":	"linux",
+					"sdxOs":	"linux",
+					"qemuArgs":	"<platformDir>/resources/MinimalLinux/linux_domain/qemu_args.txt",
+					"qemuData":	"<platformDir>/resources/MinimalLinux/linux_domain/qemu",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"isLinuxConfigured":	"true",
+					"isBuildFlow":	"false",
+					"sysBootDir":	"",
+					"isMicroBlaze":	"false",
+					"bootmode":	"qspi",
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2023-08-30.09:11:12::SCWWriter::formatted JSON is {
+	"platformName":	"MinimalLinux",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"MinimalLinux",
+	"platHandOff":	"//wsl.localhost/Ubuntu/home/daniel/Projects/ZYBO/linux/MinimalLinux/hardware/System_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/System_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"true",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"MinimalLinux",
+	"systems":	[{
+			"systemName":	"MinimalLinux",
+			"systemDesc":	"MinimalLinux",
+			"sysIsBootAutoGen":	"false",
+			"systemDispName":	"MinimalLinux",
+			"sysActiveDom":	"linux_domain",
+			"sysDefaultDom":	"linux_domain",
+			"domains":	[{
+					"domainName":	"linux_domain",
+					"domainDispName":	"linux on ps7_cortexa9",
+					"domainDesc":	"linux_domain",
+					"processors":	"ps7_cortexa9",
+					"os":	"linux",
+					"sdxOs":	"linux",
+					"qemuArgs":	"<platformDir>/resources/MinimalLinux/linux_domain/qemu_args.txt",
+					"qemuData":	"<platformDir>/resources/MinimalLinux/linux_domain/qemu",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"isLinuxConfigured":	"true",
+					"isBuildFlow":	"false",
+					"sysBootDir":	"",
+					"isMicroBlaze":	"false",
+					"bootmode":	"sd",
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2023-08-30.09:14:14::SCWWriter::formatted JSON is {
+	"platformName":	"MinimalLinux",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"MinimalLinux",
+	"platHandOff":	"//wsl.localhost/Ubuntu/home/daniel/Projects/ZYBO/linux/MinimalLinux/hardware/System_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/System_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"true",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"MinimalLinux",
+	"systems":	[{
+			"systemName":	"MinimalLinux",
+			"systemDesc":	"MinimalLinux",
+			"sysIsBootAutoGen":	"false",
+			"systemDispName":	"MinimalLinux",
+			"sysActiveDom":	"linux_domain",
+			"sysDefaultDom":	"linux_domain",
+			"domains":	[{
+					"domainName":	"linux_domain",
+					"domainDispName":	"linux on ps7_cortexa9",
+					"domainDesc":	"linux_domain",
+					"processors":	"ps7_cortexa9",
+					"os":	"linux",
+					"sdxOs":	"linux",
+					"qemuArgs":	"<platformDir>/resources/MinimalLinux/linux_domain/qemu_args.txt",
+					"qemuData":	"<platformDir>/resources/MinimalLinux/linux_domain/qemu",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"isLinuxConfigured":	"true",
+					"isBuildFlow":	"false",
+					"sysBootDir":	"/home/daniel/Projects/ZYBO/linux/MinimalLinux/petalinux/images/linux",
+					"isMicroBlaze":	"false",
+					"bootmode":	"sd",
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+LOG::2023-08-30.09:14:40::SCWPlatform::Started generating the artifacts platform MinimalLinux
+TRACE::2023-08-30.09:14:40::SCWPlatform::Sanity checking of platform is completed
+LOG::2023-08-30.09:14:40::SCWPlatform::Started generating the artifacts for system configuration MinimalLinux
+LOG::2023-08-30.09:14:40::SCWSystem::Checking the domain linux_domain
+LOG::2023-08-30.09:14:40::SCWSystem::Not a boot domain 
+TRACE::2023-08-30.09:14:40::SCWSystem::Copying the bif file from   To /home/daniel/Projects/ZYBO/linux/MinimalLinux/application/MinimalLinux/export/MinimalLinux/sw/MinimalLinux/boot/
+LOG::2023-08-30.09:14:40::SCWSystem::Started Processing the domain linux_domain
+TRACE::2023-08-30.09:14:40::SCWDomain::Generating domain artifcats
+LOG::2023-08-30.09:14:40::SCWSystem::Completed Processing the domain linux_domain
+LOG::2023-08-30.09:14:40::SCWSystem::Completed Processing the sysconfig MinimalLinux
+LOG::2023-08-30.09:14:40::SCWPlatform::Completed generating the artifacts for system configuration MinimalLinux
+TRACE::2023-08-30.09:14:40::SCWPlatform::Started preparing the platform 
+TRACE::2023-08-30.09:14:40::SCWSystem::Skipping writing of the bif file for system config MinimalLinux
+TRACE::2023-08-30.09:14:40::SCWPlatform::Started writing the spfm file 
+TRACE::2023-08-30.09:14:40::SCWPlatform::Started writing the xpfm file 
+TRACE::2023-08-30.09:14:40::SCWPlatform::Completed generating the platform
+TRACE::2023-08-30.09:14:40::SCWWriter::formatted JSON is {
+	"platformName":	"MinimalLinux",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"MinimalLinux",
+	"platHandOff":	"//wsl.localhost/Ubuntu/home/daniel/Projects/ZYBO/linux/MinimalLinux/hardware/System_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/System_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"true",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"MinimalLinux",
+	"systems":	[{
+			"systemName":	"MinimalLinux",
+			"systemDesc":	"MinimalLinux",
+			"sysIsBootAutoGen":	"false",
+			"systemDispName":	"MinimalLinux",
+			"sysActiveDom":	"linux_domain",
+			"sysDefaultDom":	"linux_domain",
+			"domains":	[{
+					"domainName":	"linux_domain",
+					"domainDispName":	"linux on ps7_cortexa9",
+					"domainDesc":	"linux_domain",
+					"processors":	"ps7_cortexa9",
+					"os":	"linux",
+					"sdxOs":	"linux",
+					"qemuArgs":	"<platformDir>/resources/MinimalLinux/linux_domain/qemu_args.txt",
+					"qemuData":	"<platformDir>/resources/MinimalLinux/linux_domain/qemu",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"isLinuxConfigured":	"true",
+					"isBuildFlow":	"false",
+					"sysBootDir":	"/home/daniel/Projects/ZYBO/linux/MinimalLinux/petalinux/images/linux",
+					"isMicroBlaze":	"false",
+					"bootmode":	"sd",
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+KEYINFO::2023-08-30.09:14:40::SCWPlatform::updated the xpfm file.

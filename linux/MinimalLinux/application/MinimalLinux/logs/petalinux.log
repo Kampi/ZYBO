@@ -1,0 +1,4 @@
+TRACE::2023-08-30.09:14:40::SCWLinux::Copying the qemu file from  /home/daniel/Projects/ZYBO/linux/MinimalLinux/application/MinimalLinux/resources/MinimalLinux/linux_domain/qemu_args.txt To /home/daniel/Projects/ZYBO/linux/MinimalLinux/application/MinimalLinux/export/MinimalLinux/sw/MinimalLinux/qemu/
+TRACE::2023-08-30.09:14:40::SCWLinux::Copying the qemu file from  /home/daniel/Projects/ZYBO/linux/MinimalLinux/application/MinimalLinux/resources/MinimalLinux/linux_domain/qemu_args.txt To /home/daniel/Projects/ZYBO/linux/MinimalLinux/application/MinimalLinux/export/MinimalLinux/sw/MinimalLinux/linux_domain/qemu/
+TRACE::2023-08-30.09:14:40::SCWLinux:: Copying the user libraries. 
+TRACE::2023-08-30.09:14:40::SCWLinux::Skipping the Petalinux build as image is already given.
